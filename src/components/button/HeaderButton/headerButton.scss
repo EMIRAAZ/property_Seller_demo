@@ -1,0 +1,24 @@
+.header-btn {
+  width: 76.76px;
+  height: 27.74px;
+  border: none;
+  background: linear-gradient(180deg, #1fa0e9 0%, #8667f2 100%);
+  border-radius: 42px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13.4373px;
+  line-height: 15px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+@media (min-width: 600px) {
+  .header-btn {
+    width: 92.95px;
+    height: 33.59px;
+    border-radius: 50.86px;
+    font-size: 16.2712px;
+    line-height: 18px;
+  }
+}
