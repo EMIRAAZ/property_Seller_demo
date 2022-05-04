@@ -1,41 +1,18 @@
 .header-english {
   ul {
-    display: flex;
-    list-style-type: none;
-    flex-wrap: wrap;
     margin: 0;
-    padding: 10px 15px 10px 35px;
-    overflow: hidden;
-    align-items: center;
-  }
-
-  .logo {
-    margin-top: 7px;
-  }
-  .company-name {
-    margin-left: 40px;
+    padding: 0;
+    list-style-type: none;
     display: flex;
-    flex-direction: column;
-    color: #1c3988;
-    font-family: 'Poppins';
-    .main-name {
-      font-size: 19.03px;
-      font-weight: 600;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    .simple-list-buy {
+      margin-left: auto;
     }
-    .sub-name {
-      font-size: 14px;
-      font-weight: 500;
-    }
-  }
-  .right-list {
-    margin-left: auto;
-    .right-header {
-      .simple-list {
-        font-family: 'Poppins';
-        font-weight: 600;
-        font-size: 13px;
-        padding: 0px 10px;
-      }
+
+    .simple-list {
+      padding: 0px 20px;
     }
   }
 }
