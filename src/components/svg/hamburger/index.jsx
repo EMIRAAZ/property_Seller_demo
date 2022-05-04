@@ -1,10 +1,10 @@
-const HamburgerLogo = () => {
+const HamburgerLogo = ({ width, height }) => {
   return (
     <div>
       <svg
-        width="39"
-        height="25"
-        viewBox="0 0 39 25"
+        width={width}
+        height={height}
+        viewBox={`0 0 ${width} ${height}`}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >

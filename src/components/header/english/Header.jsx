@@ -7,13 +7,13 @@ const Header = () => {
     <div className="header-english">
       <ul>
         <li className="logo">
-          <HamburgerLogo />
+          <HamburgerLogo width="35" height="28" />
         </li>
         <li className="company-name">
           <span className="main-name">UAE&nbsp;Assistant</span>
           <span className="sub-name">Properties</span>
         </li>
-        <li className="simple-list-buy">Buy</li>
+        <li className="simple-list buy">Buy</li>
         <li className="simple-list">Rent</li>
         <li className="simple-list">Sell</li>
         <li className="simple-list">Short&nbsp;Term</li>

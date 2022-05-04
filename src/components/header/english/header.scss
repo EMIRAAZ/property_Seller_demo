@@ -1,18 +1,94 @@
 .header-english {
+  font-family: 'Poppins';
   ul {
     margin: 0;
-    padding: 0;
+    padding: 7px 0px;
     list-style-type: none;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
 
-    .simple-list-buy {
-      margin-left: auto;
+    .logo {
+      padding: 0px 10px;
+      padding-top: 7px;
+    }
+
+    .company-name {
+      padding: 0px 10px;
+      color: #1c3988;
+      letter-spacing: 0.5px;
+      display: flex;
+      flex-direction: column;
+
+      .main-name {
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      .sub-name {
+        font-weight: 500;
+        font-size: 11.5px;
+      }
     }
 
     .simple-list {
-      padding: 0px 20px;
+      display: none;
+    }
+
+    .header-btn {
+      margin-left: auto;
+      margin-right: 20px;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .header-english {
+    font-family: 'Poppins';
+    ul {
+      margin: 0;
+      padding: 7px 0px;
+      list-style-type: none;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      .logo {
+        padding: 0px 15px;
+      }
+
+      .company-name {
+        padding: 0px 15px;
+        color: #1c3988;
+        display: flex;
+        flex-direction: column;
+
+        .main-name {
+          font-weight: 600;
+          font-size: 18.5px;
+        }
+
+        .sub-name {
+          font-weight: 500;
+          font-size: 14.5px;
+        }
+      }
+
+      .buy {
+        margin-left: auto;
+      }
+
+      .simple-list {
+        display: block;
+        padding: 0px 20px;
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      .header-btn {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   }
 }
