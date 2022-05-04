@@ -5,11 +5,11 @@ import Header from '../components/header';
 export const Preview = () => {
   return (
     <>
-      <div className="preview">
-        <Header />
+      <Header />
+      {/* <div className="preview">
         <HeaderButton>االعربية</HeaderButton>
         <HeaderButton>English</HeaderButton>
-      </div>
+      </div> */}
     </>
   );
 };
