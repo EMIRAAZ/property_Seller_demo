@@ -12,6 +12,14 @@
   letter-spacing: -0.02em;
   color: #ffffff;
   cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(180deg, #6dc0f0 0%, #7c5cf1 100%);
+  }
+  &:active {
+    box-shadow: 0 1px #666;
+    transform: translateX(1px);
+  }
 }
 
 @media (min-width: 600px) {
