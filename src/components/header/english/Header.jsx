@@ -2,6 +2,7 @@ import './header.scss';
 import HamburgerLogo from '../../svg/hamburger';
 import DownArrow from '../../svg/downarrow';
 import HeaderButton from '../../button/HeaderButton';
+import HeaderSelect from '../../select/HeaderSelect';
 
 const Header = () => {
   return (
@@ -21,7 +22,15 @@ const Header = () => {
         <li className="simple-list">Mortgages</li>
         <li className="simple-list">Off&nbsp;Plan</li>
         <li className="simple-list luxury">
-          <div className="luxury-margin"> Luxury&nbsp;Properties</div>
+          <HeaderSelect
+            name="Luxury&nbsp;Properties"
+            options={[
+              { name: 'Villas' },
+              { name: 'Resorts' },
+              { name: 'Estates' },
+              { name: 'Apartments' },
+            ]}
+          />
           <DownArrow />
         </li>
         <li className="simple-list">List&nbsp;Your&nbsp;Property</li>

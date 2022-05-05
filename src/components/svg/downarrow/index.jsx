@@ -1,6 +1,6 @@
 const DownArrow = () => {
   return (
-    <div>
+    <div className="down-arrow">
       <svg
         width="8"
         height="6"
