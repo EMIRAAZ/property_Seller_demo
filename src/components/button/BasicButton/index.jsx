@@ -1,7 +1,11 @@
 import './basicButton.scss';
 
-const BasicButton = ({ customClass, children }) => {
-  return <button className={`basic-btn ${customClass}`}>{children}</button>;
+const BasicButton = ({ customClass, children, onClick }) => {
+  return (
+    <button className={`basic-btn ${customClass}`} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default BasicButton;

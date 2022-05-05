@@ -1,5 +1,10 @@
-.preview {
-  // display: flex;
-  // flex-direction: column;
-  // gap: 20px;
+.preview-main {
+  .preview-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: rgb(193, 255, 255);
+    padding: 10px;
+  }
 }
