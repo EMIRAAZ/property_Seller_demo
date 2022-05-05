@@ -88,9 +88,14 @@
       .luxury {
         display: flex !important;
         flex-direction: row;
+        align-items: center;
 
-        .luxury-margin {
-          margin-right: 3px;
+        .header-select {
+          margin-right: 5px;
+
+          &:hover .down-arrow {
+            background-color: #1c3988;
+          }
         }
       }
 
