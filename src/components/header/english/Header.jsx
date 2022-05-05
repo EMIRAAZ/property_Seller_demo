@@ -1,5 +1,6 @@
 import './header.scss';
 import HamburgerLogo from '../../svg/hamburger';
+import DownArrow from '../../svg/downarrow';
 import HeaderButton from '../../button/HeaderButton';
 
 const Header = () => {
@@ -19,7 +20,10 @@ const Header = () => {
         <li className="simple-list">Short&nbsp;Term</li>
         <li className="simple-list">Mortgages</li>
         <li className="simple-list">Off&nbsp;Plan</li>
-        <li className="simple-list">Luxury&nbsp;Properties</li>
+        <li className="simple-list luxury">
+          <div className="luxury-margin"> Luxury&nbsp;Properties</div>
+          <DownArrow />
+        </li>
         <li className="simple-list">List&nbsp;Your&nbsp;Property</li>
         <li className="header-btn">
           <HeaderButton>االعربية</HeaderButton>
