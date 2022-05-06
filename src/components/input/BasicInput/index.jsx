@@ -10,6 +10,8 @@ const BasicInput = ({
   leftIcon,
   rightIcon,
 }) => {
+  const removeLeftPaddingIfNotLeftIcon = () =>
+    leftIcon ? '' : 'remove-left-padding';
   return (
     <div className="basic-input-container">
       {leftIcon
@@ -21,7 +23,7 @@ const BasicInput = ({
           })
         : null}
       <input
-        className={`basic-input ${customClass}`}
+        className={`basic-input ${customClass} ${removeLeftPaddingIfNotLeftIcon()}`}
         type={type}
         placeholder={placeholder}
         value={value}
