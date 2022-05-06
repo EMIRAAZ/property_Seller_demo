@@ -120,6 +120,7 @@
       display: flex;
       flex-wrap: nowrap;
       align-items: center;
+      flex-wrap: nowrap;
 
       .logo {
         padding: 0px 15px;
@@ -162,6 +163,7 @@
 
       .simple-list {
         display: block;
+        min-width: fit-content;
         padding: 0px 20px;
         font-weight: 600;
         font-size: 13px;
@@ -173,7 +175,7 @@
 
       .header-btn {
         margin-left: 0;
-        margin-right: 0;
+        margin-right: 10px;
       }
     }
 
