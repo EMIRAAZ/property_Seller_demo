@@ -1,7 +1,8 @@
-import './index.scss';
+import Footer from "../../components/footer/english/Footer";
+import "./index.scss";
 
 const Preview = () => {
-  return <>Bahul</>;
+  return <Footer />;
 };
 
 export default Preview;
