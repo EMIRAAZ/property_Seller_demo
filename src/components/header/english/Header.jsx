@@ -3,12 +3,52 @@ import HamburgerLogo from '../../svg/hamburger';
 import DownArrow from '../../svg/downarrow';
 import HeaderButton from '../../button/HeaderButton';
 import HeaderSelect from '../../select/HeaderSelect';
+import Close from '../../svg/close';
+import { useState } from 'react';
 
 const Header = () => {
+  const [state, changeState] = useState('hide');
+  const onSidebarWebToggle = () => {
+    changeState(state === 'hide' ? 'show' : 'hide');
+  };
+
   return (
     <div className="header-english">
-      <ul>
-        <li className="logo">
+      <div className={`web-sidebar ${state}`}>
+        <ul>
+          <li onClick={onSidebarWebToggle}>
+            <Close />
+          </li>
+          <li>Blogs</li>
+          <li>About Us</li>
+          <li>About Founder</li>
+          <li>Our Team</li>
+          <li>Our Partners</li>
+          <li>Careers</li>
+          <li>Teams And Conditions</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div className={`mobile-sidebar ${state}`}>
+        <ul>
+          <li onClick={onSidebarWebToggle}>
+            <Close />
+          </li>
+          <li>Buy</li>
+          <li>Rent</li>
+          <li>Sell</li>
+          <li>Short Term</li>
+          <li>Commercial</li>
+          <li>Property Management</li>
+          <li>Mortgages</li>
+          <li>Off Plan</li>
+          <li>Luxury Properties</li>
+          <li>Blogs</li>
+          <li>News</li>
+        </ul>
+      </div>
+      <ul className="header-list">
+        <li className="logo" onClick={onSidebarWebToggle}>
           <HamburgerLogo width="35" height="28" />
         </li>
         <li className="company-name">

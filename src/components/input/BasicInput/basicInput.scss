@@ -1,0 +1,47 @@
+.basic-input-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .left-b-input-icon {
+    position: absolute;
+    top: calc((100% - 24px) / 2);
+    margin-left: 20px;
+  }
+  .basic-input {
+    border: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    padding: 13px 15px;
+    padding-left: 50px;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Open Sans';
+
+    background-color: #f3f3fa;
+
+    &::-webkit-input-placeholder {
+      /* Edge */
+      font-family: 'Open Sans';
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    &::-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      font-family: 'Open Sans';
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    &::placeholder {
+      font-family: 'Open Sans';
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+  .remove-left-padding {
+    padding-left: 20px;
+  }
+}
