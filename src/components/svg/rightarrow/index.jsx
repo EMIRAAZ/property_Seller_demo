@@ -1,6 +1,6 @@
-const RightArrow = () => {
+const RightArrow = ({ customClass }) => {
   return (
-    <div>
+    <div className={customClass}>
       <svg
         width="16"
         height="8"
