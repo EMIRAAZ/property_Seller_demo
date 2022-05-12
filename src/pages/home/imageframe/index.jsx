@@ -19,7 +19,11 @@ const ImageFrame = () => {
         <img src="/assets/image/build2.jpg" alt="building" />
       </div>
       <div className="img-div">
-        <img src="/assets/image/build5.jpg" alt="building" />
+        <img
+          className="desktop-only"
+          src="/assets/image/build5.jpg"
+          alt="building"
+        />
       </div>
     </div>
   );

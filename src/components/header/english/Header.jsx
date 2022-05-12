@@ -57,12 +57,12 @@ const Header = () => {
         </li>
         <li className="desktop-li">
           <ul className="desktop-ul">
-            <li className="simple-list">Buy</li>
-            <li className="simple-list">Rent</li>
-            <li className="simple-list">Sell</li>
-            <li className="simple-list">Short&nbsp;Term</li>
-            <li className="simple-list">Mortgages</li>
-            <li className="simple-list">Off&nbsp;Plan</li>
+            <li className="simple-list buy">Buy</li>
+            <li className="simple-list rent">Rent</li>
+            <li className="simple-list sell">Sell</li>
+            <li className="simple-list short">Short&nbsp;Term</li>
+            <li className="simple-list mortgages">Mortgages</li>
+            <li className="simple-list off">Off&nbsp;Plan</li>
             <li className="simple-list luxury">
               <HeaderSelect
                 name="Luxury&nbsp;Properties"
@@ -76,10 +76,10 @@ const Header = () => {
               <DownArrow />
             </li>
             <li className="simple-list">List&nbsp;Your&nbsp;Property</li>
-            <li className="header-btn">
-              <HeaderButton>االعربية</HeaderButton>
-            </li>
           </ul>
+        </li>
+        <li className="header-btn">
+          <HeaderButton>االعربية</HeaderButton>
         </li>
       </ul>
     </div>
