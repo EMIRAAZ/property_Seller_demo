@@ -1,10 +1,10 @@
 .v {
-  padding: 30px;
-  height: 100px;
-  width: 1000px;
-
+  background-color: aqua;
+  align-items: center;
+  margin: 50px auto;
+  width: 70%;
   .order-one {
-    grid-column: 0.5/ 3;
+    grid-column: 0.2/ 3;
   }
   .order-two {
     grid-column: 1 / 3;

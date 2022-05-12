@@ -1,5 +1,6 @@
 .form-card {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 10px;
+  padding: 10px;
+  border-color: #ffffff;
+}
+@media only screen and (min-width: 600px) {
 }
