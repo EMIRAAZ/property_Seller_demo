@@ -63,7 +63,12 @@
 @media only screen and (min-width: 600px) {
   .featured-list {
     .featured-list-item {
-      flex-direction: row;
+      &:nth-child(1) {
+        flex-direction: row;
+      }
+      &:nth-child(2) {
+        flex-direction: row-reverse;
+      }
       img {
         width: 50%;
       }

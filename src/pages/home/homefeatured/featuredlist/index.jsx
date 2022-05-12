@@ -3,10 +3,7 @@ import RightArrow from '../../../../components/svg/rightarrow';
 
 const FeaturedList = () => {
   const featuredListItem = (img, key) => (
-    <div
-      className="featured-list-item"
-      style={{ flexDirection: `${key === 2 ? 'row-reverse' : 'row'}` }}
-    >
+    <div className="featured-list-item">
       <img className="desktop-only" src={img} alt="building" />
       <div
         className="item-details"
