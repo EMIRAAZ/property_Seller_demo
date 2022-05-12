@@ -1,5 +1,15 @@
 .v {
   padding: 30px;
   height: 100px;
-  width: 400px;
+  width: 1000px;
+
+  .order-one {
+    grid-column: 0.5/ 3;
+  }
+  .order-two {
+    grid-column: 1 / 3;
+  }
+  .order-three {
+    grid-column: 1.5/ 3;
+  }
 }

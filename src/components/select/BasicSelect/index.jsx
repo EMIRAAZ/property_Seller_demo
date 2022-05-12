@@ -2,7 +2,7 @@ import './basicSelect.scss';
 import ExpandIcon from '../../svg/expand';
 import { useState } from 'react';
 
-const BasicSelect = ({ name, options }) => {
+const BasicSelect = ({ name, options, customClass = '' }) => {
   const [selectName, setSelectName] = useState(name);
   const [dropdownClass, setdropdownClass] = useState('hide');
 
@@ -24,7 +24,7 @@ const BasicSelect = ({ name, options }) => {
     ));
   return (
     <div
-      className="basic-select"
+      className={`basic-select ${customClass}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
