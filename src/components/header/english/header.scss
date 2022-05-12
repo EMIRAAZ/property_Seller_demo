@@ -142,7 +142,6 @@
       }
       .desktop-li {
         display: block;
-        overflow-x: hidden;
         width: calc(100vw - 480px);
         margin-left: auto;
       }
@@ -171,6 +170,7 @@
         padding: 0px 20px;
         font-weight: 600;
         font-size: 13px;
+        cursor: pointer;
 
         &:hover {
           color: #1c3988;
