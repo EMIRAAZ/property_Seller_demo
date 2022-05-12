@@ -66,7 +66,7 @@
     padding: 7px 0px;
     list-style-type: none;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
 
     .logo {
@@ -98,9 +98,8 @@
       }
     }
 
-    .simple-list {
+    .desktop-li {
       display: none;
-      cursor: pointer;
     }
 
     .header-btn {
@@ -118,9 +117,7 @@
       padding: 7px 0px;
       list-style-type: none;
       display: flex;
-      flex-wrap: nowrap;
       align-items: center;
-      flex-wrap: nowrap;
 
       .logo {
         padding: 0px 15px;
@@ -142,9 +139,14 @@
           font-size: 14.5px;
         }
       }
-
-      .buy {
+      .desktop-li {
+        display: block;
+        overflow: hidden;
         margin-left: auto;
+      }
+      .desktop-ul {
+        display: flex;
+        align-items: center;
       }
 
       .luxury {

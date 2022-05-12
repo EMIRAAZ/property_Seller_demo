@@ -4,6 +4,7 @@ import React from 'react';
 const BasicInput = ({
   type,
   customClass = '',
+  divClass = '',
   placeholder,
   value,
   onChange,
@@ -13,7 +14,7 @@ const BasicInput = ({
   const removeLeftPaddingIfNotLeftIcon = () =>
     leftIcon ? '' : 'remove-left-padding';
   return (
-    <div className="basic-input-container">
+    <div className={`basic-input-container ${divClass}`}>
       {leftIcon
         ? React.createElement(leftIcon, {
             className: 'left-b-input-icon',
