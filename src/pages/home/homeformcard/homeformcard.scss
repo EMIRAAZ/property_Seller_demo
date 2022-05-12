@@ -60,14 +60,17 @@
       .emirate {
         grid-column-start: 1;
         grid-column-end: 1;
+        grid-row-start: 1;
       }
       .search {
         grid-column-start: 2;
         grid-column-end: 4;
+        grid-row-start: 1;
       }
       .property {
         grid-column-start: 4;
         grid-column-end: 4;
+        grid-row-start: 1;
       }
       .sale {
         grid-column-start: 1;
@@ -90,6 +93,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        grid-row-start: 2;
+        grid-column-start: 4;
+        grid-column-end: 4;
       }
     }
   }
