@@ -142,7 +142,8 @@
       }
       .desktop-li {
         display: block;
-        overflow: hidden;
+        overflow-x: hidden;
+        width: calc(100vw - 480px);
         margin-left: auto;
       }
       .desktop-ul {
@@ -177,8 +178,8 @@
       }
 
       .header-btn {
-        margin-left: 0;
-        margin-right: 10px;
+        margin-right: 20px;
+        margin-left: 0px;
       }
     }
 
