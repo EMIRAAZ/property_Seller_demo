@@ -58,11 +58,11 @@ const Header = () => {
         <li className="desktop-li">
           <ul className="desktop-ul">
             <li className="simple-list buy">Buy</li>
-            <li className="simple-list buy">Rent</li>
-            <li className="simple-list buy">Sell</li>
-            <li className="simple-list buy">Short&nbsp;Term</li>
-            <li className="simple-list">Mortgages</li>
-            <li className="simple-list">Off&nbsp;Plan</li>
+            <li className="simple-list rent">Rent</li>
+            <li className="simple-list sell">Sell</li>
+            <li className="simple-list short">Short&nbsp;Term</li>
+            <li className="simple-list mortgages">Mortgages</li>
+            <li className="simple-list off">Off&nbsp;Plan</li>
             <li className="simple-list luxury">
               <HeaderSelect
                 name="Luxury&nbsp;Properties"
