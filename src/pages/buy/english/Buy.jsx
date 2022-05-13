@@ -2,6 +2,7 @@ import './buy.scss';
 import Header from '../../../components/header';
 import ImageFrame from '../imageframe';
 import BuyFormCard from '../buyformcard';
+import BuyProperty from '../buyproperty';
 
 const Buy = () => {
   return (
@@ -9,6 +10,7 @@ const Buy = () => {
       <Header />
       <ImageFrame />
       <BuyFormCard />
+      <BuyProperty />
     </div>
   );
 };
