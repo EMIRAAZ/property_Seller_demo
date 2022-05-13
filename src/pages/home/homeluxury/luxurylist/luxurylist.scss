@@ -1,12 +1,12 @@
 .home-luxury-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   margin-top: 40px;
   gap: 10px;
   .luxury-list-item {
     background-color: #ffffff;
     padding: 9px 10px;
     font-family: 'Poppins';
-
     img {
       width: 100%;
       height: 150px;
