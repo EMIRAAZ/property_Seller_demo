@@ -24,6 +24,8 @@ const LuxuryList = () => {
     return [
       { key: 1, img: '/assets/image/bestdeals.jpg' },
       { key: 1, img: '/assets/image/bestdeals.jpg' },
+      { key: 1, img: '/assets/image/bestdeals.jpg' },
+      { key: 1, img: '/assets/image/bestdeals.jpg' },
     ].map(item => luxuryListItem(item.img, item.key));
   };
   return <div className="home-luxury-list">{renderLuxuryListItem()}</div>;
