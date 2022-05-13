@@ -1,9 +1,13 @@
-import './dealslist.scss';
+import './luxurylist.scss';
 
 const DealsList = () => {
   const dealsListItem = img => (
-    <div className="deals-list-item">
-      <img src={img} alt="img" />
+    <div
+      className="deals-list-item"
+      style={{
+        backgroundImage: `url(${img})`,
+      }}
+    >
       <div className="deals-item-content">
         <div className="details">
           <p>DownTown</p>
