@@ -1,4 +1,5 @@
 import './homeluxury.scss';
+import LuxuryList from './luxurylist';
 
 const HomeLuxury = () => {
   return (
@@ -11,6 +12,7 @@ const HomeLuxury = () => {
             heard oh ought. His defective nor convinced residence own.
           </p>
         </div>
+        <LuxuryList />
       </div>
     </div>
   );
