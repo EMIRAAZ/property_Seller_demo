@@ -5,6 +5,7 @@ import HomeFormCard from '../homeformcard';
 import HomeFeatured from '../homefeatured';
 import HomeBestDeals from '../homebestdeals';
 import HomeLuxury from '../homeluxury';
+import SocialPanel from '../../../components/socialpanel';
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <HomeFeatured />
       <HomeBestDeals />
       <HomeLuxury />
+      <SocialPanel />
     </div>
   );
 };
