@@ -6,6 +6,7 @@ import HomeFeatured from '../homefeatured';
 import HomeBestDeals from '../homebestdeals';
 import HomeLuxury from '../homeluxury';
 import SocialPanel from '../../../components/socialpanel';
+import Footer from '../../../components/footer/english/Footer';
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <HomeBestDeals />
       <HomeLuxury />
       <SocialPanel />
+      <Footer />
     </div>
   );
 };
