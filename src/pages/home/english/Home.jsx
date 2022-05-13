@@ -3,6 +3,8 @@ import Header from '../../../components/header';
 import ImageFrame from '../imageframe';
 import HomeFormCard from '../homeformcard';
 import HomeFeatured from '../homefeatured';
+import HomeBestDeals from '../homebestdeals';
+import HomeLuxury from '../homeluxury';
 
 const Home = () => {
   return (
@@ -11,6 +13,8 @@ const Home = () => {
       <ImageFrame />
       <HomeFormCard />
       <HomeFeatured />
+      <HomeBestDeals />
+      <HomeLuxury />
     </div>
   );
 };

@@ -1,0 +1,78 @@
+.home-deals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+  height: fit-content;
+
+  .deals-list-item {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .deals-item-content {
+      padding: 15%;
+
+      position: absolute;
+      left: auto;
+      right: auto;
+      z-index: 1;
+      width: 90%;
+      height: 90%;
+      background: rgba(0, 0, 0, 0.4);
+      color: #ffffff;
+      font-family: 'Poppins';
+
+      .details {
+        display: flex;
+        gap: 10px;
+        font-weight: 500;
+        font-size: 13px;
+      }
+      .heading {
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .price {
+        font-weight: 500;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .home-deals-list {
+    flex-direction: row;
+    gap: 10px;
+
+    .deals-list-item {
+      width: 50%;
+      .deals-item-content {
+        padding: 10%;
+        .details {
+          display: flex;
+          gap: 10px;
+          font-weight: 500;
+          font-size: 15px;
+        }
+        .heading {
+          font-weight: 700;
+          font-size: 23px;
+        }
+        .price {
+          font-weight: 500;
+          font-size: 23px;
+        }
+      }
+    }
+  }
+}
