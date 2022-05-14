@@ -3,6 +3,7 @@ import Header from '../../../components/header';
 import ImageFrame from '../imageframe';
 import BuyFormCard from '../buyformcard';
 import BuyProperty from '../buyproperty';
+import Pagination from '../../../components/pagination';
 
 const Buy = () => {
   return (
@@ -11,6 +12,7 @@ const Buy = () => {
       <ImageFrame />
       <BuyFormCard />
       <BuyProperty />
+      <Pagination />
     </div>
   );
 };
