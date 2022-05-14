@@ -1,6 +1,6 @@
-.buy-property {
+.rent-property {
   background-color: #eef7ff;
-  .buy-property-content {
+  .rent-property-content {
     margin: 0px auto;
     padding: 40px 0px 10px 0px;
     width: 90%;
@@ -29,8 +29,8 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .buy-property {
-    .buy-property-content {
+  .rent-property {
+    .rent-property-content {
       background-color: #eef7ff;
       .heading {
         font-size: 48px;

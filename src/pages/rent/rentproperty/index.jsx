@@ -1,11 +1,11 @@
-import './buyproperty.scss';
+import './rentproperty.scss';
 import PropertyList from '../../../components/propertylist';
 
-const BuyProperty = () => {
+const RentProperty = () => {
   return (
-    <div className="buy-property">
-      <div className="buy-property-content">
-        <p className="heading">Properties for sale in UAE</p>
+    <div className="rent-property">
+      <div className="rent-property-content">
+        <p className="heading">Properties for rent in UAE</p>
         <p className="sub">3587 Properties found</p>
         <div className="property-list-container">
           <PropertyList />
@@ -18,4 +18,4 @@ const BuyProperty = () => {
   );
 };
 
-export default BuyProperty;
+export default RentProperty;
