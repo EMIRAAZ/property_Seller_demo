@@ -5,8 +5,10 @@ import HeaderButton from '../../button/HeaderButton';
 import HeaderSelect from '../../select/HeaderSelect';
 import Close from '../../svg/close';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
   const [state, changeState] = useState('hide');
   const onSidebarWebToggle = () => {
     changeState(state === 'hide' ? 'show' : 'hide');
@@ -34,8 +36,8 @@ const Header = () => {
           <li onClick={onSidebarWebToggle}>
             <Close />
           </li>
-          <li>Buy</li>
-          <li>Rent</li>
+          <li onClick={() => navigate('/buy')}>Buy</li>
+          <li onClick={() => navigate('/rent')}>Rent</li>
           <li>Sell</li>
           <li>Short Term</li>
           <li>Commercial</li>
@@ -51,14 +53,18 @@ const Header = () => {
         <li className="logo" onClick={onSidebarWebToggle}>
           <HamburgerLogo width="35" height="28" />
         </li>
-        <li className="company-name">
+        <li className="company-name" onClick={() => navigate('/')}>
           <span className="main-name">UAE&nbsp;Assistant</span>
           <span className="sub-name">Properties</span>
         </li>
         <li className="desktop-li">
           <ul className="desktop-ul">
-            <li className="simple-list buy">Buy</li>
-            <li className="simple-list rent">Rent</li>
+            <li className="simple-list buy" onClick={() => navigate('/buy')}>
+              Buy
+            </li>
+            <li className="simple-list rent" onClick={() => navigate('/rent')}>
+              Rent
+            </li>
             <li className="simple-list sell">Sell</li>
             <li className="simple-list short">Short&nbsp;Term</li>
             <li className="simple-list mortgages">Mortgages</li>
