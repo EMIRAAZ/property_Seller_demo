@@ -2,7 +2,7 @@ import './pagination.scss';
 import RightPage from '../svg/rightpage';
 import { useState } from 'react';
 
-const Pagination = ({ totalPages = 10 }) => {
+const Pagination = ({ totalPages = 20 }) => {
   const [currentState, setCurrentState] = useState(5);
 
   const onArrowClick = type => {

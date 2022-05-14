@@ -1,6 +1,6 @@
 .pagination-component {
   display: flex;
-  gap: 10px;
+  gap: 2px;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -22,7 +22,7 @@
   }
   p {
     font-family: 'Poppins';
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 30px;
     letter-spacing: -1.0553843975067139px;
@@ -32,6 +32,15 @@
     &:hover {
       color: #ffffff;
       background-color: #1fa0e9;
+    }
+  }
+}
+@media only screen and (min-width: 600px) {
+  .pagination-component {
+    gap: 10px;
+
+    p {
+      font-size: 20px;
     }
   }
 }
