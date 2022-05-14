@@ -10,6 +10,8 @@ const BuyProperty = () => {
         <div className="property-list-container">
           <PropertyList />
           <PropertyList />
+          <PropertyList />
+          <PropertyList />
         </div>
       </div>
     </div>
