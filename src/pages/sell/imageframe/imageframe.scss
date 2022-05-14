@@ -8,17 +8,17 @@
   }
   .heading {
     font-family: 'Poppins';
-    font-size: 42px;
+    font-size: 28px;
     font-weight: 700;
-    line-height: 64px;
+    line-height: 42px;
     letter-spacing: 0px;
     text-align: left;
     color: #ffffff;
     position: absolute;
     z-index: 10;
-    top: 300px;
-    left: 100px;
-    max-width: 500px;
+    top: 30px;
+    left: 10px;
+    max-width: 300px;
   }
 }
 @media only screen and (min-width: 600px) {
@@ -26,6 +26,21 @@
     .img-frame {
       width: 100%;
       height: auto;
+    }
+    .heading {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 64px;
+      letter-spacing: 0px;
+      text-align: left;
+      top: 300px;
+      left: 100px;
+      max-width: 500px;
+    }
+    .sell-form-card {
+      position: absolute;
+      top: 300px;
+      right: 200px;
     }
   }
 }
