@@ -1,5 +1,6 @@
 .header-english {
   font-family: 'Poppins';
+  background-color: #ffffff;
 
   .web-sidebar {
     display: none;
@@ -66,7 +67,7 @@
     padding: 7px 0px;
     list-style-type: none;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
 
     .logo {
@@ -98,9 +99,8 @@
       }
     }
 
-    .simple-list {
+    .desktop-li {
       display: none;
-      cursor: pointer;
     }
 
     .header-btn {
@@ -113,14 +113,13 @@
 @media only screen and (min-width: 600px) {
   .header-english {
     font-family: 'Poppins';
+
     .header-list {
       margin: 0;
       padding: 7px 0px;
       list-style-type: none;
       display: flex;
-      flex-wrap: nowrap;
       align-items: center;
-      flex-wrap: nowrap;
 
       .logo {
         padding: 0px 15px;
@@ -142,15 +141,22 @@
           font-size: 14.5px;
         }
       }
-
-      .buy {
+      .desktop-li {
+        display: inline-block;
+        max-width: 690px;
         margin-left: auto;
+      }
+      .desktop-ul {
+        display: inline-block;
+        align-items: center;
+        margin-right: 10px;
       }
 
       .luxury {
         display: flex !important;
         flex-direction: row;
         align-items: center;
+        position: relative;
 
         .header-select {
           margin-right: 5px;
@@ -163,10 +169,11 @@
 
       .simple-list {
         display: block;
-        min-width: fit-content;
-        padding: 0px 20px;
+        float: left;
+        padding: 0px 10px;
         font-weight: 600;
         font-size: 13px;
+        cursor: pointer;
 
         &:hover {
           color: #1c3988;
@@ -174,8 +181,8 @@
       }
 
       .header-btn {
-        margin-left: 0;
-        margin-right: 10px;
+        margin-right: 20px;
+        margin-left: 0px;
       }
     }
 
@@ -238,6 +245,139 @@
             background-color: #b2d2ff;
           }
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1042px) {
+  .header-english {
+    .header-list {
+      .buy {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .header-english {
+    .header-list {
+      .buy {
+        display: none;
+      }
+      .rent {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 928px) {
+  .header-english {
+    .header-list {
+      .buy {
+        display: none;
+      }
+      .rent {
+        display: none;
+      }
+      .sell {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .header-english {
+    .header-list {
+      .buy {
+        display: none;
+      }
+      .rent {
+        display: none;
+      }
+      .sell {
+        display: none;
+      }
+      .short {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 790px) {
+  .header-english {
+    .header-list {
+      .buy {
+        display: none;
+      }
+      .rent {
+        display: none;
+      }
+      .sell {
+        display: none;
+      }
+      .short {
+        display: none;
+      }
+      .mortgages {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 716px) {
+  .header-english {
+    .header-list {
+      .buy {
+        display: none;
+      }
+      .rent {
+        display: none;
+      }
+      .sell {
+        display: none;
+      }
+      .short {
+        display: none;
+      }
+      .mortgages {
+        display: none;
+      }
+      .off {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 634px) {
+  .header-english {
+    .header-list {
+      .buy {
+        display: none;
+      }
+      .rent {
+        display: none;
+      }
+      .sell {
+        display: none;
+      }
+      .short {
+        display: none;
+      }
+      .mortgages {
+        display: none;
+      }
+      .off {
+        display: none;
+      }
+      .luxury {
+        display: none !important;
       }
     }
   }

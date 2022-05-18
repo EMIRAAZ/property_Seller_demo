@@ -1,0 +1,100 @@
+.home-luxury-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 40px;
+  gap: 10px;
+  .luxury-list-item {
+    background-color: #ffffff;
+    padding: 9px 10px;
+    font-family: 'Poppins';
+    img {
+      width: 100%;
+      height: 108px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .details {
+      margin-top: 0px;
+      display: flex;
+      gap: 6px;
+      font-size: 5.08px;
+      font-weight: 500;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #6e6e6e;
+    }
+    .header {
+      font-size: 7.62px;
+      font-weight: 700;
+      line-height: 20px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #313131;
+    }
+    .description {
+      font-size: 5.93px;
+      font-weight: 400;
+      text-align: left;
+      color: #6e6e6e;
+    }
+    .view-more {
+      display: flex;
+      margin-top: 3px;
+      gap: 5px;
+      font-family: Poppins;
+      font-size: 5.08px;
+      font-weight: 700;
+      letter-spacing: 0em;
+      justify-content: flex-end;
+      .right-arrow {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .home-luxury-list {
+    gap: 40px;
+    .luxury-list-item {
+      padding: 14px 18px;
+
+      img {
+        height: 400px;
+      }
+      .details {
+        gap: 40px;
+        font-size: 12px;
+      }
+      .header {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 36px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #313131;
+      }
+      .description {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+        color: #6e6e6e;
+      }
+      .view-more {
+        display: flex;
+        margin-top: 30px;
+        gap: 5px;
+        font-family: Poppins;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0em;
+        justify-content: flex-end;
+        .right-arrow {
+          display: block;
+        }
+      }
+    }
+  }
+}

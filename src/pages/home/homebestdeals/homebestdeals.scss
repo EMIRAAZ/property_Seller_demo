@@ -1,0 +1,44 @@
+.home-best-deals {
+  background-color: #eef7ff;
+  margin: 50px auto;
+  .best-deals-content {
+    margin: 0px auto;
+    padding: 40px 0px 110px 0px;
+    width: 90%;
+    .header {
+      .main-header {
+        font-family: Poppins;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 59px;
+        letter-spacing: -0.03em;
+        text-align: left;
+      }
+      .sub-header {
+        padding-top: 20px;
+        font-family: Poppins;
+        font-size: 8.96px;
+        font-weight: 500;
+        line-height: 19px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .home-best-deals {
+    .best-deals-content {
+      .header {
+        .main-header {
+          font-size: 50px;
+        }
+        .sub-header {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
