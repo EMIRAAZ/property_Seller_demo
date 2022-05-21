@@ -4,6 +4,8 @@ import Buy from './pages/buy';
 import Rent from './pages/rent';
 import Sell from './pages/sell';
 import ShortTerm from './pages/shortterm';
+import Management from './pages/management';
+import Mortgage from './pages/mortgage';
 import { Preview } from './preview';
 
 function Router() {
@@ -16,6 +18,8 @@ function Router() {
           <Route path="rent" element={<Rent />} />
           <Route path="sell" element={<Sell />} />
           <Route path="shortterm" element={<ShortTerm />} />
+          <Route path="management" element={<Management />} />
+          <Route path="mortgage" element={<Mortgage />} />
           <Route path="preview" element={<Preview />} />
         </Route>
       </Routes>

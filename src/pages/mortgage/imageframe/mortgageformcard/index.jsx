@@ -1,23 +1,22 @@
-import './shorttermformcard.scss';
+import './mortgageformcard.scss';
 import FormCard from '../../../../components/formcard';
 import BasicSelect from '../../../../components/select/BasicSelect';
 import BasicInput from '../../../../components/input/BasicInput';
 import BasicButton from '../../../../components/button/BasicButton';
 
-const ManagementFormCard = () => {
+const MortgageFormCard = () => {
   return (
-    <div className="shortterm-form-card">
-      <FormCard customClass="shortterm-formcard">
+    <div className="mortgage-form-card">
+      <FormCard customClass="mortgage-formcard">
         <BasicInput
           divClass="location"
           type="text"
           placeholder="Search a location"
         />
-        <BasicInput divClass="check-in" type="text" placeholder="Check in" />
-        <BasicInput divClass="check-out" type="text" placeholder="Check out" />
+
         <BasicSelect
-          customClass="property"
-          name="Choose Guest"
+          customClass="residence"
+          name="Country of residence"
           options={[
             { name: 'Villas' },
             { name: 'Resorts' },
@@ -25,10 +24,11 @@ const ManagementFormCard = () => {
             { name: 'Apartments' },
           ]}
         />
-        <BasicButton customClass="shortterm-search-btn">Submit</BasicButton>
+        <BasicInput divClass="message" type="text" placeholder="Message" />
+        <BasicButton customClass="mortgage-search-btn">Submit</BasicButton>
       </FormCard>
     </div>
   );
 };
 
-export default ManagementFormCard;
+export default MortgageFormCard;
