@@ -42,7 +42,7 @@ const Header = () => {
           <li onClick={() => navigate('/shortterm')}>Short Term</li>
           <li>Commercial</li>
           <li onClick={() => navigate('/management')}>Property Management</li>
-          <li>Mortgages</li>
+          <li onClick={() => navigate('/mortgage')}>Mortgages</li>
           <li>Off Plan</li>
           <li>Luxury Properties</li>
           <li>Blogs</li>
@@ -74,7 +74,12 @@ const Header = () => {
             >
               Short&nbsp;Term
             </li>
-            <li className="simple-list mortgages">Mortgages</li>
+            <li
+              className="simple-list mortgages"
+              onClick={() => navigate('/mortgage')}
+            >
+              Mortgages
+            </li>
 
             <li className="simple-list off">Off&nbsp;Plan</li>
             <li className="simple-list luxury">

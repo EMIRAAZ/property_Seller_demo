@@ -1,0 +1,71 @@
+.mortgage-form-card {
+  z-index: 10;
+  font-family: 'Poppins';
+  position: relative;
+  .mortgage-formcard {
+    border: 20px solid rgba(255, 255, 255, 0.5);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box;
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 18px 20px;
+    margin: 0px auto;
+    margin-top: -100px;
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.01) 0px 0px 0px 1px;
+    .location {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+    }
+    .residence {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 2;
+    }
+    .message {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 3;
+    }
+
+    .mortgage-search-btn {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 4;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .mortgage-form-card {
+    width: 500px;
+    .mortgage-formcard {
+      .location {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+      }
+      .residence {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 2;
+      }
+      .message {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 3;
+      }
+
+      .mortgage-search-btn {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 4;
+      }
+    }
+  }
+}
