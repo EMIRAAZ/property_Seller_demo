@@ -4,7 +4,7 @@ import BasicSelect from '../../../../components/select/BasicSelect';
 import BasicInput from '../../../../components/input/BasicInput';
 import BasicButton from '../../../../components/button/BasicButton';
 
-const SellFormCard = () => {
+const ManagementFormCard = () => {
   return (
     <div className="shortterm-form-card">
       <FormCard customClass="shortterm-formcard">
@@ -31,4 +31,4 @@ const SellFormCard = () => {
   );
 };
 
-export default SellFormCard;
+export default ManagementFormCard;
