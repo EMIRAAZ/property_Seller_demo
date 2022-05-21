@@ -8,8 +8,8 @@ const SellFormCard = () => {
   return (
     <div className="sell-form-card">
       <FormCard customClass="sell-formcard">
-        <p className="list-main">List your property</p>
-        <p className="list-sub">
+        <p className="sell-list-main">List your property</p>
+        <p className="sell-list-sub">
           If you list now, property valuation is on us.
         </p>
         <BasicInput divClass="name" type="text" placeholder="Name" />

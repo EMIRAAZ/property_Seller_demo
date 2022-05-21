@@ -1,28 +1,37 @@
 .sell-form-card {
   z-index: 10;
+  font-family: 'Poppins';
   position: relative;
   .sell-formcard {
+    border: 20px solid rgba(255, 255, 255, 0.5);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box;
     background-color: #ffffff;
     border-radius: 8px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    padding: 40px 20px;
+    padding: 18px 20px;
     margin: 0px auto;
     margin-top: -100px;
     width: 90%;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 36px 0px,
       rgba(0, 0, 0, 0.01) 0px 0px 0px 1px;
 
-    .list-main {
+    .sell-list-main {
       grid-column-start: 1;
       grid-column-end: 5;
       grid-row-start: 1;
+      font-weight: 600;
+      font-size: 21.87px;
+      line-height: 13.87px;
     }
-    .list-sub {
+    .sell-list-sub {
       grid-column-start: 1;
       grid-column-end: 5;
       grid-row-start: 2;
+      font-size: 10.94px;
+      line-height: 7.81px;
     }
     .name {
       grid-column-start: 1;
@@ -59,17 +68,21 @@
 
 @media only screen and (min-width: 600px) {
   .sell-form-card {
-    width: 400px;
+    width: 500px;
     .sell-formcard {
-      .list-main {
+      .sell-list-main {
         grid-column-start: 1;
         grid-column-end: 5;
         grid-row-start: 1;
+        font-size: 21px;
+        line-height: 20.87px;
       }
-      .list-sub {
+      .sell-list-sub {
         grid-column-start: 1;
         grid-column-end: 5;
         grid-row-start: 2;
+        font-size: 11px;
+        line-height: 11.81px;
       }
       .name {
         grid-column-start: 1;
