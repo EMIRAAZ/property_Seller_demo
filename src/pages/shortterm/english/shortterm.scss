@@ -1,0 +1,35 @@
+.shortterm-list-with-us {
+  background-color: #eef7ff;
+  .heading {
+    font-family: Poppins;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 59px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    padding-left: 30px;
+    padding-top: 30px;
+  }
+  .shortterm-para {
+    background-color: inherit;
+    padding-top: 10px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .shortterm-list-with-us {
+    background-color: #eef7ff;
+    padding-bottom: 40px;
+    .heading {
+      padding-left: 100px;
+      padding-top: 50px;
+      font-size: 44px;
+    }
+    .shortterm-para {
+      padding-top: 20px;
+    }
+  }
+  .social-panel {
+    display: none;
+  }
+}
