@@ -1,0 +1,19 @@
+.paragraph-class {
+  font-family: 'Poppins';
+  font-weight: 400;
+  size: 15px;
+  line-height: 30.91px;
+  color: #000000;
+  text-align: left;
+  vertical-align: top;
+  background-color: #ffffff;
+  padding: 20px 30px;
+}
+
+@media only screen and (min-width: 600px) {
+  .paragraph-class {
+    size: 22px;
+    line-height: 43.91px;
+    padding: 50px 100px;
+  }
+}

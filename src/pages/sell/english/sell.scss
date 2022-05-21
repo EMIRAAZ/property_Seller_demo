@@ -1,0 +1,31 @@
+.sell-list-with-us {
+  background-color: #eef7ff;
+  .heading {
+    font-family: Poppins;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 59px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    padding-left: 30px;
+    padding-top: 30px;
+  }
+  .sell-para {
+    background-color: inherit;
+    padding-top: 10px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .sell-list-with-us {
+    background-color: #eef7ff;
+    .heading {
+      padding-left: 100px;
+      padding-top: 50px;
+      font-size: 44px;
+    }
+    .sell-para {
+      padding-top: 20px;
+    }
+  }
+}

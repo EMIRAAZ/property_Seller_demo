@@ -4,7 +4,7 @@ import ImageFrame from '../imageframe';
 import RentFormCard from '../rentformcard';
 import RentProperty from '../rentproperty';
 import Pagination from '../../../components/pagination';
-import Footer from '../../../components/footer/english/Footer';
+import Footer from '../../../components/footer';
 
 const Rent = () => {
   return (
