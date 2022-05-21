@@ -3,7 +3,7 @@ import SellFormCard from './sellformcard';
 
 const ImageFrame = () => {
   return (
-    <div className="rent-image-frame">
+    <div className="sell-image-frame">
       <img className="img-frame" src="/assets/image/sell.jpg" alt="building" />
       <p className="heading">List Your Properties With Us.</p>
       <SellFormCard />

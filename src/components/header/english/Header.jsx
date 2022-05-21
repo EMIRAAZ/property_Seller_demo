@@ -39,7 +39,7 @@ const Header = () => {
           <li onClick={() => navigate('/buy')}>Buy</li>
           <li onClick={() => navigate('/rent')}>Rent</li>
           <li onClick={() => navigate('/sell')}>Sell</li>
-          <li>Short Term</li>
+          <li onClick={() => navigate('/shortterm')}>Short Term</li>
           <li>Commercial</li>
           <li>Property Management</li>
           <li>Mortgages</li>
@@ -68,7 +68,12 @@ const Header = () => {
             <li className="simple-list sell" onClick={() => navigate('/sell')}>
               Sell
             </li>
-            <li className="simple-list short">Short&nbsp;Term</li>
+            <li
+              className="simple-list short"
+              onClick={() => navigate('/shortterm')}
+            >
+              Short&nbsp;Term
+            </li>
             <li className="simple-list mortgages">Mortgages</li>
             <li className="simple-list off">Off&nbsp;Plan</li>
             <li className="simple-list luxury">
