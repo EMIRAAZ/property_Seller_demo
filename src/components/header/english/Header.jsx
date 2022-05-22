@@ -21,6 +21,7 @@ const Header = () => {
           <li onClick={onSidebarWebToggle}>
             <Close />
           </li>
+          <li onClick={() => navigate('/management')}>Property Management</li>
           <li>Blogs</li>
           <li>About Us</li>
           <li>About Founder</li>
