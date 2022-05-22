@@ -47,6 +47,13 @@ const Header = () => {
           <li>Luxury Properties</li>
           <li>Blogs</li>
           <li>News</li>
+          <li>About Us</li>
+          <li>About Founder</li>
+          <li>Our Team</li>
+          <li>Our Partners</li>
+          <li>Careers</li>
+          <li>Teams And Conditions</li>
+          <li>Privacy Policy</li>
         </ul>
       </div>
       <ul className="header-list">
