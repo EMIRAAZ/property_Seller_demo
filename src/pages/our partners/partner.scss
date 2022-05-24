@@ -58,7 +58,7 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
     }
     .container{
         width: 100%;
-        background: #F2F2F2;
+        background: #E5E5E5;
         .team-card-container{
 
             display: flex;
@@ -89,13 +89,14 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
         margin-left: 10px;
         padding-right: 0px;
         margin-right: 120px;
-        .card-image-container{
-            margin: 0 auto;
-            width: fit-content;
+        
         .team-image{
+            padding-left: 20px;
             padding-top: 20px;
-            margin:0px auto;
-        }}
+            margin: 0px;
+    
+            padding-right: 10px;
+        }
         .card-title{
             padding-left: 30px;
             font-family: 'Inter';
@@ -120,9 +121,8 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
 
 }
 @media only screen and (max-width: 800px) {
-    .main{
+    .main-container{
         width: 100%;
-        background: #E5E5E5;
         .header{
                 
             font-family: 'Poppins';
@@ -140,22 +140,19 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
     
     text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
         }
-        .team-main-image{
+        .partner-main-image{
             width: 100%;
-            height: 100%;
         }
         .container{
             width: 100%;
             background: #E5E5E5;
             margin-top: 20px;
-            .team-card-container{
+            .partner-card-container{
     
                 display: flex;
                 flex-direction: column;
                 margin: 0;
-                margin-bottom: 20px;
-                padding: 0;
-                .team-card{
+                .partner-card{
                     width: 100%;
                     background-color: red;
             
