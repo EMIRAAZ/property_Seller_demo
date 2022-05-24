@@ -1,14 +1,14 @@
 import { useLocation } from 'react-router-dom';
-import ArabicHeader from './arabic/Header';
-import EnglishHeader from './english/Header';
+import ArabicFooter from './arabic/Footer';
+import EnglishFooter from './english/Footer';
 
-const Header = () => {
+const Footer = () => {
   const search = useLocation().search;
   const lang = new URLSearchParams(search).get('lang');
 
-  if (lang === 'eng') return <EnglishHeader />;
-  else if (lang === 'ar') return <ArabicHeader />;
-  else return <EnglishHeader />;
+  if (lang === 'eng') return <EnglishFooter />;
+  else if (lang === 'ar') return <ArabicFooter />;
+  else return <EnglishFooter />;
 };
 
-export default Header;
+export default Footer;
