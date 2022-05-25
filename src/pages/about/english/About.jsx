@@ -1,9 +1,11 @@
 import './about.scss';
 import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer';
+import Header from '../../../components/header';
 
 const About = () => {
   return <div className="about-english-container">
+    <Header/>
   <div className='image-container'>
   <h2 className='header'>About Us</h2>
   <img className='about-image' src="/assets/image/about.jpg" alt ="about us"  />

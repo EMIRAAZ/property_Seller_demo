@@ -1,10 +1,13 @@
 import './career.scss';
 import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer';
+import Header from '../../../components/header';
 import FormCard from '../../../components/formcard';
+
 
 const Career = () => {
   return <div className="career-container">
+    <Header/>
   <div className='c-image-container'>
   <h2 className='career-header'>Career</h2>
   <img className='career-image' src="/assets/image/career.jpg" alt ="about us"  />

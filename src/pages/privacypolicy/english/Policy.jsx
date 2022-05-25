@@ -1,11 +1,13 @@
 import './policy.scss';
 import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer';
+import Header from '../../../components/header';
 
 const Policy = () => {
   return (
     <>
     <div className='policy-container'>
+      <Header/>
         <div className='h-container'>
             <h2 className='p-header'>Privacy Policy</h2>
         </div>
