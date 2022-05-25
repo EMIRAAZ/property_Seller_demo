@@ -1,5 +1,6 @@
 import './policy.scss';
-import React from 'react'
+import SocialPanel from '../../../components/socialpanel';
+import Footer from '../../../components/footer';
 
 const Policy = () => {
   return (
@@ -38,6 +39,8 @@ const Policy = () => {
 
 
         </div>
+        <SocialPanel/>
+        <Footer/>
     </div>
     </>
   )

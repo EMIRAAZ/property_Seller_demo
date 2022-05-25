@@ -1,5 +1,8 @@
 import React from 'react';
 import './aboutfounder.scss';
+import Socialpanel from '../../../components/socialpanel'
+import Footer from '../../../components/footer'
+
 
 const Aboutfounder = () => {
   return (
@@ -26,6 +29,9 @@ const Aboutfounder = () => {
                     Whether you own a single unit or an entire building, let us manage your property while you reap the rewards.   </p>
            </div>
        </div>
+
+       <Socialpanel/>
+   <Footer/>
    </div>
    </>
   )

@@ -1,6 +1,7 @@
-import "./ourteam.scss"
-import Socialpanel from '../../../components/socialpanel'
-import Footer from '../../../components/footer'
+import "./partner.scss"
+import SocialPanel from "../../../components/socialpanel";
+import Footer from "../../../components/footer";
+// import Footer from '../../../components/footer'
 
 const image = ["/assets/image/img1.jpg","/assets/image/img2.jpg","/assets/image/img3.jpg","/assets/image/img4.jpg","/assets/image/img5.jpg","/assets/image/img6.jpg"];
 // const iname= ["vishnu","hari","bahul"]
@@ -16,7 +17,7 @@ const TeamCard = ({url,name,position}) => {
       </div>
    })} */}
    <div className="card-image-container">
-     <h2 className="header">Our Team</h2>
+     <h2 className="header">Our Partners</h2>
    <img className='team-image' src={url} alt ="team"  />
    </div>
    <div className="card-title">
@@ -35,15 +36,15 @@ const TeamCard = ({url,name,position}) => {
 }
 
 
-const Ourteam = () => {
+const Ourpartner = () => {
   return (
    <>
-   <div className="ourteam-main-container">
+   <div className="ourpartner-main-container">
      
-   <img className='team-main-image' src="/assets/image/team-main.jpg" alt ="about us"  />
-   <div className="container">
+   <img className='partner-main-image' src="/assets/image/partner-main.jpg" alt ="about us"  />
+   <div className="partner-container">
 
-    <div className="team-card-container">
+    <div className="partner-card-container">
       
     <TeamCard
     url="/assets/image/img1.jpg"
@@ -61,7 +62,7 @@ const Ourteam = () => {
     position="Position"      
     />
     </div>
-    <div className="team-card-container">
+    <div className="partner-card-container">
      <TeamCard
     url="/assets/image/img4.jpg"
     name='Name'
@@ -81,7 +82,7 @@ const Ourteam = () => {
     </div>
 
    </div>
-   <Socialpanel/>
+   <SocialPanel/>
    <Footer/>
     
      </div> 
@@ -89,4 +90,4 @@ const Ourteam = () => {
   )
 }
 
-export default Ourteam
+export default Ourpartner
