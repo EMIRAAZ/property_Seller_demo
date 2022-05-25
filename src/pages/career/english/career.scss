@@ -1,0 +1,127 @@
+.career-container{
+    width: 100%;
+   .c-image-container{
+       width: 100%;
+       .career-header{
+       
+           font-family: 'Poppins';
+           font-style: normal;
+           font-weight: 700;
+           font-size: 42.491px;
+           line-height: 64px;
+           position: absolute;
+           left: 7.57%;
+           right: 57.81%;
+           top: 30%;
+           bottom: 64.91%;
+           color: white;
+           
+
+text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
+       }
+       
+       .career-image{
+           height: 80%;
+           width: 100%;
+       }
+
+   }
+
+   .career-properties{
+       
+       width: 100%;
+       left: 0.07px;
+       top: 880.06px;
+       background: #EEF7FF;
+
+       .career-property-header{
+           font-family: 'Poppins';
+           font-style: normal;
+           font-weight: 600;
+           font-size: 51.2674px;
+           line-height: 63px;
+           letter-spacing: -0.03em;
+           padding-top:80px;   
+           padding-left:100px;   
+       }
+       .career-text-width{
+           width: 75%;
+       
+           .c-properties-3{
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22.2159px;
+            line-height: 46px;
+            padding-left: 100px;
+            padding-top: 30px;
+            letter-spacing: 0.02em;
+            margin-top: 10px;
+            }
+        }   
+       
+   }
+   
+}
+
+
+@media only screen and (max-width: 800px) {
+.career-container{
+   width: 100%;
+  .c-image-container{
+      width: 100%;
+      .career-header{
+      
+          font-family: 'Poppins';
+          font-weight: 700;
+          font-size: 26.491px;
+       
+          position: absolute;
+          top: 10%;
+          
+          color: #FFFFFF;
+
+text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
+      }
+      
+      .career-image{
+          height: 470px;
+          width: 100%;
+      }
+
+  }
+
+  .career-properties{
+      
+      width: 100%;
+      background: #EEF7FF;
+
+      .career-property-header{
+          font-family: 'Poppins';
+          font-weight: 600;
+          font-size: 30.2674px;
+          text-align: left;
+          padding: 0;
+          padding-left: 10px;
+          
+      }
+      .career-text-width{
+       width: 92%;
+   
+       .c-properties-3{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 27px;
+        padding:10px 0px 0px 20px;
+        letter-spacing: 0.02em;
+        }
+    }   
+      
+  }
+ 
+}
+
+
+}
