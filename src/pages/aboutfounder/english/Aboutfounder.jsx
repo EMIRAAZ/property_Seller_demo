@@ -2,12 +2,14 @@ import React from 'react';
 import './aboutfounder.scss';
 import Socialpanel from '../../../components/socialpanel'
 import Footer from '../../../components/footer'
+import Header from '../../../components/header';
 
 
 const Aboutfounder = () => {
   return (
    <>
    <div className='about-founder-container'>
+       <Header/>
        <div className='description-1'>
         <div className='content-container-1'>
             <h2 className='header'>About Founder</h2>

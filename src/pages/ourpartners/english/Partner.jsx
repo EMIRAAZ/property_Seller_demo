@@ -1,6 +1,7 @@
 import "./partner.scss"
 import SocialPanel from "../../../components/socialpanel";
 import Footer from "../../../components/footer";
+import Header from "../../../components/header";
 // import Footer from '../../../components/footer'
 
 const image = ["/assets/image/img1.jpg","/assets/image/img2.jpg","/assets/image/img3.jpg","/assets/image/img4.jpg","/assets/image/img5.jpg","/assets/image/img6.jpg"];
@@ -40,7 +41,7 @@ const Ourpartner = () => {
   return (
    <>
    <div className="ourpartner-main-container">
-     
+     <Header/>
    <img className='partner-main-image' src="/assets/image/partner-main.jpg" alt ="about us"  />
    <div className="partner-container">
 

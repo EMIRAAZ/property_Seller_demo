@@ -1,6 +1,7 @@
 import "./ourteam.scss"
 import Socialpanel from '../../../components/socialpanel'
 import Footer from '../../../components/footer'
+import Header from "../../../components/header";
 
 const image = ["/assets/image/img1.jpg","/assets/image/img2.jpg","/assets/image/img3.jpg","/assets/image/img4.jpg","/assets/image/img5.jpg","/assets/image/img6.jpg"];
 // const iname= ["vishnu","hari","bahul"]
@@ -39,7 +40,7 @@ const Ourteam = () => {
   return (
    <>
    <div className="ourteam-main-container">
-     
+     <Header/>
    <img className='team-main-image' src="/assets/image/team-main.jpg" alt ="about us"  />
    <div className="container">
 
