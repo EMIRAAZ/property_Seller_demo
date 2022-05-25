@@ -1,6 +1,9 @@
 .about-founder-container{
     margin: 0;
     padding: 0;
+    social-panel{
+        display: block;
+    }
     .description-1{
         width: 100%;
         height: 1200;
@@ -68,6 +71,7 @@
 
 @media only screen and (max-width: 800px) {
     .about-founder-container{
+        
 
         .description-1{
             width: 100%;

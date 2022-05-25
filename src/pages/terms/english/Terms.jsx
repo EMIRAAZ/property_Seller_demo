@@ -1,5 +1,6 @@
 import './terms.scss';
-import React from 'react'
+import SocialPanel from '../../../components/socialpanel';
+import Footer from '../../../components/footer';
 
 const Terms = () => {
   return (
@@ -28,6 +29,8 @@ const Terms = () => {
 
 
         </div>
+        <SocialPanel/>
+        <Footer/>
     </div>
     </>
   )

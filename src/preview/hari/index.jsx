@@ -1,8 +1,7 @@
 import './index.scss';
-// import About from '../../pages/about/english/About';
-import Ourteam from '../../pages/ourteam/english/Ourteam';
+import Blog from '../../pages/dailyblog/english/Blog';
 
 const Preview = () => {
-  return <><Ourteam/></>;
+  return <><Blog/></>;
 };
 export default Preview;
