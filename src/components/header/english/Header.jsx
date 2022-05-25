@@ -23,13 +23,13 @@ const Header = () => {
           </li>
           <li onClick={() => navigate('/management')}>Property Management</li>
           <li>Blogs</li>
-          <li>About Us</li>
-          <li>About Founder</li>
-          <li>Our Team</li>
-          <li>Our Partners</li>
-          <li>Careers</li>
-          <li>Teams And Conditions</li>
-          <li>Privacy Policy</li>
+          <li onClick={() => navigate('/about')}>About Us</li>
+          <li onClick={() => navigate('/aboutfounder')}>About Founder</li>
+          <li onClick={() => navigate('/ourteam')}>Our Team</li>
+          <li onClick={() => navigate('/ourpartner')}>Our Partners</li>
+          <li onClick={() => navigate('/career')}>Careers</li>
+          <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
+          <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li>
         </ul>
       </div>
       <div className={`mobile-sidebar ${state}`}>
@@ -48,13 +48,13 @@ const Header = () => {
           <li>Luxury Properties</li>
           <li>Blogs</li>
           <li>News</li>
-          <li>About Us</li>
-          <li>About Founder</li>
-          <li>Our Team</li>
-          <li>Our Partners</li>
-          <li>Careers</li>
-          <li>Teams And Conditions</li>
-          <li>Privacy Policy</li>
+          <li onClick={() => navigate('/about')}>About Us</li>
+          <li onClick={() => navigate('/aboutfounder')}>About Founder</li>
+          <li onClick={() => navigate('/ourteam')}>Our Team</li>
+          <li onClick={() => navigate('/ourpartner')}>Our Partners</li>
+          <li onClick={() => navigate('/career')}>Careers</li>
+          <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
+          <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li>
         </ul>
       </div>
       <ul className="header-list">
