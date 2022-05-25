@@ -20,7 +20,7 @@ const Management = () => {
         own a single unit or an entire building, let us manage your property
         while you reap the rewards.
       </Paragraph>
-      <SocialPanel />
+      <SocialPanel customClass="management-social-panel" />
       <Footer />
     </div>
   );
