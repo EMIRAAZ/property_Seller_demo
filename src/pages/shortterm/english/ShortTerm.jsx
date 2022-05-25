@@ -25,7 +25,7 @@ const ShortTerm = () => {
         <p className="heading">Our Communities</p>
         <Communities />
       </div>
-      <SocialPanel />
+      <SocialPanel customClass="shortterm-social-panel" />
       <Footer />
     </div>
   );

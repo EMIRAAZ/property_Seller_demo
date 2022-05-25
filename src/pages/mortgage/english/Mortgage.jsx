@@ -35,7 +35,7 @@ const Mortgage = () => {
         <br />
         Simply fill out the form and we will respond within 24 hours.
       </Paragraph>
-      <SocialPanel />
+      <SocialPanel customClass="mortgage-social-panel" />
       <Footer />
     </div>
   );
