@@ -4,6 +4,9 @@ import {
   GET_HOME_PROPERTY_ERROR,
   GET_HOME_PROPERTY_STARTED,
   HOME_SEARCH_INPUT_CHANGE,
+  GET_HOME_LOCATION_SEARCH,
+  GET_HOME_LOCATION_SEARCH_ERROR,
+  GET_HOME_LOCATION_SEARCH_STARTED,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -43,6 +46,43 @@ const reducer = (state = initialState, action) => {
         homeSearch: {
           ...state.homeSearch,
           [action.payload.key]: action.payload.value,
+        },
+      };
+    case GET_HOME_LOCATION_SEARCH:
+      return {
+        ...state,
+        homeSearch: {
+          ...state.homeSearch,
+          locationSearch: {
+            ...state.homeSearch.locationSearch,
+            error: false,
+            loading: false,
+            location: action.payload && action.payload[0],
+          },
+        },
+      };
+    case GET_HOME_LOCATION_SEARCH_STARTED:
+      return {
+        ...state,
+        homeSearch: {
+          ...state.homeSearch,
+          locationSearch: {
+            ...state.homeSearch.locationSearch,
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case GET_HOME_LOCATION_SEARCH_ERROR:
+      return {
+        ...state,
+        homeSearch: {
+          ...state.homeSearch,
+          locationSearch: {
+            ...state.homeSearch.locationSearch,
+            error: true,
+            loading: false,
+          },
         },
       };
 

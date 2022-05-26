@@ -1,5 +1,5 @@
 import './rentproperty.scss';
-import PropertyList from '../../../components/propertylist';
+import Property from '../../../components/property';
 
 const RentProperty = () => {
   return (
@@ -8,10 +8,10 @@ const RentProperty = () => {
         <p className="heading">Properties for rent in UAE</p>
         <p className="sub">3587 Properties found</p>
         <div className="property-list-container">
-          <PropertyList />
-          <PropertyList />
-          <PropertyList />
-          <PropertyList />
+          <Property />
+          <Property />
+          <Property />
+          <Property />
         </div>
       </div>
     </div>

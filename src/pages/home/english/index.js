@@ -3,6 +3,7 @@ import Home from './Home';
 import {
   getHomeProperty,
   onHomeSearchInputChange,
+  getHomeLocationSearch,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -17,6 +18,7 @@ const mapDispatchToProps = dispatch => {
     getHomeProperty: params => dispatch(getHomeProperty(params)),
     onHomeSearchInputChange: payload =>
       dispatch(onHomeSearchInputChange(payload)),
+    getHomeLocationSearch: payload => dispatch(getHomeLocationSearch(payload)),
   };
 };
 

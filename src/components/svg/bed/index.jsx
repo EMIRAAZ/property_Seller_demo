@@ -1,6 +1,6 @@
-const Bed = () => {
+const Bed = ({ customClass }) => {
   return (
-    <div>
+    <div className={`${customClass}`}>
       <svg
         width="17"
         height="14"

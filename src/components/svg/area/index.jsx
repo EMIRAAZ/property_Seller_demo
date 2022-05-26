@@ -1,6 +1,6 @@
-const Area = () => {
+const Area = ({ customClass }) => {
   return (
-    <div>
+    <div className={`${customClass}`}>
       <svg
         width="17"
         height="17"

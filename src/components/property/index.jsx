@@ -1,11 +1,11 @@
-import './propertylist.scss';
+import './property.scss';
 import LocationIcon from '../svg/location';
 import Bath from '../svg/bath';
 import Bed from '../svg/bed';
 import Living from '../svg/living';
 import Area from '../svg/area';
 
-const PropertyList = props => {
+const Property = props => {
   const renderDescription = description => {
     return description.length < 120
       ? description
@@ -21,7 +21,11 @@ const PropertyList = props => {
   return (
     <div className="property-list">
       <div className="property-list-item">
-        <img className="prop-list-img" src={props.images[0]} alt="img" />
+        <img
+          className="prop-list-img"
+          src={props.images && props.images[0]}
+          alt="img"
+        />
         <div className="price-tag">AED {props.price}</div>
         <div className="main-heading">{props.title}</div>
         <div className="description">
@@ -40,22 +44,22 @@ const PropertyList = props => {
         <div className="property-line" />
         <div className="spec">
           <div className="spec-wrap">
-            <Bed />
+            <Bed className="property-bed" />
             <p>{props.noOfBedroom} Bed</p>
           </div>
           <div class="vl"></div>
           <div className="spec-wrap">
-            <Bath />
+            <Bath className="property-bath" />
             <p>{props.noOfBathroom} Bath</p>
           </div>
           <div class="vl"></div>
           <div className="spec-wrap">
-            <Living />
+            <Living className="property-living" />
             <p>8 Rooms</p>
           </div>
           <div class="vl"></div>
           <div className="spec-wrap">
-            <Area />
+            <Area className="property-area" />
             <p>
               {props.propertySize} {props.propertySizeUnit}
             </p>
@@ -66,4 +70,4 @@ const PropertyList = props => {
   );
 };
 
-export default PropertyList;
+export default Property;

@@ -1,9 +1,9 @@
 import './homeproperty.scss';
-import PropertyList from '../../../components/propertylist';
+import Property from '../../../components/property';
 
 const HomeProperty = ({ property }) => {
   const renderProperty = () =>
-    property.property.map(item => <PropertyList key={item.id} {...item} />);
+    property.property.map(item => <Property key={item.id} {...item} />);
   return (
     <div className="home-property">
       <div className="home-property-content">
