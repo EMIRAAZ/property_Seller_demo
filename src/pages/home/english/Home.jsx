@@ -1,5 +1,4 @@
 import './home.scss';
-import { useEffect } from 'react';
 import Header from '../../../components/header';
 import ImageFrame from '../imageframe';
 import HomeFormCard from '../homeformcard';
@@ -8,10 +7,10 @@ import HomeBestDeals from '../homebestdeals';
 import HomeLuxury from '../homeluxury';
 import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer/english/Footer';
-import HomeProperty from '../HomeProperty';
+import HomeProperty from '../homeProperty';
 
 const Home = props => {
-  console.log(props.homeSearch);
+  console.log(props);
 
   return (
     <div className="home-english">
@@ -24,9 +23,12 @@ const Home = props => {
         onSearch={props.getHomeProperty}
       />
       <HomeProperty property={props.homeProperty} />
-      <HomeFeatured />
+      <HomeFeatured
+        featured={props.homeFeatured}
+        getFeatured={props.getHomeFeatured}
+      />
       <HomeBestDeals />
-      <HomeLuxury />
+      <HomeLuxury luxury={props.homeLuxury} getLuxury={props.getHomeLuxury} />
       <SocialPanel />
       <Footer />
     </div>

@@ -16,4 +16,6 @@ export const initialState = {
       location: [],
     },
   },
+  homeFeatured: { loading: false, error: false, featured: [] },
+  homeLuxury: { loading: false, error: false, luxury: [] },
 };

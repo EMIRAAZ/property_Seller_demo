@@ -7,6 +7,12 @@ import {
   GET_HOME_LOCATION_SEARCH,
   GET_HOME_LOCATION_SEARCH_ERROR,
   GET_HOME_LOCATION_SEARCH_STARTED,
+  GET_HOME_FEATURED,
+  GET_HOME_FEATURED_STARTED,
+  GET_HOME_FEATURED_ERROR,
+  GET_HOME_LUXURY,
+  GET_HOME_LUXURY_STARTED,
+  GET_HOME_LUXURY_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -85,7 +91,62 @@ const reducer = (state = initialState, action) => {
           },
         },
       };
-
+    case GET_HOME_FEATURED:
+      return {
+        ...state,
+        homeFeatured: {
+          ...state.homeFeatured,
+          loading: false,
+          error: false,
+          featured: action.payload,
+        },
+      };
+    case GET_HOME_FEATURED_STARTED:
+      return {
+        ...state,
+        homeFeatured: {
+          ...state.homeFeatured,
+          loading: true,
+          error: false,
+        },
+      };
+    case GET_HOME_FEATURED_ERROR:
+      return {
+        ...state,
+        homeFeatured: {
+          ...state.homeFeatured,
+          loading: false,
+          error: true,
+        },
+      };
+    case GET_HOME_LUXURY:
+      return {
+        ...state,
+        homeLuxury: {
+          ...state.homeLuxury,
+          loading: false,
+          error: false,
+          luxury: action.payload.rows,
+        },
+      };
+    case GET_HOME_LUXURY_STARTED:
+      return {
+        ...state,
+        homeLuxury: {
+          ...state.homeLuxury,
+          loading: true,
+          error: false,
+        },
+      };
+    case GET_HOME_LUXURY_ERROR:
+      return {
+        ...state,
+        homeLuxury: {
+          ...state.homeLuxury,
+          loading: false,
+          error: true,
+        },
+      };
     default:
       return state;
   }

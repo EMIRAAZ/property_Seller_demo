@@ -1,7 +1,11 @@
 import './homeluxury.scss';
+import { useEffect } from 'react';
 import LuxuryList from './luxurylist';
 
-const HomeLuxury = () => {
+const HomeLuxury = props => {
+  useEffect(() => {
+    props.getLuxury();
+  }, []);
   return (
     <div className="home-luxury">
       <div className="luxury-content">
@@ -12,7 +16,7 @@ const HomeLuxury = () => {
             heard oh ought. His defective nor convinced residence own.
           </p>
         </div>
-        <LuxuryList />
+        <LuxuryList luxury={props.luxury.luxury} />
       </div>
     </div>
   );
