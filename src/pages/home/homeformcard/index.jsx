@@ -2,7 +2,6 @@ import './homeformcard.scss';
 import FormCard from '../../../components/formcard';
 import BasicSelect from '../../../components/select/BasicSelect';
 import InputSelect from '../../../components/select/InputSelect';
-import BasicInput from '../../../components/input/BasicInput';
 import LocationIcon from '../../../components/svg/location';
 import BasicButton from '../../../components/button/BasicButton';
 import SearchIcon from '../../../components/svg/search';
@@ -22,12 +21,18 @@ const HomeFormCard = props => {
   return (
     <div className="home-form-card">
       <FormCard customClass="home-formcard">
-        <BasicInput
-          divClass="search"
-          type="text"
-          placeholder={'Search a location'}
+        <InputSelect
+          customClass="search"
+          name="Search a location"
           onChange={e => onInputChange('location', e.target.value)}
+          value={props.homeSearch.location}
           leftIcon={LocationIcon}
+          options={[
+            { name: '300,000', value: 300000 },
+            { name: '400,000', value: 400000 },
+            { name: '500,000', value: 500000 },
+            { name: '600,000', value: 600000 },
+          ]}
         />
         <BasicSelect
           customClass="property"
