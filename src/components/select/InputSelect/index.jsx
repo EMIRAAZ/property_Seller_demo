@@ -1,13 +1,19 @@
-import './basicSelect.scss';
+import './inputSelect.scss';
 import ExpandIcon from '../../svg/expand';
 import { useState } from 'react';
 
-const BasicSelect = ({ name, options, customClass = '', onChange }) => {
+const InputSelect = ({ name, options, customClass = '', onChange, value }) => {
   const [selectName, setSelectName] = useState(name);
   const [dropdownClass, setdropdownClass] = useState('hide');
 
   const onMouseEnter = () => setdropdownClass('show');
   const onMouseLeave = () => setdropdownClass('hide');
+
+  const handleKeyDown = e => {
+    if (e.key === 'Enter') {
+      setdropdownClass('hide');
+    }
+  };
 
   const onClickOption = (name, value) => {
     onChange(value);
@@ -25,14 +31,21 @@ const BasicSelect = ({ name, options, customClass = '', onChange }) => {
     ));
   return (
     <div
-      className={`basic-select ${customClass}`}
+      className={`input-select ${customClass}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       <div className="select-box">
-        <p className="drop-btn">{selectName}</p>
+        {/* <p className="drop-btn">{selectName}</p> */}
+        <input
+          className="drop-btn"
+          placeholder={name}
+          onChange={e => onChange(e.target.value)}
+          onKeyDown={handleKeyDown}
+          value={value}
+        />
         <ExpandIcon
-          className="basic-select-icon"
+          className="input-select-icon"
           width="12"
           height="10"
           viewbox="0 0 15 10"
@@ -45,4 +58,4 @@ const BasicSelect = ({ name, options, customClass = '', onChange }) => {
   );
 };
 
-export default BasicSelect;
+export default InputSelect;
