@@ -9,6 +9,11 @@ const BasicSelect = ({ name, options, customClass = '', onChange }) => {
   const onMouseEnter = () => setdropdownClass('show');
   const onMouseLeave = () => setdropdownClass('hide');
 
+  const onClick = () => {
+    if (dropdownClass === 'hide') setdropdownClass('show');
+    else setdropdownClass('hide');
+  };
+
   const onClickOption = (name, value) => {
     onChange(value);
     setSelectName(name);
@@ -28,6 +33,7 @@ const BasicSelect = ({ name, options, customClass = '', onChange }) => {
       className={`basic-select ${customClass}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onClick={onClick}
     >
       <div className="select-box">
         <p className="drop-btn">{selectName}</p>

@@ -23,6 +23,11 @@ const InputSelect = ({ name, options, customClass = '', onChange, value }) => {
       : setdropdownClass('hide');
   };
 
+  const onClick = () => {
+    if (dropdownClass === 'hide') setdropdownClass('show');
+    else setdropdownClass('hide');
+  };
+
   const renderOptions = () =>
     (options || []).map((option, i) => (
       <p key={i} onClick={() => onClickOption(option.name, option.value)}>
@@ -34,6 +39,7 @@ const InputSelect = ({ name, options, customClass = '', onChange, value }) => {
       className={`input-select ${customClass}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onClick={onClick}
     >
       <div className="select-box">
         {/* <p className="drop-btn">{selectName}</p> */}

@@ -10,7 +10,14 @@ import { makeUrlParam } from '../../../utils';
 
 const HomeFormCard = props => {
   const onInputChange = (key, value) => {
-    props.onInputChange({ key, value });
+    if (key === 'priceFrom' || key === 'priceTo') {
+      const num = Number(value);
+      if (Number.isInteger(num)) {
+        props.onInputChange({ key, value });
+      }
+    } else {
+      props.onInputChange({ key, value });
+    }
   };
   return (
     <div className="home-form-card">
