@@ -1,10 +1,14 @@
 import './homefeatured.scss';
+import { useEffect } from 'react';
 import LeftNavigate from '../../../components/svg/leftnavigate';
 import RightNavigate from '../../../components/svg/rightnavigate';
 import ProgressLine from './progressline';
 import FeaturedList from './featuredlist';
 
-const HomeFeatured = () => {
+const HomeFeatured = props => {
+  useEffect(() => {
+    props.getFeatured();
+  }, []);
   return (
     <div className="home-featured">
       <div className="header">
@@ -15,7 +19,7 @@ const HomeFeatured = () => {
         </div>
       </div>
       <ProgressLine />
-      <FeaturedList />
+      <FeaturedList featured={props.featured.featured} />
     </div>
   );
 };
