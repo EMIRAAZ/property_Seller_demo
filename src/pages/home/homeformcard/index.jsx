@@ -14,8 +14,37 @@ const HomeFormCard = props => {
       if (Number.isInteger(num)) {
         props.onInputChange({ key, value });
       }
+    } else if (key === 'location') {
+      props.onSearchLocation(value);
+      props.onInputChange({ key, value });
     } else {
       props.onInputChange({ key, value });
+    }
+  };
+
+  const getSearchValue = () => {
+    const { location } = props.homeSearch;
+    if (typeof location === 'string') return location;
+    else
+      return `${location.placeAddress} ${
+        location.building ? location.building : ''
+      } ${location.city}`;
+  };
+
+  const makeLocationAndSearch = () => {
+    const { location } = props.homeSearch;
+
+    if (typeof location === 'string') return makeUrlParam(props.homeSearch);
+    else {
+      const newParamObject = {
+        ...props.homeSearch,
+        placeAddress: location.placeAddress,
+        city: location.city,
+        ...(location.building ? { building: location.building } : {}),
+      };
+      delete newParamObject.location;
+      delete newParamObject.locationSearch;
+      return makeUrlParam(newParamObject);
     }
   };
   return (
@@ -24,15 +53,19 @@ const HomeFormCard = props => {
         <InputSelect
           customClass="search"
           name="Search a location"
-          onChange={e => onInputChange('location', e.target.value)}
-          value={props.homeSearch.location}
+          onChange={value => onInputChange('location', value)}
+          value={getSearchValue()}
           leftIcon={LocationIcon}
-          options={[
-            { name: '300,000', value: 300000 },
-            { name: '400,000', value: 400000 },
-            { name: '500,000', value: 500000 },
-            { name: '600,000', value: 600000 },
-          ]}
+          options={props.homeSearch.locationSearch.location.map(location => {
+            return {
+              name: `${location.placeAddress} ${location.building} ${location.city}`,
+              value: {
+                placeAddress: location.placeAddress,
+                building: location.building,
+                city: location.city,
+              },
+            };
+          })}
         />
         <BasicSelect
           customClass="property"
@@ -42,7 +75,7 @@ const HomeFormCard = props => {
             { name: 'Villas', value: 'villas' },
             { name: 'Resorts', value: 'resorts' },
             { name: 'Estates', value: 'estates' },
-            { name: 'Apartments', value: 'apartments' },
+            { name: 'Apartments', value: 'apartment' },
           ]}
         />
         <BasicSelect
@@ -81,7 +114,7 @@ const HomeFormCard = props => {
         />
         <BasicButton
           customClass="home-search-btn"
-          onClick={() => props.onSearch(makeUrlParam(props.homeSearch))}
+          onClick={() => props.onSearch(makeLocationAndSearch())}
         >
           <SearchIcon /> Search
         </BasicButton>

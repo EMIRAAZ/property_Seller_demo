@@ -1,8 +1,15 @@
 import './inputSelect.scss';
 import ExpandIcon from '../../svg/expand';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-const InputSelect = ({ name, options, customClass = '', onChange, value }) => {
+const InputSelect = ({
+  name,
+  options,
+  customClass = '',
+  onChange,
+  value,
+  leftIcon,
+}) => {
   const [selectName, setSelectName] = useState(name);
   const [dropdownClass, setdropdownClass] = useState('hide');
 
@@ -21,6 +28,11 @@ const InputSelect = ({ name, options, customClass = '', onChange, value }) => {
     dropdownClass === 'hide'
       ? setdropdownClass('show')
       : setdropdownClass('hide');
+  };
+
+  const onChangeInput = e => {
+    setdropdownClass('show');
+    onChange(e.target.value);
   };
 
   const onClick = () => {
@@ -43,10 +55,18 @@ const InputSelect = ({ name, options, customClass = '', onChange, value }) => {
     >
       <div className="select-box">
         {/* <p className="drop-btn">{selectName}</p> */}
+        {leftIcon
+          ? React.createElement(leftIcon, {
+              className: 'left-b-input-icon',
+              width: '14',
+              height: '20',
+              viewbox: '0 0 19 20',
+            })
+          : null}
         <input
           className="drop-btn"
           placeholder={name}
-          onChange={e => onChange(e.target.value)}
+          onChange={e => onChangeInput(e)}
           onKeyDown={handleKeyDown}
           value={value}
         />

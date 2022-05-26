@@ -19,6 +19,7 @@ const Home = props => {
       <ImageFrame />
       <HomeFormCard
         onInputChange={props.onHomeSearchInputChange}
+        onSearchLocation={props.getHomeLocationSearch}
         homeSearch={props.homeSearch}
         onSearch={props.getHomeProperty}
       />

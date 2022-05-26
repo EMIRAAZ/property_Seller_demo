@@ -10,5 +10,10 @@ export const initialState = {
     sale: '',
     priceFrom: '',
     priceTo: '',
+    locationSearch: {
+      loading: false,
+      error: false,
+      location: [],
+    },
   },
 };
