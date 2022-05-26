@@ -1,11 +1,11 @@
-import './propertylist.scss';
+import './property.scss';
 import LocationIcon from '../svg/location';
 import Bath from '../svg/bath';
 import Bed from '../svg/bed';
 import Living from '../svg/living';
 import Area from '../svg/area';
 
-const PropertyList = props => {
+const Property = props => {
   const renderDescription = description => {
     return description.length < 120
       ? description
@@ -66,4 +66,4 @@ const PropertyList = props => {
   );
 };
 
-export default PropertyList;
+export default Property;
