@@ -1,18 +1,8 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { combineReducers } from 'redux';
+import homeReducer from './home';
 
-import thunk from 'redux-thunk';
+const rootReducer = combineReducers({
+  homeReducer,
+});
 
-import rootReducer from '../reducers';
-
-export default function configureStore(preloadedState) {
-  const middlewares = [thunk];
-  const middlewareEnhancer = applyMiddleware(...middlewares);
-
-  const storeEnhancers = [middlewareEnhancer];
-
-  const composedEnhancer = compose(...storeEnhancers);
-
-  const store = createStore(rootReducer, preloadedState, composedEnhancer);
-
-  return store;
-}
+export default rootReducer;
