@@ -1,0 +1,50 @@
+.datatable {
+  height: 100%;
+  padding: 20px;
+
+  .MuiDataGrid-root .MuiDataGrid-cell:focus {
+    outline: none;
+  }
+
+  .image {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+  .id {
+    color: rgb(72, 72, 214);
+  }
+  .date {
+    color: rgb(133, 130, 130);
+  }
+  .cellAction {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .viewButton {
+      padding: 2px 5px;
+      border-radius: 5px;
+      color: darkblue;
+      border: 1px solid rgb(197, 197, 247);
+      cursor: pointer;
+
+      &:hover {
+        background-color: #edeeed;
+      }
+    }
+    .deleteButton {
+      padding: 2px 5px;
+      border-radius: 5px;
+      color: crimson;
+      border: 1px solid rgb(247, 201, 210);
+      cursor: pointer;
+
+      &:hover {
+        background-color: #edeeed;
+      }
+    }
+  }
+}
