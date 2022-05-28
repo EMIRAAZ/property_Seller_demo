@@ -1,4 +1,9 @@
 export const initialState = {
+  addAdmin: {
+    error: false,
+    loading: false,
+  },
+
   property: {
     title: '',
     description: '',
@@ -47,4 +52,5 @@ export const initialState = {
     { name: 'Rent', value: 'rent' },
     { name: 'Both', value: 'both' },
   ],
+  agent: [],
 };
