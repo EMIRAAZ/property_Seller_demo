@@ -5,6 +5,7 @@ import Textarea from '../../../components/input/admintextarea';
 import Select from '../../../components/select/adminSelect';
 import Button from '../../../components/button/BasicButton';
 import UploadImage from '../../../components/uploadimage';
+import { useNavigate } from 'react-router-dom';
 
 const AddForm = ({
   onChange,
@@ -15,6 +16,8 @@ const AddForm = ({
   property,
   agent,
 }) => {
+  let navigate = useNavigate();
+
   const onChangeInput = (key, value) => {
     if (key === 'amenities') {
       onChange({ key, value: renderAmenities(value) });
@@ -26,8 +29,7 @@ const AddForm = ({
   };
 
   const addProperty = () => {
-    console.log({ ...property, images: images });
-    // addAdminProperty({ ...property, images: images });
+    addAdminProperty({ ...property, images: images }, () => navigate('/admin'));
   };
   return (
     <div className="add-property-form">

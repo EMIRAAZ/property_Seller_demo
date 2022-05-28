@@ -28,10 +28,15 @@ const addAdminPropertyError = () => {
   };
 };
 
-export const addAdminProperty = property => async dispatch => {
+export const addAdminProperty = (property, cb) => async dispatch => {
   try {
     dispatch(addAdminPropertyStarted());
-    const res = await axios.post(`/api/property`, property);
+    const res = await axios.post(`/api/property`, property, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    cb();
     dispatch({
       type: ADD_ADMIN_PROPERTY,
       payload: res.data?.data,
