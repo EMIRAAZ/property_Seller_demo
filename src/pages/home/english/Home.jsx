@@ -10,8 +10,6 @@ import Footer from '../../../components/footer/english/Footer';
 import HomeProperty from '../homeProperty';
 
 const Home = props => {
-  console.log(props);
-
   return (
     <div className="home-english">
       <Header />
