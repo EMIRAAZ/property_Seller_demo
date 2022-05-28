@@ -50,10 +50,10 @@ const AddForm = () => {
           Property Images<span>*</span>
         </label>
         <div className="property-row-div-upload">
-          <UploadImage />
+          <UploadImage linkIndex={0} onChangeImage={() => {}} />
           <div className="property-row-div-upload-flex">
-            <UploadImage />
-            <UploadImage />
+            <UploadImage linkIndex={1} onChangeImage={() => {}} />
+            <UploadImage linkIndex={2} onChangeImage={() => {}} />
           </div>
         </div>
         <label className="property-image-label">Property Video</label>

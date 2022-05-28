@@ -1,10 +1,6 @@
 import './uploadimage.scss';
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
-import Avatar from '@mui/material/Avatar';
-import ErrorIcon from '@mui/icons-material/Error';
-import IconButton from '@mui/material/IconButton';
-import CircularProgress from '@mui/material/CircularProgress';
-import Input from '@mui/material/Input';
+
+import Camera from '../../components/svg/camera';
 
 const UploadImage = props => {
   const onChange = e => {
@@ -18,25 +14,28 @@ const UploadImage = props => {
   };
 
   const getIcon = () => {
-    if (props.loading) return <CircularProgress className="upload-icon" />;
-    else if (props.error) return <ErrorIcon className="upload-icon" />;
-    else if (props.link)
-      return <Avatar alt="uploaded photo" src={props.link} />;
-    else return <AddAPhotoIcon className="upload-icon" />;
+    if (props.link[props.linkIndex])
+      return (
+        <img
+          className="upload-img-class"
+          alt="pic"
+          src={props.link[props.linkIndex]}
+        />
+      );
+    else return <Camera customClass="upload-img-icon" />;
   };
+
   const getText = () => {
     if (props.loading) return 'loading..';
     else if (props.error)
       return (
         <>
-          <strong>Error </strong>{' '}
-          <span className="error">Please try again</span>
+          <strong>Error </strong> <span className="error">try again</span>
         </>
       );
-    else if (props.link)
+    else if (props.link.length)
       return (
         <>
-          <strong>Successfully </strong>
           <span className="success">uploaded image</span>
         </>
       );
@@ -50,22 +49,14 @@ const UploadImage = props => {
   return (
     <div className="upload-container">
       <label htmlFor="icon-button-file">
-        <Input
+        <input
           accept="image/*"
           id="icon-button-file"
           className="upload-input"
           type="file"
           onChange={e => onChange(e)}
         />
-        <div className="upload-picture">
-          <IconButton
-            color="primary"
-            aria-label="upload picture"
-            component="span"
-          >
-            {getIcon()}
-          </IconButton>
-        </div>
+        {getIcon()}
       </label>
       <p>{getText()}</p>
     </div>

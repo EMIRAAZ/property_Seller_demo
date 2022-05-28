@@ -9,7 +9,6 @@ const Property = props => {
     props.getAdminProperty();
   }, []);
 
-  console.log(props.adminProperty.property);
   return (
     <div>
       <AdminHeader />

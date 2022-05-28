@@ -4,10 +4,21 @@
   border-radius: 3px;
   font-family: 'Poppins';
   font-size: 13px;
-
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
+  label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .upload-img-class {
+    width: 60%;
+    margin: 0px auto;
+    max-height: 100px;
+  }
   .add {
     color: #8e74f3;
   }
@@ -20,6 +31,9 @@
 
   .upload-input {
     display: none;
+  }
+  .upload-img-icon {
+    cursor: pointer;
   }
   .upload-picture {
     margin: 0px auto;
