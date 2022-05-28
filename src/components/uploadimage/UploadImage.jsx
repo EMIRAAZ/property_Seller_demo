@@ -4,7 +4,6 @@ import Avatar from '@mui/material/Avatar';
 import ErrorIcon from '@mui/icons-material/Error';
 import IconButton from '@mui/material/IconButton';
 import CircularProgress from '@mui/material/CircularProgress';
-import Input from '@mui/material/Input';
 
 const UploadImage = props => {
   const onChange = e => {
@@ -50,7 +49,7 @@ const UploadImage = props => {
   return (
     <div className="upload-container">
       <label htmlFor="icon-button-file">
-        <Input
+        <input
           accept="image/*"
           id="icon-button-file"
           className="upload-input"
