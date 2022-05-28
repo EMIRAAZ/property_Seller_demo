@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
 import AddProperty from './AddProperty';
-import { getAdminProperty } from '../../../redux/actions';
+import { changeAdminPropertyInput } from '../../../redux/actions';
 
 const mapStateToProps = state => {
   return {
-    adminProperty: state.adminpropertyReducer.adminProperty,
+    addProperty: state.adminaddpropertyReducer.property,
+    sale: state.adminaddpropertyReducer.sale,
+    propertyType: state.adminaddpropertyReducer.propertyType,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    getAdminProperty: params => dispatch(getAdminProperty(params)),
+    onInputChange: payload => dispatch(changeAdminPropertyInput(payload)),
   };
 };
 
