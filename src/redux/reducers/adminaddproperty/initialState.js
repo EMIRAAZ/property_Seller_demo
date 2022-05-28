@@ -31,6 +31,9 @@ export const initialState = {
     building: '',
     city: '',
     agentId: '',
+    noOfSave: 0,
+    noOfShare: 0,
+    noOfReport: 0,
   },
   propertyType: [
     { name: 'Apartment', value: 'Apartment' },

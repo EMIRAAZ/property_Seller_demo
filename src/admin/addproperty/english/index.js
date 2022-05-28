@@ -19,7 +19,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onInputChange: payload => dispatch(changeAdminPropertyInput(payload)),
-    addAdminProperty: payload => dispatch(addAdminProperty(payload)),
+    addAdminProperty: (payload, cb) => dispatch(addAdminProperty(payload, cb)),
     getAgentProperty: payload => dispatch(getAgentProperty(payload)),
   };
 };
