@@ -1,0 +1,251 @@
+.header-english {
+  font-family: 'Poppins';
+  background-color: #ffffff;
+
+  .web-sidebar {
+    display: none;
+  }
+
+  .show {
+    opacity: 1;
+    left: 0;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+  }
+
+  .hide {
+    opacity: 0;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    left: -100%;
+  }
+
+  .mobile-sidebar {
+    display: block;
+    position: absolute;
+    background-color: #e7f1ff;
+    width: 100%;
+    height: 100%;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    z-index: 11;
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      list-style-type: none;
+      margin: 0px 10px 0px 20px;
+      padding: 0px;
+
+      li {
+        padding: 15px;
+        padding-left: 20px;
+        border-radius: 5px;
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+
+        &:first-child {
+          padding-left: 0px;
+          padding: 5px 5px 0px 5px;
+          margin: 5px;
+          background-color: #b2d2ff;
+          margin-left: auto;
+          cursor: pointer;
+        }
+
+        &:hover {
+          background-color: #b2d2ff;
+        }
+      }
+    }
+  }
+
+  .header-list {
+    margin: 0;
+    padding: 7px 0px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .logo {
+      padding: 0px 10px;
+      padding-top: 7px;
+
+      :first-child {
+        cursor: pointer;
+      }
+    }
+
+    .company-name {
+      padding: 0px 10px;
+      color: #1c3988;
+      letter-spacing: 0.5px;
+      display: flex;
+      flex-direction: column;
+
+      .main-name {
+        font-weight: 600;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      .sub-name {
+        font-weight: 500;
+        font-size: 11.5px;
+        cursor: pointer;
+      }
+    }
+
+    .desktop-li {
+      display: none;
+    }
+
+    .header-btn {
+      margin-left: auto;
+      margin-right: 20px;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .header-english {
+    font-family: 'Poppins';
+
+    .header-list {
+      margin: 0;
+      padding: 7px 0px;
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+
+      .logo {
+        padding: 0px 15px;
+      }
+
+      .company-name {
+        padding: 0px 15px;
+        color: #1c3988;
+        display: flex;
+        flex-direction: column;
+
+        .main-name {
+          font-weight: 600;
+          font-size: 18.5px;
+        }
+
+        .sub-name {
+          font-weight: 500;
+          font-size: 14.5px;
+        }
+      }
+      .desktop-li {
+        display: inline-block;
+        max-width: 690px;
+        margin-left: auto;
+      }
+      .desktop-ul {
+        display: inline-block;
+        align-items: center;
+        margin-right: 10px;
+      }
+
+      .luxury {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+
+        .header-select {
+          margin-right: 5px;
+
+          &:hover .down-arrow {
+            background-color: #1c3988;
+          }
+        }
+      }
+
+      .simple-list {
+        display: block;
+        float: left;
+        padding: 0px 10px;
+        font-weight: 600;
+        font-size: 13px;
+        cursor: pointer;
+
+        &:hover {
+          color: #1c3988;
+        }
+      }
+
+      .header-btn {
+        margin-right: 20px;
+        margin-left: 0px;
+      }
+    }
+
+    .show {
+      opacity: 1;
+      left: 0;
+      transition: all 0.25s;
+      -webkit-transition: all 0.25s;
+    }
+
+    .hide {
+      opacity: 0;
+      transition: all 0.25s;
+      -webkit-transition: all 0.25s;
+      left: -35%;
+    }
+
+    .mobile-sidebar {
+      display: none;
+    }
+
+    .web-sidebar {
+      display: block;
+      position: absolute;
+      background-color: #e7f1ff;
+      width: 35%;
+      height: 100%;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      transition: all 0.25s;
+      -webkit-transition: all 0.25s;
+      z-index: 11;
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        list-style-type: none;
+        margin: 0px 10px 0px 20px;
+        padding: 0px;
+
+        li {
+          padding: 15px;
+          padding-left: 20px;
+          border-radius: 5px;
+          font-family: 'Poppins';
+          font-weight: 600;
+          font-size: 14px;
+          cursor: pointer;
+
+          &:first-child {
+            padding-left: 0px;
+            padding: 5px 5px 0px 5px;
+            margin: 5px;
+            background-color: #b2d2ff;
+            margin-left: auto;
+            cursor: pointer;
+          }
+
+          &:hover {
+            background-color: #b2d2ff;
+          }
+        }
+      }
+    }
+  }
+}
