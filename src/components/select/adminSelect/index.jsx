@@ -22,8 +22,8 @@ const AdminSelect = ({
   };
 
   const onClickOption = (name, value) => {
-    onChange(value);
     setSelectName(name);
+    onChange(value);
     dropdownClass === 'hide'
       ? setdropdownClass('show')
       : setdropdownClass('hide');
