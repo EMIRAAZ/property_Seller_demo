@@ -6,7 +6,15 @@ import Select from '../../../components/select/adminSelect';
 import Button from '../../../components/button/BasicButton';
 import UploadImage from '../../../components/uploadimage';
 
-const AddForm = ({ onChange, sale, propertyType }) => {
+const AddForm = ({
+  onChange,
+  sale,
+  propertyType,
+  addAdminProperty,
+  images,
+  property,
+  agent,
+}) => {
   const onChangeInput = (key, value) => {
     if (key === 'amenities') {
       onChange({ key, value: renderAmenities(value) });
@@ -15,6 +23,11 @@ const AddForm = ({ onChange, sale, propertyType }) => {
 
   const renderAmenities = amenities => {
     return amenities.split(',');
+  };
+
+  const addProperty = () => {
+    console.log({ ...property, images: images });
+    // addAdminProperty({ ...property, images: images });
   };
   return (
     <div className="add-property-form">
@@ -54,6 +67,7 @@ const AddForm = ({ onChange, sale, propertyType }) => {
           customClass="property-input"
           label="Agent"
           required
+          options={agent}
           onChange={v => onChangeInput('agentId', v)}
         />
         <span className="select-border"></span>
@@ -199,7 +213,9 @@ const AddForm = ({ onChange, sale, propertyType }) => {
           />
         </div>
         <div className="property-row-div">
-          <Button customClass="add-property-btn">ADD</Button>
+          <Button customClass="add-property-btn" onClick={addProperty}>
+            ADD
+          </Button>
           <Button customClass="add-property-btn">CLEAR</Button>
         </div>
       </div>
