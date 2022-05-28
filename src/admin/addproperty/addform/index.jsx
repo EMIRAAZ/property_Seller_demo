@@ -10,25 +10,39 @@ const AddForm = () => {
   return (
     <div className="add-property-form">
       <div className="add-property-form-left">
-        <Input label="Title" required />
-        <Textarea label="Description" rows={8} required />
-        <Textarea label="Place Address" rows={5} required />
-        <Input label="Building" />
-        <Input label="City" required />
-        <Select label="Agent" required />
+        <Input divClass="property-input" label="Title" required />
+        <Textarea
+          divClass="property-input"
+          label="Description"
+          rows={8}
+          required
+        />
+        <Textarea
+          divClass="property-input"
+          label="Place Address"
+          rows={5}
+          required
+        />
+        <Input divClass="property-input" label="Building" />
+        <Input divClass="property-input" label="City" required />
+        <Select customClass="property-input" label="Agent" required />
         <span className="select-border"></span>
-        <Select label="Amenities" required />
+        <Select customClass="property-input" label="Amenities" required />
         <span className="select-border"></span>
         <div className="property-row-div">
-          <Input label="Property size" required />
-          <Input label="Property size unit" required />
+          <Input divClass="property-input" label="Property size" required />
+          <Input
+            divClass="property-input"
+            label="Property size unit"
+            required
+          />
         </div>
-        <Select label="Property type" required />
+        <Select customClass="property-input" label="Property type" required />
         <span className="select-border"></span>
-        <Input label="Property age" required />
+        <Input divClass="property-input" label="Property age" required />
         <div className="property-row-div">
-          <Input label="No. of bedrooms" required />
-          <Input label="No. of bathrooms" required />
+          <Input divClass="property-input" label="No. of bedrooms" required />
+          <Input divClass="property-input" label="No. of bathrooms" required />
         </div>
       </div>
       <div className="add-property-form-right">
@@ -46,23 +60,23 @@ const AddForm = () => {
         <div className="property-row-div-upload">
           <UploadImage />
         </div>
-        <Select label="Sale" required />
+        <Select customClass="property-input" label="Sale" required />
         <span className="select-border"></span>
         <div className="property-row-div">
-          <Input label="Price" required />
-          <Input label="Ownership" required />
+          <Input divClass="property-input" label="Price" required />
+          <Input divClass="property-input" label="Ownership" required />
         </div>
         <div className="property-row-div">
-          <Input label="Reference No" required />
-          <Input label="Trakheesi Permit" required />
+          <Input divClass="property-input" label="Reference No" required />
+          <Input divClass="property-input" label="Trakheesi Permit" required />
         </div>
         <div className="property-row-div">
-          <Input label="Broker ORN" required />
-          <Input label="Agent BRN" required />
+          <Input divClass="property-input" label="Broker ORN" required />
+          <Input divClass="property-input" label="Agent BRN" required />
         </div>
-        <Input label="Call" required />
-        <Input label="Email" required />
-        <Input label="Whatsapp" required />
+        <Input divClass="property-input" label="Call" required />
+        <Input divClass="property-input" label="Email" required />
+        <Input divClass="property-input" label="Whatsapp" required />
         <div className="property-row-div">
           <Checkbox label="Featured" required />
           <Checkbox label="Luxury" required />
