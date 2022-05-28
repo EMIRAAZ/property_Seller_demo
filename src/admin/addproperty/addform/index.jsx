@@ -4,7 +4,7 @@ import Checkbox from '../../../components/input/checkbox';
 import Textarea from '../../../components/input/admintextarea';
 import Select from '../../../components/select/adminSelect';
 import Button from '../../../components/button/BasicButton';
-import UploadImage from '../../../components/uploadimage';
+// import UploadImage from '../../../components/uploadimage';
 
 const AddForm = () => {
   return (
@@ -50,16 +50,14 @@ const AddForm = () => {
           Property Images<span>*</span>
         </label>
         <div className="property-row-div-upload">
-          <UploadImage />
+          {/* <UploadImage /> */}
           <div className="property-row-div-upload-flex">
-            <UploadImage />
-            <UploadImage />
+            {/* <UploadImage /> */}
+            {/* <UploadImage /> */}
           </div>
         </div>
         <label className="property-image-label">Property Video</label>
-        <div className="property-row-div-upload">
-          <UploadImage />
-        </div>
+        <div className="property-row-div-upload">{/* <UploadImage /> */}</div>
         <Select customClass="property-input" label="Sale" required />
         <span className="select-border"></span>
         <div className="property-row-div">
