@@ -18,6 +18,12 @@ export const initialState = {
       location: [],
     },
   },
-  homeFeatured: { loading: false, error: false, featured: [], currentPage: 0 },
+  homeFeatured: {
+    loading: false,
+    error: false,
+    featured: [],
+    currentPage: 0,
+    count: 0,
+  },
   homeLuxury: { loading: false, error: false, luxury: [], currentPage: 0 },
 };

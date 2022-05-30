@@ -6,16 +6,34 @@ import ProgressLine from './progressline';
 import FeaturedList from './featuredlist';
 
 const HomeFeatured = props => {
+  const { featured } = props;
   useEffect(() => {
     props.getFeatured();
   }, []);
+  const onLeftClick = () => {
+    const offset =
+      2 * featured.currentPage - 2 > 0 ? 2 * featured.currentPage - 2 : 0;
+
+    if (offset > 0)
+      props.onChangePage(featured.currentPage + 1, () =>
+        props.getFeautred(`?offset=${offset}`)
+      );
+  };
+  const onRightClick = () => {
+    const offset =
+      2 * featured.currentPage - 2 > 0 ? 2 * featured.currentPage - 2 : 0;
+    if (offset < featured.count)
+      props.onChangePage(featured.currentPage - 1, () =>
+        props.getFeautred(`?offset=${offset}`)
+      );
+  };
   return (
     <div className="home-featured">
       <div className="header">
         <p>Featured</p>
         <div className="navigate">
-          <LeftNavigate />
-          <RightNavigate />
+          <LeftNavigate onClick={onLeftClick} />
+          <RightNavigate onClick={onRightClick} />
         </div>
       </div>
       <ProgressLine />
