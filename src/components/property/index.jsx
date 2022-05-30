@@ -19,9 +19,11 @@ const Property = props => {
   };
 
   const renderAddress = address => {
-    return `${address.placeAddress}, ${
+    let add = `${address.placeAddress}, ${
       address.building ? address.building : ''
     } ${address.city}`;
+
+    return add.length < 50 ? add : add.substring(0, 49) + '...';
   };
 
   return (
@@ -29,7 +31,11 @@ const Property = props => {
       <div className="property-list-item">
         <img
           className="prop-list-img"
-          src={props.images && props.images[0]}
+          src={
+            props.images && props.images.length
+              ? props.images[0]
+              : '/assets/image/noimage.jpg'
+          }
           alt="img"
         />
         <div className="price-tag">AED {props.price}</div>
@@ -50,22 +56,42 @@ const Property = props => {
         <div className="property-line" />
         <div className="spec">
           <div className="spec-wrap">
-            <Bed className="property-bed" />
+            <Bed
+              className="property-bed"
+              width="15"
+              height="14"
+              viewBox="0 0 17 14"
+            />
             <p>{props.noOfBedroom} Bed</p>
           </div>
           <div class="vl"></div>
           <div className="spec-wrap">
-            <Bath className="property-bath" />
+            <Bath
+              className="property-bath"
+              width="15"
+              height="14"
+              viewBox="0 0 17 17"
+            />
             <p>{props.noOfBathroom} Bath</p>
           </div>
           <div class="vl"></div>
           <div className="spec-wrap">
-            <Living className="property-living" />
+            <Living
+              className="property-living"
+              width="15"
+              height="14"
+              viewBox="0 0 17 14"
+            />
             <p>8 Rooms</p>
           </div>
           <div class="vl"></div>
           <div className="spec-wrap">
-            <Area className="property-area" />
+            <Area
+              className="property-area"
+              width="15"
+              height="14"
+              viewBox="0 0 17 16"
+            />
             <p>
               {props.propertySize} {props.propertySizeUnit}
             </p>
