@@ -4,7 +4,7 @@ import ChipSelect from '../../components/select/ChipSelect';
 const Preview = () => {
   return (
     <>
-      <ChipSelect
+      {/* <ChipSelect
         options={[
           { name: 'Apartment', value: 'Apartment' },
           { name: 'Villa', value: 'Villa' },
@@ -20,7 +20,7 @@ const Preview = () => {
           { name: 'Bungalow', value: 'Bungalow' },
           { name: 'Hotel & Hotel Apartment', value: 'Hotel & Hotel Apartment' },
         ]}
-      />
+      /> */}
     </>
   );
 };

@@ -20,13 +20,21 @@ const Home = props => {
         homeSearch={props.homeSearch}
         onSearch={props.getHomeProperty}
       />
-      <HomeProperty property={props.homeProperty} />
+      <HomeProperty
+        property={props.homeProperty}
+        onChangePage={props.changePageHomeProperty}
+      />
       <HomeFeatured
         featured={props.homeFeatured}
         getFeatured={props.getHomeFeatured}
+        onChangePage={props.changePageHomeFeatured}
       />
       <HomeBestDeals />
-      <HomeLuxury luxury={props.homeLuxury} getLuxury={props.getHomeLuxury} />
+      <HomeLuxury
+        luxury={props.homeLuxury}
+        getLuxury={props.getHomeLuxury}
+        onChangePage={props.changePageHomeLuxury}
+      />
       <SocialPanel />
       <Footer />
     </div>

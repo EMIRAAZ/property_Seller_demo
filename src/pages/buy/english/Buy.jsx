@@ -17,7 +17,7 @@ const Buy = props => {
       <ImageFrame />
       <BuyFormCard />
       <BuyProperty property={props.buyProperty} />
-      <Pagination />
+      <Pagination count />
       <Footer />
     </div>
   );

@@ -13,7 +13,34 @@ import {
   GET_HOME_LUXURY,
   GET_HOME_LUXURY_ERROR,
   GET_HOME_LUXURY_STARTED,
+  CHANGE_HOME_PROPERTY_PAGE,
+  CHANGE_HOME_FEATURED_PAGE,
+  CHANGE_HOME_LUXURY_PAGE,
 } from '../../constants';
+
+export const changePageHomeProperty = (payload, cb) => async dispatch => {
+  dispatch({
+    type: CHANGE_HOME_PROPERTY_PAGE,
+    payload: payload,
+  });
+  cb();
+};
+
+export const changePageHomeFeatured = (payload, cb) => async dispatch => {
+  dispatch({
+    type: CHANGE_HOME_FEATURED_PAGE,
+    payload: payload,
+  });
+  cb();
+};
+
+export const changePageHomeLuxury = (payload, cb) => async dispatch => {
+  dispatch({
+    type: CHANGE_HOME_LUXURY_PAGE,
+    payload: payload,
+  });
+  cb();
+};
 
 /// home property ///
 
