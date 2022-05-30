@@ -17,6 +17,8 @@ const AddForm = ({
   property,
   agent,
   amenities,
+  imgLoading,
+  imgError,
 }) => {
   let navigate = useNavigate();
 
@@ -32,6 +34,14 @@ const AddForm = ({
 
   const addProperty = () => {
     addAdminProperty({ ...property, images: images }, () => navigate('/admin'));
+  };
+
+  const renderImageLoadingdiv = () => {
+    if (imgLoading) {
+      return <div className="img-loading">loading</div>;
+    } else if (imgError) {
+      return <div className="img-loading">Error</div>;
+    } else return null;
   };
   return (
     <div className="add-property-form">
@@ -129,6 +139,7 @@ const AddForm = ({
         <label className="property-image-label">
           Property Images<span>*</span>
         </label>
+        {renderImageLoadingdiv()}
         <div className="property-row-div-upload">
           <UploadImage linkIndex={0} onChangeImage={() => {}} />
           <div className="property-row-div-upload-flex">

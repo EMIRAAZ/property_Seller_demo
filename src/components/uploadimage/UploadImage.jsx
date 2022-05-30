@@ -26,25 +26,11 @@ const UploadImage = props => {
   };
 
   const getText = () => {
-    if (props.loading) return 'loading..';
-    else if (props.error)
-      return (
-        <>
-          <strong>Error </strong> <span className="error">try again</span>
-        </>
-      );
-    else if (props.link.length)
-      return (
-        <>
-          <span className="success">uploaded image</span>
-        </>
-      );
-    else
-      return (
-        <>
-          <strong>Click </strong> <span className="add">to add Image.</span>
-        </>
-      );
+    return (
+      <>
+        <strong>Click </strong> <span className="add">to add Image.</span>
+      </>
+    );
   };
   return (
     <div className="upload-container">

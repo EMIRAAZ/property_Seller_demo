@@ -60,6 +60,18 @@
       gap: 10px;
     }
   }
+
+  .img-loading {
+    width: 70%;
+    height: 40px;
+    background-color: #faf0d7;
+    margin: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    color: #464646;
+  }
 }
 
 @media only screen and (min-width: 600px) {
