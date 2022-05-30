@@ -1,2 +1,32 @@
 .single-property-view {
+  .main-container {
+    // flex: 1;
+    display: flex;
+    background-color: #eef7ff;
+    padding: 3% 4%;
+    .image-slider-container {
+      background-color: rgb(143, 241, 148);
+      width: 56%;
+      .image-container {
+        display: flex;
+        justify-content: space-between;
+        .div-1 {
+          width: 17%;
+          opacity: 30%;
+          background-color: black;
+          height: 400px;
+        }
+        .div-2 {
+          width: 17%;
+          background-color: black;
+          opacity: 30%;
+          height: 400px;
+        }
+      }
+    }
+    .main-details-container {
+      background-color: rgb(241, 116, 116);
+      width: 44%;
+    }
+  }
 }
