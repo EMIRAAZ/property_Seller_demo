@@ -1,6 +1,6 @@
-const RightNavigate = ({ customClass }) => {
+const RightNavigate = ({ customClass, onClick }) => {
   return (
-    <div className={customClass}>
+    <div className={customClass} onClick={onClick}>
       <svg
         width="28"
         height="29"

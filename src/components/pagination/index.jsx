@@ -2,7 +2,7 @@ import './pagination.scss';
 import RightPage from '../svg/rightpage';
 import { useState } from 'react';
 
-const Pagination = ({ onChange, count }) => {
+const Pagination = ({ onChange, count = 0 }) => {
   const [currentState, setCurrentState] = useState(5);
 
   const calculateTotalPages = () => {

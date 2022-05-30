@@ -126,7 +126,8 @@ const reducer = (state = initialState, action) => {
           ...state.homeFeatured,
           loading: false,
           error: false,
-          featured: action.payload,
+          featured: action.payload.rows,
+          count: action.payload.count,
         },
       };
     case GET_HOME_FEATURED_STARTED:
