@@ -8,7 +8,6 @@ const PropertyView = props => {
   useEffect(() => {
     props.getPropertyByID(getID());
   }, []);
-  console.log(props);
 
   const getID = () => location.pathname.split('/').pop();
   return <div className="single-property-view"></div>;

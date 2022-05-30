@@ -3,7 +3,8 @@ export const initialState = {
     loading: false,
     error: false,
     property: [],
-    currentPage: 0,
+    currentPage: 1,
+    params: '',
   },
   homeSearch: {
     location: '',
