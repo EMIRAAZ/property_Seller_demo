@@ -44,9 +44,10 @@ export const changePageHomeLuxury = (payload, cb) => async dispatch => {
 
 /// home property ///
 
-const getHomePropertyStarted = () => {
+const getHomePropertyStarted = params => {
   return {
     type: GET_HOME_PROPERTY_STARTED,
+    payload: params,
   };
 };
 
@@ -57,10 +58,10 @@ const getHomePropertyError = () => {
 };
 
 export const getHomeProperty =
-  (params = '') =>
+  (params = '', search) =>
   async dispatch => {
     try {
-      dispatch(getHomePropertyStarted());
+      dispatch(getHomePropertyStarted(search ? params : ''));
       const res = await axios.get(`/api/property${params}`);
       dispatch({
         type: GET_HOME_PROPERTY,

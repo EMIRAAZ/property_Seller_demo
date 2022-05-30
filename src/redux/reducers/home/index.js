@@ -62,6 +62,7 @@ const reducer = (state = initialState, action) => {
           ...state.homeProperty,
           error: false,
           loading: true,
+          params: action.payload,
         },
       };
     case GET_HOME_PROPERTY_ERROR:
@@ -125,7 +126,8 @@ const reducer = (state = initialState, action) => {
           ...state.homeFeatured,
           loading: false,
           error: false,
-          featured: action.payload,
+          featured: action.payload.rows,
+          count: action.payload.count,
         },
       };
     case GET_HOME_FEATURED_STARTED:

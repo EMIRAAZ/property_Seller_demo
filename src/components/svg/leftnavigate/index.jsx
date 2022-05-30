@@ -1,6 +1,6 @@
-const LeftNavigate = ({ customClass }) => {
+const LeftNavigate = ({ customClass, onClick }) => {
   return (
-    <div className={customClass}>
+    <div className={customClass} onClick={onClick}>
       <svg
         width="28"
         height="29"
