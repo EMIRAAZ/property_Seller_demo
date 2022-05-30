@@ -13,10 +13,37 @@ import {
   GET_HOME_LUXURY,
   GET_HOME_LUXURY_STARTED,
   GET_HOME_LUXURY_ERROR,
+  CHANGE_HOME_FEATURED_PAGE,
+  CHANGE_HOME_LUXURY_PAGE,
+  CHANGE_HOME_PROPERTY_PAGE,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case CHANGE_HOME_FEATURED_PAGE:
+      return {
+        ...state,
+        homeFeatured: {
+          ...state.homeFeatured,
+          currentPage: action.payload,
+        },
+      };
+    case CHANGE_HOME_PROPERTY_PAGE:
+      return {
+        ...state,
+        homeProperty: {
+          ...state.homeProperty,
+          currentPage: action.payload,
+        },
+      };
+    case CHANGE_HOME_LUXURY_PAGE:
+      return {
+        ...state,
+        homeLuxury: {
+          ...state.homeLuxury,
+          currentPage: action.payload,
+        },
+      };
     case GET_HOME_PROPERTY:
       return {
         ...state,

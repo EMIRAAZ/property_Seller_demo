@@ -6,6 +6,9 @@ import {
   getHomeLocationSearch,
   getHomeFeatured,
   getHomeLuxury,
+  changePageHomeLuxury,
+  changePageHomeFeatured,
+  changePageHomeProperty,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -25,6 +28,12 @@ const mapDispatchToProps = dispatch => {
     getHomeLocationSearch: payload => dispatch(getHomeLocationSearch(payload)),
     getHomeFeatured: payload => dispatch(getHomeFeatured(payload)),
     getHomeLuxury: payload => dispatch(getHomeLuxury(payload)),
+    changePageHomeLuxury: (payload, cb) =>
+      dispatch(changePageHomeLuxury(payload, cb)),
+    changePageHomeFeatured: (payload, cb) =>
+      dispatch(changePageHomeFeatured(payload, cb)),
+    changePageHomeProperty: (payload, cb) =>
+      dispatch(changePageHomeProperty(payload, cb)),
   };
 };
 

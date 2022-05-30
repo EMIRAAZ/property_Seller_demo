@@ -3,6 +3,7 @@ export const initialState = {
     loading: false,
     error: false,
     property: [],
+    currentPage: 0,
   },
   homeSearch: {
     location: '',
@@ -16,6 +17,6 @@ export const initialState = {
       location: [],
     },
   },
-  homeFeatured: { loading: false, error: false, featured: [] },
-  homeLuxury: { loading: false, error: false, luxury: [] },
+  homeFeatured: { loading: false, error: false, featured: [], currentPage: 0 },
+  homeLuxury: { loading: false, error: false, luxury: [], currentPage: 0 },
 };
