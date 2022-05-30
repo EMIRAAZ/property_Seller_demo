@@ -1,5 +1,6 @@
 .chip-select {
-  max-height: 43px;
+  height: fit-content;
+  max-height: 200px;
   z-index: auto;
   cursor: pointer;
   margin: 10px 0px;
@@ -58,7 +59,6 @@
     .drop-btn {
       display: flex;
       flex-wrap: wrap;
-
       .drop-btn-chip {
         padding: 5px;
         border-radius: 4px;

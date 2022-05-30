@@ -4,8 +4,14 @@ import Bath from '../svg/bath';
 import Bed from '../svg/bed';
 import Living from '../svg/living';
 import Area from '../svg/area';
+import { useNavigate } from 'react-router-dom';
 
 const Property = props => {
+  let navigate = useNavigate();
+
+  const navigateTo = () => {
+    navigate(`/property/${props.id}`);
+  };
   const renderDescription = description => {
     return description.length < 120
       ? description
@@ -19,7 +25,7 @@ const Property = props => {
   };
 
   return (
-    <div className="property-list">
+    <div className="property-list" onClick={navigateTo}>
       <div className="property-list-item">
         <img
           className="prop-list-img"

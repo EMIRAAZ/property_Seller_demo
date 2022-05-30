@@ -21,9 +21,9 @@ const ChipSelect = ({
     else setdropdownClass('hide');
   };
 
-  const onClickOption = (name, value) => {
+  const onClickOption = name => {
     setSelectName([...selectName, name]);
-    onChange(value);
+    onChange([...selectName, name]);
     dropdownClass === 'hide'
       ? setdropdownClass('show')
       : setdropdownClass('hide');
@@ -31,8 +31,8 @@ const ChipSelect = ({
 
   const renderOptions = () =>
     (options || []).map((option, i) => (
-      <p key={i} onClick={() => onClickOption(option.name, option.value)}>
-        {option.name}
+      <p key={i} onClick={() => onClickOption(option)}>
+        {option}
       </p>
     ));
 
@@ -55,7 +55,6 @@ const ChipSelect = ({
     <div
       className={`chip-select ${customClass}`}
       onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
       onClick={onClick}
     >
       <label>
@@ -71,7 +70,10 @@ const ChipSelect = ({
           viewbox="0 0 15 10"
         />
       </div>
-      <div className={`dropdown-content ${dropdownClass}`}>
+      <div
+        className={`dropdown-content ${dropdownClass}`}
+        onMouseLeave={onMouseLeave}
+      >
         {renderOptions()}
       </div>
     </div>
