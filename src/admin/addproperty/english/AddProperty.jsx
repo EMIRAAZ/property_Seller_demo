@@ -24,6 +24,7 @@ const AddProperty = props => {
           amenities={props.amenities}
           imgLoading={props.imgLoading}
           imgError={props.imgError}
+          addAdmin={props.addAdmin}
         />
       </div>
     </div>
