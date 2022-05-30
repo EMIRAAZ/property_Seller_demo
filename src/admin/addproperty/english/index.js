@@ -16,6 +16,7 @@ const mapStateToProps = state => {
     amenities: state.adminaddpropertyReducer.amenities,
     imgLoading: state.uploadReducer.loading,
     imgError: state.uploadReducer.error,
+    addAdmin: state.adminaddpropertyReducer.addAdmin,
   };
 };
 

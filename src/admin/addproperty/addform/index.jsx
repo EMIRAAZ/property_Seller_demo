@@ -4,7 +4,7 @@ import Checkbox from '../../../components/input/checkbox';
 import Textarea from '../../../components/input/admintextarea';
 import Select from '../../../components/select/adminSelect';
 import ChipSelect from '../../../components/select/ChipSelect';
-import Button from '../../../components/button/BasicButton';
+import Button from '../../../components/button/SpinnerButton';
 import UploadImage from '../../../components/uploadimage';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,6 +19,7 @@ const AddForm = ({
   amenities,
   imgLoading,
   imgError,
+  addAdmin,
 }) => {
   let navigate = useNavigate();
 
@@ -228,7 +229,11 @@ const AddForm = ({
           />
         </div>
         <div className="property-row-div">
-          <Button customClass="add-property-btn" onClick={addProperty}>
+          <Button
+            customClass="add-property-btn"
+            onClick={addProperty}
+            loading={addAdmin.loading}
+          >
             ADD
           </Button>
           <Button customClass="add-property-btn">CLEAR</Button>
