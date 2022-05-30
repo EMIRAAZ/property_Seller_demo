@@ -33,8 +33,9 @@ const HomeFormCard = props => {
 
   const makeLocationAndSearch = () => {
     const { location } = props.homeSearch;
-
-    if (typeof location === 'string') return makeUrlParam(props.homeSearch);
+    if (!location.length) return '?';
+    else if (typeof location === 'string')
+      return makeUrlParam(props.homeSearch);
     else {
       const newParamObject = {
         ...props.homeSearch,
@@ -114,7 +115,7 @@ const HomeFormCard = props => {
         />
         <BasicButton
           customClass="home-search-btn"
-          onClick={() => props.onSearch(makeLocationAndSearch())}
+          onClick={() => props.onSearch(makeLocationAndSearch(), true)}
         >
           <SearchIcon /> Search
         </BasicButton>

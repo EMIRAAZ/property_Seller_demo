@@ -23,7 +23,9 @@ const Home = props => {
       <HomeProperty
         property={props.homeProperty}
         onChangePage={props.changePageHomeProperty}
+        getProperty={props.getHomeProperty}
       />
+
       <HomeFeatured
         featured={props.homeFeatured}
         getFeatured={props.getHomeFeatured}

@@ -62,6 +62,7 @@ const reducer = (state = initialState, action) => {
           ...state.homeProperty,
           error: false,
           loading: true,
+          params: action.payload,
         },
       };
     case GET_HOME_PROPERTY_ERROR:

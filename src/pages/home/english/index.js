@@ -22,7 +22,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getHomeProperty: params => dispatch(getHomeProperty(params)),
+    getHomeProperty: (params, search) =>
+      dispatch(getHomeProperty(params, search)),
     onHomeSearchInputChange: payload =>
       dispatch(onHomeSearchInputChange(payload)),
     getHomeLocationSearch: payload => dispatch(getHomeLocationSearch(payload)),
