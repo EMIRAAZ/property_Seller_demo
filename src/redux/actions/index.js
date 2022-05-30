@@ -5,3 +5,4 @@ export * from './adminlogin';
 export * from './adminproperty';
 export * from './upload';
 export * from './adminaddproperty';
+export * from './property';

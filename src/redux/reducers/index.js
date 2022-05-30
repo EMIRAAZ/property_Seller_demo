@@ -6,6 +6,7 @@ import adminloginReducer from './adminlogin';
 import adminpropertyReducer from './adminproperty';
 import uploadReducer from './upload';
 import adminaddpropertyReducer from './adminaddproperty';
+import propertyReducer from './property';
 
 const rootReducer = combineReducers({
   homeReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   adminpropertyReducer,
   uploadReducer,
   adminaddpropertyReducer,
+  propertyReducer,
 });
 
 export default rootReducer;

@@ -56,4 +56,10 @@ export const initialState = {
     { name: 'Both', value: 'both' },
   ],
   agent: [],
+  amenities: [
+    'Unfurnished',
+    "Children's Play Area",
+    'Built in Wardrobes',
+    'Pets Allowed',
+  ],
 };

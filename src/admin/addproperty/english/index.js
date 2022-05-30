@@ -13,6 +13,7 @@ const mapStateToProps = state => {
     propertyType: state.adminaddpropertyReducer.propertyType,
     images: state.uploadReducer.link,
     agent: state.adminaddpropertyReducer.agent,
+    amenities: state.adminaddpropertyReducer.amenities,
   };
 };
 

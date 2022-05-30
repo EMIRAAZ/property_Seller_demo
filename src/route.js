@@ -18,6 +18,7 @@ import Career from './pages/career';
 import Property from './admin/property';
 import AddProperty from './admin/addproperty';
 import Login from './admin/login';
+import PropertyView from './pages/propertyview';
 
 function Router() {
   const makePrivate = (component, role = '') => (
@@ -37,6 +38,7 @@ function Router() {
             />
           </Route>
           <Route path="buy" element={<Buy />} />
+          <Route path="property/:id" element={<PropertyView />} />
           <Route path="rent" element={<Rent />} />
           <Route path="sell" element={<Sell />} />
           <Route path="shortterm" element={<ShortTerm />} />

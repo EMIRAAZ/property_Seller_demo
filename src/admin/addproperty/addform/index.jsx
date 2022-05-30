@@ -3,6 +3,7 @@ import Input from '../../../components/input/admininput';
 import Checkbox from '../../../components/input/checkbox';
 import Textarea from '../../../components/input/admintextarea';
 import Select from '../../../components/select/adminSelect';
+import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/BasicButton';
 import UploadImage from '../../../components/uploadimage';
 import { useNavigate } from 'react-router-dom';
@@ -15,6 +16,7 @@ const AddForm = ({
   images,
   property,
   agent,
+  amenities,
 }) => {
   let navigate = useNavigate();
 
@@ -73,11 +75,11 @@ const AddForm = ({
           onChange={v => onChangeInput('agentId', v)}
         />
         <span className="select-border"></span>
-        <Textarea
-          divClass="property-input"
+        <ChipSelect
+          customClass="property-input"
           label="Amenities"
-          rows={5}
-          onChange={e => onChangeInput('amenities', e.target.value)}
+          options={amenities}
+          onChange={v => onChangeInput('amenities', v)}
           required
         />
         <div className="property-row-div">
