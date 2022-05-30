@@ -21,6 +21,7 @@ const AddProperty = props => {
           sale={props.sale}
           propertyType={props.propertyType}
           agent={props.agent}
+          amenities={props.amenities}
         />
       </div>
     </div>

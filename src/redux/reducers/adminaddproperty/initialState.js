@@ -56,4 +56,5 @@ export const initialState = {
     { name: 'Both', value: 'both' },
   ],
   agent: [],
+  amenities: [],
 };
