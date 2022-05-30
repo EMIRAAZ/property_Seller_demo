@@ -22,6 +22,8 @@ const AddProperty = props => {
           propertyType={props.propertyType}
           agent={props.agent}
           amenities={props.amenities}
+          imgLoading={props.imgLoading}
+          imgError={props.imgError}
         />
       </div>
     </div>

@@ -14,6 +14,8 @@ const mapStateToProps = state => {
     images: state.uploadReducer.link,
     agent: state.adminaddpropertyReducer.agent,
     amenities: state.adminaddpropertyReducer.amenities,
+    imgLoading: state.uploadReducer.loading,
+    imgError: state.uploadReducer.error,
   };
 };
 
