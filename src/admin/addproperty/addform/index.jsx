@@ -6,10 +6,11 @@ import Select from '../../../components/select/adminSelect';
 import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import UploadImage from '../../../components/uploadimage';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const AddForm = ({
   addProperty,
+  editProperty,
   env,
   onChange,
   images,
@@ -17,23 +18,29 @@ const AddForm = ({
   imgError,
   propertyValue,
   propertyOptions,
+  editing,
 }) => {
   let navigate = useNavigate();
+  let location = useLocation();
+
+  const getID = () => location.pathname.split('/').pop();
 
   const { agent, propertyType, amenities, sale } = propertyOptions;
 
   const onChangeInput = (key, value) => {
-    if (key === 'amenities') {
-      onChange({ key, value: renderAmenities(value) });
-    } else onChange({ key, value });
-  };
-
-  const renderAmenities = amenities => {
-    return amenities.split(',');
+    onChange({ key, value });
   };
 
   const addAdminProperty = () => {
-    addProperty({ ...propertyValue, images: images }, () => navigate('/admin'));
+    if (editing) {
+      editProperty(getID(), { ...propertyValue, images: images }, () =>
+        navigate('/admin')
+      );
+    } else {
+      addProperty({ ...propertyValue, images: images }, () =>
+        navigate('/admin')
+      );
+    }
   };
 
   const renderImageLoadingdiv = () => {
@@ -95,6 +102,7 @@ const AddForm = ({
           customClass="property-input"
           label="Amenities"
           options={amenities}
+          value={propertyValue.amenities}
           onChange={v => onChangeInput('amenities', v)}
           required
         />

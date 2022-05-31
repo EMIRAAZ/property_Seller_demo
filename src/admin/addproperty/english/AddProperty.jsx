@@ -9,11 +9,12 @@ const AddProperty = props => {
   let location = useLocation();
 
   const getID = () => location.pathname.split('/').pop();
+  console.log(getID());
 
   useEffect(() => {
     props.getAgentProperty();
     props.getAmenityProperty();
-    props.getAdminPropertyById(getID());
+    if (getID() !== 'add-property') props.getAdminPropertyById(getID());
   }, []);
   return (
     <div className="admin-add-property">
@@ -22,7 +23,9 @@ const AddProperty = props => {
         <PropertyHeader />
         <AddForm
           addProperty={props.addAdminProperty}
+          editProperty={props.editAdminProperty}
           env={props.env}
+          editing={getID() !== 'add-property'}
           onChange={props.onInputChange}
           images={props.images}
           imgLoading={props.imgLoading}
