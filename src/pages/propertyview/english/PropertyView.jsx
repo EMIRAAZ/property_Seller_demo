@@ -5,6 +5,7 @@ import Footer from "../../../components/footer/english/Footer";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import BasicButton from "../../../components/button/BasicButton";
+import RightArrow from "../../../components/svg/rightarrow";
 
 const PropertyView = (props) => {
   let location = useLocation();
@@ -62,7 +63,9 @@ const ImageSlider = ({ images }) => {
       }}
     >
       <div className="div-1"></div>
-      <div className="div-2"></div>
+      <div className="div-2">
+        <RightArrow />
+      </div>
     </div>
   );
 };
