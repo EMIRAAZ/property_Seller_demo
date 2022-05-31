@@ -1,10 +1,13 @@
 .blog-card-container{
     display: flex;
+    width: 70%;
+    align-items: center;
     flex-direction: row;
+    justify-content: center;
+    margin:10px auto;
     border-radius: 20px;
     padding: 20px;
     background: #FFFFFF;
-    margin-left: 200px;
 
     .blog-desciption{
     
@@ -56,5 +59,242 @@
 
 .blog-container{
     background-color: #EEF7FF;;
-    display: flex;
+    .daily-blog{
+        padding-top: 100px;
+        .heading-bt-container{
+            display: flex;
+            width: 70%;
+            margin: 20px auto;
+            flex-direction: row;
+            justify-content: space-between;
+            h1{
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 26px;
+                line-height: 130%;
+                color: #1D2939;
+                
+            }
+            button{
+                background-color: white;
+                border: none;
+                padding: 10px;
+                outline: none;  
+                color: #1D2939;
+                border-radius: 8px;
+            }
+        }
+
+    }
+    .design-tools{
+        padding-top: 50px;
+        .heading-bt-container{
+            display: flex;
+            width: 70%;
+            margin: 20px auto;
+            flex-direction: row;
+            justify-content: space-between;
+            h1{
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 26px;
+                line-height: 130%;
+                color: #1D2939;
+                
+            }
+            button{
+                background-color: white;
+                border: none;
+                padding: 10px;
+                outline: none;  
+                color: #1D2939;
+                border-radius: 8px;
+            }
+        }
+
+    }
+    .tutorials{
+        padding-top: 50px;
+        .heading-bt-container{
+            display: flex;
+            width: 70%;
+            margin: 20px auto;
+            flex-direction: row;
+            justify-content: space-between;
+            h1{
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 26px;
+                line-height: 130%;
+                color: #1D2939;
+                
+            }
+            button{
+                background-color: white;
+                border: none;
+                padding: 10px;
+                outline: none;  
+                color: #1D2939;
+                border-radius: 8px;
+            }
+        }
+
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .blog-card-container{
+        display: flex;
+        width: 95%;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        margin:10px auto;
+        border-radius: 20px;
+        
+        background: #FFFFFF;
+    
+        .blog-desciption{
+        
+            
+            .blog-date{
+                font-family: 'Graphik';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 7px;
+                line-height: 120%;
+                text-align: left;
+                text-transform: uppercase;
+                color: #667085;
+                margin: 0px auto;
+                padding: 0;
+    
+            }
+            .blog-content{
+                
+                width: 100%;
+            
+                margin: 10px auto;
+                .blog-heading{
+                    font-family: 'Graphik';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 130%;
+                    color: #1D2939;
+                }
+                .blog-description{
+                    font-family: 'Graphik';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 8px;
+                    line-height: 150%;
+                    color: #475467;
+                    margin-top: 10px;
+                }
+            }
+        }
+        .blog-main-image{
+           width: 120px; 
+           height: 90px;
+        }
+    
+    }       
+}
+@media only screen and (max-width: 800px) {
+    .blog-container{
+        background-color: #EEF7FF;;
+        .daily-blog{
+            padding: 0;
+            .heading-bt-container{
+                display: flex;
+                width: 90%;
+                margin: 0px auto;
+                padding-top: 30px;
+                flex-direction: row;
+                justify-content: space-between;
+                h1{
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 17px;
+                    line-height: 130%;
+                    color: #1D2939;
+                    padding-top: 5px;
+                    
+                }
+                button{
+                    background-color: white;
+                    border: none;
+                    padding: 10px;
+                    outline: none;  
+                    color: #1D2939;
+                    border-radius: 8px;
+                }
+            }
+    
+        }
+        .design-tools{
+            padding-top: 0px;
+            .heading-bt-container{
+                display: flex;
+                width: 90%;
+                margin: 20px auto;
+                flex-direction: row;
+                justify-content: space-between;
+                h1{
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 17px;
+                    line-height: 130%;
+                    color: #1D2939;
+                    padding-top: 5px;
+                    
+                }
+                button{
+                    background-color: white;
+                    border: none;
+                    padding: 10px;
+                    outline: none;  
+                    color: #1D2939;
+                    border-radius: 8px;
+                }
+            }
+    
+        }
+        .tutorials{
+            padding-top: 0px;
+            .heading-bt-container{
+                display: flex;
+                width: 90%;
+                margin: 20px auto;
+                flex-direction: row;
+                justify-content: space-between;
+                h1{
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 17px;
+                    line-height: 130%;
+                    color: #1D2939;
+                    margin-top:10px ;
+                    padding-top: 5px;
+                }
+                button{
+                    background-color: white;
+                    border: none;
+                    padding: 10px;
+                    outline: none;  
+                    color: #1D2939;
+                    border-radius: 8px;
+                }
+            }
+    
+        }
+    }
 }
