@@ -4,19 +4,19 @@ import {
   changeAdminPropertyInput,
   addAdminProperty,
   getAgentProperty,
+  getAmenityProperty,
+  editAdminProperty,
+  getAdminPropertyById,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
   return {
-    addProperty: state.adminaddpropertyReducer.property,
-    sale: state.adminaddpropertyReducer.sale,
-    propertyType: state.adminaddpropertyReducer.propertyType,
+    env: state.adminaddpropertyReducer.env,
+    propertyValue: state.adminaddpropertyReducer.propertyValue,
+    propertyOptions: state.adminaddpropertyReducer.propertyOptions,
     images: state.uploadReducer.link,
-    agent: state.adminaddpropertyReducer.agent,
-    amenities: state.adminaddpropertyReducer.amenities,
     imgLoading: state.uploadReducer.loading,
     imgError: state.uploadReducer.error,
-    addAdmin: state.adminaddpropertyReducer.addAdmin,
   };
 };
 
@@ -24,7 +24,11 @@ const mapDispatchToProps = dispatch => {
   return {
     onInputChange: payload => dispatch(changeAdminPropertyInput(payload)),
     addAdminProperty: (payload, cb) => dispatch(addAdminProperty(payload, cb)),
+    editAdminProperty: (id, payload, cb) =>
+      dispatch(editAdminProperty(id, payload, cb)),
     getAgentProperty: payload => dispatch(getAgentProperty(payload)),
+    getAmenityProperty: payload => dispatch(getAmenityProperty(payload)),
+    getAdminPropertyById: id => dispatch(getAdminPropertyById(id)),
   };
 };
 

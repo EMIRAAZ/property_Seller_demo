@@ -3,8 +3,15 @@ import Table from '../../../components/table';
 import AdminHeader from '../../../components/adminheader';
 import { tableHeader } from './table';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Property = props => {
+  let navigate = useNavigate();
+
+  const navigateTo = id => {
+    navigate(`/admin/add-property/${id}`);
+  };
+
   useEffect(() => {
     props.getAdminProperty();
   }, []);
@@ -15,7 +22,9 @@ const Property = props => {
       <Table
         rows={props.adminProperty.property || []}
         columns={tableHeader}
-        onEdit={() => {}}
+        onEdit={id => {
+          navigateTo(id);
+        }}
         onClickDelete={() => {}}
         onChangePage={() => {}}
         count={4}

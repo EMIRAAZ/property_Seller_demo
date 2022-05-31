@@ -9,8 +9,8 @@ const ChipSelect = ({
   onChange,
   label,
   required = false,
+  value,
 }) => {
-  const [selectName, setSelectName] = useState([]);
   const [dropdownClass, setdropdownClass] = useState('hide');
 
   const onMouseEnter = () => setdropdownClass('show');
@@ -22,8 +22,7 @@ const ChipSelect = ({
   };
 
   const onClickOption = name => {
-    setSelectName([...selectName, name]);
-    onChange([...selectName, name]);
+    onChange([...value, name]);
     dropdownClass === 'hide'
       ? setdropdownClass('show')
       : setdropdownClass('hide');
@@ -31,18 +30,18 @@ const ChipSelect = ({
 
   const renderOptions = () =>
     (options || []).map((option, i) => (
-      <p key={i} onClick={() => onClickOption(option)}>
-        {option}
+      <p key={i} onClick={() => onClickOption(option.name, option.value)}>
+        {option.name}
       </p>
     ));
 
   const removeChip = item => {
-    const removedSelectName = selectName.filter(name => name !== item);
-    setSelectName(removedSelectName);
+    const removedSelectName = value.filter(name => name !== item);
+    onChange([...removedSelectName]);
   };
 
   const renderChip = () => {
-    return selectName.map(item => (
+    return value.map(item => (
       <p className="drop-btn-chip">
         <p>{item}</p>
         <span onClick={() => removeChip(item)}>
@@ -51,6 +50,7 @@ const ChipSelect = ({
       </p>
     ));
   };
+
   return (
     <div
       className={`chip-select ${customClass}`}

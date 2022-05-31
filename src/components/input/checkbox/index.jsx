@@ -7,7 +7,6 @@ const AdminCheckbox = ({
   divClass,
   label,
   required = false,
-  name,
 }) => {
   return (
     <div className={`admin-checkbox-div ${divClass} `}>
@@ -18,7 +17,7 @@ const AdminCheckbox = ({
       <input
         className={`admin-checkbox ${customClass} `}
         type="checkbox"
-        value={value}
+        checked={value}
         onChange={onChange}
       />
     </div>

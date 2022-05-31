@@ -36,6 +36,10 @@ function Router() {
               path="add-property"
               element={makePrivate(<AddProperty />, 'ADMIN')}
             />
+            <Route
+              path="add-property/:id"
+              element={makePrivate(<AddProperty />, 'ADMIN')}
+            />
           </Route>
           <Route path="buy" element={<Buy />} />
           <Route path="property/:id" element={<PropertyView />} />
