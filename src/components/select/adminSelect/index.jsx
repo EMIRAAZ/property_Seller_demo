@@ -1,6 +1,6 @@
 import './adminselect.scss';
 import ExpandIcon from '../../svg/expand';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const AdminSelect = ({
   name,
@@ -9,9 +9,19 @@ const AdminSelect = ({
   onChange,
   label,
   required = false,
+  value,
 }) => {
   const [selectName, setSelectName] = useState(name);
   const [dropdownClass, setdropdownClass] = useState('hide');
+  const renderValue = () => {
+    if (value) {
+      const currentOption = options.filter(option => option.value === value);
+      if (currentOption.length) {
+        return currentOption[0].name;
+      }
+    }
+    return '';
+  };
 
   const onMouseEnter = () => setdropdownClass('show');
   const onMouseLeave = () => setdropdownClass('hide');
@@ -21,9 +31,9 @@ const AdminSelect = ({
     else setdropdownClass('hide');
   };
 
-  const onClickOption = (name, value) => {
+  const onClickOption = (name, val) => {
     setSelectName(name);
-    onChange(value);
+    onChange(val);
     dropdownClass === 'hide'
       ? setdropdownClass('show')
       : setdropdownClass('hide');
@@ -47,7 +57,7 @@ const AdminSelect = ({
         {required ? <span>*</span> : <></>}
       </label>
       <div className="select-box">
-        <p className="drop-btn">{selectName}</p>
+        <p className="drop-btn">{renderValue()}</p>
         <ExpandIcon
           className="admin-select-icon"
           width="12"

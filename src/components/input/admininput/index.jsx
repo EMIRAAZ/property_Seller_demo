@@ -1,7 +1,7 @@
 import './admininput.scss';
 
 const AdminInput = ({
-  type,
+  type = 'text',
   value,
   onChange,
   placeholder,
@@ -9,7 +9,6 @@ const AdminInput = ({
   divClass,
   label,
   required = false,
-  name,
 }) => {
   return (
     <div className={`admin-input-div ${divClass} `}>

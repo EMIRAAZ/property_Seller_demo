@@ -1,8 +1,6 @@
 import './header.scss';
 import HamburgerLogo from '../../svg/hamburger';
-import DownArrow from '../../svg/downarrow';
 import HeaderButton from '../../button/HeaderButton';
-import HeaderSelect from '../../select/HeaderSelect';
 import Close from '../../svg/close';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -38,7 +36,7 @@ const Header = () => {
         <li className="logo" onClick={onSidebarWebToggle}>
           <HamburgerLogo width="35" height="28" />
         </li>
-        <li className="company-name" onClick={() => navigate('/')}>
+        <li className="company-name" onClick={() => navigate('/admin')}>
           <span className="main-name">UAE&nbsp;Assistant</span>
           <span className="sub-name">ADMIN</span>
         </li>
