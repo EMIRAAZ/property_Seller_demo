@@ -164,7 +164,7 @@ const getAdminPropertyByIdError = () => {
 export const getAdminPropertyById = id => async dispatch => {
   try {
     dispatch(getAdminPropertyByIdStarted());
-    const res = await axios.get(`/api/property${id}`);
+    const res = await axios.get(`/api/property/${id}`);
     dispatch({
       type: GET_ADMIN_PROPERTY_BY_ID,
       payload: res.data?.data,

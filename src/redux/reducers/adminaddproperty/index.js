@@ -135,9 +135,34 @@ const reducer = (state = initialState, action) => {
         },
       };
     case GET_ADMIN_PROPERTY_BY_ID:
-      console.log(action.payload);
+      let propVal =
+        action.payload && action.payload.length && action.payload[0];
+
+      const newPropertyValue = { ...state.propertyValue };
+      const createdPropertyValue = {};
+
+      for (const key in propVal) {
+        if (newPropertyValue.hasOwnProperty(key)) {
+          createdPropertyValue[key] = propVal[key];
+        }
+      }
+
+      createdPropertyValue.building = propVal.address.building
+        ? propVal.address.building
+        : '';
+
+      createdPropertyValue.placeAddress = propVal.address.placeAddress
+        ? propVal.address.placeAddress
+        : '';
+      createdPropertyValue.city = propVal.address.city
+        ? propVal.address.city
+        : '';
       return {
         ...state,
+        propertyValue: {
+          ...state.propertyValue,
+          ...createdPropertyValue,
+        },
       };
     case GET_ADMIN_PROPERTY_BY_ID_STARTED:
       return {

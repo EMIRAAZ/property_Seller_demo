@@ -13,15 +13,15 @@ const AdminSelect = ({
 }) => {
   const [selectName, setSelectName] = useState(name);
   const [dropdownClass, setdropdownClass] = useState('hide');
-
-  useEffect(() => {
+  const renderValue = () => {
     if (value) {
       const currentOption = options.filter(option => option.value === value);
       if (currentOption.length) {
-        setSelectName(currentOption[0].name);
+        return currentOption[0].name;
       }
     }
-  }, []);
+    return '';
+  };
 
   const onMouseEnter = () => setdropdownClass('show');
   const onMouseLeave = () => setdropdownClass('hide');
@@ -57,7 +57,7 @@ const AdminSelect = ({
         {required ? <span>*</span> : <></>}
       </label>
       <div className="select-box">
-        <p className="drop-btn">{selectName}</p>
+        <p className="drop-btn">{renderValue()}</p>
         <ExpandIcon
           className="admin-select-icon"
           width="12"
