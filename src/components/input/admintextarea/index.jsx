@@ -11,7 +11,6 @@ const AdminTextarea = ({
   divClass,
   label,
   required = false,
-  name,
 }) => {
   return (
     <div className={`admin-textarea-div ${divClass} `}>

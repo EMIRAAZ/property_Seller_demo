@@ -7,6 +7,9 @@ import {
   GET_AGENT_PROPERTY,
   GET_AGENT_PROPERTY_ERROR,
   GET_AGENT_PROPERTY_STARTED,
+  GET_AMENITY_PROPERTY,
+  GET_AMENITY_PROPERTY_ERROR,
+  GET_AMENITY_PROPERTY_STARTED,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -14,37 +17,39 @@ const reducer = (state = initialState, action) => {
     case ADMIN_PROPERTY_INPUT_CHANGE:
       return {
         ...state,
-        loading: true,
-        property: {
-          ...state.property,
+        propertyValue: {
+          ...state.propertyValue,
           [action.payload.key]: action.payload.value,
         },
       };
     case ADD_ADMIN_PROPERTY:
       return {
         ...state,
-        addAdmin: {
+        env: {
           ...state,
           error: false,
           loading: false,
+          success: true,
         },
       };
     case ADD_ADMIN_PROPERTY_STARTED:
       return {
         ...state,
-        addAdmin: {
+        env: {
           ...state,
           error: false,
           loading: true,
+          success: true,
         },
       };
     case ADD_ADMIN_PROPERTY_ERROR:
       return {
         ...state,
-        addAdmin: {
+        env: {
           ...state,
           error: true,
           loading: false,
+          success: false,
         },
       };
     case GET_AGENT_PROPERTY:
@@ -56,13 +61,39 @@ const reducer = (state = initialState, action) => {
       });
       return {
         ...state,
-        agent: agent,
+        propertyOptions: {
+          ...state.propertyOptions,
+          agent: agent,
+        },
       };
     case GET_AGENT_PROPERTY_STARTED:
       return {
         ...state,
       };
     case GET_AGENT_PROPERTY_ERROR:
+      return {
+        ...state,
+      };
+    case GET_AMENITY_PROPERTY:
+      const amenity = action.payload.rows.map(a => {
+        return {
+          name: a.username,
+          amenityLogo: a.amenityLogo,
+          value: a.id,
+        };
+      });
+      return {
+        ...state,
+        propertyOptions: {
+          ...state.propertyOptions,
+          amenities: amenity,
+        },
+      };
+    case GET_AMENITY_PROPERTY_STARTED:
+      return {
+        ...state,
+      };
+    case GET_AMENITY_PROPERTY_ERROR:
       return {
         ...state,
       };

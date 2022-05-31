@@ -22,6 +22,14 @@ const UploadImage = props => {
           src={props.link[props.linkIndex]}
         />
       );
+    else if (props.value && props.value[props.linkIndex])
+      return (
+        <img
+          className="upload-img-class"
+          alt="pic"
+          src={props.value[props.linkIndex]}
+        />
+      );
     else return <Camera customClass="upload-img-icon" />;
   };
 

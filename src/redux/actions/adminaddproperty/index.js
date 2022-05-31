@@ -7,6 +7,9 @@ import {
   GET_AGENT_PROPERTY,
   GET_AGENT_PROPERTY_ERROR,
   GET_AGENT_PROPERTY_STARTED,
+  GET_AMENITY_PROPERTY,
+  GET_AMENITY_PROPERTY_ERROR,
+  GET_AMENITY_PROPERTY_STARTED,
 } from '../../constants';
 
 export const changeAdminPropertyInput = payload => {
@@ -72,5 +75,34 @@ export const getAgentProperty = () => async dispatch => {
     });
   } catch (e) {
     dispatch(getAgentPropertyError());
+  }
+};
+
+const getAmenityPropertyStarted = () => {
+  return {
+    type: GET_AMENITY_PROPERTY_STARTED,
+  };
+};
+
+const getAmenityPropertyError = () => {
+  return {
+    type: GET_AMENITY_PROPERTY_ERROR,
+  };
+};
+
+export const getAmenityProperty = () => async dispatch => {
+  try {
+    dispatch(getAmenityPropertyStarted());
+    const res = await axios.get(`/api/amenity`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    dispatch({
+      type: GET_AMENITY_PROPERTY,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getAmenityPropertyError());
   }
 };

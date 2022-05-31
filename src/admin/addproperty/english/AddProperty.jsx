@@ -14,17 +14,14 @@ const AddProperty = props => {
       <div className="admin-add-property-container">
         <PropertyHeader />
         <AddForm
-          addAdminProperty={props.addAdminProperty}
-          property={props.addProperty}
-          images={props.images}
+          addProperty={props.addAdminProperty}
+          env={props.env}
           onChange={props.onInputChange}
-          sale={props.sale}
-          propertyType={props.propertyType}
-          agent={props.agent}
-          amenities={props.amenities}
+          images={props.images}
           imgLoading={props.imgLoading}
           imgError={props.imgError}
-          addAdmin={props.addAdmin}
+          propertyValue={props.propertyValue}
+          propertyOptions={props.propertyOptions}
         />
       </div>
     </div>
