@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Property from './Property';
-import { getAdminProperty } from '../../../redux/actions';
+import { getAdminProperty, deleteAdminProperty } from '../../../redux/actions';
 
 const mapStateToProps = state => {
   return {
@@ -11,6 +11,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getAdminProperty: params => dispatch(getAdminProperty(params)),
+    deleteAdminProperty: (id, cb) => dispatch(deleteAdminProperty(id, cb)),
   };
 };
 

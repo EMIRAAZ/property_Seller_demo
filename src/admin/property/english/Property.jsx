@@ -25,7 +25,10 @@ const Property = props => {
         onEdit={id => {
           navigateTo(id);
         }}
-        onClickDelete={() => {}}
+        onClickDelete={id => {
+          props.getAdminProperty();
+          props.deleteAdminProperty(id, props.getAdminProperty);
+        }}
         onChangePage={() => {}}
         count={4}
       />
