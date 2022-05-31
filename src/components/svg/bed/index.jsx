@@ -1,10 +1,15 @@
-const Bed = () => {
+const Bed = ({
+  customClass = '',
+  width = '17',
+  height = '14',
+  viewBox = '0 0 17 14',
+}) => {
   return (
-    <div>
+    <div className={`${customClass}`}>
       <svg
-        width="17"
-        height="14"
-        viewBox="0 0 17 14"
+        width={width}
+        height={height}
+        viewBox={viewBox}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >

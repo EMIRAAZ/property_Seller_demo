@@ -1,0 +1,88 @@
+.input-select {
+  width: 100%;
+  max-height: 43px;
+
+  .dropdown-content {
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    position: relative;
+    z-index: 999;
+    background-color: white;
+    p {
+      font-family: 'Open Sans';
+      font-weight: 400;
+      font-size: 12px;
+      padding: 10px;
+      cursor: pointer;
+      color: #1c3988;
+      margin: 1px;
+
+      &:hover {
+        background-color: #f3f3fa;
+      }
+    }
+  }
+
+  .select-box {
+    display: flex;
+    cursor: pointer;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    padding: 13px 15px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 12px;
+    justify-content: space-between;
+    color: #1c3988;
+    align-items: center;
+    background-color: #f3f3fa;
+    .left-b-input-icon {
+      margin-right: 20px;
+    }
+
+    .drop-btn {
+      border: none;
+      box-sizing: border-box;
+      border-radius: 4px;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      background-color: #f3f3fa;
+      font-size: 16px;
+
+      &::-webkit-input-placeholder {
+        /* Edge */
+        font-family: 'Open Sans';
+        font-weight: 400;
+        font-size: 14px;
+        color: #1c3988;
+      }
+
+      &::-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        font-family: 'Open Sans';
+        font-weight: 400;
+        font-size: 14px;
+        color: #1c3988;
+      }
+
+      &::placeholder {
+        font-family: 'Open Sans';
+        font-weight: 400;
+        font-size: 14px;
+        color: #1c3988;
+      }
+    }
+  }
+
+  .show {
+    display: block !important;
+  }
+
+  .hide {
+    display: none !important;
+  }
+}

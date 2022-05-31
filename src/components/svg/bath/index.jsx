@@ -1,10 +1,15 @@
-const Bath = () => {
+const Bath = ({
+  customClass,
+  width = '17',
+  height = '17',
+  viewBox = '0 0 17 17',
+}) => {
   return (
-    <div>
+    <div className={`${customClass}`}>
       <svg
-        width="17"
-        height="17"
-        viewBox="0 0 17 17"
+        width={width}
+        height={height}
+        viewBox={viewBox}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >

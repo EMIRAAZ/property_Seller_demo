@@ -1,0 +1,17 @@
+.spinner-btn {
+  border: none;
+  background-color: #1fa0e9;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 7px 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+
+  &:active {
+    box-shadow: 0 1px #666;
+    transform: translateX(1px);
+  }
+}

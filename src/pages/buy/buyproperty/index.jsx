@@ -1,18 +1,15 @@
 import './buyproperty.scss';
-import PropertyList from '../../../components/propertylist';
+import Property from '../../../components/property';
 
-const BuyProperty = () => {
+const BuyProperty = ({ property }) => {
+  const renderProperty = () =>
+    property.property.map(item => <Property key={item.id} {...item} />);
   return (
     <div className="buy-property">
       <div className="buy-property-content">
         <p className="heading">Properties for sale in UAE</p>
-        <p className="sub">3587 Properties found</p>
-        <div className="property-list-container">
-          <PropertyList />
-          <PropertyList />
-          <PropertyList />
-          <PropertyList />
-        </div>
+        <p className="sub">{property.count} Properties found</p>
+        <div className="property-list-container">{renderProperty()}</div>
       </div>
     </div>
   );

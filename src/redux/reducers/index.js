@@ -1,18 +1,22 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { combineReducers } from 'redux';
+import homeReducer from './home';
+import buyReducer from './buy';
+import rentReducer from './rent';
+import adminloginReducer from './adminlogin';
+import adminpropertyReducer from './adminproperty';
+import uploadReducer from './upload';
+import adminaddpropertyReducer from './adminaddproperty';
+import propertyReducer from './property';
 
-import thunk from 'redux-thunk';
+const rootReducer = combineReducers({
+  homeReducer,
+  buyReducer,
+  rentReducer,
+  adminloginReducer,
+  adminpropertyReducer,
+  uploadReducer,
+  adminaddpropertyReducer,
+  propertyReducer,
+});
 
-import rootReducer from '../reducers';
-
-export default function configureStore(preloadedState) {
-  const middlewares = [thunk];
-  const middlewareEnhancer = applyMiddleware(...middlewares);
-
-  const storeEnhancers = [middlewareEnhancer];
-
-  const composedEnhancer = compose(...storeEnhancers);
-
-  const store = createStore(rootReducer, preloadedState, composedEnhancer);
-
-  return store;
-}
+export default rootReducer;
