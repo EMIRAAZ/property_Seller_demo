@@ -15,6 +15,7 @@ import Partner from './pages/ourpartners';
 import Policy from './pages/privacypolicy';
 import Terms from './pages/terms';
 import Career from './pages/career';
+import Blog from './pages/dailyblog';
 import Property from './admin/property';
 import AddProperty from './admin/addproperty';
 import Login from './admin/login';
@@ -51,6 +52,7 @@ function Router() {
           <Route path="ourteam" element={<OurTeam />} />
           <Route path="ourpartner" element={<Partner />} />
           <Route path="about" element={<About />} />
+          <Route path="dailyblog" element={<Blog />} />
           <Route path="privacypolicy" element={<Policy />} />
           <Route path="terms" element={<Terms />} />
           <Route path="career" element={<Career />} />
