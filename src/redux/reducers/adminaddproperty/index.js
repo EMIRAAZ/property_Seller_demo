@@ -10,6 +10,12 @@ import {
   GET_AMENITY_PROPERTY,
   GET_AMENITY_PROPERTY_ERROR,
   GET_AMENITY_PROPERTY_STARTED,
+  EDIT_ADMIN_PROPERTY,
+  EDIT_ADMIN_PROPERTY_ERROR,
+  EDIT_ADMIN_PROPERTY_STARTED,
+  GET_ADMIN_PROPERTY_BY_ID,
+  GET_ADMIN_PROPERTY_BY_ID_ERROR,
+  GET_ADMIN_PROPERTY_BY_ID_STARTED,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -82,7 +88,6 @@ const reducer = (state = initialState, action) => {
           value: a.name,
         };
       });
-      console.log(amenity);
       return {
         ...state,
         propertyOptions: {
@@ -95,6 +100,50 @@ const reducer = (state = initialState, action) => {
         ...state,
       };
     case GET_AMENITY_PROPERTY_ERROR:
+      return {
+        ...state,
+      };
+    case EDIT_ADMIN_PROPERTY:
+      return {
+        ...state,
+        env: {
+          ...state,
+          error: false,
+          loading: false,
+          success: true,
+          editing: false,
+        },
+      };
+    case EDIT_ADMIN_PROPERTY_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state,
+          error: false,
+          loading: true,
+          success: true,
+        },
+      };
+    case EDIT_ADMIN_PROPERTY_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state,
+          error: true,
+          loading: false,
+          success: false,
+        },
+      };
+    case GET_ADMIN_PROPERTY_BY_ID:
+      console.log(action.payload);
+      return {
+        ...state,
+      };
+    case GET_ADMIN_PROPERTY_BY_ID_STARTED:
+      return {
+        ...state,
+      };
+    case GET_ADMIN_PROPERTY_BY_ID_ERROR:
       return {
         ...state,
       };

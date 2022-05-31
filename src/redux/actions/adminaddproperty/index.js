@@ -10,6 +10,12 @@ import {
   GET_AMENITY_PROPERTY,
   GET_AMENITY_PROPERTY_ERROR,
   GET_AMENITY_PROPERTY_STARTED,
+  EDIT_ADMIN_PROPERTY,
+  EDIT_ADMIN_PROPERTY_ERROR,
+  EDIT_ADMIN_PROPERTY_STARTED,
+  GET_ADMIN_PROPERTY_BY_ID,
+  GET_ADMIN_PROPERTY_BY_ID_ERROR,
+  GET_ADMIN_PROPERTY_BY_ID_STARTED,
 } from '../../constants';
 
 export const changeAdminPropertyInput = payload => {
@@ -106,3 +112,66 @@ export const getAmenityProperty = () => async dispatch => {
     dispatch(getAmenityPropertyError());
   }
 };
+
+// edit property
+
+const editAdminPropertyStarted = () => {
+  return {
+    type: EDIT_ADMIN_PROPERTY_STARTED,
+  };
+};
+
+const editAdminPropertyError = () => {
+  return {
+    type: EDIT_ADMIN_PROPERTY_ERROR,
+  };
+};
+
+export const editAdminProperty = (id, property, cb) => async dispatch => {
+  try {
+    dispatch(editAdminPropertyStarted());
+    const res = await axios.patch(`/api/property/${id}`, property, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    cb();
+    dispatch({
+      type: EDIT_ADMIN_PROPERTY,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(editAdminPropertyError());
+  }
+};
+
+// edit property
+
+// get property by Id
+
+const getAdminPropertyByIdStarted = () => {
+  return {
+    type: GET_ADMIN_PROPERTY_BY_ID_STARTED,
+  };
+};
+
+const getAdminPropertyByIdError = () => {
+  return {
+    type: GET_ADMIN_PROPERTY_BY_ID_ERROR,
+  };
+};
+
+export const getAdminPropertyById = id => async dispatch => {
+  try {
+    dispatch(getAdminPropertyByIdStarted());
+    const res = await axios.get(`/api/property${id}`);
+    dispatch({
+      type: GET_ADMIN_PROPERTY_BY_ID,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getAdminPropertyByIdError());
+  }
+};
+
+// get property by Id

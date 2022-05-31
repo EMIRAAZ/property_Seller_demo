@@ -5,6 +5,8 @@ import {
   addAdminProperty,
   getAgentProperty,
   getAmenityProperty,
+  editAdminProperty,
+  getAdminPropertyById,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -22,8 +24,11 @@ const mapDispatchToProps = dispatch => {
   return {
     onInputChange: payload => dispatch(changeAdminPropertyInput(payload)),
     addAdminProperty: (payload, cb) => dispatch(addAdminProperty(payload, cb)),
+    editAdminProperty: (id, payload, cb) =>
+      dispatch(editAdminProperty(id, payload, cb)),
     getAgentProperty: payload => dispatch(getAgentProperty(payload)),
     getAmenityProperty: payload => dispatch(getAmenityProperty(payload)),
+    getAdminPropertyById: id => dispatch(getAdminPropertyById(id)),
   };
 };
 
