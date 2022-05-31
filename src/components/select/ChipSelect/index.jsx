@@ -31,8 +31,8 @@ const ChipSelect = ({
 
   const renderOptions = () =>
     (options || []).map((option, i) => (
-      <p key={i} onClick={() => onClickOption(option)}>
-        {option}
+      <p key={i} onClick={() => onClickOption(option.name, option.value)}>
+        {option.name}
       </p>
     ));
 

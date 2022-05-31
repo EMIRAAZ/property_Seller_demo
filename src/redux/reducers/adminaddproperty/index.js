@@ -77,11 +77,12 @@ const reducer = (state = initialState, action) => {
     case GET_AMENITY_PROPERTY:
       const amenity = action.payload.rows.map(a => {
         return {
-          name: a.username,
+          name: a.name,
           amenityLogo: a.amenityLogo,
-          value: a.id,
+          value: a.name,
         };
       });
+      console.log(amenity);
       return {
         ...state,
         propertyOptions: {

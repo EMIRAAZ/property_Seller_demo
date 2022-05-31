@@ -7,6 +7,7 @@ import AddForm from '../addform';
 const AddProperty = props => {
   useEffect(() => {
     props.getAgentProperty();
+    props.getAmenityProperty();
   }, []);
   return (
     <div className="admin-add-property">
