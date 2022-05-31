@@ -1,10 +1,10 @@
 export const initialState = {
-  addAdmin: {
+  env: {
     error: false,
     loading: false,
+    success: false,
   },
-
-  property: {
+  propertyValue: {
     title: '',
     description: '',
     images: [],
@@ -31,35 +31,29 @@ export const initialState = {
     building: '',
     city: '',
     agentId: '',
-    noOfSave: 0,
-    noOfShare: 0,
-    noOfReport: 0,
   },
-  propertyType: [
-    { name: 'Apartment', value: 'Apartment' },
-    { name: 'Villa', value: 'Villa' },
-    { name: 'Townhouse', value: 'Townhouse' },
-    { name: 'Penthouse', value: 'Penthouse' },
-    { name: 'Compound', value: 'Compound' },
-    { name: 'Duplex', value: 'Duplex' },
-    { name: 'Full Floor', value: 'Full Floor' },
-    { name: 'Half Floor', value: 'Half Floor' },
-    { name: 'Whole Building', value: 'Whole Building' },
-    { name: 'Land', value: 'Land' },
-    { name: 'Bulk Sale Unit', value: 'Bulk Sale Unit' },
-    { name: 'Bungalow', value: 'Bungalow' },
-    { name: 'Hotel & Hotel Apartment', value: 'Hotel & Hotel Apartment' },
-  ],
-  sale: [
-    { name: 'Buy', value: 'buy' },
-    { name: 'Rent', value: 'rent' },
-    { name: 'Both', value: 'both' },
-  ],
-  agent: [],
-  amenities: [
-    'Unfurnished',
-    "Children's Play Area",
-    'Built in Wardrobes',
-    'Pets Allowed',
-  ],
+  propertyOptions: {
+    propertyType: [
+      { name: 'Apartment', value: 'Apartment' },
+      { name: 'Villa', value: 'Villa' },
+      { name: 'Townhouse', value: 'Townhouse' },
+      { name: 'Penthouse', value: 'Penthouse' },
+      { name: 'Compound', value: 'Compound' },
+      { name: 'Duplex', value: 'Duplex' },
+      { name: 'Full Floor', value: 'Full Floor' },
+      { name: 'Half Floor', value: 'Half Floor' },
+      { name: 'Whole Building', value: 'Whole Building' },
+      { name: 'Land', value: 'Land' },
+      { name: 'Bulk Sale Unit', value: 'Bulk Sale Unit' },
+      { name: 'Bungalow', value: 'Bungalow' },
+      { name: 'Hotel & Hotel Apartment', value: 'Hotel & Hotel Apartment' },
+    ],
+    sale: [
+      { name: 'Sell', value: 'sell' },
+      { name: 'Rent', value: 'rent' },
+      { name: 'Both', value: 'both' },
+    ],
+    agent: [],
+    amenities: [],
+  },
 };
