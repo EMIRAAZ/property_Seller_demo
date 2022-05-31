@@ -14,6 +14,7 @@ import Partner from './pages/ourpartners';
 import Policy from './pages/privacypolicy';
 import Terms from './pages/terms';
 import Career from './pages/career';
+import Blog from './pages/dailyblog';
 
 function Router() {
   return (
@@ -30,6 +31,7 @@ function Router() {
           <Route path="ourteam" element={<OurTeam />} />
           <Route path="ourpartner" element={<Partner/>} />
           <Route path="about" element={<About />} />
+          <Route path="dailyblog" element={<Blog />} />
           <Route path="privacypolicy" element={<Policy />} />
           <Route path="terms" element={<Terms />} />
           <Route path="career" element={<Career />} />
