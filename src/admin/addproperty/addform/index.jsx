@@ -8,6 +8,31 @@ import Button from '../../../components/button/SpinnerButton';
 import UploadImage from '../../../components/uploadimage';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Spinner from '../../../components/spinner';
+import { checkIfAllKeyHasValue } from '../../../utils';
+
+const keyArr = [
+  'title',
+  'description',
+  'placeAddress',
+  'city',
+  'propertySize',
+  'propertySizeUnit',
+  'propertyType',
+  'propertyAge',
+  'noOfBedroom',
+  'noOfBathroom',
+  'referenceNo',
+  'trakheesiPermit',
+  'ownership',
+  'brokerORN',
+  'agentBRN',
+  'call',
+  'email',
+  'whatsapp',
+  'for',
+  'city',
+  'agentId',
+];
 
 const AddForm = ({
   addProperty,
@@ -33,6 +58,14 @@ const AddForm = ({
   };
 
   const addAdminProperty = () => {
+    if (checkIfAllKeyHasValue(propertyValue, keyArr)) {
+      document.getElementById('on-add-warning').style.display = 'block';
+      setInterval(() => {
+        document.getElementById('on-add-warning').style.display = 'none';
+        return;
+      }, 3000);
+      return;
+    }
     if (editing) {
       editProperty(getID(), { ...propertyValue, images: images }, () =>
         navigate('/admin')
@@ -277,16 +310,16 @@ const AddForm = ({
             onChange={e => onChangeInput('luxury', e.target.checked)}
           />
         </div>
-        <div className="property-row-div">
-          <Button
-            customClass="add-property-btn"
-            onClick={addAdminProperty}
-            loading={env.loading}
-          >
-            ADD
-          </Button>
-          <Button customClass="add-property-btn">CLEAR</Button>
-        </div>
+        <Button
+          customClass="add-property-btn"
+          onClick={addAdminProperty}
+          loading={env.loading}
+        >
+          ADD
+        </Button>
+        <span id="on-add-warning" className="property-input pls-fill">
+          please fill all the required fields !!
+        </span>
       </div>
     </div>
   );
