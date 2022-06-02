@@ -99,6 +99,10 @@ const AddForm = ({
           onChange={v => onChangeInput('agentId', v)}
         />
         <span className="select-border"></span>
+        <span className="property-input amenities-instruction">
+          Select multiple amenities from the drop down list to add multiple
+          amenities to the property.
+        </span>
         <ChipSelect
           customClass="property-input"
           label="Amenities"
