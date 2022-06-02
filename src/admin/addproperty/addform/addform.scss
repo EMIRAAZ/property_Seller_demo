@@ -58,6 +58,12 @@
       flex-direction: column;
       width: 70%;
       gap: 10px;
+      .second-img-Class-admin {
+        height: 95px;
+      }
+    }
+    .first-img-Class-admin {
+      height: 200px;
     }
   }
 
@@ -109,6 +115,14 @@
           padding-left: 2px;
           position: relative;
           bottom: 3px;
+        }
+      }
+      .spinner-label {
+        display: flex;
+        align-items: center;
+
+        .img-add-error {
+          color: #ff0000;
         }
       }
 

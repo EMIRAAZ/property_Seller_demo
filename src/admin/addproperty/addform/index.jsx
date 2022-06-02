@@ -7,6 +7,7 @@ import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import UploadImage from '../../../components/uploadimage';
 import { useNavigate, useLocation } from 'react-router-dom';
+import Spinner from '../../../components/spinner';
 
 const AddForm = ({
   addProperty,
@@ -43,12 +44,12 @@ const AddForm = ({
     }
   };
 
-  const renderImageLoadingdiv = () => {
+  const renderImageLoadingSpinner = () => {
     if (imgLoading) {
-      return <div className="img-loading">loading</div>;
+      return <Spinner />;
     } else if (imgError) {
-      return <div className="img-loading">Error</div>;
-    } else return null;
+      return <span className="img-add-error">Errored ! please try again</span>;
+    }
   };
   return (
     <div className="add-property-form">
@@ -156,31 +157,32 @@ const AddForm = ({
         </div>
       </div>
       <div className="add-property-form-right">
-        <label className="property-image-label">
-          Property Images<span>*</span>
+        <label className="property-image-label spinner-label">
+          Property Images<span>*</span> {renderImageLoadingSpinner()}
         </label>
-        {renderImageLoadingdiv()}
+
         <div className="property-row-div-upload">
           <UploadImage
             linkIndex={0}
+            customClass="first-img-Class-admin"
             onChangeImage={() => {}}
             value={propertyValue.images}
           />
           <div className="property-row-div-upload-flex">
             <UploadImage
               linkIndex={1}
+              customClass="second-img-Class-admin"
               onChangeImage={() => {}}
               value={propertyValue.images}
             />
             <UploadImage
               linkIndex={2}
+              customClass="second-img-Class-admin"
               onChangeImage={() => {}}
               value={propertyValue.images}
             />
           </div>
         </div>
-        <label className="property-image-label">Property Video</label>
-        <div className="property-row-div-upload">{/* <UploadImage /> */}</div>
         <Select
           customClass="property-input"
           label="Sale"
