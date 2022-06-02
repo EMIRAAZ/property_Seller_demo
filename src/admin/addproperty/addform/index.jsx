@@ -7,6 +7,32 @@ import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import UploadImage from '../../../components/uploadimage';
 import { useNavigate, useLocation } from 'react-router-dom';
+import Spinner from '../../../components/spinner';
+import { checkIfAllKeyHasValue } from '../../../utils';
+
+const keyArr = [
+  'title',
+  'description',
+  'placeAddress',
+  'city',
+  'propertySize',
+  'propertySizeUnit',
+  'propertyType',
+  'propertyAge',
+  'noOfBedroom',
+  'noOfBathroom',
+  'referenceNo',
+  'trakheesiPermit',
+  'ownership',
+  'brokerORN',
+  'agentBRN',
+  'call',
+  'email',
+  'whatsapp',
+  'for',
+  'city',
+  'agentId',
+];
 
 const AddForm = ({
   addProperty,
@@ -32,6 +58,14 @@ const AddForm = ({
   };
 
   const addAdminProperty = () => {
+    if (checkIfAllKeyHasValue(propertyValue, keyArr)) {
+      document.getElementById('on-add-warning').style.display = 'block';
+      setInterval(() => {
+        document.getElementById('on-add-warning').style.display = 'none';
+        return;
+      }, 3000);
+      return;
+    }
     if (editing) {
       editProperty(getID(), { ...propertyValue, images: images }, () =>
         navigate('/admin')
@@ -43,12 +77,12 @@ const AddForm = ({
     }
   };
 
-  const renderImageLoadingdiv = () => {
+  const renderImageLoadingSpinner = () => {
     if (imgLoading) {
-      return <div className="img-loading">loading</div>;
+      return <Spinner />;
     } else if (imgError) {
-      return <div className="img-loading">Error</div>;
-    } else return null;
+      return <span className="img-add-error">Errored ! please try again</span>;
+    }
   };
   return (
     <div className="add-property-form">
@@ -98,6 +132,10 @@ const AddForm = ({
           onChange={v => onChangeInput('agentId', v)}
         />
         <span className="select-border"></span>
+        <span className="property-input amenities-instruction">
+          Select multiple amenities from the drop down list to add multiple
+          amenities to the property.
+        </span>
         <ChipSelect
           customClass="property-input"
           label="Amenities"
@@ -156,31 +194,32 @@ const AddForm = ({
         </div>
       </div>
       <div className="add-property-form-right">
-        <label className="property-image-label">
-          Property Images<span>*</span>
+        <label className="property-image-label spinner-label">
+          Property Images<span>*</span> {renderImageLoadingSpinner()}
         </label>
-        {renderImageLoadingdiv()}
+
         <div className="property-row-div-upload">
           <UploadImage
             linkIndex={0}
+            customClass="first-img-Class-admin"
             onChangeImage={() => {}}
             value={propertyValue.images}
           />
           <div className="property-row-div-upload-flex">
             <UploadImage
               linkIndex={1}
+              customClass="second-img-Class-admin"
               onChangeImage={() => {}}
               value={propertyValue.images}
             />
             <UploadImage
               linkIndex={2}
+              customClass="second-img-Class-admin"
               onChangeImage={() => {}}
               value={propertyValue.images}
             />
           </div>
         </div>
-        <label className="property-image-label">Property Video</label>
-        <div className="property-row-div-upload">{/* <UploadImage /> */}</div>
         <Select
           customClass="property-input"
           label="Sale"
@@ -271,16 +310,16 @@ const AddForm = ({
             onChange={e => onChangeInput('luxury', e.target.checked)}
           />
         </div>
-        <div className="property-row-div">
-          <Button
-            customClass="add-property-btn"
-            onClick={addAdminProperty}
-            loading={env.loading}
-          >
-            ADD
-          </Button>
-          <Button customClass="add-property-btn">CLEAR</Button>
-        </div>
+        <Button
+          customClass="add-property-btn"
+          onClick={addAdminProperty}
+          loading={env.loading}
+        >
+          ADD
+        </Button>
+        <span id="on-add-warning" className="property-input pls-fill">
+          please fill all the required fields !!
+        </span>
       </div>
     </div>
   );

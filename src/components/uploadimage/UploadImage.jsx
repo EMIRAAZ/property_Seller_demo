@@ -24,24 +24,19 @@ const UploadImage = props => {
       );
     else if (props.value && props.value[props.linkIndex])
       return (
-        <img
-          className="upload-img-class"
-          alt="pic"
-          src={props.value[props.linkIndex]}
-        />
+        <>
+          <img
+            className="upload-img-class"
+            alt="pic"
+            src={props.value[props.linkIndex]}
+          />
+        </>
       );
-    else return <Camera customClass="upload-img-icon" />;
+    else <></>;
   };
 
-  const getText = () => {
-    return (
-      <>
-        <strong>Click </strong> <span className="add">to add Image.</span>
-      </>
-    );
-  };
   return (
-    <div className="upload-container">
+    <div className={`upload-container ${props.customClass || ''}`}>
       <label htmlFor="icon-button-file">
         <input
           accept="image/*"
@@ -50,9 +45,9 @@ const UploadImage = props => {
           type="file"
           onChange={e => onChange(e)}
         />
+        <Camera customClass="upload-img-icon" />
         {getIcon()}
       </label>
-      <p>{getText()}</p>
     </div>
   );
 };
