@@ -29,6 +29,10 @@ const Property = props => {
     return add.length < 50 ? add : add.substring(0, 49) + '...';
   };
 
+  const renderUnit = unit => {
+    return unit.length < 10 ? unit : unit.substring(0, 7) + '...';
+  };
+
   return (
     <div className="property-list">
       <div className="property-list-item">
@@ -38,7 +42,7 @@ const Property = props => {
           {props.title}
         </div>
         <div className="description" onClick={navigateTo}>
-          {renderDescription(props.description)}
+          {renderDescription(props.description).toLowerCase()}
         </div>
         <div className="address">
           <LocationIcon
@@ -90,7 +94,7 @@ const Property = props => {
               viewBox="0 0 17 16"
             />
             <p>
-              {props.propertySize} {props.propertySizeUnit}
+              {props.propertySize} {renderUnit(props.propertySizeUnit)}
             </p>
           </div>
         </div>
