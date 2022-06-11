@@ -13,6 +13,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+
+    .left-carousel-arrow,
+    .right-carousel-arrow {
+      opacity: 0.5;
+      cursor: pointer;
+    }
   }
 
   .carousel-img-tag {

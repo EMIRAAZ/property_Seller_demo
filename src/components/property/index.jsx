@@ -5,6 +5,7 @@ import Whatsapp from '../svg/whatsapp';
 import Phone from '../svg/phone';
 import Bed from '../svg/bed';
 import Living from '../svg/living';
+import Verified from '../svg/verified';
 import Area from '../svg/area';
 import { useNavigate } from 'react-router-dom';
 import ImgPropCarousel from '../imgpropcarousel';
@@ -37,6 +38,9 @@ const Property = props => {
     <div className="property-list">
       <div className="property-list-item">
         <ImgPropCarousel imgArray={props.images} />
+        <div className="property-verified">
+          <Verified /> VERIFIED
+        </div>
         <div className="price-tag">AED {props.price}</div>
         <div className="main-heading" onClick={navigateTo}>
           {props.title}
