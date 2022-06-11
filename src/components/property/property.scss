@@ -79,7 +79,7 @@
       letter-spacing: 0em;
       text-align: left;
       margin: 20px 20px;
-      padding-bottom: 20px;
+      padding-bottom: 10px;
       .vl {
         border-left: 1px solid #d3dee8;
         height: 20px;
@@ -88,6 +88,29 @@
         display: flex;
         align-items: center;
         gap: 4px;
+      }
+    }
+
+    .service-property {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      font-family: 'Roboto';
+      font-style: Regular;
+      font-size: 10px;
+      padding: 10px 10px;
+
+      .service-btn-property {
+        border: 1px solid #dddddd;
+        height: 40px;
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        cursor: pointer;
       }
     }
   }
@@ -173,7 +196,7 @@
         letter-spacing: 0em;
         text-align: left;
         margin: 20px 20px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         .vl {
           border-left: 1px solid #d3dee8;
           height: 20px;

@@ -4,8 +4,11 @@ import BasicButton from '../../button/BasicButton';
 import Facebook from '../../svg/facebook';
 import Twitter from '../../svg/twitter';
 import Instagram from '../../svg/instagram';
+import { useNavigate } from 'react-router-dom';
 
 function Footer() {
+  const navigate = useNavigate();
+
   return (
     <div className="footer-english">
       <div className="mini-container">
@@ -48,12 +51,34 @@ function Footer() {
         </div>
       </div>
       <div className="third-container">
+        <p className="abt" onClick={() => navigate('/about')}>
+          About Us
+        </p>
+        <p className="abt-founder" onClick={() => navigate('/aboutfounder')}>
+          About Founder
+        </p>
+        <p className="ourtm" onClick={() => navigate('/ourteam')}>
+          Our Team
+        </p>
+        <p className="ourpart" onClick={() => navigate('/ourpartner')}>
+          Our Partners
+        </p>
+        <p className="carrer" onClick={() => navigate('/career')}>
+          Careers
+        </p>
+        <p className="terms" onClick={() => navigate('/terms')}>
+          Teams And Conditions
+        </p>
+        <p className="policy" onClick={() => navigate('/privacypolicy')}>
+          Privacy Policy
+        </p>
+        {/* <p className="blog" onClick={() => navigate('/privacypolicy')}>
+          Blog
+        </p>
+        <p className="news" onClick={() => navigate('/privacypolicy')}>
+          News
+        </p> */}
         <p className="copy-right">Copyright 2021 - UAEAssistant</p>
-        <p className="abt">About Us</p>
-        <p className="ourtm">Our Team</p>
-        <p className="ourpart">Our Partners</p>
-        <p className="blogs">Blogs</p>
-        <p className="news">News</p>
       </div>
     </div>
   );
