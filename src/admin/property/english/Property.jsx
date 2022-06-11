@@ -17,7 +17,7 @@ const Property = props => {
   }, []);
 
   return (
-    <div>
+    <div className="property-admin-table">
       <AdminHeader />
       <Table
         rows={props.adminProperty.property || []}
