@@ -21,8 +21,14 @@ const HomeProperty = ({ property, onChangePage, getProperty }) => {
     onChangePage(current, getProperty(`${property.params}&offset=${offset}`));
   };
 
+  const bgColor = () => {
+    if (property.property && property.property.length > 0) {
+      return '#eef7ff';
+    } else return '#ffffff';
+  };
+
   return (
-    <div className="home-property">
+    <div className="home-property" style={{ backgroundColor: bgColor() }}>
       <div className="home-property-content">
         {renderPropertyHeader()}
         <div className="property-list-container">{renderProperty()}</div>

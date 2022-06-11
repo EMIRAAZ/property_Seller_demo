@@ -9,10 +9,10 @@
     gap: 20px;
     padding: 40px 20px;
     margin: 0px auto;
-    margin-top: -250px;
+    margin-top: -90px;
     width: 90%;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 36px 0px,
-      rgba(0, 0, 0, 0.01) 0px 0px 0px 1px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.01) 0px 0px 0px 0px;
 
     .search {
       grid-column-start: 1;
@@ -59,7 +59,7 @@
   .home-form-card {
     .home-formcard {
       margin: 0px auto;
-      margin-top: -40px;
+      margin-top: -150px;
 
       .search {
         grid-column-start: 1;
