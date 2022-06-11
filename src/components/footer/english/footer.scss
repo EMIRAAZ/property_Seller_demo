@@ -113,37 +113,59 @@
     font-weight: 500;
     line-height: 23px;
     letter-spacing: -0.37692299485206604px;
-    text-align: left;
+    text-align: center;
     gap: 10px;
-    .copy-right {
-      grid-column-start: 2;
-      grid-column-end: 5;
-      grid-row-start: 2;
-    }
+
     .abt {
       grid-column-start: 1;
-      grid-column-end: 1;
-      grid-row-start: 1;
-    }
-    .ourtm {
-      grid-column-start: 2;
       grid-column-end: 2;
       grid-row-start: 1;
     }
-    .ourpart {
-      grid-column-start: 3;
+    .abt-founder {
+      grid-column-start: 2;
       grid-column-end: 3;
       grid-row-start: 1;
     }
-    .blogs {
-      grid-column-start: 4;
+    .ourtm {
+      grid-column-start: 3;
       grid-column-end: 4;
       grid-row-start: 1;
     }
-    .news {
-      grid-column-start: 5;
+    .ourpart {
+      grid-column-start: 4;
       grid-column-end: 5;
       grid-row-start: 1;
+    }
+    .career {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+    }
+    .terms {
+      grid-column-start: 2;
+      grid-column-end: 4;
+      grid-row-start: 2;
+    }
+    .policy {
+      grid-column-start: 4;
+      grid-column-end: 5;
+      grid-row-start: 2;
+    }
+    .blog {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 3;
+    }
+    .news {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      grid-row-start: 3;
+    }
+
+    .copy-right {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 4;
     }
   }
 }
