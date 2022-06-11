@@ -1,6 +1,8 @@
 import './property.scss';
 import LocationIcon from '../svg/location';
 import Bath from '../svg/bath';
+import Whatsapp from '../svg/whatsapp';
+import Phone from '../svg/phone';
 import Bed from '../svg/bed';
 import Living from '../svg/living';
 import Area from '../svg/area';
@@ -91,6 +93,17 @@ const Property = props => {
               {props.propertySize} {props.propertySizeUnit}
             </p>
           </div>
+        </div>
+        <div className="service-property">
+          <div className="service-btn-property whatsapp">
+            <Whatsapp />
+            whatsapp
+          </div>
+          <div className="service-btn-property phone">
+            <Phone />
+            Phone
+          </div>
+          <div className="service-btn-property email">Mail</div>
         </div>
       </div>
     </div>
