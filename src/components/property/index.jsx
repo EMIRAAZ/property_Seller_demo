@@ -5,6 +5,7 @@ import Bed from '../svg/bed';
 import Living from '../svg/living';
 import Area from '../svg/area';
 import { useNavigate } from 'react-router-dom';
+import ImgPropCarousel from '../imgpropcarousel';
 
 const Property = props => {
   let navigate = useNavigate();
@@ -27,20 +28,14 @@ const Property = props => {
   };
 
   return (
-    <div className="property-list" onClick={navigateTo}>
+    <div className="property-list">
       <div className="property-list-item">
-        <img
-          className="prop-list-img"
-          src={
-            props.images && props.images.length
-              ? props.images[0]
-              : '/assets/image/noimage.jpg'
-          }
-          alt="img"
-        />
+        <ImgPropCarousel imgArray={props.images} />
         <div className="price-tag">AED {props.price}</div>
-        <div className="main-heading">{props.title}</div>
-        <div className="description">
+        <div className="main-heading" onClick={navigateTo}>
+          {props.title}
+        </div>
+        <div className="description" onClick={navigateTo}>
           {renderDescription(props.description)}
         </div>
         <div className="address">
