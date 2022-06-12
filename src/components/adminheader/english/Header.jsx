@@ -5,11 +5,17 @@ import Close from '../../svg/close';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Header = () => {
+const Header = props => {
   const navigate = useNavigate();
   const [state, changeState] = useState('hide');
   const onSidebarWebToggle = () => {
     changeState(state === 'hide' ? 'show' : 'hide');
+  };
+
+  const onClickAddProperty = () => {
+    console.log('clicked');
+    props.clearAddProperty();
+    navigate('/admin/add-property');
   };
 
   return (
@@ -20,7 +26,7 @@ const Header = () => {
             <Close />
           </li>
           <li onClick={() => navigate('/admin')}>Property </li>
-          <li onClick={() => navigate('/admin/add-property')}>Add Property </li>
+          <li onClick={onClickAddProperty}>Add Property </li>
         </ul>
       </div>
       <div className={`mobile-sidebar ${state}`}>
@@ -45,10 +51,7 @@ const Header = () => {
             <li className="simple-list" onClick={() => navigate('/admin')}>
               Property
             </li>
-            <li
-              className="simple-list"
-              onClick={() => navigate('/admin/add-property')}
-            >
+            <li className="simple-list" onClick={onClickAddProperty}>
               Add Property
             </li>
           </ul>

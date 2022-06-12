@@ -9,7 +9,6 @@ const AddProperty = props => {
   let location = useLocation();
 
   const getID = () => location.pathname.split('/').pop();
-  console.log(getID());
 
   useEffect(() => {
     props.getAgentProperty();
