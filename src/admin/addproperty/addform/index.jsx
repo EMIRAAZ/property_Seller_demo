@@ -309,6 +309,11 @@ const AddForm = ({
             value={propertyValue.luxury}
             onChange={e => onChangeInput('luxury', e.target.checked)}
           />
+          <Checkbox
+            label="Verified"
+            value={propertyValue.verified}
+            onChange={e => onChangeInput('verified', e.target.checked)}
+          />
         </div>
         <Button
           customClass="add-property-btn"
