@@ -1,0 +1,60 @@
+.add-agency-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  justify-content: center;
+  margin-top: 30px;
+  .agency-input {
+    width: 100%;
+  }
+  .agency-logo-img {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+  }
+
+  .add-agency-btn {
+    width: 50%;
+    margin-top: 26px;
+    height: 47px;
+    font-family: 'Poppins';
+    background-color: #1c3988;
+    font-weight: 600;
+  }
+  .pls-fill {
+    margin-top: 10px;
+    font-family: 'Poppins';
+    font-size: 13px;
+    color: #ff0000;
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .add-agency-form {
+    display: flex;
+    margin: 0px auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+
+    .agency-input {
+      width: 60%;
+    }
+
+    .agency-logo-img {
+      width: 60%;
+      height: 200px;
+      margin-top: 10px;
+    }
+
+    .add-agency-btn {
+      width: 20%;
+      margin: 26px;
+      height: 47px;
+      font-family: 'Poppins';
+      background-color: #1c3988;
+      font-weight: 600;
+    }
+  }
+}

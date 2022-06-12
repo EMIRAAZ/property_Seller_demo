@@ -16,6 +16,7 @@ import {
   GET_ADMIN_PROPERTY_BY_ID,
   GET_ADMIN_PROPERTY_BY_ID_ERROR,
   GET_ADMIN_PROPERTY_BY_ID_STARTED,
+  CLEAR_ADD_PROPERTY,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -171,6 +172,10 @@ const reducer = (state = initialState, action) => {
     case GET_ADMIN_PROPERTY_BY_ID_ERROR:
       return {
         ...state,
+      };
+    case CLEAR_ADD_PROPERTY:
+      return {
+        ...initialState,
       };
     default:
       return state;

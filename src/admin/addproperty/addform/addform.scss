@@ -68,20 +68,27 @@
     gap: 10px;
   }
   .property-row-div-upload {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
+    height: max-content;
     gap: 10px;
-    .property-row-div-upload-flex {
-      display: flex;
-      flex-direction: column;
-      width: 70%;
-      gap: 10px;
-      .second-img-Class-admin {
-        height: 95px;
-      }
+
+    .second-img-Class-admin {
+      height: 200px;
     }
+
     .first-img-Class-admin {
       height: 200px;
+    }
+
+    .add-new-img-upload {
+      height: 200px;
+      border: 1px dotted gray;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -164,15 +171,11 @@
       gap: 10px;
     }
     .property-row-div-upload {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       width: 70%;
+      height: max-content;
       gap: 10px;
-      .property-row-div-upload-flex {
-        display: flex;
-        flex-direction: column;
-        width: 70%;
-        gap: 10px;
-      }
     }
   }
   .img-loading {
