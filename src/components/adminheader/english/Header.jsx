@@ -13,9 +13,13 @@ const Header = props => {
   };
 
   const onClickAddProperty = () => {
-    console.log('clicked');
     props.clearAddProperty();
     navigate('/admin/add-property');
+  };
+
+  const onClickAddAgency = () => {
+    props.clearAddAgency();
+    navigate('/admin/add-agency');
   };
 
   return (
@@ -27,6 +31,8 @@ const Header = props => {
           </li>
           <li onClick={() => navigate('/admin')}>Property </li>
           <li onClick={onClickAddProperty}>Add Property </li>
+          <li onClick={() => navigate('/admin')}>Agency </li>
+          <li onClick={onClickAddAgency}>Add Agency </li>
         </ul>
       </div>
       <div className={`mobile-sidebar ${state}`}>
@@ -35,7 +41,9 @@ const Header = props => {
             <Close />
           </li>
           <li onClick={() => navigate('/admin')}>Property</li>
-          <li onClick={() => navigate('/admin/add-property')}>Add Property</li>
+          <li onClick={onClickAddProperty}>Add Property</li>
+          <li onClick={() => navigate('/admin')}>Agency</li>
+          <li onClick={onClickAddAgency}>Add Agency</li>
         </ul>
       </div>
       <ul className="header-list">
@@ -53,6 +61,12 @@ const Header = props => {
             </li>
             <li className="simple-list" onClick={onClickAddProperty}>
               Add Property
+            </li>
+            <li className="simple-list" onClick={() => navigate('/admin')}>
+              Agency
+            </li>
+            <li className="simple-list" onClick={onClickAddAgency}>
+              Add Agency
             </li>
           </ul>
         </li>
