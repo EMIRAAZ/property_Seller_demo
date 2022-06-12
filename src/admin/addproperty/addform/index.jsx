@@ -7,8 +7,10 @@ import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import UploadImage from '../../../components/uploadimage';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
+import Plus from '../../../components/svg/plus';
 
 const keyArr = [
   'title',
@@ -49,12 +51,18 @@ const AddForm = ({
   let navigate = useNavigate();
   let location = useLocation();
 
+  const [uploadCount, setUploadCount] = useState([0]);
+
   const getID = () => location.pathname.split('/').pop();
 
   const { agent, propertyType, amenities, sale } = propertyOptions;
 
   const onChangeInput = (key, value) => {
     onChange({ key, value });
+  };
+
+  const onSetUploadCount = () => {
+    setUploadCount([...uploadCount, 0]);
   };
 
   const addAdminProperty = () => {
@@ -197,28 +205,20 @@ const AddForm = ({
         <label className="property-image-label spinner-label">
           Property Images<span>*</span> {renderImageLoadingSpinner()}
         </label>
-
         <div className="property-row-div-upload">
-          <UploadImage
-            linkIndex={0}
-            customClass="first-img-Class-admin"
-            onChangeImage={() => {}}
-            value={propertyValue.images}
-          />
-          <div className="property-row-div-upload-flex">
+          {uploadCount.map((_, i) => (
             <UploadImage
-              linkIndex={1}
-              customClass="second-img-Class-admin"
+              linkIndex={i}
+              customClass="first-img-Class-admin"
               onChangeImage={() => {}}
               value={propertyValue.images}
             />
-            <UploadImage
-              linkIndex={2}
-              customClass="second-img-Class-admin"
-              onChangeImage={() => {}}
-              value={propertyValue.images}
-            />
-          </div>
+          ))}
+          {uploadCount.length < 15 ? (
+            <div className="add-new-img-upload" onClick={onSetUploadCount}>
+              <Plus />
+            </div>
+          ) : null}
         </div>
         <Select
           customClass="property-input"
