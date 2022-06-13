@@ -105,6 +105,14 @@ const AddForm = ({
           <div className="agent-in-agency">
             <h2>Agent</h2>
             {renderAgent()}
+            <Button
+              customClass="add-agency-btn"
+              onClick={() =>
+                navigate('/admin/add-agent', { state: { id: getID() } })
+              }
+            >
+              ADD AGENT
+            </Button>
           </div>
         ) : (
           <></>

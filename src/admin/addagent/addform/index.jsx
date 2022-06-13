@@ -34,7 +34,6 @@ const AddForm = ({
     onChange({ key, value });
   };
 
-  console.log(agentValue);
   const addAdminAgent = () => {
     if (checkIfAllKeyHasValue(agentValue, keyArr)) {
       document.getElementById('on-add-warning').style.opacity = '100';
@@ -54,8 +53,9 @@ const AddForm = ({
         () => navigate(`/admin/add-agency/${agentValue.agencyId}`)
       );
     } else {
-      addAgent({ ...agentValue, agentImage: images[0] }, () =>
-        navigate(`/adminadd-agency/${agentValue.agencyId}`)
+      addAgent(
+        { ...agentValue, agentImage: images[0], agencyId: location.state.id },
+        () => navigate(`/admin/add-agency/${location.state.id}`)
       );
     }
   };
@@ -116,7 +116,7 @@ const AddForm = ({
           divClass="agent-input"
           label="Password"
           required
-          value={''}
+          value={editing ? '' : agentValue.password}
           onChange={e => onChangeInput('password', e.target.value)}
         />
         <Input
