@@ -12,7 +12,7 @@ const AddAgent = props => {
 
   useEffect(() => {
     if (getID() !== 'add-agent') {
-      props.getAdminAgentById(getID);
+      props.getAdminAgentById(getID());
     }
   }, []);
   return (
