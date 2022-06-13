@@ -31,6 +31,7 @@ const AddProperty = props => {
           imgError={props.imgError}
           propertyValue={props.propertyValue}
           propertyOptions={props.propertyOptions}
+          clear={props.clearUpload}
         />
       </div>
     </div>

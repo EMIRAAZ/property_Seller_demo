@@ -48,14 +48,16 @@ const AddForm = ({
   propertyValue,
   propertyOptions,
   editing,
+  clear,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
 
   const [uploadCount, setUploadCount] = useState([0]);
 
+  console.log(propertyValue.images);
+
   useEffect(() => {
-    console.log(propertyValue.images);
     if (propertyValue.images.length > 0 && editing) {
       setUploadCount([...propertyValue.images]);
     }
@@ -86,12 +88,16 @@ const AddForm = ({
       editProperty(
         getID(),
         { ...propertyValue, images: [...propertyValue.images, ...images] },
-        () => navigate('/admin')
+        () => {
+          clear();
+          navigate('/admin');
+        }
       );
     } else {
-      addProperty({ ...propertyValue, images: [...images] }, () =>
-        navigate('/admin')
-      );
+      addProperty({ ...propertyValue, images: [...images] }, () => {
+        clear();
+        navigate('/admin');
+      });
     }
   };
 
@@ -229,6 +235,7 @@ const AddForm = ({
               customClass="first-img-Class-admin"
               onChangeImage={() => {}}
               value={propertyValue.images}
+              editing={editing}
             />
           ))}
           {uploadCount.length < 15 ? (

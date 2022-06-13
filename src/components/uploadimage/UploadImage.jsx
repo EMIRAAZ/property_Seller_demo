@@ -14,7 +14,18 @@ const UploadImage = props => {
   };
 
   const getIcon = () => {
-    if (props.link[props.linkIndex])
+    if (props.editing) {
+      const imgArr = [...props.value, ...props.link];
+      return (
+        <>
+          <img
+            className="upload-img-class"
+            alt="pic"
+            src={imgArr[props.linkIndex]}
+          />
+        </>
+      );
+    } else if (!props.editing) {
       return (
         <img
           className="upload-img-class"
@@ -22,17 +33,7 @@ const UploadImage = props => {
           src={props.link[props.linkIndex]}
         />
       );
-    else if (props.value && props.value[props.linkIndex])
-      return (
-        <>
-          <img
-            className="upload-img-class"
-            alt="pic"
-            src={props.value[props.linkIndex]}
-          />
-        </>
-      );
-    else <></>;
+    } else <></>;
   };
 
   return (
