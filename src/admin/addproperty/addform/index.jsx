@@ -85,7 +85,7 @@ const AddForm = ({
     if (editing) {
       editProperty(
         getID(),
-        { ...propertyValue, images: [...propertyValue.images, images] },
+        { ...propertyValue, images: [...propertyValue.images, ...images] },
         () => navigate('/admin')
       );
     } else {
