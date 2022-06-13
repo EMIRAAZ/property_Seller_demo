@@ -8,3 +8,4 @@ export * from './adminaddproperty';
 export * from './property';
 export * from './adminaddagency';
 export * from './adminagency';
+export * from './adminaddagent';
