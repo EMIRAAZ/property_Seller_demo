@@ -8,11 +8,13 @@ import AddForm from '../addform';
 const AddAgent = props => {
   let location = useLocation();
 
+  console.log(props);
+
   const getID = () => location.pathname.split('/').pop();
 
   useEffect(() => {
     if (getID() !== 'add-agent') {
-      // props.getAdminAgentById(getID());
+      props.getAdminAgentById(getID);
     }
   }, []);
   return (

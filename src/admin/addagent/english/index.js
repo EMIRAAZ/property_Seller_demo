@@ -4,15 +4,14 @@ import {
   changeAdminAgencyInput,
   addAdminAgency,
   editAdminAgency,
-  getAdminAgencyById,
+  getAdminAgentById,
   getAdminAgentByAgency,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
   return {
-    env: state.adminaddagencyReducer.env,
-    agencyValue: state.adminaddagencyReducer.agencyValue,
-    agentValue: state.adminaddagencyReducer.agentValue,
+    env: state.adminaddagentReducer.env,
+    agentValue: state.adminaddagentReducer.agentValue,
     images: state.uploadReducer.link,
     imgLoading: state.uploadReducer.loading,
     imgError: state.uploadReducer.error,
@@ -25,7 +24,7 @@ const mapDispatchToProps = dispatch => {
     addAdminAgency: (payload, cb) => dispatch(addAdminAgency(payload, cb)),
     editAdminAgency: (id, payload, cb) =>
       dispatch(editAdminAgency(id, payload, cb)),
-    getAdminAgencyById: id => dispatch(getAdminAgencyById(id)),
+    getAdminAgentById: id => dispatch(getAdminAgentById(id)),
     getAdminAgentByAgency: agencyId =>
       dispatch(getAdminAgentByAgency(agencyId)),
   };

@@ -6,7 +6,14 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
 
-const keyArr = ['agentName'];
+const keyArr = [
+  'agentName',
+  'position',
+  'yearsOfExperience',
+  'username',
+  'password',
+  'languages',
+];
 
 const AddForm = ({
   addAgency,
@@ -66,7 +73,7 @@ const AddForm = ({
       <div className="add-left-agent-form">
         <Input
           divClass="agent-input"
-          label="Agency Name"
+          label="Agent Name"
           required
           value={agentValue.agentName}
           onChange={e => onChangeInput('agentName', e.target.value)}
@@ -86,7 +93,7 @@ const AddForm = ({
           divClass="agent-input"
           label="Position"
           required
-          value={agentValue.agentName}
+          value={agentValue.position}
           onChange={e => onChangeInput('position', e.target.value)}
         />
       </div>
@@ -95,29 +102,29 @@ const AddForm = ({
           divClass="agent-input"
           label="Years Of Experience"
           required
-          value={agentValue.agentName}
+          value={agentValue.yearsOfExperience}
           onChange={e => onChangeInput('yearsOfExperience', e.target.value)}
         />
         <Input
           divClass="agent-input"
           label="Username"
           required
-          value={agentValue.agentName}
+          value={agentValue.username}
           onChange={e => onChangeInput('username', e.target.value)}
         />
         <Input
           divClass="agent-input"
           label="Password"
           required
-          value={agentValue.agentName}
+          value={''}
           onChange={e => onChangeInput('password', e.target.value)}
         />
         <Input
           divClass="agent-input"
-          label="Password"
+          label="Languages"
           required
-          value={agentValue.agentName}
-          onChange={e => onChangeInput('password', e.target.value)}
+          value={agentValue.languages}
+          onChange={e => onChangeInput('languages', e.target.value)}
         />
         <span id="on-add-warning" className="pls-fill">
           please fill all the required fields !!
