@@ -22,6 +22,7 @@ export const initialState = {
     ownership: '',
     brokerORN: '',
     agentBRN: '',
+    verified: false,
     call: '',
     email: '',
     whatsapp: '',

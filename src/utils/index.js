@@ -29,8 +29,14 @@ export const checkAuth = role => {
   return decoded.role && role === decoded.role;
 };
 
-export const getDeviceWidth = () =>
-  Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-
 export const titleCase = str =>
   str.toLowerCase().replace(/\b(\w)/g, s => s.toUpperCase());
+
+export const checkIfAllKeyHasValue = (obj, keyArr) => {
+  for (var i = 0; i < keyArr.length; i++) {
+    if (!obj[keyArr[i]]) {
+      return true;
+    }
+  }
+  return false;
+};

@@ -17,7 +17,7 @@ const Property = props => {
   }, []);
 
   return (
-    <div>
+    <div className="property-admin-table">
       <AdminHeader />
       <Table
         rows={props.adminProperty.property || []}
@@ -25,7 +25,10 @@ const Property = props => {
         onEdit={id => {
           navigateTo(id);
         }}
-        onClickDelete={() => {}}
+        onClickDelete={id => {
+          props.getAdminProperty();
+          props.deleteAdminProperty(id, props.getAdminProperty);
+        }}
         onChangePage={() => {}}
         count={4}
       />

@@ -53,7 +53,7 @@ const HomeFormCard = props => {
       <FormCard customClass="home-formcard">
         <InputSelect
           customClass="search"
-          name="Search a location"
+          name="Search City, Building, Community .."
           onChange={value => onInputChange('location', value)}
           value={getSearchValue()}
           leftIcon={LocationIcon}

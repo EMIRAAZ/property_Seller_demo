@@ -1,10 +1,14 @@
 import './property.scss';
 import LocationIcon from '../svg/location';
 import Bath from '../svg/bath';
+import Whatsapp from '../svg/whatsapp';
+import Phone from '../svg/phone';
 import Bed from '../svg/bed';
 import Living from '../svg/living';
+import Verified from '../svg/verified';
 import Area from '../svg/area';
 import { useNavigate } from 'react-router-dom';
+import ImgPropCarousel from '../imgpropcarousel';
 
 const Property = props => {
   let navigate = useNavigate();
@@ -26,22 +30,23 @@ const Property = props => {
     return add.length < 50 ? add : add.substring(0, 49) + '...';
   };
 
+  const renderUnit = unit => {
+    return unit.length < 10 ? unit : unit.substring(0, 7) + '...';
+  };
+
   return (
-    <div className="property-list" onClick={navigateTo}>
+    <div className="property-list">
       <div className="property-list-item">
-        <img
-          className="prop-list-img"
-          src={
-            props.images && props.images.length
-              ? props.images[0]
-              : '/assets/image/noimage.jpg'
-          }
-          alt="img"
-        />
+        <ImgPropCarousel imgArray={props.images} />
+        <div className="property-verified">
+          <Verified /> VERIFIED
+        </div>
         <div className="price-tag">AED {props.price}</div>
-        <div className="main-heading">{props.title}</div>
-        <div className="description">
-          {renderDescription(props.description)}
+        <div className="main-heading" onClick={navigateTo}>
+          {props.title}
+        </div>
+        <div className="description" onClick={navigateTo}>
+          {renderDescription(props.description).toLowerCase()}
         </div>
         <div className="address">
           <LocationIcon
@@ -93,9 +98,20 @@ const Property = props => {
               viewBox="0 0 17 16"
             />
             <p>
-              {props.propertySize} {props.propertySizeUnit}
+              {props.propertySize} {renderUnit(props.propertySizeUnit)}
             </p>
           </div>
+        </div>
+        <div className="service-property">
+          <div className="service-btn-property whatsapp">
+            <Whatsapp />
+            whatsapp
+          </div>
+          <div className="service-btn-property phone">
+            <Phone />
+            Phone
+          </div>
+          <div className="service-btn-property email">Mail</div>
         </div>
       </div>
     </div>

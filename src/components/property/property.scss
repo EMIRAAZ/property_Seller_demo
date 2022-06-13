@@ -1,9 +1,40 @@
 .property-list {
   margin: 10px;
-  cursor: pointer;
   .property-list-item {
     background-color: #ffffff;
     border-radius: 4px;
+
+    .property-verified {
+      position: relative;
+      display: flex;
+      background-color: #39a76d;
+      z-index: 10;
+      width: 75px;
+      padding: 2px 3px 1px 3px;
+      align-items: center;
+      bottom: 190px;
+      color: #ffffff;
+      font-family: 'Roboto';
+      font-weight: 600;
+      font-size: 12px;
+      left: -5px;
+      justify-content: space-between;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+
+      &:before {
+        border-width: 0 0.4rem 0.4rem 0;
+        top: 100%;
+        border-style: solid;
+        content: '';
+        display: block;
+        height: 0;
+        left: 0;
+        border-color: transparent #104227 transparent transparent;
+        position: absolute;
+        width: 0;
+      }
+    }
 
     .prop-list-img {
       width: 100%;
@@ -34,10 +65,12 @@
       text-align: left;
       margin-top: 29px;
       margin-left: 20px;
+      cursor: pointer;
     }
 
     .description {
       font-family: 'Roboto';
+      cursor: pointer;
       font-size: 10.53px;
       font-weight: 400;
       line-height: 18px;
@@ -77,8 +110,7 @@
       line-height: 28px;
       letter-spacing: 0em;
       text-align: left;
-      margin: 20px 20px;
-      padding-bottom: 20px;
+      margin: 10px 20px;
       .vl {
         border-left: 1px solid #d3dee8;
         height: 20px;
@@ -87,6 +119,30 @@
         display: flex;
         align-items: center;
         gap: 4px;
+      }
+    }
+
+    .service-property {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      font-family: 'Roboto';
+      font-style: Regular;
+      font-size: 10px;
+      padding: 0px 10px;
+      padding-bottom: 10px;
+
+      .service-btn-property {
+        border: 1px solid #dddddd;
+        height: 40px;
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        cursor: pointer;
       }
     }
   }
@@ -98,6 +154,10 @@
     .property-list-item {
       background-color: #ffffff;
       border-radius: 4px;
+
+      .property-verified {
+        bottom: 240px;
+      }
 
       .prop-list-img {
         width: 100%;
@@ -172,7 +232,7 @@
         letter-spacing: 0em;
         text-align: left;
         margin: 20px 20px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         .vl {
           border-left: 1px solid #d3dee8;
           height: 20px;

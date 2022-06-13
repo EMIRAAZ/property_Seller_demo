@@ -1,5 +1,6 @@
 .home-property {
-  background-color: #eef7ff;
+  margin: 0px auto;
+  margin-top: 40px;
   .home-property-content {
     margin: 0px auto;
     padding: 40px 0px 10px 0px;
@@ -31,7 +32,6 @@
 @media only screen and (min-width: 600px) {
   .home-property {
     .home-property-content {
-      background-color: #eef7ff;
       .heading {
         font-size: 48px;
         line-height: 59px;
