@@ -34,6 +34,7 @@ const keyArr = [
   'for',
   'city',
   'agentId',
+  'mainTitle',
 ];
 
 const AddForm = ({
@@ -54,10 +55,11 @@ const AddForm = ({
   const [uploadCount, setUploadCount] = useState([0]);
 
   useEffect(() => {
+    console.log(propertyValue.images);
     if (propertyValue.images.length > 0 && editing) {
       setUploadCount([...propertyValue.images]);
     }
-  }, []);
+  }, [propertyValue.images]);
 
   const getID = () => location.pathname.split('/').pop();
 
@@ -81,11 +83,13 @@ const AddForm = ({
       return;
     }
     if (editing) {
-      editProperty(getID(), { ...propertyValue, images: images }, () =>
-        navigate('/admin')
+      editProperty(
+        getID(),
+        { ...propertyValue, images: [...propertyValue.images, images] },
+        () => navigate('/admin')
       );
     } else {
-      addProperty({ ...propertyValue, images: images }, () =>
+      addProperty({ ...propertyValue, images: [...images] }, () =>
         navigate('/admin')
       );
     }
@@ -107,6 +111,13 @@ const AddForm = ({
           required
           value={propertyValue.title}
           onChange={e => onChangeInput('title', e.target.value)}
+        />
+        <Input
+          divClass="property-input"
+          label="Main Title"
+          required
+          value={propertyValue.mainTitle}
+          onChange={e => onChangeInput('mainTitle', e.target.value)}
         />
         <Textarea
           divClass="property-input"

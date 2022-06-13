@@ -1,60 +1,89 @@
 .add-agency-form {
   display: flex;
   flex-direction: column;
-  margin: 0px auto;
   justify-content: center;
   margin-top: 30px;
-  .agency-input {
-    width: 100%;
-  }
-  .agency-logo-img {
-    width: 100%;
-    height: 200px;
-    margin-top: 10px;
-  }
 
-  .add-agency-btn {
-    width: 50%;
-    margin-top: 26px;
-    height: 47px;
-    font-family: 'Poppins';
-    background-color: #1c3988;
-    font-weight: 600;
+  .add-left-agency-form {
+    .property-image-label {
+      font-family: 'Poppins';
+      margin: 5px 0;
+      color: #464646;
+      font-weight: 500;
+      span {
+        color: #e60000fd;
+        font-size: 13px;
+        padding-left: 2px;
+        position: relative;
+        bottom: 3px;
+      }
+    }
+    .spinner-label {
+      display: flex;
+      align-items: center;
+
+      .img-add-error {
+        color: #ff0000;
+      }
+    }
+
+    .agency-input {
+      width: 100%;
+    }
+    .agency-logo-img {
+      width: 100%;
+      height: 200px;
+      margin-top: 10px;
+    }
+
+    .add-agency-btn {
+      width: 50%;
+      margin-top: 26px;
+      height: 47px;
+      font-family: 'Poppins';
+      background-color: #1c3988;
+      font-weight: 600;
+      margin-left: auto;
+    }
+    .pls-fill {
+      margin: 10px;
+      font-family: 'Poppins';
+      font-size: 13px;
+      color: #ff0000;
+      opacity: 0;
+    }
   }
-  .pls-fill {
-    margin-top: 10px;
-    font-family: 'Poppins';
-    font-size: 13px;
-    color: #ff0000;
-    display: none;
+  .add-right-agency-form {
+    display: flex;
+    flex-direction: column;
   }
 }
 
 @media only screen and (min-width: 600px) {
   .add-agency-form {
     display: flex;
-    margin: 0px auto;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
     margin-top: 30px;
 
-    .agency-input {
-      width: 60%;
-    }
+    .add-left-agency-form {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
 
-    .agency-logo-img {
-      width: 60%;
-      height: 200px;
-      margin-top: 10px;
+      .add-agency-btn {
+        width: 20%;
+        margin: 0px 0px 30px 0px;
+        margin-left: auto;
+      }
     }
-
-    .add-agency-btn {
-      width: 20%;
-      margin: 26px;
-      height: 47px;
+    .add-right-agency-form {
+      width: 50%;
+      padding-left: 70px;
       font-family: 'Poppins';
-      background-color: #1c3988;
-      font-weight: 600;
+
+      .agent-in-agency {
+      }
     }
   }
 }
