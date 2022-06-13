@@ -35,6 +35,10 @@
       height: 200px;
       margin-top: 10px;
     }
+  }
+  .add-right-agent-form {
+    display: flex;
+    flex-direction: column;
 
     .add-agent-btn {
       width: 50%;
@@ -52,10 +56,6 @@
       color: #ff0000;
       opacity: 0;
     }
-  }
-  .add-right-agent-form {
-    display: flex;
-    flex-direction: column;
   }
 }
 

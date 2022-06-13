@@ -49,6 +49,10 @@ function Router() {
               element={makePrivate(<AddProperty />, 'ADMIN')}
             />
             <Route
+              path="add-agent"
+              element={makePrivate(<AddAgent />, 'ADMIN')}
+            />
+            <Route
               path="add-agent/:id"
               element={makePrivate(<AddAgent />, 'ADMIN')}
             />
