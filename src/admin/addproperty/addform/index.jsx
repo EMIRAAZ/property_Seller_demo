@@ -7,7 +7,7 @@ import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import UploadImage from '../../../components/uploadimage';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
 import Plus from '../../../components/svg/plus';
@@ -52,6 +52,12 @@ const AddForm = ({
   let location = useLocation();
 
   const [uploadCount, setUploadCount] = useState([0]);
+
+  useEffect(() => {
+    if (propertyValue.images.length > 0 && editing) {
+      setUploadCount([...propertyValue.images]);
+    }
+  }, []);
 
   const getID = () => location.pathname.split('/').pop();
 

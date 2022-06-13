@@ -22,6 +22,10 @@ const reducer = (state = initialState, action) => {
         loading: false,
         error: true,
       };
+    case CLEAR_UPLOAD:
+      return {
+        ...initialState,
+      };
     default:
       return state;
   }

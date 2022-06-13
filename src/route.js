@@ -17,6 +17,7 @@ import Terms from './pages/terms';
 import Career from './pages/career';
 import Blog from './pages/dailyblog';
 import Property from './admin/property';
+import AdminAgency from './admin/agency';
 import AddProperty from './admin/addproperty';
 import Login from './admin/login';
 import PropertyView from './pages/propertyview';
@@ -34,6 +35,10 @@ function Router() {
           <Route path="admin">
             <Route path="login" element={<Login />} />
             <Route index element={makePrivate(<Property />, 'ADMIN')} />
+            <Route
+              path="agency"
+              element={makePrivate(<AdminAgency />, 'ADMIN')}
+            />
             <Route
               path="add-property"
               element={makePrivate(<AddProperty />, 'ADMIN')}
