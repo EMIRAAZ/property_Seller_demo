@@ -5,6 +5,7 @@ import UploadImage from '../../../components/uploadimage';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
+import Agent from '../agent';
 
 const keyArr = ['agencyName'];
 
@@ -17,6 +18,7 @@ const AddForm = ({
   imgLoading,
   imgError,
   agencyValue,
+  agentValue,
   editing,
 }) => {
   let navigate = useNavigate();
@@ -38,8 +40,13 @@ const AddForm = ({
       return;
     }
     if (editing) {
-      editAgency(getID(), { ...agencyValue, images: images }, () =>
-        navigate('/admin/agency')
+      editAgency(
+        getID(),
+        {
+          ...agencyValue,
+          agencyLogo: images[0] ? images[0] : agencyValue.agencyLogo[0],
+        },
+        () => navigate('/admin/agency')
       );
     } else {
       addAgency({ ...agencyValue, agencyLogo: images[0] }, () =>
@@ -55,6 +62,11 @@ const AddForm = ({
       return <span className="img-add-error">Errored ! please try again</span>;
     }
   };
+
+  const renderAgent = () => {
+    return agentValue.agent.map((agent, i) => <Agent key={i} {...agent} />);
+  };
+
   return (
     <div className="add-agency-form">
       <div className="add-left-agency-form">
@@ -62,7 +74,7 @@ const AddForm = ({
           divClass="agency-input"
           label="Agency Name"
           required
-          value={agencyValue.title}
+          value={agencyValue.agencyName}
           onChange={e => onChangeInput('agencyName', e.target.value)}
         />
         <label className="property-image-label spinner-label">
@@ -70,6 +82,7 @@ const AddForm = ({
         </label>
 
         <UploadImage
+          editing={editing}
           linkIndex={0}
           customClass="agency-logo-img"
           onChangeImage={() => {}}
@@ -88,12 +101,14 @@ const AddForm = ({
         </Button>
       </div>
       <div className="add-right-agency-form">
-        <div className="agent-in-agency">
-          <h2>Agent</h2>
-          <div>
-            <img />
+        {editing ? (
+          <div className="agent-in-agency">
+            <h2>Agent</h2>
+            {renderAgent()}
           </div>
-        </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

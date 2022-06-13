@@ -16,7 +16,6 @@ const Agency = props => {
     props.getAdminAgency();
   }, []);
 
-  console.log(props);
   return (
     <div className="agency-admin-table">
       <AdminHeader />

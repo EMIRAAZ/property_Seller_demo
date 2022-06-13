@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import AddAgency from './AddAgency';
+import AddAgency from './AddAgent';
 import {
   changeAdminAgencyInput,
   addAdminAgency,

@@ -10,6 +10,9 @@ import {
   GET_ADMIN_AGENCY_BY_ID,
   GET_ADMIN_AGENCY_BY_ID_ERROR,
   GET_ADMIN_AGENCY_BY_ID_STARTED,
+  GET_ADMIN_AGENCY_AGENT,
+  GET_ADMIN_AGENCY_AGENT_STARTED,
+  GET_ADMIN_AGENCY_AGENT_ERROR,
   CLEAR_ADD_AGENCY,
 } from '../../constants';
 
@@ -101,7 +104,11 @@ const getAdminAgencyByIdError = () => {
 export const getAdminAgencyById = id => async dispatch => {
   try {
     dispatch(getAdminAgencyByIdStarted());
-    const res = await axios.get(`/api/agency/${id}`);
+    const res = await axios.get(`/api/agency/${id}`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
     dispatch({
       type: GET_ADMIN_AGENCY_BY_ID,
       payload: res.data?.data,
@@ -119,4 +126,35 @@ export const clearAddAgency = () => {
   return {
     type: CLEAR_ADD_AGENCY,
   };
+};
+
+// AGENT FOR AGENCY
+
+const getAdminAgentByAgencyStarted = () => {
+  return {
+    type: GET_ADMIN_AGENCY_AGENT_STARTED,
+  };
+};
+
+const getAdminAgentByAgencyError = () => {
+  return {
+    type: GET_ADMIN_AGENCY_AGENT_ERROR,
+  };
+};
+
+export const getAdminAgentByAgency = agencyId => async dispatch => {
+  try {
+    dispatch(getAdminAgentByAgencyStarted());
+    const res = await axios.get(`/api/agent/agency/${agencyId}`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    dispatch({
+      type: GET_ADMIN_AGENCY_AGENT,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getAdminAgentByAgencyError());
+  }
 };
