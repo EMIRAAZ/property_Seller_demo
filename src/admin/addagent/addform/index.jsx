@@ -123,7 +123,7 @@ const AddForm = ({
           divClass="agent-input"
           label="Languages"
           required
-          value={agentValue.languages}
+          value={agentValue.languages.toString()}
           onChange={e => onChangeInput('languages', e.target.value)}
         />
         <span id="on-add-warning" className="pls-fill">

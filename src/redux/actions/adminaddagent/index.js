@@ -3,7 +3,15 @@ import {
   GET_ADMIN_AGENT_BY_ID,
   GET_ADMIN_AGENT_BY_ID_STARTED,
   GET_ADMIN_AGENT_BY_ID_ERROR,
+  ADMIN_AGENT_INPUT_CHANGE,
 } from '../../constants';
+
+export const changeAdminAgentInput = payload => {
+  return {
+    type: ADMIN_AGENT_INPUT_CHANGE,
+    payload: payload,
+  };
+};
 
 const getAgentByIdStarted = () => {
   return {
