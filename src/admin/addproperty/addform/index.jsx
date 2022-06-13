@@ -7,7 +7,7 @@ import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import UploadImage from '../../../components/uploadimage';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
 import Plus from '../../../components/svg/plus';
@@ -34,6 +34,7 @@ const keyArr = [
   'for',
   'city',
   'agentId',
+  'mainTitle',
 ];
 
 const AddForm = ({
@@ -52,6 +53,13 @@ const AddForm = ({
   let location = useLocation();
 
   const [uploadCount, setUploadCount] = useState([0]);
+
+  useEffect(() => {
+    console.log(propertyValue.images);
+    if (propertyValue.images.length > 0 && editing) {
+      setUploadCount([...propertyValue.images]);
+    }
+  }, [propertyValue.images]);
 
   const getID = () => location.pathname.split('/').pop();
 
@@ -75,11 +83,13 @@ const AddForm = ({
       return;
     }
     if (editing) {
-      editProperty(getID(), { ...propertyValue, images: images }, () =>
-        navigate('/admin')
+      editProperty(
+        getID(),
+        { ...propertyValue, images: [...propertyValue.images, images] },
+        () => navigate('/admin')
       );
     } else {
-      addProperty({ ...propertyValue, images: images }, () =>
+      addProperty({ ...propertyValue, images: [...images] }, () =>
         navigate('/admin')
       );
     }
@@ -101,6 +111,13 @@ const AddForm = ({
           required
           value={propertyValue.title}
           onChange={e => onChangeInput('title', e.target.value)}
+        />
+        <Input
+          divClass="property-input"
+          label="Main Title"
+          required
+          value={propertyValue.mainTitle}
+          onChange={e => onChangeInput('mainTitle', e.target.value)}
         />
         <Textarea
           divClass="property-input"

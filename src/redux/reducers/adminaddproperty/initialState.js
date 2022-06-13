@@ -7,6 +7,7 @@ export const initialState = {
   },
   propertyValue: {
     title: '',
+    mainTitle: '',
     description: '',
     images: [],
     price: 0.0,
@@ -33,6 +34,7 @@ export const initialState = {
     building: '',
     city: '',
     agentId: '',
+    agencyId: '',
   },
   propertyOptions: {
     propertyType: [

@@ -15,11 +15,13 @@ const Header = props => {
   const onClickAddProperty = () => {
     props.clearAddProperty();
     navigate('/admin/add-property');
+    props.clearUpload();
   };
 
   const onClickAddAgency = () => {
     props.clearAddAgency();
     navigate('/admin/add-agency');
+    props.clearUpload();
   };
 
   return (
@@ -31,7 +33,7 @@ const Header = props => {
           </li>
           <li onClick={() => navigate('/admin')}>Property </li>
           <li onClick={onClickAddProperty}>Add Property </li>
-          <li onClick={() => navigate('/admin')}>Agency </li>
+          <li onClick={() => navigate('/admin/agency')}>Agency </li>
           <li onClick={onClickAddAgency}>Add Agency </li>
         </ul>
       </div>
@@ -42,7 +44,7 @@ const Header = props => {
           </li>
           <li onClick={() => navigate('/admin')}>Property</li>
           <li onClick={onClickAddProperty}>Add Property</li>
-          <li onClick={() => navigate('/admin')}>Agency</li>
+          <li onClick={() => navigate('/admin/agency')}>Agency</li>
           <li onClick={onClickAddAgency}>Add Agency</li>
         </ul>
       </div>
@@ -62,7 +64,10 @@ const Header = props => {
             <li className="simple-list" onClick={onClickAddProperty}>
               Add Property
             </li>
-            <li className="simple-list" onClick={() => navigate('/admin')}>
+            <li
+              className="simple-list"
+              onClick={() => navigate('/admin/agency')}
+            >
               Agency
             </li>
             <li className="simple-list" onClick={onClickAddAgency}>
