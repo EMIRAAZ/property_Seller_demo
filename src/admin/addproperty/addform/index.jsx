@@ -55,8 +55,6 @@ const AddForm = ({
 
   const [uploadCount, setUploadCount] = useState([0]);
 
-  console.log(propertyValue.images);
-
   useEffect(() => {
     if (propertyValue.images.length > 0 && editing) {
       setUploadCount([...propertyValue.images]);

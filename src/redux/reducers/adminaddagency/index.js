@@ -11,6 +11,9 @@ import {
   GET_ADMIN_AGENCY_BY_ID_ERROR,
   GET_ADMIN_AGENCY_BY_ID_STARTED,
   CLEAR_ADD_AGENCY,
+  GET_ADMIN_AGENCY_AGENT,
+  GET_ADMIN_AGENCY_AGENT_STARTED,
+  GET_ADMIN_AGENCY_AGENT_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -102,6 +105,7 @@ const reducer = (state = initialState, action) => {
         agencyValue: {
           ...state.agencyValue,
           ...createdAgencyValue,
+          agencyLogo: [createdAgencyValue.agencyLogo],
         },
       };
     case GET_ADMIN_AGENCY_BY_ID_STARTED:
@@ -115,6 +119,37 @@ const reducer = (state = initialState, action) => {
     case CLEAR_ADD_AGENCY:
       return {
         ...initialState,
+      };
+    case GET_ADMIN_AGENCY_AGENT:
+      return {
+        ...state,
+        agentValue: {
+          ...state.agentValue,
+          error: false,
+          success: false,
+          loading: false,
+          agent: action.payload ? action.payload[0] : [],
+        },
+      };
+    case GET_ADMIN_AGENCY_AGENT_STARTED:
+      return {
+        ...state,
+        agentValue: {
+          ...state.agentValue,
+          error: false,
+          success: false,
+          loading: true,
+        },
+      };
+    case GET_ADMIN_AGENCY_AGENT_ERROR:
+      return {
+        ...state,
+        agentValue: {
+          ...state.agentValue,
+          error: true,
+          success: false,
+          loading: false,
+        },
       };
     default:
       return state;

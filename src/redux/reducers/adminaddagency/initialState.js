@@ -9,4 +9,10 @@ export const initialState = {
     agencyName: '',
     agencyLogo: [],
   },
+  agentValue: {
+    error: false,
+    loading: false,
+    success: false,
+    agent: [],
+  },
 };

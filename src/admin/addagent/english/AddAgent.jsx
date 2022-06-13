@@ -1,42 +1,40 @@
-import './addagency.scss';
+import './addagent.scss';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import AdminHeader from '../../../components/adminheader';
-import AgencyHeader from '../agencyheader';
+import AgentHeader from '../agentheader';
 import AddForm from '../addform';
 
-const AddAgency = props => {
+const AddAgent = props => {
   let location = useLocation();
 
   const getID = () => location.pathname.split('/').pop();
 
   useEffect(() => {
-    if (getID() !== 'add-agency') {
-      props.getAdminAgencyById(getID());
-      props.getAdminAgentByAgency(getID());
+    if (getID() !== 'add-agent') {
+      // props.getAdminAgentById(getID());
     }
   }, []);
   return (
-    <div className="admin-add-agency">
+    <div className="admin-add-agent">
       <AdminHeader />
-      <div className="admin-add-agency-container">
-        <AgencyHeader />
+      <div className="admin-add-agent-container">
+        <AgentHeader />
         <AddForm
-          addAgency={props.addAdminAgency}
-          editAgency={props.editAdminAgency}
+          addAgent={props.addAdminAgent}
+          editAgent={props.editAdminAgent}
           env={props.env}
-          editing={getID() !== 'add-agency'}
+          editing={getID() !== 'add-agent'}
           onChange={props.onInputChange}
           images={props.images}
           imgLoading={props.imgLoading}
           imgError={props.imgError}
-          agencyValue={props.agencyValue}
           agentValue={props.agentValue}
-          agencyOptions={props.agencyOptions}
+          agentOptions={props.agentOptions}
         />
       </div>
     </div>
   );
 };
 
-export default AddAgency;
+export default AddAgent;

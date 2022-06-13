@@ -1,16 +1,19 @@
 import './agent.scss';
+import { useNavigate } from 'react-router-dom';
 
 const Agent = props => {
+  let navigate = useNavigate();
+
   return (
     <div className="admin-add-agency-agent">
       <div className="agent-details">
-        <img src="/assets/image/noimage.jpg" alt="agent-img" />
+        <img src={props.agentImage} alt="agent-img" />
         <div className="agent-details-admin">
-          <p>New Agent</p>
-          <p>Sales Manager</p>
-          <p>3.4 yrs experience</p>
+          <p>{props.agentName}</p>
+          <p>{props.position}</p>
+          <p>{props.yearsOfExperience}</p>
           <div className="agent-details-admin-service">
-            <p>edit</p>
+            <p onClick={() => navigate(`/admin/add-agent/${props.id}`)}>edit</p>
             <p>delete</p>
           </div>
         </div>
