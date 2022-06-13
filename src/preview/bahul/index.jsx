@@ -1,10 +1,10 @@
 import Footer from "../../components/footer/english/Footer";
-// import PropertyView from "../../pages/propertyview/english/PropertyView";
+import OffplanView from "../../pages/offplanview/english/OffplanView";
 import "./index.scss";
 
 const Preview = () => {
-  // return <PropertyView />;
-  return null;
+  return <OffplanView />;
+  // return null;
 };
 
 export default Preview;

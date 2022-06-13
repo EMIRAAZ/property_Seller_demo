@@ -6,6 +6,9 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import BasicButton from "../../../components/button/BasicButton";
 import RightArrow from "../../../components/svg/rightarrow";
+import RarrowIcon from "../../../components/svg/rarrow";
+import LarrowIcon from "../../../components/svg/larrow";
+import ShareIcon from "../../../components/svg/share";
 
 const PropertyView = (props) => {
   let location = useLocation();
@@ -30,7 +33,7 @@ const PropertyView = (props) => {
           )}
         </div>
         <div className="main-details-container">
-          <MainDetails />
+          <MainDetails property={property} />
         </div>
       </div>
       <div className="full-details-main-div">
@@ -55,16 +58,20 @@ const ImageSlider = ({ images }) => {
   let img1 = images && images[0] ? images[0] : "";
   let img2 = images && images[1] ? images[1] : "";
   let img3 = images && images[2] ? images[2] : "";
+  let i = 2;
+
   return (
     <div
       className="image-container"
       style={{
-        backgroundImage: `url(${img2})`,
+        backgroundImage: `url(${img3})`,
       }}
     >
-      <div className="div-1"></div>
+      <div className="div-1">
+        <LarrowIcon className="rArrow" />
+      </div>
       <div className="div-2">
-        <RightArrow />
+        <RarrowIcon className="rArrow" />
       </div>
     </div>
   );
@@ -89,38 +96,77 @@ const MainDetails = () => {
         <h1 className="reference">
           RERA Permit No: <span className="reference-span">BHM-S-55166</span>
         </h1>
-        <BasicButton customClass="btn-3"> Share Property</BasicButton>
+        <BasicButton customClass="btn-3">
+          {/* <ShareIcon />  */}
+          Share Property
+        </BasicButton>
       </div>
     </div>
   );
 };
 
-const FullDetails = () => {
+const FullDetails = ({ property }) => {
   return (
-    <div className="full-details-container">
-      <h1 className="proerty-details-heading">Property Details</h1>
-      <p className="property-description ">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi ipsam
-        debitis mollitia rerum in omnis, culpa dignissimos amet ex ullam
-        deserunt harum magni aspernatur beatae saepe architecto obcaecati
-        laboriosam alias. Lorem ipsum dolor sit, amet consectetur adipisicing
-        elit. Laudantium hic at, facere molestiae, asperiores accusamus quo vel
-        officia tempore quae qui sunt iusto eaque fugiat perferendis numquam
-        reiciendis, velit illum. Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Fugit ipsum eligendi minus unde, accusantium nulla
-        deserunt, assumenda, libero neque quidem pariatur dicta ratione
-        consequatur aliquid explicabo consequuntur consectetur reprehenderit
-        temporibus?Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Labore dolor neque facere quam? Sed obcaecati delectus sapiente ipsam
-        nemo quaerat consequatur nobis nulla nesciunt similique incidunt
-        voluptatibus, tempora aspernatur? Ab! Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Numquam iste harum nihil aspernatur
-        voluptatem consectetur provident possimus? Deleniti pariatur expedita
-        placeat doloremque, possimus sunt ducimus consectetur accusamus vel.
-        Ipsa, exercitationem.lorem
-      </p>
-      <h1 className="proerty-details-heading">Facilities And Amenities.</h1>
-    </div>
+    <>
+      <div className="full-details-container">
+        <h1 className="proerty-details-heading">Property Details</h1>
+        {/* <p className="property-description ">{property.description}</p> */}
+      </div>
+      <div className="ameneties-container">
+        <h1 className="proerty-details-heading">Facilities And Amenities.</h1>
+
+        <div className="amenities-list">
+          <div className="amenities">
+            <img
+              src="/assets/image/bedicon.png"
+              className="amenties-icon"
+              alt="building"
+            />
+            <h1 className="ameneties-text">Balcony</h1>
+          </div>
+          <div className="amenities">
+            <img
+              src="/assets/image/bedicon.png"
+              className="amenties-icon"
+              alt="building"
+            />
+            <h1 className="ameneties-text">Balcony</h1>
+          </div>
+          <div className="amenities">
+            <img
+              src="/assets/image/bedicon.png"
+              className="amenties-icon"
+              alt="building"
+            />
+            <h1 className="ameneties-text">Balcony</h1>
+          </div>
+          <div className="amenities">
+            <img
+              src="/assets/image/bedicon.png"
+              className="amenties-icon"
+              alt="building"
+            />
+            <h1 className="ameneties-text">Balcony</h1>
+          </div>
+          <div className="amenities">
+            <img
+              src="/assets/image/bedicon.png"
+              className="amenties-icon"
+              alt="building"
+            />
+            <h1 className="ameneties-text">Balcony</h1>
+          </div>
+          <div className="amenities">
+            <img
+              src="/assets/image/bedicon.png"
+              className="amenties-icon"
+              alt="building"
+            />
+            <h1 className="ameneties-text">Balcony</h1>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

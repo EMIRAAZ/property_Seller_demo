@@ -1,0 +1,50 @@
+.image-container {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  //   background-color: aqua;
+  margin: 10px;
+
+  .offplan-card {
+    width: 100%;
+  }
+  .details-div {
+    padding: 15px;
+    .heading {
+      font-size: 18px;
+      font-weight: 600;
+      font-family: "Poppins";
+      color: #302f2f;
+    }
+    .bedrooms {
+      font-size: 13px;
+      font-weight: 400;
+      font-family: "Poppins";
+      color: #302f2f;
+    }
+    .price {
+      font-size: 13px;
+      font-family: "Poppins";
+      font-weight: 400;
+      color: #302f2f;
+    }
+    .logo-div {
+      display: flex;
+      justify-content: space-between;
+      .description {
+        font-size: 13px;
+        font-family: "Poppins";
+        color: #302f2f;
+        font-weight: 400;
+        margin-right: 10px;
+      }
+      .offplan-logo {
+        width: 50px;
+        height: 100%;
+        margin: 5px; //   height: 5px;
+      }
+    }
+  }
+}
+.image-container:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
