@@ -2,10 +2,9 @@ import { connect } from 'react-redux';
 import AddAgency from './AddAgent';
 import {
   changeAdminAgentInput,
-  addAdminAgency,
-  editAdminAgency,
+  addAdminAgent,
+  editAdminAgent,
   getAdminAgentById,
-  getAdminAgentByAgency,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -21,12 +20,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onInputChange: payload => dispatch(changeAdminAgentInput(payload)),
-    addAdminAgency: (payload, cb) => dispatch(addAdminAgency(payload, cb)),
-    editAdminAgency: (id, payload, cb) =>
-      dispatch(editAdminAgency(id, payload, cb)),
+    addAdminAgent: (payload, cb) => dispatch(addAdminAgent(payload, cb)),
+    editAdminAgent: (id, payload, cb) =>
+      dispatch(editAdminAgent(id, payload, cb)),
     getAdminAgentById: id => dispatch(getAdminAgentById(id)),
-    getAdminAgentByAgency: agencyId =>
-      dispatch(getAdminAgentByAgency(agencyId)),
   };
 };
 

@@ -11,13 +11,12 @@ const keyArr = [
   'position',
   'yearsOfExperience',
   'username',
-  'password',
   'languages',
 ];
 
 const AddForm = ({
-  addAgency,
-  editAgency,
+  addAgent,
+  editAgent,
   env,
   onChange,
   images,
@@ -35,7 +34,8 @@ const AddForm = ({
     onChange({ key, value });
   };
 
-  const addAdminAgency = () => {
+  console.log(agentValue);
+  const addAdminAgent = () => {
     if (checkIfAllKeyHasValue(agentValue, keyArr)) {
       document.getElementById('on-add-warning').style.opacity = '100';
       setInterval(() => {
@@ -45,17 +45,17 @@ const AddForm = ({
       return;
     }
     if (editing) {
-      editAgency(
+      editAgent(
         getID(),
         {
           ...agentValue,
-          agentLogo: images[0] ? images[0] : agentValue.agentLogo[0],
+          agentImage: images[0] ? images[0] : agentValue.agentImage[0],
         },
-        () => navigate('/admin/agent')
+        () => navigate(`/admin/add-agency/${agentValue.agencyId}`)
       );
     } else {
-      addAgency({ ...agentValue, agentLogo: images[0] }, () =>
-        navigate('/admin/agent')
+      addAgent({ ...agentValue, agentImage: images[0] }, () =>
+        navigate(`/adminadd-agency/${agentValue.agencyId}`)
       );
     }
   };
@@ -87,7 +87,7 @@ const AddForm = ({
           linkIndex={0}
           customClass="agent-logo-img"
           onChangeImage={() => {}}
-          value={[]}
+          value={agentValue.agentImage}
         />
         <Input
           divClass="agent-input"
@@ -132,7 +132,7 @@ const AddForm = ({
 
         <Button
           customClass="add-agent-btn"
-          onClick={addAdminAgency}
+          onClick={addAdminAgent}
           loading={env.loading}
         >
           ADD
