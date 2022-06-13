@@ -114,10 +114,10 @@ const AddForm = ({
         />
         <Input
           divClass="agent-input"
-          label="Password"
+          label="Languages"
           required
           value={agentValue.agentName}
-          onChange={e => onChangeInput('password', e.target.value)}
+          onChange={e => onChangeInput('languages', e.target.value)}
         />
         <span id="on-add-warning" className="pls-fill">
           please fill all the required fields !!
