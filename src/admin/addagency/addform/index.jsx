@@ -5,6 +5,7 @@ import UploadImage from '../../../components/uploadimage';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
+import Agent from '../agent';
 
 const keyArr = ['agencyName'];
 
@@ -90,9 +91,9 @@ const AddForm = ({
       <div className="add-right-agency-form">
         <div className="agent-in-agency">
           <h2>Agent</h2>
-          <div>
-            <img />
-          </div>
+          <Agent />
+          <Agent />
+          <Agent />
         </div>
       </div>
     </div>
