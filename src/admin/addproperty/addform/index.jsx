@@ -66,6 +66,7 @@ const AddForm = ({
   const { agent, propertyType, amenities, sale } = propertyOptions;
 
   const onChangeInput = (key, value) => {
+    document.getElementById('on-add-warning').style.display = 'none';
     onChange({ key, value });
   };
 
@@ -76,10 +77,6 @@ const AddForm = ({
   const addAdminProperty = () => {
     if (checkIfAllKeyHasValue(propertyValue, keyArr)) {
       document.getElementById('on-add-warning').style.display = 'block';
-      setInterval(() => {
-        document.getElementById('on-add-warning').style.display = 'none';
-        return;
-      }, 3000);
       return;
     }
     if (editing) {
