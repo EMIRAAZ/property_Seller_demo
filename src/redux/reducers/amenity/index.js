@@ -10,6 +10,10 @@ import {
   GET_AMENITY_ADMIN_BY_ID,
   GET_AMENITY_ADMIN_STARTED_BY_ID,
   GET_AMENITY_ADMIN_ERROR_BY_ID,
+  CLEAR_ADD_AMENITY,
+  DELETE_ADMIN_AMENITY_ERROR,
+  DELETE_ADMIN_AMENITY_STARTED,
+  DELETE_ADMIN_AMENITY,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -90,6 +94,25 @@ const reducer = (state = initialState, action) => {
         ...state,
       };
     case GET_AMENITY_ADMIN_ERROR_BY_ID:
+      return {
+        ...state,
+      };
+    case CLEAR_ADD_AMENITY:
+      return {
+        ...state,
+        amenityValue: {
+          ...initialState.amenityValue,
+        },
+      };
+    case DELETE_ADMIN_AMENITY_STARTED:
+      return {
+        ...state,
+      };
+    case DELETE_ADMIN_AMENITY:
+      return {
+        ...state,
+      };
+    case DELETE_ADMIN_AMENITY_ERROR:
       return {
         ...state,
       };

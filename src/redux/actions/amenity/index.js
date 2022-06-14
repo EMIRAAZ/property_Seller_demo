@@ -12,7 +12,11 @@ import {
   EDIT_ADMIN_AMENITY_ERROR,
   GET_AMENITY_ADMIN_BY_ID,
   GET_AMENITY_ADMIN_ERROR_BY_ID,
+  CLEAR_ADD_AMENITY,
   GET_AMENITY_ADMIN_STARTED_BY_ID,
+  DELETE_ADMIN_AMENITY,
+  DELETE_ADMIN_AMENITY_STARTED,
+  DELETE_ADMIN_AMENITY_ERROR,
 } from '../../constants';
 
 export const changeAdminAmenityInput = payload => {
@@ -143,5 +147,43 @@ export const getByIdAdminAmenity = id => async dispatch => {
     });
   } catch (e) {
     dispatch(getByIdAdminAmenityError());
+  }
+};
+
+export const clearAddAmenity = () => {
+  return {
+    type: CLEAR_ADD_AMENITY,
+  };
+};
+
+// delete amenity
+
+const deleteAdminAmenityStarted = () => {
+  return {
+    type: DELETE_ADMIN_AMENITY_STARTED,
+  };
+};
+
+const deleteAdminAmenityError = () => {
+  return {
+    type: DELETE_ADMIN_AMENITY_ERROR,
+  };
+};
+
+export const deleteAdminAmenity = (id, cb) => async dispatch => {
+  try {
+    dispatch(deleteAdminAmenityStarted());
+    const res = await axios.delete(`/api/amenity/${id}`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    dispatch({
+      type: DELETE_ADMIN_AMENITY,
+      payload: res.data?.data,
+    });
+    cb();
+  } catch (e) {
+    dispatch(deleteAdminAmenityError());
   }
 };

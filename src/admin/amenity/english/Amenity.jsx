@@ -34,8 +34,7 @@ const Property = props => {
               props.getByIdAdminAmenity(id);
             }}
             onClickDelete={id => {
-              props.getAdminProperty();
-              props.deleteAdminProperty(id, props.getAdminProperty);
+              props.deleteAdminAmenity(id, props.getAmenityAdmin);
             }}
             onChangePage={() => {}}
             count={4}
@@ -44,8 +43,10 @@ const Property = props => {
         <div className="amenity-admin-right">
           <AddForm
             onChange={props.changeAdminAmenityInput}
+            clear={props.clearAddAmenity}
             amenityValue={props.amenityValue}
             addAmenity={props.addAdminAmenity}
+            getAmenity={props.getAmenityAdmin}
             editAmenity={props.editAdminAmenity}
             env={props.env}
             editing={getID() !== 'amenity'}

@@ -12,6 +12,7 @@ const keyArr = ['name', 'amenityLogo'];
 const AddForm = ({
   addAmenity,
   editAmenity,
+  getAmenity,
   env,
   onChange,
   images,
@@ -19,6 +20,7 @@ const AddForm = ({
   imgError,
   amenityValue,
   editing,
+  clear,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -28,6 +30,12 @@ const AddForm = ({
   const onChangeInput = (key, value) => {
     document.getElementById('on-add-warning').style.opacity = '0';
     onChange({ key, value });
+  };
+
+  const editCB = () => {
+    getAmenity();
+    navigate(`/admin/amenity`);
+    clear();
   };
 
   const addAdminAmenity = () => {
@@ -42,7 +50,7 @@ const AddForm = ({
           ...amenityValue,
           amenityLogo: images[0] ? images[0] : amenityValue.amenityLogo[0],
         },
-        () => navigate(`/admin/amenity/${amenityValue.agencyId}`)
+        () => editCB()
       );
     } else {
       addAmenity(
@@ -50,7 +58,7 @@ const AddForm = ({
           ...amenityValue,
           amenityLogo: images[0],
         },
-        () => navigate(`/admin/amenity`)
+        () => editCB()
       );
     }
   };
