@@ -10,6 +10,9 @@ import {
   EDIT_ADMIN_AGENT,
   EDIT_ADMIN_AGENT_ERROR,
   EDIT_ADMIN_AGENT_STARTED,
+  DELETE_ADMIN_AGENT,
+  DELETE_ADMIN_AGENT_STARTED,
+  DELETE_ADMIN_AGENT_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -114,6 +117,18 @@ const reducer = (state = initialState, action) => {
           loading: false,
           success: false,
         },
+      };
+    case DELETE_ADMIN_AGENT:
+      return {
+        ...state,
+      };
+    case DELETE_ADMIN_AGENT_STARTED:
+      return {
+        ...state,
+      };
+    case DELETE_ADMIN_AGENT_ERROR:
+      return {
+        ...state,
       };
     default:
       return state;

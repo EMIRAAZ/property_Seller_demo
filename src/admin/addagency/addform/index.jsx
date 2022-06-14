@@ -14,12 +14,14 @@ const AddForm = ({
   editAgency,
   env,
   onChange,
+  deleteAgent,
   images,
   imgLoading,
   imgError,
   agencyValue,
   agentValue,
   editing,
+  getAgentAgency,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -61,7 +63,14 @@ const AddForm = ({
   };
 
   const renderAgent = () => {
-    return agentValue.agent.map((agent, i) => <Agent key={i} {...agent} />);
+    return agentValue.agent.map((agent, i) => (
+      <Agent
+        key={i}
+        {...agent}
+        deleteAgent={deleteAgent}
+        getAgentAgency={getAgentAgency}
+      />
+    ));
   };
 
   return (

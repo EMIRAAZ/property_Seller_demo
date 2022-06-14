@@ -33,6 +33,8 @@ const AddAgency = props => {
           agencyValue={props.agencyValue}
           agentValue={props.agentValue}
           agencyOptions={props.agencyOptions}
+          deleteAgent={props.deleteAdminAgent}
+          getAgentAgency={props.getAdminAgentByAgency}
         />
       </div>
     </div>
