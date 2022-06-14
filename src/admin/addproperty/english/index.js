@@ -7,6 +7,7 @@ import {
   getAmenityProperty,
   editAdminProperty,
   getAdminPropertyById,
+  clearUpload,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -29,6 +30,7 @@ const mapDispatchToProps = dispatch => {
     getAgentProperty: payload => dispatch(getAgentProperty(payload)),
     getAmenityProperty: payload => dispatch(getAmenityProperty(payload)),
     getAdminPropertyById: id => dispatch(getAdminPropertyById(id)),
+    clearUpload: () => dispatch(clearUpload()),
   };
 };
 

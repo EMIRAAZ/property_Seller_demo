@@ -22,13 +22,24 @@ import {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADMIN_PROPERTY_INPUT_CHANGE:
-      return {
-        ...state,
-        propertyValue: {
-          ...state.propertyValue,
-          [action.payload.key]: action.payload.value,
-        },
-      };
+      if (action.payload.key === 'agentId') {
+        return {
+          ...state,
+          propertyValue: {
+            ...state.propertyValue,
+            agentId: action.payload.value.split(' ')[0],
+            agencyId: action.payload.value.split(' ')[1],
+          },
+        };
+      } else {
+        return {
+          ...state,
+          propertyValue: {
+            ...state.propertyValue,
+            [action.payload.key]: action.payload.value,
+          },
+        };
+      }
     case ADD_ADMIN_PROPERTY:
       return {
         ...state,
@@ -63,7 +74,7 @@ const reducer = (state = initialState, action) => {
       const agent = action.payload.map(a => {
         return {
           name: a.username,
-          value: a.id,
+          value: `${a.id} ${a.agencyId}`,
         };
       });
       return {

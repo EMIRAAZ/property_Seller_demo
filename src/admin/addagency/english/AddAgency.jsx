@@ -11,7 +11,10 @@ const AddAgency = props => {
   const getID = () => location.pathname.split('/').pop();
 
   useEffect(() => {
-    if (getID() !== 'add-agency') props.getAdminAgencyById(getID());
+    if (getID() !== 'add-agency') {
+      props.getAdminAgencyById(getID());
+      props.getAdminAgentByAgency(getID());
+    }
   }, []);
   return (
     <div className="admin-add-agency">
@@ -28,7 +31,10 @@ const AddAgency = props => {
           imgLoading={props.imgLoading}
           imgError={props.imgError}
           agencyValue={props.agencyValue}
+          agentValue={props.agentValue}
           agencyOptions={props.agencyOptions}
+          deleteAgent={props.deleteAdminAgent}
+          getAgentAgency={props.getAdminAgentByAgency}
         />
       </div>
     </div>

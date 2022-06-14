@@ -7,7 +7,7 @@ import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import UploadImage from '../../../components/uploadimage';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
 import Plus from '../../../components/svg/plus';
@@ -34,6 +34,7 @@ const keyArr = [
   'for',
   'city',
   'agentId',
+  'mainTitle',
 ];
 
 const AddForm = ({
@@ -47,17 +48,25 @@ const AddForm = ({
   propertyValue,
   propertyOptions,
   editing,
+  clear,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
 
   const [uploadCount, setUploadCount] = useState([0]);
 
+  useEffect(() => {
+    if (propertyValue.images.length > 0 && editing) {
+      setUploadCount([...propertyValue.images]);
+    }
+  }, [propertyValue.images]);
+
   const getID = () => location.pathname.split('/').pop();
 
   const { agent, propertyType, amenities, sale } = propertyOptions;
 
   const onChangeInput = (key, value) => {
+    document.getElementById('on-add-warning').style.display = 'none';
     onChange({ key, value });
   };
 
@@ -68,20 +77,22 @@ const AddForm = ({
   const addAdminProperty = () => {
     if (checkIfAllKeyHasValue(propertyValue, keyArr)) {
       document.getElementById('on-add-warning').style.display = 'block';
-      setInterval(() => {
-        document.getElementById('on-add-warning').style.display = 'none';
-        return;
-      }, 3000);
       return;
     }
     if (editing) {
-      editProperty(getID(), { ...propertyValue, images: images }, () =>
-        navigate('/admin')
+      editProperty(
+        getID(),
+        { ...propertyValue, images: [...propertyValue.images, ...images] },
+        () => {
+          clear();
+          navigate('/admin');
+        }
       );
     } else {
-      addProperty({ ...propertyValue, images: images }, () =>
-        navigate('/admin')
-      );
+      addProperty({ ...propertyValue, images: [...images] }, () => {
+        clear();
+        navigate('/admin');
+      });
     }
   };
 
@@ -101,6 +112,13 @@ const AddForm = ({
           required
           value={propertyValue.title}
           onChange={e => onChangeInput('title', e.target.value)}
+        />
+        <Input
+          divClass="property-input"
+          label="Main Title"
+          required
+          value={propertyValue.mainTitle}
+          onChange={e => onChangeInput('mainTitle', e.target.value)}
         />
         <Textarea
           divClass="property-input"
@@ -212,6 +230,7 @@ const AddForm = ({
               customClass="first-img-Class-admin"
               onChangeImage={() => {}}
               value={propertyValue.images}
+              editing={editing}
             />
           ))}
           {uploadCount.length < 15 ? (

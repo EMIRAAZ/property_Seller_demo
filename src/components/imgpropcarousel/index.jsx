@@ -1,12 +1,15 @@
-import './imgpropcarousel.scss';
-import { useState } from 'react';
-import LeftCarousel from '../svg/leftcarousel';
-import RightCarousel from '../svg/rightcarousel';
+import "./imgpropcarousel.scss";
+import { useState } from "react";
+import LeftCarousel from "../svg/leftcarousel";
+import RightCarousel from "../svg/rightcarousel";
 
-const ImgPropCarousel = ({ imgArray = ['/assets/image/noimage.jpg'] }) => {
+const ImgPropCarousel = ({
+  imgArray = ["/assets/image/noimage.jpg"],
+  customClass,
+}) => {
   const [index, setIndex] = useState(0);
 
-  const onsetIndex = add => {
+  const onsetIndex = (add) => {
     if (index === 0 && add === -1) {
       setIndex(imgArray.length - 1);
     } else if (index === imgArray.length - 1 && add === 1) {
