@@ -47,7 +47,6 @@ const Table = ({
           disableSelectionOnClick={true}
           disableVirtualization
           onPageChange={onPageChange}
-          pagination={false}
           rowHeight={70}
           autoHeight={true}
           columns={columns.concat(actionColumn)}
