@@ -1,11 +1,11 @@
 const Bath = ({
   customClass,
-  width = '17',
-  height = '17',
-  viewBox = '0 0 17 17',
+  width = "17",
+  height = "17",
+  viewBox = "0 0 17 17",
 }) => {
   return (
-    <div className={`${customClass}`}>
+    <div className={`${customClass} `}>
       <svg
         width={width}
         height={height}
