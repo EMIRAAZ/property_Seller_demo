@@ -27,16 +27,13 @@ const AddForm = ({
   const getID = () => location.pathname.split('/').pop();
 
   const onChangeInput = (key, value) => {
+    document.getElementById('on-add-warning').style.opacity = '0';
     onChange({ key, value });
   };
 
   const addAdminAgency = () => {
     if (checkIfAllKeyHasValue(agencyValue, keyArr)) {
       document.getElementById('on-add-warning').style.opacity = '100';
-      setInterval(() => {
-        document.getElementById('on-add-warning').style.opacity = '0';
-        return;
-      }, 3000);
       return;
     }
     if (editing) {
