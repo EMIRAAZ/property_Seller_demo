@@ -1,9 +1,9 @@
-import { initialState } from './initialState';
+import { initialState } from "./initialState";
 import {
   GET_PROPERTY_BY_ID,
   GET_PROPERTY_BY_ID_ERROR,
   GET_PROPERTY_BY_ID_STARTED,
-} from '../../constants';
+} from "../../constants";
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

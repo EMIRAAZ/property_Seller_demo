@@ -1,4 +1,4 @@
-const RarrowIcon = ({
+const LarrowIcon = ({
   className,
   width = "9",
   height = "15",
@@ -16,11 +16,11 @@ const RarrowIcon = ({
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M0.115234 12.7871L5.40215 7.48859L0.115234 2.19013L1.74287 0.5625L8.66896 7.48859L1.74287 14.4147L0.115234 12.7871Z"
+          d="M9.38281 12.7871L4.09589 7.48859L9.38281 2.19013L7.75518 0.5625L0.829087 7.48859L7.75518 14.4147L9.38281 12.7871Z"
           fill={fill}
         />
       </svg>
     </div>
   );
 };
-export default RarrowIcon;
+export default LarrowIcon;
