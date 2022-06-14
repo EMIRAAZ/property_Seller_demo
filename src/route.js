@@ -23,6 +23,7 @@ import Login from './admin/login';
 import PropertyView from './pages/propertyview';
 import AddAgency from './admin/addagency';
 import AddAgent from './admin/addagent';
+import Amenity from './admin/amenity';
 
 function Router() {
   const makePrivate = (component, role = '') => (
@@ -47,6 +48,11 @@ function Router() {
             <Route
               path="add-property/:id"
               element={makePrivate(<AddProperty />, 'ADMIN')}
+            />
+            <Route path="amenity" element={makePrivate(<Amenity />, 'ADMIN')} />
+            <Route
+              path="amenity/:id"
+              element={makePrivate(<Amenity />, 'ADMIN')}
             />
             <Route
               path="add-agent"
