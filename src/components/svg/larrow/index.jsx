@@ -4,9 +4,10 @@ const LarrowIcon = ({
   height = "15",
   viewbox = "0 0 9 15",
   fill = "#1FA0E9",
+  onClick,
 }) => {
   return (
-    <div className={className}>
+    <div className={className} onClick={onClick}>
       <svg
         width={width}
         height={height}

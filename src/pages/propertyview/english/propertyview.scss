@@ -72,6 +72,27 @@
           font-family: "Poppins";
           color: #2a2c30;
         }
+        .spec {
+          display: flex;
+          font-family: "Roboto";
+          justify-content: space-between;
+          align-items: center;
+          font-size: 12.53px;
+          font-weight: 400;
+          line-height: 28px;
+          letter-spacing: 0em;
+          text-align: left;
+          margin: 0 20px;
+          // .vl {
+          //   border-left: 1px solid #d3dee8;
+          //   height: 20px;
+          // }
+          .spec-wrap {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+          }
+        }
         .button-div {
           display: flex;
           justify-content: space-between;
@@ -339,6 +360,28 @@
             font-weight: 500;
             font-family: "Poppins";
             color: #2a2c30;
+          }
+          .spec {
+            display: flex;
+            font-family: "Roboto";
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 28px;
+            letter-spacing: 0em;
+            text-align: left;
+            margin: 20px 20px;
+            padding-bottom: 10px;
+            .vl {
+              border-left: 1px solid #d3dee8;
+              height: 20px;
+            }
+            .spec-wrap {
+              display: flex;
+              align-items: center;
+              gap: 4px;
+            }
           }
           .button-div {
             display: flex;
