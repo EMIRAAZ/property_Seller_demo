@@ -99,7 +99,9 @@ const ImageSlider = ({ imgArray = ["/assets/image/noimage.jpg"] }) => {
 };
 const MainDetails = ({ property }) => {
   const renderUnit = (unit) => {
-    return unit.length < 10 ? unit : unit.substring(0, 7) + "...";
+    if (unit && unit.length < 10) return unit;
+    else if (!unit) return "";
+    else return unit.substring(0, 7) + "...";
   };
   return (
     <div className="details-container">
@@ -175,7 +177,6 @@ const MainDetails = ({ property }) => {
 };
 
 const FullDetails = ({ property }) => {
-  console.log(property);
   return (
     <>
       <div className="full-details-container">
