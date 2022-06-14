@@ -10,6 +10,9 @@ import {
   EDIT_ADMIN_AGENT,
   EDIT_ADMIN_AGENT_STARTED,
   EDIT_ADMIN_AGENT_ERROR,
+  DELETE_ADMIN_AGENT,
+  DELETE_ADMIN_AGENT_STARTED,
+  DELETE_ADMIN_AGENT_ERROR,
 } from '../../constants';
 
 export const changeAdminAgentInput = payload => {
@@ -109,5 +112,37 @@ export const editAdminAgent = (id, agent, cb) => async dispatch => {
     });
   } catch (e) {
     dispatch(editAdminAgentError());
+  }
+};
+
+// delete agent
+
+const deleteAdminAgentStarted = () => {
+  return {
+    type: DELETE_ADMIN_AGENT_STARTED,
+  };
+};
+
+const deleteAdminAgentError = () => {
+  return {
+    type: DELETE_ADMIN_AGENT_ERROR,
+  };
+};
+
+export const deleteAdminAgent = (id, cb) => async dispatch => {
+  try {
+    dispatch(deleteAdminAgentStarted());
+    const res = await axios.delete(`/api/agent/${id}`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    dispatch({
+      type: DELETE_ADMIN_AGENT,
+      payload: res.data?.data,
+    });
+    cb();
+  } catch (e) {
+    dispatch(deleteAdminAgentError());
   }
 };
