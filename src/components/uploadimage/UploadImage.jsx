@@ -3,14 +3,14 @@ import './uploadimage.scss';
 import Camera from '../../components/svg/camera';
 
 const UploadImage = props => {
-  const onChange = e => {
+  const onChange = (e, i) => {
     onUploadFile(e.target.files[0]);
   };
 
   const onUploadFile = file => {
     const formData = new FormData();
     formData.append('file', file, file.name);
-    props.uploadImage(formData, props.onChangeImage);
+    props.uploadImage(formData, props.onChangeImage, props.linkIndex);
   };
 
   const getIcon = () => {
@@ -37,14 +37,17 @@ const UploadImage = props => {
   };
 
   return (
-    <div className={`upload-container ${props.customClass || ''}`}>
+    <div
+      key={props.key}
+      className={`upload-container ${props.customClass || ''}`}
+    >
       <label htmlFor="icon-button-file">
         <input
           accept="image/*"
           id="icon-button-file"
           className="upload-input"
           type="file"
-          onChange={e => onChange(e)}
+          onChange={e => onChange(e, props.linkIndex)}
         />
         <Camera customClass="upload-img-icon" />
         {getIcon()}

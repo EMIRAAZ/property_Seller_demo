@@ -153,7 +153,7 @@ const AddForm = ({
           customClass="property-input"
           label="Agent"
           required
-          value={propertyValue.agentId}
+          value={`${propertyValue.agentId} ${propertyValue.agencyId}`}
           options={agent}
           onChange={v => onChangeInput('agentId', v)}
         />
@@ -226,6 +226,7 @@ const AddForm = ({
         <div className="property-row-div-upload">
           {uploadCount.map((_, i) => (
             <UploadImage
+              key={i}
               linkIndex={i}
               customClass="first-img-Class-admin"
               onChangeImage={() => {}}

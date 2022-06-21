@@ -12,8 +12,8 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    uploadImage: (payload, cb) =>
-      dispatch(uploadAdminPropertyImage(payload, cb)),
+    uploadImage: (payload, cb, i) =>
+      dispatch(uploadAdminPropertyImage(payload, cb, i)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(UploadImage);

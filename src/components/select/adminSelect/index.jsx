@@ -1,6 +1,6 @@
 import './adminselect.scss';
 import ExpandIcon from '../../svg/expand';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const AdminSelect = ({
   name,
@@ -13,6 +13,7 @@ const AdminSelect = ({
 }) => {
   const [selectName, setSelectName] = useState(name);
   const [dropdownClass, setdropdownClass] = useState('hide');
+
   const renderValue = () => {
     if (value) {
       const currentOption = options.filter(option => option.value === value);
