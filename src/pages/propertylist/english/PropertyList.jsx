@@ -33,7 +33,7 @@ const PropertyList = () => {
       </div>
       <div className='property-list-properties-2'>
         <div className='property-text-width'>
-          <h2 className='property-div-header'>Why list with us</h2>
+          <h2 className='property-div-header'>Why list with us?</h2>
           <p className='list-properties-3'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt
             sit ipsum lacus faucibus purus. Nec imperdiet quis sit ornare. A

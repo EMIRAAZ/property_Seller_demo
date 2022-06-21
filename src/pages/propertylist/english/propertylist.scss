@@ -62,6 +62,15 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
        .property-text-width{
         width:78%;
 
+        .property-div-header{
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 44px;
+            line-height: 59px;
+            letter-spacing: -0.03em;
+            padding-left: 100px;
+        }
         .list-properties-3{
             font-family: 'Poppins';
             font-style: normal;
@@ -113,7 +122,7 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
       
       width: 100%;
       margin: 0;
-      background: #EEF7FF;
+      background: white;
 
       .property-text-width{
        width: 92%;
@@ -136,17 +145,22 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
   }
   .property-list-properties-2{
       width: 100%;
-      background-color: white;
+      background-color: #EEF7FF;
       padding:0;
       .property-text-width{
         width: 90%;
+
         .property-div-header{
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 600;
-            font-size: 26px;
-            line-height: 48px;
-            letter-spacing: -0.03em;
+            font-size: 22px;
+            line-height: 44px;
+            letter-spacing: 0.03em;
+            margin: 0;
+            padding: 15px;
+        }
+            
             .list-properties-3{
                 font-family: 'Poppins';
                 font-style: normal;
@@ -155,7 +169,7 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
                 line-height: 30px;
                 padding:10px 0px 0px 20px;
                 letter-spacing: 0.02em;
-        }
+        
     }
 
       }
