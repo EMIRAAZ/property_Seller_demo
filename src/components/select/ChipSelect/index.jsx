@@ -29,11 +29,14 @@ const ChipSelect = ({
   };
 
   const renderOptions = () =>
-    (options || []).map((option, i) => (
-      <p key={i} onClick={() => onClickOption(option.name, option.value)}>
-        {option.name}
-      </p>
-    ));
+    (options || []).map((option, i) => {
+      if (!value.includes(option.value))
+        return (
+          <p key={i} onClick={() => onClickOption(option.name, option.value)}>
+            {option.name}
+          </p>
+        );
+    });
 
   const removeChip = item => {
     const removedSelectName = value.filter(name => name !== item);
@@ -41,8 +44,8 @@ const ChipSelect = ({
   };
 
   const renderChip = () => {
-    return value.map(item => (
-      <p className="drop-btn-chip">
+    return value.map((item, i) => (
+      <p key={i} className="drop-btn-chip">
         <p>{item}</p>
         <span onClick={() => removeChip(item)}>
           <CloseIcon width="10" height="10" viewBox="0 0 15 15" />

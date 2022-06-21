@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
         error: false,
       };
     case UPLOAD_IMAGE:
-      return addToLinkArray(state, action.payload);
+      return addToLinkArray(state, action.payload, action.index);
     case UPLOAD_IMAGE_ERROR:
       return {
         ...state,
@@ -31,9 +31,10 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const addToLinkArray = (state, payload) => {
+const addToLinkArray = (state, payload, i) => {
   const linkArray = [...state.link];
-  if (payload) linkArray.push(payload);
+  if (i) linkArray[i] = payload;
+  else if (payload) linkArray.push(payload);
   return {
     ...state,
     loading: false,
