@@ -3,6 +3,9 @@ import {
   GET_ADMIN_PROPERTY,
   GET_ADMIN_PROPERTY_ERROR,
   GET_ADMIN_PROPERTY_STARTED,
+  DELETE_ADMIN_PROPERTY,
+  DELETE_ADMIN_PROPERTY_ERROR,
+  DELETE_ADMIN_PROPERTY_STARTED,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -35,6 +38,18 @@ const reducer = (state = initialState, action) => {
           error: true,
           loading: false,
         },
+      };
+    case DELETE_ADMIN_PROPERTY:
+      return {
+        ...state,
+      };
+    case DELETE_ADMIN_PROPERTY_STARTED:
+      return {
+        ...state,
+      };
+    case DELETE_ADMIN_PROPERTY_ERROR:
+      return {
+        ...state,
       };
     default:
       return state;

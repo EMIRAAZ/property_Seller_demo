@@ -16,6 +16,7 @@ import {
   GET_ADMIN_PROPERTY_BY_ID,
   GET_ADMIN_PROPERTY_BY_ID_ERROR,
   GET_ADMIN_PROPERTY_BY_ID_STARTED,
+  CLEAR_ADD_PROPERTY,
 } from '../../constants';
 
 export const changeAdminPropertyInput = payload => {
@@ -175,3 +176,11 @@ export const getAdminPropertyById = id => async dispatch => {
 };
 
 // get property by Id
+
+// clear add property
+
+export const clearAddProperty = () => {
+  return {
+    type: CLEAR_ADD_PROPERTY,
+  };
+};

@@ -9,7 +9,6 @@ const AddProperty = props => {
   let location = useLocation();
 
   const getID = () => location.pathname.split('/').pop();
-  console.log(getID());
 
   useEffect(() => {
     props.getAgentProperty();
@@ -32,6 +31,7 @@ const AddProperty = props => {
           imgError={props.imgError}
           propertyValue={props.propertyValue}
           propertyOptions={props.propertyOptions}
+          clear={props.clearUpload}
         />
       </div>
     </div>

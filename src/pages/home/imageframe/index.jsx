@@ -25,10 +25,14 @@ const ImageFrame = () => {
       <div className="img-div">
         <img src="/assets/image/build1.jpg" alt="building" />
       </div>
-      <div className="img-div">
-        <img src="/assets/image/build2.jpg" alt="building" />
+      <div className="img-div no-mobile">
+        <img
+          className="desktop-only"
+          src="/assets/image/build2.jpg"
+          alt="building"
+        />
       </div>
-      <div className="img-div">
+      <div className="img-div no-mobile">
         <img
           className="desktop-only"
           src="/assets/image/build5.jpg"

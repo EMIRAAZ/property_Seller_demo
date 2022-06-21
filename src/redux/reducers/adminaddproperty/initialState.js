@@ -7,6 +7,7 @@ export const initialState = {
   },
   propertyValue: {
     title: '',
+    mainTitle: '',
     description: '',
     images: [],
     price: 0.0,
@@ -22,6 +23,7 @@ export const initialState = {
     ownership: '',
     brokerORN: '',
     agentBRN: '',
+    verified: false,
     call: '',
     email: '',
     whatsapp: '',
@@ -32,6 +34,7 @@ export const initialState = {
     building: '',
     city: '',
     agentId: '',
+    agencyId: '',
   },
   propertyOptions: {
     propertyType: [

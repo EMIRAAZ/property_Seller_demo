@@ -14,7 +14,7 @@ export const tableHeader = [
     renderCell: params => {
       return (
         <>
-          <img src={params.row.image} alt="" className="image" />
+          <img src={params.row.images[0]} alt="" className="image" />
           <p>{params.row.title}</p>
         </>
       );
@@ -22,6 +22,13 @@ export const tableHeader = [
   },
   { field: 'description', headerName: 'Description', minWidth: 450 },
   { field: 'price', headerName: 'Price' },
+  {
+    field: 'for',
+    headerName: 'Sale',
+    renderCell: params => {
+      return <span className="sale-admin">{params.row.for.toUpperCase()}</span>;
+    },
+  },
   {
     field: 'updatedAt',
     headerName: 'Date',

@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import ArabicHeader from './arabic/Header';
-import EnglishHeader from './english/Header';
+import EnglishHeader from './english';
 
 const Header = () => {
   const search = useLocation().search;

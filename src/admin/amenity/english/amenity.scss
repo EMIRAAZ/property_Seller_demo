@@ -1,0 +1,33 @@
+.amenity-admin-table {
+  .sale-admin {
+    color: rgb(72, 72, 214);
+  }
+
+  .amenity-admin-container {
+    display: flex;
+    flex-direction: column;
+    .amenity-admin-left {
+      width: 100%;
+    }
+    .amenity-admin-right {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .amenity-admin-table {
+    .amenity-admin-container {
+      display: flex;
+      flex-direction: row;
+      margin-top: 20px;
+      .amenity-admin-left {
+        width: 60%;
+        margin-top: 50px;
+      }
+      .amenity-admin-right {
+        width: 40%;
+      }
+    }
+  }
+}

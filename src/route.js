@@ -17,9 +17,13 @@ import Terms from './pages/terms';
 import Career from './pages/career';
 import Blog from './pages/dailyblog';
 import Property from './admin/property';
+import AdminAgency from './admin/agency';
 import AddProperty from './admin/addproperty';
 import Login from './admin/login';
 import PropertyView from './pages/propertyview';
+import AddAgency from './admin/addagency';
+import AddAgent from './admin/addagent';
+import Amenity from './admin/amenity';
 
 function Router() {
   const makePrivate = (component, role = '') => (
@@ -34,12 +38,37 @@ function Router() {
             <Route path="login" element={<Login />} />
             <Route index element={makePrivate(<Property />, 'ADMIN')} />
             <Route
+              path="agency"
+              element={makePrivate(<AdminAgency />, 'ADMIN')}
+            />
+            <Route
               path="add-property"
               element={makePrivate(<AddProperty />, 'ADMIN')}
             />
             <Route
               path="add-property/:id"
               element={makePrivate(<AddProperty />, 'ADMIN')}
+            />
+            <Route path="amenity" element={makePrivate(<Amenity />, 'ADMIN')} />
+            <Route
+              path="amenity/:id"
+              element={makePrivate(<Amenity />, 'ADMIN')}
+            />
+            <Route
+              path="add-agent"
+              element={makePrivate(<AddAgent />, 'ADMIN')}
+            />
+            <Route
+              path="add-agent/:id"
+              element={makePrivate(<AddAgent />, 'ADMIN')}
+            />
+            <Route
+              path="add-agency"
+              element={makePrivate(<AddAgency />, 'ADMIN')}
+            />
+            <Route
+              path="add-agency/:id"
+              element={makePrivate(<AddAgency />, 'ADMIN')}
             />
           </Route>
           <Route path="buy" element={<Buy />} />
