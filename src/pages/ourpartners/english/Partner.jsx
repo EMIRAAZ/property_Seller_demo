@@ -12,8 +12,6 @@ const image = [
   "/assets/image/img5.jpg",
   "/assets/image/img6.jpg",
 ];
-// const iname= ["vishnu","hari","bahul"]
-// const iposition = ["ceo","hr","cto",]
 
 const TeamCard = ({ url, name, position }) => {
   return (
@@ -25,7 +23,6 @@ const TeamCard = ({ url, name, position }) => {
       </div>
    })} */}
         <div className='card-image-container'>
-          <h2 className='header'>Our Partners</h2>
           <img className='team-image' src={url} alt='team' />
         </div>
         <div className='card-title'>
