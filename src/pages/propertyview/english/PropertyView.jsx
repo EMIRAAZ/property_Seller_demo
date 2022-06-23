@@ -1,21 +1,21 @@
-import './propertyview.scss';
-import Header from '../../../components/header/english/Header';
-import Footer from '../../../components/footer/english/Footer';
-import { useState } from 'react';
+import "./propertyview.scss";
+import Header from "../../../components/header/english/Header";
+import Footer from "../../../components/footer/english/Footer";
+import { useState } from "react";
 
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import BasicButton from '../../../components/button/BasicButton';
-import RightArrow from '../../../components/svg/rightarrow';
-import RarrowIcon from '../../../components/svg/rarrow';
-import LarrowIcon from '../../../components/svg/larrow';
-import ShareIcon from '../../../components/svg/share';
-import Bed from '../../../components/svg/bed';
-import Bath from '../../../components/svg/bath';
-import Living from '../../../components/svg/living';
-import Area from '../../../components/svg/area';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import BasicButton from "../../../components/button/BasicButton";
+import RightArrow from "../../../components/svg/rightarrow";
+import RarrowIcon from "../../../components/svg/rarrow";
+import LarrowIcon from "../../../components/svg/larrow";
+import ShareIcon from "../../../components/svg/share";
+import Bed from "../../../components/svg/bed";
+import Bath from "../../../components/svg/bath";
+import Living from "../../../components/svg/living";
+import Area from "../../../components/svg/area";
 
-const PropertyView = props => {
+const PropertyView = (props) => {
   let location = useLocation();
 
   const { property } = props;
@@ -24,21 +24,29 @@ const PropertyView = props => {
     props.getPropertyByID(getID());
   }, []);
 
-  const getID = () => location.pathname.split('/').pop();
+  const getID = () => location.pathname.split("/").pop();
+  console.log(props);
+  const [content, setContent] = useState(true);
+  console.log(content);
   return (
     <div className="single-property-view">
       <Header />
       <div className="main-container">
         <div className="image-slider-container">
-          {props.property.images ? (
+          {props.property.images && content ? (
             <ImageSlider imgArray={props.property.images} />
+          ) : // <VideoView />
+          props.property.VideoView ? (
+            <VideoView url={props.property.VideoView} />
           ) : (
             // <VideoView />
-            <></>
+            <>
+              <VideoView />
+            </>
           )}
         </div>
         <div className="main-details-container">
-          <MainDetails property={property} />
+          <MainDetails setContent={setContent} property={property} />
         </div>
       </div>
       <div className="full-details-main-div">
@@ -59,20 +67,16 @@ const PropertyView = props => {
   );
 };
 
-const VideoView = () => {
+const VideoView = ({ url = "https://www.youtube.com/embed/05DqIGS_koU" }) => {
   return (
-    <iframe
-      width="100%"
-      height="400px"
-      src="https://www.youtube.com/embed/tgbNymZ7vqY"
-    ></iframe>
+    <iframe width="100%" height="400px" allow=" autoplay;" src={url}></iframe>
   );
 };
 
-const ImageSlider = ({ imgArray = ['/assets/image/noimage.jpg'] }) => {
+const ImageSlider = ({ imgArray = ["/assets/image/noimage.jpg"] }) => {
   const [index, setIndex] = useState(0);
 
-  const onsetIndex = add => {
+  const onsetIndex = (add) => {
     if (index === 0 && add === -1) {
       setIndex(imgArray.length - 1);
     } else if (index === imgArray.length - 1 && add === 1) {
@@ -96,12 +100,13 @@ const ImageSlider = ({ imgArray = ['/assets/image/noimage.jpg'] }) => {
     </div>
   );
 };
-const MainDetails = ({ property }) => {
-  const renderUnit = unit => {
+const MainDetails = ({ property, setContent }) => {
+  const renderUnit = (unit) => {
     if (unit && unit.length < 10) return unit;
-    else if (!unit) return '';
-    else return unit.substring(0, 7) + '...';
+    else if (!unit) return "";
+    else return unit.substring(0, 7) + "...";
   };
+
   return (
     <div className="details-container">
       <h1 className="heading">{property.mainTitle}</h1>
@@ -150,8 +155,12 @@ const MainDetails = ({ property }) => {
       </div>
       <div className="button-div">
         <BasicButton customClass="btn-1"> Book a Viewing</BasicButton>
-        <BasicButton customClass="btn-2"> Photos</BasicButton>
-        <BasicButton customClass="btn-2"> Videos</BasicButton>
+        <BasicButton customClass="btn-2" onClick={() => setContent(true)}>
+          Photos
+        </BasicButton>
+        <BasicButton customClass="btn-2" onClick={() => setContent(false)}>
+          Videos
+        </BasicButton>
         <BasicButton customClass="btn-2"> Map</BasicButton>
       </div>
       <div>
@@ -267,7 +276,7 @@ const ContactAgent = ({ property }) => {
           {/* <a href="tel:+971521278701" className="button-a-tag"> */}
           <BasicButton
             customClass="btn-1"
-            onClick={() => window.open('tel:+971521278701', '_blank')}
+            onClick={() => window.open("tel:+971521278701", "_blank")}
           >
             {/* <a
               style={{ textDecoration: "none", color: "white" }}
@@ -279,7 +288,7 @@ const ContactAgent = ({ property }) => {
           </BasicButton>
           {/* <a href="tel:+971521278701"> */}
           <BasicButton
-            onClick={() => window.open('tel:+971521278701', '_blank')}
+            onClick={() => window.open("tel:+971521278701", "_blank")}
             customClass="btn-2"
           >
             Call
@@ -288,8 +297,8 @@ const ContactAgent = ({ property }) => {
           <BasicButton
             onClick={() =>
               window.open(
-                'whatsapp://send?abid=+971521278701&text=Hello',
-                '_blank'
+                "whatsapp://send?abid=+971521278701&text=Hello",
+                "_blank"
               )
             }
             customClass="btn-3"
