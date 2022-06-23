@@ -17,6 +17,9 @@ import {
   GET_ADMIN_PROPERTY_BY_ID_ERROR,
   GET_ADMIN_PROPERTY_BY_ID_STARTED,
   CLEAR_ADD_PROPERTY,
+  GET_NEIGHBORHOOD_PROPERTY,
+  GET_NEIGHBORHOOD_PROPERTY_STARTED,
+  GET_NEIGHBORHOOD_PROPERTY_ERROR,
 } from '../../constants';
 
 export const changeAdminPropertyInput = payload => {
@@ -183,4 +186,35 @@ export const clearAddProperty = () => {
   return {
     type: CLEAR_ADD_PROPERTY,
   };
+};
+
+// neighborhood
+
+const getNeighborhoodPropertyStarted = () => {
+  return {
+    type: GET_NEIGHBORHOOD_PROPERTY_STARTED,
+  };
+};
+
+const getNeighborhoodPropertyError = () => {
+  return {
+    type: GET_NEIGHBORHOOD_PROPERTY_ERROR,
+  };
+};
+
+export const getNeighborhoodProperty = () => async dispatch => {
+  try {
+    dispatch(getNeighborhoodPropertyStarted());
+    const res = await axios.get(`/api/famousneighborhood`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    dispatch({
+      type: GET_NEIGHBORHOOD_PROPERTY,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getNeighborhoodPropertyError());
+  }
 };

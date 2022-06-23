@@ -23,6 +23,7 @@ export const initialState = {
     ownership: '',
     brokerORN: '',
     agentBRN: '',
+    videoView: '',
     verified: false,
     call: '',
     email: '',
@@ -35,6 +36,7 @@ export const initialState = {
     city: '',
     agentId: '',
     agencyId: '',
+    neighborhood: [],
   },
   propertyOptions: {
     propertyType: [
@@ -59,5 +61,6 @@ export const initialState = {
     ],
     agent: [],
     amenities: [],
+    neighbor: [],
   },
 };
