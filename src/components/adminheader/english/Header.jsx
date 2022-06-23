@@ -48,6 +48,9 @@ const Header = props => {
           <li onClick={() => navigate('/admin/agency')}>Agency</li>
           <li onClick={onClickAddAgency}>Add Agency</li>
           <li onClick={() => navigate('/admin/amenity')}>Amenity </li>
+          <li onClick={() => navigate('/admin/neighborhood')}>
+            Neighbor&nbsp;Hood
+          </li>
         </ul>
       </div>
       <ul className="header-list">
@@ -79,7 +82,13 @@ const Header = props => {
               className="simple-list"
               onClick={() => navigate('/admin/amenity')}
             >
-              Amenity{' '}
+              Amenity
+            </li>
+            <li
+              className="simple-list"
+              onClick={() => navigate('/admin/neighborhood')}
+            >
+              Neighbor&nbsp;Hood
             </li>
           </ul>
         </li>
