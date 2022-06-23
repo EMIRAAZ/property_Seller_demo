@@ -13,6 +13,7 @@ const AddProperty = props => {
   useEffect(() => {
     props.getAgentProperty();
     props.getAmenityProperty();
+    props.getNeighborhoodProperty();
     if (getID() !== 'add-property') props.getAdminPropertyById(getID());
   }, []);
   return (

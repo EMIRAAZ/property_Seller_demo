@@ -18,7 +18,10 @@ const HomeProperty = ({ property, onChangePage, getProperty }) => {
   };
   const onChangeCurrentPage = current => {
     const offset = 20 * current - 20 > 0 ? 20 * current - 20 : 0;
-    onChangePage(current, getProperty(`${property.params}&offset=${offset}`));
+    onChangePage(
+      current,
+      getProperty(`${property.params}&offset=${offset}&limit=20`)
+    );
   };
 
   const bgColor = () => {
