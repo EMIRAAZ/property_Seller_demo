@@ -28,6 +28,7 @@ import News from './pages/news/english/News';
 import Neighborhood from './admin/neighborhood';
 import Offplan from './admin/offplan';
 import TagHead from './admin/taghead';
+import TagLine from './admin/tagline';
 
 function Router() {
   const makePrivate = (component, role = '') => (
@@ -87,6 +88,11 @@ function Router() {
             <Route
               path="taghead/:id"
               element={makePrivate(<TagHead />, 'ADMIN')}
+            />
+            <Route path="tagline" element={makePrivate(<TagLine />, 'ADMIN')} />
+            <Route
+              path="tagline/:id"
+              element={makePrivate(<TagLine />, 'ADMIN')}
             />
           </Route>
           <Route path="buy" element={<Buy />} />

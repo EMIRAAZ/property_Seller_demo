@@ -12,3 +12,4 @@ export * from './adminaddagent';
 export * from './amenity';
 export * from './neighborhood';
 export * from './taghead';
+export * from './tagline';
