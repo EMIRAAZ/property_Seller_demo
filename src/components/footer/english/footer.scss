@@ -283,6 +283,9 @@
       text-align: center;
       gap: 10px;
       padding-bottom: 30px;
+      p {
+        cursor: pointer;
+      }
 
       .abt {
         grid-column-start: 1;
