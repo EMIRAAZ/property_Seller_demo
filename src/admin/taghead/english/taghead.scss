@@ -1,0 +1,33 @@
+.taghead-admin-table {
+  .sale-admin {
+    color: rgb(72, 72, 214);
+  }
+
+  .taghead-admin-container {
+    display: flex;
+    flex-direction: column;
+    .taghead-admin-left {
+      width: 100%;
+    }
+    .taghead-admin-right {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .taghead-admin-table {
+    .taghead-admin-container {
+      display: flex;
+      flex-direction: row;
+      margin-top: 20px;
+      .taghead-admin-left {
+        width: 60%;
+        margin-top: 50px;
+      }
+      .taghead-admin-right {
+        width: 40%;
+      }
+    }
+  }
+}

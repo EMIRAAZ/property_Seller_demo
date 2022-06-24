@@ -63,7 +63,8 @@ const AddForm = ({
 
   const getID = () => location.pathname.split('/').pop();
 
-  const { agent, propertyType, amenities, sale, neighbor } = propertyOptions;
+  const { agent, propertyType, amenities, sale, neighbor, tagline } =
+    propertyOptions;
 
   const onChangeInput = (key, value) => {
     document.getElementById('on-add-warning').style.display = 'none';
@@ -257,6 +258,15 @@ const AddForm = ({
           onChange={v => onChangeInput('neighborhood', v)}
           required
         />
+        <Select
+          customClass="property-input"
+          label="Tagline"
+          required
+          value={`${propertyValue.taglineId}`}
+          options={tagline}
+          onChange={v => onChangeInput('taglineId', v)}
+        />
+        <span className="select-border"></span>
         <div className="property-row-div">
           <Input
             divClass="property-input"

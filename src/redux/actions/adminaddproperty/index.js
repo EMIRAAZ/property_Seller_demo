@@ -20,6 +20,9 @@ import {
   GET_NEIGHBORHOOD_PROPERTY,
   GET_NEIGHBORHOOD_PROPERTY_STARTED,
   GET_NEIGHBORHOOD_PROPERTY_ERROR,
+  GET_TAGLINE_PROPERTY,
+  GET_TAGLINE_PROPERTY_STARTED,
+  GET_TAGLINE_PROPERTY_ERROR,
 } from '../../constants';
 
 export const changeAdminPropertyInput = payload => {
@@ -216,5 +219,36 @@ export const getNeighborhoodProperty = () => async dispatch => {
     });
   } catch (e) {
     dispatch(getNeighborhoodPropertyError());
+  }
+};
+
+// tagline
+
+const getTaglinePropertyStarted = () => {
+  return {
+    type: GET_TAGLINE_PROPERTY_STARTED,
+  };
+};
+
+const getTaglinePropertyError = () => {
+  return {
+    type: GET_TAGLINE_PROPERTY_ERROR,
+  };
+};
+
+export const getTaglineProperty = () => async dispatch => {
+  try {
+    dispatch(getTaglinePropertyStarted());
+    const res = await axios.get(`/api/tagline`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    dispatch({
+      type: GET_TAGLINE_PROPERTY,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getTaglinePropertyError());
   }
 };

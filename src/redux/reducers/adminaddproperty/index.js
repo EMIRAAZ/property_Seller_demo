@@ -20,6 +20,9 @@ import {
   GET_NEIGHBORHOOD_PROPERTY,
   GET_NEIGHBORHOOD_PROPERTY_STARTED,
   GET_NEIGHBORHOOD_PROPERTY_ERROR,
+  GET_TAGLINE_PROPERTY,
+  GET_TAGLINE_PROPERTY_STARTED,
+  GET_TAGLINE_PROPERTY_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -211,6 +214,28 @@ const reducer = (state = initialState, action) => {
         ...state,
       };
     case GET_NEIGHBORHOOD_PROPERTY_ERROR:
+      return {
+        ...state,
+      };
+    case GET_TAGLINE_PROPERTY:
+      const tagline = action.payload.rows.map(a => {
+        return {
+          name: a.title,
+          value: a.id,
+        };
+      });
+      return {
+        ...state,
+        propertyOptions: {
+          ...state.propertyOptions,
+          tagline: tagline,
+        },
+      };
+    case GET_TAGLINE_PROPERTY_STARTED:
+      return {
+        ...state,
+      };
+    case GET_TAGLINE_PROPERTY_ERROR:
       return {
         ...state,
       };
