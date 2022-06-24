@@ -112,75 +112,6 @@
   }
 }
 
-<<<<<<< HEAD
-@media only screen and (max-width: 800px) {
-  .card-container {
-    width: 95%;
-
-    background-color: red;
-    align-items: center;
-    margin: 0;
-    margin-top: 20px;
-    margin-left: 10px;
-    padding-right: 0px;
-    margin-right: 120px;
-    .card-image-container {
-      margin: 0 auto;
-      width: fit-content;
-      .team-image {
-        padding-top: 20px;
-        margin: 0px auto;
-      }
-    }
-    .card-title {
-      padding-left: 30px;
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 20px;
-      line-height: 120%;
-      padding-top: 10px;
-    }
-    .card-description {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 140%;
-      padding-left: 30px;
-    }
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .about-english-container {
-    width: 100%;
-    .image-container {
-      width: 100%;
-      .header {
-        font-family: "Poppins";
-        font-weight: 700;
-        font-size: 26.491px;
-
-        position: absolute;
-        top: 10%;
-
-        color: #ffffff;
-
-        // text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
-      }
-
-      .about-image {
-        // height: 470px;-
-        width: 100%;
-      }
-    }
-
-    .about-properties {
-      width: 100%;
-      //    height:320px ;
-      background: #eef7ff;
-=======
     .about-english-container{
             width: 100%;
             overflow: hidden !important;
@@ -340,7 +271,6 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
               
                width: 100%;
            }
->>>>>>> dev
 
       .property-header {
         font-family: "Poppins";
@@ -353,16 +283,6 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
       .text-width {
         width: 92%;
 
-<<<<<<< HEAD
-        .properties-1 {
-          font-family: "Poppins";
-          font-style: normal;
-          font-weight: 500;
-          font-size: 12.2159px;
-          line-height: 18px;
-          padding: 10px 0px 0px 20px;
-          letter-spacing: -0.02em;
-=======
        .about-properties{
            
            width: 100%;
@@ -412,7 +332,6 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
         
         .teamcard{
             margin: 0px;
->>>>>>> dev
         }
 
         .properties-2 {
