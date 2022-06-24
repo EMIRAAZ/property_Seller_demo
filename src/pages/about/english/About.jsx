@@ -1,7 +1,7 @@
-import "./about.scss";
-import SocialPanel from "../../../components/socialpanel";
-import Footer from "../../../components/footer";
-import Header from "../../../components/header";
+import './about.scss';
+import SocialPanel from '../../../components/socialpanel';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header';
 
 const TeamCard = ({ url, name, position }) => {
   return (
@@ -23,14 +23,9 @@ const About = () => {
   return (
     <div className="about-english-container">
       <Header />
-<<<<<<< HEAD
+
       <div className="image-container">
         <h2 className="header">About Us</h2>
-=======
-
-      <div className='image-container'>
-        <h2 className='header'>About Us</h2>
->>>>>>> dev
         <img
           className="about-image"
           src="/assets/image/about.jpg"
@@ -88,7 +83,7 @@ const About = () => {
             position="Director & Research"
           />
           <TeamCard
-            url="/assets/image/ghanim.jpg"  
+            url="/assets/image/ghanim.jpg"
             name="Ghanim Al Muhairi"
             position="Director & Legal Officer"
           />
