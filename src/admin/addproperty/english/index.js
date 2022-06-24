@@ -9,6 +9,7 @@ import {
   getAdminPropertyById,
   clearUpload,
   getNeighborhoodProperty,
+  getTaglineProperty,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -29,6 +30,7 @@ const mapDispatchToProps = dispatch => {
     editAdminProperty: (id, payload, cb) =>
       dispatch(editAdminProperty(id, payload, cb)),
     getAgentProperty: payload => dispatch(getAgentProperty(payload)),
+    getTaglineProperty: payload => dispatch(getTaglineProperty(payload)),
     getNeighborhoodProperty: payload =>
       dispatch(getNeighborhoodProperty(payload)),
     getAmenityProperty: payload => dispatch(getAmenityProperty(payload)),
