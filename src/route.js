@@ -24,6 +24,8 @@ import PropertyView from './pages/propertyview';
 import AddAgency from './admin/addagency';
 import AddAgent from './admin/addagent';
 import Amenity from './admin/amenity';
+import News from './pages/news/english/News';
+import Neighborhood from './admin/neighborhood';
 
 function Router() {
   const makePrivate = (component, role = '') => (
@@ -55,6 +57,14 @@ function Router() {
               element={makePrivate(<Amenity />, 'ADMIN')}
             />
             <Route
+              path="neighborhood"
+              element={makePrivate(<Neighborhood />, 'ADMIN')}
+            />
+            <Route
+              path="neighborhood/:id"
+              element={makePrivate(<Neighborhood />, 'ADMIN')}
+            />
+            <Route
               path="add-agent"
               element={makePrivate(<AddAgent />, 'ADMIN')}
             />
@@ -73,6 +83,7 @@ function Router() {
           </Route>
           <Route path="buy" element={<Buy />} />
           <Route path="property/:id" element={<PropertyView />} />
+          <Route path="news/:id" element={<News />} />
           <Route path="rent" element={<Rent />} />
           <Route path="sell" element={<Sell />} />
           <Route path="shortterm" element={<ShortTerm />} />

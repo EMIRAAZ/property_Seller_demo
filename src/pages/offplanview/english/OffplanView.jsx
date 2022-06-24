@@ -4,7 +4,11 @@ import Footer from "../../../components/footer";
 import Header from "../../../components/header";
 import ImageFrame from "../imageframe";
 import OffplanCard from "../../../components/offpaln/offplanCard/OffplanCard";
-import ImgPropCarousel from "../../../components/imgpropcarousel";
+import ImgPropCarousel from "../../../components/imgpropcarouselview";
+import LarrowIcon from "../../../components/svg/larrow";
+import RarrowIcon from "../../../components/svg/rarrow";
+import { useState } from "react";
+import Bed from "../../../components/svg/bed";
 
 const OffplanView = () => {
   return (
@@ -26,7 +30,15 @@ const OffplanView = () => {
         </div>
         <div className="offplans-projects">
           <h1 className="Heading">Image Gallery</h1>
-          <ImgPropCarousel />
+          <div className="image-slider-container">
+            <ImageSlider />
+          </div>
+          <h1 className="Heading">Availability</h1>
+          <div className="availability">
+            <Availability />
+            <Availability />
+          </div>
+          <h1 className="Heading">similar projects</h1>
         </div>
         <Footer />
       </div>
@@ -56,5 +68,45 @@ const Amenities = () => {
   );
 };
 ////////////////////
+
+const Availability = () => {
+  return (
+    <div className="availability-div">
+      <Bed width="40" height="40" />
+      <h1 className="title">4 Bed</h1>
+      <h1 className="sub-title">View Floor Plan</h1>
+    </div>
+  );
+};
+
+//////////////////////////////////
+
+const ImageSlider = ({ imgArray = ["/assets/image/noimage.jpg"] }) => {
+  const [index, setIndex] = useState(0);
+
+  const onsetIndex = (add) => {
+    if (index === 0 && add === -1) {
+      setIndex(imgArray.length - 1);
+    } else if (index === imgArray.length - 1 && add === 1) {
+      setIndex(0);
+    } else setIndex(index + add);
+  };
+
+  return (
+    <div
+      className="image-container"
+      style={{
+        backgroundImage: `url(${imgArray[index]})`,
+      }}
+    >
+      <div className="div-1">
+        <LarrowIcon className="rArrow" onClick={() => onsetIndex(-1)} />
+      </div>
+      <div className="div-2">
+        <RarrowIcon className="rArrow" onClick={() => onsetIndex(1)} />
+      </div>
+    </div>
+  );
+};
 
 export default OffplanView;

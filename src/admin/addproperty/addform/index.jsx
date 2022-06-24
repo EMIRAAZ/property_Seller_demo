@@ -63,7 +63,7 @@ const AddForm = ({
 
   const getID = () => location.pathname.split('/').pop();
 
-  const { agent, propertyType, amenities, sale } = propertyOptions;
+  const { agent, propertyType, amenities, sale, neighbor } = propertyOptions;
 
   const onChangeInput = (key, value) => {
     document.getElementById('on-add-warning').style.display = 'none';
@@ -249,6 +249,14 @@ const AddForm = ({
           onChange={v => onChangeInput('for', v)}
         />
         <span className="select-border"></span>
+        <ChipSelect
+          customClass="property-input"
+          label="Famous Neighborhoods"
+          options={neighbor}
+          value={propertyValue.neighborhood}
+          onChange={v => onChangeInput('neighborhood', v)}
+          required
+        />
         <div className="property-row-div">
           <Input
             divClass="property-input"
@@ -297,6 +305,12 @@ const AddForm = ({
             onChange={e => onChangeInput('agentBRN', e.target.value)}
           />
         </div>
+        <Input
+          divClass="property-input"
+          label="Youtube Link"
+          value={propertyValue.videoView}
+          onChange={e => onChangeInput('videoView', e.target.value)}
+        />
         <Input
           divClass="property-input"
           label="Call"

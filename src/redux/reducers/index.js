@@ -11,6 +11,7 @@ import adminaddagencyReducer from './adminaddagency';
 import adminaddagentReducer from './addadminagent';
 import propertyReducer from './property';
 import amenityReducer from './amenity';
+import neighborReducer from './neighborhood';
 
 const rootReducer = combineReducers({
   homeReducer,
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
   adminagencyReducer,
   adminaddagentReducer,
   amenityReducer,
+  neighborReducer,
 });
 
 export default rootReducer;
