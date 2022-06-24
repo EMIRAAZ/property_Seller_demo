@@ -17,6 +17,9 @@ import {
   GET_ADMIN_PROPERTY_BY_ID_ERROR,
   GET_ADMIN_PROPERTY_BY_ID_STARTED,
   CLEAR_ADD_PROPERTY,
+  GET_NEIGHBORHOOD_PROPERTY,
+  GET_NEIGHBORHOOD_PROPERTY_STARTED,
+  GET_NEIGHBORHOOD_PROPERTY_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -187,6 +190,29 @@ const reducer = (state = initialState, action) => {
     case CLEAR_ADD_PROPERTY:
       return {
         ...initialState,
+      };
+
+    case GET_NEIGHBORHOOD_PROPERTY:
+      const neighborhood = action.payload.rows.map(a => {
+        return {
+          name: a.title,
+          value: a.id,
+        };
+      });
+      return {
+        ...state,
+        propertyOptions: {
+          ...state.propertyOptions,
+          neighbor: neighborhood,
+        },
+      };
+    case GET_NEIGHBORHOOD_PROPERTY_STARTED:
+      return {
+        ...state,
+      };
+    case GET_NEIGHBORHOOD_PROPERTY_ERROR:
+      return {
+        ...state,
       };
     default:
       return state;
