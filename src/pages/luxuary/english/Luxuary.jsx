@@ -1,0 +1,227 @@
+import "./luxuary.scss";
+import SocialPanel from "../../../components/socialpanel";
+import Footer from "../../../components/footer";
+import Header from "../../../components/header";
+
+const luxuaryvillas = [
+  {
+    heading: "Villa 1",
+    description:
+      "lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.",
+    image: "/assets/image/lux1.jpg",
+    place: "Dountown",
+    timw: "1 month ago",
+  },
+  {
+    heading: "villa 2",
+    description:
+      "lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.",
+    image: "/assets/image/lux2.jpg",
+    place: "Dubai",
+    timw: "1 month ago",
+  },
+  {
+    heading: "villa 3",
+    description:
+      "lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.",
+    image: "/assets/image/lux3.jpg",
+    place: "Dubai",
+    timw: "1 month ago",
+  },
+];
+
+const luxuaryappartments = [
+  {
+    heading: "resort 1",
+    description:
+      "lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.",
+    image: "/assets/image/resort1.jpg",
+    place: "Dountown",
+    timw: "1 month ago",
+  },
+  {
+    heading: "resort 2",
+    description:
+      "lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.",
+    image: "/assets/image/resort2.jpg",
+    place: "Dubai",
+    timw: "1 month ago",
+  },
+  {
+    heading: "resort 3",
+    description:
+      "lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.",
+    image: "/assets/image/resort3.jpg",
+    place: "Dubai",
+    timw: "1 month ago",
+  },
+];
+
+const luxuarytownhouse = [
+  {
+    heading: "appartment 1",
+    description:
+      "lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.",
+    image: "/assets/image/appart1.jpg",
+    place: "Dountown",
+    timw: "1 month ago",
+  },
+  {
+    heading: "appartment 2",
+    description:
+      "lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.",
+    image: "/assets/image/appart2.jpg",
+    place: "Dubai",
+    timw: "1 month ago",
+  },
+  {
+    heading: "appartment 3",
+    description:
+      "lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.",
+    image: "/assets/image/appart3.jpg",
+    place: "Dubai",
+    timw: "1 month ago",
+  },
+];
+const luxuarypenthouse = [
+  {
+    heading: "apartment 1",
+    description:
+      "lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.",
+    image: "/assets/image/appart1.jpg",
+    place: "Dountown",
+    timw: "1 month ago",
+  },
+  {
+    heading: "apartment 2",
+    description:
+      "lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.",
+    image: "/assets/image/appart2.jpg",
+    place: "Dubai",
+    timw: "1 month ago",
+  },
+  {
+    heading: "apartment 3",
+    description:
+      "lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.",
+    image: "/assets/image/appart3.jpg",
+    place: "Dubai",
+    timw: "1 month ago",
+  },
+];
+
+const LuxuaryCard = ({ image, heading, description, place, timw }) => {
+  return (
+    <>
+      <div className='lux1-card-container'>
+        <div className='lux1-desciption'>
+          <div className='lux1-content'>
+            <img className='lux1-image' src={image} alt='blog' />
+            <div className='dateandtime'>
+              <p className='place'>{place}</p>
+              <p className='time'>{timw}</p>
+            </div>
+            <h1 className='lux1-heading'>{heading}</h1>
+            <p className='lux2-description'>{description}</p>
+            <p className='more'> view more -></p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+const Luxuary = () => {
+  const renderstory1 = () =>
+    luxuaryvillas.map((item, i) => <LuxuaryCard key={i} {...item} />);
+  const renderstory2 = () =>
+    luxuaryappartments.map((item, i) => <LuxuaryCard key={i} {...item} />);
+  const renderstory3 = () =>
+    luxuarytownhouse.map((item, i) => <LuxuaryCard key={i} {...item} />);
+  const renderstory4 = () =>
+    luxuarypenthouse.map((item, i) => <LuxuaryCard key={i} {...item} />);
+  return (
+    <div className='luxuary-container'>
+      <Header />
+      <div className='l-image-container'>
+        <h2 className='luxuary-header'>Luxuary properties</h2>
+        <img
+          className='luxuary-image'
+          src='/assets/image/luxuary.jpg'
+          alt='luxuary properties'
+        />
+      </div>
+      <div className='luxuary-properties'>
+        <h2 className='luxuary-property-header'>About Properties</h2>
+        <div className='luxuary-text-width'>
+          <p className='l-properties-3'>
+            Being a landlord is great! Until you need to find a new tenant or
+            deal with a faulty AC on your own. We’ll take care of it. From
+            marketing your home and collecting rent to carrying out maintenance
+            – and everything in between – our comprehensive property management
+            service gives you total peace of mind. What’s more, our goal is to
+            ensure maximum return on your investment. In addition to providing
+            you with a hassle-free experience, we make it our business to
+            maintain a high occupancy rate. .
+          </p>
+        </div>
+      </div>
+
+      <div className='lux-main'>
+        <div className='viewall'>
+          <div className='luxuary-text-width'>
+            <h2 className='l-heading'>Luxry Villas</h2>
+            <p className='l-description'>
+              We so opinion friends me message as delight. Whole front do of
+              plate heard oh ought. His defective nor convinced residence own.
+            </p>
+          </div>
+          <div className='card-row'>{renderstory1()}</div>
+        </div>
+      </div>
+      <div className='lux-main'>
+        <div className='viewall'>
+          <div className='luxuary-text-width'>
+            <h2 className='l-heading'>Luxry Appartments</h2>
+            <p className='l-description'>
+              We so opinion friends me message as delight. Whole front do of
+              plate heard oh ought. His defective nor convinced residence own.
+            </p>
+          </div>
+          <div className='card-row'>{renderstory2()}</div>
+        </div>
+      </div>
+
+      <div className='lux-main'>
+        <div className='viewall'>
+          <div className='luxuary-text-width'>
+            <h2 className='l-heading'>Luxry Townhouse</h2>
+            <p className='l-description'>
+              We so opinion friends me message as delight. Whole front do of
+              plate heard oh ought. His defective nor convinced residence own.
+            </p>
+          </div>
+          <div className='card-row'>{renderstory3()}</div>
+        </div>
+      </div>
+
+      <div className='lux-main'>
+        <div className='viewall'>
+          <div className='luxuary-text-width'>
+            <h2 className='l-heading'>Luxry Penthouse</h2>
+            <p className='l-description'>
+              We so opinion friends me message as delight. Whole front do of
+              plate heard oh ought. His defective nor convinced residence own.
+            </p>
+          </div>
+          <div className='card-row'>{renderstory4()}</div>
+        </div>
+      </div>
+
+      <SocialPanel />
+      <Footer />
+    </div>
+  );
+};
+
+export default Luxuary;

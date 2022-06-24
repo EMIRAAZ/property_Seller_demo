@@ -1,11 +1,12 @@
 import "./index.scss";
-// import Topstory from "../../pages/topstory/english/Topstory";
-import PropertyList from "../../pages/propertylist/english/PropertyList";
+
+// /import Nft from "../../pages/nft/english/Nft";
+import Luxuary from "../../pages/luxuary/english/Luxuary";
 
 const Preview = () => {
   return (
     <>
-      <PropertyList />
+      <Luxuary />
     </>
   );
 };
