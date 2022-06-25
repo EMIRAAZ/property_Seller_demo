@@ -358,6 +358,11 @@ const AddForm = ({
             value={propertyValue.verified}
             onChange={e => onChangeInput('verified', e.target.checked)}
           />
+          <Checkbox
+            label="ReadyToMove"
+            value={propertyValue.readyToMove}
+            onChange={e => onChangeInput('readyToMove', e.target.checked)}
+          />
         </div>
         <Button
           customClass="add-property-btn"
