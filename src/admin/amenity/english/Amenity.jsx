@@ -1,6 +1,7 @@
 import './amenity.scss';
 import Table from '../../../components/table';
 import AdminHeader from '../../../components/adminheader';
+import AmenityHeader from '../amenityheader';
 import { tableHeader } from './table';
 import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -24,6 +25,7 @@ const Property = props => {
   return (
     <div className="amenity-admin-table">
       <AdminHeader />
+      <AmenityHeader />
       <div className="amenity-admin-container">
         <div className="amenity-admin-left">
           <Table

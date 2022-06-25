@@ -1,6 +1,7 @@
 import './property.scss';
 import Table from '../../../components/table';
 import AdminHeader from '../../../components/adminheader';
+import PropertyHeader from '../propertyheader';
 import { tableHeader } from './table';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -19,6 +20,7 @@ const Property = props => {
   return (
     <div className="property-admin-table">
       <AdminHeader />
+      <PropertyHeader />
       <Table
         rows={props.adminProperty.property || []}
         columns={tableHeader}

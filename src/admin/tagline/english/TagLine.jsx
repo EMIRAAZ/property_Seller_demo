@@ -1,6 +1,7 @@
 import './tagline.scss';
 import Table from '../../../components/table';
 import AdminHeader from '../../../components/adminheader';
+import TagLineHeader from '../taglineheader';
 import { tableHeader } from './table';
 import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -25,6 +26,7 @@ const TagLine = props => {
   return (
     <div className="tagline-admin-table">
       <AdminHeader />
+      <TagLineHeader />
       <div className="tagline-admin-container">
         <div className="tagline-admin-left">
           <Table

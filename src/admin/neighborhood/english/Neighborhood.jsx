@@ -1,6 +1,7 @@
 import './neighbor.scss';
 import Table from '../../../components/table';
 import AdminHeader from '../../../components/adminheader';
+import NeighborHeader from '../neighborhoodheader';
 import { tableHeader } from './table';
 import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -24,6 +25,7 @@ const Property = props => {
   return (
     <div className="neighbor-admin-table">
       <AdminHeader />
+      <NeighborHeader />
       <div className="neighbor-admin-container">
         <div className="neighbor-admin-left">
           <Table
