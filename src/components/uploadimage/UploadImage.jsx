@@ -26,13 +26,15 @@ const UploadImage = props => {
         </>
       );
     } else if (!props.editing) {
-      return (
-        <img
-          className="upload-img-class"
-          alt="pic"
-          src={props.link[props.linkIndex]}
-        />
-      );
+      if (props.link[props.linkIndex]) {
+        return (
+          <img
+            className="upload-img-class"
+            alt="pic"
+            src={props.link[props.linkIndex]}
+          />
+        );
+      } else <></>;
     } else <></>;
   };
 

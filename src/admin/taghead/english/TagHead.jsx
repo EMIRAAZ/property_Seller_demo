@@ -1,6 +1,7 @@
 import './taghead.scss';
 import Table from '../../../components/table';
 import AdminHeader from '../../../components/adminheader';
+import TagHeader from '../tagheadheader';
 import { tableHeader } from './table';
 import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -24,6 +25,7 @@ const TagHead = props => {
   return (
     <div className="taghead-admin-table">
       <AdminHeader />
+      <TagHeader />
       <div className="taghead-admin-container">
         <div className="taghead-admin-left">
           <Table
@@ -36,8 +38,10 @@ const TagHead = props => {
             onClickDelete={id => {
               props.deleteAdminTagHead(id, props.getTagHeadAdmin);
             }}
-            onChangePage={() => {}}
-            count={4}
+            onChangePage={page =>
+              props.getTagHeadAdmin(`?offset=${page * 10 + 1}`)
+            }
+            count={props.adminTagHead.taghead.count || 0}
           />
         </div>
         <div className="taghead-admin-right">
