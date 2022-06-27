@@ -15,6 +15,7 @@ import neighborReducer from './neighborhood';
 import tagheadReducer from './taghead';
 import taglineReducer from './tagline';
 import newstopicsReducer from './newstopics';
+import newsReducer from './news';
 
 const rootReducer = combineReducers({
   homeReducer,
@@ -33,6 +34,7 @@ const rootReducer = combineReducers({
   tagheadReducer,
   taglineReducer,
   newstopicsReducer,
+  newsReducer,
 });
 
 export default rootReducer;
