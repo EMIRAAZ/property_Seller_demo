@@ -4,9 +4,15 @@ import { useState } from 'react';
 
 const Pagination = ({ onChange, count = 0 }) => {
   const [currentState, setCurrentState] = useState(5);
+  const [selected, setSelected] = useState(1);
+
+  const onChangePage = i => {
+    onChange(i);
+    setSelected(i);
+  };
 
   const calculateTotalPages = () => {
-    return Math.ceil(count / 20);
+    return Math.ceil(count / 10);
   };
 
   const onArrowClick = type => {
@@ -24,7 +30,14 @@ const Pagination = ({ onChange, count = 0 }) => {
       i++
     ) {
       count++;
-      page.push(<p onClick={() => onChange(i)}>{i}</p>);
+      page.push(
+        <p
+          className={selected === i ? 'selected-page' : ''}
+          onClick={() => onChangePage(i)}
+        >
+          {i}
+        </p>
+      );
     }
     return page;
   };

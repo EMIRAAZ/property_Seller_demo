@@ -23,7 +23,9 @@ export const changePageHomeProperty = (payload, cb) => async dispatch => {
     type: CHANGE_HOME_PROPERTY_PAGE,
     payload: payload,
   });
-  cb();
+  if (typeof cb === 'function') {
+    cb();
+  }
 };
 
 export const changePageHomeFeatured = (payload, cb) => async dispatch => {
@@ -62,7 +64,7 @@ export const getHomeProperty =
   async dispatch => {
     try {
       dispatch(getHomePropertyStarted(search ? params : ''));
-      const res = await axios.get(`/api/property${params}`);
+      const res = await axios.get(`/api/property?${params}`);
       dispatch({
         type: GET_HOME_PROPERTY,
         payload: res.data?.data,

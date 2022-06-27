@@ -17,10 +17,10 @@ const HomeProperty = ({ property, onChangePage, getProperty }) => {
     else return null;
   };
   const onChangeCurrentPage = current => {
-    const offset = 20 * current - 20 > 0 ? 20 * current - 20 : 0;
+    const offset = 10 * current - 10 > 0 ? 10 * current - 10 : 0;
     onChangePage(
       current,
-      getProperty(`${property.params}&offset=${offset}&limit=20`)
+      getProperty(`${property.params}&offset=${offset}&limit=10`)
     );
   };
 
