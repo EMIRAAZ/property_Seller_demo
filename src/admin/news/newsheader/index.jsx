@@ -4,9 +4,9 @@ const NewsHeader = props => {
   return (
     <div className="admin-news-header-container">
       <div className="admin-add-news-header">
-        <p>List Tag Line</p>
+        <p>List News</p>
       </div>
-      <span>showing list of tag line.</span>
+      <span>showing list of news.</span>
     </div>
   );
 };

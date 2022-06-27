@@ -2,7 +2,6 @@ import './addform.scss';
 import Input from '../../../components/input/admininput';
 import UploadImage from '../../../components/uploadimage';
 import Textarea from '../../../components/input/admintextarea';
-import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { checkIfAllKeyHasValue } from '../../../utils';
@@ -11,13 +10,12 @@ import Spinner from '../../../components/spinner';
 const keyArr = ['title', 'mainTitle', 'description'];
 
 const AddForm = ({
-  addNews,
-  topics,
-  editNews,
-  getNews,
+  addBlog,
+  editBlog,
+  getBlog,
   env,
   onChange,
-  newsValue,
+  blogValue,
   editing,
   clear,
   images,
@@ -35,29 +33,29 @@ const AddForm = ({
   };
 
   const editCB = () => {
-    getNews();
-    navigate(`/admin/news`);
+    getBlog();
+    navigate(`/admin/blog`);
     clear();
   };
 
-  const addAdminNews = () => {
-    if (checkIfAllKeyHasValue(newsValue, keyArr)) {
+  const addAdminBlog = () => {
+    if (checkIfAllKeyHasValue(blogValue, keyArr)) {
       document.getElementById('on-add-warning').style.opacity = '100';
       return;
     }
     if (editing) {
-      editNews(
+      editBlog(
         getID(),
         {
-          ...newsValue,
-          images: images[0] ? images : newsValue.images,
+          ...blogValue,
+          images: images[0] ? images : blogValue.images,
         },
         () => editCB()
       );
     } else {
-      addNews(
+      addBlog(
         {
-          ...newsValue,
+          ...blogValue,
           images: images,
         },
         () => editCB()
@@ -74,31 +72,31 @@ const AddForm = ({
   };
 
   return (
-    <div className="add-news-form">
+    <div className="add-blog-form">
       <Input
-        divClass="news-input"
+        divClass="blog-input"
         label="Title"
         required
-        value={newsValue.title}
+        value={blogValue.title}
         onChange={e => onChangeInput('title', e.target.value)}
       />
       <Input
-        divClass="news-input"
+        divClass="blog-input"
         label="Main Title"
         required
-        value={newsValue.mainTitle}
+        value={blogValue.mainTitle}
         onChange={e => onChangeInput('mainTitle', e.target.value)}
       />
       <Textarea
-        divClass="news-input"
+        divClass="blog-input"
         label="Description"
         rows={8}
         onChange={e => onChangeInput('description', e.target.value)}
-        value={newsValue.description}
+        value={blogValue.description}
         required
       />
       <label className="property-image-label spinner-label">
-        News Image<span>*</span> {renderImageLoadingSpinner()}
+        Blog Image<span>*</span> {renderImageLoadingSpinner()}
       </label>
 
       <UploadImage
@@ -107,25 +105,15 @@ const AddForm = ({
         customClass="neighbor-logo-img"
         onChangeImage={() => {}}
         svg={true}
-        value={newsValue.images}
+        value={blogValue.images}
       />
 
       <span id="on-add-warning" className="pls-fill">
         please fill all the required fields !!
       </span>
-
-      <ChipSelect
-        customClass="news-input"
-        label="Topics"
-        options={topics}
-        value={newsValue.topics}
-        onChange={v => onChangeInput('topics', v)}
-        required
-      />
-
       <Button
-        customClass="add-news-btn"
-        onClick={addAdminNews}
+        customClass="add-blog-btn"
+        onClick={addAdminBlog}
         loading={env.loading}
       >
         ADD

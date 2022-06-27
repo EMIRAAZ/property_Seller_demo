@@ -15,3 +15,4 @@ export * from './taghead';
 export * from './tagline';
 export * from './newstopics';
 export * from './news';
+export * from './blog';
