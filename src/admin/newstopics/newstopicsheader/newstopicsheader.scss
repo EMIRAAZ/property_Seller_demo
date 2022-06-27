@@ -1,0 +1,21 @@
+.admin-tagheader-header-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  .admin-add-tagheader-header {
+    display: flex;
+    p {
+      font-family: 'Poppins';
+      font-size: 25px;
+      font-weight: 600;
+      color: #353535;
+    }
+  }
+  span {
+    margin-top: 10px;
+    color: #8d8d8d;
+    font-family: 'Poppins';
+    font-size: 13px;
+    max-width: 800px;
+  }
+}

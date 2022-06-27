@@ -1,0 +1,50 @@
+.add-tagline-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 20px;
+  .select-border {
+    margin: 10px 0px;
+  }
+
+  .tagline-input {
+    width: 100%;
+  }
+  .tagline-logo-img {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+  }
+  .add-tagline-btn {
+    width: 50%;
+    margin-top: 26px;
+    height: 47px;
+    font-family: 'Poppins';
+    background-color: #1c3988;
+    font-weight: 600;
+    margin-left: auto;
+  }
+  .pls-fill {
+    margin: 10px;
+    font-family: 'Poppins';
+    font-size: 13px;
+    color: #ff0000;
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .add-tagline-form {
+    display: flex;
+    justify-content: space-between;
+
+    .add-tagline-btn {
+      width: 20%;
+      margin: 0px 0px 90px 0px;
+      margin-left: auto;
+    }
+
+    .tagline-in-tagline {
+    }
+  }
+}

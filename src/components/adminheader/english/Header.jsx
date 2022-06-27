@@ -36,6 +36,9 @@ const Header = props => {
           <li onClick={() => navigate('/admin/agency')}>Agency </li>
           <li onClick={onClickAddAgency}>Add Agency </li>
           <li onClick={() => navigate('/admin/amenity')}>Amenity </li>
+          <li onClick={() => navigate('/admin/offplan')}>Offplan </li>
+          <li onClick={() => navigate('/admin/taghead')}>Tag&nbsp;Header</li>
+          <li onClick={() => navigate('/admin/tagline')}>Tag&nbsp;Line</li>
         </ul>
       </div>
       <div className={`mobile-sidebar ${state}`}>
@@ -51,6 +54,9 @@ const Header = props => {
           <li onClick={() => navigate('/admin/neighborhood')}>
             Neighbor&nbsp;Hood
           </li>
+          <li onClick={() => navigate('/admin/offplan')}>Offplan </li>
+          <li onClick={() => navigate('/admin/taghead')}>Tag&nbsp;Header</li>
+          <li onClick={() => navigate('/admin/tagline')}>Tag&nbsp;Line</li>
         </ul>
       </div>
       <ul className="header-list">
@@ -89,6 +95,24 @@ const Header = props => {
               onClick={() => navigate('/admin/neighborhood')}
             >
               Neighbor&nbsp;Hood
+            </li>
+            <li
+              className="simple-list"
+              onClick={() => navigate('/admin/offplan')}
+            >
+              Offplan
+            </li>
+            <li
+              className="simple-list"
+              onClick={() => navigate('/admin/taghead')}
+            >
+              Tag&nbsp;Header
+            </li>
+            <li
+              className="simple-list"
+              onClick={() => navigate('/admin/tagline')}
+            >
+              Tag&nbsp;Line
             </li>
           </ul>
         </li>

@@ -1,6 +1,7 @@
 import './agency.scss';
 import Table from '../../../components/table';
 import AdminHeader from '../../../components/adminheader';
+import AgencyHeader from '../agencyheader';
 import { tableHeader } from './table';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -19,6 +20,7 @@ const Agency = props => {
   return (
     <div className="agency-admin-table">
       <AdminHeader />
+      <AgencyHeader />
       <Table
         rows={props.adminAgency.agency || []}
         columns={tableHeader}
@@ -29,8 +31,8 @@ const Agency = props => {
           props.getAdminAgency();
           props.deleteAdminAgency(id, props.getAdminAgency);
         }}
-        onChangePage={() => {}}
-        count={4}
+        onChangePage={page => props.getAdminAgency(`?offset=${page * 10 + 1}`)}
+        count={props.adminAgency.count || 0}
       />
     </div>
   );

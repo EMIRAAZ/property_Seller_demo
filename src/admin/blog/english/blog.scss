@@ -1,0 +1,33 @@
+.blog-admin-table {
+  .sale-admin {
+    color: rgb(72, 72, 214);
+  }
+
+  .blog-admin-container {
+    display: flex;
+    flex-direction: column;
+    .blog-admin-left {
+      width: 100%;
+    }
+    .blog-admin-right {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .blog-admin-table {
+    .blog-admin-container {
+      display: flex;
+      flex-direction: row;
+      margin-top: 20px;
+      .blog-admin-left {
+        width: 60%;
+        margin-top: 50px;
+      }
+      .blog-admin-right {
+        width: 40%;
+      }
+    }
+  }
+}

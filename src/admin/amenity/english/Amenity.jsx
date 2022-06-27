@@ -1,6 +1,7 @@
 import './amenity.scss';
 import Table from '../../../components/table';
 import AdminHeader from '../../../components/adminheader';
+import AmenityHeader from '../amenityheader';
 import { tableHeader } from './table';
 import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -24,6 +25,7 @@ const Property = props => {
   return (
     <div className="amenity-admin-table">
       <AdminHeader />
+      <AmenityHeader />
       <div className="amenity-admin-container">
         <div className="amenity-admin-left">
           <Table
@@ -36,8 +38,10 @@ const Property = props => {
             onClickDelete={id => {
               props.deleteAdminAmenity(id, props.getAmenityAdmin);
             }}
-            onChangePage={() => {}}
-            count={4}
+            onChangePage={page =>
+              props.getAmenityAdmin(`?offset=${page * 10 + 1}`)
+            }
+            count={props.adminAmenity.amenity.count || 0}
           />
         </div>
         <div className="amenity-admin-right">

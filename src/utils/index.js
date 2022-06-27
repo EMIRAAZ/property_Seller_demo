@@ -11,7 +11,7 @@ export const makeUrlParam = paramObject => {
     }
   }
 
-  return paramString ? '?' + paramString : paramString;
+  return paramString;
 };
 
 export const checkAuth = role => {

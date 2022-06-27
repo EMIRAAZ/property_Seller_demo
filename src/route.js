@@ -28,6 +28,9 @@ import News from './pages/news/english/News';
 import Neighborhood from './admin/neighborhood';
 import PropertyList from './pages/propertylist';
 import Luxuary from './pages/luxuary/english/Luxuary';
+import Offplan from './admin/offplan';
+import TagHead from './admin/taghead';
+import TagLine from './admin/tagline';
 
 function Router() {
   const makePrivate = (component, role = '') => (
@@ -66,6 +69,7 @@ function Router() {
               path="neighborhood/:id"
               element={makePrivate(<Neighborhood />, 'ADMIN')}
             />
+            <Route path="offplan" element={makePrivate(<Offplan />, 'ADMIN')} />
             <Route
               path="add-agent"
               element={makePrivate(<AddAgent />, 'ADMIN')}
@@ -81,6 +85,16 @@ function Router() {
             <Route
               path="add-agency/:id"
               element={makePrivate(<AddAgency />, 'ADMIN')}
+            />
+            <Route path="taghead" element={makePrivate(<TagHead />, 'ADMIN')} />
+            <Route
+              path="taghead/:id"
+              element={makePrivate(<TagHead />, 'ADMIN')}
+            />
+            <Route path="tagline" element={makePrivate(<TagLine />, 'ADMIN')} />
+            <Route
+              path="tagline/:id"
+              element={makePrivate(<TagLine />, 'ADMIN')}
             />
           </Route>
           <Route path="buy" element={<Buy />} />

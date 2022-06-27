@@ -77,6 +77,7 @@ const About = () => {
             name='Ashiq Emiraaz'
             position='Founder & CEO'
           />
+
           <TeamCard
             url='/assets/image/ghanim.jpg'
             name='Ghanim Al Muhairi'

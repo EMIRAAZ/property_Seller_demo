@@ -4,6 +4,11 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+
+  .selected-page {
+    color: #ffffff;
+    background-color: rgba(129, 129, 129, 0.3);
+  }
   .mirror {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
