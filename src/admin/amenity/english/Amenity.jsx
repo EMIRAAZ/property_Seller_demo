@@ -38,8 +38,10 @@ const Property = props => {
             onClickDelete={id => {
               props.deleteAdminAmenity(id, props.getAmenityAdmin);
             }}
-            onChangePage={() => {}}
-            count={4}
+            onChangePage={page =>
+              props.getAmenityAdmin(`?offset=${page * 10 + 1}`)
+            }
+            count={props.adminAmenity.amenity.count || 0}
           />
         </div>
         <div className="amenity-admin-right">

@@ -31,8 +31,8 @@ const Agency = props => {
           props.getAdminAgency();
           props.deleteAdminAgency(id, props.getAdminAgency);
         }}
-        onChangePage={() => {}}
-        count={4}
+        onChangePage={page => props.getAdminAgency(`?offset=${page * 10 + 1}`)}
+        count={props.adminAgency.count || 0}
       />
     </div>
   );

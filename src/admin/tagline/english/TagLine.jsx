@@ -39,8 +39,10 @@ const TagLine = props => {
             onClickDelete={id => {
               props.deleteAdminTagLine(id, props.getTagLineAdmin);
             }}
-            onChangePage={() => {}}
-            count={4}
+            onChangePage={page =>
+              props.getTagLineAdmin(`?offset=${page * 10 + 1}`)
+            }
+            count={props.adminTagLine.tagline.count || 0}
           />
         </div>
         <div className="tagline-admin-right">

@@ -31,8 +31,10 @@ const Property = props => {
           props.getAdminProperty();
           props.deleteAdminProperty(id, props.getAdminProperty);
         }}
-        onChangePage={() => {}}
-        count={4}
+        onChangePage={page =>
+          props.getAdminProperty(`?offset=${page * 10 + 1}`)
+        }
+        count={props.adminProperty.count || 0}
       />
     </div>
   );

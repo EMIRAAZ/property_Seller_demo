@@ -38,8 +38,10 @@ const Property = props => {
             onClickDelete={id => {
               props.deleteAdminNeighborhood(id, props.getNeighborhoodAdmin);
             }}
-            onChangePage={() => {}}
-            count={4}
+            onChangePage={page =>
+              props.getNeighborhoodAdmin(`?offset=${page * 10 + 1}`)
+            }
+            count={props.adminNeighborhood.neighbor.count || 0}
           />
         </div>
         <div className="neighbor-admin-right">

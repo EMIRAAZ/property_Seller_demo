@@ -38,8 +38,10 @@ const TagHead = props => {
             onClickDelete={id => {
               props.deleteAdminTagHead(id, props.getTagHeadAdmin);
             }}
-            onChangePage={() => {}}
-            count={4}
+            onChangePage={page =>
+              props.getTagHeadAdmin(`?offset=${page * 10 + 1}`)
+            }
+            count={props.adminTagHead.taghead.count || 0}
           />
         </div>
         <div className="taghead-admin-right">
