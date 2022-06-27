@@ -78,14 +78,15 @@ const About = () => {
             position='Founder & CEO'
           />
           <TeamCard
-            url='/assets/image/faisal.jpg'
-            name='Faisal Mangat'
-            position='Director & Research'
-          />
-          <TeamCard
             url='/assets/image/ghanim.jpg'
             name='Ghanim Al Muhairi'
             position='Director & Legal Officer'
+          />
+
+          <TeamCard
+            url='/assets/image/faisal.jpg'
+            name='Faisal Mangat'
+            position='Director & Research'
           />
         </div>
       </div>

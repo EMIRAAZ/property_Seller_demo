@@ -26,6 +26,8 @@ import AddAgent from './admin/addagent';
 import Amenity from './admin/amenity';
 import News from './pages/news/english/News';
 import Neighborhood from './admin/neighborhood';
+import PropertyList from './pages/propertylist';
+import Luxuary from './pages/luxuary/english/Luxuary';
 
 function Router() {
   const makePrivate = (component, role = '') => (
@@ -88,6 +90,8 @@ function Router() {
           <Route path="sell" element={<Sell />} />
           <Route path="shortterm" element={<ShortTerm />} />
           <Route path="management" element={<Management />} />
+          <Route path="management" element={<PropertyList />} />
+          <Route path="management" element={<Luxuary />} />
           <Route path="mortgage" element={<Mortgage />} />
           <Route path="ourteam" element={<OurTeam />} />
           <Route path="ourpartner" element={<Partner />} />
