@@ -144,7 +144,7 @@ const Luxuary = () => {
     <div className='luxuary-container'>
       <Header />
       <div className='l-image-container'>
-        <h2 className='luxuary-header'>Luxuary properties</h2>
+        <h2 className='luxuary-header'>Luxury properties</h2>
         <img
           className='luxuary-image'
           src='/assets/image/luxuary.jpg'
@@ -152,7 +152,7 @@ const Luxuary = () => {
         />
       </div>
       <div className='luxuary-properties'>
-        <h2 className='luxuary-property-header'>About Properties</h2>
+        <h2 className='luxuary-property-header'></h2>
         <div className='luxuary-text-width'>
           <p className='l-properties-3'>
             Being a landlord is great! Until you need to find a new tenant or
@@ -182,7 +182,7 @@ const Luxuary = () => {
       <div className='lux-main'>
         <div className='viewall'>
           <div className='luxuary-text-width'>
-            <h2 className='l-heading'>Luxry Appartments</h2>
+            <h2 className='l-heading'>Luxury Appartments</h2>
             <p className='l-description'>
               We so opinion friends me message as delight. Whole front do of
               plate heard oh ought. His defective nor convinced residence own.
