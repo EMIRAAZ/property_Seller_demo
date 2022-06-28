@@ -30,6 +30,9 @@
           line-height: 34px;
           letter-spacing: 0em;
           text-align: left;
+          line-height: 1em;
+          height: 2em;
+          overflow: hidden;
         }
         .description {
           font-family: Poppins;
@@ -38,6 +41,9 @@
           letter-spacing: 0em;
           text-align: left;
           color: #6e6e6e;
+          line-height: 1.5em;
+          height: 3em;
+          overflow: hidden;
         }
 
         .price {
@@ -71,6 +77,7 @@
       }
       img {
         width: 50%;
+        height: fit-content;
       }
       .item-details {
         width: 50%;
@@ -93,6 +100,9 @@
             line-height: 34px;
             letter-spacing: 0em;
             text-align: left;
+            line-height: 1em;
+            height: 2em;
+            overflow: hidden;
           }
           .description {
             font-family: Poppins;
@@ -102,6 +112,9 @@
             letter-spacing: 0em;
             text-align: left;
             color: #6e6e6e;
+            line-height: 1.5em;
+            height: 3em;
+            overflow: hidden;
           }
 
           .price {

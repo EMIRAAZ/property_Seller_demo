@@ -12,7 +12,7 @@ import HomeProperty from '../homeProperty';
 const Home = props => {
   return (
     <div className="home-english">
-      <Header />
+      <Header customClass="home-header-class" />
       <ImageFrame />
       <HomeFormCard
         onInputChange={props.onHomeSearchInputChange}

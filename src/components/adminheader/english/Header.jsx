@@ -25,7 +25,7 @@ const Header = props => {
   };
 
   return (
-    <div className="header-english">
+    <div className="adminheader-english">
       <div className={`web-sidebar ${state}`}>
         <ul>
           <li onClick={onSidebarWebToggle}>
@@ -59,7 +59,7 @@ const Header = props => {
           <li onClick={() => navigate('/admin/tagline')}>Tag&nbsp;Line</li>
         </ul>
       </div>
-      <ul className="header-list">
+      <ul className="adminheader-list">
         <li className="logo" onClick={onSidebarWebToggle}>
           <HamburgerLogo width="35" height="28" />
         </li>
@@ -72,29 +72,18 @@ const Header = props => {
             <li className="simple-list" onClick={() => navigate('/admin')}>
               Property
             </li>
-            <li className="simple-list" onClick={onClickAddProperty}>
-              Add Property
-            </li>
             <li
               className="simple-list"
               onClick={() => navigate('/admin/agency')}
             >
               Agency
             </li>
-            <li className="simple-list" onClick={onClickAddAgency}>
-              Add Agency
-            </li>
+
             <li
               className="simple-list"
               onClick={() => navigate('/admin/amenity')}
             >
               Amenity
-            </li>
-            <li
-              className="simple-list"
-              onClick={() => navigate('/admin/neighborhood')}
-            >
-              Neighbor&nbsp;Hood
             </li>
             <li
               className="simple-list"
@@ -104,19 +93,13 @@ const Header = props => {
             </li>
             <li
               className="simple-list"
-              onClick={() => navigate('/admin/taghead')}
-            >
-              Tag&nbsp;Header
-            </li>
-            <li
-              className="simple-list"
               onClick={() => navigate('/admin/tagline')}
             >
               Tag&nbsp;Line
             </li>
           </ul>
         </li>
-        <li className="header-btn">
+        <li className="adminheader-btn">
           <HeaderButton>االعربية</HeaderButton>
         </li>
       </ul>
