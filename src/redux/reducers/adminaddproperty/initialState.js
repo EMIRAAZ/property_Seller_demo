@@ -59,7 +59,6 @@ export const initialState = {
     sale: [
       { name: 'Sell', value: 'sell' },
       { name: 'Rent', value: 'rent' },
-      { name: 'Both', value: 'both' },
     ],
     agent: [],
     amenities: [],
