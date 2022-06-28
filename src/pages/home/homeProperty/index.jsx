@@ -1,8 +1,13 @@
 import './homeproperty.scss';
 import Property from '../../../components/property';
 import Pagination from '../../../components/pagination';
+import { useEffect } from 'react';
 
 const HomeProperty = ({ property, onChangePage, getProperty }) => {
+  useEffect(() => {
+    getProperty();
+  }, []);
+
   const renderProperty = () =>
     property.property.map(item => <Property key={item.id} {...item} />);
 

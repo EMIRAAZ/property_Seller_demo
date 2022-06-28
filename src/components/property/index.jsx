@@ -35,7 +35,7 @@ const Property = props => {
   };
 
   const renderVerified = verified =>
-    verified ? (
+    true ? (
       <div className="property-verified">
         <Verified /> VERIFIED
       </div>
