@@ -1,26 +1,26 @@
-import "./header.scss";
-import HamburgerLogo from "../../svg/hamburger";
-import HeaderButton from "../../button/HeaderButton";
-import Close from "../../svg/close";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import './header.scss';
+import HamburgerLogo from '../../svg/hamburger';
+import HeaderButton from '../../button/HeaderButton';
+import Close from '../../svg/close';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Header = (props) => {
+const Header = props => {
   const navigate = useNavigate();
-  const [state, changeState] = useState("hide");
+  const [state, changeState] = useState('hide');
   const onSidebarWebToggle = () => {
-    changeState(state === "hide" ? "show" : "hide");
+    changeState(state === 'hide' ? 'show' : 'hide');
   };
 
   const onClickAddProperty = () => {
     props.clearAddProperty();
-    navigate("/admin/add-property");
+    navigate('/admin/add-property');
     props.clearUpload();
   };
 
   const onClickAddAgency = () => {
     props.clearAddAgency();
-    navigate("/admin/add-agency");
+    navigate('/admin/add-agency');
     props.clearUpload();
   };
 
@@ -31,14 +31,19 @@ const Header = (props) => {
           <li onClick={onSidebarWebToggle}>
             <Close />
           </li>
-          <li onClick={() => navigate("/admin")}>Property </li>
+          <li onClick={() => navigate('/admin')}>Property </li>
           <li onClick={onClickAddProperty}>Add Property </li>
-          <li onClick={() => navigate("/admin/agency")}>Agency </li>
+          <li onClick={() => navigate('/admin/agency')}>Agency </li>
           <li onClick={onClickAddAgency}>Add Agency </li>
-          <li onClick={() => navigate("/admin/amenity")}>Amenity </li>
-          <li onClick={() => navigate("/admin/offplan")}>Offplan </li>
-          <li onClick={() => navigate("/admin/taghead")}>Tag&nbsp;Header</li>
-          <li onClick={() => navigate("/admin/tagline")}>Tag&nbsp;Line</li>
+          <li onClick={() => navigate('/admin/amenity')}>Amenity </li>
+          <li onClick={() => navigate('/admin/offplan')}>Offplan </li>
+          <li onClick={() => navigate('/admin/taghead')}>Tag&nbsp;Header</li>
+          <li onClick={() => navigate('/admin/tagline')}>Tag&nbsp;Line</li>
+          <li onClick={() => navigate('/admin/newstopics')}>
+            News&nbsp;Topics
+          </li>
+          <li onClick={() => navigate('/admin/news')}>News</li>
+          <li onClick={() => navigate('/admin/blog')}>Blog</li>
         </ul>
       </div>
       <div className={`mobile-sidebar ${state}`}>
@@ -46,54 +51,59 @@ const Header = (props) => {
           <li onClick={onSidebarWebToggle}>
             <Close />
           </li>
-          <li onClick={() => navigate("/admin")}>Property</li>
+          <li onClick={() => navigate('/admin')}>Property</li>
           <li onClick={onClickAddProperty}>Add Property</li>
-          <li onClick={() => navigate("/admin/agency")}>Agency</li>
+          <li onClick={() => navigate('/admin/agency')}>Agency</li>
           <li onClick={onClickAddAgency}>Add Agency</li>
-          <li onClick={() => navigate("/admin/amenity")}>Amenity </li>
-          <li onClick={() => navigate("/admin/neighborhood")}>
+          <li onClick={() => navigate('/admin/amenity')}>Amenity </li>
+          <li onClick={() => navigate('/admin/neighborhood')}>
             Neighbor&nbsp;Hood
           </li>
-          <li onClick={() => navigate("/admin/offplan")}>Offplan </li>
-          <li onClick={() => navigate("/admin/taghead")}>Tag&nbsp;Header</li>
-          <li onClick={() => navigate("/admin/tagline")}>Tag&nbsp;Line</li>
+          <li onClick={() => navigate('/admin/offplan')}>Offplan </li>
+          <li onClick={() => navigate('/admin/taghead')}>Tag&nbsp;Header</li>
+          <li onClick={() => navigate('/admin/tagline')}>Tag&nbsp;Line</li>
+          <li onClick={() => navigate('/admin/newstopics')}>
+            News&nbsp;Topics
+          </li>
+          <li onClick={() => navigate('/admin/news')}>News</li>
+          <li onClick={() => navigate('/admin/blog')}>Blog</li>
         </ul>
       </div>
       <ul className="adminheader-list">
         <li className="logo" onClick={onSidebarWebToggle}>
           <HamburgerLogo width="35" height="28" />
         </li>
-        <li className="company-name" onClick={() => navigate("/admin")}>
+        <li className="company-name" onClick={() => navigate('/admin')}>
           <span className="main-name">UAE&nbsp;Assistant</span>
           <span className="sub-name">ADMIN</span>
         </li>
         <li className="desktop-li">
           <ul className="desktop-ul">
-            <li className="simple-list" onClick={() => navigate("/admin")}>
+            <li className="simple-list" onClick={() => navigate('/admin')}>
               Property
             </li>
             <li
               className="simple-list"
-              onClick={() => navigate("/admin/agency")}
+              onClick={() => navigate('/admin/agency')}
             >
               Agency
             </li>
 
             <li
               className="simple-list"
-              onClick={() => navigate("/admin/amenity")}
+              onClick={() => navigate('/admin/amenity')}
             >
               Amenity
             </li>
             <li
               className="simple-list"
-              onClick={() => navigate("/admin/offplan")}
+              onClick={() => navigate('/admin/offplan')}
             >
               Offplan
             </li>
             <li
               className="simple-list"
-              onClick={() => navigate("/admin/tagline")}
+              onClick={() => navigate('/admin/tagline')}
             >
               Tag&nbsp;Line
             </li>
