@@ -5,14 +5,14 @@ import Header from "../../../components/header";
 
 const TeamCard = ({ url, name, position }) => {
   return (
-    <div className='card-container'>
-      <div className='card-image-container'>
-        <img className='team-image' src={url} alt='team' />
+    <div className="card-container">
+      <div className="card-image-container">
+        <img className="team-image" src={url} alt="team" />
       </div>
-      <div className='card-title'>
+      <div className="card-title">
         <p>{name}</p>
       </div>
-      <div className='card-description'>
+      <div className="card-description">
         <p>{position}</p>
       </div>
     </div>
@@ -21,21 +21,21 @@ const TeamCard = ({ url, name, position }) => {
 
 const About = () => {
   return (
-    <div className='about-english-container'>
+    <div className="about-english-container">
       <Header />
 
-      <div className='image-container'>
-        <h2 className='header'>About Us</h2>
+      <div className="image-container">
+        <h2 className="header">About Us</h2>
         <img
-          className='about-image'
-          src='/assets/image/about.jpg'
-          alt='about us'
+          className="about-image"
+          src="/assets/image/about.jpg"
+          alt="about us"
         />
       </div>
-      <div className='about-properties'>
-        <h2 className='property-header'>About Properties</h2>
-        <div className='text-width'>
-          <p className='properties-1'>
+      <div className="about-properties">
+        <h2 className="property-header">About Properties</h2>
+        <div className="text-width">
+          <p className="properties-1">
             A one stop solution for all your property needs, the ‘UAE Assistant’
             has been disrupting the real estate sector in the UAE in ways never
             imagined before. A comprehensive real estate portal, the ‘UAE
@@ -70,24 +70,24 @@ const About = () => {
             opportunities. Know what it does and why it can’t be done without.
           </p>
         </div>
-        <div className='about-properties-2'>
+        <div className="about-properties-2">
           <TeamCard
-            className='teamcard'
-            url='/assets/image/ashique.jpg'
-            name='Ashiq Emiraaz'
-            position='Founder & CEO'
+            className="teamcard"
+            url="/assets/image/ashique.jpg"
+            name="Ashiq Emiraaz"
+            position="Founder & CEO"
           />
 
           <TeamCard
-            url='/assets/image/ghanim.jpg'
-            name='Ghanim Al Muhairi'
-            position='Director & Legal Officer'
+            url="/assets/image/ghanim.jpg"
+            name="Ghanim Al Muhairi"
+            position="Director & Legal Officer"
           />
 
           <TeamCard
-            url='/assets/image/faisal.jpg'
-            name='Faisal Mangat'
-            position='Director & Research'
+            url="/assets/image/faisal.jpg"
+            name="Faisal Mangat"
+            position="Director & Research"
           />
         </div>
       </div>

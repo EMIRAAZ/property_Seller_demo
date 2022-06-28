@@ -2,7 +2,8 @@
   .main-container {
     // flex: 1;
     display: flex;
-    background-color: #eef7ff;
+    // background-color: #eef7ff;
+    background-color: white;
     padding: 3% 4%;
     .image-slider-container {
       width: 56%;
@@ -62,7 +63,7 @@
       }
     }
     .main-details-container {
-      padding: 3%;
+      padding: 0 3%;
       background-color: white;
       width: 44%;
       .details-container {
@@ -178,8 +179,9 @@
           width: 33%;
           margin-top: 20px;
           .amenties-icon {
-            width: 25px;
-            height: 25px;
+            width: 20px;
+            height: 20px;
+            margin-top: 3px;
           }
           .ameneties-text {
             font-size: 19px;
@@ -450,7 +452,7 @@
           font-family: "Poppins";
           color: #333333;
           font-weight: 600;
-          font-size: 27px;
+          font-size: 21px;
           margin-top: 30px;
         }
         .amenities-list {
@@ -470,6 +472,7 @@
             .amenties-icon {
               width: 25px;
               height: 25px;
+              margin-top: 0px;
             }
             .ameneties-text {
               font-size: 19px;
@@ -479,6 +482,9 @@
               margin-left: 20px;
             }
           }
+        }
+        .agency-logo {
+          width: 150px;
         }
       }
     }
