@@ -19,6 +19,7 @@ import Blog from "./pages/dailyblog";
 import Property from "./admin/property";
 import AdminAgency from "./admin/agency";
 import AddProperty from "./admin/addproperty";
+import Addoffplan from "./admin/addoffplan";
 import Login from "./admin/login";
 import PropertyView from "./pages/propertyview";
 import AddAgency from "./admin/addagency";
@@ -64,6 +65,10 @@ function Router() {
             <Route
               path="neighborhood/:id"
               element={makePrivate(<Neighborhood />, "ADMIN")}
+            />{" "}
+            <Route
+              path="add-offplan"
+              element={makePrivate(<Addoffplan />, "ADMIN")}
             />
             <Route path="offplan" element={makePrivate(<Offplan />, "ADMIN")} />
             <Route

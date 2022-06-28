@@ -96,7 +96,10 @@ const Header = (props) => {
               className="simple-list"
               onClick={() => navigate("/admin/offplan")}
             >
-              Offplan{" "}
+              Offplan
+            </li>
+            <li className="simple-list" onClick={() => navigate("/admin/add-")}>
+              Offplan
             </li>
           </ul>
         </li>
