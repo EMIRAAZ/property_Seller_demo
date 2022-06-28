@@ -26,7 +26,7 @@ const Home = props => {
         getProperty={props.getHomeProperty}
       />
 
-      <HomeFeatured
+      {/* <HomeFeatured
         featured={props.homeFeatured}
         getFeatured={props.getHomeFeatured}
         onChangePage={props.changePageHomeFeatured}
@@ -36,7 +36,7 @@ const Home = props => {
         luxury={props.homeLuxury}
         getLuxury={props.getHomeLuxury}
         onChangePage={props.changePageHomeLuxury}
-      />
+      /> */}
       <SocialPanel />
       <Footer />
     </div>

@@ -1,7 +1,18 @@
 .home-english {
   .home-header-class {
-    background-color: transparent !important;
-    position: relative;
+    .mobile-sidebar {
+      background-color: #e7f1ff !important;
+
+      ul {
+        background-color: #e7f1ff !important;
+      }
+    }
+    width: 100%;
+    margin: 0 auto;
+
+    .header-list {
+      background-color: transparent !important;
+    }
 
     .logo {
       color: #ffffff;
@@ -21,6 +32,14 @@
           color: #ffffff;
         }
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .home-english {
+    .home-header-class {
+      width: 79%;
     }
   }
 }
