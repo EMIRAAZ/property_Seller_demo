@@ -107,16 +107,7 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
        top: 880.06px;
        background:white;
 
-       .luxuary-property-header{
-           font-family: 'Poppins';
-           font-style: normal;
-           font-weight: 600;
-           font-size: 51.2674px;
-           line-height: 63px;
-           letter-spacing: -0.03em;
-           padding-top:80px;   
-           padding-left:100px;   
-       }
+       
        .luxuary-text-width{
            width: 85%;
        
@@ -183,43 +174,50 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
 
 
     .lux1-card-container{
-       
-        width: 90%;
+        display: flex;
+        width: 35%;
         align-items: center;
         flex-direction: row;
         justify-content: center;
         margin:10px auto;
-        
+        margin-left: 20px;
         background:white ;
     
         .lux1-desciption{
             margin-left: 10px auto;
-             
+            
             
             .lux1-content{
                 
-                width: 85%;
-                margin-top: 30px;
-                margin-left: 20px;
+                width: 100%;
+                margin-top: 10px;
+                margin-left: 0px;
+                .lux1-image{
+                    
+                    width: 100%;
+                }
+                
                 .dateandtime{
                     display: flex;
                     flex-direction: row;
-                    margin-top: 10px;
+                    margin-top: 0px;
                     .place{
                         font-family: 'Poppins';
                         font-style: normal;
                         font-weight: 500;
-                        font-size: 10.6667px;
+                        font-size: 5px;
                         line-height: 16px;
+                        margin-left: 5px;
                         color: #6E6E6E;
                     }
                     .time{
                         font-family: 'Poppins';
                         font-style: normal;
                         font-weight: 500;
-                        font-size: 10.6667px;
+                        font-size: 5px;
                         line-height: 16px;
                         margin-left: 20px;
+                        margin-left: 5px;
                         color: #6E6E6E;
                     }
                 }
@@ -229,27 +227,33 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
                     font-family: 'Poppins';
                     font-style: normal;
                     font-weight: 700;
-                    font-size: 16px;
+                    font-size: 11px;
                     line-height: 24px;
+                    margin-left: 5px;
                     color: #1D2939;
                 }
                 .lux2-description{
+                    width: 90%;
                     font-family: 'Poppins';
                     font-style: normal;
                     font-weight: 400;
-                    font-size: 12.4444px;
-                    line-height: 19px;
-                    margin-top: 10px;
+                    font-size: 5.92895px;
+                    line-height: 9px;
+                    margin-top: 0px;
+                    margin-left: 5px;
                     color: #6E6E6E;
                 }
                 .more{
-                    margin-left: 220px;
+                    margin: 0;
+                    font-weight: 700;
+                    font-size: 5.08196px;
+                    line-height: 8px;
+                    margin-left:100px;
                 }
             }
         }
     
     }  
-
 
 
 
@@ -262,14 +266,17 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
       width: 100%;
       .luxuary-header{
       
-          font-family: 'Poppins';
-          font-weight: 700;
-          font-size: 26.491px;
-       
-          position: absolute;
-          top: 10%;
-          
-          color: #FFFFFF;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28.1502px;
+        line-height: 42px;
+        position: absolute;
+        left: 7.57%;
+        right: 57.81%;
+        top: 30%;
+        bottom: 14.91%;
+        color: white;
 
 text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
       }
@@ -344,9 +351,10 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
             }
         }   
         .card-row{
-            display: grid;
-            grid-template-columns:repeat(2, 1fr) ;
-            
+            // display: grid;
+            // grid-template-columns:repeat(2, 1fr) ;
+            display: flex;
+            flex-wrap: wrap;
         }
     }
 }

@@ -22,7 +22,7 @@ export const initialState = {
     loading: false,
     error: false,
     featured: [],
-    currentPage: 0,
+    currentPage: 1,
     count: 0,
   },
   homeLuxury: { loading: false, error: false, luxury: [], currentPage: 0 },

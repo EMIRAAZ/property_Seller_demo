@@ -19,7 +19,6 @@ import Blog from "./pages/dailyblog";
 import Property from "./admin/property";
 import AdminAgency from "./admin/agency";
 import AddProperty from "./admin/addproperty";
-import Addoffplan from "./admin/addoffplan";
 import Login from "./admin/login";
 import PropertyView from "./pages/propertyview";
 import AddAgency from "./admin/addagency";
@@ -27,7 +26,11 @@ import AddAgent from "./admin/addagent";
 import Amenity from "./admin/amenity";
 import News from "./pages/news/english/News";
 import Neighborhood from "./admin/neighborhood";
+import PropertyList from "./pages/propertylist";
+import Luxuary from "./pages/luxuary/english/Luxuary";
 import Offplan from "./admin/offplan";
+import TagHead from "./admin/taghead";
+import TagLine from "./admin/tagline";
 
 function Router() {
   const makePrivate = (component, role = "") => (
@@ -65,10 +68,6 @@ function Router() {
             <Route
               path="neighborhood/:id"
               element={makePrivate(<Neighborhood />, "ADMIN")}
-            />{" "}
-            <Route
-              path="add-offplan"
-              element={makePrivate(<Addoffplan />, "ADMIN")}
             />
             <Route path="offplan" element={makePrivate(<Offplan />, "ADMIN")} />
             <Route
@@ -87,6 +86,16 @@ function Router() {
               path="add-agency/:id"
               element={makePrivate(<AddAgency />, "ADMIN")}
             />
+            <Route path="taghead" element={makePrivate(<TagHead />, "ADMIN")} />
+            <Route
+              path="taghead/:id"
+              element={makePrivate(<TagHead />, "ADMIN")}
+            />
+            <Route path="tagline" element={makePrivate(<TagLine />, "ADMIN")} />
+            <Route
+              path="tagline/:id"
+              element={makePrivate(<TagLine />, "ADMIN")}
+            />
           </Route>
           <Route path="buy" element={<Buy />} />
           <Route path="property/:id" element={<PropertyView />} />
@@ -95,6 +104,8 @@ function Router() {
           <Route path="sell" element={<Sell />} />
           <Route path="shortterm" element={<ShortTerm />} />
           <Route path="management" element={<Management />} />
+          <Route path="management" element={<PropertyList />} />
+          <Route path="management" element={<Luxuary />} />
           <Route path="mortgage" element={<Mortgage />} />
           <Route path="ourteam" element={<OurTeam />} />
           <Route path="ourpartner" element={<Partner />} />

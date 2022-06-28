@@ -45,13 +45,14 @@ const reducer = (state = initialState, action) => {
         },
       };
     case GET_HOME_PROPERTY:
+      console.log('fired');
       return {
         ...state,
         homeProperty: {
           ...state.homeProperty,
           error: false,
           loading: false,
-          property: action.payload.rows,
+          property: [...state.homeProperty.property, ...action.payload.rows],
           count: action.payload.count,
         },
       };

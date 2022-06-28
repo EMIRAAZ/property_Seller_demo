@@ -7,6 +7,27 @@
   position: relative;
   overflow: hidden;
   z-index: -1;
+  margin-top: -64px;
+
+  .home-properties-caption {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    margin: 70px auto;
+    justify-content: center;
+    width: 100%;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+    span {
+      font-weight: 600;
+    }
+  }
+
+  .img-main-home {
+    width: 100%;
+  }
 
   .background-square {
     overflow: hidden;
@@ -80,6 +101,22 @@
   .home-image-frame {
     height: 500px;
     flex-direction: row;
+
+    .home-properties-caption {
+      position: absolute;
+      z-index: 10;
+      display: flex;
+      margin: 70px auto;
+      justify-content: center;
+      width: 100%;
+      font-family: 'Poppins';
+      font-weight: 400;
+      font-size: 40px;
+      color: #ffffff;
+      span {
+        font-weight: 600;
+      }
+    }
 
     .main-div {
       flex: 1 1 0;

@@ -3,10 +3,22 @@ import {
   GET_RENT_PROPERTY,
   GET_RENT_PROPERTY_ERROR,
   GET_RENT_PROPERTY_STARTED,
+  ON_CHANGE_RENT_PROPERTY_INPUT,
+  GET_RENT_LOCATION_SEARCH_STARTED,
+  GET_RENT_LOCATION_SEARCH_ERROR,
+  GET_RENT_LOCATION_SEARCH,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case ON_CHANGE_RENT_PROPERTY_INPUT:
+      return {
+        ...state,
+        paramInput: {
+          ...state.paramInput,
+          [action.payload.key]: action.payload.value,
+        },
+      };
     case GET_RENT_PROPERTY:
       return {
         ...state,
@@ -32,6 +44,34 @@ const reducer = (state = initialState, action) => {
         ...state,
         rentProperty: {
           ...state.rentProperty,
+          error: true,
+          loading: false,
+        },
+      };
+    case GET_RENT_LOCATION_SEARCH:
+      return {
+        ...state,
+        locationSearch: {
+          ...state.locationSearch,
+          error: false,
+          loading: false,
+          location: action.payload && action.payload[0],
+        },
+      };
+    case GET_RENT_LOCATION_SEARCH_STARTED:
+      return {
+        ...state,
+        locationSearch: {
+          ...state.locationSearch,
+          error: false,
+          loading: true,
+        },
+      };
+    case GET_RENT_LOCATION_SEARCH_ERROR:
+      return {
+        ...state,
+        locationSearch: {
+          ...state.locationSearch,
           error: true,
           loading: false,
         },

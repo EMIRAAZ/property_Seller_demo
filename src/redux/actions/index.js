@@ -11,3 +11,8 @@ export * from './adminagency';
 export * from './adminaddagent';
 export * from './amenity';
 export * from './neighborhood';
+export * from './taghead';
+export * from './tagline';
+export * from './newstopics';
+export * from './news';
+export * from './blog';

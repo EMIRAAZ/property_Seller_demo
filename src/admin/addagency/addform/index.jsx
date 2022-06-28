@@ -7,7 +7,16 @@ import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
 import Agent from '../agent';
 
-const keyArr = ['agencyName'];
+const keyArr = [
+  'agencyName',
+  'tradeLicenseNo',
+  'brn',
+  'website',
+  'email',
+  'phoneNumber',
+  'officeAddress',
+  'ownerName',
+];
 
 const AddForm = ({
   addAgency,
@@ -93,6 +102,62 @@ const AddForm = ({
           customClass="agency-logo-img"
           onChangeImage={() => {}}
           value={agencyValue.agencyLogo}
+        />
+        <Input
+          divClass="agency-input"
+          label="Trade License No"
+          required
+          value={agencyValue.tradeLicenseNo}
+          onChange={e => onChangeInput('tradeLicenseNo', e.target.value)}
+        />
+        <Input
+          divClass="agency-input"
+          label="BRN"
+          required
+          value={agencyValue.brn}
+          onChange={e => onChangeInput('brn', e.target.value)}
+        />
+        <Input
+          divClass="agency-input"
+          label="Website"
+          required
+          value={agencyValue.website}
+          onChange={e => onChangeInput('website', e.target.value)}
+        />
+        <Input
+          divClass="agency-input"
+          label="Email"
+          required
+          value={agencyValue.email}
+          onChange={e => onChangeInput('email', e.target.value)}
+        />
+        <Input
+          divClass="agency-input"
+          label="Phone Number"
+          required
+          value={agencyValue.phoneNumber}
+          onChange={e => onChangeInput('phoneNumber', e.target.value)}
+        />
+        <Input
+          divClass="agency-input"
+          label="Whatsapp Number"
+          required
+          value={agencyValue.whatsAppNumber}
+          onChange={e => onChangeInput('whatsAppNumber', e.target.value)}
+        />
+        <Input
+          divClass="agency-input"
+          label="Office Address"
+          required
+          value={agencyValue.officeAddress}
+          onChange={e => onChangeInput('officeAddress', e.target.value)}
+        />
+        <Input
+          divClass="agency-input"
+          label="Owner Name"
+          required
+          value={agencyValue.ownerName}
+          onChange={e => onChangeInput('ownerName', e.target.value)}
         />
         <span id="on-add-warning" className="pls-fill">
           please fill all the required fields !!

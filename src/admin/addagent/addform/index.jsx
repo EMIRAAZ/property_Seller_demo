@@ -12,6 +12,10 @@ const keyArr = [
   'yearsOfExperience',
   'username',
   'languages',
+  'rera',
+  'orn',
+  'phoneNumber',
+  'whatsAppNumber',
 ];
 
 const AddForm = ({
@@ -78,7 +82,6 @@ const AddForm = ({
         <label className="property-image-label spinner-label">
           Agent Image<span>*</span> {renderImageLoadingSpinner()}
         </label>
-
         <UploadImage
           editing={editing}
           linkIndex={0}
@@ -92,6 +95,20 @@ const AddForm = ({
           required
           value={agentValue.position}
           onChange={e => onChangeInput('position', e.target.value)}
+        />
+        <Input
+          divClass="agent-input"
+          label="RERA"
+          required
+          value={agentValue.rera}
+          onChange={e => onChangeInput('rera', e.target.value)}
+        />
+        <Input
+          divClass="agent-input"
+          label="ORN"
+          required
+          value={agentValue.orn}
+          onChange={e => onChangeInput('orn', e.target.value)}
         />
       </div>
       <div className="add-right-agent-form">
@@ -118,6 +135,20 @@ const AddForm = ({
         />
         <Input
           divClass="agent-input"
+          label="Phone Number"
+          required
+          value={agentValue.phoneNumber}
+          onChange={e => onChangeInput('phoneNumber', e.target.value)}
+        />
+        <Input
+          divClass="agent-input"
+          label="Whatsapp Number"
+          required
+          value={agentValue.whatsAppNumber}
+          onChange={e => onChangeInput('whatsAppNumber', e.target.value)}
+        />
+        <Input
+          divClass="agent-input"
           label="Languages"
           required
           value={agentValue.languages.toString()}
@@ -126,7 +157,6 @@ const AddForm = ({
         <span id="on-add-warning" className="pls-fill">
           please fill all the required fields !!
         </span>
-
         <Button
           customClass="add-agent-btn"
           onClick={addAdminAgent}

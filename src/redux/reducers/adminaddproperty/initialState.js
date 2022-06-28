@@ -30,6 +30,7 @@ export const initialState = {
     whatsapp: '',
     featured: false,
     luxury: false,
+    readyToMove: false,
     for: '',
     placeAddress: '',
     building: '',
@@ -37,6 +38,7 @@ export const initialState = {
     agentId: '',
     agencyId: '',
     neighborhood: [],
+    taglineId: '',
   },
   propertyOptions: {
     propertyType: [
@@ -57,10 +59,10 @@ export const initialState = {
     sale: [
       { name: 'Sell', value: 'sell' },
       { name: 'Rent', value: 'rent' },
-      { name: 'Both', value: 'both' },
     ],
     agent: [],
     amenities: [],
     neighbor: [],
+    tagline: [],
   },
 };

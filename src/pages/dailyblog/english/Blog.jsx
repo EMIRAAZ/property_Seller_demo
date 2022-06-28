@@ -82,7 +82,7 @@ const card3 = [
   },
 ];
 
-const BlogCard = ({ date, heading, description, image }) => {
+export const BlogCard = ({ date, heading, description, image }) => {
   return (
     <>
       <div className='blog-card-container'>
