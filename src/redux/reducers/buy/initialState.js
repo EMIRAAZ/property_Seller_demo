@@ -4,4 +4,17 @@ export const initialState = {
     error: false,
     property: [],
   },
+  params: '',
+  paramInput: {
+    propertyType: '',
+    sale: '',
+    priceFrom: '',
+    priceTo: '',
+    location: '',
+  },
+  locationSearch: {
+    loading: false,
+    error: false,
+    location: [],
+  },
 };

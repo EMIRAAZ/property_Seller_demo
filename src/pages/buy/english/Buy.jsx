@@ -11,13 +11,24 @@ const Buy = props => {
   useEffect(() => {
     props.getBuyProperty();
   }, []);
+
+  const onChangeCurrentPage = current => {};
   return (
     <div className="buy-english">
       <Header />
       <ImageFrame />
-      <BuyFormCard />
+      <BuyFormCard
+        onInputChange={props.onChangeBuyParams}
+        paramInput={props.paramInput}
+        getProperty={props.getBuyProperty}
+        locationSearch={props.locationSearch}
+        onSearchLocation={props.getBuyLocationSearch}
+      />
       <BuyProperty property={props.buyProperty} />
-      <Pagination count={props.buyProperty.count} />
+      <Pagination
+        count={props.buyProperty.count}
+        onChange={current => onChangeCurrentPage(current)}
+      />
       <Footer />
     </div>
   );
