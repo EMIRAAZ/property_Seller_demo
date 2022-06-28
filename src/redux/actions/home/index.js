@@ -64,7 +64,7 @@ export const getHomeProperty =
   async dispatch => {
     try {
       dispatch(getHomePropertyStarted(search ? params : ''));
-      const res = await axios.get(`/api/property?${params}`);
+      const res = await axios.get(`/api/property?limit=6${params}`);
       dispatch({
         type: GET_HOME_PROPERTY,
         payload: res.data?.data,
