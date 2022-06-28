@@ -13,7 +13,6 @@ import {
 const mapStateToProps = state => {
   return {
     adminBlog: state.blogReducer,
-    taghead: state.blogReducer.taghead,
     blogValue: state.blogReducer.blogValue,
     env: state.blogReducer.env,
     images: state.uploadReducer.link,

@@ -39,6 +39,11 @@ const Header = props => {
           <li onClick={() => navigate('/admin/offplan')}>Offplan </li>
           <li onClick={() => navigate('/admin/taghead')}>Tag&nbsp;Header</li>
           <li onClick={() => navigate('/admin/tagline')}>Tag&nbsp;Line</li>
+          <li onClick={() => navigate('/admin/newstopics')}>
+            News&nbsp;Topics
+          </li>
+          <li onClick={() => navigate('/admin/news')}>News</li>
+          <li onClick={() => navigate('/admin/blog')}>Blog</li>
         </ul>
       </div>
       <div className={`mobile-sidebar ${state}`}>
@@ -57,6 +62,11 @@ const Header = props => {
           <li onClick={() => navigate('/admin/offplan')}>Offplan </li>
           <li onClick={() => navigate('/admin/taghead')}>Tag&nbsp;Header</li>
           <li onClick={() => navigate('/admin/tagline')}>Tag&nbsp;Line</li>
+          <li onClick={() => navigate('/admin/newstopics')}>
+            News&nbsp;Topics
+          </li>
+          <li onClick={() => navigate('/admin/news')}>News</li>
+          <li onClick={() => navigate('/admin/blog')}>Blog</li>
         </ul>
       </div>
       <ul className="adminheader-list">

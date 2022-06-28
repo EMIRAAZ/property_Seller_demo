@@ -31,6 +31,9 @@ import Luxuary from './pages/luxuary/english/Luxuary';
 import Offplan from './admin/offplan';
 import TagHead from './admin/taghead';
 import TagLine from './admin/tagline';
+import NewsTopics from './admin/newstopics';
+import AdminNews from './admin/news';
+import AdminBlog from './admin/blog';
 
 function Router() {
   const makePrivate = (component, role = '') => (
@@ -95,6 +98,24 @@ function Router() {
             <Route
               path="tagline/:id"
               element={makePrivate(<TagLine />, 'ADMIN')}
+            />
+            <Route
+              path="newstopics"
+              element={makePrivate(<NewsTopics />, 'ADMIN')}
+            />
+            <Route
+              path="newstopics/:id"
+              element={makePrivate(<NewsTopics />, 'ADMIN')}
+            />
+            <Route path="news" element={makePrivate(<AdminNews />, 'ADMIN')} />
+            <Route
+              path="news/:id"
+              element={makePrivate(<AdminNews />, 'ADMIN')}
+            />
+            <Route path="blog" element={makePrivate(<AdminBlog />, 'ADMIN')} />
+            <Route
+              path="blog/:id"
+              element={makePrivate(<AdminBlog />, 'ADMIN')}
             />
           </Route>
           <Route path="buy" element={<Buy />} />
