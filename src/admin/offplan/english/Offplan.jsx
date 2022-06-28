@@ -1,14 +1,14 @@
-import './agency.scss';
-import Table from '../../../components/table';
-import AdminHeader from '../../../components/adminheader';
-import { tableHeader } from './table';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import "./offplan.scss";
+import Table from "../../../components/table";
+import AdminHeader from "../../../components/adminheader";
+import { tableHeader } from "./table";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Agency = props => {
+const Offplan = (props) => {
   let navigate = useNavigate();
 
-  const navigateTo = id => {
+  const navigateTo = (id) => {
     navigate(`/admin/add-agency/${id}`);
   };
 
@@ -17,15 +17,15 @@ const Agency = props => {
   }, []);
 
   return (
-    <div className="agency-admin-table">
+    <div className="offplan-admin-table">
       <AdminHeader />
       <Table
         rows={props.adminAgency.agency || []}
         columns={tableHeader}
-        onEdit={id => {
+        onEdit={(id) => {
           navigateTo(id);
         }}
-        onClickDelete={id => {
+        onClickDelete={(id) => {
           props.getAdminAgency();
           props.deleteAdminAgency(id, props.getAdminAgency);
         }}
@@ -36,4 +36,4 @@ const Agency = props => {
   );
 };
 
-export default Agency;
+export default Offplan;
