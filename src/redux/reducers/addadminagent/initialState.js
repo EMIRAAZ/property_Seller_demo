@@ -14,5 +14,9 @@ export const initialState = {
     position: '',
     username: '',
     yearsOfExperience: '',
+    rera: '',
+    orn: '',
+    phoneNumber: '',
+    whatsAppNumber: '',
   },
 };
