@@ -1,2 +1,26 @@
 .home-english {
+  .home-header-class {
+    background-color: transparent !important;
+    position: relative;
+
+    .logo {
+      color: #ffffff;
+    }
+    .company-name {
+      .main-name {
+        color: #ffffff;
+      }
+      .sub-name {
+        color: #ffffff;
+      }
+    }
+    .desktop-li {
+      color: #ffffff;
+      li {
+        &:hover {
+          color: #ffffff;
+        }
+      }
+    }
+  }
 }

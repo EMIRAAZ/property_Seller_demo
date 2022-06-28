@@ -92,7 +92,7 @@ const Property = props => {
               height="14"
               viewBox="0 0 17 14"
             />
-            <p>8 Rooms</p>
+            <p>{props.noOfBathroom + props.noOfBedroom}</p>
           </div>
           <div class="vl"></div>
           <div className="spec-wrap">

@@ -1,6 +1,5 @@
 import './homeproperty.scss';
 import Property from '../../../components/property';
-import Pagination from '../../../components/pagination';
 import BasicButton from '../../../components/button/BasicButton';
 import { useEffect, useState } from 'react';
 
@@ -46,16 +45,10 @@ const HomeProperty = ({ property, onChangePage, getProperty }) => {
       <div className="home-property-content">
         {renderPropertyHeader()}
         <div className="property-list-container">{renderProperty()}</div>
-      </div>
-      {/* <Pagination
-        count={property.count}
-        onChange={current => onChangeCurrentPage(current)}
-      /> */}
-      {
         <BasicButton customClass="view-all-home-btn" onClick={setCurrentPage}>
           View All
         </BasicButton>
-      }
+      </div>
     </div>
   );
 };

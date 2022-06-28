@@ -30,7 +30,9 @@
   .view-all-home-btn {
     display: flex;
     margin: 10px auto;
-    padding: 10px 20px;
+    padding: 15px 40px;
+    font-family: 'Poppins';
+    font-weight: 600;
     border-radius: 0px;
   }
 }
@@ -55,7 +57,7 @@
     .view-all-home-btn {
       display: flex;
       margin: 10px auto;
-      padding: 10px 20px;
+      padding: 15px 40px;
     }
   }
 }

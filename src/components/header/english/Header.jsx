@@ -7,7 +7,7 @@ import Close from '../../svg/close';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ customClass }) => {
   const navigate = useNavigate();
   const [state, changeState] = useState('hide');
   const onSidebarWebToggle = () => {
@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <div className="header-english">
+    <div className={`header-english ${customClass}`}>
       <div className={`web-sidebar ${state}`}>
         <ul>
           <li onClick={onSidebarWebToggle}>
