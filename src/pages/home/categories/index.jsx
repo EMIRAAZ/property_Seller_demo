@@ -1,31 +1,31 @@
-import "./categories.scss";
-import React from "react";
+import './categories.scss';
+import React from 'react';
 
 const categories = [
   {
     id: 1,
 
-    name: "Featured Properties",
-    image: "/assets/image/cat1.png",
+    name: 'Featured Properties',
+    image: '/assets/image/cat1.png',
   },
   {
     id: 2,
 
-    name: "Famous Neighbourhood",
-    image: "/assets/image/cat2.png",
+    name: 'Famous Neighbourhood',
+    image: '/assets/image/cat2.png',
   },
   {
     id: 3,
 
-    name: "Luxury Properties",
+    name: 'Luxury Properties',
 
-    image: "/assets/image/cat3.png",
+    image: '/assets/image/cat3.png',
   },
   {
     id: 4,
 
-    name: "Ready To MoveIn",
-    image: "/assets/image/cat4.png",
+    name: 'Ready To MoveIn',
+    image: '/assets/image/cat4.png',
   },
 ];
 
@@ -33,7 +33,7 @@ function Categories() {
   return (
     <div className="categories">
       {categories.map((item, i) => (
-        <div className="image-div">
+        <div key={i} className="image-div">
           <div
             className="image-class"
             key={i}
@@ -48,7 +48,7 @@ function Categories() {
           </div>
         </div>
       ))}
-      <div className="image-div" style={{ width: "100%" }}>
+      <div className="image-div" style={{ width: '100%' }}>
         <div
           className="image-class"
           style={{
