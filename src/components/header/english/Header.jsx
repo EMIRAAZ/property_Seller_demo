@@ -14,8 +14,14 @@ const Header = ({ customClass }) => {
     changeState(state === 'hide' ? 'show' : 'hide');
   };
 
+  document.addEventListener('scroll', function (e) {
+    if (state === 'show') {
+      onSidebarWebToggle();
+    }
+  });
+
   return (
-    <div className={`header-english ${customClass}`}>
+    <div className={`header-english ${customClass} ${state}`}>
       <div className={`web-sidebar ${state}`}>
         <ul>
           <li onClick={onSidebarWebToggle}>
