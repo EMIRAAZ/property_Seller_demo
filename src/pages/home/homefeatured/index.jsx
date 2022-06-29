@@ -6,7 +6,6 @@ import ProgressLine from './progressline';
 import FeaturedList from './featuredlist';
 
 const HomeFeatured = props => {
-  console.log(props.featured.currentPage);
   const { featured } = props;
   useEffect(() => {
     props.getFeatured();
