@@ -4,27 +4,29 @@ import Footer from "../../../components/footer";
 import Header from "../../../components/header";
 import NewHome from "../../../components/newhome/english/NewHome";
 import BasicButton from "../../../components/button/BasicButton";
+import ImageFrame from "../../home/imageframe";
 const neighbourhood = [
-  // {
-  //   id: 1,
-  //   name: "Dubai",
-  //   image: "/assets/image/neigh.jpg",
-  // },
-  // {
-  //   id: 2,
-  //   name: "Pollachi",
-  //   image: "/assets/image/neigh.jpg",
-  // },
-  // {
-  //   id: 3,
-  //   name: "thiruppathi",
-  //   image: "/assets/image/neigh.jpg",
-  // },
+  {
+    id: 1,
+    name: "Dubai",
+    image: "/assets/image/neigh.jpg",
+  },
+  {
+    id: 2,
+    name: "Pollachi",
+    image: "/assets/image/neigh.jpg",
+  },
+  {
+    id: 3,
+    name: "thiruppathi",
+    image: "/assets/image/neigh.jpg",
+  },
 ];
 const NeighborHood = () => {
   return (
     <div className="neighbourhood">
       <NewHome />
+
       <div className="main-container">
         <h1 className="heading">Famous Neighbourhood</h1>
         <h1 className="subheading">3472 Properties Found</h1>

@@ -188,7 +188,7 @@ body {
           display: flex;
           margin-top: 20px;
           justify-content: space-evenly;
-          overflow-x: scroll;
+          overflow-x: scroll !important;
           -ms-overflow-style: none;
           scrollbar-width: none;
           -webkit-overflow-scrolling: touch;

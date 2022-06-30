@@ -1,4 +1,4 @@
-.offplan-main-container {
+.offplan-main-container-1 {
   .offplans-projects {
     width: 90%;
     margin: auto;
@@ -22,6 +22,37 @@
       justify-content: space-between;
       .offplan-card-size-div {
         width: 30%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .offplan-main-container-1 {
+    .offplans-projects {
+      width: 90%;
+      margin: auto;
+      .Heading {
+        font-size: 35px;
+        font-family: "Poppins";
+        color: black;
+        font-weight: 700;
+        margin-top: 20px;
+      }
+      .sub-heading {
+        margin-top: 10px;
+        font-size: 18px;
+        font-family: "Poppins";
+        color: black;
+        font-weight: 400;
+      }
+      .offplan-card-div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .offplan-card-size-div {
+          width: 100%;
+        }
       }
     }
   }

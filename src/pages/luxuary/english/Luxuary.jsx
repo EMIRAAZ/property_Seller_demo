@@ -2,6 +2,7 @@ import "./luxuary.scss";
 import SocialPanel from "../../../components/socialpanel";
 import Footer from "../../../components/footer";
 import Header from "../../../components/header";
+import RightArrow from "../../../components/svg/rightarrow";
 
 const luxuaryvillas = [
   {
@@ -123,7 +124,51 @@ const LuxuaryCard = ({ image, heading, description, place, timw }) => {
             </div>
             <h1 className="lux1-heading">{heading}</h1>
             <p className="lux2-description">{description}</p>
-            <p className="more"> view more -></p>
+            <p className="more">
+              view more
+              <svg
+                width="19"
+                height="12"
+                viewBox="0 0 16 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{}}
+              >
+                <g clip-path="url(#clip0_0_2066)">
+                  <path
+                    d="M4.23926 9.33301H14.6096"
+                    stroke="#313131"
+                    stroke-width="1.11111"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11.6484 12.296L14.6114 9.33301"
+                    stroke="#313131"
+                    stroke-width="1.11111"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11.6484 6.37012L14.6114 9.33308"
+                    stroke="#313131"
+                    stroke-width="1.11111"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_0_2066">
+                    <rect
+                      width="17.7778"
+                      height="17.7778"
+                      fill="white"
+                      transform="translate(0.537109 0.444336)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+            </p>
           </div>
         </div>
       </div>
@@ -218,7 +263,7 @@ const Luxuary = () => {
         </div>
       </div>
 
-      <SocialPanel />
+      {/* <SocialPanel /> */}
       <Footer />
     </div>
   );
