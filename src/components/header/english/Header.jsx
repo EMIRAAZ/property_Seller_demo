@@ -71,15 +71,15 @@ const Header = ({ customClass }) => {
       <ul className="header-list">
         <li className="logo" onClick={onSidebarWebToggle}>
           <HamburgerLogo
-            width="35"
-            height="28"
+            width="27"
+            height="26"
             fill={getLoc() === '' ? '#ffffff' : '#1C3988'}
           />
         </li>
         <li className="company-name" onClick={() => navigate('/')}>
           {/* <WhiteLogo /> */}
           <span className="main-name">UAE&nbsp;Assistant</span>
-          <span className="sub-name">Properties</span>
+          <span className="sub-name">for Properties</span>
         </li>
         <li className="desktop-li">
           <ul className="desktop-ul">
@@ -116,7 +116,7 @@ const Header = ({ customClass }) => {
                   { name: 'Apartments' },
                 ]}
               />
-              <DownArrow fill="#ffffff" />
+              <DownArrow fill={getLoc() === '' ? '#ffffff' : '#000000'} />
             </li>
             <li className="simple-list">List&nbsp;Your&nbsp;Property</li>
           </ul>

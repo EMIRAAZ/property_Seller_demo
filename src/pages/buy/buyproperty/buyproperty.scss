@@ -1,7 +1,7 @@
 .buy-property {
   background-color: #eef7ff;
   .buy-property-content {
-    margin: 200px auto 0 auto;
+    margin: 0px auto 0 auto;
     padding: 40px 0px 10px 0px;
     width: 90%;
     .heading {
@@ -31,7 +31,7 @@
 @media only screen and (min-width: 600px) {
   .buy-property {
     .buy-property-content {
-      margin: 40px auto 0 auto;
+      margin: 0px auto 0 auto;
       padding: 40px 0px 10px 0px;
       .heading {
         font-size: 48px;
@@ -53,6 +53,8 @@
 @media only screen and (min-width: 800px) {
   .buy-property {
     .buy-property-content {
+      margin: 0px auto 0 auto;
+
       background-color: #eef7ff;
       .heading {
         font-size: 48px;
@@ -74,6 +76,8 @@
 @media only screen and (min-width: 900px) {
   .buy-property {
     .buy-property-content {
+      margin: 0px auto 0 auto;
+
       background-color: #eef7ff;
       .heading {
         font-size: 48px;

@@ -16,3 +16,5 @@ export * from './tagline';
 export * from './newstopics';
 export * from './news';
 export * from './blog';
+export * from './topstory';
+export * from './singlenews';

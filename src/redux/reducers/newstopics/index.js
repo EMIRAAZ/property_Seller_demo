@@ -14,6 +14,7 @@ import {
   DELETE_ADMIN_NEWSTOPICS_ERROR,
   DELETE_ADMIN_NEWSTOPICS_STARTED,
   DELETE_ADMIN_NEWSTOPICS,
+  GET_TOPICS_NEWS,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -115,6 +116,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
       };
+
     default:
       return state;
   }

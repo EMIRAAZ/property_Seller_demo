@@ -4,7 +4,7 @@ import Button from '../../../components/button/SpinnerButton';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { checkIfAllKeyHasValue } from '../../../utils';
 
-const keyArr = ['title'];
+const keyArr = ['name'];
 
 const AddForm = ({
   addNewsTopics,
@@ -61,8 +61,8 @@ const AddForm = ({
         divClass="newstopics-input"
         label="Name"
         required
-        value={newstopicsValue.title}
-        onChange={e => onChangeInput('title', e.target.value)}
+        value={newstopicsValue.name}
+        onChange={e => onChangeInput('name', e.target.value)}
       />
 
       <span id="on-add-warning" className="pls-fill">

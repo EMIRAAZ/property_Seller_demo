@@ -1,45 +1,41 @@
-import Footer from "../../../components/footer";
-import Header from "../../../components/header";
-import "./news.scss";
+import Footer from '../../../components/footer';
+import Header from '../../../components/header';
+import './news.scss';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const News = () => {
+const News = props => {
+  let location = useLocation();
+
+  const getID = () => location.pathname.split('/').pop();
+
+  useEffect(() => {
+    props.getSingleNews(getID());
+  }, []);
+
   return (
     <div className="news-main-container">
       <Header />
 
       <div className="container">
-        <h1 className="heading">
-          Samsung Galaxy F22 hshslaunched in India: Price, features, other
-          details
-        </h1>
+        <h1 className="heading">{props.news[0] && props.news[0].mainTitle}</h1>
         <div className="category">
-          <div className="item-div">
-            <h1 className="item">Tech</h1>
-          </div>
-          <div className="item-div">
-            <h1 className="item">Mobile</h1>
-          </div>
+          {props.news[0] &&
+            props.news[0].topics.map((item, i) => (
+              <div className="item-div" key={i}>
+                <h1 className="item">{item}</h1>
+              </div>
+            ))}
         </div>
-        <h1 className="sub-heading">
-          Samsung's next Unpacked event reortedly last August 11
-        </h1>
-        <img src="/assets/image/blog6.jpg" className="image-div" alt="" />
+        <h1 className="sub-heading">{props.news[0] && props.news[0].title}</h1>
+        <img
+          src={props.news[0] && props.news[0].images[0]}
+          className="image-div"
+          alt=""
+        />
 
         <p className="news-content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-          veritatis minus dolor aspernatur enim velit! Cum voluptates vero
-          ducimus molestiae reiciendis animi esse alias nesciunt consectetur,
-          nihil architecto sit tempora? Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Unde, enim numquam. Expedita officia iusto quas
-          laborum praesentium rem repellat nulla culpa dolores ut, provident
-          accusantium. Sint debitis delectus consequuntur doloremque. <br />{" "}
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, illo
-          qui eveniet impedit atque dolore, quisquam, iure earum expedita natus
-          facilis! Pariatur doloremque nesciunt alias cupiditate dolorum
-          voluptate ullam dicta? Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Quis, aperiam accusamus? Quas voluptatum earum
-          repellendus non vitae ut dignissimos eum inventore laborum tenetur.
-          Laborum laudantium, adipisci dolor facere cupiditate at?{" "}
+          {props.news[0] && props.news[0].description}
         </p>
       </div>
       <Footer />

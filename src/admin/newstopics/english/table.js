@@ -14,7 +14,7 @@ export const tableHeader = [
     renderCell: params => {
       return (
         <>
-          <p>{params.row.title}</p>
+          <p>{params.row.name}</p>
         </>
       );
     },
