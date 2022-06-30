@@ -1,5 +1,4 @@
 import './buyformcard.scss';
-import FormCard from '../../../components/formcard';
 import BasicSelect from '../../../components/select/BasicSelect';
 import InputSelect from '../../../components/select/InputSelect';
 import LocationIcon from '../../../components/svg/location';
@@ -51,8 +50,10 @@ const BuyFormCard = ({
 
   return (
     <div className="buy-form-card">
-      <FormCard customClass="buy-formcard">
+      <div className="buy-formcard">
         <BasicSelect
+          bgColor="white"
+          border
           customClass="property"
           name="Property Type"
           value={paramInput.propertyType}
@@ -77,6 +78,8 @@ const BuyFormCard = ({
           ]}
         />
         <InputSelect
+          bgColor="white"
+          border
           customClass="search"
           value={getSearchValue()}
           onChange={value => onChange('location', value)}
@@ -108,6 +111,8 @@ const BuyFormCard = ({
           ]}
         /> */}
         <BasicSelect
+          bgColor="white"
+          border
           customClass="price-from"
           name="Price From"
           onChange={value => onChange('priceFrom', value)}
@@ -119,6 +124,8 @@ const BuyFormCard = ({
           ]}
         />
         <BasicSelect
+          bgColor="white"
+          border
           customClass="price-two"
           name="Price To"
           onChange={value => onChange('priceTo', value)}
@@ -132,7 +139,7 @@ const BuyFormCard = ({
         <BasicButton customClass="buy-advanced-search-btn">
           Advanced Search
         </BasicButton>
-      </FormCard>
+      </div>
     </div>
   );
 };

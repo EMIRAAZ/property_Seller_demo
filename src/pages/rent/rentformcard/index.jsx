@@ -1,5 +1,4 @@
 import './rentformcard.scss';
-import FormCard from '../../../components/formcard';
 import BasicSelect from '../../../components/select/BasicSelect';
 import InputSelect from '../../../components/select/InputSelect';
 import LocationIcon from '../../../components/svg/location';
@@ -51,8 +50,10 @@ const RentFormCard = ({
   };
   return (
     <div className="rent-form-card">
-      <FormCard customClass="rent-formcard">
+      <div className="rent-formcard">
         <BasicSelect
+          bgColor="white"
+          border
           customClass="property"
           name="Property Type"
           value={paramInput.propertyType}
@@ -81,6 +82,8 @@ const RentFormCard = ({
           ]}
         />
         <InputSelect
+          bgColor="white"
+          border
           customClass="search"
           value={getSearchValue()}
           onChange={value => onChange('location', value)}
@@ -111,6 +114,8 @@ const RentFormCard = ({
           ]}
         /> */}
         <BasicSelect
+          bgColor="white"
+          border
           customClass="price-from"
           name="Price From"
           onChange={value => onChange('priceFrom', value)}
@@ -122,6 +127,8 @@ const RentFormCard = ({
           ]}
         />
         <BasicSelect
+          bgColor="white"
+          border
           customClass="price-two"
           name="Price To"
           onChange={value => onChange('priceTo', value)}
@@ -135,7 +142,7 @@ const RentFormCard = ({
         <BasicButton customClass="rent-advanced-search-btn">
           Advanced Search
         </BasicButton>
-      </FormCard>
+      </div>
     </div>
   );
 };
