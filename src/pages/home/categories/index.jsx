@@ -1,23 +1,27 @@
 import './categories.scss';
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const categories = [
   {
     id: 1,
 
     name: 'Featured Properties',
+    page: 'featured',
     image: '/assets/image/cat1.png',
   },
   {
     id: 2,
 
     name: 'Famous Neighbourhood',
+    page: 'neighbourhood',
+
     image: '/assets/image/cat2.png',
   },
   {
     id: 3,
 
     name: 'Luxury Properties',
+    page: 'luxury',
 
     image: '/assets/image/cat3.png',
   },
@@ -25,15 +29,26 @@ const categories = [
     id: 4,
 
     name: 'Ready To MoveIn',
+    page: 'readtomove',
+
     image: '/assets/image/cat4.png',
   },
 ];
 
 function Categories() {
+  let navigate = useNavigate();
+
+  const navigateTo = page => {
+    navigate(`/listproperty/${page}`);
+  };
   return (
     <div className="categories">
       {categories.map((item, i) => (
-        <div key={i} className="image-div">
+        <div
+          key={i}
+          className="image-div"
+          onClick={() => navigateTo(item.page)}
+        >
           <div
             className="image-class"
             key={i}
@@ -48,7 +63,11 @@ function Categories() {
           </div>
         </div>
       ))}
-      <div className="image-div" style={{ width: '100%' }}>
+      <div
+        className="image-div"
+        style={{ width: '100%' }}
+        onClick={() => navigateTo('offplan')}
+      >
         <div
           className="image-class"
           style={{
