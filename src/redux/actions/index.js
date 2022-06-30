@@ -18,3 +18,4 @@ export * from './news';
 export * from './blog';
 export * from './topstory';
 export * from './singlenews';
+export * from './blogweb';
