@@ -122,8 +122,8 @@ const reducer = (state = initialState, action) => {
     case GET_TOPICS_NEWS:
       const topics = action.payload.rows.map(a => {
         return {
-          name: a.title,
-          value: a.title,
+          name: a.name,
+          value: a.name,
         };
       });
       return {

@@ -23,6 +23,7 @@ const AddForm = ({
   images,
   imgLoading,
   imgError,
+  clearUpload,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -38,6 +39,7 @@ const AddForm = ({
     getNews();
     navigate(`/admin/news`);
     clear();
+    clearUpload();
   };
 
   const addAdminNews = () => {
