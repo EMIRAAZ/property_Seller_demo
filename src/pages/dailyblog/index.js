@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import ArabicBlog from './arabic/Blog';
-import EnglishBlog from './english/Blog';
+import EnglishBlog from './english';
 
 const Blog = () => {
   const search = useLocation().search;
