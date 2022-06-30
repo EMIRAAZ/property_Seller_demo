@@ -53,6 +53,8 @@ const HomeFormCard = props => {
       {/* <FormCard> */}
       <div className="home-formcard">
         <InputSelect
+          bgColor="white"
+          border
           customClass="search"
           name="Search City, Building, Community .."
           onChange={value => onInputChange('location', value)}
@@ -70,6 +72,8 @@ const HomeFormCard = props => {
           })}
         />
         <BasicSelect
+          bgColor="white"
+          border
           customClass="property"
           name="Property Type"
           onChange={value => onInputChange('propertyType', value)}
@@ -81,8 +85,10 @@ const HomeFormCard = props => {
           ]}
         />
         <BasicSelect
+          bgColor="white"
           customClass="sale"
           name="Sale"
+          border
           onChange={value => onInputChange('sale', value)}
           options={[
             { name: 'Buy', value: 'buy' },
@@ -92,6 +98,8 @@ const HomeFormCard = props => {
         />
         <InputSelect
           customClass="price-from"
+          bgColor="white"
+          border
           name="Price From"
           onChange={value => onInputChange('priceFrom', value)}
           value={props.homeSearch.priceFrom}
@@ -105,6 +113,8 @@ const HomeFormCard = props => {
         <InputSelect
           customClass="price-two"
           name="Price To"
+          bgColor="white"
+          border
           onChange={value => onInputChange('priceTo', value)}
           value={props.homeSearch.priceTo}
           options={[
