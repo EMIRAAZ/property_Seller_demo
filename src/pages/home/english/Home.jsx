@@ -2,12 +2,10 @@ import './home.scss';
 import Header from '../../../components/header';
 import ImageFrame from '../imageframe';
 import HomeFormCard from '../homeformcard';
-import HomeFeatured from '../homefeatured';
-import HomeBestDeals from '../homebestdeals';
-import HomeLuxury from '../homeluxury';
 import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer/english/Footer';
 import HomeProperty from '../homeProperty';
+import Categories from '../categories';
 
 const Home = props => {
   return (
@@ -25,8 +23,8 @@ const Home = props => {
         onChangePage={props.changePageHomeProperty}
         getProperty={props.getHomeProperty}
       />
-
-      <HomeFeatured
+      <Categories />
+      {/* <HomeFeatured
         featured={props.homeFeatured}
         getFeatured={props.getHomeFeatured}
         onChangePage={props.changePageHomeFeatured}
@@ -36,7 +34,7 @@ const Home = props => {
         luxury={props.homeLuxury}
         getLuxury={props.getHomeLuxury}
         onChangePage={props.changePageHomeLuxury}
-      />
+      /> */}
       <SocialPanel />
       <Footer />
     </div>

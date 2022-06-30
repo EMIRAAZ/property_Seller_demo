@@ -45,7 +45,6 @@ const reducer = (state = initialState, action) => {
         },
       };
     case GET_HOME_PROPERTY:
-      console.log('fired');
       return {
         ...state,
         homeProperty: {

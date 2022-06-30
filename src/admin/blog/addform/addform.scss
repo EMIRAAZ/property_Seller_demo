@@ -6,6 +6,19 @@
   .select-border {
     margin: 10px 0px;
   }
+  .property-image-label {
+    font-family: 'Poppins';
+    margin: 5px 0;
+    color: #464646;
+    font-weight: 500;
+    span {
+      color: #e60000fd;
+      font-size: 13px;
+      padding-left: 2px;
+      position: relative;
+      bottom: 3px;
+    }
+  }
   .spinner-label {
     display: flex;
     align-items: center;

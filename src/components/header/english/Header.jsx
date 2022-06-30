@@ -14,8 +14,14 @@ const Header = ({ customClass }) => {
     changeState(state === 'hide' ? 'show' : 'hide');
   };
 
+  document.addEventListener('scroll', function (e) {
+    if (state === 'show') {
+      onSidebarWebToggle();
+    }
+  });
+
   return (
-    <div className={`header-english ${customClass}`}>
+    <div className={`header-english ${customClass} ${state}`}>
       <div className={`web-sidebar ${state}`}>
         <ul>
           <li onClick={onSidebarWebToggle}>
@@ -62,6 +68,7 @@ const Header = ({ customClass }) => {
           <HamburgerLogo width="35" height="28" />
         </li>
         <li className="company-name" onClick={() => navigate('/')}>
+          {/* <WhiteLogo /> */}
           <span className="main-name">UAE&nbsp;Assistant</span>
           <span className="sub-name">Properties</span>
         </li>

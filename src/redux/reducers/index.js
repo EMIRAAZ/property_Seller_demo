@@ -16,6 +16,7 @@ import tagheadReducer from './taghead';
 import taglineReducer from './tagline';
 import newstopicsReducer from './newstopics';
 import newsReducer from './news';
+import blogReducer from './blog';
 
 const rootReducer = combineReducers({
   homeReducer,
@@ -35,6 +36,7 @@ const rootReducer = combineReducers({
   taglineReducer,
   newstopicsReducer,
   newsReducer,
+  blogReducer,
 });
 
 export default rootReducer;

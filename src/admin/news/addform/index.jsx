@@ -104,7 +104,7 @@ const AddForm = ({
       <UploadImage
         editing={editing}
         linkIndex={0}
-        customClass="neighbor-logo-img"
+        customClass="news-logo-img"
         onChangeImage={() => {}}
         svg={true}
         value={newsValue.images}

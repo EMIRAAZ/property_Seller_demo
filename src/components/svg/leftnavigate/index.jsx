@@ -14,7 +14,7 @@ const LeftNavigate = ({ customClass, onClick }) => {
           cy="14.4715"
           r="12.3569"
           stroke="#282828"
-          stroke-width="2.66666"
+          strokeWidth="2.66666"
         />
         <svg
           width="28"
