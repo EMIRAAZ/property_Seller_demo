@@ -1,5 +1,4 @@
 import './homeformcard.scss';
-import FormCard from '../../../components/formcard';
 import BasicSelect from '../../../components/select/BasicSelect';
 import InputSelect from '../../../components/select/InputSelect';
 import LocationIcon from '../../../components/svg/location';
@@ -50,7 +49,6 @@ const HomeFormCard = props => {
   };
   return (
     <div className="home-form-card">
-      {/* <FormCard> */}
       <div className="home-formcard">
         <InputSelect
           bgColor="white"
@@ -131,7 +129,6 @@ const HomeFormCard = props => {
           <SearchIcon /> Search
         </BasicButton>
       </div>
-      {/* </FormCard> */}
     </div>
   );
 };
