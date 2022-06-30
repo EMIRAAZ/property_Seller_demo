@@ -11,16 +11,6 @@ const neighbourhood = [
     name: "Dubai",
     image: "/assets/image/neigh.jpg",
   },
-  {
-    id: 2,
-    name: "Pollachi",
-    image: "/assets/image/neigh.jpg",
-  },
-  {
-    id: 3,
-    name: "thiruppathi",
-    image: "/assets/image/neigh.jpg",
-  },
 ];
 const NeighborHood = () => {
   return (
