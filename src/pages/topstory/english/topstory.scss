@@ -62,6 +62,12 @@ body {
               font-size: 20px;
               font-weight: 600;
               color: #072d4b;
+              -webkit-line-clamp: 1; /* number of lines to show */
+              line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
             }
             .description {
               font-family: 'Poppins';
@@ -69,6 +75,12 @@ body {
               color: #072d4b;
               font-weight: 400;
               opacity: 0.6;
+              -webkit-line-clamp: 4; /* number of lines to show */
+              line-clamp: 4;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
             }
             .location-div {
               display: flex;
@@ -190,7 +202,7 @@ body {
           display: flex;
           margin-top: 20px;
           justify-content: space-evenly;
-          overflow-x: scroll;
+          overflow-x: scroll !important;
           -ms-overflow-style: none;
           scrollbar-width: none;
           -webkit-overflow-scrolling: touch;

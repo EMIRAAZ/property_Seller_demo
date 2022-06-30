@@ -1,14 +1,14 @@
 import { useLocation } from "react-router-dom";
-import ArabicOffplan from "./arabic/Offplan";
-import EnglishOffplan from "./english/Offplan";
+import ArabicNeighBourhood from "./arabic/NeighBourhood";
+import EnglisNeighBourhood from "./english/NeighBourhood";
 
-const Offplan = () => {
+const NeighBourhood = () => {
   const search = useLocation().search;
   const lang = new URLSearchParams(search).get("lang");
 
-  if (lang === "eng") return <EnglishOffplan />;
-  else if (lang === "ar") return <ArabicOffplan />;
-  else return <EnglishOffplan />;
+  if (lang === "eng") return <EnglisNeighBourhood />;
+  else if (lang === "ar") return <ArabicNeighBourhood />;
+  else return <EnglisNeighBourhood />;
 };
 
-export default Offplan;
+export default NeighBourhood;
