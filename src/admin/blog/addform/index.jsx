@@ -21,6 +21,7 @@ const AddForm = ({
   images,
   imgLoading,
   imgError,
+  clearUpload,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -36,6 +37,7 @@ const AddForm = ({
     getBlog();
     navigate(`/admin/blog`);
     clear();
+    clearUpload();
   };
 
   const addAdminBlog = () => {

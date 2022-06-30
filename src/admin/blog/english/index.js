@@ -8,6 +8,7 @@ import {
   editAdminBlog,
   clearAddBlog,
   deleteAdminBlog,
+  clearUpload,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -30,6 +31,7 @@ const mapDispatchToProps = dispatch => {
     getByIdAdminBlog: id => dispatch(getByIdAdminBlog(id)),
     deleteAdminBlog: (id, cb) => dispatch(deleteAdminBlog(id, cb)),
     clearAddBlog: () => dispatch(clearAddBlog()),
+    clearUpload: () => dispatch(clearUpload()),
   };
 };
 
