@@ -134,6 +134,7 @@ function Router() {
           <Route path="ourpartner" element={<Partner />} />
           <Route path="about" element={<About />} />
           <Route path="dailyblog" element={<Blog />} />
+          <Route path="dailyblog/id" element={<Blog />} />
           <Route path="privacypolicy" element={<Policy />} />
           <Route path="terms" element={<Terms />} />
           <Route path="career" element={<Career />} />

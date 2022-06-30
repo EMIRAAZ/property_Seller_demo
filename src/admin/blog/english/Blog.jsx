@@ -52,6 +52,7 @@ const Blog = props => {
             addBlog={props.addAdminBlog}
             getBlog={props.getBlogAdmin}
             editBlog={props.editAdminBlog}
+            clearUpload={props.clearUpload}
             env={props.env}
             editing={getID() !== 'blog'}
             images={props.images}
