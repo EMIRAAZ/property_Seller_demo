@@ -8,7 +8,7 @@ import OffplanCard from "../../../components/offpaln/offplanCard/OffplanCard";
 const Offplan = () => {
   return (
     <>
-      <div className="offplan-main-container">
+      <div className="offplan-main-container-1">
         <Header />
         <ImageFrame />
         <div className="offplans-projects">
@@ -19,7 +19,7 @@ const Offplan = () => {
               <OffplanCard />
             </div>
             <div className="offplan-card-size-div">
-             <OffplanCard />
+              <OffplanCard />
             </div>
             <div className="offplan-card-size-div">
               <OffplanCard />

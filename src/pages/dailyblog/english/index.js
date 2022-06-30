@@ -1,16 +1,16 @@
-import { connect } from 'react-redux';
-import Blog from './Blog';
-import { getBlogWeb } from '../../../redux/actions';
+import { connect } from "react-redux";
+import Blog from "./Blog";
+import { getBlogWeb } from "../../../redux/actions";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     blogs: state.blogwebReducer.blogs,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    getBlogWeb: params => dispatch(getBlogWeb(params)),
+    getBlogWeb: (params) => dispatch(getBlogWeb(params)),
   };
 };
 

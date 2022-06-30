@@ -24,6 +24,7 @@ const categories = [
     page: 'luxury',
 
     image: '/assets/image/cat3.png',
+    onClick: '/luxury-property',
   },
   {
     id: 4,

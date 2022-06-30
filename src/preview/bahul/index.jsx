@@ -1,13 +1,12 @@
 import Footer from "../../components/footer/english/Footer";
 import OffplanView from "../../pages/offplanview/english/OffplanView";
+import Topstory from "../../pages/topstory/english/Topstory";
 import Nft from "../../pages/nft/english/Nft";
 import "./index.scss";
-import NeighborHood from "../../pages/neighbourhood/english/NeighBourhood";
+// import OffplanView from "../../pages/offplanview";
 
 const Preview = () => {
-  return <NeighborHood />;
-
-  // return null;
+  return <Topstory />;
 };
 
 export default Preview;

@@ -1,272 +1,258 @@
-.lux1-card-container{
+.lux1-card-container {
+  display: flex;
+  width: 31%;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px auto;
+
+  background: white;
+
+  .lux1-desciption {
+    margin-left: 10px auto;
+
+    .lux1-content {
+      width: 90%;
+      margin: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+
+      //   background-color: aqua;
+      .lux1-image {
+        width: 100%;
+      }
+
+      .dateandtime {
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        .place {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 10.6667px;
+          line-height: 16px;
+          color: #6e6e6e;
+        }
+        .time {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 10.6667px;
+          line-height: 16px;
+          margin-left: 20px;
+          color: #6e6e6e;
+        }
+      }
+      .lux1-heading {
+        font-family: "Graphik";
+        font-style: normal;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: #1d2939;
+      }
+      .lux2-description {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12.4444px;
+        line-height: 19px;
+        margin-top: 10px;
+        color: #6e6e6e;
+      }
+      .more {
+        text-align: end;
+        font-family: "Poppins";
+        font-weight: 700;
+        font-size: 12.5px;
+        line-height: 8px;
+        margin-left: 100px;
+        color: #313131;
+        margin-bottom: 23px;
+      }
+    }
+  }
+}
+
+.luxuary-container {
+  width: 100%;
+  background-color: #eef7ff;
+  .l-image-container {
+    width: 100%;
+    .luxuary-header {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 42.491px;
+      line-height: 64px;
+      position: absolute;
+      left: 7.57%;
+      right: 57.81%;
+      top: 30%;
+      bottom: 64.91%;
+      color: white;
+
+      text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
+    }
+
+    .luxuary-image {
+      height: 80%;
+      width: 100%;
+    }
+  }
+
+  .luxuary-properties {
+    width: 100%;
+    left: 0.07px;
+    top: 880.06px;
+    background: white;
+
+    .luxuary-text-width {
+      width: 85%;
+
+      .l-properties-3 {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22.2159px;
+        line-height: 46px;
+        padding-left: 100px;
+        padding-top: 30px;
+        letter-spacing: 0.02em;
+        margin-top: 10px;
+      }
+    }
+  }
+  .lux-main {
+    background-color: #eef7ff;
+    .viewall {
+      background-color: #eef7ff;
+      margin: 50px auto;
+      .luxuary-text-width {
+        width: 85%;
+        margin-left: 80px;
+        margin-bottom: 50px;
+
+        .l-heading {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 48px;
+          line-height: 59px;
+          /* identical to box height, or 123% */
+
+          letter-spacing: -0.03em;
+        }
+        .l-description {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14.2977px;
+          line-height: 26px;
+          margin-bottom: 30px;
+          /* identical to box height, or 181% */
+
+          letter-spacing: -0.02em;
+        }
+      }
+      .card-row {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .lux1-card-container {
     display: flex;
-    width: 24%;
+    width: 95%;
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    margin:10px auto;
-    
-    background:white ;
+    margin: 10px auto;
+    // margin-left: 20px;
+    background: white;
+    border-radius: 10px;
 
-    .lux1-desciption{
-        margin-left: 10px auto;
-        
-        
-        .lux1-content{
-            
-            width: 85%;
-            margin-top: 30px;
-            margin-left: 20px;
-            .dateandtime{
-                display: flex;
-                flex-direction: row;
-                margin-top: 10px;
-                .place{
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 500;
-                    font-size: 10.6667px;
-                    line-height: 16px;
-                    color: #6E6E6E;
-                }
-                .time{
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 500;
-                    font-size: 10.6667px;
-                    line-height: 16px;
-                    margin-left: 20px;
-                    color: #6E6E6E;
-                }
-            }
-            .lux1-heading{
-                font-family: 'Graphik';
-                font-style: normal;
-                font-family: 'Poppins';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 16px;
-                line-height: 24px;
-                color: #1D2939;
-            }
-            .lux2-description{
-                font-family: 'Poppins';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 12.4444px;
-                line-height: 19px;
-                margin-top: 10px;
-                color: #6E6E6E;
-            }
-            .more{
-                margin-left: 220px;
-            }
+    .lux1-desciption {
+      margin-left: 10px auto;
+
+      .lux1-content {
+        width: 93%;
+        margin: auto;
+        margin-top: 16px;
+        .lux1-image {
+          width: 100%;
         }
-    }
 
-}  
-
-
-
-
-
-.luxuary-container{
-    width: 100%;
-    background-color: #EEF7FF;
-   .l-image-container{
-       width: 100%;
-       .luxuary-header{
-       
-           font-family: 'Poppins';
-           font-style: normal;
-           font-weight: 700;
-           font-size: 42.491px;
-           line-height: 64px;
-           position: absolute;
-           left: 7.57%;
-           right: 57.81%;
-           top: 30%;
-           bottom: 64.91%;
-           color: white;
-           
-
-text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
-       }
-       
-       .luxuary-image{
-           height: 80%;
-           width: 100%;
-       }
-
-   }
-
-   .luxuary-properties{
-       
-       width: 100%;
-       left: 0.07px;
-       top: 880.06px;
-       background:white;
-
-       
-       .luxuary-text-width{
-           width: 85%;
-       
-           .l-properties-3{
-            font-family: 'Poppins';
+        .dateandtime {
+          display: flex;
+          flex-direction: row;
+          margin-top: 0px;
+          .place {
+            font-family: "Poppins";
             font-style: normal;
-            font-weight: 400;
-            font-size: 22.2159px;
-            line-height: 46px;
-            padding-left: 100px;
-            padding-top: 30px;
-            letter-spacing: 0.02em;
-            margin-top: 10px;
-            }
-        }   
-    
-    }
-    .lux-main{
-        background-color: #EEF7FF;
-        .viewall{
-            background-color: #EEF7FF;
-            margin: 50px auto;
-            .luxuary-text-width{
-                width: 85%;
-                margin-left: 80px;
-                margin-bottom: 50px;
-    
-                .l-heading{
-                    
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 48px;
-                    line-height: 59px;
-                    /* identical to box height, or 123% */
-    
-                    letter-spacing: -0.03em;
-                           }
-                .l-description{
-                    
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 500;
-                    font-size: 14.2977px;
-                    line-height: 26px;
-                    margin-bottom: 30px;
-                    /* identical to box height, or 181% */
-    
-                    letter-spacing: -0.02em;
-                }
-            }   
-            .card-row{
-                display: flex;
-                flex-direction: row;
-            }
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 16px;
+            margin-left: 5px;
+            color: #6e6e6e;
+          }
+          .time {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 16px;
+            margin-left: 20px;
+            margin-left: 5px;
+            color: #6e6e6e;
+          }
         }
-    }
-    
-   
-}
-
-
-@media only screen and (max-width: 800px) {
-
-
-    .lux1-card-container{
-        display: flex;
-        width: 35%;
-        align-items: center;
-        flex-direction: row;
-        justify-content: center;
-        margin:10px auto;
-        margin-left: 20px;
-        background:white ;
-    
-        .lux1-desciption{
-            margin-left: 10px auto;
-            
-            
-            .lux1-content{
-                
-                width: 100%;
-                margin-top: 10px;
-                margin-left: 0px;
-                .lux1-image{
-                    
-                    width: 100%;
-                }
-                
-                .dateandtime{
-                    display: flex;
-                    flex-direction: row;
-                    margin-top: 0px;
-                    .place{
-                        font-family: 'Poppins';
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 5px;
-                        line-height: 16px;
-                        margin-left: 5px;
-                        color: #6E6E6E;
-                    }
-                    .time{
-                        font-family: 'Poppins';
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 5px;
-                        line-height: 16px;
-                        margin-left: 20px;
-                        margin-left: 5px;
-                        color: #6E6E6E;
-                    }
-                }
-                .lux1-heading{
-                    font-family: 'Graphik';
-                    font-style: normal;
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 11px;
-                    line-height: 24px;
-                    margin-left: 5px;
-                    color: #1D2939;
-                }
-                .lux2-description{
-                    width: 90%;
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 5.92895px;
-                    line-height: 9px;
-                    margin-top: 0px;
-                    margin-left: 5px;
-                    color: #6E6E6E;
-                }
-                .more{
-                    margin: 0;
-                    font-weight: 700;
-                    font-size: 5.08196px;
-                    line-height: 8px;
-                    margin-left:100px;
-                }
-            }
+        .lux1-heading {
+          font-family: "Graphik";
+          font-style: normal;
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 24px;
+          margin-left: 5px;
+          color: #1d2939;
         }
-    
-    }  
+        .lux2-description {
+          width: 90%;
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12.92895px;
+          //   line-height: 1px;
+          margin-top: 0px;
+          margin-left: 5px;
+          color: #6e6e6e;
+        }
+        .more {
+          margin-bottom: 20px;
+          font-family: "Poppins";
+          font-weight: 700;
+          font-size: 11.08196px;
+          line-height: 8px;
+        }
+      }
+    }
+  }
 
-
-
-
-
-
-.luxuary-container{
-   width: 100%;
-  .l-image-container{
+  .luxuary-container {
+    width: 100%;
+    .l-image-container {
       width: 100%;
-      .luxuary-header{
-      
-        font-family: 'Poppins';
+      .luxuary-header {
+        font-family: "Poppins";
         font-style: normal;
         font-weight: 700;
         font-size: 28.1502px;
@@ -278,90 +264,79 @@ text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
         bottom: 14.91%;
         color: white;
 
-text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
-      }
-      
-      .luxuary-image{
-          height: 470px;
-          width: 100%;
+        text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
       }
 
-  }
-
-  .luxuary-properties{
-      
-      width: 100%;
-      background: #EEF7FF;
-
-      .luxuary-property-header{
-          font-family: 'Poppins';
-          font-weight: 600;
-          font-size: 30.2674px;
-          text-align: left;
-          padding: 0;
-          padding-left: 10px;
-          
+      .luxuary-image {
+        height: 470px;
+        width: 100%;
       }
-      .luxuary-text-width{
-       width: 92%;
-   
-       .l-properties-3{
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 27px;
-        padding:10px 0px 0px 20px;
-        letter-spacing: 0.02em;
-        }
-    }   
-      
-  }
-  .lux-main{
-    background-color: #EEF7FF;
-    .viewall{
-        background-color: #EEF7FF;
-        margin: 50px auto;
-        .luxuary-text-width{
-            width: 85%;
-            
-            margin:20px;
-
-            .l-heading{
-                
-                font-family: 'Poppins';
-                font-style: normal;
-                font-weight: 600;
-                font-size: 30px;
-                line-height: 37px;
-                /* identical to box height, or 123% */
-                
-                letter-spacing: -0.03em;
-                       }
-            .l-description{
-                
-                font-family: 'Poppins';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 8.95612px;
-                line-height: 16px;
-                /* or 181% */
-
-                letter-spacing: -0.02em;
-            }
-        }   
-        .card-row{
-            // display: grid;
-            // grid-template-columns:repeat(2, 1fr) ;
-            display: flex;
-            flex-wrap: wrap;
-        }
     }
-}
 
+    .luxuary-properties {
+      width: 100%;
+      background: #eef7ff;
 
+      .luxuary-property-header {
+        font-family: "Poppins";
+        font-weight: 600;
+        font-size: 30.2674px;
+        text-align: left;
+        padding: 0;
+        padding-left: 10px;
+      }
+      .luxuary-text-width {
+        width: 92%;
 
-}
+        .l-properties-3 {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 27px;
+          padding: 10px 0px 0px 20px;
+          letter-spacing: 0.02em;
+        }
+      }
+    }
+    .lux-main {
+      background-color: #eef7ff;
+      .viewall {
+        background-color: #eef7ff;
+        margin: 50px auto;
+        .luxuary-text-width {
+          width: 85%;
 
+          margin: 20px;
 
+          .l-heading {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 37px;
+            /* identical to box height, or 123% */
+
+            letter-spacing: -0.03em;
+          }
+          .l-description {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 8.95612px;
+            line-height: 16px;
+            /* or 181% */
+
+            letter-spacing: -0.02em;
+          }
+        }
+        .card-row {
+          // display: grid;
+          // grid-template-columns:repeat(2, 1fr) ;
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
 }

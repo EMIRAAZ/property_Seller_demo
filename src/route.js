@@ -3,7 +3,9 @@ import PrivateRoute from './components/privateroute';
 import Home from './pages/home';
 import Buy from './pages/buy';
 import Rent from './pages/rent';
+import NeighBourhood from './pages/neighbourhood';
 import Sell from './pages/sell';
+import WebOffplan from './pages/offplan';
 import ShortTerm from './pages/shortterm';
 import Management from './pages/management';
 import Mortgage from './pages/mortgage';
@@ -36,7 +38,6 @@ import AdminNews from './admin/news';
 import AdminBlog from './admin/blog';
 import Topstory from './pages/topstory';
 import ListProperty from './pages/listproperty';
-
 function Router() {
   const makePrivate = (component, role = '') => (
     <PrivateRoute role={role}>{component}</PrivateRoute>
@@ -125,7 +126,10 @@ function Router() {
           <Route path="news" element={<Topstory />} />
           <Route path="news/:id" element={<News />} />
           <Route path="rent" element={<Rent />} />
+          <Route path="luxury-property" element={<Luxuary />} />
+          <Route path="neighbourhood" element={<NeighBourhood />} />
           <Route path="sell" element={<Sell />} />
+          <Route path="off-plan" element={<WebOffplan />} />
           <Route path="shortterm" element={<ShortTerm />} />
           <Route path="management" element={<Management />} />
           <Route path="management" element={<PropertyList />} />
