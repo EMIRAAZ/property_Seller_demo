@@ -44,8 +44,9 @@ const Property = props => {
   return (
     <div className="property-list">
       <div className="property-list-item">
-        <ImgPropCarousel imgArray={props.images} />
+        <ImgPropCarousel customClass="" imgArray={props.images} />
         {renderVerified(props.verified)}
+        {props.check ? <div className="new-listing">New Listing</div> : ''}
         <div className="price-tag">AED {props.price}</div>
         <div className="main-heading" onClick={navigateTo}>
           {props.title}

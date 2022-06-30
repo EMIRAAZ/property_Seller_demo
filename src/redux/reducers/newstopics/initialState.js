@@ -3,7 +3,7 @@ export const initialState = {
   error: false,
   newstopics: [],
   newstopicsValue: {
-    title: '',
+    name: '',
   },
   env: {
     loading: false,

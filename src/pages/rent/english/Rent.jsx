@@ -30,7 +30,7 @@ const Rent = props => {
   };
   return (
     <div className="rent-english">
-      <Header />
+      <Header customClass="rent-header-class" />
       <ImageFrame />
       <RentFormCard
         onInputChange={props.onChangeRentParams}

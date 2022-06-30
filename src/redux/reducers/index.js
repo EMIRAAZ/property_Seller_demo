@@ -17,6 +17,8 @@ import taglineReducer from './tagline';
 import newstopicsReducer from './newstopics';
 import newsReducer from './news';
 import blogReducer from './blog';
+import topReducer from './topstory';
+import singlenewsReducer from './singlenews';
 
 const rootReducer = combineReducers({
   homeReducer,
@@ -37,6 +39,8 @@ const rootReducer = combineReducers({
   newstopicsReducer,
   newsReducer,
   blogReducer,
+  topReducer,
+  singlenewsReducer,
 });
 
 export default rootReducer;
