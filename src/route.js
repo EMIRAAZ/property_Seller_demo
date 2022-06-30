@@ -24,7 +24,7 @@ import PropertyView from './pages/propertyview';
 import AddAgency from './admin/addagency';
 import AddAgent from './admin/addagent';
 import Amenity from './admin/amenity';
-import News from './pages/news/english/News';
+import News from './pages/news';
 import Neighborhood from './admin/neighborhood';
 import PropertyList from './pages/propertylist';
 import Luxuary from './pages/luxuary/english/Luxuary';
@@ -120,6 +120,7 @@ function Router() {
           </Route>
           <Route path="buy" element={<Buy />} />
           <Route path="property/:id" element={<PropertyView />} />
+          <Route path="news" element={<News />} />
           <Route path="news/:id" element={<News />} />
           <Route path="rent" element={<Rent />} />
           <Route path="sell" element={<Sell />} />
