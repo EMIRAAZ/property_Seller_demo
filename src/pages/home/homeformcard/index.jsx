@@ -50,7 +50,8 @@ const HomeFormCard = props => {
   };
   return (
     <div className="home-form-card">
-      <FormCard customClass="home-formcard">
+      {/* <FormCard> */}
+      <div className="home-formcard">
         <InputSelect
           customClass="search"
           name="Search City, Building, Community .."
@@ -119,7 +120,8 @@ const HomeFormCard = props => {
         >
           <SearchIcon /> Search
         </BasicButton>
-      </FormCard>
+      </div>
+      {/* </FormCard> */}
     </div>
   );
 };
