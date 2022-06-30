@@ -37,7 +37,7 @@ import TagLine from "./admin/tagline";
 import NewsTopics from "./admin/newstopics";
 import AdminNews from "./admin/news";
 import AdminBlog from "./admin/blog";
-
+import Topstory from "./pages/topstory";
 function Router() {
   const makePrivate = (component, role = "") => (
     <PrivateRoute role={role}>{component}</PrivateRoute>
@@ -123,7 +123,7 @@ function Router() {
           </Route>
           <Route path="buy" element={<Buy />} />
           <Route path="property/:id" element={<PropertyView />} />
-          <Route path="news" element={<News />} />
+          <Route path="news" element={<Topstory />} />
           <Route path="news/:id" element={<News />} />
           <Route path="rent" element={<Rent />} />
           <Route path="luxury-property" element={<Luxuary />} />

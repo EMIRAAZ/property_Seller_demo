@@ -50,6 +50,7 @@ const News = props => {
             onChange={props.changeAdminNewsInput}
             topics={props.topics}
             clear={props.clearAddNews}
+            clearUpload={props.clearUpload}
             newsValue={props.newsValue}
             addNews={props.addAdminNews}
             getNews={props.getNewsAdmin}

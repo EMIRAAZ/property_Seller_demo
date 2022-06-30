@@ -17,7 +17,9 @@ const HomeProperty = ({ property, onChangePage, getProperty }) => {
   };
 
   const renderProperty = () =>
-    property.property.map(item => <Property key={item.id} {...item} />);
+    property.property.map((item, i) => (
+      <Property check={i < 6} key={item.id} {...item} />
+    ));
 
   const renderPropertyHeader = () => {
     if (property.property && property.property.length > 0)

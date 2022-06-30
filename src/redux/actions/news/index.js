@@ -208,7 +208,7 @@ const getTopicsNewsError = () => {
 export const getTopicsNews = () => async dispatch => {
   try {
     dispatch(getTopicsNewsStarted());
-    const res = await axios.get(`/api/topics`, {
+    const res = await axios.get(`/api/newstopics`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('authToken'),
       },

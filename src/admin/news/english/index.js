@@ -9,6 +9,7 @@ import {
   clearAddNews,
   deleteAdminNews,
   getTopicsNews,
+  clearUpload,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -16,6 +17,7 @@ const mapStateToProps = state => {
     adminNews: state.newsReducer,
     taghead: state.newsReducer.taghead,
     newsValue: state.newsReducer.newsValue,
+    topics: state.newsReducer.topics,
     env: state.newsReducer.env,
     images: state.uploadReducer.link,
     imgLoading: state.uploadReducer.loading,
@@ -33,6 +35,7 @@ const mapDispatchToProps = dispatch => {
     deleteAdminNews: (id, cb) => dispatch(deleteAdminNews(id, cb)),
     clearAddNews: () => dispatch(clearAddNews()),
     getTopicsNews: () => dispatch(getTopicsNews()),
+    clearUpload: () => dispatch(clearUpload()),
   };
 };
 

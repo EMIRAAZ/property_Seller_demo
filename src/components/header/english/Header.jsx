@@ -6,9 +6,13 @@ import HeaderSelect from '../../select/HeaderSelect';
 import Close from '../../svg/close';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Header = ({ customClass }) => {
   const navigate = useNavigate();
+  let location = useLocation();
+
+  const getLoc = () => location.pathname.split('/').pop();
   const [state, changeState] = useState('hide');
   const onSidebarWebToggle = () => {
     changeState(state === 'hide' ? 'show' : 'hide');
@@ -66,12 +70,16 @@ const Header = ({ customClass }) => {
       </div>
       <ul className="header-list">
         <li className="logo" onClick={onSidebarWebToggle}>
-          <HamburgerLogo width="35" height="28" />
+          <HamburgerLogo
+            width="27"
+            height="26"
+            fill={getLoc() === '' ? '#ffffff' : '#1C3988'}
+          />
         </li>
         <li className="company-name" onClick={() => navigate('/')}>
           {/* <WhiteLogo /> */}
           <span className="main-name">UAE&nbsp;Assistant</span>
-          <span className="sub-name">Properties</span>
+          <span className="sub-name">for Properties</span>
         </li>
         <li className="desktop-li">
           <ul className="desktop-ul">
@@ -108,7 +116,7 @@ const Header = ({ customClass }) => {
                   { name: 'Apartments' },
                 ]}
               />
-              <DownArrow />
+              <DownArrow fill={getLoc() === '' ? '#ffffff' : '#000000'} />
             </li>
             <li className="simple-list">List&nbsp;Your&nbsp;Property</li>
           </ul>
