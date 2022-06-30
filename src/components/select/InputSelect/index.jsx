@@ -9,6 +9,8 @@ const InputSelect = ({
   onChange,
   value,
   leftIcon,
+  bgColor = '#f3f3fa',
+  border = false,
 }) => {
   const [selectName, setSelectName] = useState(name);
   const [dropdownClass, setdropdownClass] = useState('hide');
@@ -53,7 +55,13 @@ const InputSelect = ({
       onMouseLeave={onMouseLeave}
       onClick={onClick}
     >
-      <div className="select-box">
+      <div
+        style={{
+          backgroundColor: bgColor,
+          border: border ? '1px solid #c1cdee' : 'none',
+        }}
+        className="select-box"
+      >
         {/* <p className="drop-btn">{selectName}</p> */}
         {leftIcon
           ? React.createElement(leftIcon, {
@@ -64,6 +72,7 @@ const InputSelect = ({
             })
           : null}
         <input
+          style={{ backgroundColor: bgColor }}
           className="drop-btn"
           placeholder={name}
           onChange={e => onChangeInput(e)}

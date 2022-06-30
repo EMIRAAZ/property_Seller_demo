@@ -1,18 +1,26 @@
 .buy-form-card {
   z-index: 10;
-  position: relative;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  left: 0;
+  right: 0;
+  top: 150px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 90%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.01) 0px 0px 0px 0px;
   .buy-formcard {
-    background-color: #ffffff;
+    background-color: #f3f3fa;
     border-radius: 8px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 40px 20px;
     margin: 0px auto;
-    margin-top: -150px;
-    width: 90%;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 36px 0px,
-      rgba(0, 0, 0, 0.01) 0px 0px 0px 1px;
+    width: 100%;
 
     .property {
       grid-column-start: 1;
@@ -62,14 +70,9 @@
 
 @media only screen and (min-width: 600px) {
   .buy-form-card {
+    width: 75%;
+    top: 340px;
     .buy-formcard {
-      margin: 0px auto;
-      margin-top: -130px;
-      // .property {
-      //   grid-column-start: 1;
-      //   grid-column-end: 1;
-      //   grid-row-start: 1;
-      // }
       .search {
         grid-column-start: 1;
         grid-column-end: 4;
