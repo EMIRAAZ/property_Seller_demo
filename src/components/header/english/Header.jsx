@@ -108,7 +108,7 @@ const Header = ({ customClass }) => {
                   { name: 'Apartments' },
                 ]}
               />
-              <DownArrow />
+              <DownArrow fill="#ffffff" />
             </li>
             <li className="simple-list">List&nbsp;Your&nbsp;Property</li>
           </ul>
