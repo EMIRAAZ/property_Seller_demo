@@ -27,9 +27,11 @@
     }
     .desktop-li {
       color: #ffffff;
+
       li {
         &:hover {
-          color: #ffffff;
+          transition: all 1s ease-out;
+          color: #ffd0e0;
         }
       }
     }

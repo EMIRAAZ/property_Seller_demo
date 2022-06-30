@@ -70,6 +70,10 @@
       line-height: 1.5em;
       height: 1.5em;
       overflow: hidden;
+      transition: all 0.2s ease-out;
+      &:hover {
+        color: #39a76d;
+      }
     }
 
     .description {

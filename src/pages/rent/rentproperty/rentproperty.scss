@@ -1,7 +1,7 @@
 .rent-property {
   background-color: #eef7ff;
   .rent-property-content {
-    margin: 40px auto 0 auto;
+    margin: 200px auto 0 auto;
     padding: 40px 0px 10px 0px;
     width: 90%;
     .heading {
@@ -31,7 +31,8 @@
 @media only screen and (min-width: 600px) {
   .rent-property {
     .rent-property-content {
-      background-color: #eef7ff;
+      margin: 40px auto 0 auto;
+      padding: 40px 0px 10px 0px;
       .heading {
         font-size: 48px;
         line-height: 59px;
