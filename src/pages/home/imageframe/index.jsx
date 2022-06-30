@@ -5,7 +5,7 @@ const ImageFrame = () => {
   return (
     <div className="home-image-frame">
       <p className="home-properties-caption">
-        Lets Find Your <span>Properties in Dubai</span>
+        Lets Find Your <span>Properties in UAE</span>
       </p>
       <img
         className="img-main-home"

@@ -1,7 +1,7 @@
-import "./newhome.scss";
-import React from "react";
-import Header from "../../header";
-import HomeFormCard from "../../../pages/home/homeformcard";
+import './newhome.scss';
+import React from 'react';
+import Header from '../../header';
+import HomeFormCard from '../../../pages/home/homeformcard';
 
 function NewHome() {
   return (
@@ -10,7 +10,7 @@ function NewHome() {
 
       <div className="main-container">
         <h1 className="heading">
-          Lets Find Your <span>Properties in Dubai</span>
+          Lets Find Your <span>Properties in UAE</span>
         </h1>
         {/* <HomeFormCard
           onInputChange={() => {}}

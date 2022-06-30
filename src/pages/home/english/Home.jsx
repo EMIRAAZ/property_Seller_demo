@@ -35,7 +35,7 @@ const Home = props => {
         getLuxury={props.getHomeLuxury}
         onChangePage={props.changePageHomeLuxury}
       /> */}
-      <SocialPanel />
+      {/* <SocialPanel /> */}
       <Footer />
     </div>
   );
