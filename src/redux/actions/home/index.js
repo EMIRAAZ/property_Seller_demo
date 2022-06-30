@@ -41,7 +41,6 @@ export const changePageHomeLuxury = (payload, cb) => async dispatch => {
     type: CHANGE_HOME_LUXURY_PAGE,
     payload: payload,
   });
-  console.log('fired', payload);
   cb();
 };
 

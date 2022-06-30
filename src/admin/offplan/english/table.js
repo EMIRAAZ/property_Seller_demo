@@ -1,17 +1,17 @@
 export const tableHeader = [
   {
-    field: 'id',
-    headerName: 'ID',
+    field: "id",
+    headerName: "ID",
     minWidth: 220,
-    renderCell: params => {
+    renderCell: (params) => {
       return <p className="id">{params.row.id}</p>;
     },
   },
   {
-    field: 'agencyName',
-    headerName: 'Name',
+    field: "title",
+    headerName: "Name",
     minWidth: 400,
-    renderCell: params => {
+    renderCell: (params) => {
       return (
         <>
           <img src={params.row.agencyLogo} alt="" className="image" />
@@ -21,23 +21,23 @@ export const tableHeader = [
     },
   },
   {
-    field: 'updatedAt',
-    headerName: 'Date',
+    field: "updatedAt",
+    headerName: "Date",
     minWidth: 280,
-    renderCell: params => {
+    renderCell: (params) => {
       var date = new Date(params.row.updatedAt);
       // .toLocaleString(undefined, {
       //   timeZone: 'Asia/Kolkata',
       // });
       const options = {
-        weekday: 'short',
-        year: 'numeric',
-        month: 'short',
-        hour: 'numeric',
-        minute: 'numeric',
+        weekday: "short",
+        year: "numeric",
+        month: "short",
+        hour: "numeric",
+        minute: "numeric",
       };
       return (
-        <p className="date">{date.toLocaleDateString('en-us', options)}</p>
+        <p className="date">{date.toLocaleDateString("en-us", options)}</p>
       );
     },
   },

@@ -1,0 +1,18 @@
+.new-home {
+  background-image: url("../../../../public/assets/image/new-bg.png");
+  height: 745px;
+  padding: 0px 30px;
+  .main-container {
+    .heading {
+      color: white;
+      font-size: 35px;
+      font-family: "Poppins";
+      text-align: center;
+      font-weight: 400;
+      margin-top: 10%;
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}
