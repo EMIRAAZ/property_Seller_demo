@@ -113,17 +113,17 @@ const luxuarypenthouse = [
 const LuxuaryCard = ({ image, heading, description, place, timw }) => {
   return (
     <>
-      <div className='lux1-card-container'>
-        <div className='lux1-desciption'>
-          <div className='lux1-content'>
-            <img className='lux1-image' src={image} alt='blog' />
-            <div className='dateandtime'>
-              <p className='place'>{place}</p>
-              <p className='time'>{timw}</p>
+      <div className="lux1-card-container">
+        <div className="lux1-desciption">
+          <div className="lux1-content">
+            <img className="lux1-image" src={image} alt="blog" />
+            <div className="dateandtime">
+              <p className="place">{place}</p>
+              <p className="time">{timw}</p>
             </div>
-            <h1 className='lux1-heading'>{heading}</h1>
-            <p className='lux2-description'>{description}</p>
-            <p className='more'> view more -></p>
+            <h1 className="lux1-heading">{heading}</h1>
+            <p className="lux2-description">{description}</p>
+            <p className="more"> view more -></p>
           </div>
         </div>
       </div>
@@ -141,20 +141,20 @@ const Luxuary = () => {
   const renderstory4 = () =>
     luxuarypenthouse.map((item, i) => <LuxuaryCard key={i} {...item} />);
   return (
-    <div className='luxuary-container'>
+    <div className="luxuary-container">
       <Header />
-      <div className='l-image-container'>
-        <h2 className='luxuary-header'>Luxury properties</h2>
+      <div className="l-image-container">
+        <h2 className="luxuary-header">Luxury properties</h2>
         <img
-          className='luxuary-image'
-          src='/assets/image/luxuary.jpg'
-          alt='luxuary properties'
+          className="luxuary-image"
+          src="/assets/image/luxuary.jpg"
+          alt="luxuary properties"
         />
       </div>
-      <div className='luxuary-properties'>
-        <h2 className='luxuary-property-header'></h2>
-        <div className='luxuary-text-width'>
-          <p className='l-properties-3'>
+      <div className="luxuary-properties">
+        <h2 className="luxuary-property-header"></h2>
+        <div className="luxuary-text-width">
+          <p className="l-properties-3">
             Being a landlord is great! Until you need to find a new tenant or
             deal with a faulty AC on your own. We’ll take care of it. From
             marketing your home and collecting rent to carrying out maintenance
@@ -167,54 +167,54 @@ const Luxuary = () => {
         </div>
       </div>
 
-      <div className='lux-main'>
-        <div className='viewall'>
-          <div className='luxuary-text-width'>
-            <h2 className='l-heading'>Luxry Villas</h2>
-            <p className='l-description'>
+      <div className="lux-main">
+        <div className="viewall">
+          <div className="luxuary-text-width">
+            <h2 className="l-heading">Luxry Villas</h2>
+            <p className="l-description">
               We so opinion friends me message as delight. Whole front do of
               plate heard oh ought. His defective nor convinced residence own.
             </p>
           </div>
-          <div className='card-row'>{renderstory1()}</div>
+          <div className="card-row">{renderstory1()}</div>
         </div>
       </div>
-      <div className='lux-main'>
-        <div className='viewall'>
-          <div className='luxuary-text-width'>
-            <h2 className='l-heading'>Luxury Appartments</h2>
-            <p className='l-description'>
+      <div className="lux-main">
+        <div className="viewall">
+          <div className="luxuary-text-width">
+            <h2 className="l-heading">Luxury Appartments</h2>
+            <p className="l-description">
               We so opinion friends me message as delight. Whole front do of
               plate heard oh ought. His defective nor convinced residence own.
             </p>
           </div>
-          <div className='card-row'>{renderstory2()}</div>
-        </div>
-      </div>
-
-      <div className='lux-main'>
-        <div className='viewall'>
-          <div className='luxuary-text-width'>
-            <h2 className='l-heading'>Luxry Townhouse</h2>
-            <p className='l-description'>
-              We so opinion friends me message as delight. Whole front do of
-              plate heard oh ought. His defective nor convinced residence own.
-            </p>
-          </div>
-          <div className='card-row'>{renderstory3()}</div>
+          <div className="card-row">{renderstory2()}</div>
         </div>
       </div>
 
-      <div className='lux-main'>
-        <div className='viewall'>
-          <div className='luxuary-text-width'>
-            <h2 className='l-heading'>Luxry Penthouse</h2>
-            <p className='l-description'>
+      <div className="lux-main">
+        <div className="viewall">
+          <div className="luxuary-text-width">
+            <h2 className="l-heading">Luxry Townhouse</h2>
+            <p className="l-description">
               We so opinion friends me message as delight. Whole front do of
               plate heard oh ought. His defective nor convinced residence own.
             </p>
           </div>
-          <div className='card-row'>{renderstory4()}</div>
+          <div className="card-row">{renderstory3()}</div>
+        </div>
+      </div>
+
+      <div className="lux-main">
+        <div className="viewall">
+          <div className="luxuary-text-width">
+            <h2 className="l-heading">Luxry Penthouse</h2>
+            <p className="l-description">
+              We so opinion friends me message as delight. Whole front do of
+              plate heard oh ought. His defective nor convinced residence own.
+            </p>
+          </div>
+          <div className="card-row">{renderstory4()}</div>
         </div>
       </div>
 
