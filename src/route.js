@@ -38,6 +38,7 @@ import AdminNews from './admin/news';
 import AdminBlog from './admin/blog';
 import Topstory from './pages/topstory';
 import ListProperty from './pages/listproperty';
+
 function Router() {
   const makePrivate = (component, role = '') => (
     <PrivateRoute role={role}>{component}</PrivateRoute>

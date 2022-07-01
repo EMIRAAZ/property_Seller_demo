@@ -20,6 +20,7 @@ import blogReducer from './blog';
 import topReducer from './topstory';
 import singlenewsReducer from './singlenews';
 import blogwebReducer from './blogweb';
+import listpropReducer from './listproperty';
 
 const rootReducer = combineReducers({
   homeReducer,
@@ -43,6 +44,7 @@ const rootReducer = combineReducers({
   topReducer,
   singlenewsReducer,
   blogwebReducer,
+  listpropReducer,
 });
 
 export default rootReducer;
