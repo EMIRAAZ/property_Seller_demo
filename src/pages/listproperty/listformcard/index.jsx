@@ -30,23 +30,27 @@ const ListFormCard = props => {
       } ${location.city}`;
   };
 
-  const makeLocationAndSearch = () => {
-    const { location } = props.listSearch;
-    if (!location.length) return '?';
-    else if (typeof location === 'string')
-      return makeUrlParam(props.listSearch);
+  const makeParam = () => {
+    const newListSearch = { ...props.listSearch };
+    const { location } = newListSearch;
+    let loc = '';
+    if (typeof location === 'string') loc = location;
     else {
-      const newParamObject = {
-        ...props.listSearch,
+      loc = {
         placeAddress: location.placeAddress,
         city: location.city,
         ...(location.building ? { building: location.building } : {}),
       };
-      delete newParamObject.location;
-      delete newParamObject.locationSearch;
-      return makeUrlParam(newParamObject);
     }
+    delete newListSearch.locationSearch;
+    delete newListSearch.location;
+
+    return `&${makeUrlParam({
+      ...newListSearch,
+      ...(typeof loc === 'string' ? { location: loc } : loc),
+    })}`;
   };
+
   return (
     <div className="list-form-card">
       <div className="list-formcard">
@@ -90,7 +94,7 @@ const ListFormCard = props => {
           onChange={value => onInputChange('sale', value)}
           options={[
             { name: 'Buy', value: 'buy' },
-            { name: 'Rent', value: 'buy' },
+            { name: 'Rent', value: 'rent' },
             { name: 'Both', value: 'both' },
           ]}
         />
@@ -124,7 +128,7 @@ const ListFormCard = props => {
         />
         <BasicButton
           customClass="list-search-btn"
-          onClick={() => props.onSearch(makeLocationAndSearch(), true)}
+          onClick={() => props.onSearch(makeParam())}
         >
           <SearchIcon /> Search
         </BasicButton>

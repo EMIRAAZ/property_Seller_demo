@@ -68,7 +68,7 @@ export const getRtmin =
     try {
       dispatch(getRtminFeaturedStarted());
       const res = await axios.get(
-        `/api/property?readyToMove=true&&limit=10${params}`
+        `/api/property?readyToMove=true&limit=10${params}`
       );
       dispatch({
         type: GET_RTMIN,

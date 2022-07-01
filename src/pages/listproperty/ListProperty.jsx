@@ -5,7 +5,6 @@ import Header from '../../components/header';
 import ListFormCard from './listformcard';
 import ListPropItem from './listpropitem';
 const ListProperty = props => {
-  console.log(props);
   let location = useLocation();
 
   const getID = () => location.pathname.split('/').pop();
@@ -18,12 +17,11 @@ const ListProperty = props => {
     if (getID() === 'featured') return props.featurd;
     else if (getID() === 'readytomove') return props.readyToMoveIn;
   };
-  const getPropertyFn = () => {
-    if (getID() === 'featured') return () => props.getCatFeatured();
-    else if (getID() === 'readytomove') return () => props.getRtmin();
+  const getPropertyFn = params => {
+    if (getID() === 'featured') return props.getCatFeatured(params);
+    else if (getID() === 'readytomove') return props.getRtmin(params);
   };
 
-  console.log(getPropertyData());
   return (
     <div className="list-property-api">
       <Header />
@@ -31,12 +29,12 @@ const ListProperty = props => {
         onInputChange={props.onChangeListPropParams}
         onSearchLocation={props.getListpropLocationSearch}
         listSearch={props.listSearch}
-        onSearch={getPropertyFn()}
+        onSearch={params => getPropertyFn(params)}
       />
       <ListPropItem
         property={getPropertyData()}
         onChangePage={() => {}}
-        getProperty={getPropertyFn()}
+        getProperty={params => getPropertyFn(params)}
       />
     </div>
   );
