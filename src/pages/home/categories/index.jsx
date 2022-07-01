@@ -4,34 +4,26 @@ import { useNavigate } from 'react-router-dom';
 const categories = [
   {
     id: 1,
-
     name: 'Featured Properties',
-    page: 'featured',
+    page: '/listproperty/featured',
     image: '/assets/image/cat1.png',
   },
   {
     id: 2,
-
     name: 'Famous Neighbourhood',
-    page: 'neighbourhood',
-
+    page: '/neighbourhood',
     image: '/assets/image/cat2.png',
   },
   {
     id: 3,
-
     name: 'Luxury Properties',
-    page: 'luxury',
-
+    page: '/luxury-property',
     image: '/assets/image/cat3.png',
-    onClick: '/luxury-property',
   },
   {
     id: 4,
-
     name: 'Ready To MoveIn',
-    page: 'readtomove',
-
+    page: '/listproperty/readytomove',
     image: '/assets/image/cat4.png',
   },
 ];
@@ -40,7 +32,7 @@ function Categories() {
   let navigate = useNavigate();
 
   const navigateTo = page => {
-    navigate(`/listproperty/${page}`);
+    navigate(`${page}`);
   };
   return (
     <div className="categories">
@@ -67,7 +59,7 @@ function Categories() {
       <div
         className="image-div"
         style={{ width: '100%' }}
-        onClick={() => navigateTo('offplan')}
+        onClick={() => navigateTo('/off-plan')}
       >
         <div
           className="image-class"

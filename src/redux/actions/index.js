@@ -19,3 +19,4 @@ export * from './blog';
 export * from './topstory';
 export * from './singlenews';
 export * from './blogweb';
+export * from './listproperty';
