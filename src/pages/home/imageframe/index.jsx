@@ -9,7 +9,7 @@ const ImageFrame = () => {
       </p>
       <img
         className="img-main-home"
-        src="/assets/image/home-main.jpg"
+        src={'/assets/image/home-main.jpg'}
         alt="building"
       />
       {/* <div className="background-square"></div>
