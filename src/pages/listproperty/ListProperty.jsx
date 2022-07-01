@@ -28,10 +28,10 @@ const ListProperty = props => {
     <div className="list-property-api">
       <Header />
       <ListFormCard
-        onInputChange={() => {}}
-        onSearchLocation={() => {}}
-        listSearch={{ location: 'loc', locationSearch: { location: [] } }}
-        onSearch={() => {}}
+        onInputChange={props.onChangeListPropParams}
+        onSearchLocation={props.getListpropLocationSearch}
+        listSearch={props.listSearch}
+        onSearch={getPropertyFn()}
       />
       <ListPropItem
         property={getPropertyData()}

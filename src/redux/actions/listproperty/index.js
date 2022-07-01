@@ -6,7 +6,18 @@ import {
   GET_RTMIN_STARTED,
   GET_RTMIN,
   GET_RTMIN_ERROR,
+  ON_CHANGE_LIST_PAGE_PROPERTY_INPUT,
+  GET_LISTPROP_LOCATION_SEARCH_STARTED,
+  GET_LISTPROP_LOCATION_SEARCH,
+  GET_LISTPROP_LOCATION_SEARCH_ERROR,
 } from '../../constants';
+
+export const onChangeListPropParams = payload => {
+  return {
+    type: ON_CHANGE_LIST_PAGE_PROPERTY_INPUT,
+    payload: payload,
+  };
+};
 
 /// cat featured ///
 
@@ -67,3 +78,28 @@ export const getRtmin =
       dispatch(getRtminFeaturedError());
     }
   };
+
+const getListpropLocationSearchStarted = () => {
+  return {
+    type: GET_LISTPROP_LOCATION_SEARCH_STARTED,
+  };
+};
+
+const getListpropLocationSearchError = () => {
+  return {
+    type: GET_LISTPROP_LOCATION_SEARCH_ERROR,
+  };
+};
+
+export const getListpropLocationSearch = location => async dispatch => {
+  try {
+    dispatch(getListpropLocationSearchStarted());
+    const res = await axios.post(`/api/location`, { location });
+    dispatch({
+      type: GET_LISTPROP_LOCATION_SEARCH,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getListpropLocationSearchError());
+  }
+};
