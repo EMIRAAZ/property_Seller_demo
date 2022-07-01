@@ -10,7 +10,7 @@ const ImageFrame = () => {
       <img
         className="img-main-home"
         src={'/assets/image/home-main.jpg'}
-        alt="building"
+        alt="buildings"
       />
       {/* <div className="background-square"></div>
       <div className="main-div">
