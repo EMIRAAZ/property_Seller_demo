@@ -1,6 +1,5 @@
 import './listpropitem.scss';
 import Property from '../../../components/property';
-import BasicButton from '../../../components/button/BasicButton';
 import { useEffect, useState } from 'react';
 
 const ListPropertyItem = ({ property, onChangePage, getProperty }) => {
@@ -22,7 +21,7 @@ const ListPropertyItem = ({ property, onChangePage, getProperty }) => {
     ));
 
   const renderPropertyHeader = () => {
-    if (property.property && property.property.length > 0)
+    if (property && property.length > 0)
       return (
         <>
           <p className="heading">Properties</p>
@@ -37,7 +36,7 @@ const ListPropertyItem = ({ property, onChangePage, getProperty }) => {
   };
 
   const bgColor = () => {
-    if (property.property && property.property.length > 0) {
+    if (property && property.length > 0) {
       return '#eef7ff';
     } else return '#ffffff';
   };
