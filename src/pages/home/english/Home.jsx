@@ -18,12 +18,18 @@ const Home = props => {
         homeSearch={props.homeSearch}
         onSearch={props.getHomeProperty}
       />
-      <HomeProperty
-        property={props.homeProperty}
-        onChangePage={props.changePageHomeProperty}
-        getProperty={props.getHomeProperty}
-      />
-      <Categories />
+      <div className="home-grid">
+        <div className="home-grid-property">
+          <HomeProperty
+            property={props.homeProperty}
+            onChangePage={props.changePageHomeProperty}
+            getProperty={props.getHomeProperty}
+          />
+        </div>
+        <div className="home-grid-category">
+          <Categories />
+        </div>
+      </div>
       {/* <HomeFeatured
         featured={props.homeFeatured}
         getFeatured={props.getHomeFeatured}
