@@ -51,7 +51,9 @@ const reducer = (state = initialState, action) => {
           ...state.homeProperty,
           error: false,
           loading: false,
-          property: [...state.homeProperty.property, ...action.payload.rows],
+          property: [
+            ...addIfNecessary(state.homeProperty.property, action.payload.rows),
+          ],
           count: action.payload.count,
         },
       };
@@ -179,6 +181,18 @@ const reducer = (state = initialState, action) => {
     default:
       return state;
   }
+};
+
+const addIfNecessary = (addTo, add) => {
+  let mainArray = [...addTo];
+  for (let i = 0; i < add.length; i++) {
+    const filterArray = mainArray.filter(i => i.id === add[i].id);
+    if (!filterArray.length) {
+      addTo.push(add[i]);
+    }
+  }
+
+  return addTo;
 };
 
 export default reducer;
