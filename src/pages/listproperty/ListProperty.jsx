@@ -14,7 +14,7 @@ const ListProperty = props => {
     else if (getID() === 'readytomove') props.getRtmin();
   }, []);
   const getPropertyData = () => {
-    if (getID() === 'featured') return props.featurd;
+    if (getID() === 'featured') return props.featured;
     else if (getID() === 'readytomove') return props.readyToMoveIn;
   };
   const getPropertyFn = params => {
