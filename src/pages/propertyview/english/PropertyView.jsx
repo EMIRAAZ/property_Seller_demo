@@ -1,6 +1,6 @@
 import './propertyview.scss';
 import Header from '../../../components/header/english/Header';
-import Footer from '../../../components/footer/english/Footer';
+import Footer from '../../../components/footer/english';
 import { useState } from 'react';
 
 import { useEffect } from 'react';
