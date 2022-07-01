@@ -1,29 +1,24 @@
-import "./neighbourhood.scss";
+import './neighbourhood.scss';
+import { useEffect } from 'react';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header';
+import ImageFrame from '../imageframe';
+import BasicButton from '../../../components/button/BasicButton';
 
-import Footer from "../../../components/footer";
-import Header from "../../../components/header";
-import NewHome from "../../../components/newhome/english/NewHome";
-import BasicButton from "../../../components/button/BasicButton";
-import ImageFrame from "../../home/imageframe";
-const neighbourhood = [
-  {
-    id: 1,
-    name: "Dubai",
-    image: "/assets/image/neigh.jpg",
-  },
-];
-const NeighborHood = () => {
+const NeighborHood = props => {
+  useEffect(() => {
+    props.getNeighborhoodWeb();
+  }, []);
   return (
     <div className="neighbourhood">
-      <NewHome />
-
+      <Header customClass="home-header-class" />
+      <ImageFrame />
       <div className="main-container">
         <h1 className="heading">Famous Neighbourhood</h1>
-        <h1 className="subheading">3472 Properties Found</h1>
+        <h1 className="subheading">{props.neighbor.count} Properties Found</h1>
         <div className="card-div">
-          {neighbourhood.map((item, i) => (
-            <Card item={item} i={i} />
-          ))}
+          {props.neighbor.rows &&
+            props.neighbor.rows.map(item => <Card key={item.id} {...item} />)}
         </div>
       </div>
       <Footer />
@@ -33,18 +28,17 @@ const NeighborHood = () => {
 
 ///////////////////
 
-const Card = ({ item, i }) => {
+const Card = props => {
   return (
-    <div className="card" key={i}>
-      {/* <img src={item.image} className="image-class" /> */}
+    <div className="card">
       <div
         style={{
-          backgroundImage: `url(${item.image})`,
+          backgroundImage: `url(${props.images[0]})`,
         }}
         className="image-div"
       >
         <div className="text-div">
-          <h2 className="neigh-name"> {item.name} </h2>
+          <h2 className="neigh-name"> {props.title} </h2>
         </div>
       </div>
       <div className="button-div">
