@@ -5,7 +5,7 @@ import ImageFrame from '../imageframe';
 import BuyFormCard from '../buyformcard';
 import BuyProperty from '../buyproperty';
 import Pagination from '../../../components/pagination';
-import Footer from '../../../components/footer/english/Footer';
+import Footer from '../../../components/footer/english';
 import { makeUrlParam } from '../../../utils';
 
 const Buy = props => {
