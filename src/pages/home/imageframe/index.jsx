@@ -1,5 +1,5 @@
-import './imageFrame.scss';
-import RightArrow from '../../../components/svg/rightarrow';
+import "./imageFrame.scss";
+import RightArrow from "../../../components/svg/rightarrow";
 
 const ImageFrame = () => {
   return (
@@ -9,7 +9,7 @@ const ImageFrame = () => {
       </p>
       <img
         className="img-main-home"
-        src="/assets/image/home-main.jpg"
+        src="/assets/image/home-main2.jpg"
         alt="building"
       />
       {/* <div className="background-square"></div>

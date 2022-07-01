@@ -7,14 +7,14 @@ const categories = [
     id: 1,
 
     name: "Featured Properties",
-    image: "/assets/image/cat1.png",
+    image: "/assets/image/catn1.jpg",
     onClick: "/neighbourhood",
   },
   {
     id: 2,
 
     name: "Famous Neighbourhood",
-    image: "/assets/image/cat2.png",
+    image: "/assets/image/catn2.jpg",
     onClick: "/neighbourhood",
   },
   {
@@ -22,14 +22,14 @@ const categories = [
 
     name: "Luxury Properties",
 
-    image: "/assets/image/cat3.png",
+    image: "/assets/image/catn3.jpg",
     onClick: "/luxury-property",
   },
   {
     id: 4,
 
     name: "Ready To MoveIn",
-    image: "/assets/image/cat4.png",
+    image: "/assets/image/catn4.jpg",
     onClick: "/neighbourhood",
   },
 ];
@@ -67,7 +67,7 @@ function Categories() {
         <div
           className="image-class"
           style={{
-            backgroundImage: `url('/assets/image/cat5.png')`,
+            backgroundImage: `url('/assets/image/catn5.jpg')`,
           }}
         >
           <div className="text-div">
