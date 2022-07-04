@@ -104,6 +104,7 @@ const AddForm = ({
       return <span className="img-add-error">Errored ! please try again</span>;
     }
   };
+  console.log(propertyValue);
   return (
     <div className="add-property-form">
       <div className="add-property-form-left">
