@@ -193,6 +193,7 @@ const MainDetails = ({ property, setContent }) => {
 };
 
 const FullDetails = ({ property }) => {
+  console.log(property.agency);
   return (
     <>
       <div className="full-details-container">
@@ -217,29 +218,32 @@ const FullDetails = ({ property }) => {
             ))}
         </div>
       </div>
+      {property && property.agencyId && (
+        <div className="ameneties-container">
+          <h1 className="proerty-details-heading">
+            {property.agency.agencyName}
+          </h1>
 
-      <div className="ameneties-container">
-        <h1 className="proerty-details-heading">Agency</h1>
-
-        <img
-          src="/assets/image/emaar-logo.png"
-          className="agency-logo"
-          style={{ width: '150px', marginTop: '20px' }}
-          alt="logo"
-        />
-        <h2
-          className="agency-name"
-          style={{
-            fontFamily: 'Poppins',
-            fontSize: '17px',
-            color: '#333333',
-            fontWeight: '500',
-            marginTop: '10px',
-          }}
-        >
-          Emaar snjsjs
-        </h2>
-      </div>
+          <img
+            src={property.agency.agencyLogo}
+            className="agency-logo"
+            style={{ width: '150px', marginTop: '20px' }}
+            alt="logo"
+          />
+          <h2
+            className="agency-name"
+            style={{
+              fontFamily: 'Poppins',
+              fontSize: '17px',
+              color: '#333333',
+              fontWeight: '500',
+              marginTop: '10px',
+            }}
+          >
+            {property.agency.officeAddress}
+          </h2>
+        </div>
+      )}
     </>
   );
 };
@@ -249,12 +253,7 @@ const ContactAgent = ({ property }) => {
   return (
     <div className="contact-agent-container">
       <div className="image-div">
-        <img
-          // src={property && property.images && property.images[0]}
-          src="/assets/image/agents.jpg"
-          alt=""
-          className="agent-image"
-        />
+        <img src={agent.agentImage} alt="agentName" className="agent-image" />
       </div>
       <div className="details-div">
         <h1 className="agent-name">{agent.agentName}</h1>
