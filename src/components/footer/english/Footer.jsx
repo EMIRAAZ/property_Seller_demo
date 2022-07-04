@@ -70,7 +70,6 @@ function Footer(props) {
 }
 
 const renderTag = (taghead, tagline) => {
-  console.log(taghead, tagline);
   return (
     taghead.rows &&
     taghead.rows.map((item, i) => (
