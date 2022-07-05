@@ -29,7 +29,6 @@ const Blog = props => {
     props.getBlogWeb();
   }, []);
 
-  console.log(props);
   const renderCard = () =>
     props.blogs.map((item, i) => <BlogCard key={i} {...item} />);
 

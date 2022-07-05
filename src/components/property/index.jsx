@@ -109,11 +109,26 @@ const Property = props => {
           </div>
         </div>
         <div className="service-property">
-          <div className="service-btn-property whatsapp">
+          <div
+            className="service-btn-property whatsapp"
+            onClick={() =>
+              window.open(
+                `whatsapp://send?abid=${
+                  props.agent?.whatsAppNumber || 0
+                }&text=Hello`,
+                '_blank'
+              )
+            }
+          >
             <Whatsapp />
             whatsapp
           </div>
-          <div className="service-btn-property phone">
+          <div
+            className="service-btn-property phone"
+            onClick={() =>
+              window.open(`tel:${props.agent?.phoneNumber || 0}`, '_blank')
+            }
+          >
             <Phone />
             Phone
           </div>

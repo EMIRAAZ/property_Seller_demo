@@ -1,15 +1,11 @@
 import "./propertyview.scss";
 import Header from "../../../components/header/english/Header";
-import Footer from "../../../components/footer/english/Footer";
-import { useState } from "react";
-
-import { useEffect } from "react";
+import Footer from "../../../components/footer/english";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import BasicButton from "../../../components/button/BasicButton";
-import RightArrow from "../../../components/svg/rightarrow";
 import RarrowIcon from "../../../components/svg/rarrow";
 import LarrowIcon from "../../../components/svg/larrow";
-import ShareIcon from "../../../components/svg/share";
 import Bed from "../../../components/svg/bed";
 import Bath from "../../../components/svg/bath";
 import Living from "../../../components/svg/living";
@@ -50,12 +46,14 @@ const PropertyView = (props) => {
       <div className="full-details-main-div">
         <FullDetails property={property} />
       </div>
-      <div className="contact-agent-div">
-        <h1 className="proerty-details-heading">
-          Interested? Contact the agent.
-        </h1>
-        <ContactAgent property={property} />
-      </div>
+      {property && property.agentId && (
+        <div className="contact-agent-div">
+          <h1 className="proerty-details-heading">
+            Interested? Contact the agent.
+          </h1>
+          <ContactAgent property={property} />
+        </div>
+      )}
       <div className="similar-properties">
         <h1 className="proerty-details-heading">Similar Properties.</h1>
       </div>
@@ -195,7 +193,7 @@ const MainDetails = ({ property, setContent }) => {
 };
 
 const FullDetails = ({ property }) => {
-  console.log({ property });
+  console.log(property.agency);
   return (
     <>
       <div className="full-details-container">
@@ -206,7 +204,8 @@ const FullDetails = ({ property }) => {
         <h1 className="proerty-details-heading">Facilities And Amenities.</h1>
 
         <div className="amenities-list">
-          {property.amenities &&
+          {Object.keys(property).length !== 0 &&
+            property.amenities &&
             property.amenities.map((item, i) => (
               <div key={i} className="amenities">
                 <img
@@ -219,51 +218,50 @@ const FullDetails = ({ property }) => {
             ))}
         </div>
       </div>
+      {property && property.agencyId && (
+        <div className="ameneties-container">
+          <h1 className="proerty-details-heading">
+            {property.agency.agencyName}
+          </h1>
 
-      <div className="ameneties-container">
-        <h1 className="proerty-details-heading">Agency</h1>
-
-        <img
-          src="/assets/image/emaar-logo.png"
-          className="agency-logo"
-          style={{ width: "150px", marginTop: "20px" }}
-          alt="logo"
-        />
-        <h2
-          className="agency-name"
-          style={{
-            fontFamily: "Poppins",
-            fontSize: "17px",
-            color: "#333333",
-            fontWeight: "500",
-            marginTop: "10px",
-          }}
-        >
-          Emaar snjsjs
-        </h2>
-      </div>
+          <img
+            src={property.agency.agencyLogo}
+            className="agency-logo"
+            style={{ width: "150px", marginTop: "20px" }}
+            alt="logo"
+          />
+          <h2
+            className="agency-name"
+            style={{
+              fontFamily: "Poppins",
+              fontSize: "17px",
+              color: "#333333",
+              fontWeight: "500",
+              marginTop: "10px",
+            }}
+          >
+            {property.agency.officeAddress}
+          </h2>
+        </div>
+      )}
     </>
   );
 };
 
 const ContactAgent = ({ property }) => {
+  const { agent } = property;
   return (
     <div className="contact-agent-container">
       <div className="image-div">
-        <img
-          // src={property && property.images && property.images[0]}
-          src="/assets/image/agents.jpg"
-          alt=""
-          className="agent-image"
-        />
+        <img src={agent.agentImage} alt="agentName" className="agent-image" />
       </div>
       <div className="details-div">
-        <h1 className="agent-name">Jordan Miccheal</h1>
-        <h1 className="agent-designation">Residantial consultant</h1>
-        <h1 className="agent-no">RERA NO:3442</h1>
-        <h1 className="agent-no"> Contact No: +971521278701</h1>
+        <h1 className="agent-name">{agent.agentName}</h1>
+        <h1 className="agent-designation">{agent.position}</h1>
+        <h1 className="agent-no">RERA NO:{agent.rera}</h1>
+        <h1 className="agent-no"> Contact No: {agent.phoneNumber}</h1>
         <h1 className="reference">
-          Reference: <span className="reference-span">BHM-S-55166</span>
+          Reference: <span className="reference-span">{agent.id}</span>
         </h1>
         <h1 className="reference">
           price: <span className="reference-span">AED {property.price}</span>

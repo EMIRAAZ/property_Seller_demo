@@ -5,9 +5,14 @@ import Facebook from '../../svg/facebook';
 import Twitter from '../../svg/twitter';
 import Instagram from '../../svg/instagram';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
-function Footer() {
+function Footer(props) {
   const navigate = useNavigate();
+  useEffect(() => {
+    props.getTagHeadWeb();
+    props.getTagLineWeb();
+  }, []);
 
   return (
     <div className="footer-english">
@@ -28,27 +33,7 @@ function Footer() {
             <Instagram />
           </div>
         </div>
-        <div className="column-2">
-          <p className="column-heading">Column Heading</p>
-          <p className="column-link">Link goes here</p>
-          <p className="column-link">Link goes here</p>
-          <p className="column-link">Link goes here</p>
-          <p className="column-link">Link goes here</p>
-        </div>
-        <div className="column-3">
-          <p className="column-heading">Column Heading</p>
-          <p className="column-link">Link goes here</p>
-          <p className="column-link">Link goes here</p>
-          <p className="column-link">Link goes here</p>
-          <p className="column-link">Link goes here</p>
-        </div>
-        <div className="column-4">
-          <p className="column-heading">Column Heading</p>
-          <p className="column-link">Link goes here</p>
-          <p className="column-link">Link goes here</p>
-          <p className="column-link">Link goes here</p>
-          <p className="column-link">Link goes here</p>
-        </div>
+        {renderTag(props.taghead, props.tagline)}
       </div>
       <div className="third-container">
         <p className="abt" onClick={() => navigate('/about')}>
@@ -83,5 +68,22 @@ function Footer() {
     </div>
   );
 }
+
+const renderTag = (taghead, tagline) => {
+  return (
+    taghead.rows &&
+    taghead.rows.map((item, i) => (
+      <div key={i} className={`column-${i + 2}`}>
+        <p className="column-heading">{item.title}</p>
+        {tagline.rows &&
+          tagline.rows.map((link, j) => (
+            <p key={j + j} className="column-link">
+              {link.title}
+            </p>
+          ))}
+      </div>
+    ))
+  );
+};
 
 export default Footer;

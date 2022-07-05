@@ -19,3 +19,6 @@ export * from './blog';
 export * from './topstory';
 export * from './singlenews';
 export * from './blogweb';
+export * from './listproperty';
+export * from './neighweb';
+export * from './tagweb';

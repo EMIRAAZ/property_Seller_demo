@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import ArabicFooter from './arabic/Footer';
-import EnglishFooter from './english/Footer';
+import EnglishFooter from './english';
 
 const Footer = () => {
   const search = useLocation().search;

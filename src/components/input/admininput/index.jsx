@@ -20,7 +20,7 @@ const AdminInput = ({
         className={`admin-input ${customClass} `}
         type={type}
         placeholder={placeholder}
-        value={value}
+        value={value || ''}
         onChange={onChange}
       />
     </div>
