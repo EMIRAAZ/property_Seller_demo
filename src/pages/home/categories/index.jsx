@@ -43,7 +43,7 @@ function Categories() {
     navigate(`/listproperty/${page}`);
   };
   return (
-    <div className="categories">
+    <div className="categories-main-div">
       {categories.map((item, i) => (
         <div
           key={i}
