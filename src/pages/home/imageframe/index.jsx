@@ -9,13 +9,8 @@ const ImageFrame = () => {
       </p>
       <img
         className="img-main-home"
-<<<<<<< HEAD
         src="/assets/image/home-main2.jpg"
         alt="building"
-=======
-        src={'/assets/image/home-main.jpg'}
-        alt="buildings"
->>>>>>> dev
       />
       {/* <div className="background-square"></div>
       <div className="main-div">
