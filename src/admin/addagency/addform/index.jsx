@@ -31,6 +31,7 @@ const AddForm = ({
   agentValue,
   editing,
   getAgentAgency,
+  clearAgency,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -178,9 +179,9 @@ const AddForm = ({
             {renderAgent()}
             <Button
               customClass="add-agency-btn"
-              onClick={() =>
-                navigate('/admin/add-agent', { state: { id: getID() } })
-              }
+              onClick={() => {
+                navigate('/admin/add-agent', { state: { id: getID() } });
+              }}
             >
               ADD AGENT
             </Button>
