@@ -1,41 +1,41 @@
-import './categories.scss';
-import { useNavigate } from 'react-router-dom';
+import "./categories.scss";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
   {
     id: 1,
-    name: 'Featured Properties',
-    page: '/listproperty/featured',
-    image: '/assets/image/cat1.png',
+    name: "Featured Properties",
+    page: "/listproperty/featured",
+    image: "/assets/image/cat1.png",
   },
   {
     id: 2,
-    name: 'Famous Neighbourhood',
-    page: '/neighbourhood',
-    image: '/assets/image/cat2.png',
+    name: "Famous Neighbourhood",
+    page: "/neighbourhood",
+    image: "/assets/image/cat2.png",
   },
   {
     id: 3,
-    name: 'Luxury Properties',
-    page: '/luxury-property',
-    image: '/assets/image/cat3.png',
+    name: "Luxury Properties",
+    page: "/luxury-property",
+    image: "/assets/image/cat3.png",
   },
   {
     id: 4,
-    name: 'Ready To MoveIn',
-    page: '/listproperty/readytomove',
-    image: '/assets/image/cat4.png',
+    name: "Ready To MoveIn",
+    page: "/listproperty/readytomove",
+    image: "/assets/image/cat4.png",
   },
 ];
 
 function Categories() {
   let navigate = useNavigate();
 
-  const navigateTo = page => {
+  const navigateTo = (page) => {
     navigate(`${page}`);
   };
   return (
-    <div className="categories">
+    <div className="categories-main-div">
       {categories.map((item, i) => (
         <div
           key={i}
@@ -58,13 +58,13 @@ function Categories() {
       ))}
       <div
         className="image-div"
-        style={{ width: '100%' }}
-        onClick={() => navigateTo('/off-plan')}
+        style={{ width: "100%" }}
+        onClick={() => navigateTo("/off-plan")}
       >
         <div
           className="image-class"
           style={{
-            backgroundImage: `url('/assets/image/cat5.png')`,
+            backgroundImage: `url('/assets/image/catn5.jpg')`,
           }}
         >
           <div className="text-div">
