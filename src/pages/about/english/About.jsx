@@ -6,14 +6,10 @@ import Header from "../../../components/header";
 const TeamCard = ({ url, name, position }) => {
   return (
     <div className='card-container'>
-      <div className='card-image-container'>
-        <img className='team-image' src={url} alt='team' />
-      </div>
-      <div className='card-title'>
-        <p>{name}</p>
-      </div>
-      <div className='card-description'>
-        <p>{position}</p>
+      <img className='team-image' src={url} alt='team' />
+      <div className='about-card-detail'>
+        <p className='card-title'>{name}</p>
+        <p className='card-description'>{position}</p>
       </div>
     </div>
   );
@@ -69,26 +65,26 @@ const About = () => {
             investment. Explore the UAE Assistant to learn more of the unlimited
             opportunities. Know what it does and why it can’t be done without.
           </p>
-        </div>
-        <div className='about-properties-2'>
-          <TeamCard
-            className='teamcard'
-            url='/assets/image/ashique.jpg'
-            name='Ashiq Emiraaz'
-            position='Founder & CEO'
-          />
+          <div className='about-properties-2'>
+            <TeamCard
+              className='teamcard'
+              url='/assets/image/ashique.jpg'
+              name='Ashiq Emiraaz'
+              position='Founder & CEO'
+            />
 
-          <TeamCard
-            url='/assets/image/ghanim.jpg'
-            name='Ghanim Al Muhairi'
-            position='Director & Legal Officer'
-          />
+            <TeamCard
+              url='/assets/image/ghanim.jpg'
+              name='Ghanim Al Muhairi'
+              position='Director & Legal Officer'
+            />
 
-          <TeamCard
-            url='/assets/image/faisal.jpg'
-            name='Faisal Mangat'
-            position='Director & Research'
-          />
+            <TeamCard
+              url='/assets/image/faisal.jpg'
+              name='Faisal Mangat'
+              position='Director & Research'
+            />
+          </div>
         </div>
       </div>
 
