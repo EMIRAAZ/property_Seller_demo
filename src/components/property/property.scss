@@ -1,6 +1,7 @@
 .property-list {
   margin: 10px;
   border-radius: 4px;
+
   .property-list-item {
     position: relative;
     background-color: #ffffff;
@@ -15,7 +16,7 @@
       padding: 2px 3px 1px 3px;
       align-items: center;
       color: #ffffff;
-      font-family: 'Roboto';
+      font-family: "Poppins";
       font-weight: 500;
       font-size: 12px;
       left: -6px;
@@ -28,7 +29,7 @@
         border-width: 0 0.4rem 0.4rem 0;
         top: 100%;
         border-style: solid;
-        content: '';
+        content: "";
         display: block;
         height: 0;
         left: 0;
@@ -53,7 +54,7 @@
       background-color: #ffe000;
       width: fit-content;
       font-size: 13px;
-      font-family: 'Roboto';
+      font-family: "Poppins";
       padding: 6px 10px;
       border-radius: 11px;
     }
@@ -65,7 +66,7 @@
       color: #ffffff;
       background-color: #10ac84;
       width: fit-content;
-      font-family: 'Roboto';
+      font-family: "Poppins";
       padding: 4px 8px;
       font-size: 15.8px;
       font-weight: 500;
@@ -75,7 +76,7 @@
       border-radius: 4px;
     }
     .main-heading {
-      font-family: 'Roboto';
+      font-family: "Poppins";
       font-size: 15.8px;
       font-weight: 500;
       text-align: left;
@@ -92,7 +93,7 @@
     }
 
     .description {
-      font-family: 'Roboto';
+      font-family: "Poppins";
       cursor: pointer;
       font-size: 10.53px;
       font-weight: 400;
@@ -114,7 +115,7 @@
       gap: 6px;
       align-items: center;
       p {
-        font-family: 'Roboto';
+        font-family: "Poppins";
         font-size: 10.53px;
         font-weight: 400;
         line-height: 28px;
@@ -128,7 +129,7 @@
     }
     .spec {
       display: flex;
-      font-family: 'Roboto';
+      font-family: "Poppins";
       justify-content: space-between;
       align-items: center;
       font-size: 10.53px;
@@ -154,7 +155,7 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      font-family: 'Roboto';
+      font-family: "Poppins";
       font-style: Regular;
       font-size: 10px;
       padding: 0px 10px;
@@ -172,6 +173,9 @@
       }
     }
   }
+}
+.property-list:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -195,7 +199,7 @@
         color: #ffffff;
         background-color: #10ac84;
         width: fit-content;
-        font-family: 'Roboto';
+        font-family: "Poppins";
         padding: 4px 8px;
         font-size: 20px;
         font-weight: 500;
@@ -204,7 +208,7 @@
         text-align: left;
       }
       .main-heading {
-        font-family: 'Roboto';
+        font-family: "Poppins";
         font-size: 20px;
         font-weight: 500;
         text-align: left;
@@ -213,7 +217,7 @@
       }
 
       .description {
-        font-family: 'Roboto';
+        font-family: "Poppins";
         font-size: 14px;
         font-weight: 400;
         line-height: 24px;
@@ -231,7 +235,7 @@
         gap: 6px;
         align-items: center;
         p {
-          font-family: 'Roboto';
+          font-family: "Poppins";
           font-size: 11px;
           font-weight: 400;
           line-height: 28px;
@@ -245,7 +249,7 @@
       }
       .spec {
         display: flex;
-        font-family: 'Roboto';
+        font-family: "Poppins";
         justify-content: space-between;
         align-items: center;
         font-size: 14px;

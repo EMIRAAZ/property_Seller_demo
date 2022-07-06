@@ -30,8 +30,8 @@ const PropertyView = (props) => {
           {props.property.images && content ? (
             <ImageSlider imgArray={props.property.images} />
           ) : // <VideoView />
-          props.property.VideoView ? (
-            <VideoView url={props.property.VideoView} />
+          props.property.videoView ? (
+            <VideoView url={props.property.videoView} />
           ) : (
             // <VideoView />
             <>
@@ -162,14 +162,17 @@ const MainDetails = ({ property, setContent }) => {
       <div>
         <h1 className="reference">
           Reference:
-          <span className="reference-span">{property.referenceNo}</span>
+          <span className="reference-span">{property.id}</span>
         </h1>
         <h1 className="reference">
           Approx size:
           <span className="reference-span">{property.propertySize} </span>
         </h1>
         <h1 className="reference">
-          RERA Permit No: <span className="reference-span">BHM-S-55166</span>
+          RERA Permit No:
+          <span className="reference-span">
+            {property.agent && property.agent.rera}
+          </span>
         </h1>
         <BasicButton customClass="btn-3">
           <svg
@@ -193,12 +196,25 @@ const MainDetails = ({ property, setContent }) => {
 };
 
 const FullDetails = ({ property }) => {
-  console.log(property.agency);
+  console.log(property);
   return (
     <>
       <div className="full-details-container">
         <h1 className="proerty-details-heading">Property Details</h1>
-        <p className="property-description ">{property.description}</p>
+        <p className="property-description ">
+          {property.description}
+          <br />
+          <br />
+          {property.agency && (
+            <p>
+              Company Name : {property.agency.agencyName} <br />
+              RERA ORN : {property.agent.orn} <br />
+              Address : {property.agency.officeAddress} <br />
+              Office Phone No : {property.agency.phoneNumber} <br />
+              Primary email : {property.agency.email} <br />
+            </p>
+          )}
+        </p>
       </div>
       <div className="ameneties-container">
         <h1 className="proerty-details-heading">Facilities And Amenities.</h1>
@@ -220,9 +236,7 @@ const FullDetails = ({ property }) => {
       </div>
       {property && property.agencyId && (
         <div className="ameneties-container">
-          <h1 className="proerty-details-heading">
-            {property.agency.agencyName}
-          </h1>
+          <h1 className="proerty-details-heading">Agency</h1>
 
           <img
             src={property.agency.agencyLogo}
@@ -240,7 +254,7 @@ const FullDetails = ({ property }) => {
               marginTop: "10px",
             }}
           >
-            {property.agency.officeAddress}
+            {property.agency.agencyName}
           </h2>
         </div>
       )}
@@ -250,6 +264,7 @@ const FullDetails = ({ property }) => {
 
 const ContactAgent = ({ property }) => {
   const { agent } = property;
+  // console.log(agent);
   return (
     <div className="contact-agent-container">
       <div className="image-div">
@@ -259,9 +274,16 @@ const ContactAgent = ({ property }) => {
         <h1 className="agent-name">{agent.agentName}</h1>
         <h1 className="agent-designation">{agent.position}</h1>
         <h1 className="agent-no">RERA NO:{agent.rera}</h1>
-        <h1 className="agent-no"> Contact No: {agent.phoneNumber}</h1>
+        <h1 className="agent-no">
+          Languages Known:
+          {agent.languages.map((item, i) => (
+            <p key={i} style={{ display: "inline-block" }}>
+              {item} &nbsp;
+            </p>
+          ))}
+        </h1>
         <h1 className="reference">
-          Reference: <span className="reference-span">{agent.id}</span>
+          Reference: <span className="reference-span">{property.id}</span>
         </h1>
         <h1 className="reference">
           price: <span className="reference-span">AED {property.price}</span>
@@ -285,7 +307,7 @@ const ContactAgent = ({ property }) => {
             onClick={() => window.open("tel:+971521278701", "_blank")}
             customClass="btn-2"
           >
-            Call{" "}
+            Call
             <svg
               width="13"
               height="13"
@@ -304,7 +326,11 @@ const ContactAgent = ({ property }) => {
           <BasicButton
             onClick={() =>
               window.open(
-                "whatsapp://send?abid=+971521278701&text=Hello",
+                `whatsapp://send?abid=+971521278701&text=Hello UAE Assistant. I’m interested in this property http://uaeassistant.com/property/${property.id}
+                Price: AED ${property.price}
+                Location: ${property.address}
+                Reference: ${property.id}
+                Please send me more information regards`,
                 "_blank"
               )
             }
@@ -313,7 +339,16 @@ const ContactAgent = ({ property }) => {
             Whatsapp
           </BasicButton>
           <BasicButton
-            onClick={() => window.open("tel:+971521278701", "_blank")}
+            onClick={() =>
+              window.open(
+                `mailto:hello@uaeassistant.com?subject=I’m interested in this property&body=Hello UAE Assistant. I’m interested in this property http://uaeassistant.com/property/${property.id}
+                Price: AED ${property.price}
+                Location: ${property.address}
+                Reference: ${property.id}
+                Please send me more information regards`,
+                "_blank"
+              )
+            }
             customClass="btn-2"
           >
             Email
@@ -332,7 +367,7 @@ const ContactAgent = ({ property }) => {
             </svg>
           </BasicButton>
           <BasicButton
-            onClick={() => window.open("tel:+971521278701", "_blank")}
+            // onClick={() => window.open("tel:+971521278701", "_blank")}
             customClass="btn-2"
           >
             Save
@@ -350,7 +385,7 @@ const ContactAgent = ({ property }) => {
             </svg>
           </BasicButton>
           <BasicButton
-            onClick={() => window.open("tel:+971521278701", "_blank")}
+            // onClick={() => ()}
             customClass="btn-2"
             style={{ color: "red" }}
           >
