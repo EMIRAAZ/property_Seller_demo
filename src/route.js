@@ -29,7 +29,7 @@ import Amenity from './admin/amenity';
 import News from './pages/news';
 import AdminNeighborhood from './admin/neighborhood';
 import PropertyList from './pages/propertylist';
-import Luxuary from './pages/luxuary/english/Luxuary';
+import Luxuary from './pages/luxuary/english';
 import Offplan from './admin/offplan';
 import TagHead from './admin/taghead';
 import TagLine from './admin/tagline';
