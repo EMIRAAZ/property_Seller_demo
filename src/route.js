@@ -27,7 +27,7 @@ import AddAgency from './admin/addagency';
 import AddAgent from './admin/addagent';
 import Amenity from './admin/amenity';
 import News from './pages/news';
-import Neighborhood from './admin/neighborhood';
+import AdminNeighborhood from './admin/neighborhood';
 import PropertyList from './pages/propertylist';
 import Luxuary from './pages/luxuary/english/Luxuary';
 import Offplan from './admin/offplan';
@@ -70,11 +70,7 @@ function Router() {
             />
             <Route
               path="neighborhood"
-              element={makePrivate(<Neighborhood />, 'ADMIN')}
-            />
-            <Route
-              path="neighborhood/:id"
-              element={makePrivate(<Neighborhood />, 'ADMIN')}
+              element={makePrivate(<AdminNeighborhood />, 'ADMIN')}
             />
             <Route path="offplan" element={makePrivate(<Offplan />, 'ADMIN')} />
             <Route
