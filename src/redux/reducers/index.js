@@ -23,6 +23,7 @@ import blogwebReducer from './blogweb';
 import listpropReducer from './listproperty';
 import neighwebReducer from './neighweb';
 import tagwebReducer from './tagweb';
+import luxurywebReducer from './luxuryweb';
 
 const rootReducer = combineReducers({
   homeReducer,
@@ -49,6 +50,7 @@ const rootReducer = combineReducers({
   listpropReducer,
   neighwebReducer,
   tagwebReducer,
+  luxurywebReducer,
 });
 
 export default rootReducer;
