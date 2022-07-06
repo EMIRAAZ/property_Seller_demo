@@ -1,4 +1,4 @@
-.categories {
+.categories-main-div {
   width: 90%;
   margin: auto;
   margin-bottom: 30px;
@@ -28,7 +28,7 @@
 
         .category-name {
           text-align: center;
-          font-family: 'Poppins';
+          font-family: "Poppins";
           color: white;
           transition: all 1s ease-out;
         }
@@ -43,7 +43,7 @@
   }
 }
 @media screen and (max-width: 600px) {
-  .categories {
+  .categories-main-div {
     width: 90%;
     margin: auto;
     margin-bottom: 40px;
@@ -70,7 +70,7 @@
           padding-top: 60px;
           .category-name {
             text-align: center;
-            font-family: 'Poppins';
+            font-family: "Poppins";
             color: white;
             font-size: 14px;
           }

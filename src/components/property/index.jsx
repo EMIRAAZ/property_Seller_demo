@@ -1,40 +1,40 @@
-import './property.scss';
-import LocationIcon from '../svg/location';
-import Bath from '../svg/bath';
-import Whatsapp from '../svg/whatsapp';
-import Phone from '../svg/phone';
-import Bed from '../svg/bed';
-import Living from '../svg/living';
-import Verified from '../svg/verified';
-import Area from '../svg/area';
-import { useNavigate } from 'react-router-dom';
-import ImgPropCarousel from '../imgpropcarousel';
+import "./property.scss";
+import LocationIcon from "../svg/location";
+import Bath from "../svg/bath";
+import Whatsapp from "../svg/whatsapp";
+import Phone from "../svg/phone";
+import Bed from "../svg/bed";
+import Living from "../svg/living";
+import Verified from "../svg/verified";
+import Area from "../svg/area";
+import { useNavigate } from "react-router-dom";
+import ImgPropCarousel from "../imgpropcarousel";
 
-const Property = props => {
+const Property = (props) => {
   let navigate = useNavigate();
 
   const navigateTo = () => {
     navigate(`/property/${props.id}`);
   };
-  const renderDescription = description => {
+  const renderDescription = (description) => {
     return description.length < 120
       ? description
-      : description.substring(0, 140) + '...';
+      : description.substring(0, 140) + "...";
   };
 
-  const renderAddress = address => {
+  const renderAddress = (address) => {
     let add = `${address.placeAddress}, ${
-      address.building ? address.building : ''
+      address.building ? address.building : ""
     } ${address.city}`;
 
-    return add.length < 50 ? add : add.substring(0, 49) + '...';
+    return add.length < 50 ? add : add.substring(0, 49) + "...";
   };
 
-  const renderUnit = unit => {
-    return unit.length < 10 ? unit : unit.substring(0, 7) + '...';
+  const renderUnit = (unit) => {
+    return unit.length < 10 ? unit : unit.substring(0, 7) + "...";
   };
 
-  const renderVerified = verified =>
+  const renderVerified = (verified) =>
     true ? (
       <div className="property-verified">
         <Verified /> VERIFIED
@@ -46,7 +46,7 @@ const Property = props => {
       <div className="property-list-item">
         <ImgPropCarousel customClass="" imgArray={props.images} />
         {renderVerified(props.verified)}
-        {props.check ? <div className="new-listing">New Listing</div> : ''}
+        {props.check ? <div className="new-listing">New Listing</div> : ""}
         <div className="price-tag">AED {props.price}</div>
         <div className="main-heading" onClick={navigateTo}>
           {props.title}
@@ -113,10 +113,12 @@ const Property = props => {
             className="service-btn-property whatsapp"
             onClick={() =>
               window.open(
-                `whatsapp://send?abid=${
-                  props.agent?.whatsAppNumber || 0
-                }&text=Hello`,
-                '_blank'
+                `whatsapp://send?abid=+971521278701&text=Hello UAE Assistant. I’m interested in this property http://uaeassistant.com/property/${props.id}
+                Price: AED ${props.price}
+                Location: ${props.address}
+                Reference: ${props.id}
+                Please send me more information regards`,
+                "_blank"
               )
             }
           >
@@ -125,14 +127,19 @@ const Property = props => {
           </div>
           <div
             className="service-btn-property phone"
-            onClick={() =>
-              window.open(`tel:${props.agent?.phoneNumber || 0}`, '_blank')
-            }
+            onClick={() => window.open("tel:+971521278701", "_blank")}
           >
             <Phone />
             Phone
           </div>
-          <div className="service-btn-property email">Mail</div>
+          <div
+            className="service-btn-property email"
+            onClick={() =>
+              window.open("mailto:hello@uaeassistant.com", "_blank")
+            }
+          >
+            Mail
+          </div>
         </div>
       </div>
     </div>
