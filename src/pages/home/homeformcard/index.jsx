@@ -1,5 +1,4 @@
 import './homeformcard.scss';
-import FormCard from '../../../components/formcard';
 import BasicSelect from '../../../components/select/BasicSelect';
 import InputSelect from '../../../components/select/InputSelect';
 import LocationIcon from '../../../components/svg/location';
@@ -50,8 +49,10 @@ const HomeFormCard = props => {
   };
   return (
     <div className="home-form-card">
-      <FormCard customClass="home-formcard">
+      <div className="home-formcard">
         <InputSelect
+          bgColor="white"
+          border
           customClass="search"
           name="Search City, Building, Community .."
           onChange={value => onInputChange('location', value)}
@@ -69,6 +70,8 @@ const HomeFormCard = props => {
           })}
         />
         <BasicSelect
+          bgColor="white"
+          border
           customClass="property"
           name="Property Type"
           onChange={value => onInputChange('propertyType', value)}
@@ -80,8 +83,10 @@ const HomeFormCard = props => {
           ]}
         />
         <BasicSelect
+          bgColor="white"
           customClass="sale"
           name="Sale"
+          border
           onChange={value => onInputChange('sale', value)}
           options={[
             { name: 'Buy', value: 'buy' },
@@ -91,6 +96,8 @@ const HomeFormCard = props => {
         />
         <InputSelect
           customClass="price-from"
+          bgColor="white"
+          border
           name="Price From"
           onChange={value => onInputChange('priceFrom', value)}
           value={props.homeSearch.priceFrom}
@@ -104,6 +111,8 @@ const HomeFormCard = props => {
         <InputSelect
           customClass="price-two"
           name="Price To"
+          bgColor="white"
+          border
           onChange={value => onInputChange('priceTo', value)}
           value={props.homeSearch.priceTo}
           options={[
@@ -119,7 +128,7 @@ const HomeFormCard = props => {
         >
           <SearchIcon /> Search
         </BasicButton>
-      </FormCard>
+      </div>
     </div>
   );
 };

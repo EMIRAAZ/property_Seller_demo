@@ -4,7 +4,15 @@ import RightArrow from '../../../components/svg/rightarrow';
 const ImageFrame = () => {
   return (
     <div className="home-image-frame">
-      <div className="background-square"></div>
+      <p className="home-properties-caption">
+        Lets Find Your <span>Properties in UAE</span>
+      </p>
+      <img
+        className="img-main-home"
+        src={'/assets/image/home-main.jpg'}
+        alt="buildings"
+      />
+      {/* <div className="background-square"></div>
       <div className="main-div">
         <div className="text">
           <p className="first"> Properties</p>
@@ -38,7 +46,7 @@ const ImageFrame = () => {
           src="/assets/image/build5.jpg"
           alt="building"
         />
-      </div>
+      </div> */}
     </div>
   );
 };

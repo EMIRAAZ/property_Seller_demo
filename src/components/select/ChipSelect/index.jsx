@@ -30,7 +30,7 @@ const ChipSelect = ({
 
   const renderOptions = () =>
     (options || []).map((option, i) => {
-      if (!value.includes(option.value))
+      if (value && !value.includes(option.value))
         return (
           <p key={i} onClick={() => onClickOption(option.name, option.value)}>
             {option.name}
@@ -44,7 +44,7 @@ const ChipSelect = ({
   };
 
   const renderChip = () => {
-    return value.map((item, i) => (
+    return (value || []).map((item, i) => (
       <p key={i} className="drop-btn-chip">
         <p>{item}</p>
         <span onClick={() => removeChip(item)}>

@@ -14,9 +14,8 @@ const HeaderButton = ({ children }) => {
   };
 
   return (
-    <button onClick={onLanguageChange} className="header-btn">
-      {children}
-    </button>
+    // <button onClick={onLanguageChange} className="header-btn">
+    <button className="header-btn">{children}</button>
   );
 };
 

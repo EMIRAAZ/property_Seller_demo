@@ -1,8 +1,8 @@
 const Bath = ({
   customClass,
-  width = "17",
-  height = "17",
-  viewBox = "0 0 17 17",
+  width = '17',
+  height = '17',
+  viewBox = '0 0 17 17',
 }) => {
   return (
     <div className={`${customClass} `}>
@@ -13,7 +13,7 @@ const Bath = ({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_0_791)">
+        <g clipPath="url(#clip0_0_791)">
           <path
             d="M15.4375 8.82227H1.4375C0.886156 8.82227 0.4375 9.27092 0.4375 9.82227C0.4375 10.3736 0.886156 10.8223 1.4375 10.8223H15.4375C15.9888 10.8223 16.4375 10.3736 16.4375 9.82227C16.4375 9.27092 15.9888 8.82227 15.4375 8.82227Z"
             fill="#1FA0E9"

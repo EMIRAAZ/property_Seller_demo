@@ -14,17 +14,17 @@ const HomeFeatured = props => {
     const offset =
       2 * featured.currentPage - 2 > 0 ? 2 * featured.currentPage - 2 : 0;
 
-    if (offset > 0)
-      props.onChangePage(featured.currentPage + 1, () =>
-        props.getFeautred(`?offset=${offset}`)
+    if (offset >= 0 && featured.currentPage > 0)
+      props.onChangePage(featured.currentPage - 1, () =>
+        props.getFeatured(`&offset=${offset}`)
       );
   };
   const onRightClick = () => {
     const offset =
       2 * featured.currentPage - 2 > 0 ? 2 * featured.currentPage - 2 : 0;
     if (offset < featured.count)
-      props.onChangePage(featured.currentPage - 1, () =>
-        props.getFeautred(`?offset=${offset}`)
+      props.onChangePage(featured.currentPage + 1, () =>
+        props.getFeatured(`&offset=${offset}`)
       );
   };
   return (

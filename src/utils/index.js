@@ -3,11 +3,18 @@ import jwt_decode from 'jwt-decode';
 export const makeUrlParam = paramObject => {
   const keyArray = Object.keys(paramObject);
   let paramString = '';
+  let nestedParam = '';
 
   for (let i = 0; i < keyArray.length; i++) {
     if (paramObject[keyArray[i]]) {
       if (paramString !== '') paramString += '&';
+      if (typeof paramObject[keyArray[i]] === 'object') {
+        nestedParam = makeUrlParam(paramObject[keyArray[i]]);
+      }
       paramString += `${keyArray[i]}=${paramObject[keyArray[i]]}`;
+      if (nestedParam !== '') {
+        paramString += nestedParam;
+      }
     }
   }
 

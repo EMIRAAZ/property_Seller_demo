@@ -34,13 +34,19 @@ const Property = props => {
     return unit.length < 10 ? unit : unit.substring(0, 7) + '...';
   };
 
+  const renderVerified = verified =>
+    true ? (
+      <div className="property-verified">
+        <Verified /> VERIFIED
+      </div>
+    ) : null;
+
   return (
     <div className="property-list">
       <div className="property-list-item">
-        <ImgPropCarousel imgArray={props.images} />
-        <div className="property-verified">
-          <Verified /> VERIFIED
-        </div>
+        <ImgPropCarousel customClass="" imgArray={props.images} />
+        {renderVerified(props.verified)}
+        {props.check ? <div className="new-listing">New Listing</div> : ''}
         <div className="price-tag">AED {props.price}</div>
         <div className="main-heading" onClick={navigateTo}>
           {props.title}
@@ -87,7 +93,7 @@ const Property = props => {
               height="14"
               viewBox="0 0 17 14"
             />
-            <p>8 Rooms</p>
+            <p>{props.noOfBathroom + props.noOfBedroom}</p>
           </div>
           <div class="vl"></div>
           <div className="spec-wrap">
@@ -103,11 +109,26 @@ const Property = props => {
           </div>
         </div>
         <div className="service-property">
-          <div className="service-btn-property whatsapp">
+          <div
+            className="service-btn-property whatsapp"
+            onClick={() =>
+              window.open(
+                `whatsapp://send?abid=${
+                  props.agent?.whatsAppNumber || 0
+                }&text=Hello`,
+                '_blank'
+              )
+            }
+          >
             <Whatsapp />
             whatsapp
           </div>
-          <div className="service-btn-property phone">
+          <div
+            className="service-btn-property phone"
+            onClick={() =>
+              window.open(`tel:${props.agent?.phoneNumber || 0}`, '_blank')
+            }
+          >
             <Phone />
             Phone
           </div>

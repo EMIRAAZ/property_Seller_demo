@@ -8,7 +8,7 @@ body {
       margin: auto;
       .heading {
         color: #072d4b;
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-size: 20px;
         margin-top: 20px;
         font-weight: 700;
@@ -31,7 +31,7 @@ body {
           margin-left: 7px;
           margin-right: 7px;
           .item-name {
-            font-family: "Poppins";
+            font-family: 'Poppins';
             font-size: 15px;
             font-weight: 500;
           }
@@ -48,6 +48,7 @@ body {
         width: 100%;
 
         .storycard-div {
+          cursor: pointer;
           display: flex;
           justify-content: space-between;
           background-color: white;
@@ -57,17 +58,29 @@ body {
           .text-div {
             padding: 10px;
             .heading-news-item {
-              font-family: "Poppins";
+              font-family: 'Poppins';
               font-size: 20px;
               font-weight: 600;
               color: #072d4b;
+              -webkit-line-clamp: 1; /* number of lines to show */
+              line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
             }
             .description {
-              font-family: "Poppins";
+              font-family: 'Poppins';
               font-size: 15px;
               color: #072d4b;
               font-weight: 400;
               opacity: 0.6;
+              -webkit-line-clamp: 4; /* number of lines to show */
+              line-clamp: 4;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
             }
             .location-div {
               display: flex;
@@ -75,14 +88,14 @@ body {
               width: 20%;
               margin-top: 15px;
               .location {
-                font-family: "Poppins";
+                font-family: 'Poppins';
                 font-size: 13px;
                 color: #072d4b;
                 opacity: 0.4;
                 font-weight: 400;
               }
               .time {
-                font-family: "Poppins";
+                font-family: 'Poppins';
                 color: #072d4b;
                 opacity: 0.4;
                 font-weight: 400;
@@ -100,6 +113,7 @@ body {
         .story-card-small-main {
           width: 48%;
           .storycard-small-div {
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
             background-color: white;
@@ -109,7 +123,7 @@ body {
             .text-div {
               padding: 10px;
               .heading-news-item {
-                font-family: "Poppins";
+                font-family: 'Poppins';
                 font-size: 20px;
                 font-weight: 600;
                 color: #072d4b;
@@ -121,7 +135,7 @@ body {
                 display: -webkit-box;
               }
               .description {
-                font-family: "Poppins";
+                font-family: 'Poppins';
                 font-size: 15px;
                 color: #072d4b;
                 font-weight: 400;
@@ -139,14 +153,14 @@ body {
                 width: 50%;
                 margin-top: 15px;
                 .location {
-                  font-family: "Poppins";
+                  font-family: 'Poppins';
                   font-size: 13px;
                   color: #072d4b;
                   opacity: 0.4;
                   font-weight: 400;
                 }
                 .time {
-                  font-family: "Poppins";
+                  font-family: 'Poppins';
                   color: #072d4b;
                   opacity: 0.4;
                   font-weight: 400;
@@ -179,7 +193,7 @@ body {
         margin: auto;
         .heading {
           color: #072d4b;
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-size: 15px;
           margin-top: 20px;
           font-weight: 700;
@@ -188,7 +202,7 @@ body {
           display: flex;
           margin-top: 20px;
           justify-content: space-evenly;
-          overflow-x: scroll;
+          overflow-x: scroll !important;
           -ms-overflow-style: none;
           scrollbar-width: none;
           -webkit-overflow-scrolling: touch;
@@ -202,7 +216,7 @@ body {
             margin-left: 7px;
             margin-right: 7px;
             .item-name {
-              font-family: "Poppins";
+              font-family: 'Poppins';
               font-size: 15px;
               font-weight: 500;
             }
@@ -228,7 +242,7 @@ body {
             .text-div {
               padding: 10px;
               .heading-news-item {
-                font-family: "Poppins";
+                font-family: 'Poppins';
                 font-size: 15px;
                 font-weight: 600;
                 color: #072d4b;
@@ -240,7 +254,7 @@ body {
                 display: -webkit-box;
               }
               .description {
-                font-family: "Poppins";
+                font-family: 'Poppins';
                 font-size: 15px;
                 color: #072d4b;
                 font-weight: 400;
@@ -258,14 +272,14 @@ body {
                 width: 100%;
                 margin-top: 15px;
                 .location {
-                  font-family: "Poppins";
+                  font-family: 'Poppins';
                   font-size: 13px;
                   color: #072d4b;
                   opacity: 0.4;
                   font-weight: 400;
                 }
                 .time {
-                  font-family: "Poppins";
+                  font-family: 'Poppins';
                   color: #072d4b;
                   opacity: 0.4;
                   font-weight: 400;
@@ -292,7 +306,7 @@ body {
               .text-div {
                 padding: 10px;
                 .heading-news-item {
-                  font-family: "Poppins";
+                  font-family: 'Poppins';
                   font-size: 15px;
                   font-weight: 600;
                   color: #072d4b;
@@ -304,7 +318,7 @@ body {
                   display: -webkit-box;
                 }
                 .description {
-                  font-family: "Poppins";
+                  font-family: 'Poppins';
                   font-size: 15px;
                   color: #072d4b;
                   font-weight: 400;
@@ -322,14 +336,14 @@ body {
                   width: 100%;
                   margin-top: 15px;
                   .location {
-                    font-family: "Poppins";
+                    font-family: 'Poppins';
                     font-size: 13px;
                     color: #072d4b;
                     opacity: 0.4;
                     font-weight: 400;
                   }
                   .time {
-                    font-family: "Poppins";
+                    font-family: 'Poppins';
                     color: #072d4b;
                     opacity: 0.4;
                     font-weight: 400;

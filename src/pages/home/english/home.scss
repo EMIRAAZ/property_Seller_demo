@@ -1,2 +1,77 @@
 .home-english {
+  .home-header-class {
+    .mobile-sidebar {
+      background-color: #e7f1ff !important;
+
+      ul {
+        background-color: #e7f1ff !important;
+      }
+    }
+    width: 100%;
+    margin: 0 auto;
+
+    .header-list {
+      background-color: transparent !important;
+    }
+
+    .logo {
+      color: #ffffff;
+    }
+    .company-name {
+      .main-name {
+        color: #ffffff;
+      }
+      .sub-name {
+        color: #ffffff;
+      }
+    }
+    .desktop-li {
+      color: #ffffff;
+
+      li {
+        &:hover {
+          transition: all 1s ease-out;
+          color: #ffd0e0;
+        }
+      }
+    }
+  }
+  .home-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    .home-grid-property {
+      grid-column-start: 1;
+      grid-column-end: 1;
+      grid-row-start: 2;
+    }
+    .home-grid-category {
+      grid-column-start: 1;
+      grid-column-end: 1;
+      grid-row-start: 1;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .home-english {
+    .home-header-class {
+      width: 89%;
+    }
+    .home-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+
+      .home-grid-property {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+      }
+      .home-grid-category {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 2;
+      }
+    }
+  }
 }

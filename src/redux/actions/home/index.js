@@ -64,7 +64,7 @@ export const getHomeProperty =
   async dispatch => {
     try {
       dispatch(getHomePropertyStarted(search ? params : ''));
-      const res = await axios.get(`/api/property?${params}`);
+      const res = await axios.get(`/api/property?limit=6${params}`);
       dispatch({
         type: GET_HOME_PROPERTY,
         payload: res.data?.data,
@@ -135,7 +135,7 @@ export const getHomeFeatured =
   async dispatch => {
     try {
       dispatch(getHomeFeaturedStarted());
-      const res = await axios.get(`/api/featured${params}`);
+      const res = await axios.get(`/api/featured?limit=2${params}`);
       dispatch({
         type: GET_HOME_FEATURED,
         payload: res.data?.data,
@@ -166,7 +166,7 @@ export const getHomeLuxury =
   async dispatch => {
     try {
       dispatch(getHomeLuxuryStarted());
-      const res = await axios.get(`/api/property${params}`);
+      const res = await axios.get(`/api/property?limit=4${params}`);
       dispatch({
         type: GET_HOME_LUXURY,
         payload: res.data?.data,

@@ -2,7 +2,14 @@ import './basicSelect.scss';
 import ExpandIcon from '../../svg/expand';
 import { useState } from 'react';
 
-const BasicSelect = ({ name, options, customClass = '', onChange }) => {
+const BasicSelect = ({
+  name,
+  options,
+  customClass = '',
+  onChange,
+  bgColor = '#f3f3fa',
+  border = false,
+}) => {
   const [selectName, setSelectName] = useState(name);
   const [dropdownClass, setdropdownClass] = useState('hide');
 
@@ -35,7 +42,13 @@ const BasicSelect = ({ name, options, customClass = '', onChange }) => {
       onMouseLeave={onMouseLeave}
       onClick={onClick}
     >
-      <div className="select-box">
+      <div
+        className="select-box"
+        style={{
+          backgroundColor: bgColor,
+          border: border ? '1px solid #c1cdee' : 'none',
+        }}
+      >
         <p className="drop-btn">{selectName}</p>
         <ExpandIcon
           className="basic-select-icon"

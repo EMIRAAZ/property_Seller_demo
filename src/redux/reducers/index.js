@@ -16,6 +16,13 @@ import tagheadReducer from './taghead';
 import taglineReducer from './tagline';
 import newstopicsReducer from './newstopics';
 import newsReducer from './news';
+import blogReducer from './blog';
+import topReducer from './topstory';
+import singlenewsReducer from './singlenews';
+import blogwebReducer from './blogweb';
+import listpropReducer from './listproperty';
+import neighwebReducer from './neighweb';
+import tagwebReducer from './tagweb';
 
 const rootReducer = combineReducers({
   homeReducer,
@@ -35,6 +42,13 @@ const rootReducer = combineReducers({
   taglineReducer,
   newstopicsReducer,
   newsReducer,
+  blogReducer,
+  topReducer,
+  singlenewsReducer,
+  blogwebReducer,
+  listpropReducer,
+  neighwebReducer,
+  tagwebReducer,
 });
 
 export default rootReducer;

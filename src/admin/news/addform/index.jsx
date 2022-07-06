@@ -23,6 +23,7 @@ const AddForm = ({
   images,
   imgLoading,
   imgError,
+  clearUpload,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -38,6 +39,7 @@ const AddForm = ({
     getNews();
     navigate(`/admin/news`);
     clear();
+    clearUpload();
   };
 
   const addAdminNews = () => {
@@ -104,7 +106,7 @@ const AddForm = ({
       <UploadImage
         editing={editing}
         linkIndex={0}
-        customClass="neighbor-logo-img"
+        customClass="news-logo-img"
         onChangeImage={() => {}}
         svg={true}
         value={newsValue.images}

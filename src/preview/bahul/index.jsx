@@ -1,11 +1,12 @@
-import Footer from "../../components/footer/english/Footer";
-import OffplanView from "../../pages/offplanview/english/OffplanView";
-import Nft from "../../pages/nft/english/Nft";
-import "./index.scss";
+import Footer from '../../components/footer/english';
+import OffplanView from '../../pages/offplanview/english/OffplanView';
+import Topstory from '../../pages/topstory/english/Topstory';
+import Nft from '../../pages/nft/english/Nft';
+import './index.scss';
+// import OffplanView from "../../pages/offplanview";
 
 const Preview = () => {
-  return <Nft />;
-  // return null;
+  return <Topstory />;
 };
 
 export default Preview;

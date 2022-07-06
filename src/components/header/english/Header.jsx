@@ -6,23 +6,34 @@ import HeaderSelect from '../../select/HeaderSelect';
 import Close from '../../svg/close';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ customClass }) => {
   const navigate = useNavigate();
+  let location = useLocation();
+
+  const getLoc = () => location.pathname.split('/').pop();
   const [state, changeState] = useState('hide');
   const onSidebarWebToggle = () => {
     changeState(state === 'hide' ? 'show' : 'hide');
   };
 
+  document.addEventListener('scroll', function (e) {
+    if (state === 'show') {
+      onSidebarWebToggle();
+    }
+  });
+
   return (
-    <div className="header-english">
+    <div className={`header-english ${customClass} ${state}`}>
       <div className={`web-sidebar ${state}`}>
         <ul>
           <li onClick={onSidebarWebToggle}>
             <Close />
           </li>
           <li onClick={() => navigate('/management')}>Property Management</li>
-          <li>Blogs</li>
+          <li onClick={() => navigate('/blogs')}>Blogs</li>
+          <li onClick={() => navigate('/news')}>News</li>
           <li onClick={() => navigate('/about')}>About Us</li>
           <li onClick={() => navigate('/aboutfounder')}>About Founder</li>
           <li onClick={() => navigate('/ourteam')}>Our Team</li>
@@ -39,15 +50,15 @@ const Header = () => {
           </li>
           <li onClick={() => navigate('/buy')}>Buy</li>
           <li onClick={() => navigate('/rent')}>Rent</li>
-          <li onClick={() => navigate('/sell')}>Sell</li>
-          <li onClick={() => navigate('/shortterm')}>Short Term</li>
+          {/* <li onClick={() => navigate('/sell')}>Sell</li> */}
+          {/* <li onClick={() => navigate('/shortterm')}>Short Term</li> */}
           <li>Commercial</li>
           <li onClick={() => navigate('/management')}>Property Management</li>
           {/* <li onClick={() => navigate('/mortgage')}>Mortgages</li> */}
           <li>Off Plan</li>
           <li>Luxury Properties</li>
-          <li>Blogs</li>
-          <li>News</li>
+          <li onClick={() => navigate('/blogs')}>Blogs</li>
+          <li onClick={() => navigate('/news')}>News</li>
           <li onClick={() => navigate('/about')}>About Us</li>
           <li onClick={() => navigate('/aboutfounder')}>About Founder</li>
           <li onClick={() => navigate('/ourteam')}>Our Team</li>
@@ -59,11 +70,16 @@ const Header = () => {
       </div>
       <ul className="header-list">
         <li className="logo" onClick={onSidebarWebToggle}>
-          <HamburgerLogo width="35" height="28" />
+          <HamburgerLogo
+            width="27"
+            height="26"
+            fill={getLoc() === '' ? '#ffffff' : '#1C3988'}
+          />
         </li>
         <li className="company-name" onClick={() => navigate('/')}>
+          {/* <WhiteLogo /> */}
           <span className="main-name">UAE&nbsp;Assistant</span>
-          <span className="sub-name">Properties</span>
+          <span className="sub-name">for Properties</span>
         </li>
         <li className="desktop-li">
           <ul className="desktop-ul">
@@ -73,15 +89,15 @@ const Header = () => {
             <li className="simple-list rent" onClick={() => navigate('/rent')}>
               Rent
             </li>
-            <li className="simple-list sell" onClick={() => navigate('/sell')}>
+            {/* <li className="simple-list sell" onClick={() => navigate('/sell')}>
               Sell
-            </li>
-            <li
+            </li> */}
+            {/* <li
               className="simple-list short"
               onClick={() => navigate('/shortterm')}
             >
               Short&nbsp;Term
-            </li>
+            </li> */}
             {/* <li
               className="simple-list mortgages"
               onClick={() => navigate('/mortgage')}
@@ -100,7 +116,7 @@ const Header = () => {
                   { name: 'Apartments' },
                 ]}
               />
-              <DownArrow />
+              <DownArrow fill={getLoc() === '' ? '#ffffff' : '#000000'} />
             </li>
             <li className="simple-list">List&nbsp;Your&nbsp;Property</li>
           </ul>
