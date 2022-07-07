@@ -1,6 +1,7 @@
 import './luxuryViewMore.scss';
 import Footer from '../../../components/footer';
 import Header from '../../../components/header';
+import Pagination from '../../../components/pagination';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -14,6 +15,11 @@ const LuxuryViewMore = props => {
 
   const renderstory1 = () =>
     props.luxury.data.map((item, i) => <LuxuaryCard key={i} {...item} />);
+
+  const onChangeCurrentPage = current => {
+    const offset = 10 * current - 10 > 0 ? 10 * current - 10 : 0;
+    props.getLuxuryWithTypeWeb(getID(), offset);
+  };
   return (
     <div className="luxuaryv-container">
       <Header />
@@ -28,6 +34,10 @@ const LuxuryViewMore = props => {
             </p>
           </div>
           <div className="card-row">{renderstory1()}</div>
+          <Pagination
+            count={props.luxury.count}
+            onChange={current => onChangeCurrentPage(current)}
+          />
         </div>
       </div>
       <Footer />

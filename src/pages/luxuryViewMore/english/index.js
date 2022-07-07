@@ -10,8 +10,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getLuxuryWithTypeWeb: propertyType =>
-      dispatch(getLuxuryWithTypeWeb(propertyType)),
+    getLuxuryWithTypeWeb: (propertyType, offset) =>
+      dispatch(getLuxuryWithTypeWeb(propertyType, offset)),
   };
 };
 

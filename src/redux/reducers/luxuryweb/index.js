@@ -140,6 +140,7 @@ const reducer = (state = initialState, action) => {
           loading: false,
           error: false,
           data: action.payload.rows,
+          count: action.payload.count,
         },
       };
     case GET_LUXURY_WITH_PROPERTYTYPE_STARTED:

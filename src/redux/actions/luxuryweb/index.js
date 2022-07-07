@@ -137,15 +137,19 @@ const getLuxuryWithTypeError = () => {
   };
 };
 
-export const getLuxuryWithTypeWeb = propertyType => async dispatch => {
-  try {
-    dispatch(getLuxuryWithTypeStarted());
-    const res = await axios.get(`/api/property?propertyType=${propertyType}`);
-    dispatch({
-      type: GET_LUXURY_WITH_PROPERTYTYPE,
-      payload: res.data?.data,
-    });
-  } catch (e) {
-    dispatch(getLuxuryWithTypeError());
-  }
-};
+export const getLuxuryWithTypeWeb =
+  (propertyType, offset = 0) =>
+  async dispatch => {
+    try {
+      dispatch(getLuxuryWithTypeStarted());
+      const res = await axios.get(
+        `/api/property?propertyType=${propertyType}&limit=10&offset=${offset}`
+      );
+      dispatch({
+        type: GET_LUXURY_WITH_PROPERTYTYPE,
+        payload: res.data?.data,
+      });
+    } catch (e) {
+      dispatch(getLuxuryWithTypeError());
+    }
+  };
