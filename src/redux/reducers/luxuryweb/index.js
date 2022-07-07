@@ -12,6 +12,9 @@ import {
   GET_LUXURY_PENTHOUSE_STARTED,
   GET_LUXURY_PENTHOUSE_ERROR,
   GET_LUXURY_PENTHOUSE,
+  GET_LUXURY_WITH_PROPERTYTYPE_STARTED,
+  GET_LUXURY_WITH_PROPERTYTYPE,
+  GET_LUXURY_WITH_PROPERTYTYPE_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -124,6 +127,35 @@ const reducer = (state = initialState, action) => {
         ...state,
         penthouse: {
           ...state.penthouse,
+          loading: false,
+          error: true,
+        },
+      };
+
+    case GET_LUXURY_WITH_PROPERTYTYPE:
+      return {
+        ...state,
+        luxury: {
+          ...state.luxury,
+          loading: false,
+          error: false,
+          data: action.payload.rows,
+        },
+      };
+    case GET_LUXURY_WITH_PROPERTYTYPE_STARTED:
+      return {
+        ...state,
+        luxury: {
+          ...state.luxury,
+          loading: true,
+          error: false,
+        },
+      };
+    case GET_LUXURY_WITH_PROPERTYTYPE_ERROR:
+      return {
+        ...state,
+        luxury: {
+          ...state.luxury,
           loading: false,
           error: true,
         },

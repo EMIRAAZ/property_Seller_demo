@@ -12,6 +12,9 @@ import {
   GET_LUXURY_PENTHOUSE,
   GET_LUXURY_PENTHOUSE_STARTED,
   GET_LUXURY_PENTHOUSE_ERROR,
+  GET_LUXURY_WITH_PROPERTYTYPE_STARTED,
+  GET_LUXURY_WITH_PROPERTYTYPE,
+  GET_LUXURY_WITH_PROPERTYTYPE_ERROR,
 } from '../../constants';
 
 // villa
@@ -119,5 +122,30 @@ export const getLuxuryPenthouseWeb = () => async dispatch => {
     });
   } catch (e) {
     dispatch(getLuxuryPenthouseError());
+  }
+};
+
+const getLuxuryWithTypeStarted = () => {
+  return {
+    type: GET_LUXURY_WITH_PROPERTYTYPE_STARTED,
+  };
+};
+
+const getLuxuryWithTypeError = () => {
+  return {
+    type: GET_LUXURY_WITH_PROPERTYTYPE_ERROR,
+  };
+};
+
+export const getLuxuryWithTypeWeb = propertyType => async dispatch => {
+  try {
+    dispatch(getLuxuryWithTypeStarted());
+    const res = await axios.get(`/api/property?propertyType=${propertyType}`);
+    dispatch({
+      type: GET_LUXURY_WITH_PROPERTYTYPE,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getLuxuryWithTypeError());
   }
 };

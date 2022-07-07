@@ -19,4 +19,9 @@ export const initialState = {
     error: false,
     data: [],
   },
+  luxury: {
+    loading: false,
+    error: false,
+    data: [],
+  },
 };
