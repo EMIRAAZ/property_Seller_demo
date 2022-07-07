@@ -3,6 +3,15 @@ import {
   GET_LUXURY_VILLA,
   GET_LUXURY_VILLA_STARTED,
   GET_LUXURY_VILLA_ERROR,
+  GET_LUXURY_APPARTMENT,
+  GET_LUXURY_APPARTMENT_STARTED,
+  GET_LUXURY_APPARTMENT_ERROR,
+  GET_LUXURY_TOWNHOUSE_STARTED,
+  GET_LUXURY_TOWNHOUSE_ERROR,
+  GET_LUXURY_TOWNHOUSE,
+  GET_LUXURY_PENTHOUSE_STARTED,
+  GET_LUXURY_PENTHOUSE_ERROR,
+  GET_LUXURY_PENTHOUSE,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -31,6 +40,90 @@ const reducer = (state = initialState, action) => {
         ...state,
         villa: {
           ...state.villa,
+          loading: false,
+          error: true,
+        },
+      };
+    case GET_LUXURY_APPARTMENT:
+      return {
+        ...state,
+        apartment: {
+          ...state.apartment,
+          loading: false,
+          error: false,
+          data: action.payload.rows,
+        },
+      };
+    case GET_LUXURY_APPARTMENT_STARTED:
+      return {
+        ...state,
+        apartment: {
+          ...state.apartment,
+          loading: true,
+          error: false,
+        },
+      };
+    case GET_LUXURY_APPARTMENT_ERROR:
+      return {
+        ...state,
+        apartment: {
+          ...state.apartment,
+          loading: false,
+          error: true,
+        },
+      };
+    case GET_LUXURY_TOWNHOUSE:
+      return {
+        ...state,
+        townhouse: {
+          ...state.townhouse,
+          loading: false,
+          error: false,
+          data: action.payload.rows,
+        },
+      };
+    case GET_LUXURY_TOWNHOUSE_STARTED:
+      return {
+        ...state,
+        townhouse: {
+          ...state.townhouse,
+          loading: true,
+          error: false,
+        },
+      };
+    case GET_LUXURY_TOWNHOUSE_ERROR:
+      return {
+        ...state,
+        townhouse: {
+          ...state.townhouse,
+          loading: false,
+          error: true,
+        },
+      };
+    case GET_LUXURY_PENTHOUSE:
+      return {
+        ...state,
+        penthouse: {
+          ...state.penthouse,
+          loading: false,
+          error: false,
+          data: action.payload.rows,
+        },
+      };
+    case GET_LUXURY_PENTHOUSE_STARTED:
+      return {
+        ...state,
+        penthouse: {
+          ...state.penthouse,
+          loading: true,
+          error: false,
+        },
+      };
+    case GET_LUXURY_PENTHOUSE_ERROR:
+      return {
+        ...state,
+        penthouse: {
+          ...state.penthouse,
           loading: false,
           error: true,
         },
