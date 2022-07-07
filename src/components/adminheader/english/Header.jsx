@@ -24,6 +24,12 @@ const Header = props => {
     props.clearUpload();
   };
 
+  const onClickAddOffplan = () => {
+    props.clearAddOffplan();
+    navigate('/admin/add-offplan');
+    props.clearUpload();
+  };
+
   return (
     <div className="adminheader-english">
       <div className={`web-sidebar ${state}`}>
@@ -37,6 +43,7 @@ const Header = props => {
           <li onClick={onClickAddAgency}>Add Agency </li>
           <li onClick={() => navigate('/admin/amenity')}>Amenity </li>
           <li onClick={() => navigate('/admin/offplan')}>Offplan </li>
+          <li onClick={onClickAddOffplan}>Add Offplan </li>
           <li onClick={() => navigate('/admin/neighborhood')}>Neighbourhood</li>
           <li onClick={() => navigate('/admin/taghead')}>Tag&nbsp;Header</li>
           <li onClick={() => navigate('/admin/tagline')}>Tag&nbsp;Line</li>
@@ -61,6 +68,7 @@ const Header = props => {
             Neighbor&nbsp;Hood
           </li>
           <li onClick={() => navigate('/admin/offplan')}>Offplan </li>
+          <li onClick={onClickAddOffplan}>Add Offplan </li>
           <li onClick={() => navigate('/admin/taghead')}>Tag&nbsp;Header</li>
           <li onClick={() => navigate('/admin/tagline')}>Tag&nbsp;Line</li>
           <li onClick={() => navigate('/admin/newstopics')}>
