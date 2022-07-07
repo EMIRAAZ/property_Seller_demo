@@ -79,6 +79,13 @@ const AddForm = ({
         value={neighborValue.title}
         onChange={e => onChangeInput('title', e.target.value)}
       />
+      <Input
+        divClass="neighbor-input"
+        label="Emirate"
+        required
+        value={neighborValue.emirate}
+        onChange={e => onChangeInput('emirate', e.target.value)}
+      />
       <label className="property-image-label spinner-label">
         Neighborhood Image<span>*</span> {renderImageLoadingSpinner()}
       </label>
