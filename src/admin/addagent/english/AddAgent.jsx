@@ -31,6 +31,7 @@ const AddAgent = props => {
           imgError={props.imgError}
           agentValue={props.agentValue}
           agentOptions={props.agentOptions}
+          clearAddAgency={props.clearAddAgency}
         />
       </div>
     </div>

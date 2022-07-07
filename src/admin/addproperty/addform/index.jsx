@@ -228,6 +228,7 @@ const AddForm = ({
           {uploadCount.map((_, i) => (
             <UploadImage
               key={i}
+              multiple={true}
               linkIndex={i}
               customClass="first-img-Class-admin"
               onChangeImage={() => {}}

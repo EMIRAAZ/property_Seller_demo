@@ -28,6 +28,7 @@ const AddForm = ({
   imgError,
   agentValue,
   editing,
+  clearAddAgency,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -51,12 +52,18 @@ const AddForm = ({
           ...agentValue,
           agentImage: images[0] ? images[0] : agentValue.agentImage[0],
         },
-        () => navigate(`/admin/add-agency/${agentValue.agencyId}`)
+        () => {
+          clearAddAgency();
+          navigate(`/admin/add-agency/${agentValue.agencyId}`);
+        }
       );
     } else {
       addAgent(
         { ...agentValue, agentImage: images[0], agencyId: location.state.id },
-        () => navigate(`/admin/add-agency/${location.state.id}`)
+        () => {
+          clearAddAgency();
+          navigate(`/admin/add-agency/${location.state.id}`);
+        }
       );
     }
   };
