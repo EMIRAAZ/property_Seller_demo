@@ -25,6 +25,7 @@ import listpropReducer from './listproperty';
 import neighwebReducer from './neighweb';
 import tagwebReducer from './tagweb';
 import luxurywebReducer from './luxuryweb';
+import adminaddoffplanReducer from './adminaddoffplan';
 
 const rootReducer = combineReducers({
   homeReducer,
@@ -53,6 +54,7 @@ const rootReducer = combineReducers({
   tagwebReducer,
   luxurywebReducer,
   adminoffplanReducer,
+  adminaddoffplanReducer,
 });
 
 export default rootReducer;
