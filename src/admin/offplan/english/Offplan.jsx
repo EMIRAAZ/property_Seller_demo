@@ -1,36 +1,36 @@
-import "./offplan.scss";
-import Table from "../../../components/table";
-import AdminHeader from "../../../components/adminheader";
-import { tableHeader } from "./table";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import './offplan.scss';
+import Table from '../../../components/table';
+import AdminHeader from '../../../components/adminheader';
+import { tableHeader } from './table';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Offplan = (props) => {
+const Offplan = props => {
   let navigate = useNavigate();
 
-  const navigateTo = (id) => {
-    navigate(`/admin/add-agency/${id}`);
+  const navigateTo = id => {
+    navigate(`/admin/add-offplan/${id}`);
   };
 
   useEffect(() => {
-    props.getAdminAgency();
+    props.getAdminOffplan();
   }, []);
 
   return (
     <div className="offplan-admin-table">
       <AdminHeader />
       <Table
-        rows={props.adminAgency.agency || []}
+        rows={props.adminOffplan.offplan || []}
         columns={tableHeader}
-        onEdit={(id) => {
+        onEdit={id => {
           navigateTo(id);
         }}
-        onClickDelete={(id) => {
-          props.getAdminAgency();
-          props.deleteAdminAgency(id, props.getAdminAgency);
+        onClickDelete={id => {
+          props.getAdminOffplan();
+          props.deleteAdminOffplan(id, props.getAdminOffplan);
         }}
-        onChangePage={() => {}}
-        count={4}
+        onChangePage={page => props.getAdminOffplan(`?offset=${page * 10 + 1}`)}
+        count={props.adminOffplan.count || 0}
       />
     </div>
   );

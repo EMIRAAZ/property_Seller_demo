@@ -1,10 +1,10 @@
-import './propertyheader.scss';
+import './offplanheader.scss';
 
-const PropertyHeader = props => {
+const OffplanHeader = props => {
   return (
-    <div className="admin-add-property-header-container">
-      <div className="admin-add-property-header">
-        <p>Add Property</p>
+    <div className="admin-add-offplan-header-container">
+      <div className="admin-add-offplan-header">
+        <p>Add Offplan</p>
       </div>
       <span>
         The most important feature in the product adding part. When adding
@@ -15,4 +15,4 @@ const PropertyHeader = props => {
   );
 };
 
-export default PropertyHeader;
+export default OffplanHeader;

@@ -1,29 +1,30 @@
-.add-property-form {
+.add-offplan-form {
   display: flex;
   flex-direction: column;
   margin: 0px auto;
   justify-content: center;
   margin-top: 30px;
-  .property-input {
+  .offplan-input {
     width: 100%;
   }
   .select-border {
     margin: 10px 0px;
   }
-  .add-property-form-left {
+  .add-offplan-form-left {
     display: flex;
     flex-direction: column;
     width: 100%;
 
     .amenities-instruction {
       margin-top: 10px;
+      padding-top: 10px;
       color: #8d8d8d;
       font-family: 'Poppins';
       font-size: 13px;
       max-width: 800px;
     }
   }
-  .add-property-form-right {
+  .add-offplan-form-right {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -38,7 +39,7 @@
       display: none;
     }
 
-    .property-image-label {
+    .offplan-image-label {
       font-family: 'Poppins';
       margin: 5px 0;
       color: #464646;
@@ -52,7 +53,7 @@
       }
     }
 
-    .add-property-btn {
+    .add-offplan-btn {
       width: 50%;
       margin-top: 46px;
       height: 47px;
@@ -62,34 +63,14 @@
     }
   }
 
-  .property-row-div {
+  .offplan-row-div {
     display: flex;
     width: 49%;
     gap: 10px;
   }
-  .property-row-div-upload {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    height: max-content;
-    gap: 10px;
 
-    .second-img-Class-admin {
-      height: 200px;
-    }
-
-    .first-img-Class-admin {
-      height: 200px;
-    }
-
-    .add-new-img-upload {
-      height: 200px;
-      border: 1px dotted gray;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  .first-img-Class-admin {
+    height: 200px;
   }
 
   .img-loading {
@@ -110,30 +91,30 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .add-property-form {
+  .add-offplan-form {
     display: flex;
     flex-direction: row;
     margin: 0px auto;
     justify-content: center;
     margin-top: 30px;
 
-    .property-input {
+    .offplan-input {
       width: 70%;
     }
     .select-border {
       margin: 10px 0px;
     }
-    .add-property-form-left {
+    .add-offplan-form-left {
       display: flex;
       flex-direction: column;
       width: 100%;
     }
-    .add-property-form-right {
+    .add-offplan-form-right {
       display: flex;
       flex-direction: column;
       width: 100%;
 
-      .property-image-label {
+      .offplan-image-label {
         font-family: 'Poppins';
         margin: 5px 0;
         color: #464646;
@@ -155,7 +136,7 @@
         }
       }
 
-      .add-property-btn {
+      .add-offplan-btn {
         width: 50%;
         margin-top: 46px;
         height: 47px;
@@ -165,12 +146,12 @@
       }
     }
 
-    .property-row-div {
+    .offplan-row-div {
       display: flex;
       width: 49%;
       gap: 10px;
     }
-    .property-row-div-upload {
+    .offplan-row-div-upload {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       width: 70%;

@@ -23,3 +23,6 @@ export * from './listproperty';
 export * from './neighweb';
 export * from './tagweb';
 export * from './luxuryweb';
+export * from './adminoffplan';
+export * from './adminaddoffplan';
+export * from './offplan';

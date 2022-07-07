@@ -1,21 +1,20 @@
 import { connect } from 'react-redux';
-import AddProperty from './AddProperty';
+import AddOffplan from './AddOffplan';
 import {
-  changeAdminPropertyInput,
-  addAdminProperty,
-  getAgentProperty,
-  getAmenityProperty,
-  editAdminProperty,
-  getAdminPropertyById,
+  changeAdminOffplanInput,
+  addAdminOffplan,
+  getAmenityOffplan,
+  editAdminOffplan,
+  getAdminOffplanById,
   clearUpload,
-  getNeighborhoodProperty,
+  clearAddOffplan,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
   return {
-    env: state.adminaddpropertyReducer.env,
-    propertyValue: state.adminaddpropertyReducer.propertyValue,
-    propertyOptions: state.adminaddpropertyReducer.propertyOptions,
+    env: state.adminaddoffplanReducer.env,
+    offplanValue: state.adminaddoffplanReducer.offplanValue,
+    offplanOptions: state.adminaddoffplanReducer.offplanOptions,
     images: state.uploadReducer.link,
     imgLoading: state.uploadReducer.loading,
     imgError: state.uploadReducer.error,
@@ -24,17 +23,15 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onInputChange: payload => dispatch(changeAdminPropertyInput(payload)),
-    addAdminProperty: (payload, cb) => dispatch(addAdminProperty(payload, cb)),
-    editAdminProperty: (id, payload, cb) =>
-      dispatch(editAdminProperty(id, payload, cb)),
-    getAgentProperty: payload => dispatch(getAgentProperty(payload)),
-    getNeighborhoodProperty: payload =>
-      dispatch(getNeighborhoodProperty(payload)),
-    getAmenityProperty: payload => dispatch(getAmenityProperty(payload)),
-    getAdminPropertyById: id => dispatch(getAdminPropertyById(id)),
+    onInputChange: payload => dispatch(changeAdminOffplanInput(payload)),
+    addAdminOffplan: (payload, cb) => dispatch(addAdminOffplan(payload, cb)),
+    editAdminOffplan: (id, payload, cb) =>
+      dispatch(editAdminOffplan(id, payload, cb)),
+    getAmenityOffplan: payload => dispatch(getAmenityOffplan(payload)),
+    getAdminOffplanById: id => dispatch(getAdminOffplanById(id)),
     clearUpload: () => dispatch(clearUpload()),
+    clearAddOffplan: () => dispatch(clearAddOffplan()),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddProperty);
+export default connect(mapStateToProps, mapDispatchToProps)(AddOffplan);
