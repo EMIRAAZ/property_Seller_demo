@@ -199,7 +199,7 @@ const reducer = (state = initialState, action) => {
       const neighborhood = action.payload.rows.map(a => {
         return {
           name: a.title,
-          value: a.id,
+          value: a.title,
         };
       });
       return {

@@ -4,6 +4,7 @@ import Footer from '../../../components/footer';
 import Header from '../../../components/header';
 import ImageFrame from '../imageframe';
 import BasicButton from '../../../components/button/BasicButton';
+import { useNavigate } from 'react-router-dom';
 
 const NeighborHood = props => {
   useEffect(() => {
@@ -29,6 +30,7 @@ const NeighborHood = props => {
 ///////////////////
 
 const Card = props => {
+  const navigate = useNavigate();
   return (
     <div className="card">
       <div
@@ -42,8 +44,26 @@ const Card = props => {
         </div>
       </div>
       <div className="button-div">
-        <BasicButton customClass="btn-1">BUY</BasicButton>
-        <BasicButton customClass="btn-2">RENT</BasicButton>
+        <BasicButton
+          onClick={() =>
+            navigate(
+              `/listproperty/neighbourhood?neighborhood=${props.title}&sale=buy`
+            )
+          }
+          customClass="btn-1"
+        >
+          BUY
+        </BasicButton>
+        <BasicButton
+          onClick={() =>
+            navigate(
+              `/listproperty/neighbourhood?neighborhood=${props.title}&sale=rent`
+            )
+          }
+          customClass="btn-2"
+        >
+          RENT
+        </BasicButton>
       </div>
     </div>
   );
