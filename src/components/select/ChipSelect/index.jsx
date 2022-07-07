@@ -22,7 +22,7 @@ const ChipSelect = ({
   };
 
   const onClickOption = name => {
-    onChange([...value, name]);
+    onChange([...(value && value.length ? value : []), name]);
     dropdownClass === 'hide'
       ? setdropdownClass('show')
       : setdropdownClass('hide');
@@ -30,12 +30,19 @@ const ChipSelect = ({
 
   const renderOptions = () =>
     (options || []).map((option, i) => {
-      if (value && !value.includes(option.value))
+      if (value && !value.includes(option.value)) {
         return (
           <p key={i} onClick={() => onClickOption(option.name, option.value)}>
             {option.name}
           </p>
         );
+      } else if (!value) {
+        return (
+          <p key={i} onClick={() => onClickOption(option.name, option.value)}>
+            {option.name}
+          </p>
+        );
+      }
     });
 
   const removeChip = item => {

@@ -10,6 +10,9 @@ import {
   GET_LISTPROP_LOCATION_SEARCH_STARTED,
   GET_LISTPROP_LOCATION_SEARCH,
   GET_LISTPROP_LOCATION_SEARCH_ERROR,
+  GET_PROPERTY_NEIGHBORHOOD_SALE,
+  GET_PROPERTY_NEIGHBORHOOD_SALE_STARTED,
+  GET_PROPERTY_NEIGHBORHOOD_SALE_ERROR,
 } from '../../constants';
 
 export const onChangeListPropParams = payload => {
@@ -101,5 +104,30 @@ export const getListpropLocationSearch = location => async dispatch => {
     });
   } catch (e) {
     dispatch(getListpropLocationSearchError());
+  }
+};
+
+const getPropWithNeighSaleStarted = () => {
+  return {
+    type: GET_PROPERTY_NEIGHBORHOOD_SALE_STARTED,
+  };
+};
+
+const getPropWithNeighSaleError = () => {
+  return {
+    type: GET_PROPERTY_NEIGHBORHOOD_SALE_ERROR,
+  };
+};
+
+export const getPropWithNeighSale = param => async dispatch => {
+  try {
+    dispatch(getPropWithNeighSaleStarted());
+    const res = await axios.get(`/api/property${param}`);
+    dispatch({
+      type: GET_PROPERTY_NEIGHBORHOOD_SALE,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getPropWithNeighSaleError());
   }
 };
