@@ -54,6 +54,12 @@
         font-size: 16px;
         line-height: 24px;
         color: #1d2939;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
       }
       .lux2-description {
         font-family: "Poppins";
@@ -63,6 +69,12 @@
         line-height: 19px;
         margin-top: 10px;
         color: #6e6e6e;
+        -webkit-line-clamp: 3; /* number of lines to show */
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
       }
       .more {
         text-align: end;
