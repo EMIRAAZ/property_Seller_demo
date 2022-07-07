@@ -5,6 +5,7 @@ import rentReducer from './rent';
 import adminloginReducer from './adminlogin';
 import adminpropertyReducer from './adminproperty';
 import adminagencyReducer from './adminagency';
+import adminoffplanReducer from './adminoffplan';
 import uploadReducer from './upload';
 import adminaddpropertyReducer from './adminaddproperty';
 import adminaddagencyReducer from './adminaddagency';
@@ -51,6 +52,7 @@ const rootReducer = combineReducers({
   neighwebReducer,
   tagwebReducer,
   luxurywebReducer,
+  adminoffplanReducer,
 });
 
 export default rootReducer;

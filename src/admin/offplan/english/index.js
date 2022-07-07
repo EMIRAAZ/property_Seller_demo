@@ -1,17 +1,17 @@
-import { connect } from "react-redux";
-import Offplan from "./Offplan";
-import { getAdminAgency, deleteAdminAgency } from "../../../redux/actions";
+import { connect } from 'react-redux';
+import Offplan from './Offplan';
+import { getAdminOffplan, deleteAdminOffplan } from '../../../redux/actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    adminAgency: state.adminagencyReducer.adminAgency,
+    adminOffplan: state.adminoffplanReducer.adminOffplan,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    getAdminAgency: (params) => dispatch(getAdminAgency(params)),
-    deleteAdminAgency: (id, cb) => dispatch(deleteAdminAgency(id, cb)),
+    getAdminOffplan: params => dispatch(getAdminOffplan(params)),
+    deleteAdminOffplan: (id, cb) => dispatch(deleteAdminOffplan(id, cb)),
   };
 };
 
