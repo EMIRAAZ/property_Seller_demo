@@ -4,4 +4,25 @@ export const initialState = {
     error: false,
     data: [],
   },
+  apartment: {
+    loading: false,
+    error: false,
+    data: [],
+  },
+  townhouse: {
+    loading: false,
+    error: false,
+    data: [],
+  },
+  penthouse: {
+    loading: false,
+    error: false,
+    data: [],
+  },
+  luxury: {
+    loading: false,
+    error: false,
+    data: [],
+    count: 0,
+  },
 };

@@ -1,13 +1,13 @@
-import { useLocation } from "react-router-dom";
-import ArabicLuxuryViewMore from "./arabic/LuxuryViewMore";
-import EnglishLuxuryViewMore from "./english/LuxuryViewMore";
+import { useLocation } from 'react-router-dom';
+import ArabicLuxuryViewMore from './arabic/LuxuryViewMore';
+import EnglishLuxuryViewMore from './english';
 
 const LuxuryViewMore = () => {
   const search = useLocation().search;
-  const lang = new URLSearchParams(search).get("lang");
+  const lang = new URLSearchParams(search).get('lang');
 
-  if (lang === "eng") return <ArabicLuxuryViewMore />;
-  else if (lang === "ar") return <EnglishLuxuryViewMore />;
+  if (lang === 'eng') return <ArabicLuxuryViewMore />;
+  else if (lang === 'ar') return <EnglishLuxuryViewMore />;
   else return <EnglishLuxuryViewMore />;
 };
 
