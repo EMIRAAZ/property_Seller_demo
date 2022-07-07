@@ -10,6 +10,9 @@ import {
   GET_LISTPROP_LOCATION_SEARCH,
   GET_LISTPROP_LOCATION_SEARCH_ERROR,
   GET_LISTPROP_LOCATION_SEARCH_STARTED,
+  GET_PROPERTY_NEIGHBORHOOD_SALE,
+  GET_PROPERTY_NEIGHBORHOOD_SALE_STARTED,
+  GET_PROPERTY_NEIGHBORHOOD_SALE_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -25,34 +28,60 @@ const reducer = (state = initialState, action) => {
     case GET_CAT_FEATURED:
       return {
         ...state,
-        error: false,
-        loading: false,
-        featured: action.payload.rows,
+        featured: {
+          ...state.featured,
+          error: false,
+          loading: false,
+          data: action.payload.rows,
+          count: action.payload.count,
+        },
       };
     case GET_CAT_FEATURED_STARTED:
       return {
         ...state,
-        error: false,
-        loading: false,
+        featured: {
+          ...state.featured,
+          error: false,
+          loading: true,
+        },
       };
     case GET_CAT_FEATURED_ERROR:
       return {
         ...state,
-        error: false,
-        loading: false,
+        featured: {
+          ...state.featured,
+          error: true,
+          loading: false,
+        },
       };
     case GET_RTMIN:
       return {
         ...state,
-        readyToMoveIn: action.payload.rows,
+        readyToMoveIn: {
+          ...state.readyToMoveIn,
+          error: false,
+          loading: false,
+          data: action.payload.rows,
+          count: action.payload.count,
+        },
       };
     case GET_RTMIN_STARTED:
       return {
         ...state,
+        readyToMoveIn: {
+          ...state.readyToMoveIn,
+          error: false,
+          loading: true,
+        },
       };
     case GET_RTMIN_ERROR:
       return {
         ...state,
+        readyToMoveIn: {
+          ...state.readyToMoveIn,
+          error: true,
+          loading: false,
+        },
       };
     case GET_LISTPROP_LOCATION_SEARCH:
       return {
@@ -89,6 +118,36 @@ const reducer = (state = initialState, action) => {
             error: true,
             loading: false,
           },
+        },
+      };
+
+    case GET_PROPERTY_NEIGHBORHOOD_SALE:
+      return {
+        ...state,
+        propWithNeighbor: {
+          ...state.propWithNeighbor,
+          error: false,
+          loading: false,
+          data: action.payload.rows,
+          count: action.payload.count,
+        },
+      };
+    case GET_PROPERTY_NEIGHBORHOOD_SALE_STARTED:
+      return {
+        ...state,
+        propWithNeighbor: {
+          ...state.propWithNeighbor,
+          error: false,
+          loading: true,
+        },
+      };
+    case GET_PROPERTY_NEIGHBORHOOD_SALE_ERROR:
+      return {
+        ...state,
+        propWithNeighbor: {
+          ...state.propWithNeighbor,
+          error: true,
+          loading: false,
         },
       };
     default:

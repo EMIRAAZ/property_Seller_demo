@@ -57,7 +57,7 @@ export const initialState = {
       { name: 'Hotel & Hotel Apartment', value: 'Hotel & Hotel Apartment' },
     ],
     sale: [
-      { name: 'Sell', value: 'sell' },
+      { name: 'Buy', value: 'buy' },
       { name: 'Rent', value: 'rent' },
     ],
     agent: [],

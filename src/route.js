@@ -30,6 +30,7 @@ import News from './pages/news';
 import AdminNeighborhood from './admin/neighborhood';
 import PropertyList from './pages/propertylist';
 import Luxuary from './pages/luxuary/english';
+import LuxuaryViewMore from './pages/luxuryViewMore';
 import Offplan from './admin/offplan';
 import TagHead from './admin/taghead';
 import TagLine from './admin/tagline';
@@ -124,6 +125,7 @@ function Router() {
           <Route path="news/:id" element={<News />} />
           <Route path="rent" element={<Rent />} />
           <Route path="luxury-property" element={<Luxuary />} />
+          <Route path="luxuryproperty/:id" element={<LuxuaryViewMore />} />
           <Route path="neighbourhood" element={<NeighBourhood />} />
           <Route path="sell" element={<Sell />} />
           <Route path="off-plan" element={<WebOffplan />} />
