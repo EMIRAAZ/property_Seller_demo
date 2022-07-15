@@ -47,9 +47,11 @@ const HomeProperty = ({ property, onChangePage, getProperty }) => {
       <div className="home-property-content">
         {renderPropertyHeader()}
         <div className="property-list-container">{renderProperty()}</div>
-        <BasicButton customClass="view-all-home-btn" onClick={setCurrentPage}>
-          View All
-        </BasicButton>
+        <div className="view-btn-class">
+          <BasicButton customClass="view-all-home-btn" onClick={setCurrentPage}>
+            View All
+          </BasicButton>
+        </div>
       </div>
     </div>
   );

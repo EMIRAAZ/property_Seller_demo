@@ -1,10 +1,10 @@
-const Phone = () => {
+const Phone = ({ width = '20', height = '20', viewBox = '0 0 16 16' }) => {
   return (
     <div>
       <svg
-        width="20"
-        height="20"
-        viewBox="0 0 16 16"
+        width={width}
+        height={height}
+        viewBox={viewBox}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
