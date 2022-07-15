@@ -1,17 +1,17 @@
-import "./imageFrame.scss";
-import RightArrow from "../../../components/svg/rightarrow";
+import './imageFrame.scss';
+import RightArrow from '../../../components/svg/rightarrow';
 
 const ImageFrame = () => {
   return (
     <div className="home-image-frame">
       <p className="home-properties-caption">
-        Lets Find Your <span>Properties in UAE</span>
+        Your Assistant for Properties in <span> &nbsp;UAE</span>
       </p>
-      <img
+      {/* <img
         className="img-main-home"
         src="/assets/image/home-main2.jpg"
         alt="building"
-      />
+      /> */}
       {/* <div className="background-square"></div>
       <div className="main-div">
         <div className="text">
