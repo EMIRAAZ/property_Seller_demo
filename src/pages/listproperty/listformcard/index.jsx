@@ -52,8 +52,8 @@ const ListFormCard = props => {
   };
 
   return (
-    <div className="list-form-card">
-      <div className="list-formcard">
+    <div className="list-form-card-listproperty">
+      <div className="list-formcard-listproperty">
         <InputSelect
           bgColor="white"
           border
@@ -99,7 +99,7 @@ const ListFormCard = props => {
           ]}
         />
         <InputSelect
-          customClass="price-from"
+          customClass="price-from-list"
           bgColor="white"
           border
           name="Price From"
@@ -113,7 +113,7 @@ const ListFormCard = props => {
           ]}
         />
         <InputSelect
-          customClass="price-two"
+          customClass="price-two-list"
           name="Price To"
           bgColor="white"
           border

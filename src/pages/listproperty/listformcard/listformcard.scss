@@ -1,4 +1,4 @@
-.list-form-card {
+.list-form-card-listproperty {
   z-index: 1;
   position: absolute;
   margin-left: auto;
@@ -13,7 +13,7 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.01) 0px 0px 0px 0px;
 
-  .list-formcard {
+  .list-formcard-listproperty {
     background-color: #f3f3fa;
     border-radius: 8px;
     display: grid;
@@ -38,12 +38,12 @@
       grid-column-end: 5;
       grid-row-start: 3;
     }
-    .price-from {
+    .price-from-list {
       grid-column-start: 1;
       grid-column-end: 3;
       grid-row-start: 4;
     }
-    .price-two {
+    .price-two-list {
       grid-column-start: 3;
       grid-column-end: 5;
       grid-row-start: 4;
@@ -65,35 +65,42 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .list-form-card {
-    width: 75%;
-    top: 140px;
+  .list-form-card-listproperty {
+    width: 90%;
+    top: 70px;
+    background-color: transparent;
+    box-shadow: none;
 
-    .list-formcard {
+    .list-formcard-listproperty {
+      background-color: transparent;
       .search {
         grid-column-start: 1;
         grid-column-end: 4;
         grid-row-start: 1;
       }
       .property {
+        width: 150px;
         grid-column-start: 4;
         grid-column-end: 5;
         grid-row-start: 1;
       }
       .sale {
-        grid-column-start: 1;
-        grid-column-end: 1;
-        grid-row-start: 2;
+        width: 150px;
+        grid-column-start: 5;
+        grid-column-end: 6;
+        grid-row-start: 1;
       }
-      .price-from {
-        grid-column-start: 2;
-        grid-column-end: 2;
-        grid-row-start: 2;
+      .price-from-list {
+        width: 150px;
+        grid-column-start: 6;
+        grid-column-end: 7;
+        grid-row-start: 1;
       }
-      .price-two {
-        grid-column-start: 3;
-        grid-column-end: 3;
-        grid-row-start: 2;
+      .price-two-list {
+        width: 150px;
+        grid-column-start: 7;
+        grid-column-end: 8;
+        grid-row-start: 1;
       }
       .list-search-btn {
         font-weight: 700;
@@ -101,9 +108,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        grid-row-start: 2;
-        grid-column-start: 4;
-        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-column-start: 8;
+        grid-column-end: 9;
       }
     }
   }
