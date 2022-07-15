@@ -3,13 +3,13 @@ import RightArrow from '../../../components/svg/rightarrow';
 
 const ImageFrame = () => {
   return (
-    <div className="home-image-frame">
-      <p className="home-properties-caption">
+    <div className="neighbourhood-image-frame">
+      <p className="neighbourhood-properties-caption">
         Lets Find Your <span>Properties in UAE</span>
       </p>
       <img
-        className="img-main-home"
-        src="/assets/image/home-main.jpg"
+        className="img-main-neighbourhood"
+        src="/assets/image/neighbourhood-main.jpg"
         alt="building"
       />
       {/* <div className="background-square"></div>
@@ -20,7 +20,7 @@ const ImageFrame = () => {
           <p className="third">
             Rent, Buy and sell amazing private properties across Dubai.
           </p>
-          <div className="home-black-btn">
+          <div className="neighbourhood-black-btn">
             <RightArrow
               customClass="right-arrow-rotate"
               width="25"

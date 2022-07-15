@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 700px;
+  height: 1000px;
   background-image: linear-gradient(#3151ca, #6aadfe);
 
   position: relative;
@@ -31,8 +31,8 @@
       -225deg,
       #fcfcfc 0%,
       #ffffff 29%,
-      #6aadfe 67%,
-      #3151ca 100%
+      #cae2ff 67%,
+      #aabcff 100%
     );
     background-size: auto auto;
     background-clip: border-box;
@@ -137,6 +137,7 @@
       z-index: 10;
       display: flex;
       margin: 10px auto;
+      margin-top: 80px;
       justify-content: center;
       width: 100%;
       font-family: 'Poppins';
