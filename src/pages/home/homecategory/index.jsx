@@ -49,6 +49,7 @@ const HomeCategory = () => {
   const renderHomeCategoryComponent = () => {
     return CAT.map(propertyType => (
       <div
+        key={propertyType.id}
         className="property-type-component-outer"
         onClick={() => navigateTo(propertyType.page)}
       >
