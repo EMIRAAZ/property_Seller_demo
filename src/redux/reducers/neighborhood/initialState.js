@@ -4,6 +4,7 @@ export const initialState = {
   neighbor: [],
   neighborValue: {
     title: '',
+    emirate: '',
     images: [],
   },
   env: {

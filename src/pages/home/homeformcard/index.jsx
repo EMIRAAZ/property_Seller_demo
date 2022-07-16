@@ -32,7 +32,7 @@ const HomeFormCard = props => {
 
   const makeLocationAndSearch = () => {
     const { location } = props.homeSearch;
-    if (!location.length) return '?';
+    if (!location.length) return '';
     else if (typeof location === 'string')
       return makeUrlParam(props.homeSearch);
     else {

@@ -1,9 +1,9 @@
-import axios from "../../../utils/axios";
+import axios from '../../../utils/axios';
 import {
   GET_OFFPLAN_WEB,
   GET_OFFPLAN_WEB_STARTED,
   GET_OFFPLAN_WEB_ERROR,
-} from "../../constants";
+} from '../../constants';
 
 const getOffplanStarted = () => {
   return {
@@ -17,10 +17,10 @@ const getOffplanError = () => {
   };
 };
 
-export const getOffplan = (id) => async (dispatch) => {
+export const getOffplanWeb = () => async dispatch => {
   try {
     dispatch(getOffplanStarted());
-    const res = await axios.get(`/api/offplan/${id}`);
+    const res = await axios.get(`/api/offplan`);
     dispatch({
       type: GET_OFFPLAN_WEB,
       payload: res.data?.data,

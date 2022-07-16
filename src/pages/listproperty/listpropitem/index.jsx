@@ -20,16 +20,6 @@ const ListPropertyItem = ({ property, onChangePage, getProperty }) => {
       <Property check={i < 6} key={item.id} {...item} />
     ));
 
-  const renderPropertyHeader = () => {
-    if (property && property.length > 0)
-      return (
-        <>
-          <p className="heading">Properties</p>
-          <p className="sub">{property.count} Properties found</p>
-        </>
-      );
-    else return null;
-  };
   const onChangeCurrentPage = current => {
     const offset = 6 * current - 6 > 0 ? 6 * current - 6 : 0;
     onChangePage(current, getProperty(`${property.params}&offset=${offset}`));
@@ -44,7 +34,6 @@ const ListPropertyItem = ({ property, onChangePage, getProperty }) => {
   return (
     <div className="list-prop-property" style={{ backgroundColor: bgColor() }}>
       <div className="list-prop-property-content">
-        {renderPropertyHeader()}
         <div className="property-list-container">{renderProperty()}</div>
       </div>
     </div>

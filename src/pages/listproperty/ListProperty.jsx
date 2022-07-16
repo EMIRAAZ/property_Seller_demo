@@ -23,6 +23,12 @@ const ListProperty = props => {
     else if (getID() === 'readytomove') return props.readyToMoveIn.data;
     else if (getID() === 'neighbourhood') return props.propWithNeighbor.data;
   };
+
+  const getPropertyName = () => {
+    if (getID() === 'featured') return 'Featured Properties';
+    else if (getID() === 'readytomove') return 'Ready To Move';
+    else if (getID() === 'neighbourhood') return 'Famous Neighbourhoods';
+  };
   const getPropertyFn = params => {
     if (getID() === 'featured') return props.getCatFeatured(params);
     else if (getID() === 'readytomove') return props.getRtmin(params);
@@ -49,6 +55,10 @@ const ListProperty = props => {
         listSearch={props.listSearch}
         onSearch={params => getPropertyFn(params)}
       />
+      <div className="list-property-api-details">
+        <h1>{getPropertyName()}</h1>
+        <p>{getPropertyCount()} Properties found</p>
+      </div>
       <ListPropItem
         property={getPropertyData()}
         onChangePage={() => {}}

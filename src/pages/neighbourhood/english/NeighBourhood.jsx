@@ -41,6 +41,7 @@ const Card = props => {
       >
         <div className="text-div">
           <h2 className="neigh-name"> {props.title} </h2>
+          <p className="neigh-emirate">{props.emirate} </p>
         </div>
       </div>
       <div className="button-div">

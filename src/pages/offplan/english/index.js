@@ -1,16 +1,16 @@
-import { connect } from "react-redux";
-import Offplan from "./Offplan";
-import { getLuxuryVillaWeb } from "../../../redux/actions";
+import { connect } from 'react-redux';
+import Offplan from './Offplan';
+import { getOffplanWeb } from '../../../redux/actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    villa: state.luxurywebReducer.villa,
+    offplan: state.offplanwebReducer.offplan,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    getLuxuryVillaWeb: () => dispatch(getLuxuryVillaWeb()),
+    getOffplanWeb: () => dispatch(getOffplanWeb()),
   };
 };
 

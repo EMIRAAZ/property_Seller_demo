@@ -6,6 +6,7 @@ import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer/english';
 import HomeProperty from '../homeProperty';
 import Categories from '../categories';
+import HomeCategory from '../homecategory';
 
 const Home = props => {
   return (
@@ -18,6 +19,7 @@ const Home = props => {
         homeSearch={props.homeSearch}
         onSearch={props.getHomeProperty}
       />
+      <HomeCategory />
       <div className="home-grid">
         <div className="home-grid-property">
           <HomeProperty
@@ -26,9 +28,9 @@ const Home = props => {
             getProperty={props.getHomeProperty}
           />
         </div>
-        <div className="home-grid-category">
+        {/* <div className="home-grid-category">
           <Categories />
-        </div>
+        </div> */}
       </div>
       {/* <HomeFeatured
         featured={props.homeFeatured}

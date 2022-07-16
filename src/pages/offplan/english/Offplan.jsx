@@ -1,11 +1,23 @@
-import "./Offplan.scss";
+import './Offplan.scss';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header';
+import ImageFrame from '../imageframe';
+import OffplanCard from '../../../components/offpaln/offplanCard/OffplanCard';
+import { useEffect } from 'react';
 
-import Footer from "../../../components/footer";
-import Header from "../../../components/header";
-import ImageFrame from "../imageframe";
-import OffplanCard from "../../../components/offpaln/offplanCard/OffplanCard";
+const Offplan = props => {
+  console.log(props);
 
-const Offplan = () => {
+  useEffect(() => {
+    props.getOffplanWeb();
+  }, []);
+
+  const renderOffplan = () =>
+    props.offplan.data.map(item => (
+      <div className="offplan-card-size-div">
+        <OffplanCard key={item.id} {...item} />
+      </div>
+    ));
   return (
     <>
       <div className="offplan-main-container-1">
@@ -13,21 +25,8 @@ const Offplan = () => {
         <ImageFrame />
         <div className="offplans-projects">
           <h1 className="Heading">Offplan Projects</h1>
-          <h2 className="sub-heading">358 properties found</h2>
-          <div className="offplan-card-div">
-            <div className="offplan-card-size-div">
-              <OffplanCard />
-            </div>
-            <div className="offplan-card-size-div">
-              <OffplanCard />
-            </div>
-            <div className="offplan-card-size-div">
-              <OffplanCard />
-            </div>
-            <div className="offplan-card-size-div">
-              <OffplanCard />
-            </div>
-          </div>
+          <h2 className="sub-heading">{props.offplan.count} offplans found</h2>
+          <div className="offplan-card-div">{renderOffplan()}</div>
         </div>
         <Footer />
       </div>

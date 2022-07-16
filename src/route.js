@@ -39,6 +39,7 @@ import AdminNews from './admin/news';
 import AdminBlog from './admin/blog';
 import Topstory from './pages/topstory';
 import ListProperty from './pages/listproperty';
+import AddOffplan from './admin/addoffplan';
 
 function Router() {
   const makePrivate = (component, role = '') => (
@@ -63,6 +64,14 @@ function Router() {
             <Route
               path="add-property/:id"
               element={makePrivate(<AddProperty />, 'ADMIN')}
+            />
+            <Route
+              path="add-offplan"
+              element={makePrivate(<AddOffplan />, 'ADMIN')}
+            />
+            <Route
+              path="add-offplan/:id"
+              element={makePrivate(<AddOffplan />, 'ADMIN')}
             />
             <Route path="amenity" element={makePrivate(<Amenity />, 'ADMIN')} />
             <Route
