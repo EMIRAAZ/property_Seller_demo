@@ -40,7 +40,7 @@ const Terms = () => {
             leo pharetra in sit semper et. Amet quam placerat sem.
           </p>
         </div>
-        <SocialPanel />
+        {/* <SocialPanel /> */}
         <Footer />
       </div>
     </>
