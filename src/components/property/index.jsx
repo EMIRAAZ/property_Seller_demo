@@ -40,21 +40,23 @@ const Property = props => {
 
   const renderVerified = verified =>
     verified ? (
-      <div className="property-rectangle verified-property">
-        <Tick width="25" height="20" />
-      </div>
+      <div className="new-listing verified-property">VERIFIED</div>
     ) : null;
   return (
     <div className="property-list">
       <div className="property-list-item">
-        <ImgPropCarousel customClass="" imgArray={props.images} />
+        <ImgPropCarousel
+          customClass="prop-list-img"
+          imgArray={props.images}
+          curImgClass="prop-list-img"
+        />
         {props.check ? <div className="new-listing">New Listing</div> : ''}
         {renderVerified(props.verified)}
         <div className="property-rectangle favourite">
-          <Favourite width="23" height="21" viewbox="0 -1 12 10" />
+          <Favourite width="15" height="16" viewbox="0 -1.2 12 10" />
         </div>
         <div className="property-rectangle share">
-          <Share width="18" height="23" fill="#979797" viewbox="1 -2 9 15" />
+          <Share width="14" height="15" fill="#979797" viewbox="1 -3 9 15" />
         </div>
         <div className="address">
           <LocationIcon
