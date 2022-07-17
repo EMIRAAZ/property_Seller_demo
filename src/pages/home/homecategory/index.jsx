@@ -6,37 +6,37 @@ const CAT = [
     id: 1,
     name: 'Featured Properties',
     page: '/listproperty/featured',
-    image: '/assets/image/cat1.png',
+    image: '/assets/image/cat1-min.png',
   },
   {
     id: 2,
     name: 'Famous Neighbourhood',
     page: '/neighbourhood',
-    image: '/assets/image/cat2.png',
+    image: '/assets/image/cat2-min.png',
   },
   {
     id: 3,
     name: 'Luxury Properties',
     page: '/luxury-property',
-    image: '/assets/image/cat3.png',
+    image: '/assets/image/cat3-min.png',
   },
   {
     id: 4,
     name: 'Ready To MoveIn',
     page: '/listproperty/readytomove',
-    image: '/assets/image/cat4.png',
+    image: '/assets/image/cat4-min.png',
   },
   {
     id: 5,
     name: 'Off Plan Properties',
     page: '/off-plan',
-    image: '/assets/image/catn5.jpg',
+    image: '/assets/image/cat5-min.png',
   },
   {
     id: 6,
     name: 'Secondary Properties',
     page: '/listproperty/secondaryproperty',
-    image: '/assets/image/catn5.jpg',
+    image: '/assets/image/cat5-min.png',
   },
 ];
 
