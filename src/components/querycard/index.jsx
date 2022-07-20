@@ -11,6 +11,7 @@ const QueryCard = ({
   onSearchLocation,
   cardInput,
   onSearch,
+  isSale = true,
 }) => {
   const onChange = (key, value) => {
     if (
@@ -86,7 +87,7 @@ const QueryCard = ({
         <BasicSelect
           bgColor="white"
           border
-          customClass="property"
+          customClass={`property ${isSale ? '' : 'no-sale'}`}
           name="Property Type"
           onChange={value => onChange('propertyType', value)}
           options={[
@@ -96,18 +97,20 @@ const QueryCard = ({
             { name: 'Apartments', value: 'apartment' },
           ]}
         />
-        <BasicSelect
-          bgColor="white"
-          customClass="sale"
-          name="Sale"
-          border
-          onChange={value => onChange('sale', value)}
-          options={[
-            { name: 'Buy', value: 'buy' },
-            { name: 'Rent', value: 'rent' },
-            { name: 'Both', value: 'both' },
-          ]}
-        />
+        {isSale ? (
+          <BasicSelect
+            bgColor="white"
+            customClass="sale"
+            name="Sale"
+            border
+            onChange={value => onChange('sale', value)}
+            options={[
+              { name: 'Buy', value: 'buy' },
+              { name: 'Rent', value: 'rent' },
+              { name: 'Both', value: 'both' },
+            ]}
+          />
+        ) : null}
         <InputSelect
           customClass="price-from-list"
           bgColor="white"

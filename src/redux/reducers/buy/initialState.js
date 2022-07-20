@@ -4,17 +4,18 @@ export const initialState = {
     error: false,
     property: [],
   },
-  params: '',
-  paramInput: {
+  cardInput: {
+    location: '',
     propertyType: '',
     sale: '',
     priceFrom: '',
     priceTo: '',
-    location: '',
-  },
-  locationSearch: {
-    loading: false,
-    error: false,
-    location: [],
+    noOfBed: '',
+    noOfBath: '',
+    locationSearch: {
+      loading: false,
+      error: false,
+      location: [],
+    },
   },
 };

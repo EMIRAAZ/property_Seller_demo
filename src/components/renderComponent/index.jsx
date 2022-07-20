@@ -9,13 +9,14 @@ const RenderComponent = ({
   type = 'PROPERTY',
   limit = 6,
   offset = 0,
-  query = '',
+  iQuery = `limit=${limit}&offset=${offset}`,
+  query = `limit=${limit}&offset=${offset}`,
   propertyCallApi = () => {},
   data = [],
   count = 0,
 }) => {
   useEffect(() => {
-    propertyCallApi(`limit=${limit}&offset=${offset}`);
+    propertyCallApi(iQuery);
   }, []);
 
   const selectPropertyComponent = () => {
