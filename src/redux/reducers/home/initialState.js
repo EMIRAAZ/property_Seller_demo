@@ -10,6 +10,8 @@ export const initialState = {
     sale: '',
     priceFrom: '',
     priceTo: '',
+    noOfBed: '',
+    noOfBath: '',
     locationSearch: {
       loading: false,
       error: false,

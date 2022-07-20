@@ -35,7 +35,7 @@ const Sell = () => {
           faucibus tempor.
         </Paragraph>
       </div>
-      <SocialPanel />
+      {/* <SocialPanel /> */}
       <Footer />
     </div>
   );

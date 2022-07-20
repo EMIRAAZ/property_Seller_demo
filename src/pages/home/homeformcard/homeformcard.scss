@@ -6,12 +6,15 @@
   padding: 15px;
   left: 0;
   right: 0;
-  top: 200px;
+  top: 160px;
   background-color: #ffffff;
   border-radius: 8px;
   width: 90%;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.01) 0px 0px 0px 0px;
+  .advanced-formcard {
+    gap: 20px 10px !important;
+  }
 
   .home-formcard {
     background-color: #f3f3fa;
@@ -22,6 +25,7 @@
     padding: 40px 20px;
     margin: 0px auto;
     width: 100%;
+    transition: 1s;
 
     .search {
       grid-column-start: 1;
@@ -48,6 +52,13 @@
       grid-column-end: 5;
       grid-row-start: 4;
     }
+    .bath-home {
+      display: none;
+    }
+    .bed-home {
+      display: none;
+    }
+
     .home-search-btn {
       font-weight: 700;
       font-size: 16px;
@@ -61,13 +72,78 @@
       color: #ffffff;
       border: none;
     }
+    .advanced-search-input {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+    }
+    .advanced-property {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 2;
+    }
+    .advanced-sale {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 3;
+    }
+    .advanced-price-from {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 4;
+    }
+    .advanced-price-two {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      grid-row-start: 4;
+    }
+
+    .advanced-home-search-btn {
+      font-weight: 700;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 6;
+      background-color: #2f70ff;
+      color: #ffffff;
+      border: none;
+    }
+    .advanced-bath-home {
+      display: block;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 5;
+    }
+    .advanced-bed-home {
+      display: block;
+      grid-column-start: 3;
+      grid-column-end: 5;
+      grid-row-start: 5;
+    }
+
+    .advanced-search {
+      position: absolute;
+      right: 50px;
+      bottom: 30px;
+      font-size: 15px;
+      font-family: 'Sans';
+      color: #2f70ff;
+      cursor: pointer;
+
+      &:hover {
+        color: #0033a1;
+      }
+    }
   }
 }
 
 @media only screen and (min-width: 600px) {
   .home-form-card {
     width: 65%;
-    top: 160px;
+    top: 200px;
 
     .home-formcard {
       .search {
@@ -95,6 +171,17 @@
         grid-column-end: 3;
         grid-row-start: 2;
       }
+      .advanced-search {
+        right: 50px;
+        bottom: 30px;
+      }
+      .bath-home {
+        display: none;
+      }
+      .bed-home {
+        display: none;
+      }
+
       .home-search-btn {
         font-weight: 700;
         font-size: 16px;
@@ -104,6 +191,59 @@
         grid-row-start: 2;
         grid-column-start: 4;
         grid-column-end: 4;
+      }
+      //advanced
+
+      .advanced-search-input {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+      }
+      .advanced-property {
+        grid-column-start: 4;
+        grid-column-end: 4;
+        grid-row-start: 1;
+      }
+      .advanced-sale {
+        grid-column-start: 5;
+        grid-column-end: 5;
+        grid-row-start: 1;
+      }
+      .advanced-price-from {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 2;
+      }
+      .advanced-price-two {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 2;
+      }
+      .advanced-search {
+        right: 50px;
+        bottom: 30px;
+      }
+      .advanced-bath-home {
+        display: block;
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 2;
+      }
+      .advanced-bed-home {
+        display: block;
+        grid-column-start: 4;
+        grid-column-end: 4;
+        grid-row-start: 2;
+      }
+      .advanced-home-search-btn {
+        font-weight: 700;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-row-start: 2;
+        grid-column-start: 5;
+        grid-column-end: 5;
       }
     }
   }

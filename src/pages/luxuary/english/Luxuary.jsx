@@ -1,7 +1,9 @@
 import './luxuary.scss';
 import Footer from '../../../components/footer';
 import Header from '../../../components/header';
+import Property from '../../../components/property';
 import { useEffect } from 'react';
+import ViewAll from '../viewall';
 
 const Luxuary = props => {
   useEffect(() => {
@@ -12,13 +14,13 @@ const Luxuary = props => {
   }, []);
 
   const renderstory1 = () =>
-    props.villa.data.map((item, i) => <LuxuaryCard key={i} {...item} />);
+    props.villa.data.map((item, i) => <Property key={i} {...item} />);
   const renderstory2 = () =>
-    props.apartment.data.map((item, i) => <LuxuaryCard key={i} {...item} />);
+    props.apartment.data.map((item, i) => <Property key={i} {...item} />);
   const renderstory3 = () =>
-    props.townhouse.data.map((item, i) => <LuxuaryCard key={i} {...item} />);
+    props.townhouse.data.map((item, i) => <Property key={i} {...item} />);
   const renderstory4 = () =>
-    props.penthouse.data.map((item, i) => <LuxuaryCard key={i} {...item} />);
+    props.penthouse.data.map((item, i) => <Property key={i} {...item} />);
   return (
     <div className="luxuary-container">
       <Header />
@@ -55,6 +57,7 @@ const Luxuary = props => {
               </p>
             </div>
             <div className="card-row">{renderstory1()}</div>
+            <ViewAll />
           </div>
         </div>
       ) : (
@@ -71,6 +74,7 @@ const Luxuary = props => {
               </p>
             </div>
             <div className="card-row">{renderstory2()}</div>
+            <ViewAll />
           </div>
         </div>
       ) : (
@@ -87,6 +91,7 @@ const Luxuary = props => {
               </p>
             </div>
             <div className="card-row">{renderstory3()}</div>
+            <ViewAll />
           </div>
         </div>
       ) : (
@@ -103,6 +108,7 @@ const Luxuary = props => {
               </p>
             </div>
             <div className="card-row">{renderstory4()}</div>
+            <ViewAll />
           </div>
         </div>
       ) : (

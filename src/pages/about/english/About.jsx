@@ -1,15 +1,15 @@
-import "./about.scss";
-import SocialPanel from "../../../components/socialpanel";
-import Footer from "../../../components/footer";
-import Header from "../../../components/header";
+import './about.scss';
+import SocialPanel from '../../../components/socialpanel';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header';
 
 const TeamCard = ({ url, name, position }) => {
   return (
-    <div className='card-container'>
-      <img className='team-image' src={url} alt='team' />
-      <div className='about-card-detail'>
-        <p className='card-title'>{name}</p>
-        <p className='card-description'>{position}</p>
+    <div className="card-container">
+      <img className="team-image" src={url} alt="team" />
+      <div className="about-card-detail">
+        <p className="card-title">{name}</p>
+        <p className="card-description">{position}</p>
       </div>
     </div>
   );
@@ -17,21 +17,21 @@ const TeamCard = ({ url, name, position }) => {
 
 const About = () => {
   return (
-    <div className='about-english-container'>
+    <div className="about-english-container">
       <Header />
 
-      <div className='image-container'>
-        <h2 className='header'>About Us</h2>
+      <div className="image-container">
+        <h2 className="header">About Us</h2>
         <img
-          className='about-image'
-          src='/assets/image/about.jpg'
-          alt='about us'
+          className="about-image"
+          src="/assets/image/about.jpg"
+          alt="about us"
         />
       </div>
-      <div className='about-properties'>
-        <h2 className='property-header'>About Properties</h2>
-        <div className='text-width'>
-          <p className='properties-1'>
+      <div className="about-properties">
+        <h2 className="property-header">About Properties</h2>
+        <div className="text-width">
+          <p className="properties-1">
             A one stop solution for all your property needs, the ‘UAE Assistant’
             has been disrupting the real estate sector in the UAE in ways never
             imagined before. A comprehensive real estate portal, the ‘UAE
@@ -65,30 +65,30 @@ const About = () => {
             investment. Explore the UAE Assistant to learn more of the unlimited
             opportunities. Know what it does and why it can’t be done without.
           </p>
-          <div className='about-properties-2'>
+          <div className="about-properties-2">
             <TeamCard
-              className='teamcard'
-              url='/assets/image/ashique.jpg'
-              name='Ashiq Emiraaz'
-              position='Founder & CEO'
+              className="teamcard"
+              url="/assets/image/ashique.jpg"
+              name="Ashiq Emiraaz"
+              position="Founder & CEO"
             />
 
             <TeamCard
-              url='/assets/image/ghanim.jpg'
-              name='Ghanim Al Muhairi'
-              position='Director & Legal Officer'
+              url="/assets/image/ghanim.jpg"
+              name="Ghanim Al Muhairi"
+              position="Director & Legal Officer"
             />
 
             <TeamCard
-              url='/assets/image/faisal.jpg'
-              name='Faisal Mangat'
-              position='Director & Research'
+              url="/assets/image/faisal.jpg"
+              name="Faisal Mangat"
+              position="Director & Research"
             />
           </div>
         </div>
       </div>
 
-      <SocialPanel />
+      {/* <SocialPanel /> */}
       <Footer />
     </div>
   );

@@ -4,6 +4,7 @@ import Header from '../../components/header';
 import QueryCard from '../../components/querycard';
 import RenderComponent from '../../components/renderComponent';
 import ListHeading from '../../components/ListHeading';
+import Footer from '../../components/footer';
 
 const ListProperty = props => {
   let location = useLocation();
@@ -50,6 +51,7 @@ const ListProperty = props => {
         iQuery={`limit=${6}&offset=${0}`}
         isPagination
       />
+      <Footer />
     </div>
   );
 };
