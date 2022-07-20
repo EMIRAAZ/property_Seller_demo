@@ -2,6 +2,7 @@ import './ourteam.scss';
 import Socialpanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer';
 import Header from '../../../components/header';
+import MoveToTopComponent from '../../../components/movetotop';
 
 const image = [
   '/assets/image/img1.jpg',
@@ -85,6 +86,7 @@ const Ourteam = () => {
           </div>
         </div>
         {/* <Socialpanel/> */}
+        <MoveToTopComponent />
         <Footer />
       </div>
     </>

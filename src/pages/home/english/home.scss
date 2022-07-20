@@ -40,12 +40,21 @@
       }
     }
   }
+  .home-ctrl {
+    display: flex;
+    width: 95%;
+    margin: 10px auto 40px auto;
+    justify-content: space-between;
+  }
 }
 
 @media only screen and (min-width: 600px) {
   .home-english {
     .home-header-class {
       width: 89%;
+    }
+    .home-ctrl {
+      margin: 10px auto 150px auto;
     }
   }
 }

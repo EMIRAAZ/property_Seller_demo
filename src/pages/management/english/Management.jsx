@@ -3,6 +3,8 @@ import Header from '../../../components/header';
 import ImageFrame from '../imageframe';
 import Paragraph from '../../../components/paragraph';
 import SocialPanel from '../../../components/socialpanel';
+import MoveToTopComponent from '../../../components/movetotop';
+
 import Footer from '../../../components/footer';
 const Management = () => {
   return (
@@ -21,6 +23,7 @@ const Management = () => {
         while you reap the rewards.
       </Paragraph>
       {/* <SocialPanel customClass="management-social-panel" /> */}
+      <MoveToTopComponent />
       <Footer />
     </div>
   );

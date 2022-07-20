@@ -10,6 +10,7 @@ import Bed from '../../../components/svg/bed';
 import Bath from '../../../components/svg/bath';
 import Living from '../../../components/svg/living';
 import Area from '../../../components/svg/area';
+import MoveToTopComponent from '../../../components/movetotop';
 
 const PropertyView = props => {
   let location = useLocation();
@@ -57,7 +58,7 @@ const PropertyView = props => {
       <div className="similar-properties">
         <h1 className="proerty-details-heading">Similar Properties.</h1>
       </div>
-
+      <MoveToTopComponent />
       <Footer />
     </div>
   );

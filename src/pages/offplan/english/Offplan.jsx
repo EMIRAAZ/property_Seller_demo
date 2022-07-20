@@ -4,6 +4,7 @@ import RenderComponent from '../../../components/renderComponent';
 import Footer from '../../../components/footer/english';
 import ListHeading from '../../../components/ListHeading';
 import OffplanCard from '../../../components/offpaln/offplanCard/OffplanCard';
+import MoveToTopComponent from '../../../components/movetotop';
 
 const Offplan = props => {
   const renderOffplan = () =>
@@ -29,6 +30,7 @@ const Offplan = props => {
           iQuery={`&limit=${6}&offset=${0}`}
           isPagination
         />
+        <MoveToTopComponent />
         <Footer />
       </div>
     </>

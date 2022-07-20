@@ -5,6 +5,7 @@ import ListHeading from '../../components/ListHeading';
 import QueryCard from '../../components/querycard';
 import RenderComponent from '../../components/renderComponent';
 import Footer from '../../components/footer';
+import MoveToTopComponent from '../../components/movetotop';
 
 const PropertySearchView = props => {
   const search = useLocation().search;
@@ -28,6 +29,7 @@ const PropertySearchView = props => {
         isPagination
       />
       <Footer />
+      <MoveToTopComponent />
     </div>
   );
 };

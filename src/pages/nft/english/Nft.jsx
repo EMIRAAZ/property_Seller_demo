@@ -2,6 +2,7 @@ import './nft.scss';
 import Header from '../../../components/header';
 import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer';
+import MoveToTopComponent from '../../../components/movetotop';
 
 const card1 = [
   {
@@ -148,6 +149,7 @@ const Nft = () => {
         <input className="letter-button" type="submit" value="Subscribe" />
       </div>
       {/* <SocialPanel /> */}
+      <MoveToTopComponent />
       <Footer />
     </div>
   );

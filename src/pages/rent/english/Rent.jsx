@@ -5,6 +5,7 @@ import QueryCard from '../../../components/querycard';
 import RenderComponent from '../../../components/renderComponent';
 import Footer from '../../../components/footer';
 import ListHeading from '../../../components/ListHeading';
+import MoveToTopComponent from '../../../components/movetotop';
 
 const Rent = props => {
   const [param, setParam] = useState('');
@@ -30,6 +31,7 @@ const Rent = props => {
         query={`sale=rent${param}`}
         isPagination
       />
+      <MoveToTopComponent />
       <Footer />
     </div>
   );

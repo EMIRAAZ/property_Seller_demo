@@ -17,7 +17,7 @@ const ViewAll = ({ count, getApi, limit = 6 }) => {
   };
 
   return (
-    <div className="view-btn-class">
+    <div className="view-btn-class-luxury">
       <div className="container">
         <BasicButton customClass="view-all-home-btn" onClick={setCurrentPage}>
           View All Properties

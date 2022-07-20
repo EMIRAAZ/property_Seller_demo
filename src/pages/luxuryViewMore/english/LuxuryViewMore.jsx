@@ -4,6 +4,7 @@ import Header from '../../../components/header';
 import Pagination from '../../../components/pagination';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import MoveToTopComponent from '../../../components/movetotop';
 
 const LuxuryViewMore = props => {
   let location = useLocation();
@@ -40,6 +41,7 @@ const LuxuryViewMore = props => {
           />
         </div>
       </div>
+      <MoveToTopComponent />
       <Footer />
     </div>
   );

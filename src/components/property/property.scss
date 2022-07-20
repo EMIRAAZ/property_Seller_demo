@@ -1,7 +1,7 @@
 .property-list {
   margin: 10px;
   border-radius: 4px;
-  box-shadow: rgba(70, 70, 70, 0.1) 0px 1px 4px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
   .property-list-item {
     position: relative;
@@ -201,7 +201,7 @@
   }
 }
 .property-list:hover {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 4px 5px 14px 5px;
 }
 
 @media only screen and (min-width: 600px) {

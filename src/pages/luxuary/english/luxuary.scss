@@ -94,7 +94,7 @@
 }
 .luxuary-container {
   width: 100%;
-  background-color: #eef7ff;
+  // background-color: #eef7ff;
   .l-image-container {
     width: 100%;
     .luxuary-header {
@@ -114,9 +114,8 @@
     }
 
     .luxuary-image {
-      height: 400px;
+      height: 500px;
       width: 100%;
-      object-fit: cover;
     }
   }
 
@@ -143,9 +142,9 @@
     }
   }
   .lux-main {
-    background-color: #eef7ff;
+    // background-color: #eef7ff;
     .viewall {
-      background-color: #eef7ff;
+      // background-color: #eef7ff;
       margin: 50px auto;
 
       .luxuary-text-width {
@@ -177,7 +176,7 @@
         display: flex;
         flex-direction: row;
         width: 95%;
-        margin: auto;
+        margin: 0px auto;
       }
     }
   }
@@ -316,9 +315,9 @@
       }
     }
     .lux-main {
-      background-color: #eef7ff;
+      // background-color: #eef7ff;
       .viewall {
-        background-color: #eef7ff;
+        // background-color: #eef7ff;
         margin: 50px auto;
         .luxuary-text-width {
           width: 85%;
@@ -351,6 +350,7 @@
           // grid-template-columns:repeat(2, 1fr) ;
           display: flex;
           flex-wrap: wrap;
+          width: 95%;
         }
       }
     }

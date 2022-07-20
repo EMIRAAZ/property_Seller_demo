@@ -4,6 +4,7 @@ import Header from '../../../components/header';
 import Property from '../../../components/property';
 import { useEffect } from 'react';
 import ViewAll from '../viewall';
+import MoveToTopComponent from '../../../components/movetotop';
 
 const Luxuary = props => {
   useEffect(() => {
@@ -24,14 +25,14 @@ const Luxuary = props => {
   return (
     <div className="luxuary-container">
       <Header />
-      <div className="l-image-container">
+      {/* <div className="l-image-container">
         <h2 className="luxuary-header">Luxury properties</h2>
         <img
           className="luxuary-image"
           src="/assets/image/luxuary.jpg"
           alt="luxuary properties"
         />
-      </div>
+      </div> */}
       <div className="luxuary-properties">
         <div className="luxuary-text-width">
           <p className="l-properties-3">
@@ -114,6 +115,7 @@ const Luxuary = props => {
       ) : (
         <></>
       )}
+      <MoveToTopComponent />
       <Footer />
     </div>
   );
