@@ -1,0 +1,25 @@
+.render-component-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .component-container {
+    width: 95%;
+    margin: 40px 0px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .render-component-div {
+    .component-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

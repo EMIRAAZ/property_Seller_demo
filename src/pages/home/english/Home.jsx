@@ -5,6 +5,7 @@ import HomeFormCard from '../homeformcard';
 import Footer from '../../../components/footer/english';
 import HomeProperty from '../homeProperty';
 import HomeCategory from '../homecategory';
+import RenderComponent from '../../../components/renderComponent';
 
 const Home = props => {
   return (
@@ -18,30 +19,23 @@ const Home = props => {
         onSearch={props.getHomeProperty}
       />
       <HomeCategory />
-      <div className="home-grid">
-        <div className="home-grid-property">
-          <HomeProperty
-            property={props.homeProperty}
-            onChangePage={props.changePageHomeProperty}
-            getProperty={props.getHomeProperty}
-          />
+      {props.homeProperty.property && props.homeProperty.property.length > 0 ? (
+        <div className="property-render-header">
+          <p className="heading-home">Properties</p>
+          <p className="sub-home">
+            {props.homeProperty.count} Properties found
+          </p>
         </div>
-        {/* <div className="home-grid-category">
-          <Categories />
-        </div> */}
-      </div>
-      {/* <HomeFeatured
-        featured={props.homeFeatured}
-        getFeatured={props.getHomeFeatured}
-        onChangePage={props.changePageHomeFeatured}
+      ) : null}
+      <RenderComponent
+        data={props.homeProperty.property}
+        propertyCallApi={props.getHomeProperty}
       />
-      <HomeBestDeals />
-      <HomeLuxury
-        luxury={props.homeLuxury}
-        getLuxury={props.getHomeLuxury}
-        onChangePage={props.changePageHomeLuxury}
+      {/* <HomeProperty
+        property={props.homeProperty}
+        onChangePage={props.changePageHomeProperty}
+        getProperty={props.getHomeProperty}
       /> */}
-      {/* <SocialPanel /> */}
       <Footer />
     </div>
   );
