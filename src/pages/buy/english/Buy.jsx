@@ -31,7 +31,7 @@ const Buy = props => {
   return (
     <div className="buy-english">
       <Header customClass="buy-header-class" />
-      <ImageFrame />
+      {/* <ImageFrame /> */}
       <BuyFormCard
         onInputChange={props.onChangeBuyParams}
         paramInput={props.paramInput}

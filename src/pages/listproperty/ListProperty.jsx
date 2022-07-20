@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from '../../components/header';
 import ListFormCard from './listformcard';
+import QueryCard from '../../components/querycard';
 import ListPropItem from './listpropitem';
 import Pagination from '../../components/pagination';
 
@@ -49,16 +50,22 @@ const ListProperty = props => {
   return (
     <div className="list-property-api">
       <Header />
-      <ListFormCard
+      <QueryCard
         onInputChange={props.onChangeListPropParams}
         onSearchLocation={props.getListpropLocationSearch}
         listSearch={props.listSearch}
         onSearch={params => getPropertyFn(params)}
       />
-      <div className="list-property-api-details">
+      {/* <ListFormCard
+        onInputChange={props.onChangeListPropParams}
+        onSearchLocation={props.getListpropLocationSearch}
+        listSearch={props.listSearch}
+        onSearch={params => getPropertyFn(params)}
+      /> */}
+      {/* <div className="list-property-api-details">
         <h1>{getPropertyName()}</h1>
         <p>{getPropertyCount()} Properties found</p>
-      </div>
+      </div> */}
       <ListPropItem
         property={getPropertyData()}
         onChangePage={() => {}}

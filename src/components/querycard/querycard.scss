@@ -1,0 +1,117 @@
+.query-card-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9e5ff;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    gap: 10px 5px;
+    padding: 50px 20px;
+    .search {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+    }
+    .property {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 2;
+    }
+    .sale {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 3;
+    }
+    .price-from-list {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 4;
+    }
+    .price-two-list {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      grid-row-start: 4;
+    }
+    .bath-list {
+      grid-row-start: 5;
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    .bed-list {
+      grid-row-start: 5;
+      grid-column-start: 3;
+      grid-column-end: 5;
+    }
+    .list-search-btn {
+      font-weight: 700;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-row-start: 6;
+      grid-column-start: 1;
+      grid-column-end: 6;
+      background-color: #1fa0e9;
+      color: #ffffff;
+      border: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .query-card-component {
+    .container {
+      width: 80%;
+      padding: 50px;
+      gap: 4px;
+
+      .search {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+      .property {
+        grid-row-start: 1;
+        grid-column-start: 4;
+        grid-column-end: 5;
+      }
+      .sale {
+        grid-row-start: 1;
+        grid-column-start: 5;
+        grid-column-end: 6;
+      }
+      .price-from-list {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+      .price-two-list {
+        grid-row-start: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+      .bath-list {
+        grid-row-start: 2;
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+      .bed-list {
+        grid-row-start: 2;
+        grid-column-start: 4;
+        grid-column-end: 5;
+      }
+      .list-search-btn {
+        font-weight: 700;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-row-start: 2;
+        grid-column-start: 5;
+        grid-column-end: 6;
+      }
+    }
+  }
+}
