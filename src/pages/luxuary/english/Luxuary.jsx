@@ -4,6 +4,7 @@ import Header from '../../../components/header';
 import Property from '../../../components/property';
 import { useEffect } from 'react';
 import ViewAll from '../viewall';
+import MoveToTopComponent from '../../../components/movetotop';
 
 const Luxuary = props => {
   useEffect(() => {
@@ -114,6 +115,7 @@ const Luxuary = props => {
       ) : (
         <></>
       )}
+      <MoveToTopComponent />
       <Footer />
     </div>
   );

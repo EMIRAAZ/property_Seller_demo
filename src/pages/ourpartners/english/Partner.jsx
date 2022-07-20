@@ -2,6 +2,8 @@ import './partner.scss';
 import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer';
 import Header from '../../../components/header';
+import MoveToTopComponent from '../../../components/movetotop';
+
 // import Footer from '../../../components/footer'
 
 const image = [
@@ -83,6 +85,7 @@ const Ourpartner = () => {
           </div>
         </div>
         {/* <SocialPanel /> */}
+        <MoveToTopComponent />
         <Footer />
       </div>
     </>

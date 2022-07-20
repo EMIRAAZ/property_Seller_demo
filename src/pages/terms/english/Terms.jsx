@@ -1,18 +1,19 @@
-import "./terms.scss";
-import SocialPanel from "../../../components/socialpanel";
-import Footer from "../../../components/footer";
-import Header from "../../../components/header";
+import './terms.scss';
+import SocialPanel from '../../../components/socialpanel';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header';
+import MoveToTopComponent from '../../../components/movetotop';
 
 const Terms = () => {
   return (
     <>
-      <div className='terms-container'>
+      <div className="terms-container">
         <Header />
-        <div className='h-container'>
-          <h2 className='p-header'>Terms And Conditions</h2>
-          <h3 className='p2-header'>Last updated on 1-12-2021</h3>
+        <div className="h-container">
+          <h2 className="p-header">Terms And Conditions</h2>
+          <h3 className="p2-header">Last updated on 1-12-2021</h3>
         </div>
-        <div className='terms-container-inside'>
+        <div className="terms-container-inside">
           <p>
             <h3>1. TERMS</h3>
             1.1 The term mentioned here as ‘we’,’our’ and ‘us’ would mean ‘The
@@ -47,7 +48,7 @@ const Terms = () => {
             any of these rules have been violated. Upon barring your views of
             the contentor termination of the license, any material in your
             possession obtained as downloaded matter in the form of print or
-            storage should be immediately destroyed.{" "}
+            storage should be immediately destroyed.{' '}
             <h3> 3. YOUR RESPONSIBILITIES</h3>
             3.1 We do ot claim to be a real estate agency, we only provide
             services where agents can market. You may view the details of the
@@ -217,6 +218,7 @@ const Terms = () => {
           </p>
         </div>
         {/* <SocialPanel /> */}
+        <MoveToTopComponent />
         <Footer />
       </div>
     </>

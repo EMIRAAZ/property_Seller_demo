@@ -1,0 +1,28 @@
+.move-to-top {
+  background-color: #2f70ff;
+  width: 47px;
+  height: 37px;
+  border-radius: 2.8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.move-to-top-component {
+  width: 95%;
+  margin: 5px auto 50px auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .move-top-btn {
+    background-color: #2f70ff;
+    width: 47px;
+    height: 37px;
+    border-radius: 2.8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}

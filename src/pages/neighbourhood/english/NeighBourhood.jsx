@@ -5,6 +5,7 @@ import Header from '../../../components/header';
 import ImageFrame from '../imageframe';
 import BasicButton from '../../../components/button/BasicButton';
 import { useNavigate } from 'react-router-dom';
+import MoveToTopComponent from '../../../components/movetotop';
 
 const NeighborHood = props => {
   useEffect(() => {
@@ -22,6 +23,7 @@ const NeighborHood = props => {
             props.neighbor.rows.map(item => <Card key={item.id} {...item} />)}
         </div>
       </div>
+      <MoveToTopComponent />
       <Footer />
     </div>
   );

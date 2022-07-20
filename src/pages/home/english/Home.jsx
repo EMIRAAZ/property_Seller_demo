@@ -8,6 +8,7 @@ import ViewAll from '../viewall';
 import HomeCategory from '../homecategory';
 import RenderComponent from '../../../components/renderComponent';
 import ListHeading from '../../../components/ListHeading';
+import { MoveToTop } from '../../../components/movetotop';
 
 const Home = props => {
   const navigate = useNavigate();
@@ -31,10 +32,14 @@ const Home = props => {
         propertyCallApi={props.getHomeProperty}
         newList
       />
-      <ViewAll
-        count={props.homeProperty.count}
-        getApi={props.getHomeProperty}
-      />
+      <div className="home-ctrl">
+        <ViewAll
+          count={props.homeProperty.count}
+          getApi={props.getHomeProperty}
+        />
+        <MoveToTop />
+      </div>
+
       <Footer />
     </div>
   );
