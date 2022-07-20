@@ -1,18 +1,18 @@
-import "./policy.scss";
-import SocialPanel from "../../../components/socialpanel";
-import Footer from "../../../components/footer";
-import Header from "../../../components/header";
+import './policy.scss';
+import SocialPanel from '../../../components/socialpanel';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header';
 
 const Policy = () => {
   return (
     <>
-      <div className='policy-container'>
+      <div className="policy-container">
         <Header />
-        <div className='h-container'>
-          <h2 className='p-header'>Privacy Policy</h2>
+        <div className="h-container">
+          <h2 className="p-header">Privacy Policy</h2>
         </div>
-        <div className='policy-description'>
-          <div className='description-container'>
+        <div className="policy-description">
+          <div className="description-container">
             <p>
               <h3>1. INTRODUCTION</h3> 1.1 UAE Assistant is a company registered
               in Dubai with its registered office at ………………… , which owns and
@@ -39,7 +39,7 @@ const Policy = () => {
               jointly act as a legal entity. 1.7 With respect to the data
               processed by the website, ‘The UAE Assistant’ vests control as the
               Data Controller. The UAE Assistant is part of the ………………… Group of
-              companies, which for reference also include……………{" "}
+              companies, which for reference also include……………{' '}
               <h3>2. YOUR INFORMATION</h3> 2.1 The type of information we
               collect is either personal or general in nature: a.Personal
               Information: Whilst you sign in on the website as a consumer or
@@ -83,7 +83,7 @@ const Policy = () => {
               business partners, service providers, advertising organizations,
               analytics providers and search information providers. We may get
               details about you from such third parties. This data may be joined
-              with some other data you gave to us, as mentioned above.{" "}
+              with some other data you gave to us, as mentioned above.{' '}
               <h3>3. COLLECTING AND USING INFORMATION:</h3> 3.1 The most part of
               this website can be used without divulging details . But, some
               services and third party technology however may engage in
@@ -160,9 +160,9 @@ const Policy = () => {
               prevent unauthorized access to the details through strict
               guidelines and security norms.
               <h3>
-                {" "}
+                {' '}
                 7. YOUR RIGHT TO ACCESS AND CORRECT YOUR PERSONAL INFORMATION
-              </h3>{" "}
+              </h3>{' '}
               7.1 You have the right to access and control your information.
               Your requests will be honored and wherever applicable the data can
               be corrected, amended or deleted. Kindly write to support@the
@@ -179,7 +179,7 @@ const Policy = () => {
               stop receiving email communication or you can send a mail to
               support@theuaeassistant.ae. For enquiries on Marketing you can use
               any of the links mentioned in the marketing and communication
-              section or by sending an email to marketing@theuaeassistant.ae.{" "}
+              section or by sending an email to marketing@theuaeassistant.ae.{' '}
               <h3>8. USE OF COOKIES</h3> 8.1: This website uses cookies (which
               is not limited to google analytics and double click for
               publishers. Information regarding google partner sites can be
@@ -227,7 +227,7 @@ const Policy = () => {
               information from our Website and elsewhere on the internet and use
               that information to provide data on web analytics. If you wish not
               to entertain the use of these tracking pixels we would request you
-              to adjust your browser settings accordingly.{" "}
+              to adjust your browser settings accordingly.{' '}
               <h3>10. WEB SERVER & APPLICATION LOGS</h3> 10.1 Our servers have
               been programmed to collect certain information from the users
               visiting our website to help us monitor and protect our interests
@@ -240,7 +240,7 @@ const Policy = () => {
               assigned by us. d.Operating system of the device and other
               technical facts e.Page visits and content viewed, saved, and
               purchased f.Details provided g.URLs visited during, before and
-              after you use our Services<h3> 11. THIRD PARTY ADVERTISERS</h3>{" "}
+              after you use our Services<h3> 11. THIRD PARTY ADVERTISERS</h3>{' '}
               11.1Third party advertising networks are allowed to place
               advertisements on the site on our behalf. They may use cookies in
               the visitor’s cookie file, which will have their own target
@@ -252,7 +252,7 @@ const Policy = () => {
               Third party advertisers operate on their own Privacy Policies
               which are made available on their websites. For further
               information on what third party advertisers do please get in touch
-              with info@theuaeassistant.com{" "}
+              with info@theuaeassistant.com{' '}
               <h3>12. INTEREST-BASED ADVERTISING (IBA) </h3>12.1 IBA or
               Interest-based advertising are meant to deliver advertising
               material to users who show specific interest (target audience)
@@ -291,7 +291,7 @@ const Policy = () => {
               <h3>
                 13. LINKS AND CONNECTIONS TO AND USE OF OTHER THIRD-PARTY
                 SERVICES
-              </h3>{" "}
+              </h3>{' '}
               13.1 Our site may contain links that are connected to third party
               apps, which you may come across while using the website, that are
               not directly linked to us. These links may lead you to social
@@ -317,7 +317,7 @@ const Policy = () => {
             </p>
           </div>
         </div>
-        <SocialPanel />
+        {/* <SocialPanel /> */}
         <Footer />
       </div>
     </>

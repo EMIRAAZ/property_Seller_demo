@@ -25,10 +25,11 @@ const Home = props => {
         }}
       />
       <HomeCategory />
-      <ListHeading count={props.homeProperty.count} />
+      {/* <ListHeading count={props.homeProperty.count} /> */}
       <RenderComponent
         data={props.homeProperty.property}
         propertyCallApi={props.getHomeProperty}
+        newList
       />
       <ViewAll
         count={props.homeProperty.count}

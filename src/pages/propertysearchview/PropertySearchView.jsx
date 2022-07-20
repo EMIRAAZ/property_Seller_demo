@@ -4,7 +4,6 @@ import Header from '../../components/header';
 import ListHeading from '../../components/ListHeading';
 import QueryCard from '../../components/querycard';
 import RenderComponent from '../../components/renderComponent';
-import { getHomeProperty } from '../../redux/actions';
 import Footer from '../../components/footer';
 
 const PropertySearchView = props => {
@@ -13,10 +12,12 @@ const PropertySearchView = props => {
     <div className="list-property-api">
       <Header />
       <QueryCard
-        onInputChange={props.onChangeListPropParams}
-        onSearchLocation={props.getListpropLocationSearch}
+        onInputChange={props.onHomeSearchInputChange}
+        onSearchLocation={props.getHomeLocationSearch}
         cardInput={props.homeSearch}
-        onSearch={params => getHomeProperty(params)}
+        onSearch={params => {
+          props.getHomeProperty(params);
+        }}
       />
       <ListHeading count={props.homeProperty.count} />
       <RenderComponent

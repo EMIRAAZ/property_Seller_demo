@@ -43,7 +43,7 @@ const Blog = props => {
           </div>
           {renderCard()}
         </div>
-        <SocialPanel />
+        {/* <SocialPanel /> */}
         <Footer />
       </div>
     </>

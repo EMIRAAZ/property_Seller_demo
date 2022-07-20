@@ -126,7 +126,7 @@ const Header = ({ customClass }) => {
               <DownArrow fill={getLoc() === '' ? '#ffffff' : '#000000'} />
             </li>
             <li className="simple-list" onClick={() => navigate('/sell')}>
-              List&nbsp;Your&nbsp;Property
+              Advertise&nbsp;With&nbsp;Us
             </li>
           </ul>
         </li>

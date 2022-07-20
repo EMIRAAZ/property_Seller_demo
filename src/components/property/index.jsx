@@ -40,7 +40,13 @@ const Property = props => {
 
   const renderVerified = verified =>
     verified ? (
-      <div className="new-listing verified-property">VERIFIED</div>
+      <div
+        className={`new-listing verified-property ${
+          props.check ? '' : 'no-verified'
+        }`}
+      >
+        VERIFIED
+      </div>
     ) : null;
   return (
     <div className="property-list">

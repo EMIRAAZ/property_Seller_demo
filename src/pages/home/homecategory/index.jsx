@@ -10,7 +10,7 @@ const CAT = [
   },
   {
     id: 2,
-    name: 'Famous Neighbourhood',
+    name: 'Neighbourhoods',
     page: '/neighbourhood',
     image: '/assets/image/cat2-min.png',
   },
@@ -22,7 +22,7 @@ const CAT = [
   },
   {
     id: 4,
-    name: 'Ready To MoveIn',
+    name: 'Ready Properties',
     page: '/listproperty/readytomove',
     image: '/assets/image/cat4-min.png',
   },
@@ -34,8 +34,8 @@ const CAT = [
   },
   {
     id: 6,
-    name: 'Secondary Properties',
-    page: '/listproperty/secondaryproperty',
+    name: 'Verified Properties',
+    page: '/listproperty/verifiedproperties',
     image: '/assets/image/cat5-min.png',
   },
 ];

@@ -3,9 +3,7 @@ import './imageFrame.scss';
 const ImageFrame = () => {
   return (
     <div className="home-image-frame">
-      <p className="home-properties-caption">
-        Your Assistant for Properties in <span> &nbsp;UAE</span>
-      </p>
+      <p className="home-properties-caption">Your Property Assistant</p>
     </div>
   );
 };
