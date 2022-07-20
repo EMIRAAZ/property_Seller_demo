@@ -9,11 +9,16 @@ import { makeUrlParam } from '../../utils';
 const QueryCard = ({
   onInputChange,
   onSearchLocation,
-  listSearch,
+  cardInput,
   onSearch,
 }) => {
   const onChange = (key, value) => {
-    if (key === 'priceFrom' || key === 'priceTo') {
+    if (
+      key === 'priceFrom' ||
+      key === 'priceTo' ||
+      key === 'noOfBed' ||
+      key === 'noOfBath'
+    ) {
       const num = Number(value);
       if (Number.isInteger(num)) {
         onInputChange({ key, value });
@@ -27,7 +32,7 @@ const QueryCard = ({
   };
 
   const getSearchValue = () => {
-    const { location } = listSearch;
+    const { location } = cardInput;
     if (typeof location === 'string') return location;
     else
       return `${location.placeAddress} ${
@@ -36,7 +41,7 @@ const QueryCard = ({
   };
 
   const makeParam = () => {
-    const newListSearch = { ...listSearch };
+    const newListSearch = { ...cardInput };
     const { location } = newListSearch;
     let loc = '';
     if (typeof location === 'string') loc = location;
@@ -67,7 +72,7 @@ const QueryCard = ({
           onChange={value => onChange('location', value)}
           value={getSearchValue()}
           leftIcon={LocationIcon}
-          options={listSearch.locationSearch.location.map(location => {
+          options={cardInput.locationSearch.location.map(location => {
             return {
               name: `${location.placeAddress} ${location.building} ${location.city}`,
               value: {
@@ -109,7 +114,7 @@ const QueryCard = ({
           border
           name="Price From"
           onChange={value => onChange('priceFrom', value)}
-          value={listSearch.priceFrom}
+          value={cardInput.priceFrom}
           options={[
             { name: '300,000', value: 300000 },
             { name: '400,000', value: 400000 },
@@ -123,7 +128,7 @@ const QueryCard = ({
           bgColor="white"
           border
           onChange={value => onChange('priceTo', value)}
-          value={listSearch.priceTo}
+          value={cardInput.priceTo}
           options={[
             { name: '300,0000', value: 3000000 },
             { name: '400,0000', value: 4000000 },
@@ -136,8 +141,8 @@ const QueryCard = ({
           name="Beds"
           bgColor="white"
           border
-          onChange={value => onChange('noOfbed', value)}
-          value={listSearch.noOfBed}
+          onChange={value => onChange('noOfBed', value)}
+          value={cardInput.noOfBed}
           options={[
             { name: '1', value: 1 },
             { name: '2', value: 2 },
@@ -151,7 +156,7 @@ const QueryCard = ({
           bgColor="white"
           border
           onChange={value => onChange('noOfBath', value)}
-          value={listSearch.noOfBath}
+          value={cardInput.noOfBath}
           options={[
             { name: '1', value: 1 },
             { name: '2', value: 2 },

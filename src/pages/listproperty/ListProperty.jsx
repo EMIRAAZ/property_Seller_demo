@@ -53,15 +53,9 @@ const ListProperty = props => {
       <QueryCard
         onInputChange={props.onChangeListPropParams}
         onSearchLocation={props.getListpropLocationSearch}
-        listSearch={props.listSearch}
+        cardInput={props.listSearch}
         onSearch={params => getPropertyFn(params)}
       />
-      {/* <ListFormCard
-        onInputChange={props.onChangeListPropParams}
-        onSearchLocation={props.getListpropLocationSearch}
-        listSearch={props.listSearch}
-        onSearch={params => getPropertyFn(params)}
-      /> */}
       {/* <div className="list-property-api-details">
         <h1>{getPropertyName()}</h1>
         <p>{getPropertyCount()} Properties found</p>
