@@ -3,7 +3,7 @@ import Header from '../../../components/header';
 import ImageFrame from '../imageframe';
 import HomeFormCard from '../homeformcard';
 import Footer from '../../../components/footer/english';
-import HomeProperty from '../homeProperty';
+import ViewAll from '../viewall';
 import HomeCategory from '../homecategory';
 import RenderComponent from '../../../components/renderComponent';
 
@@ -31,11 +31,10 @@ const Home = props => {
         data={props.homeProperty.property}
         propertyCallApi={props.getHomeProperty}
       />
-      {/* <HomeProperty
-        property={props.homeProperty}
-        onChangePage={props.changePageHomeProperty}
-        getProperty={props.getHomeProperty}
-      /> */}
+      <ViewAll
+        count={props.homeProperty.count}
+        getApi={props.getHomeProperty}
+      />
       <Footer />
     </div>
   );

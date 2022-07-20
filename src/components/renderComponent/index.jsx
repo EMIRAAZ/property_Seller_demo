@@ -9,6 +9,7 @@ const RenderComponent = ({
   type = 'PROPERTY',
   limit = 6,
   offset = 0,
+  query = '',
   propertyCallApi = () => {},
   data = [],
   count = 0,
@@ -34,11 +35,17 @@ const RenderComponent = ({
     ));
   };
 
+  const onChangePage = ofst => {
+    propertyCallApi(`limit=${limit}&offset=${ofst}${query}`);
+  };
+
   return (
     <div className={`render-component-div ${className}`}>
       <div className="component-container">{renderPropertyComponent()}</div>
       <div className="pagination-container">
-        {isPagination ? <Pagination /> : null}
+        {isPagination ? (
+          <Pagination count={count} onChange={oft => onChangePage(oft)} />
+        ) : null}
       </div>
     </div>
   );

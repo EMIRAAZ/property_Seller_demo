@@ -7,42 +7,7 @@ import {
   GET_HOME_LOCATION_SEARCH,
   GET_HOME_LOCATION_SEARCH_ERROR,
   GET_HOME_LOCATION_SEARCH_STARTED,
-  GET_HOME_FEATURED,
-  GET_HOME_FEATURED_ERROR,
-  GET_HOME_FEATURED_STARTED,
-  GET_HOME_LUXURY,
-  GET_HOME_LUXURY_ERROR,
-  GET_HOME_LUXURY_STARTED,
-  CHANGE_HOME_PROPERTY_PAGE,
-  CHANGE_HOME_FEATURED_PAGE,
-  CHANGE_HOME_LUXURY_PAGE,
 } from '../../constants';
-
-export const changePageHomeProperty = (payload, cb) => async dispatch => {
-  dispatch({
-    type: CHANGE_HOME_PROPERTY_PAGE,
-    payload: payload,
-  });
-  if (typeof cb === 'function') {
-    cb();
-  }
-};
-
-export const changePageHomeFeatured = (payload, cb) => async dispatch => {
-  dispatch({
-    type: CHANGE_HOME_FEATURED_PAGE,
-    payload: payload,
-  });
-  cb();
-};
-
-export const changePageHomeLuxury = (payload, cb) => async dispatch => {
-  dispatch({
-    type: CHANGE_HOME_LUXURY_PAGE,
-    payload: payload,
-  });
-  cb();
-};
 
 /// home property ///
 
@@ -115,65 +80,3 @@ export const getHomeLocationSearch = location => async dispatch => {
 };
 
 /// home location search ///
-
-/// home featured ///
-
-const getHomeFeaturedStarted = () => {
-  return {
-    type: GET_HOME_FEATURED_STARTED,
-  };
-};
-
-const getHomeFeaturedError = () => {
-  return {
-    type: GET_HOME_FEATURED_ERROR,
-  };
-};
-
-export const getHomeFeatured =
-  (params = '') =>
-  async dispatch => {
-    try {
-      dispatch(getHomeFeaturedStarted());
-      const res = await axios.get(`/api/featured?limit=2${params}`);
-      dispatch({
-        type: GET_HOME_FEATURED,
-        payload: res.data?.data,
-      });
-    } catch (e) {
-      dispatch(getHomeFeaturedError());
-    }
-  };
-
-/// home featured ///
-
-/// home luxury ///
-
-const getHomeLuxuryStarted = () => {
-  return {
-    type: GET_HOME_LUXURY_STARTED,
-  };
-};
-
-const getHomeLuxuryError = () => {
-  return {
-    type: GET_HOME_LUXURY_ERROR,
-  };
-};
-
-export const getHomeLuxury =
-  (params = '') =>
-  async dispatch => {
-    try {
-      dispatch(getHomeLuxuryStarted());
-      const res = await axios.get(`/api/property?limit=4${params}`);
-      dispatch({
-        type: GET_HOME_LUXURY,
-        payload: res.data?.data,
-      });
-    } catch (e) {
-      dispatch(getHomeLuxuryError());
-    }
-  };
-
-/// home luxury ///

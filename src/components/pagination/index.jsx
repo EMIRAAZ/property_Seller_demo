@@ -2,17 +2,17 @@ import './pagination.scss';
 import RightPage from '../svg/rightpage';
 import { useState } from 'react';
 
-const Pagination = ({ onChange, count = 0 }) => {
+const Pagination = ({ onChange, count = 0, limit = 6 }) => {
   const [currentState, setCurrentState] = useState(5);
   const [selected, setSelected] = useState(1);
 
   const onChangePage = i => {
-    onChange(i);
+    onChange(limit * i - limit > 0 ? limit * i - limit : 0);
     setSelected(i);
   };
 
   const calculateTotalPages = () => {
-    return Math.ceil(count / 10);
+    return Math.ceil(count / limit);
   };
 
   const onArrowClick = type => {
