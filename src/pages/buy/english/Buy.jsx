@@ -4,7 +4,6 @@ import Header from '../../../components/header';
 import QueryCard from '../../../components/querycard';
 import RenderComponent from '../../../components/renderComponent';
 import Footer from '../../../components/footer/english';
-import { makeUrlParam } from '../../../utils';
 
 const Buy = props => {
   const [param, setParam] = useState('');

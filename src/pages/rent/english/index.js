@@ -9,8 +9,7 @@ import {
 const mapStateToProps = state => {
   return {
     rentProperty: state.rentReducer.rentProperty,
-    paramInput: state.rentReducer.paramInput,
-    locationSearch: state.rentReducer.locationSearch,
+    cardInput: state.rentReducer.cardInput,
   };
 };
 
