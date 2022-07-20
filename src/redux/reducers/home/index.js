@@ -31,6 +31,7 @@ const reducer = (state = initialState, action) => {
           ...state.homeProperty,
           error: false,
           loading: true,
+          property: [],
           params: action.payload,
         },
       };
@@ -40,6 +41,7 @@ const reducer = (state = initialState, action) => {
         homeProperty: {
           ...state.homeProperty,
           error: true,
+          property: [],
           loading: false,
         },
       };

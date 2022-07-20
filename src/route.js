@@ -40,6 +40,7 @@ import AdminBlog from './admin/blog';
 import Topstory from './pages/topstory';
 import ListProperty from './pages/listproperty';
 import AddOffplan from './admin/addoffplan';
+import PropertySearchView from './pages/propertysearchview';
 
 function Router() {
   const makePrivate = (component, role = '') => (
@@ -128,7 +129,9 @@ function Router() {
               element={makePrivate(<AdminBlog />, 'ADMIN')}
             />
           </Route>
+
           <Route path="buy" element={<Buy />} />
+          <Route path="property-search" element={<PropertySearchView />} />
           <Route path="property/:id" element={<PropertyView />} />
           <Route path="news" element={<Topstory />} />
           <Route path="news/:id" element={<News />} />

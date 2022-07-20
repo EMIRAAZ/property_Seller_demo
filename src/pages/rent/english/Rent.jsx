@@ -4,13 +4,13 @@ import Header from '../../../components/header';
 import QueryCard from '../../../components/querycard';
 import RenderComponent from '../../../components/renderComponent';
 import Footer from '../../../components/footer';
+import ListHeading from '../../../components/ListHeading';
 
 const Rent = props => {
   const [param, setParam] = useState('');
   return (
     <div className="rent-english">
       <Header customClass="rent-header-class" />
-
       <QueryCard
         onInputChange={props.onChangeRentParams}
         onSearchLocation={props.getRentLocationSearch}
@@ -21,6 +21,7 @@ const Rent = props => {
           setParam(params);
         }}
       />
+      <ListHeading count={props.rentProperty.count} />
       <RenderComponent
         data={props.rentProperty.property}
         propertyCallApi={props.getRentProperty}

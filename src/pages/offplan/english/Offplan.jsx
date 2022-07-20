@@ -6,8 +6,6 @@ import OffplanCard from '../../../components/offpaln/offplanCard/OffplanCard';
 import { useEffect } from 'react';
 
 const Offplan = props => {
-  console.log(props);
-
   useEffect(() => {
     props.getOffplanWeb();
   }, []);

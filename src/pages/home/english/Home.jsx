@@ -1,4 +1,5 @@
 import './home.scss';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../../components/header';
 import ImageFrame from '../imageframe';
 import HomeFormCard from '../homeformcard';
@@ -6,8 +7,11 @@ import Footer from '../../../components/footer/english';
 import ViewAll from '../viewall';
 import HomeCategory from '../homecategory';
 import RenderComponent from '../../../components/renderComponent';
+import ListHeading from '../../../components/ListHeading';
 
 const Home = props => {
+  const navigate = useNavigate();
+
   return (
     <div className="home-english">
       <Header customClass="home-header-class" />
@@ -16,17 +20,12 @@ const Home = props => {
         onInputChange={props.onHomeSearchInputChange}
         onSearchLocation={props.getHomeLocationSearch}
         homeSearch={props.homeSearch}
-        onSearch={props.getHomeProperty}
+        onSearch={params => {
+          navigate(`/property-search?limit=6&offset=0${params}`);
+        }}
       />
       <HomeCategory />
-      {props.homeProperty.property && props.homeProperty.property.length > 0 ? (
-        <div className="property-render-header">
-          <p className="heading-home">Properties</p>
-          <p className="sub-home">
-            {props.homeProperty.count} Properties found
-          </p>
-        </div>
-      ) : null}
+      <ListHeading count={props.homeProperty.count} />
       <RenderComponent
         data={props.homeProperty.property}
         propertyCallApi={props.getHomeProperty}

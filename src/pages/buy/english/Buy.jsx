@@ -4,6 +4,7 @@ import Header from '../../../components/header';
 import QueryCard from '../../../components/querycard';
 import RenderComponent from '../../../components/renderComponent';
 import Footer from '../../../components/footer/english';
+import ListHeading from '../../../components/ListHeading';
 
 const Buy = props => {
   const [param, setParam] = useState('');
@@ -20,6 +21,7 @@ const Buy = props => {
           setParam(params);
         }}
       />
+      <ListHeading count={props.buyProperty.count} />
       <RenderComponent
         data={props.buyProperty.property}
         propertyCallApi={props.getBuyProperty}
