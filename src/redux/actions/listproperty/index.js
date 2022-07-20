@@ -41,7 +41,7 @@ export const getCatFeatured =
   async dispatch => {
     try {
       dispatch(getCatFeaturedStarted());
-      const res = await axios.get(`/api/featured?limit=10${params}`);
+      const res = await axios.get(`/api/featured?${params}`);
       dispatch({
         type: GET_CAT_FEATURED,
         payload: res.data?.data,
@@ -70,9 +70,7 @@ export const getRtmin =
   async dispatch => {
     try {
       dispatch(getRtminFeaturedStarted());
-      const res = await axios.get(
-        `/api/property?readyToMove=true&limit=10${params}`
-      );
+      const res = await axios.get(`/api/property?${params}&readyToMove=true`);
       dispatch({
         type: GET_RTMIN,
         payload: res.data?.data,
@@ -122,7 +120,7 @@ const getPropWithNeighSaleError = () => {
 export const getPropWithNeighSale = param => async dispatch => {
   try {
     dispatch(getPropWithNeighSaleStarted());
-    const res = await axios.get(`/api/property${param}`);
+    const res = await axios.get(`/api/property?${param}`);
     dispatch({
       type: GET_PROPERTY_NEIGHBORHOOD_SALE,
       payload: res.data?.data,

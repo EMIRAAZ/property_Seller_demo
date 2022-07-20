@@ -30,22 +30,25 @@ const HomeFormCard = props => {
       } ${location.city}`;
   };
 
-  const makeLocationAndSearch = () => {
-    const { location } = props.homeSearch;
-    if (!location.length) return '';
-    else if (typeof location === 'string')
-      return makeUrlParam(props.homeSearch);
+  const makeParam = () => {
+    const newListSearch = { ...props.homeSearch };
+    const { location } = newListSearch;
+    let loc = '';
+    if (typeof location === 'string') loc = location;
     else {
-      const newParamObject = {
-        ...props.homeSearch,
+      loc = {
         placeAddress: location.placeAddress,
         city: location.city,
         ...(location.building ? { building: location.building } : {}),
       };
-      delete newParamObject.location;
-      delete newParamObject.locationSearch;
-      return makeUrlParam(newParamObject);
     }
+    delete newListSearch.locationSearch;
+    delete newListSearch.location;
+
+    return `&${makeUrlParam({
+      ...newListSearch,
+      ...(typeof loc === 'string' ? { location: loc } : loc),
+    })}`;
   };
   return (
     <div className="home-form-card">
@@ -124,7 +127,7 @@ const HomeFormCard = props => {
         />
         <BasicButton
           customClass="home-search-btn"
-          onClick={() => props.onSearch(makeLocationAndSearch(), true)}
+          onClick={() => props.onSearch(makeParam())}
         >
           <SearchIcon /> Search
         </BasicButton>

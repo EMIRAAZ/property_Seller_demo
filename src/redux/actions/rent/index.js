@@ -35,7 +35,7 @@ export const getRentProperty =
   async dispatch => {
     try {
       dispatch(getRentPropertyStarted());
-      const res = await axios.get(`/api/property?sale=rent${params}`);
+      const res = await axios.get(`/api/property?${params}`);
       dispatch({
         type: GET_RENT_PROPERTY,
         payload: res.data?.data,

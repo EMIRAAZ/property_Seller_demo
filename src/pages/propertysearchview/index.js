@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import Home from './Home';
+import PropertySearchView from './PropertySearchView';
 import {
   getHomeProperty,
   onHomeSearchInputChange,
   getHomeLocationSearch,
-} from '../../../redux/actions';
+} from '../../redux/actions';
 
 const mapStateToProps = state => {
   return {
@@ -23,4 +23,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(PropertySearchView);

@@ -1,0 +1,37 @@
+.property-list-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  .container {
+    width: 95%;
+    .heading {
+      font-family: 'Poppins';
+      font-size: 26px;
+      font-weight: 600;
+      text-align: left;
+      width: 94%;
+    }
+    .sub {
+      font-family: 'Poppins';
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      text-align: left;
+      width: 94%;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .property-list-heading {
+    .container {
+      .heading {
+        font-size: 48px;
+      }
+      .sub {
+        font-size: 24px;
+      }
+    }
+  }
+}
