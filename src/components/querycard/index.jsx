@@ -1,6 +1,7 @@
 import './querycard.scss';
 import BasicSelect from '../select/BasicSelect';
 import InputSelect from '../select/InputSelect';
+import SearchChipSelect from '../select/searchChipSelect';
 import LocationIcon from '../svg/location';
 import BasicButton from '../button/BasicButton';
 import SearchIcon from '../svg/search';
@@ -65,12 +66,13 @@ const QueryCard = ({
   return (
     <div className="query-card-component">
       <div className="container">
-        <InputSelect
+        <SearchChipSelect
           bgColor="white"
           border
           customClass="search"
           name="Search City, Building, Community .."
           onChange={value => onChange('location', value)}
+          // onArrayChange={value => onChange('searchArray', value)}
           value={getSearchValue()}
           leftIcon={LocationIcon}
           options={cardInput.locationSearch.location.map(location => {

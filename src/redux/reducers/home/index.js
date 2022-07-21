@@ -62,7 +62,7 @@ const reducer = (state = initialState, action) => {
             ...state.homeSearch.locationSearch,
             error: false,
             loading: false,
-            location: action.payload && action.payload[0],
+            location: action.payload && removeDuplicate(action.payload[0]),
           },
         },
       };
@@ -105,6 +105,19 @@ const addIfNecessary = (addTo, add) => {
   }
 
   return addTo;
+};
+
+const removeDuplicate = (array = []) => {
+  const newArray = [...array];
+  const uniqueTitle = [];
+  const uniqueArray = [];
+  for (let i = 0; i < newArray.length; i++) {
+    if (!uniqueTitle.includes(newArray[i].placeAddress)) {
+      uniqueTitle.push(newArray[i].placeAddress);
+      uniqueArray.push(newArray[i]);
+    }
+  }
+  return uniqueArray;
 };
 
 export default reducer;

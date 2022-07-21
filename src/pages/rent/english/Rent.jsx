@@ -9,6 +9,7 @@ import MoveToTopComponent from '../../../components/movetotop';
 
 const Rent = props => {
   const [param, setParam] = useState('');
+  console.log(props);
   return (
     <div className="rent-english">
       <Header customClass="rent-header-class" />
