@@ -72,6 +72,7 @@ const QueryCard = ({
           customClass="search"
           name="Search City, Building, Community .."
           onChange={value => onChange('location', value)}
+          // onArrayChange={value => onChange('searchArray', value)}
           value={getSearchValue()}
           leftIcon={LocationIcon}
           options={cardInput.locationSearch.location.map(location => {

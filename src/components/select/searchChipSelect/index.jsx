@@ -12,6 +12,7 @@ const SearchChipSelect = ({
   leftIcon,
   bgColor = '#f3f3fa',
   border = false,
+  onArrayChange = () => {},
 }) => {
   const [selectName, setSelectName] = useState([]);
   const [inputValue, setInputValue] = useState('');
@@ -29,6 +30,7 @@ const SearchChipSelect = ({
   const onClickOption = (name, value) => {
     onChange(value);
     setSelectName([...selectName, name]);
+    onArrayChange([...selectName, name]);
     setInputValue('');
 
     dropdownClass === 'hide'
