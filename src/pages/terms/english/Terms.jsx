@@ -15,29 +15,31 @@ const Terms = () => {
         <div className='terms-container-inside'>
           <p>
             <h3>1. TERMS</h3>
-            1.1 The term mentioned here as ‘we’,’our’ and ‘us’ would mean ‘The
-            UAE assistant’, its representatives, subsidiaries, agents,
-            affiliates or its assigned parties. 1.2 The website and its contents
-            is herein referred to as ‘www.theuaeassistant.com’. 1.3 With using
-            the website you agree to bind by the website’s terms of use and its
-            privacy policy and agree to comply with all the applicable governing
-            rules. All the content contained in this website is protected by
-            copyright and trademark law. 1.4 The site is open to be used by
-            people above the age of 18 unless legally restricted from using the
-            site under the laws of the country of your residence.
-            <h3>2. USE LICENSE & RESTRICTIONS:</h3> 2.1 The materials contained
-            in the site can be temporarily downloaded for personal and
-            non-commercial viewing only, which does not imply: a) Modifying or
-            copying the contents b) To use for any kind of display both
-            commercial and non-commercial c) Manipulate the website or its
-            functionalities in any way. d) Remove copyright or trademarks. e)
-            Transfer of materials to any entity or server. 2.2 In using the
-            website, you agree to undertake not to engage in the following
-            activities: a)Engage in any activities that will tamper the
-            contents, infrastructure or the working of the site. b)Manipulate
-            the contents, database or functionality of the website for any
-            unauthorized activities. c)Infringe upon any person’s or property
-            right including copyright, trade secret, privacy right.
+            <b>1.1</b>The term mentioned here as ‘we’,’our’ and ‘us’ would mean
+            ‘The UAE assistant’, its representatives, subsidiaries, agents,
+            affiliates or its assigned parties. <br />
+            <b>1.2</b> The website and its contents is herein referred to as
+            ‘www.theuaeassistant.com’. <br />
+            <b>1.3</b> With using the website you agree to bind by the website’s
+            terms of use and its privacy policy and agree to comply with all the
+            applicable governing rules. All the content contained in this
+            website is protected by copyright and trademark law. <br />
+            <b>1.4</b>The site is open to be used by people above the age of 18
+            unless legally restricted from using the site under the laws of the
+            country of your residence.
+            <h3>2. USE LICENSE & RESTRICTIONS:</h3> <br />
+            <b>2.1</b> The materials contained in the site can be temporarily
+            downloaded for personal and non-commercial viewing only, which does
+            not imply: a) Modifying or copying the contents b) To use for any
+            kind of display both commercial and non-commercial c) Manipulate the
+            website or its functionalities in any way. d) Remove copyright or
+            trademarks. e) Transfer of materials to any entity or server. 2.2 In
+            using the website, you agree to undertake not to engage in the
+            following activities: a)Engage in any activities that will tamper
+            the contents, infrastructure or the working of the site.
+            b)Manipulate the contents, database or functionality of the website
+            for any unauthorized activities. c)Infringe upon any person’s or
+            property right including copyright, trade secret, privacy right.
             d)Impersonate to extrude money, passwords or personal information
             from any person, entity or enterprise. e)Create any kind of virus or
             malware intended to transmit destroying the site. 2.3 It is in our
