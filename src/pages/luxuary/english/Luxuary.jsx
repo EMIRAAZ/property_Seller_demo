@@ -58,7 +58,9 @@ const Luxuary = props => {
               </p>
             </div>
             <div className="card-row">{renderstory1()}</div>
-            <ViewAll />
+            <div className="vw-btn">
+              <ViewAll />
+            </div>
           </div>
         </div>
       ) : (
@@ -75,7 +77,9 @@ const Luxuary = props => {
               </p>
             </div>
             <div className="card-row">{renderstory2()}</div>
-            <ViewAll />
+            <div className="vw-btn">
+              <ViewAll />
+            </div>
           </div>
         </div>
       ) : (
@@ -92,7 +96,9 @@ const Luxuary = props => {
               </p>
             </div>
             <div className="card-row">{renderstory3()}</div>
-            <ViewAll />
+            <div className="vw-btn">
+              <ViewAll />
+            </div>
           </div>
         </div>
       ) : (
@@ -109,7 +115,9 @@ const Luxuary = props => {
               </p>
             </div>
             <div className="card-row">{renderstory4()}</div>
-            <ViewAll />
+            <div className="vw-btn">
+              <ViewAll />
+            </div>
           </div>
         </div>
       ) : (
