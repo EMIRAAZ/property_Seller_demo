@@ -36,7 +36,7 @@ const CAT = [
     id: 6,
     name: 'Verified Properties',
     page: '/listproperty/verifiedproperties',
-    image: '/assets/image/cat5-min.png',
+    image: '/assets/image/download.jpeg',
   },
 ];
 

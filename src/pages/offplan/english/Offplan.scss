@@ -1,4 +1,34 @@
 .offplan-main-container-1 {
+  .offplan-header-class {
+    border-bottom: 1px solid #e9f1fd;
+
+    .mobile-sidebar {
+      background-color: #d9e5ff !important;
+
+      ul {
+        background-color: #d9e5ff !important;
+      }
+    }
+    width: 100%;
+    margin: 0 auto;
+
+    .header-list {
+      background-color: #d9e5ff !important;
+    }
+
+    .logo {
+      color: #ffffff;
+    }
+
+    .desktop-li {
+      li {
+        &:hover {
+          transition: all 1s ease-out;
+          color: #0084ff;
+        }
+      }
+    }
+  }
   .offplan-card-container {
     height: 200px;
     background-color: #d9e5ff;

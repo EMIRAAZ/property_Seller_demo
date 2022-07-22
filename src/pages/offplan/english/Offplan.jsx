@@ -16,7 +16,7 @@ const Offplan = props => {
   return (
     <>
       <div className="offplan-main-container-1">
-        <Header />
+        <Header customClass="offplan-header-class" />
         <div className="offplan-card-container"></div>
         <ListHeading
           main="Offplan Projects"

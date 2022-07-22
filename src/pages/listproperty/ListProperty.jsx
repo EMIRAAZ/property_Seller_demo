@@ -37,7 +37,7 @@ const ListProperty = props => {
 
   return (
     <div className="list-property-api">
-      <Header />
+      <Header customClass="property-list-header-class" />
       <QueryCard
         onInputChange={props.onChangeListPropParams}
         onSearchLocation={props.getListpropLocationSearch}

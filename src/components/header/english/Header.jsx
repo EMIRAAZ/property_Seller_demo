@@ -81,7 +81,7 @@ const Header = ({ customClass }) => {
         <li className="company-name" onClick={() => navigate('/')}>
           {/* <WhiteLogo /> */}
           <span className="main-name">UAE&nbsp;Assistant</span>
-          <span className="sub-name">for Properties</span>
+          {/* <span className="sub-name">for Properties</span> */}
         </li>
         <li className="desktop-li">
           <ul className="desktop-ul">
