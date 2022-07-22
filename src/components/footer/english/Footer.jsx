@@ -73,11 +73,15 @@ const renderTag = (taghead, tagline) => {
       <div key={i} className={`column-${i + 2}`}>
         <p className="column-heading">{item.title}</p>
         {tagline.rows &&
-          tagline.rows.map((link, j) => (
-            <p key={j + j} className="column-link">
-              {link.title}
-            </p>
-          ))}
+          tagline.rows.map((link, j) => {
+            if (link.tagheadId === item.id) {
+              return (
+                <p key={j + j} className="column-link">
+                  {link.title}
+                </p>
+              );
+            }
+          })}
       </div>
     ))
   );
