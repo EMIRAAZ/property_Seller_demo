@@ -9,7 +9,7 @@ import LarrowIcon from '../../../components/svg/larrow';
 import RarrowIcon from '../../../components/svg/rarrow';
 import { useState } from 'react';
 import Bed from '../../../components/svg/bed';
-import MoveToTopComponent from '../../../components/movetotop';
+import { MoveToTop } from '../../../components/movetotop';
 
 const OffplanView = () => {
   return (
@@ -41,7 +41,7 @@ const OffplanView = () => {
           </div>
           <h1 className="Heading">similar projects</h1>
         </div>
-        <MoveToTopComponent />
+        <MoveToTop />
         <Footer />
       </div>
     </>

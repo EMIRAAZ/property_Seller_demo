@@ -2,14 +2,12 @@ import './property.scss';
 import LocationIcon from '../svg/location';
 import Bath from '../svg/bath';
 import Whatsapp from '../svg/whatsapp';
-import Tick from '../svg/tic';
 import Favourite from '../svg/favourite';
 import Share from '../svg/share';
 import Phone from '../svg/phone';
 import Mail from '../svg/mailsvg';
 import Bed from '../svg/bed';
 import Living from '../svg/living';
-import Verified from '../svg/verified';
 import Area from '../svg/area';
 import { useNavigate } from 'react-router-dom';
 import ImgPropCarousel from '../imgpropcarousel';
@@ -66,7 +64,7 @@ const Property = props => {
         </div>
         <div className="address">
           <LocationIcon
-            fill="#1FA0E9"
+            fill="#2f70ff"
             opacity="1"
             width="9"
             height="12"
@@ -148,7 +146,7 @@ const Property = props => {
               width="17"
               height="17"
               viewBox="0 0 15 15"
-              fill="#2D79FC"
+              fill="#2f70ff"
             />
             whatsapp
           </div>
@@ -156,7 +154,7 @@ const Property = props => {
             className="service-btn-property phone"
             onClick={() => window.open('tel:+971521278701', '_blank')}
           >
-            <Phone width="17" height="17" viewBox="0 0 15 15" />
+            <Phone width="17" height="17" viewBox="0 0 15 15" fill="#2f70ff" />
             Phone
           </div>
           <div
@@ -165,7 +163,7 @@ const Property = props => {
               window.open('mailto:hello@uaeassistant.com', '_blank')
             }
           >
-            <Mail width="15" height="15" viewBox="0 0 15 15" fill="#2D79FC" />
+            <Mail width="15" height="15" viewBox="0 0 15 15" fill="#2f70ff" />
             Mail
           </div>
         </div>

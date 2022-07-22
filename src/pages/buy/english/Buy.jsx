@@ -5,7 +5,7 @@ import QueryCard from '../../../components/querycard';
 import RenderComponent from '../../../components/renderComponent';
 import Footer from '../../../components/footer/english';
 import ListHeading from '../../../components/ListHeading';
-import MoveToTopComponent from '../../../components/movetotop';
+import { MoveToTop } from '../../../components/movetotop';
 
 const Buy = props => {
   const [param, setParam] = useState('');
@@ -31,7 +31,7 @@ const Buy = props => {
         query={`sale=buy${param}`}
         isPagination
       />
-      <MoveToTopComponent />
+      <MoveToTop />
       <Footer />
     </div>
   );

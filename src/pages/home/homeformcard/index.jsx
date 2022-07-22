@@ -2,6 +2,7 @@ import './homeformcard.scss';
 import { useState } from 'react';
 import BasicSelect from '../../../components/select/BasicSelect';
 import InputSelect from '../../../components/select/InputSelect';
+import SearchChiptSelect from '../../../components/select/searchChipSelect';
 import LocationIcon from '../../../components/svg/location';
 import BasicButton from '../../../components/button/BasicButton';
 import SearchIcon from '../../../components/svg/search';
@@ -57,7 +58,7 @@ const HomeFormCard = props => {
       <div
         className={`home-formcard ${advancedSearch ? 'advanced-formcard' : ''}`}
       >
-        <InputSelect
+        <SearchChiptSelect
           bgColor="white"
           border
           customClass={`search ${

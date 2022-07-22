@@ -2,7 +2,7 @@ import Footer from '../../../components/footer';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../../components/header';
 import { useEffect } from 'react';
-import MoveToTopComponent from '../../../components/movetotop';
+import { MoveToTop } from '../../../components/movetotop';
 import './topstory.scss';
 
 const Topstory = props => {
@@ -37,7 +37,7 @@ const Topstory = props => {
           )}
         </div>
       </div>
-      <MoveToTopComponent />
+      <MoveToTop />
       <Footer />
     </div>
   );

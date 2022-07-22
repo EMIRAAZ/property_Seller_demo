@@ -2,7 +2,7 @@ import './about.scss';
 import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer';
 import Header from '../../../components/header';
-import MoveToTopComponent from '../../../components/movetotop';
+import { MoveToTop } from '../../../components/movetotop';
 
 const TeamCard = ({ url, name, position }) => {
   return (
@@ -90,7 +90,7 @@ const About = () => {
       </div>
 
       {/* <SocialPanel /> */}
-      <MoveToTopComponent />
+      <MoveToTop />
 
       <Footer />
     </div>

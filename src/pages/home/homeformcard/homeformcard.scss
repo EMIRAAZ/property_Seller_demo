@@ -126,10 +126,12 @@
 
     .advanced-search {
       position: absolute;
-      right: 50px;
+      display: flex;
+      justify-content: center;
+      width: 80%;
       bottom: 30px;
       font-size: 15px;
-      font-family: 'Sans';
+      font-family: 'arial';
       color: #2f70ff;
       cursor: pointer;
 
@@ -143,7 +145,7 @@
 @media only screen and (min-width: 600px) {
   .home-form-card {
     width: 65%;
-    top: 200px;
+    top: 290px;
 
     .home-formcard {
       .search {
@@ -172,8 +174,7 @@
         grid-row-start: 2;
       }
       .advanced-search {
-        right: 50px;
-        bottom: 30px;
+        width: 88%;
       }
       .bath-home {
         display: none;
@@ -219,10 +220,7 @@
         grid-column-end: 2;
         grid-row-start: 2;
       }
-      .advanced-search {
-        right: 50px;
-        bottom: 30px;
-      }
+
       .advanced-bath-home {
         display: block;
         grid-column-start: 3;

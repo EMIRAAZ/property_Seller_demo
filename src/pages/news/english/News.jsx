@@ -1,6 +1,6 @@
 import Footer from '../../../components/footer';
 import Header from '../../../components/header';
-import MoveToTopComponent from '../../../components/movetotop';
+import { MoveToTop } from '../../../components/movetotop';
 
 import './news.scss';
 import { useEffect } from 'react';
@@ -40,7 +40,7 @@ const News = props => {
           {props.news[0] && props.news[0].description}
         </p>
       </div>
-      <MoveToTopComponent />
+      <MoveToTop />
       <Footer />
     </div>
   );

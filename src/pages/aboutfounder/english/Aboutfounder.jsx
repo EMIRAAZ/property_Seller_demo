@@ -3,7 +3,7 @@ import './aboutfounder.scss';
 import Socialpanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer';
 import Header from '../../../components/header';
-import MoveToTopComponent from '../../../components/movetotop';
+import { MoveToTop } from '../../../components/movetotop';
 
 const Aboutfounder = () => {
   return (
@@ -56,7 +56,7 @@ const Aboutfounder = () => {
         </div>
 
         {/* <Socialpanel/> */}
-        <MoveToTopComponent />
+        <MoveToTop />
         <Footer />
       </div>
     </>

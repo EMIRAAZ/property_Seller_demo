@@ -3,7 +3,7 @@ import Header from '../../../components/header';
 import ImageFrame from '../imageframe';
 import Paragraph from '../../../components/paragraph';
 import SocialPanel from '../../../components/socialpanel';
-import MoveToTopComponent from '../../../components/movetotop';
+import { MoveToTop } from '../../../components/movetotop';
 import Footer from '../../../components/footer';
 const Sell = () => {
   return (
@@ -37,7 +37,7 @@ const Sell = () => {
         </Paragraph>
       </div>
       {/* <SocialPanel /> */}
-      <MoveToTopComponent />
+      <MoveToTop />
       <Footer />
     </div>
   );
