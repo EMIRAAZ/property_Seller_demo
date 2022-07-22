@@ -21,7 +21,8 @@ function Footer(props) {
           Lets find you a <span className="text-span">Home</span>
         </p>
         <BasicButton customClass="list-your-property-button">
-          List Your Property <RightArrow customClass="right-arrow" />
+          Advertise With Us
+          <RightArrow customClass="right-arrow" />
         </BasicButton>
       </div>
       <div className="second-container">

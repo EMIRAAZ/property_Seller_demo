@@ -1,0 +1,25 @@
+.view-btn-class {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .container {
+    .view-all-home-btn {
+      display: flex;
+      padding: 8px 20px;
+      border-radius: 4px !important;
+      background-color: #2f70ff;
+      font-family: 'Poppins';
+      font-weight: 600;
+      border-radius: 0px;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .view-btn-class {
+    .container {
+      .view-all-home-btn {
+      }
+    }
+  }
+}

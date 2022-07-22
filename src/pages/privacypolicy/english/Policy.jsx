@@ -1,18 +1,19 @@
-import "./policy.scss";
-import SocialPanel from "../../../components/socialpanel";
-import Footer from "../../../components/footer";
-import Header from "../../../components/header";
+import './policy.scss';
+import SocialPanel from '../../../components/socialpanel';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header';
+import { MoveToTop } from '../../../components/movetotop';
 
 const Policy = () => {
   return (
     <>
-      <div className='policy-container'>
+      <div className="policy-container">
         <Header />
-        <div className='h-container'>
-          <h2 className='p-header'>Privacy Policy</h2>
+        <div className="h-container">
+          <h2 className="p-header">Privacy Policy</h2>
         </div>
-        <div className='policy-description'>
-          <div className='description-container'>
+        <div className="policy-description">
+          <div className="description-container">
             <p>
               <h3>1. INTRODUCTION</h3> <b>1.1</b> UAE Assistant is a company
               registered in Dubai with its registered office at ………………… , which
@@ -185,8 +186,9 @@ const Policy = () => {
               efforts to prevent unauthorized access to the details through
               strict guidelines and security norms.
               <h3>
-                {" "}
+                {' '}
                 7. YOUR RIGHT TO ACCESS AND CORRECT YOUR PERSONAL INFORMATION
+<<<<<<< HEAD
               </h3>{" "}
               <b>7.1</b> You have the right to access and control your
               information. Your requests will be honored and wherever applicable
@@ -210,6 +212,28 @@ const Policy = () => {
               section or by sending an email to marketing@theuaeassistant.ae.{" "}
               <h3>8. USE OF COOKIES</h3> <b>8.1</b>: This website uses cookies
               (which is not limited to google analytics and double click for
+=======
+              </h3>{' '}
+              7.1 You have the right to access and control your information.
+              Your requests will be honored and wherever applicable the data can
+              be corrected, amended or deleted. Kindly write to support@the
+              uaeassistant.com for further queries. 7.2 Access to personal
+              information:You can request access to the information provided by
+              you and will be granted access unless subject to any legal
+              exemptions. You are required to produce identity proofs to comply
+              with the verification processes. A small fee is also charged for
+              providing a copy of the relevant data. 7.3 Correction and
+              deletion: You have the right to delete, update or amend your
+              personal information. However we would request you to exercise
+              discretion in doing so due to complying with legal requirements.
+              7.4 Marketing preferences: You can use the unsubscribe link to
+              stop receiving email communication or you can send a mail to
+              support@theuaeassistant.ae. For enquiries on Marketing you can use
+              any of the links mentioned in the marketing and communication
+              section or by sending an email to marketing@theuaeassistant.ae.{' '}
+              <h3>8. USE OF COOKIES</h3> 8.1: This website uses cookies (which
+              is not limited to google analytics and double click for
+>>>>>>> dev
               publishers. Information regarding google partner sites can be
               found in the link provided here:
               https://www.google.com/policies/privacy/partners) which are files
@@ -261,9 +285,15 @@ const Policy = () => {
               information from our Website and elsewhere on the internet and use
               that information to provide data on web analytics. If you wish not
               to entertain the use of these tracking pixels we would request you
+<<<<<<< HEAD
               to adjust your browser settings accordingly.{" "}
               <h3>10. WEB SERVER & APPLICATION LOGS</h3> <b>10.1</b> Our servers
               have been programmed to collect certain information from the users
+=======
+              to adjust your browser settings accordingly.{' '}
+              <h3>10. WEB SERVER & APPLICATION LOGS</h3> 10.1 Our servers have
+              been programmed to collect certain information from the users
+>>>>>>> dev
               visiting our website to help us monitor and protect our interests
               in the services we provide. This is basically used to analyze
               usage, and improve users’ experience. The information collected
@@ -274,8 +304,13 @@ const Policy = () => {
               assigned by us. d.Operating system of the device and other
               technical facts e.Page visits and content viewed, saved, and
               purchased f.Details provided g.URLs visited during, before and
+<<<<<<< HEAD
               after you use our Services<h3> 11. THIRD PARTY ADVERTISERS</h3>{" "}
               <b>11.1</b> Third party advertising networks are allowed to place
+=======
+              after you use our Services<h3> 11. THIRD PARTY ADVERTISERS</h3>{' '}
+              11.1Third party advertising networks are allowed to place
+>>>>>>> dev
               advertisements on the site on our behalf. They may use cookies in
               the visitor’s cookie file, which will have their own target
               technology in place to serve their needs <br />
@@ -288,6 +323,7 @@ const Policy = () => {
               Third party advertisers operate on their own Privacy Policies
               which are made available on their websites. For further
               information on what third party advertisers do please get in touch
+<<<<<<< HEAD
               with info@theuaeassistant.com{" "}
               <h3>12. INTEREST-BASED ADVERTISING (IBA) </h3>
               <b>12.1</b> IBA or Interest-based advertising are meant to deliver
@@ -311,6 +347,30 @@ const Policy = () => {
               in an ad and go by the instructions. Similarly you may also opt
               out of receiving interest-based ads from many sites through the
               Network Advertising Initiative's (NAI) Opt Out Tool
+=======
+              with info@theuaeassistant.com{' '}
+              <h3>12. INTEREST-BASED ADVERTISING (IBA) </h3>12.1 IBA or
+              Interest-based advertising are meant to deliver advertising
+              material to users who show specific interest (target audience)
+              while using our Services. It works by targeting users based on the
+              type of content they access or read. For instance, as you browse
+              our services page, the cookies placed on your device will be an
+              advertising cookie so as to better understand the content you are
+              interested in. This information collected from your device is
+              grouped with information from other devices that show similar
+              interests. This is then used to display advertisements to users
+              grouped on the basis of common interests. 12.2 You have the option
+              to opt out of receiving Interest Based Advertisements though it
+              does not mean that you will no longer receive advertisements when
+              you are using our services. It would imply that the information
+              collected will not pertain to IBA and that any advertisements you
+              see will not be customized or be relevant to you. You can choose
+              your online advertisement choices from http://optout.aboutads.info
+              or by clicking the AdChoices icon in an ad and go by the
+              instructions. Similarly you may also opt out of receiving
+              interest-based ads from many sites through the Network Advertising
+              Initiative's (NAI) Opt Out Tool
+>>>>>>> dev
               (http://www.networkadvertising.org/choices) It would be advisable
               to delete cookies, using a different device. <br />
               <b>12.3</b> Mobile devices are provided with identifiers that help
@@ -328,6 +388,7 @@ const Policy = () => {
               <h3>
                 13. LINKS AND CONNECTIONS TO AND USE OF OTHER THIRD-PARTY
                 SERVICES
+<<<<<<< HEAD
               </h3>{" "}
               <b>13.1</b> Our site may contain links that are connected to third
               party apps, which you may come across while using the website,
@@ -335,6 +396,15 @@ const Policy = () => {
               social media or other related sites that are not controlled by us.
               The Privacy policies of these third party sites are governed by
               their own policy statements over which we have no control. You are
+=======
+              </h3>{' '}
+              13.1 Our site may contain links that are connected to third party
+              apps, which you may come across while using the website, that are
+              not directly linked to us. These links may lead you to social
+              media or other related sites that are not controlled by us. The
+              Privacy policies of these third party sites are governed by their
+              own policy statements over which we have no control. You are
+>>>>>>> dev
               requested to review the Terms of Use and Privacy Policy of these
               third party links. Information that is provided to third-party
               companies or sites does not come under this Policy.
@@ -354,7 +424,8 @@ const Policy = () => {
             </p>
           </div>
         </div>
-        <SocialPanel />
+        {/* <SocialPanel /> */}
+        <MoveToTop />
         <Footer />
       </div>
     </>

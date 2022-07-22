@@ -3,6 +3,7 @@ import Header from '../../../components/header';
 import ImageFrame from '../imageframe';
 import Paragraph from '../../../components/paragraph';
 import SocialPanel from '../../../components/socialpanel';
+import { MoveToTop } from '../../../components/movetotop';
 import Footer from '../../../components/footer';
 const Sell = () => {
   return (
@@ -35,7 +36,8 @@ const Sell = () => {
           faucibus tempor.
         </Paragraph>
       </div>
-      <SocialPanel />
+      {/* <SocialPanel /> */}
+      <MoveToTop />
       <Footer />
     </div>
   );

@@ -1,5 +1,7 @@
 import Footer from '../../../components/footer';
 import Header from '../../../components/header';
+import { MoveToTop } from '../../../components/movetotop';
+
 import './news.scss';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -38,6 +40,7 @@ const News = props => {
           {props.news[0] && props.news[0].description}
         </p>
       </div>
+      <MoveToTop />
       <Footer />
     </div>
   );

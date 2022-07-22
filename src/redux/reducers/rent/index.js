@@ -14,8 +14,8 @@ const reducer = (state = initialState, action) => {
     case ON_CHANGE_RENT_PROPERTY_INPUT:
       return {
         ...state,
-        paramInput: {
-          ...state.paramInput,
+        cardInput: {
+          ...state.cardInput,
           [action.payload.key]: action.payload.value,
         },
       };
@@ -51,34 +51,56 @@ const reducer = (state = initialState, action) => {
     case GET_RENT_LOCATION_SEARCH:
       return {
         ...state,
-        locationSearch: {
-          ...state.locationSearch,
-          error: false,
-          loading: false,
-          location: action.payload && action.payload[0],
+        cardInput: {
+          ...state.cardInput,
+          locationSearch: {
+            ...state.cardInput.locationSearch,
+            error: false,
+            loading: false,
+            location: action.payload && removeDuplicate(action.payload[0]),
+          },
         },
       };
     case GET_RENT_LOCATION_SEARCH_STARTED:
       return {
         ...state,
-        locationSearch: {
-          ...state.locationSearch,
-          error: false,
-          loading: true,
+        cardInput: {
+          ...state.cardInput,
+          locationSearch: {
+            ...state.cardInput.locationSearch,
+            error: false,
+            loading: true,
+          },
         },
       };
     case GET_RENT_LOCATION_SEARCH_ERROR:
       return {
         ...state,
-        locationSearch: {
-          ...state.locationSearch,
-          error: true,
-          loading: false,
+        cardInput: {
+          ...state.cardInput,
+          locationSearch: {
+            ...state.cardInput.locationSearch,
+            error: true,
+            loading: false,
+          },
         },
       };
     default:
       return state;
   }
+};
+
+const removeDuplicate = (array = []) => {
+  const newArray = [...array];
+  const uniqueTitle = [];
+  const uniqueArray = [];
+  for (let i = 0; i < newArray.length; i++) {
+    if (!uniqueTitle.includes(newArray[i].placeAddress)) {
+      uniqueTitle.push(newArray[i].placeAddress);
+      uniqueArray.push(newArray[i]);
+    }
+  }
+  return uniqueArray;
 };
 
 export default reducer;

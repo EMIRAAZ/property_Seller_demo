@@ -2,9 +2,9 @@ import './neighbourhood.scss';
 import { useEffect } from 'react';
 import Footer from '../../../components/footer';
 import Header from '../../../components/header';
-import ImageFrame from '../imageframe';
 import BasicButton from '../../../components/button/BasicButton';
 import { useNavigate } from 'react-router-dom';
+import { MoveToTop } from '../../../components/movetotop';
 
 const NeighborHood = props => {
   useEffect(() => {
@@ -13,7 +13,6 @@ const NeighborHood = props => {
   return (
     <div className="neighbourhood">
       <Header customClass="home-header-class" />
-      <ImageFrame />
       <div className="main-container">
         <h1 className="heading">Famous Neighbourhood</h1>
         <h1 className="subheading">{props.neighbor.count} Properties Found</h1>
@@ -22,6 +21,7 @@ const NeighborHood = props => {
             props.neighbor.rows.map(item => <Card key={item.id} {...item} />)}
         </div>
       </div>
+      <MoveToTop />
       <Footer />
     </div>
   );

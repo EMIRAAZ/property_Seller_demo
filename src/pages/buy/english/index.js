@@ -9,8 +9,7 @@ import {
 const mapStateToProps = state => {
   return {
     buyProperty: state.buyReducer.buyProperty,
-    paramInput: state.buyReducer.paramInput,
-    locationSearch: state.buyReducer.locationSearch,
+    cardInput: state.buyReducer.cardInput,
   };
 };
 

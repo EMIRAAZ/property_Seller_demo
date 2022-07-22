@@ -4,19 +4,12 @@ import {
   getHomeProperty,
   onHomeSearchInputChange,
   getHomeLocationSearch,
-  getHomeFeatured,
-  getHomeLuxury,
-  changePageHomeLuxury,
-  changePageHomeFeatured,
-  changePageHomeProperty,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
   return {
     homeProperty: state.homeReducer.homeProperty,
     homeSearch: state.homeReducer.homeSearch,
-    homeFeatured: state.homeReducer.homeFeatured,
-    homeLuxury: state.homeReducer.homeLuxury,
   };
 };
 
@@ -27,14 +20,6 @@ const mapDispatchToProps = dispatch => {
     onHomeSearchInputChange: payload =>
       dispatch(onHomeSearchInputChange(payload)),
     getHomeLocationSearch: payload => dispatch(getHomeLocationSearch(payload)),
-    getHomeFeatured: payload => dispatch(getHomeFeatured(payload)),
-    getHomeLuxury: payload => dispatch(getHomeLuxury(payload)),
-    changePageHomeLuxury: (payload, cb) =>
-      dispatch(changePageHomeLuxury(payload, cb)),
-    changePageHomeFeatured: (payload, cb) =>
-      dispatch(changePageHomeFeatured(payload, cb)),
-    changePageHomeProperty: (payload, cb) =>
-      dispatch(changePageHomeProperty(payload, cb)),
   };
 };
 

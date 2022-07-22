@@ -1,7 +1,7 @@
 .property-list {
   margin: 10px;
   border-radius: 4px;
-  box-shadow: rgba(70, 70, 70, 0.1) 0px 1px 4px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
   .property-list-item {
     position: relative;
@@ -45,6 +45,10 @@
       left: 105px;
       width: 57px;
       background: #58ec65;
+    }
+
+    .no-verified {
+      left: 10px;
     }
     .favourite {
       right: 47px;
@@ -177,7 +181,7 @@
       font-family: 'Roboto';
       font-weight: 600;
       font-size: 10px;
-      margin: 20px 0px;
+      margin: 5px 0px;
       padding: 0px 10px;
       padding-bottom: 10px;
 
@@ -197,14 +201,14 @@
   }
 }
 .property-list:hover {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 4px 5px 14px 5px;
 }
 
 @media only screen and (min-width: 600px) {
   .property-list {
     .property-list-item {
       .prop-list-img {
-        height: 200px;
+        height: 230px;
       }
 
       .favourite {
@@ -215,7 +219,7 @@
       }
 
       .address {
-        top: 175px;
+        top: 200px;
         p {
           font-size: 9px;
         }

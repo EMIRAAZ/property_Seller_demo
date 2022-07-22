@@ -3,6 +3,7 @@ import Header from '../../../components/header';
 import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer';
 import { useEffect } from 'react';
+import { MoveToTop } from '../../../components/movetotop';
 
 export const BlogCard = ({ updatedAt, mainTitle, images, description }) => {
   return (
@@ -43,7 +44,9 @@ const Blog = props => {
           </div>
           {renderCard()}
         </div>
-        <SocialPanel />
+        {/* <SocialPanel /> */}
+        <MoveToTop />
+
         <Footer />
       </div>
     </>

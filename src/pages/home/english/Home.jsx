@@ -1,12 +1,18 @@
 import './home.scss';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../../components/header';
 import ImageFrame from '../imageframe';
 import HomeFormCard from '../homeformcard';
 import Footer from '../../../components/footer/english';
-import HomeProperty from '../homeProperty';
+import ViewAll from '../viewall';
 import HomeCategory from '../homecategory';
+import RenderComponent from '../../../components/renderComponent';
+import ListHeading from '../../../components/ListHeading';
+import { MoveToTop } from '../../../components/movetotop';
 
 const Home = props => {
+  const navigate = useNavigate();
+
   return (
     <div className="home-english">
       <Header customClass="home-header-class" />
@@ -15,33 +21,25 @@ const Home = props => {
         onInputChange={props.onHomeSearchInputChange}
         onSearchLocation={props.getHomeLocationSearch}
         homeSearch={props.homeSearch}
-        onSearch={props.getHomeProperty}
+        onSearch={params => {
+          navigate(`/property-search?limit=6&offset=0${params}`);
+        }}
       />
       <HomeCategory />
-      <div className="home-grid">
-        <div className="home-grid-property">
-          <HomeProperty
-            property={props.homeProperty}
-            onChangePage={props.changePageHomeProperty}
-            getProperty={props.getHomeProperty}
-          />
-        </div>
-        {/* <div className="home-grid-category">
-          <Categories />
-        </div> */}
-      </div>
-      {/* <HomeFeatured
-        featured={props.homeFeatured}
-        getFeatured={props.getHomeFeatured}
-        onChangePage={props.changePageHomeFeatured}
+      {/* <ListHeading count={props.homeProperty.count} /> */}
+      <RenderComponent
+        data={props.homeProperty.property}
+        propertyCallApi={props.getHomeProperty}
+        newList
       />
-      <HomeBestDeals />
-      <HomeLuxury
-        luxury={props.homeLuxury}
-        getLuxury={props.getHomeLuxury}
-        onChangePage={props.changePageHomeLuxury}
-      /> */}
-      {/* <SocialPanel /> */}
+      <div className="home-ctrl">
+        <ViewAll
+          count={props.homeProperty.count}
+          getApi={props.getHomeProperty}
+        />
+        <MoveToTop />
+      </div>
+
       <Footer />
     </div>
   );

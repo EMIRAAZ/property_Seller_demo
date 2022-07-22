@@ -10,6 +10,9 @@ export const initialState = {
     sale: '',
     priceFrom: '',
     priceTo: '',
+    noOfBed: '',
+    noOfBath: '',
+    // searchArray: [],
     locationSearch: {
       loading: false,
       error: false,

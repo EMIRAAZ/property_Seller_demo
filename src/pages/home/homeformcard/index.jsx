@@ -1,12 +1,15 @@
 import './homeformcard.scss';
+import { useState } from 'react';
 import BasicSelect from '../../../components/select/BasicSelect';
 import InputSelect from '../../../components/select/InputSelect';
+import SearchChiptSelect from '../../../components/select/searchChipSelect';
 import LocationIcon from '../../../components/svg/location';
 import BasicButton from '../../../components/button/BasicButton';
 import SearchIcon from '../../../components/svg/search';
 import { makeUrlParam } from '../../../utils';
 
 const HomeFormCard = props => {
+  const [advancedSearch, setAdvancedSearch] = useState(false);
   const onInputChange = (key, value) => {
     if (key === 'priceFrom' || key === 'priceTo') {
       const num = Number(value);
@@ -30,30 +33,37 @@ const HomeFormCard = props => {
       } ${location.city}`;
   };
 
-  const makeLocationAndSearch = () => {
-    const { location } = props.homeSearch;
-    if (!location.length) return '';
-    else if (typeof location === 'string')
-      return makeUrlParam(props.homeSearch);
+  const makeParam = () => {
+    const newListSearch = { ...props.homeSearch };
+    const { location } = newListSearch;
+    let loc = '';
+    if (typeof location === 'string') loc = location;
     else {
-      const newParamObject = {
-        ...props.homeSearch,
+      loc = {
         placeAddress: location.placeAddress,
         city: location.city,
         ...(location.building ? { building: location.building } : {}),
       };
-      delete newParamObject.location;
-      delete newParamObject.locationSearch;
-      return makeUrlParam(newParamObject);
     }
+    delete newListSearch.locationSearch;
+    delete newListSearch.location;
+
+    return `&${makeUrlParam({
+      ...newListSearch,
+      ...(typeof loc === 'string' ? { location: loc } : loc),
+    })}`;
   };
   return (
     <div className="home-form-card">
-      <div className="home-formcard">
-        <InputSelect
+      <div
+        className={`home-formcard ${advancedSearch ? 'advanced-formcard' : ''}`}
+      >
+        <SearchChiptSelect
           bgColor="white"
           border
-          customClass="search"
+          customClass={`search ${
+            advancedSearch ? 'advanced-search-input' : ''
+          }`}
           name="Search City, Building, Community .."
           onChange={value => onInputChange('location', value)}
           value={getSearchValue()}
@@ -72,7 +82,7 @@ const HomeFormCard = props => {
         <BasicSelect
           bgColor="white"
           border
-          customClass="property"
+          customClass={`property ${advancedSearch ? 'advanced-property' : ''}`}
           name="Property Type"
           onChange={value => onInputChange('propertyType', value)}
           options={[
@@ -84,7 +94,7 @@ const HomeFormCard = props => {
         />
         <BasicSelect
           bgColor="white"
-          customClass="sale"
+          customClass={`sale ${advancedSearch ? 'advanced-sale' : ''}`}
           name="Sale"
           border
           onChange={value => onInputChange('sale', value)}
@@ -95,7 +105,9 @@ const HomeFormCard = props => {
           ]}
         />
         <InputSelect
-          customClass="price-from"
+          customClass={`price-from ${
+            advancedSearch ? 'advanced-price-from' : ''
+          }`}
           bgColor="white"
           border
           name="Price From"
@@ -109,7 +121,9 @@ const HomeFormCard = props => {
           ]}
         />
         <InputSelect
-          customClass="price-two"
+          customClass={`price-two ${
+            advancedSearch ? 'advanced-price-two' : ''
+          }`}
           name="Price To"
           bgColor="white"
           border
@@ -122,12 +136,52 @@ const HomeFormCard = props => {
             { name: '600,0000', value: 6000000 },
           ]}
         />
+        <InputSelect
+          customClass={`bed-home ${advancedSearch ? 'advanced-bed-home' : ''}`}
+          name="Beds"
+          bgColor="white"
+          border
+          onChange={value => onInputChange('noOfBed', value)}
+          value={props.homeSearch.noOfBed}
+          options={[
+            { name: '1', value: 1 },
+            { name: '2', value: 2 },
+            { name: '3', value: 3 },
+            { name: '4', value: 4 },
+          ]}
+        />
+        <InputSelect
+          customClass={`bath-home ${
+            advancedSearch ? 'advanced-bath-home' : ''
+          }`}
+          name="Bathrooms"
+          bgColor="white"
+          border
+          onChange={value => onInputChange('noOfBath', value)}
+          value={props.homeSearch.noOfBath}
+          options={[
+            { name: '1', value: 1 },
+            { name: '2', value: 2 },
+            { name: '3', value: 3 },
+            { name: '4', value: 4 },
+          ]}
+        />
         <BasicButton
-          customClass="home-search-btn"
-          onClick={() => props.onSearch(makeLocationAndSearch(), true)}
+          customClass={`home-search-btn ${
+            advancedSearch ? 'advanced-home-search-btn' : ''
+          }`}
+          onClick={() => props.onSearch(makeParam())}
         >
           <SearchIcon /> Search
         </BasicButton>
+        <p
+          className="advanced-search"
+          onClick={() => {
+            setAdvancedSearch(!advancedSearch);
+          }}
+        >
+          {advancedSearch ? 'Normal Search' : 'Advanced Search'}
+        </p>
       </div>
     </div>
   );

@@ -7,43 +7,10 @@ import {
   GET_HOME_LOCATION_SEARCH,
   GET_HOME_LOCATION_SEARCH_ERROR,
   GET_HOME_LOCATION_SEARCH_STARTED,
-  GET_HOME_FEATURED,
-  GET_HOME_FEATURED_STARTED,
-  GET_HOME_FEATURED_ERROR,
-  GET_HOME_LUXURY,
-  GET_HOME_LUXURY_STARTED,
-  GET_HOME_LUXURY_ERROR,
-  CHANGE_HOME_FEATURED_PAGE,
-  CHANGE_HOME_LUXURY_PAGE,
-  CHANGE_HOME_PROPERTY_PAGE,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case CHANGE_HOME_FEATURED_PAGE:
-      return {
-        ...state,
-        homeFeatured: {
-          ...state.homeFeatured,
-          currentPage: action.payload,
-        },
-      };
-    case CHANGE_HOME_PROPERTY_PAGE:
-      return {
-        ...state,
-        homeProperty: {
-          ...state.homeProperty,
-          currentPage: action.payload,
-        },
-      };
-    case CHANGE_HOME_LUXURY_PAGE:
-      return {
-        ...state,
-        homeLuxury: {
-          ...state.homeLuxury,
-          currentPage: action.payload,
-        },
-      };
     case GET_HOME_PROPERTY:
       return {
         ...state,
@@ -64,6 +31,7 @@ const reducer = (state = initialState, action) => {
           ...state.homeProperty,
           error: false,
           loading: true,
+          property: [],
           params: action.payload,
         },
       };
@@ -73,6 +41,7 @@ const reducer = (state = initialState, action) => {
         homeProperty: {
           ...state.homeProperty,
           error: true,
+          property: [],
           loading: false,
         },
       };
@@ -93,7 +62,7 @@ const reducer = (state = initialState, action) => {
             ...state.homeSearch.locationSearch,
             error: false,
             loading: false,
-            location: action.payload && action.payload[0],
+            location: action.payload && removeDuplicate(action.payload[0]),
           },
         },
       };
@@ -121,63 +90,6 @@ const reducer = (state = initialState, action) => {
           },
         },
       };
-    case GET_HOME_FEATURED:
-      return {
-        ...state,
-        homeFeatured: {
-          ...state.homeFeatured,
-          loading: false,
-          error: false,
-          featured: action.payload.rows,
-          count: action.payload.count,
-        },
-      };
-    case GET_HOME_FEATURED_STARTED:
-      return {
-        ...state,
-        homeFeatured: {
-          ...state.homeFeatured,
-          loading: true,
-          error: false,
-        },
-      };
-    case GET_HOME_FEATURED_ERROR:
-      return {
-        ...state,
-        homeFeatured: {
-          ...state.homeFeatured,
-          loading: false,
-          error: true,
-        },
-      };
-    case GET_HOME_LUXURY:
-      return {
-        ...state,
-        homeLuxury: {
-          ...state.homeLuxury,
-          loading: false,
-          error: false,
-          luxury: action.payload.rows,
-        },
-      };
-    case GET_HOME_LUXURY_STARTED:
-      return {
-        ...state,
-        homeLuxury: {
-          ...state.homeLuxury,
-          loading: true,
-          error: false,
-        },
-      };
-    case GET_HOME_LUXURY_ERROR:
-      return {
-        ...state,
-        homeLuxury: {
-          ...state.homeLuxury,
-          loading: false,
-          error: true,
-        },
-      };
     default:
       return state;
   }
@@ -193,6 +105,19 @@ const addIfNecessary = (addTo, add) => {
   }
 
   return addTo;
+};
+
+const removeDuplicate = (array = []) => {
+  const newArray = [...array];
+  const uniqueTitle = [];
+  const uniqueArray = [];
+  for (let i = 0; i < newArray.length; i++) {
+    if (!uniqueTitle.includes(newArray[i].placeAddress)) {
+      uniqueTitle.push(newArray[i].placeAddress);
+      uniqueArray.push(newArray[i]);
+    }
+  }
+  return uniqueArray;
 };
 
 export default reducer;
