@@ -4,6 +4,8 @@ import BasicButton from "../../button/BasicButton";
 import Facebook from "../../svg/facebook";
 import Twitter from "../../svg/twitter";
 import Instagram from "../../svg/instagram";
+
+// import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -48,11 +50,34 @@ const DivTwo = () => {
     <div className="div-two">
       <h1 className="heading">Helpful Links.</h1>
       <ul>
-        <li>About us</li>
-        <li>about founder</li>
-        <li> Our Team </li>
-        <li>Our partners</li>
-        <li>privacy policy</li>
+        <li>
+          <RightArrow color="black " viewBox="12 0 16 8" />
+          About Us
+        </li>{" "}
+        <li>
+          <RightArrow color="black " viewBox="12 0 16 8" />
+          about founder
+        </li>{" "}
+        <li>
+          <RightArrow color="black " viewBox="12 0 16 8" />
+          Our Team
+        </li>{" "}
+        <li>
+          <RightArrow color="black " viewBox="12 0 16 8" />
+          Our Partners
+        </li>{" "}
+        <li>
+          <RightArrow color="black " viewBox="12 0 16 8" />
+          Teams And Conditions
+        </li>
+        <li>
+          <RightArrow color="black " viewBox="12 0 16 8" />
+          Careers
+        </li>
+        <li>
+          <RightArrow color="black " viewBox="12 0 16 8" />
+          Privacy Policy
+        </li>
       </ul>
     </div>
   );
@@ -62,8 +87,13 @@ const DivThree = () => {
     <div className="div-three">
       <h1 className="heading">Contact info.</h1>
       <p className="sub-heading">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. A dolores hic
-        expedita corporis obcaecati molestias
+        Mail : <span> hr@uaeassistant.com</span>
+      </p>
+      <p className="sub-heading">
+        Adress : <span> Dubai</span>
+      </p>
+      <p className="sub-heading">
+        phone : <span> 3983939399</span>
       </p>
     </div>
   );

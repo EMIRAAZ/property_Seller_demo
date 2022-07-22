@@ -1,14 +1,14 @@
-import './home.scss';
-import Header from '../../../components/header';
-import ImageFrame from '../imageframe';
-import HomeFormCard from '../homeformcard';
-import SocialPanel from '../../../components/socialpanel';
-import Footer from '../../../components/footer/english';
-import HomeProperty from '../homeProperty';
-import Categories from '../categories';
-import HomeCategory from '../homecategory';
+import "./home.scss";
+import Header from "../../../components/header";
+import ImageFrame from "../imageframe";
+import HomeFormCard from "../homeformcard";
+import SocialPanel from "../../../components/socialpanel";
+import Footer from "../../../components/footer/english";
+import HomeProperty from "../homeProperty";
+import Categories from "../categories";
+import HomeCategory from "../homecategory";
 
-const Home = props => {
+const Home = (props) => {
   return (
     <div className="home-english">
       <Header customClass="home-header-class" />

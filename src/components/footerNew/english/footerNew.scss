@@ -8,7 +8,7 @@
 
   .div-1 {
     width: 20%;
-    background-color: green;
+    // background-color: green;
     .div-one {
       .heading {
         font-family: "Poppins";
@@ -31,7 +31,7 @@
   .div-2 {
     width: 20%;
     height: 100px;
-    background-color: hotpink;
+    // background-color: hotpink;
     .div-two {
       .heading {
         font-family: "Poppins";
@@ -40,11 +40,18 @@
         color: rgb(88, 86, 86);
       }
       ul {
+        list-style-type: none;
         li {
           font-family: "Poppins";
           font-size: 11.61px !important;
           font-weight: 600;
           color: rgb(41, 40, 40);
+          text-decoration: none;
+          display: flex;
+        }
+
+        li:hover {
+          margin-left: 10px;
         }
       }
     }
@@ -52,7 +59,7 @@
   .div-3 {
     width: 20%;
     height: 100px;
-    background-color: hotpink;
+    // background-color: hotpink;
     .div-three {
       .heading {
         font-family: "Poppins";
@@ -65,7 +72,7 @@
   .div-4 {
     width: 20%;
     height: 100px;
-    background-color: hotpink;
+    // background-color: hotpink;
     .div-four {
       .heading {
         font-family: "Poppins";
