@@ -23,7 +23,7 @@ const Rent = props => {
           setParam(params);
         }}
       />
-      <ListHeading count={props.rentProperty.count} />
+      <ListHeading main="Rent" count={props.rentProperty.count} />
       <RenderComponent
         data={props.rentProperty.property}
         propertyCallApi={props.getRentProperty}

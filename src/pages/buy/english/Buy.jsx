@@ -22,7 +22,7 @@ const Buy = props => {
           setParam(params);
         }}
       />
-      <ListHeading count={props.buyProperty.count} />
+      <ListHeading main="Buy" count={props.buyProperty.count} />
       <RenderComponent
         data={props.buyProperty.property}
         propertyCallApi={props.getBuyProperty}
