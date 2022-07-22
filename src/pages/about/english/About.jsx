@@ -18,10 +18,10 @@ const TeamCard = ({ url, name, position }) => {
 const About = () => {
   return (
     <div className="about-english-container">
-      <Header />
+      <Header customClass="about-header-class" />
       <div className="about-properties">
         <div className="about-container">
-          <h2 className="property-header">About Properties.</h2>
+          <h2 className="property-header">About Us.</h2>
           <p className="properties-description">
             <p>
               A one stop solution for all your property needs, the ‘UAE
