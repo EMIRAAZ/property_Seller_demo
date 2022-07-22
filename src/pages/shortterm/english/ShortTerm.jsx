@@ -4,7 +4,7 @@ import ImageFrame from '../imageframe';
 import Paragraph from '../../../components/paragraph';
 import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer';
-import MoveToTopComponent from '../../../components/movetotop';
+import { MoveToTop } from '../../../components/movetotop';
 import Communities from '../communities';
 const ShortTerm = () => {
   return (
@@ -27,7 +27,7 @@ const ShortTerm = () => {
         <Communities />
       </div>
       {/* <SocialPanel customClass="shortterm-social-panel" /> */}
-      <MoveToTopComponent />
+      <MoveToTop />
       <Footer />
     </div>
   );

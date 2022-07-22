@@ -3,7 +3,7 @@ import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer';
 import Header from '../../../components/header';
 import FormCard from '../../../components/formcard';
-import MoveToTopComponent from '../../../components/movetotop';
+import { MoveToTop } from '../../../components/movetotop';
 
 const Career = () => {
   return (
@@ -45,7 +45,7 @@ const Career = () => {
       </div>
 
       {/* <SocialPanel /> */}
-      <MoveToTopComponent />
+      <MoveToTop />
 
       <Footer />
     </div>

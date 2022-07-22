@@ -5,7 +5,7 @@ import QueryCard from '../../components/querycard';
 import RenderComponent from '../../components/renderComponent';
 import ListHeading from '../../components/ListHeading';
 import Footer from '../../components/footer';
-import MoveToTopComponent from '../../components/movetotop';
+import { MoveToTop } from '../../components/movetotop';
 
 const ListProperty = props => {
   let location = useLocation();
@@ -52,7 +52,7 @@ const ListProperty = props => {
         iQuery={`limit=${6}&offset=${0}`}
         isPagination
       />
-      <MoveToTopComponent />
+      <MoveToTop />
       <Footer />
     </div>
   );

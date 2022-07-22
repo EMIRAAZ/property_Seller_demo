@@ -3,7 +3,7 @@ import Header from '../../../components/header';
 import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer';
 import { useEffect } from 'react';
-import MoveToTopComponent from '../../../components/movetotop';
+import { MoveToTop } from '../../../components/movetotop';
 
 export const BlogCard = ({ updatedAt, mainTitle, images, description }) => {
   return (
@@ -45,7 +45,7 @@ const Blog = props => {
           {renderCard()}
         </div>
         {/* <SocialPanel /> */}
-        <MoveToTopComponent />
+        <MoveToTop />
 
         <Footer />
       </div>

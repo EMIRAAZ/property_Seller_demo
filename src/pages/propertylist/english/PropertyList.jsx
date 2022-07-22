@@ -1,7 +1,7 @@
 import './propertylist.scss';
 import SocialPanel from '../../../components/socialpanel';
 import Footer from '../../../components/footer';
-import MoveToTopComponent from '../../../components/movetotop';
+import { MoveToTop } from '../../../components/movetotop';
 import Header from '../../../components/header';
 
 const PropertyList = () => {
@@ -51,7 +51,7 @@ const PropertyList = () => {
       </div>
 
       {/* <SocialPanel /> */}
-      <MoveToTopComponent />
+      <MoveToTop />
       <Footer />
     </div>
   );
