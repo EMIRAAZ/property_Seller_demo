@@ -14,6 +14,8 @@ function Footer(props) {
     props.getTagLineWeb();
   }, []);
 
+  console.log(props);
+
   return (
     <div className="footer-english">
       <div className="mini-container">
@@ -38,34 +40,28 @@ function Footer(props) {
       </div>
       <div className="third-container">
         <p className="abt" onClick={() => navigate('/about')}>
-          About Us
+          About&nbsp;Us
         </p>
         <p className="abt-founder" onClick={() => navigate('/aboutfounder')}>
-          About Founder
+          About&nbsp;Founder
         </p>
         <p className="ourtm" onClick={() => navigate('/ourteam')}>
-          Our Team
+          Our&nbsp;Team
         </p>
         <p className="ourpart" onClick={() => navigate('/ourpartner')}>
-          Our Partners
+          Our&nbsp;Partners
         </p>
         <p className="carrer" onClick={() => navigate('/career')}>
           Careers
         </p>
         <p className="terms" onClick={() => navigate('/terms')}>
-          Teams And Conditions
+          Teams&nbsp;And&nbsp;Conditions
         </p>
         <p className="policy" onClick={() => navigate('/privacypolicy')}>
-          Privacy Policy
+          Privacy&nbsp;Policy
         </p>
-        {/* <p className="blog" onClick={() => navigate('/privacypolicy')}>
-          Blog
-        </p>
-        <p className="news" onClick={() => navigate('/privacypolicy')}>
-          News
-        </p> */}
-        <p className="copy-right">Copyright 2021 - UAEAssistant</p>
       </div>
+      <p className="copy-right">Copyright 2021 - UAEAssistant</p>
     </div>
   );
 }
