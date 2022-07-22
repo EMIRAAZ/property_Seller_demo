@@ -23,7 +23,7 @@ const getTagHeadWebError = () => {
 export const getTagHeadWeb = () => async dispatch => {
   try {
     dispatch(getTagHeadWebStarted());
-    const res = await axios.get(`/api/taghead?limit=3`, {
+    const res = await axios.get(`/api/taghead?limit=4`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('authToken'),
       },

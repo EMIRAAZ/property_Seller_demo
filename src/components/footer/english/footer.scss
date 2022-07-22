@@ -43,15 +43,10 @@
     gap: 20px;
     color: #ffffff;
     width: 90%;
-    margin: auto;
-    margin-top: 70px;
+    margin: 20px auto;
     justify-content: space-between;
 
     .column-1 {
-      grid-column-start: 1;
-      grid-column-end: 4;
-      grid-row-start: 3;
-      display: flex;
       p {
         font-family: 'Poppins';
         font-size: 32px;
@@ -67,22 +62,6 @@
         margin-top: 12px;
         gap: 20px;
       }
-    }
-
-    .column-2 {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 1;
-    }
-    .column-3 {
-      grid-column-start: 2;
-      grid-column-end: 4;
-      grid-row-start: 1;
-    }
-    .column-4 {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 2;
     }
     .column-heading {
       font-family: 'Poppins';
@@ -108,70 +87,34 @@
   }
   .third-container {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     color: #ffffff;
     margin: auto;
-    margin-top: 100px;
-    padding-bottom: 30px;
-    width: 90%;
+    margin-top: 30px;
+    width: 100%;
     font-family: 'Poppins';
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     line-height: 23px;
     letter-spacing: -0.37692299485206604px;
     text-align: center;
     gap: 10px;
-
-    .abt {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 1;
-    }
-    .abt-founder {
-      grid-column-start: 2;
-      grid-column-end: 3;
-      grid-row-start: 1;
-    }
-    .ourtm {
-      grid-column-start: 3;
-      grid-column-end: 4;
-      grid-row-start: 1;
-    }
-    .ourpart {
-      grid-column-start: 4;
-      grid-column-end: 5;
-      grid-row-start: 1;
-    }
-    .career {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 2;
-    }
-    .terms {
-      grid-column-start: 2;
-      grid-column-end: 4;
-      grid-row-start: 2;
-    }
-    .policy {
-      grid-column-start: 4;
-      grid-column-end: 5;
-      grid-row-start: 2;
-    }
-    .blog {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      grid-row-start: 3;
-    }
-    .news {
-      grid-column-start: 3;
-      grid-column-end: 5;
-      grid-row-start: 3;
-    }
-
-    .copy-right {
-      grid-column-start: 1;
-      grid-column-end: 5;
-      grid-row-start: 4;
-    }
+  }
+  .copy-right {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    color: #ffffff;
+    margin: auto;
+    margin-top: 37px;
+    padding-bottom: 10px;
+    width: 100%;
+    font-family: 'Poppins';
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: -0.37692299485206604px;
+    text-align: center;
+    gap: 10px;
   }
 }
 
@@ -216,16 +159,13 @@
 
     .second-container {
       display: grid;
+      grid-template-columns: repeat(5, 1fr);
       color: #ffffff;
       width: 90%;
       margin: auto;
       margin-top: 70px;
       justify-content: space-between;
-
       .column-1 {
-        grid-column-start: 1;
-        grid-column-end: 1;
-        grid-row-start: 1;
         display: block;
         p {
           font-family: 'Poppins';
@@ -241,21 +181,6 @@
           margin-top: 30px;
           gap: 40px;
         }
-      }
-      .column-2 {
-        grid-column-start: 2;
-        grid-column-end: 2;
-        grid-row-start: 1;
-      }
-      .column-3 {
-        grid-column-start: 3;
-        grid-column-end: 3;
-        grid-row-start: 1;
-      }
-      .column-4 {
-        grid-column-start: 4;
-        grid-column-end: 4;
-        grid-row-start: 1;
       }
       .column-heading {
         font-family: 'Poppins';
@@ -275,73 +200,11 @@
       }
     }
     .third-container {
-      display: grid;
-      color: #ffffff;
-      margin: auto;
-      margin-top: 100px;
-      width: 90%;
-      font-family: 'Poppins';
+      grid-template-columns: repeat(7, 1fr);
+      padding: 20px 0px;
       font-size: 15px;
-      font-weight: 500;
-      line-height: 23px;
-      letter-spacing: -0.37692299485206604px;
-      text-align: center;
-      gap: 10px;
-      padding-bottom: 30px;
       p {
         cursor: pointer;
-      }
-
-      .abt {
-        grid-column-start: 1;
-        grid-column-end: 1;
-        grid-row-start: 1;
-      }
-      .abt-founder {
-        grid-column-start: 2;
-        grid-column-end: 2;
-        grid-row-start: 1;
-      }
-      .ourtm {
-        grid-column-start: 3;
-        grid-column-end: 3;
-        grid-row-start: 1;
-      }
-      .ourpart {
-        grid-column-start: 4;
-        grid-column-end: 4;
-        grid-row-start: 1;
-      }
-      .career {
-        grid-column-start: 1;
-        grid-column-end: 1;
-        grid-row-start: 2;
-      }
-      .terms {
-        grid-column-start: 5;
-        grid-column-end: 5;
-        grid-row-start: 1;
-      }
-      .policy {
-        grid-column-start: 2;
-        grid-column-end: 2;
-        grid-row-start: 2;
-      }
-      .blog {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 3;
-      }
-      .news {
-        grid-column-start: 3;
-        grid-column-end: 5;
-        grid-row-start: 3;
-      }
-
-      .copy-right {
-        grid-column-start: 1;
-        grid-column-end: 6;
-        grid-row-start: 4;
       }
     }
   }

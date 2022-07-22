@@ -15,6 +15,7 @@ const SearchChipSelect = ({
   onArrayChange = () => {},
 }) => {
   const [selectName, setSelectName] = useState([]);
+  const [selectObj, setSelectObj] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [dropdownClass, setdropdownClass] = useState('hide');
 
@@ -29,8 +30,9 @@ const SearchChipSelect = ({
 
   const onClickOption = (name, value) => {
     onChange(value);
+    setSelectObj([...selectObj, value]);
     setSelectName([...selectName, name]);
-    onArrayChange([...selectName, name]);
+    onArrayChange([...selectObj, value]);
     setInputValue('');
 
     dropdownClass === 'hide'
@@ -60,11 +62,20 @@ const SearchChipSelect = ({
       }
     });
 
-  const onClickChipRemove = item => {
+  const onClickChipRemove = (item, obj) => {
     if (item !== 'REMOVE_ALL') {
       setSelectName(selectName.filter(loc => loc !== item));
     } else {
       setSelectName([selectName[0]]);
+    }
+    if (item !== 'REMOVE_ALL') {
+      setSelectObj(
+        selectObj.filter(loc => loc.placeAddress !== obj.placeAddress),
+        i => onArrayChange(i)
+      );
+    } else {
+      setSelectObj([selectObj[0]]);
+      onArrayChange([selectObj[0]]);
     }
   };
 
@@ -75,7 +86,7 @@ const SearchChipSelect = ({
         <span className="render-chip">
           {selectName[0].slice(0, 10)}
           <CloseIcon
-            onClick={() => onClickChipRemove(selectName[0])}
+            onClick={() => onClickChipRemove(selectName[0], selectObj[0])}
             className="close-class"
             width="17"
             height="11"

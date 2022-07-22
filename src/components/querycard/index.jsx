@@ -33,34 +33,25 @@ const QueryCard = ({
     }
   };
 
-  const getSearchValue = () => {
-    const { location } = cardInput;
-    if (typeof location === 'string') return location;
-    else
-      return `${location.placeAddress} ${
-        location.building ? location.building : ''
-      } ${location.city}`;
-  };
-
   const makeParam = () => {
     const newListSearch = { ...cardInput };
-    const { location } = newListSearch;
-    let loc = '';
-    if (typeof location === 'string') loc = location;
-    else {
-      loc = {
-        placeAddress: location.placeAddress,
-        city: location.city,
-        ...(location.building ? { building: location.building } : {}),
-      };
-    }
     delete newListSearch.locationSearch;
     delete newListSearch.location;
+    delete newListSearch.searchArray;
 
     return `&${makeUrlParam({
       ...newListSearch,
-      ...(typeof loc === 'string' ? { location: loc } : loc),
-    })}`;
+    })}${makeMultipleLocString()}`;
+  };
+
+  const makeMultipleLocString = () => {
+    const newSearchArray = [...cardInput.searchArray];
+    let mlString = '';
+    for (let i = 0; i < newSearchArray.length; i++) {
+      let currentObject = newSearchArray[i];
+      mlString += `&placeAddress=${currentObject.placeAddress}&city=${currentObject.city}&building=${currentObject.building}`;
+    }
+    return mlString;
   };
 
   return (
@@ -72,8 +63,7 @@ const QueryCard = ({
           customClass="search"
           name="Search City, Building, Community .."
           onChange={value => onChange('location', value)}
-          // onArrayChange={value => onChange('searchArray', value)}
-          value={getSearchValue()}
+          onArrayChange={value => onChange('searchArray', value)}
           leftIcon={LocationIcon}
           options={cardInput.locationSearch.location.map(location => {
             return {
