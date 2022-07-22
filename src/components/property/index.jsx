@@ -29,7 +29,7 @@ const Property = props => {
       address.building ? address.building : ''
     } ${address.city}`;
 
-    return add.length < 64 ? add : add.substring(0, 63) + ' . . .';
+    return add.length < 50 ? add : add.substring(0, 50) + ' . . .';
   };
 
   const renderUnit = unit => {

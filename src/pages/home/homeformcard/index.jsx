@@ -24,35 +24,27 @@ const HomeFormCard = props => {
     }
   };
 
-  const getSearchValue = () => {
-    const { location } = props.homeSearch;
-    if (typeof location === 'string') return location;
-    else
-      return `${location.placeAddress} ${
-        location.building ? location.building : ''
-      } ${location.city}`;
-  };
-
   const makeParam = () => {
     const newListSearch = { ...props.homeSearch };
-    const { location } = newListSearch;
-    let loc = '';
-    if (typeof location === 'string') loc = location;
-    else {
-      loc = {
-        placeAddress: location.placeAddress,
-        city: location.city,
-        ...(location.building ? { building: location.building } : {}),
-      };
-    }
     delete newListSearch.locationSearch;
     delete newListSearch.location;
+    delete newListSearch.searchArray;
 
     return `&${makeUrlParam({
       ...newListSearch,
-      ...(typeof loc === 'string' ? { location: loc } : loc),
-    })}`;
+    })}${makeMultipleLocString()}`;
   };
+
+  const makeMultipleLocString = () => {
+    const newSearchArray = [...props.homeSearch.searchArray];
+    let mlString = '';
+    for (let i = 0; i < newSearchArray.length; i++) {
+      let currentObject = newSearchArray[i];
+      mlString += `&placeAddress=${currentObject.placeAddress}&city=${currentObject.city}&building=${currentObject.building}`;
+    }
+    return mlString;
+  };
+
   return (
     <div className="home-form-card">
       <div
@@ -66,7 +58,7 @@ const HomeFormCard = props => {
           }`}
           name="Search City, Building, Community .."
           onChange={value => onInputChange('location', value)}
-          value={getSearchValue()}
+          onArrayChange={value => onInputChange('searchArray', value)}
           leftIcon={LocationIcon}
           options={props.homeSearch.locationSearch.location.map(location => {
             return {

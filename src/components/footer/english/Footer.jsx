@@ -14,8 +14,6 @@ function Footer(props) {
     props.getTagLineWeb();
   }, []);
 
-  console.log(props);
-
   return (
     <div className="footer-english">
       <div className="mini-container">

@@ -12,7 +12,7 @@ export const initialState = {
     priceTo: '',
     noOfBed: '',
     noOfBath: '',
-    // searchArray: [],
+    searchArray: [],
     locationSearch: {
       loading: false,
       error: false,
