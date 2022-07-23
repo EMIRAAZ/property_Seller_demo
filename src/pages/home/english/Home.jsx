@@ -9,13 +9,15 @@ import HomeCategory from '../homecategory';
 import RenderComponent from '../../../components/renderComponent';
 import ListHeading from '../../../components/ListHeading';
 import { MoveToTop } from '../../../components/movetotop';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Home = props => {
   const navigate = useNavigate();
   useEffect(() => {
     props.clearHomeProperty();
   }, []);
+
+  const [advancedSearch, setAdvancedSearch] = useState(false);
 
   return (
     <div className="home-english">
@@ -28,8 +30,10 @@ const Home = props => {
         onSearch={params => {
           navigate(`/property-search?limit=6&offset=0${params}`);
         }}
+        advancedSearch={advancedSearch}
+        setAdvancedSearch={setAdvancedSearch}
       />
-      <HomeCategory />
+      <HomeCategory advancedSearch={advancedSearch} />
       {/* <ListHeading count={props.homeProperty.count} /> */}
       <RenderComponent
         data={props.homeProperty.property}

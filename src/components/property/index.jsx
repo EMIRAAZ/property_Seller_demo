@@ -148,7 +148,7 @@ const Property = props => {
               viewBox="0 0 15 15"
               fill="#2f70ff"
             />
-            whatsapp
+            WhatsApp
           </div>
           <div
             className="service-btn-property phone"
@@ -164,7 +164,7 @@ const Property = props => {
             }
           >
             <Mail width="15" height="15" viewBox="0 0 15 15" fill="#2f70ff" />
-            Mail
+            Email
           </div>
         </div>
       </div>

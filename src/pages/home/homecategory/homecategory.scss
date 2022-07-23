@@ -1,4 +1,9 @@
+.ad-s-on {
+  top: 700px !important;
+}
+
 .home-category-frame {
+  transition: 1s;
   align-items: center;
   position: absolute;
   display: grid;
@@ -45,6 +50,9 @@
 }
 
 @media only screen and (min-width: 600px) {
+  .ad-s-on {
+    top: 560px !important;
+  }
   .home-category-frame {
     display: flex;
     width: 100%;
