@@ -20,7 +20,7 @@ const ListProperty = props => {
 
   const getPropertyName = () => {
     if (getID() === 'featured') return 'Featured Properties';
-    else if (getID() === 'readytomove') return 'Ready To Move';
+    else if (getID() === 'readytomove') return 'Ready Properties';
     else if (getID() === 'neighbourhood') return 'Famous Neighbourhoods';
   };
   const getPropertyFn = params => {
@@ -44,7 +44,11 @@ const ListProperty = props => {
         cardInput={props.listSearch}
         onSearch={params => getPropertyFn(params)}
       />
-      <ListHeading main={getPropertyName()} count={getPropertyCount()} />
+      <ListHeading
+        className="list-header"
+        main={getPropertyName()}
+        count={getPropertyCount()}
+      />
       <RenderComponent
         data={getPropertyData()}
         propertyCallApi={getPropertyFn}

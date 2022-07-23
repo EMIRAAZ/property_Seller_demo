@@ -1,17 +1,14 @@
-const HamburgerLogo = ({ width, height, fill = '#1C3988' }) => {
+const HamburgerLogo = ({ width, height, fill = '#ffffff' }) => {
   return (
     <div>
       <svg
+        fill={fill}
+        xmlns="http://www.w3.org/2000/svg"
         width={width}
         height={height}
         viewBox={`0 0 ${width} ${height}`}
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M0.189453 24.1805H38.2374V20.2103H0.189453V24.1805ZM0.189453 14.255H38.2374V10.2848H0.189453V14.255ZM0.189453 0.359375V4.32955H38.2374V0.359375H0.189453Z"
-          fill={fill}
-        />
+        <path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z" />
       </svg>
     </div>
   );
