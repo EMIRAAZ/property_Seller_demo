@@ -1,11 +1,12 @@
-import './mortgage.scss';
-import Header from '../../../components/header';
-import ImageFrame from '../imageframe';
-import Paragraph from '../../../components/paragraph';
-import SocialPanel from '../../../components/socialpanel';
-import { MoveToTop } from '../../../components/movetotop';
+import "./mortgage.scss";
+import Header from "../../../components/header";
+import ImageFrame from "../imageframe";
+import Paragraph from "../../../components/paragraph";
+import SocialPanel from "../../../components/socialpanel";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
-import Footer from '../../../components/footer';
+import Footer from "../../../components/footer";
 const Mortgage = () => {
   return (
     <div className="mortgage-english">
@@ -39,7 +40,7 @@ const Mortgage = () => {
       </Paragraph>
       {/* <SocialPanel customClass="mortgage-social-panel" /> */}
       <MoveToTop />
-      <Footer />
+      <FooterNew />
     </div>
   );
 };

@@ -1,11 +1,12 @@
 const Phone = ({
-  width = '20',
-  height = '20',
-  viewBox = '0 0 16 16',
-  fill = '#1FA0E9',
+  width = "20",
+  height = "20",
+  viewBox = "0 0 16 16",
+  fill = "#1FA0E9",
+  customClass,
 }) => {
   return (
-    <div>
+    <div className={customClass}>
       <svg
         width={width}
         height={height}

@@ -1,7 +1,8 @@
-import './about.scss';
-import Footer from '../../../components/footer';
-import Header from '../../../components/header';
-import { MoveToTop } from '../../../components/movetotop';
+import "./about.scss";
+import Footer from "../../../components/footer";
+import Header from "../../../components/header";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
 const TeamCard = ({ url, name, position }) => {
   return (
@@ -93,7 +94,7 @@ const About = () => {
         </div>
       </div>
       <MoveToTop />
-      <Footer />
+      <FooterNew />
     </div>
   );
 };

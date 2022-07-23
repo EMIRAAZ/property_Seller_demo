@@ -5,6 +5,7 @@ import Pagination from '../../../components/pagination';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { MoveToTop } from '../../../components/movetotop';
+import FooterNew from '../../../components/footerNew';
 
 const LuxuryViewMore = props => {
   let location = useLocation();
@@ -42,7 +43,7 @@ const LuxuryViewMore = props => {
         </div>
       </div>
       <MoveToTop />
-      <Footer />
+      <FooterNew />
     </div>
   );
 };

@@ -1,12 +1,13 @@
-import './neighbourhood.scss';
-import { useEffect } from 'react';
-import Footer from '../../../components/footer';
-import Header from '../../../components/header';
-import BasicButton from '../../../components/button/BasicButton';
-import { useNavigate } from 'react-router-dom';
-import { MoveToTop } from '../../../components/movetotop';
+import "./neighbourhood.scss";
+import { useEffect } from "react";
+import Footer from "../../../components/footer";
+import Header from "../../../components/header";
+import BasicButton from "../../../components/button/BasicButton";
+import { useNavigate } from "react-router-dom";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
-const NeighborHood = props => {
+const NeighborHood = (props) => {
   useEffect(() => {
     props.getNeighborhoodWeb();
   }, []);
@@ -18,18 +19,18 @@ const NeighborHood = props => {
         <h1 className="subheading">{props.neighbor.count} Properties Found</h1>
         <div className="card-div">
           {props.neighbor.rows &&
-            props.neighbor.rows.map(item => <Card key={item.id} {...item} />)}
+            props.neighbor.rows.map((item) => <Card key={item.id} {...item} />)}
         </div>
       </div>
       <MoveToTop />
-      <Footer />
+      <FooterNew />
     </div>
   );
 };
 
 ///////////////////
 
-const Card = props => {
+const Card = (props) => {
   const navigate = useNavigate();
   return (
     <div className="card">

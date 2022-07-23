@@ -3,17 +3,18 @@ import SocialPanel from "../../../components/socialpanel";
 import Footer from "../../../components/footer";
 import Header from "../../../components/header";
 import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
 const Policy = () => {
   return (
     <>
-      <div className='policy-container'>
+      <div className="policy-container">
         <Header />
-        <div className='h-container'>
-          <h2 className='p-header'>Privacy Policy</h2>
+        <div className="h-container">
+          <h2 className="p-header">Privacy Policy</h2>
         </div>
-        <div className='policy-description'>
-          <div className='description-container'>
+        <div className="policy-description">
+          <div className="description-container">
             <p>
               <h3>1. INTRODUCTION</h3> <b>1.1</b> UAE Assistant is a company
               registered in Dubai with its registered office at ………………… , which
@@ -357,7 +358,7 @@ const Policy = () => {
         </div>
         {/* <SocialPanel /> */}
         <MoveToTop />
-        <Footer />
+        <FooterNew />
       </div>
     </>
   );

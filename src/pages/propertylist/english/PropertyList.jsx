@@ -1,8 +1,9 @@
-import './propertylist.scss';
-import SocialPanel from '../../../components/socialpanel';
-import Footer from '../../../components/footer';
-import { MoveToTop } from '../../../components/movetotop';
-import Header from '../../../components/header';
+import "./propertylist.scss";
+import SocialPanel from "../../../components/socialpanel";
+import Footer from "../../../components/footer";
+import { MoveToTop } from "../../../components/movetotop";
+import Header from "../../../components/header";
+import FooterNew from "../../../components/footerNew";
 
 const PropertyList = () => {
   return (
@@ -52,7 +53,7 @@ const PropertyList = () => {
 
       {/* <SocialPanel /> */}
       <MoveToTop />
-      <Footer />
+      <FooterNew />
     </div>
   );
 };

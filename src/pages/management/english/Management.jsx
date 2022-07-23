@@ -1,11 +1,12 @@
-import './management.scss';
-import Header from '../../../components/header';
-import ImageFrame from '../imageframe';
-import Paragraph from '../../../components/paragraph';
-import SocialPanel from '../../../components/socialpanel';
-import { MoveToTop } from '../../../components/movetotop';
+import "./management.scss";
+import Header from "../../../components/header";
+import ImageFrame from "../imageframe";
+import Paragraph from "../../../components/paragraph";
+import SocialPanel from "../../../components/socialpanel";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
-import Footer from '../../../components/footer';
+import Footer from "../../../components/footer";
 const Management = () => {
   return (
     <div className="management-english">
@@ -24,7 +25,7 @@ const Management = () => {
       </Paragraph>
       {/* <SocialPanel customClass="management-social-panel" /> */}
       <MoveToTop />
-      <Footer />
+      <FooterNew />
     </div>
   );
 };

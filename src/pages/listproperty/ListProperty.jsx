@@ -1,38 +1,39 @@
-import './listproperty.scss';
-import { useLocation } from 'react-router-dom';
-import Header from '../../components/header';
-import QueryCard from '../../components/querycard';
-import RenderComponent from '../../components/renderComponent';
-import ListHeading from '../../components/ListHeading';
-import Footer from '../../components/footer';
-import { MoveToTop } from '../../components/movetotop';
+import "./listproperty.scss";
+import { useLocation } from "react-router-dom";
+import Header from "../../components/header";
+import QueryCard from "../../components/querycard";
+import RenderComponent from "../../components/renderComponent";
+import ListHeading from "../../components/ListHeading";
+import Footer from "../../components/footer";
+import { MoveToTop } from "../../components/movetotop";
+// import FooterNew from "/../../components/footerNew";
 
-const ListProperty = props => {
+const ListProperty = (props) => {
   let location = useLocation();
 
-  const getID = () => location.pathname.split('/').pop();
+  const getID = () => location.pathname.split("/").pop();
 
   const getPropertyData = () => {
-    if (getID() === 'featured') return props.featured.data;
-    else if (getID() === 'readytomove') return props.readyToMoveIn.data;
-    else if (getID() === 'neighbourhood') return props.propWithNeighbor.data;
+    if (getID() === "featured") return props.featured.data;
+    else if (getID() === "readytomove") return props.readyToMoveIn.data;
+    else if (getID() === "neighbourhood") return props.propWithNeighbor.data;
   };
 
   const getPropertyName = () => {
-    if (getID() === 'featured') return 'Featured Properties';
-    else if (getID() === 'readytomove') return 'Ready To Move';
-    else if (getID() === 'neighbourhood') return 'Famous Neighbourhoods';
+    if (getID() === "featured") return "Featured Properties";
+    else if (getID() === "readytomove") return "Ready To Move";
+    else if (getID() === "neighbourhood") return "Famous Neighbourhoods";
   };
-  const getPropertyFn = params => {
-    if (getID() === 'featured') return props.getCatFeatured(params);
-    else if (getID() === 'readytomove') return props.getRtmin(params);
-    else if (getID() === 'neighbourhood') return () => {};
+  const getPropertyFn = (params) => {
+    if (getID() === "featured") return props.getCatFeatured(params);
+    else if (getID() === "readytomove") return props.getRtmin(params);
+    else if (getID() === "neighbourhood") return () => {};
   };
 
   const getPropertyCount = () => {
-    if (getID() === 'featured') return props.featured.count;
-    else if (getID() === 'readytomove') return props.readyToMoveIn.count;
-    else if (getID() === 'neighbourhood') return props.propWithNeighbor.count;
+    if (getID() === "featured") return props.featured.count;
+    else if (getID() === "readytomove") return props.readyToMoveIn.count;
+    else if (getID() === "neighbourhood") return props.propWithNeighbor.count;
   };
 
   return (
@@ -42,7 +43,7 @@ const ListProperty = props => {
         onInputChange={props.onChangeListPropParams}
         onSearchLocation={props.getListpropLocationSearch}
         cardInput={props.listSearch}
-        onSearch={params => getPropertyFn(params)}
+        onSearch={(params) => getPropertyFn(params)}
       />
       <ListHeading main={getPropertyName()} count={getPropertyCount()} />
       <RenderComponent
@@ -53,7 +54,7 @@ const ListProperty = props => {
         isPagination
       />
       <MoveToTop />
-      <Footer />
+      {/* <FooterNew /> */}
     </div>
   );
 };

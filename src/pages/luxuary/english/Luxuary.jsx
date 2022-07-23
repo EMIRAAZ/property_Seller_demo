@@ -1,12 +1,13 @@
-import './luxuary.scss';
-import Footer from '../../../components/footer';
-import Header from '../../../components/header';
-import Property from '../../../components/property';
-import { useEffect } from 'react';
-import ViewAll from '../viewall';
-import { MoveToTop } from '../../../components/movetotop';
+import "./luxuary.scss";
+import Footer from "../../../components/footer";
+import Header from "../../../components/header";
+import Property from "../../../components/property";
+import { useEffect } from "react";
+import ViewAll from "../viewall";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
-const Luxuary = props => {
+const Luxuary = (props) => {
   useEffect(() => {
     props.getLuxuryVillaWeb();
     props.getLuxuryAppartmentWeb();
@@ -124,12 +125,12 @@ const Luxuary = props => {
         <></>
       )}
       <MoveToTop />
-      <Footer />
+      <FooterNew />
     </div>
   );
 };
 
-const LuxuaryCard = villa => {
+const LuxuaryCard = (villa) => {
   return (
     <>
       <div className="lux1-card-container">

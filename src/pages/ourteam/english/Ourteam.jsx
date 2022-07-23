@@ -1,16 +1,17 @@
-import './ourteam.scss';
-import Socialpanel from '../../../components/socialpanel';
-import Footer from '../../../components/footer';
-import Header from '../../../components/header';
-import { MoveToTop } from '../../../components/movetotop';
+import "./ourteam.scss";
+import Socialpanel from "../../../components/socialpanel";
+import Footer from "../../../components/footer";
+import Header from "../../../components/header";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
 const image = [
-  '/assets/image/img1.jpg',
-  '/assets/image/img2.jpg',
-  '/assets/image/img3.jpg',
-  '/assets/image/img4.jpg',
-  '/assets/image/img5.jpg',
-  '/assets/image/img6.jpg',
+  "/assets/image/img1.jpg",
+  "/assets/image/img2.jpg",
+  "/assets/image/img3.jpg",
+  "/assets/image/img4.jpg",
+  "/assets/image/img5.jpg",
+  "/assets/image/img6.jpg",
 ];
 // const iname= ["vishnu","hari","bahul"]
 // const iposition = ["ceo","hr","cto",]
@@ -87,7 +88,7 @@ const Ourteam = () => {
         </div>
         {/* <Socialpanel/> */}
         <MoveToTop />
-        <Footer />
+        <FooterNew />
       </div>
     </>
   );

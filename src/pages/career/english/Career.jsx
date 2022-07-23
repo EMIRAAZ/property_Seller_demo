@@ -1,9 +1,10 @@
-import './career.scss';
-import SocialPanel from '../../../components/socialpanel';
-import Footer from '../../../components/footer';
-import Header from '../../../components/header';
-import FormCard from '../../../components/formcard';
-import { MoveToTop } from '../../../components/movetotop';
+import "./career.scss";
+import SocialPanel from "../../../components/socialpanel";
+import Footer from "../../../components/footer";
+import Header from "../../../components/header";
+import FormCard from "../../../components/formcard";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
 const Career = () => {
   return (
@@ -47,7 +48,7 @@ const Career = () => {
       {/* <SocialPanel /> */}
       <MoveToTop />
 
-      <Footer />
+      <FooterNew />
     </div>
   );
 };

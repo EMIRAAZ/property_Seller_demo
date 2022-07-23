@@ -1,15 +1,16 @@
-import './Offplanview.scss';
+import "./Offplanview.scss";
 
-import Footer from '../../../components/footer';
-import Header from '../../../components/header';
-import ImageFrame from '../imageframe';
-import OffplanCard from '../../../components/offpaln/offplanCard/OffplanCard';
-import ImgPropCarousel from '../../../components/imgpropcarouselview';
-import LarrowIcon from '../../../components/svg/larrow';
-import RarrowIcon from '../../../components/svg/rarrow';
-import { useState } from 'react';
-import Bed from '../../../components/svg/bed';
-import { MoveToTop } from '../../../components/movetotop';
+import Footer from "../../../components/footer";
+import Header from "../../../components/header";
+import ImageFrame from "../imageframe";
+import OffplanCard from "../../../components/offpaln/offplanCard/OffplanCard";
+import ImgPropCarousel from "../../../components/imgpropcarouselview";
+import LarrowIcon from "../../../components/svg/larrow";
+import RarrowIcon from "../../../components/svg/rarrow";
+import FooterNew from "../../../components/footerNew";
+import { useState } from "react";
+import Bed from "../../../components/svg/bed";
+import { MoveToTop } from "../../../components/movetotop";
 
 const OffplanView = () => {
   return (
@@ -42,7 +43,7 @@ const OffplanView = () => {
           <h1 className="Heading">similar projects</h1>
         </div>
         <MoveToTop />
-        <Footer />
+        <FooterNew />
       </div>
     </>
   );
@@ -83,10 +84,10 @@ const Availability = () => {
 
 //////////////////////////////////
 
-const ImageSlider = ({ imgArray = ['/assets/image/noimage.jpg'] }) => {
+const ImageSlider = ({ imgArray = ["/assets/image/noimage.jpg"] }) => {
   const [index, setIndex] = useState(0);
 
-  const onsetIndex = add => {
+  const onsetIndex = (add) => {
     if (index === 0 && add === -1) {
       setIndex(imgArray.length - 1);
     } else if (index === imgArray.length - 1 && add === 1) {
