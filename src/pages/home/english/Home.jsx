@@ -22,7 +22,7 @@ const Home = props => {
   return (
     <div className="home-english">
       <Header customClass="home-header-class" />
-      <ImageFrame />
+      <ImageFrame advancedSearch={advancedSearch} />
       <HomeFormCard
         onInputChange={props.onHomeSearchInputChange}
         onSearchLocation={props.getHomeLocationSearch}
