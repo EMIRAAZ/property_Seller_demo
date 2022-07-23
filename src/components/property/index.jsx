@@ -1,64 +1,70 @@
-import './property.scss';
-import LocationIcon from '../svg/location';
-import Bath from '../svg/bath';
-import Whatsapp from '../svg/whatsapp';
-import Tick from '../svg/tic';
-import Favourite from '../svg/favourite';
-import Share from '../svg/share';
-import Phone from '../svg/phone';
-import Mail from '../svg/mailsvg';
-import Bed from '../svg/bed';
-import Living from '../svg/living';
-import Verified from '../svg/verified';
-import Area from '../svg/area';
-import { useNavigate } from 'react-router-dom';
-import ImgPropCarousel from '../imgpropcarousel';
+import "./property.scss";
+import LocationIcon from "../svg/location";
+import Bath from "../svg/bath";
+import Whatsapp from "../svg/whatsapp";
+import Favourite from "../svg/favourite";
+import Share from "../svg/share";
+import Phone from "../svg/phone";
+import Mail from "../svg/mailsvg";
+import Bed from "../svg/bed";
+import Living from "../svg/living";
+import Area from "../svg/area";
+import { useNavigate } from "react-router-dom";
+import ImgPropCarousel from "../imgpropcarousel";
 
-const Property = props => {
+const Property = (props) => {
   let navigate = useNavigate();
 
   const navigateTo = () => {
     navigate(`/property/${props.id}`);
   };
-  const renderDescription = description => {
+  const renderDescription = (description) => {
     return description.length < 120
       ? description
-      : description.substring(0, 140) + '...';
+      : description.substring(0, 140) + "...";
   };
 
-  const renderAddress = address => {
+  const renderAddress = (address) => {
     let add = `${address.placeAddress}, ${
-      address.building ? address.building : ''
+      address.building ? address.building : ""
     } ${address.city}`;
 
-    return add.length < 64 ? add : add.substring(0, 63) + ' . . .';
+    return add.length < 50 ? add : add.substring(0, 50) + " . . .";
   };
 
-  const renderUnit = unit => {
-    return unit.length < 10 ? unit : unit.substring(0, 7) + ' ...';
+  const renderUnit = (unit) => {
+    return unit.length < 10 ? unit : unit.substring(0, 7) + " ...";
   };
 
-  const renderVerified = verified =>
+  const renderVerified = (verified) =>
     verified ? (
-      <div className="property-rectangle verified-property">
-        <Tick width="25" height="20" />
+      <div
+        className={`new-listing verified-property ${
+          props.check ? "" : "no-verified"
+        }`}
+      >
+        VERIFIED
       </div>
     ) : null;
   return (
     <div className="property-list">
       <div className="property-list-item">
-        <ImgPropCarousel customClass="" imgArray={props.images} />
-        {props.check ? <div className="new-listing">New Listing</div> : ''}
+        <ImgPropCarousel
+          customClass="prop-list-img"
+          imgArray={props.images}
+          curImgClass="prop-list-img"
+        />
+        {props.check ? <div className="new-listing">New Listing</div> : ""}
         {renderVerified(props.verified)}
         <div className="property-rectangle favourite">
-          <Favourite width="23" height="21" viewbox="0 -1 12 10" />
+          <Favourite width="15" height="16" viewbox="0 -1.2 12 10" />
         </div>
         <div className="property-rectangle share">
-          <Share width="18" height="23" fill="#979797" viewbox="1 -2 9 15" />
+          <Share width="14" height="15" fill="#979797" viewbox="1 -3 9 15" />
         </div>
         <div className="address">
           <LocationIcon
-            fill="#1FA0E9"
+            fill="#2f70ff"
             opacity="1"
             width="9"
             height="12"
@@ -127,12 +133,11 @@ const Property = props => {
             className="service-btn-property whatsapp"
             onClick={() =>
               window.open(
-                `whatsapp://send?abid=+971521278701&text=Hello UAE Assistant. I’m interested in this property http://uaeassistant.com/property/${props.id}
+                `https://wa.me/+971521278701/?text=Hello UAE Assistant. I’m interested in this property http://uaeassistant.com/property/${props.id}
                 Price: AED ${props.price}
                 Location: ${props.address}
                 Reference: ${props.id}
-                Please send me more information regards`,
-                '_blank'
+                Please send me more information regards`
               )
             }
           >
@@ -140,24 +145,24 @@ const Property = props => {
               width="17"
               height="17"
               viewBox="0 0 15 15"
-              fill="#2D79FC"
+              fill="#2f70ff"
             />
             whatsapp
           </div>
           <div
             className="service-btn-property phone"
-            onClick={() => window.open('tel:+971521278701', '_blank')}
+            onClick={() => window.open("tel:+971521278701", "_blank")}
           >
-            <Phone width="17" height="17" viewBox="0 0 15 15" />
+            <Phone width="17" height="17" viewBox="0 0 15 15" fill="#2f70ff" />
             Phone
           </div>
           <div
             className="service-btn-property email"
             onClick={() =>
-              window.open('mailto:hello@uaeassistant.com', '_blank')
+              window.open("mailto:hello@uaeassistant.com", "_blank")
             }
           >
-            <Mail width="15" height="15" viewBox="0 0 15 15" fill="#2D79FC" />
+            <Mail width="15" height="15" viewBox="0 0 15 15" fill="#2f70ff" />
             Mail
           </div>
         </div>

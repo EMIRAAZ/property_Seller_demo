@@ -21,7 +21,8 @@ function Footer(props) {
           Lets find you a <span className="text-span">Home</span>
         </p>
         <BasicButton customClass="list-your-property-button">
-          List Your Property <RightArrow customClass="right-arrow" />
+          Advertise With Us
+          <RightArrow customClass="right-arrow" />
         </BasicButton>
       </div>
       <div className="second-container">
@@ -37,34 +38,28 @@ function Footer(props) {
       </div>
       <div className="third-container">
         <p className="abt" onClick={() => navigate('/about')}>
-          About Us
+          About&nbsp;Us
         </p>
         <p className="abt-founder" onClick={() => navigate('/aboutfounder')}>
-          About Founder
+          About&nbsp;Founder
         </p>
         <p className="ourtm" onClick={() => navigate('/ourteam')}>
-          Our Team
+          Our&nbsp;Team
         </p>
         <p className="ourpart" onClick={() => navigate('/ourpartner')}>
-          Our Partners
+          Our&nbsp;Partners
         </p>
         <p className="carrer" onClick={() => navigate('/career')}>
           Careers
         </p>
         <p className="terms" onClick={() => navigate('/terms')}>
-          Teams And Conditions
+          Teams&nbsp;And&nbsp;Conditions
         </p>
         <p className="policy" onClick={() => navigate('/privacypolicy')}>
-          Privacy Policy
+          Privacy&nbsp;Policy
         </p>
-        {/* <p className="blog" onClick={() => navigate('/privacypolicy')}>
-          Blog
-        </p>
-        <p className="news" onClick={() => navigate('/privacypolicy')}>
-          News
-        </p> */}
-        <p className="copy-right">Copyright 2021 - UAEAssistant</p>
       </div>
+      <p className="copy-right">Copyright 2021 - UAEAssistant</p>
     </div>
   );
 }
@@ -76,11 +71,15 @@ const renderTag = (taghead, tagline) => {
       <div key={i} className={`column-${i + 2}`}>
         <p className="column-heading">{item.title}</p>
         {tagline.rows &&
-          tagline.rows.map((link, j) => (
-            <p key={j + j} className="column-link">
-              {link.title}
-            </p>
-          ))}
+          tagline.rows.map((link, j) => {
+            if (link.tagheadId === item.id) {
+              return (
+                <p key={j + j} className="column-link">
+                  {link.title}
+                </p>
+              );
+            }
+          })}
       </div>
     ))
   );

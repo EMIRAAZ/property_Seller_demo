@@ -1,0 +1,40 @@
+.move-to-top {
+  background-color: #2f70ff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 36px;
+  height: 37px;
+  border-radius: 2.8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  z-index: 10;
+  bottom: 50px;
+  right: 50px;
+  transition: 1s;
+}
+.show-move {
+  opacity: 1;
+}
+.hide-move {
+  opacity: 0;
+}
+
+.move-to-top-component {
+  width: 95%;
+  margin: 5px auto 50px auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .move-top-btn {
+    background-color: #2f70ff;
+    width: 47px;
+    height: 37px;
+    border-radius: 2.8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}

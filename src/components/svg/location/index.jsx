@@ -1,13 +1,14 @@
 const LocationIcon = ({
   className,
-  width = '16',
-  height = '24',
-  viewbox = '0 0 16 24',
-  fill = '#1c3988',
-  opacity = '0.35',
+  width = "16",
+  height = "24",
+  viewbox = "0 0 16 24",
+  fill = "#1c3988",
+  opacity = "0.35",
+  customClass,
 }) => {
   return (
-    <div className={className}>
+    <div className={customClass}>
       <svg
         width={width}
         height={height}

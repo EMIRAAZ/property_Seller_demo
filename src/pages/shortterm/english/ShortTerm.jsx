@@ -1,10 +1,12 @@
-import './shortterm.scss';
-import Header from '../../../components/header';
-import ImageFrame from '../imageframe';
-import Paragraph from '../../../components/paragraph';
-import SocialPanel from '../../../components/socialpanel';
-import Footer from '../../../components/footer';
-import Communities from '../communities';
+import "./shortterm.scss";
+import Header from "../../../components/header";
+import ImageFrame from "../imageframe";
+import Paragraph from "../../../components/paragraph";
+import SocialPanel from "../../../components/socialpanel";
+import Footer from "../../../components/footer";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
+import Communities from "../communities";
 const ShortTerm = () => {
   return (
     <div className="shortterm-english">
@@ -25,8 +27,9 @@ const ShortTerm = () => {
         <p className="heading">Our Communities</p>
         <Communities />
       </div>
-      <SocialPanel customClass="shortterm-social-panel" />
-      <Footer />
+      {/* <SocialPanel customClass="shortterm-social-panel" /> */}
+      <MoveToTop />
+      <FooterNew />
     </div>
   );
 };

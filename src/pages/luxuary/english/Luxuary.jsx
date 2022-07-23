@@ -1,9 +1,13 @@
-import './luxuary.scss';
-import Footer from '../../../components/footer';
-import Header from '../../../components/header';
-import { useEffect } from 'react';
+import "./luxuary.scss";
+import Footer from "../../../components/footer";
+import Header from "../../../components/header";
+import Property from "../../../components/property";
+import { useEffect } from "react";
+import ViewAll from "../viewall";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
-const Luxuary = props => {
+const Luxuary = (props) => {
   useEffect(() => {
     props.getLuxuryVillaWeb();
     props.getLuxuryAppartmentWeb();
@@ -12,24 +16,24 @@ const Luxuary = props => {
   }, []);
 
   const renderstory1 = () =>
-    props.villa.data.map((item, i) => <LuxuaryCard key={i} {...item} />);
+    props.villa.data.map((item, i) => <Property key={i} {...item} />);
   const renderstory2 = () =>
-    props.apartment.data.map((item, i) => <LuxuaryCard key={i} {...item} />);
+    props.apartment.data.map((item, i) => <Property key={i} {...item} />);
   const renderstory3 = () =>
-    props.townhouse.data.map((item, i) => <LuxuaryCard key={i} {...item} />);
+    props.townhouse.data.map((item, i) => <Property key={i} {...item} />);
   const renderstory4 = () =>
-    props.penthouse.data.map((item, i) => <LuxuaryCard key={i} {...item} />);
+    props.penthouse.data.map((item, i) => <Property key={i} {...item} />);
   return (
     <div className="luxuary-container">
       <Header />
-      <div className="l-image-container">
+      {/* <div className="l-image-container">
         <h2 className="luxuary-header">Luxury properties</h2>
         <img
           className="luxuary-image"
           src="/assets/image/luxuary.jpg"
           alt="luxuary properties"
         />
-      </div>
+      </div> */}
       <div className="luxuary-properties">
         <div className="luxuary-text-width">
           <p className="l-properties-3">
@@ -55,6 +59,9 @@ const Luxuary = props => {
               </p>
             </div>
             <div className="card-row">{renderstory1()}</div>
+            <div className="vw-btn">
+              <ViewAll />
+            </div>
           </div>
         </div>
       ) : (
@@ -71,6 +78,9 @@ const Luxuary = props => {
               </p>
             </div>
             <div className="card-row">{renderstory2()}</div>
+            <div className="vw-btn">
+              <ViewAll />
+            </div>
           </div>
         </div>
       ) : (
@@ -87,6 +97,9 @@ const Luxuary = props => {
               </p>
             </div>
             <div className="card-row">{renderstory3()}</div>
+            <div className="vw-btn">
+              <ViewAll />
+            </div>
           </div>
         </div>
       ) : (
@@ -103,17 +116,21 @@ const Luxuary = props => {
               </p>
             </div>
             <div className="card-row">{renderstory4()}</div>
+            <div className="vw-btn">
+              <ViewAll />
+            </div>
           </div>
         </div>
       ) : (
         <></>
       )}
-      <Footer />
+      <MoveToTop />
+      <FooterNew />
     </div>
   );
 };
 
-const LuxuaryCard = villa => {
+const LuxuaryCard = (villa) => {
   return (
     <>
       <div className="lux1-card-container">

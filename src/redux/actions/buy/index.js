@@ -35,7 +35,7 @@ export const getBuyProperty =
   async dispatch => {
     try {
       dispatch(getBuyPropertyStarted());
-      const res = await axios.get(`/api/property?sale=buy${params}`);
+      const res = await axios.get(`/api/property?${params}`);
       dispatch({
         type: GET_BUY_PROPERTY,
         payload: res.data?.data,

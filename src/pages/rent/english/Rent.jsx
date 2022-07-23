@@ -1,50 +1,40 @@
-import './rent.scss';
-import { useEffect } from 'react';
-import Header from '../../../components/header';
-import ImageFrame from '../imageframe';
-import RentFormCard from '../rentformcard';
-import RentProperty from '../rentproperty';
-import Pagination from '../../../components/pagination';
-import Footer from '../../../components/footer';
-import { makeUrlParam } from '../../../utils';
+import "./rent.scss";
+import { useState } from "react";
+import Header from "../../../components/header";
+import QueryCard from "../../../components/querycard";
+import RenderComponent from "../../../components/renderComponent";
+import Footer from "../../../components/footer";
+import ListHeading from "../../../components/ListHeading";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
-const Rent = props => {
-  useEffect(() => {
-    props.getRentProperty();
-  }, []);
+const Rent = (props) => {
+  const [param, setParam] = useState("");
 
-  const onChangeCurrentPage = current => {
-    const offset = 10 * current - 10 > 0 ? 10 * current - 10 : 0;
-    const newParamInput = { ...props.paramInput };
-    if (typeof newParamInput.location === 'object') {
-      const inputWithoutLocation = {
-        ...newParamInput,
-        ...newParamInput.location,
-      };
-      delete inputWithoutLocation.location;
-      props.getProperty(
-        `&${makeUrlParam(inputWithoutLocation)}&offset=${offset}`
-      );
-    } else
-      props.getProperty(`&${makeUrlParam(newParamInput)}&offset=${offset}`);
-  };
   return (
     <div className="rent-english">
       <Header customClass="rent-header-class" />
-      <ImageFrame />
-      <RentFormCard
+      <QueryCard
         onInputChange={props.onChangeRentParams}
-        paramInput={props.paramInput}
-        getProperty={props.getRentProperty}
-        locationSearch={props.locationSearch}
         onSearchLocation={props.getRentLocationSearch}
+        isSale={false}
+        cardInput={props.cardInput}
+        onSearch={(params) => {
+          props.getRentProperty(`sale=rent&limit=${6}&offset=${0}${params}`);
+          setParam(params);
+        }}
       />
-      <RentProperty property={props.rentProperty} />
-      <Pagination
+      <ListHeading main="Rent" count={props.rentProperty.count} />
+      <RenderComponent
+        data={props.rentProperty.property}
+        propertyCallApi={props.getRentProperty}
         count={props.rentProperty.count}
-        onChange={current => onChangeCurrentPage(current)}
+        iQuery={`sale=rent&limit=${6}&offset=${0}`}
+        query={`sale=rent${param}`}
+        isPagination
       />
-      <Footer />
+      <MoveToTop />
+      <FooterNew />
     </div>
   );
 };

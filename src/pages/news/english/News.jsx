@@ -1,13 +1,16 @@
-import Footer from '../../../components/footer';
-import Header from '../../../components/header';
-import './news.scss';
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import Footer from "../../../components/footer";
+import Header from "../../../components/header";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
-const News = props => {
+import "./news.scss";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+const News = (props) => {
   let location = useLocation();
 
-  const getID = () => location.pathname.split('/').pop();
+  const getID = () => location.pathname.split("/").pop();
 
   useEffect(() => {
     props.getSingleNews(getID());
@@ -38,7 +41,8 @@ const News = props => {
           {props.news[0] && props.news[0].description}
         </p>
       </div>
-      <Footer />
+      <MoveToTop />
+      <FooterNew />
     </div>
   );
 };

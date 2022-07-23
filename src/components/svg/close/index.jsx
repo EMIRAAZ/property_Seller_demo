@@ -3,11 +3,13 @@ const Close = ({
   width = '15',
   height = '15',
   viewBox = '0 0 15 15',
+  onClick = () => {},
 }) => {
   return (
     <div className={className}>
       <svg
         width={width}
+        onClick={onClick}
         height={height}
         viewBox={viewBox}
         fill="none"

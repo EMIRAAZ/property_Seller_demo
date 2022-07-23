@@ -1,9 +1,11 @@
-import './sell.scss';
-import Header from '../../../components/header';
-import ImageFrame from '../imageframe';
-import Paragraph from '../../../components/paragraph';
-import SocialPanel from '../../../components/socialpanel';
-import Footer from '../../../components/footer';
+import "./sell.scss";
+import Header from "../../../components/header";
+import ImageFrame from "../imageframe";
+import Paragraph from "../../../components/paragraph";
+import SocialPanel from "../../../components/socialpanel";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
+import Footer from "../../../components/footer";
 const Sell = () => {
   return (
     <div className="sell-english">
@@ -35,8 +37,9 @@ const Sell = () => {
           faucibus tempor.
         </Paragraph>
       </div>
-      <SocialPanel />
-      <Footer />
+      {/* <SocialPanel /> */}
+      <MoveToTop />
+      <FooterNew />
     </div>
   );
 };

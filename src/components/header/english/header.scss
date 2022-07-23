@@ -89,7 +89,7 @@
 
       .main-name {
         font-weight: 600;
-        font-size: 13px;
+        font-size: 24px;
         cursor: pointer;
       }
 
@@ -97,6 +97,7 @@
         font-weight: 500;
         font-size: 11.5px;
         cursor: pointer;
+        opacity: 0;
       }
     }
 
@@ -117,7 +118,7 @@
 
     .header-list {
       margin: 0;
-      padding: 7px 0px;
+      padding: 10px 20px;
       list-style-type: none;
       display: flex;
       align-items: center;
@@ -135,7 +136,7 @@
 
         .main-name {
           font-weight: 600;
-          font-size: 18.5px;
+          font-size: 28.5px;
         }
 
         .sub-name {

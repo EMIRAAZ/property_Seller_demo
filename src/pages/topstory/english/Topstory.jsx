@@ -2,7 +2,9 @@ import Footer from "../../../components/footer";
 import { useNavigate } from "react-router-dom";
 import Header from "../../../components/header";
 import { useEffect } from "react";
+import { MoveToTop } from "../../../components/movetotop";
 import "./topstory.scss";
+import FooterNew from "../../../components/footerNew";
 
 const Topstory = (props) => {
   useEffect(() => {
@@ -36,7 +38,8 @@ const Topstory = (props) => {
           )}
         </div>
       </div>
-      <Footer />
+      <MoveToTop />
+      <FooterNew />
     </div>
   );
 };

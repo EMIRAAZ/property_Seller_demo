@@ -1,50 +1,39 @@
-import './buy.scss';
-import { useEffect } from 'react';
-import Header from '../../../components/header';
-import ImageFrame from '../imageframe';
-import BuyFormCard from '../buyformcard';
-import BuyProperty from '../buyproperty';
-import Pagination from '../../../components/pagination';
-import Footer from '../../../components/footer/english';
-import { makeUrlParam } from '../../../utils';
+import "./buy.scss";
+import { useState } from "react";
+import Header from "../../../components/header";
+import QueryCard from "../../../components/querycard";
+import RenderComponent from "../../../components/renderComponent";
+import Footer from "../../../components/footer/english";
+import ListHeading from "../../../components/ListHeading";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
-const Buy = props => {
-  useEffect(() => {
-    props.getBuyProperty();
-  }, []);
-
-  const onChangeCurrentPage = current => {
-    const offset = 10 * current - 10 > 0 ? 10 * current - 10 : 0;
-    const newParamInput = { ...props.paramInput };
-    if (typeof newParamInput.location === 'object') {
-      const inputWithoutLocation = {
-        ...newParamInput,
-        ...newParamInput.location,
-      };
-      delete inputWithoutLocation.location;
-      props.getProperty(
-        `&${makeUrlParam(inputWithoutLocation)}&offset=${offset}`
-      );
-    } else
-      props.getProperty(`&${makeUrlParam(newParamInput)}&offset=${offset}`);
-  };
+const Buy = (props) => {
+  const [param, setParam] = useState("");
   return (
     <div className="buy-english">
       <Header customClass="buy-header-class" />
-      <ImageFrame />
-      <BuyFormCard
+      <QueryCard
         onInputChange={props.onChangeBuyParams}
-        paramInput={props.paramInput}
-        getProperty={props.getBuyProperty}
-        locationSearch={props.locationSearch}
         onSearchLocation={props.getBuyLocationSearch}
+        isSale={false}
+        cardInput={props.cardInput}
+        onSearch={(params) => {
+          props.getBuyProperty(`sale=buy&limit=${6}&offset=${0}${params}`);
+          setParam(params);
+        }}
       />
-      <BuyProperty property={props.buyProperty} />
-      <Pagination
+      <ListHeading main="Buy" count={props.buyProperty.count} />
+      <RenderComponent
+        data={props.buyProperty.property}
+        propertyCallApi={props.getBuyProperty}
         count={props.buyProperty.count}
-        onChange={current => onChangeCurrentPage(current)}
+        iQuery={`sale=buy&limit=${6}&offset=${0}`}
+        query={`sale=buy${param}`}
+        isPagination
       />
-      <Footer />
+      <MoveToTop />
+      <FooterNew />
     </div>
   );
 };

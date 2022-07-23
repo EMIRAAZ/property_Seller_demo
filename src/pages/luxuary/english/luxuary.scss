@@ -94,7 +94,7 @@
 }
 .luxuary-container {
   width: 100%;
-  background-color: #eef7ff;
+  // background-color: #eef7ff;
   .l-image-container {
     width: 100%;
     .luxuary-header {
@@ -114,7 +114,7 @@
     }
 
     .luxuary-image {
-      height: 80%;
+      height: 500px;
       width: 100%;
     }
   }
@@ -126,32 +126,32 @@
     background: white;
 
     .luxuary-text-width {
-      width: 85%;
-
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .l-properties-3 {
+        width: 90%;
+        margin-top: 50px;
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 400;
         font-size: 22.2159px;
         line-height: 46px;
-        padding-left: 100px;
-        padding-top: 30px;
         letter-spacing: 0.02em;
-        margin-top: 10px;
       }
     }
   }
   .lux-main {
-    background-color: #eef7ff;
+    // background-color: #eef7ff;
     .viewall {
-      background-color: #eef7ff;
+      // background-color: #eef7ff;
+      width: 100%;
       margin: 50px auto;
 
       .luxuary-text-width {
-        width: 85%;
-        margin-left: 80px;
-        margin-bottom: 50px;
-
+        width: 90%;
+        margin: 10px auto;
         .l-heading {
           font-family: 'Poppins';
           font-style: normal;
@@ -173,8 +173,14 @@
         }
       }
       .card-row {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 92%;
+        margin: 0px auto;
+      }
+      .vw-btn {
+        width: 97%;
+        margin: 0px auto;
       }
     }
   }
@@ -299,7 +305,7 @@
         padding-left: 10px;
       }
       .luxuary-text-width {
-        width: 92%;
+        width: 97%;
 
         .l-properties-3 {
           font-family: 'Poppins';
@@ -307,15 +313,14 @@
           font-weight: 400;
           font-size: 13px;
           line-height: 27px;
-          padding: 10px 0px 0px 20px;
           letter-spacing: 0.02em;
         }
       }
     }
     .lux-main {
-      background-color: #eef7ff;
+      // background-color: #eef7ff;
       .viewall {
-        background-color: #eef7ff;
+        // background-color: #eef7ff;
         margin: 50px auto;
         .luxuary-text-width {
           width: 85%;
@@ -348,6 +353,7 @@
           // grid-template-columns:repeat(2, 1fr) ;
           display: flex;
           flex-wrap: wrap;
+          width: 95%;
         }
       }
     }

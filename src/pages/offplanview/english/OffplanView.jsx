@@ -7,8 +7,10 @@ import OffplanCard from "../../../components/offpaln/offplanCard/OffplanCard";
 import ImgPropCarousel from "../../../components/imgpropcarouselview";
 import LarrowIcon from "../../../components/svg/larrow";
 import RarrowIcon from "../../../components/svg/rarrow";
+import FooterNew from "../../../components/footerNew";
 import { useState } from "react";
 import Bed from "../../../components/svg/bed";
+import { MoveToTop } from "../../../components/movetotop";
 
 const OffplanView = () => {
   return (
@@ -40,7 +42,8 @@ const OffplanView = () => {
           </div>
           <h1 className="Heading">similar projects</h1>
         </div>
-        <Footer />
+        <MoveToTop />
+        <FooterNew />
       </div>
     </>
   );
