@@ -6,10 +6,11 @@ import SearchChiptSelect from '../../../components/select/searchChipSelect';
 import LocationIcon from '../../../components/svg/location';
 import BasicButton from '../../../components/button/BasicButton';
 import SearchIcon from '../../../components/svg/search';
+import PlusIcon from '../../../components/svg/plus';
+import MinusIcon from '../../../components/svg/minus';
 import { makeUrlParam } from '../../../utils';
 
 const HomeFormCard = props => {
-  const [advancedSearch, setAdvancedSearch] = useState(false);
   const onInputChange = (key, value) => {
     if (key === 'priceFrom' || key === 'priceTo') {
       const num = Number(value);
@@ -48,13 +49,15 @@ const HomeFormCard = props => {
   return (
     <div className="home-form-card">
       <div
-        className={`home-formcard ${advancedSearch ? 'advanced-formcard' : ''}`}
+        className={`home-formcard ${
+          props.advancedSearch ? 'advanced-formcard' : ''
+        }`}
       >
         <SearchChiptSelect
           bgColor="white"
           border
           customClass={`search ${
-            advancedSearch ? 'advanced-search-input' : ''
+            props.advancedSearch ? 'advanced-search-input' : ''
           }`}
           name="Search City, Building, Community .."
           onChange={value => onInputChange('location', value)}
@@ -74,7 +77,9 @@ const HomeFormCard = props => {
         <BasicSelect
           bgColor="white"
           border
-          customClass={`property ${advancedSearch ? 'advanced-property' : ''}`}
+          customClass={`property ${
+            props.advancedSearch ? 'advanced-property' : ''
+          }`}
           name="Property Type"
           onChange={value => onInputChange('propertyType', value)}
           options={[
@@ -86,7 +91,7 @@ const HomeFormCard = props => {
         />
         <BasicSelect
           bgColor="white"
-          customClass={`sale ${advancedSearch ? 'advanced-sale' : ''}`}
+          customClass={`sale ${props.advancedSearch ? 'advanced-sale' : ''}`}
           name="Sale"
           border
           onChange={value => onInputChange('sale', value)}
@@ -98,7 +103,7 @@ const HomeFormCard = props => {
         />
         <InputSelect
           customClass={`price-from ${
-            advancedSearch ? 'advanced-price-from' : ''
+            props.advancedSearch ? 'advanced-price-from' : ''
           }`}
           bgColor="white"
           border
@@ -114,7 +119,7 @@ const HomeFormCard = props => {
         />
         <InputSelect
           customClass={`price-two ${
-            advancedSearch ? 'advanced-price-two' : ''
+            props.advancedSearch ? 'advanced-price-two' : ''
           }`}
           name="Price To"
           bgColor="white"
@@ -129,7 +134,9 @@ const HomeFormCard = props => {
           ]}
         />
         <InputSelect
-          customClass={`bed-home ${advancedSearch ? 'advanced-bed-home' : ''}`}
+          customClass={`bed-home ${
+            props.advancedSearch ? 'advanced-bed-home' : ''
+          }`}
           name="Beds"
           bgColor="white"
           border
@@ -144,7 +151,7 @@ const HomeFormCard = props => {
         />
         <InputSelect
           customClass={`bath-home ${
-            advancedSearch ? 'advanced-bath-home' : ''
+            props.advancedSearch ? 'advanced-bath-home' : ''
           }`}
           name="Bathrooms"
           bgColor="white"
@@ -160,7 +167,7 @@ const HomeFormCard = props => {
         />
         <BasicButton
           customClass={`home-search-btn ${
-            advancedSearch ? 'advanced-home-search-btn' : ''
+            props.advancedSearch ? 'advanced-home-search-btn' : ''
           }`}
           onClick={() => props.onSearch(makeParam())}
         >
@@ -169,10 +176,30 @@ const HomeFormCard = props => {
         <p
           className="advanced-search"
           onClick={() => {
-            setAdvancedSearch(!advancedSearch);
+            props.setAdvancedSearch(!props.advancedSearch);
           }}
         >
-          {advancedSearch ? 'Normal Search' : 'Advanced Search'}
+          {props.advancedSearch ? (
+            <span className="icon-class">
+              <MinusIcon
+                width="10"
+                height="6"
+                viewBox="0 0 8 8"
+                fill="#2f70ff"
+              />{' '}
+              Less Search
+            </span>
+          ) : (
+            <span className="icon-class">
+              <PlusIcon
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="#2f70ff"
+              />{' '}
+              Advanced Search
+            </span>
+          )}
         </p>
       </div>
     </div>

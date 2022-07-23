@@ -68,7 +68,7 @@ const Property = (props) => {
             opacity="1"
             width="9"
             height="12"
-            viewbox="0 2 16 23"
+            viewbox="0 1 16 23"
           />
           <p>{renderAddress(props.address)}</p>
         </div>
@@ -147,7 +147,7 @@ const Property = (props) => {
               viewBox="0 0 15 15"
               fill="#2f70ff"
             />
-            whatsapp
+            WhatsApp
           </div>
           <div
             className="service-btn-property phone"
@@ -163,7 +163,7 @@ const Property = (props) => {
             }
           >
             <Mail width="15" height="15" viewBox="0 0 15 15" fill="#2f70ff" />
-            Mail
+            Email
           </div>
         </div>
       </div>

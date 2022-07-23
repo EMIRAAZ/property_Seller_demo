@@ -40,7 +40,7 @@ const CAT = [
   },
 ];
 
-const HomeCategory = () => {
+const HomeCategory = props => {
   let navigate = useNavigate();
 
   const navigateTo = page => {
@@ -61,7 +61,11 @@ const HomeCategory = () => {
     ));
   };
   return (
-    <div className="home-category-frame">{renderHomeCategoryComponent()}</div>
+    <div
+      className={`home-category-frame ${props.advancedSearch ? 'ad-s-on' : ''}`}
+    >
+      {renderHomeCategoryComponent()}
+    </div>
   );
 };
 

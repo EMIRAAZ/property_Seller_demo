@@ -1,6 +1,7 @@
 import { initialState } from './initialState';
 import {
   GET_HOME_PROPERTY,
+  CLEAR_HOME_PROPERTY,
   GET_HOME_PROPERTY_ERROR,
   GET_HOME_PROPERTY_STARTED,
   HOME_SEARCH_INPUT_CHANGE,
@@ -11,6 +12,17 @@ import {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case CLEAR_HOME_PROPERTY:
+      return {
+        ...state,
+        homeProperty: {
+          ...state.homeProperty,
+          error: false,
+          loading: false,
+          property: [],
+          count: 0,
+        },
+      };
     case GET_HOME_PROPERTY:
       return {
         ...state,
@@ -31,7 +43,7 @@ const reducer = (state = initialState, action) => {
           ...state.homeProperty,
           error: false,
           loading: true,
-          property: [],
+          // property: [],
           params: action.payload,
         },
       };
@@ -96,15 +108,8 @@ const reducer = (state = initialState, action) => {
 };
 
 const addIfNecessary = (addTo, add) => {
-  let mainArray = [...addTo];
-  for (let i = 0; i < add.length; i++) {
-    const filterArray = mainArray.filter(i => i.id === add[i].id);
-    if (!filterArray.length) {
-      addTo.push(add[i]);
-    }
-  }
-
-  return addTo;
+  let mainArray = [...addTo, ...add];
+  return mainArray;
 };
 
 const removeDuplicate = (array = []) => {

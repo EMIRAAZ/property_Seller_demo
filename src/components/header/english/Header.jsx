@@ -31,13 +31,10 @@ const Header = ({ customClass }) => {
           <li onClick={onSidebarWebToggle}>
             <Close />
           </li>
-          <li onClick={() => navigate('/management')}>Property Management</li>
           <li onClick={() => navigate('/blogs')}>Blogs</li>
           <li onClick={() => navigate('/news')}>News</li>
           <li onClick={() => navigate('/about')}>About Us</li>
           <li onClick={() => navigate('/aboutfounder')}>About Founder</li>
-          <li onClick={() => navigate('/ourteam')}>Our Team</li>
-          <li onClick={() => navigate('/ourpartner')}>Our Partners</li>
           <li onClick={() => navigate('/career')}>Careers</li>
           <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
           <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li>
@@ -50,11 +47,7 @@ const Header = ({ customClass }) => {
           </li>
           <li onClick={() => navigate('/buy')}>Buy</li>
           <li onClick={() => navigate('/rent')}>Rent</li>
-          {/* <li onClick={() => navigate('/sell')}>Sell</li> */}
-          {/* <li onClick={() => navigate('/shortterm')}>Short Term</li> */}
           <li>Commercial</li>
-          <li onClick={() => navigate('/management')}>Property Management</li>
-          {/* <li onClick={() => navigate('/mortgage')}>Mortgages</li> */}
           <li onClick={() => navigate('/off-plan')}>Off Plan</li>
           <li onClick={() => navigate('/luxury-property')}>
             Luxury Properties
@@ -63,8 +56,6 @@ const Header = ({ customClass }) => {
           <li onClick={() => navigate('/news')}>News</li>
           <li onClick={() => navigate('/about')}>About Us</li>
           <li onClick={() => navigate('/aboutfounder')}>About Founder</li>
-          <li onClick={() => navigate('/ourteam')}>Our Team</li>
-          <li onClick={() => navigate('/ourpartner')}>Our Partners</li>
           <li onClick={() => navigate('/career')}>Careers</li>
           <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
           <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li>
@@ -79,9 +70,7 @@ const Header = ({ customClass }) => {
           />
         </li>
         <li className="company-name" onClick={() => navigate('/')}>
-          {/* <WhiteLogo /> */}
           <span className="main-name">UAE&nbsp;Assistant</span>
-          {/* <span className="sub-name">for Properties</span> */}
         </li>
         <li className="desktop-li">
           <ul className="desktop-ul">
@@ -91,22 +80,6 @@ const Header = ({ customClass }) => {
             <li className="simple-list rent" onClick={() => navigate('/rent')}>
               Rent
             </li>
-            {/* <li className="simple-list sell" onClick={() => navigate('/sell')}>
-              Sell
-            </li> */}
-            {/* <li
-              className="simple-list short"
-              onClick={() => navigate('/shortterm')}
-            >
-              Short&nbsp;Term
-            </li> */}
-            {/* <li
-              className="simple-list mortgages"
-              onClick={() => navigate('/mortgage')}
-            >
-              Mortgages
-            </li> */}
-
             <li
               className="simple-list off"
               onClick={() => navigate('/off-plan')}
