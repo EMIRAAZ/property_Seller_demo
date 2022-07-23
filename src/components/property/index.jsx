@@ -68,7 +68,7 @@ const Property = props => {
             opacity="1"
             width="9"
             height="12"
-            viewbox="0 2 16 23"
+            viewbox="0 1 16 23"
           />
           <p>{renderAddress(props.address)}</p>
         </div>
