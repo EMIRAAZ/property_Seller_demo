@@ -1,4 +1,4 @@
-const Plus = ({
+const Minus = ({
   width = '24',
   height = '24',
   viewBox = '0 0 24 24',
@@ -11,11 +11,11 @@ const Plus = ({
         width={width}
         height={height}
         viewBox={viewBox}
-        fill={fill}
+        fill="none"
       >
-        <path fill={fill} d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z" />
+        <path fill={fill} d="M24 0h-10v-0h-4v0h-10v4h10v0h4v-10h10z"></path>
       </svg>
     </div>
   );
 };
-export default Plus;
+export default Minus;

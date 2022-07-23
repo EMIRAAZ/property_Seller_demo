@@ -6,6 +6,8 @@ import SearchChiptSelect from '../../../components/select/searchChipSelect';
 import LocationIcon from '../../../components/svg/location';
 import BasicButton from '../../../components/button/BasicButton';
 import SearchIcon from '../../../components/svg/search';
+import PlusIcon from '../../../components/svg/plus';
+import MinusIcon from '../../../components/svg/minus';
 import { makeUrlParam } from '../../../utils';
 
 const HomeFormCard = props => {
@@ -172,7 +174,27 @@ const HomeFormCard = props => {
             setAdvancedSearch(!advancedSearch);
           }}
         >
-          {advancedSearch ? 'Normal Search' : 'Advanced Search'}
+          {advancedSearch ? (
+            <span className="icon-class">
+              <MinusIcon
+                width="10"
+                height="6"
+                viewBox="0 0 8 8"
+                fill="#2f70ff"
+              />{' '}
+              Less Search
+            </span>
+          ) : (
+            <span className="icon-class">
+              <PlusIcon
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="#2f70ff"
+              />{' '}
+              Advanced Search
+            </span>
+          )}
         </p>
       </div>
     </div>

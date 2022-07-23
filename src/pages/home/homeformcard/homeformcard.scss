@@ -135,6 +135,11 @@
       color: #2f70ff;
       cursor: pointer;
 
+      .icon-class {
+        display: flex;
+        gap: 7px;
+      }
+
       &:hover {
         color: #0033a1;
       }
