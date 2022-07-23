@@ -9,9 +9,13 @@ import HomeCategory from '../homecategory';
 import RenderComponent from '../../../components/renderComponent';
 import ListHeading from '../../../components/ListHeading';
 import { MoveToTop } from '../../../components/movetotop';
+import { useEffect } from 'react';
 
 const Home = props => {
   const navigate = useNavigate();
+  useEffect(() => {
+    props.clearHomeProperty();
+  }, []);
 
   return (
     <div className="home-english">

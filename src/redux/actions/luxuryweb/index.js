@@ -34,7 +34,7 @@ const getLuxuryError = () => {
 export const getLuxuryVillaWeb = () => async dispatch => {
   try {
     dispatch(getLuxuryVillaStarted());
-    const res = await axios.get(`/api/property?propertyType=Villa&limit=4`);
+    const res = await axios.get(`/api/property?propertyType=Villa&limit=3`);
     dispatch({
       type: GET_LUXURY_VILLA,
       payload: res.data?.data,
@@ -61,7 +61,7 @@ const getLuxuryAppartmentError = () => {
 export const getLuxuryAppartmentWeb = () => async dispatch => {
   try {
     dispatch(getLuxuryAppartmentStarted());
-    const res = await axios.get(`/api/property?propertyType=Apartment&limit=4`);
+    const res = await axios.get(`/api/property?propertyType=Apartment&limit=3`);
     dispatch({
       type: GET_LUXURY_APPARTMENT,
       payload: res.data?.data,
@@ -88,7 +88,7 @@ const getLuxuryTownhouseError = () => {
 export const getLuxuryTownhouseWeb = () => async dispatch => {
   try {
     dispatch(getLuxuryTownhouseStarted());
-    const res = await axios.get(`/api/property?propertyType=Townhouse&limit=4`);
+    const res = await axios.get(`/api/property?propertyType=Townhouse&limit=3`);
     dispatch({
       type: GET_LUXURY_TOWNHOUSE,
       payload: res.data?.data,
@@ -115,7 +115,7 @@ const getLuxuryPenthouseError = () => {
 export const getLuxuryPenthouseWeb = () => async dispatch => {
   try {
     dispatch(getLuxuryPenthouseStarted());
-    const res = await axios.get(`/api/property?propertyType=Penthouse&limit=4`);
+    const res = await axios.get(`/api/property?propertyType=Penthouse&limit=3`);
     dispatch({
       type: GET_LUXURY_PENTHOUSE,
       payload: res.data?.data,

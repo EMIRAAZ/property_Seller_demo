@@ -7,7 +7,14 @@ import {
   GET_HOME_LOCATION_SEARCH,
   GET_HOME_LOCATION_SEARCH_ERROR,
   GET_HOME_LOCATION_SEARCH_STARTED,
+  CLEAR_HOME_PROPERTY,
 } from '../../constants';
+
+export const clearHomeProperty = params => {
+  return {
+    type: CLEAR_HOME_PROPERTY,
+  };
+};
 
 /// home property ///
 

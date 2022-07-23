@@ -4,6 +4,7 @@ import {
   getHomeProperty,
   onHomeSearchInputChange,
   getHomeLocationSearch,
+  clearHomeProperty,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -20,6 +21,7 @@ const mapDispatchToProps = dispatch => {
     onHomeSearchInputChange: payload =>
       dispatch(onHomeSearchInputChange(payload)),
     getHomeLocationSearch: payload => dispatch(getHomeLocationSearch(payload)),
+    clearHomeProperty: () => dispatch(clearHomeProperty()),
   };
 };
 
