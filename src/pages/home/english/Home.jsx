@@ -9,6 +9,7 @@ import HomeCategory from '../homecategory';
 import RenderComponent from '../../../components/renderComponent';
 import ListHeading from '../../../components/ListHeading';
 import { MoveToTop } from '../../../components/movetotop';
+import Searches from '../../../components/searches';
 import { useEffect, useState } from 'react';
 
 const Home = props => {
@@ -47,6 +48,8 @@ const Home = props => {
         />
         <MoveToTop />
       </div>
+
+      <Searches />
 
       <Footer />
     </div>
