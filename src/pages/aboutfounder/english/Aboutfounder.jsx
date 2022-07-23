@@ -1,9 +1,10 @@
-import React from 'react';
-import './aboutfounder.scss';
-import Socialpanel from '../../../components/socialpanel';
-import Footer from '../../../components/footer';
-import Header from '../../../components/header';
-import { MoveToTop } from '../../../components/movetotop';
+import React from "react";
+import "./aboutfounder.scss";
+import Socialpanel from "../../../components/socialpanel";
+import Footer from "../../../components/footer";
+import Header from "../../../components/header";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
 const Aboutfounder = () => {
   return (
@@ -46,18 +47,18 @@ const Aboutfounder = () => {
               What’s more, our goal is to ensure maximum return on your
               investment. In addition to providing you with a hassle-free
               experience, we make it our business to maintain a high occupancy
-              rate.{' '}
+              rate.{" "}
             </p>
             <p className="content-3">
               Whether you own a single unit or an entire building, let us manage
-              your property while you reap the rewards.{' '}
+              your property while you reap the rewards.{" "}
             </p>
           </div>
         </div>
 
         {/* <Socialpanel/> */}
         <MoveToTop />
-        <Footer />
+        <FooterNew />
       </div>
     </>
   );

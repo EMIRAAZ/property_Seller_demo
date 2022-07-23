@@ -1,11 +1,18 @@
-const Facebook = () => {
+const Facebook = ({
+  width = "10",
+  height = "21",
+  viewBox = "0 0 10 21",
+
+  fill = "none",
+  customClass,
+}) => {
   return (
-    <div>
+    <div className={customClass}>
       <svg
-        width="10"
-        height="21"
-        viewBox="0 0 10 21"
-        fill="none"
+        width={width}
+        height={height}
+        viewBox={viewBox}
+        fill={fill}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

@@ -1,11 +1,17 @@
-const Twitter = () => {
+const Twitter = ({
+  width = "22",
+  customClass,
+  height = "19",
+  viewBox = "0 0 22 19",
+  fill = "none",
+}) => {
   return (
-    <div>
+    <div className={customClass}>
       <svg
-        width="22"
-        height="19"
-        viewBox="0 0 22 19"
-        fill="none"
+        width={width}
+        height={height}
+        viewBox={viewBox}
+        fill={fill}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

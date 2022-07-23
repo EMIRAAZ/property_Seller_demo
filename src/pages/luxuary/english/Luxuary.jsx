@@ -5,6 +5,7 @@ import Property from '../../../components/property';
 import { useEffect } from 'react';
 import ViewAll from '../viewall';
 import { MoveToTop } from '../../../components/movetotop';
+import FooterNew from '../../../components/footerNew';
 
 const Luxuary = props => {
   useEffect(() => {
@@ -86,7 +87,7 @@ const Luxuary = props => {
         <></>
       )}
       <MoveToTop />
-      <Footer />
+      <FooterNew />
     </div>
   );
 };

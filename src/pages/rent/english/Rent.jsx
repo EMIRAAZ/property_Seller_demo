@@ -1,14 +1,15 @@
-import './rent.scss';
-import { useState } from 'react';
-import Header from '../../../components/header';
-import QueryCard from '../../../components/querycard';
-import RenderComponent from '../../../components/renderComponent';
-import Footer from '../../../components/footer';
-import ListHeading from '../../../components/ListHeading';
-import { MoveToTop } from '../../../components/movetotop';
+import "./rent.scss";
+import { useState } from "react";
+import Header from "../../../components/header";
+import QueryCard from "../../../components/querycard";
+import RenderComponent from "../../../components/renderComponent";
+import Footer from "../../../components/footer";
+import ListHeading from "../../../components/ListHeading";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
-const Rent = props => {
-  const [param, setParam] = useState('');
+const Rent = (props) => {
+  const [param, setParam] = useState("");
 
   return (
     <div className="rent-english">
@@ -18,7 +19,7 @@ const Rent = props => {
         onSearchLocation={props.getRentLocationSearch}
         isSale={false}
         cardInput={props.cardInput}
-        onSearch={params => {
+        onSearch={(params) => {
           props.getRentProperty(`sale=rent&limit=${6}&offset=${0}${params}`);
           setParam(params);
         }}
@@ -33,7 +34,7 @@ const Rent = props => {
         isPagination
       />
       <MoveToTop />
-      <Footer />
+      <FooterNew />
     </div>
   );
 };

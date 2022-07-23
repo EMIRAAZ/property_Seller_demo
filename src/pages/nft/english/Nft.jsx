@@ -1,33 +1,34 @@
-import './nft.scss';
-import Header from '../../../components/header';
-import SocialPanel from '../../../components/socialpanel';
-import Footer from '../../../components/footer';
-import { MoveToTop } from '../../../components/movetotop';
+import "./nft.scss";
+import Header from "../../../components/header";
+import SocialPanel from "../../../components/socialpanel";
+import Footer from "../../../components/footer";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
 const card1 = [
   {
     heading:
-      '10 Hilarious Cartoons That Depict Real-Life Problems of Programmers',
+      "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
     description:
-      'Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.',
-    date: 'AUGust 13, 2021 ',
-    image: '/assets/image/blog1.jpg',
+      "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+    date: "AUGust 13, 2021 ",
+    image: "/assets/image/blog1.jpg",
   },
   {
     heading:
-      '10 Hilarious Cartoons That Depict Real-Life Problems of Programmers',
+      "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
     description:
-      'Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.',
-    date: 'AUGust 13, 2021 ',
-    image: '/assets/image/blog2.jpg',
+      "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+    date: "AUGust 13, 2021 ",
+    image: "/assets/image/blog2.jpg",
   },
   {
     heading:
-      '10 Hilarious Cartoons That Depict Real-Life Problems of Programmers',
+      "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
     description:
-      'Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.',
-    date: 'AUGust 13, 2021 ',
-    image: '/assets/image/blog3.jpg',
+      "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+    date: "AUGust 13, 2021 ",
+    image: "/assets/image/blog3.jpg",
   },
 ];
 
@@ -78,7 +79,7 @@ const Nft = () => {
             The toppings you may chose for that TV dinner pizza slice when you
             forgot to shop for foods, the paint you may slap on your face to
             impress the new boss is your business. But what about your daily
-            bread?{' '}
+            bread?{" "}
           </p>
           <img className="nft-image" src="/assets/image/nft1.png" alt="nft" />
           <p>
@@ -105,7 +106,7 @@ const Nft = () => {
             Design comps, layouts, wireframes—will your clients accept that you
             go about things the facile way? Authorities in our business will
             tell in no uncertain terms that Lorem Ipsum is that huge, huge no no
-            to forswear forever.{' '}
+            to forswear forever.{" "}
           </p>
 
           <p>
@@ -150,7 +151,7 @@ const Nft = () => {
       </div>
       {/* <SocialPanel /> */}
       <MoveToTop />
-      <Footer />
+      <FooterNew />
     </div>
   );
 };

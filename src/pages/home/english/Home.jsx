@@ -11,6 +11,7 @@ import ListHeading from '../../../components/ListHeading';
 import { MoveToTop } from '../../../components/movetotop';
 import Searches from '../../../components/searches';
 import { useEffect, useState } from 'react';
+import FooterNew from '../../../components/footerNew';
 
 const Home = props => {
   const navigate = useNavigate();
@@ -50,8 +51,8 @@ const Home = props => {
       </div>
 
       <Searches />
-
-      <Footer />
+      {/* <Footer /> */}
+      <FooterNew />
     </div>
   );
 };

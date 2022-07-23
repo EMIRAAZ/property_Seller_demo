@@ -1,9 +1,10 @@
-import './blog.scss';
-import Header from '../../../components/header';
-import SocialPanel from '../../../components/socialpanel';
-import Footer from '../../../components/footer';
-import { useEffect } from 'react';
-import { MoveToTop } from '../../../components/movetotop';
+import "./blog.scss";
+import Header from "../../../components/header";
+import SocialPanel from "../../../components/socialpanel";
+import Footer from "../../../components/footer";
+import { useEffect } from "react";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
 export const BlogCard = ({ updatedAt, mainTitle, images, description }) => {
   return (
@@ -25,7 +26,7 @@ export const BlogCard = ({ updatedAt, mainTitle, images, description }) => {
   );
 };
 
-const Blog = props => {
+const Blog = (props) => {
   useEffect(() => {
     props.getBlogWeb();
   }, []);
@@ -47,7 +48,7 @@ const Blog = props => {
         {/* <SocialPanel /> */}
         <MoveToTop />
 
-        <Footer />
+        <FooterNew />
       </div>
     </>
   );

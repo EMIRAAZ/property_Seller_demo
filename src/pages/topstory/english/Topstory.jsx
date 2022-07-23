@@ -1,11 +1,12 @@
-import Footer from '../../../components/footer';
-import { useNavigate } from 'react-router-dom';
-import Header from '../../../components/header';
-import { useEffect } from 'react';
-import { MoveToTop } from '../../../components/movetotop';
-import './topstory.scss';
+import Footer from "../../../components/footer";
+import { useNavigate } from "react-router-dom";
+import Header from "../../../components/header";
+import { useEffect } from "react";
+import { MoveToTop } from "../../../components/movetotop";
+import "./topstory.scss";
+import FooterNew from "../../../components/footerNew";
 
-const Topstory = props => {
+const Topstory = (props) => {
   useEffect(() => {
     props.getTopStory();
     props.getTopStoryTopics();
@@ -16,7 +17,7 @@ const Topstory = props => {
       <div className="container">
         <h2 className="heading">Top stories for you</h2>
         <div className="categories">
-          {props.newsTopics.map(item => (
+          {props.newsTopics.map((item) => (
             <div key={item.id} className="item-div">
               <h1 className="item-name">{item.name}</h1>
             </div>
@@ -38,7 +39,7 @@ const Topstory = props => {
         </div>
       </div>
       <MoveToTop />
-      <Footer />
+      <FooterNew />
     </div>
   );
 };

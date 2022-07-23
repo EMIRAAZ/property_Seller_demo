@@ -3,17 +3,18 @@ import SocialPanel from "../../../components/socialpanel";
 import Footer from "../../../components/footer";
 import Header from "../../../components/header";
 import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
 const Terms = () => {
   return (
     <>
-      <div className='terms-container'>
+      <div className="terms-container">
         <Header />
-        <div className='h-container'>
-          <h2 className='p-header'>Terms And Conditions</h2>
-          <h3 className='p2-header'>Last updated on 1-12-2021</h3>
+        <div className="h-container">
+          <h2 className="p-header">Terms And Conditions</h2>
+          <h3 className="p2-header">Last updated on 1-12-2021</h3>
         </div>
-        <div className='terms-container-inside'>
+        <div className="terms-container-inside">
           <p>
             <h3>1. TERMS</h3>
             <br />
@@ -280,7 +281,7 @@ const Terms = () => {
         </div>
         {/* <SocialPanel /> */}
         <MoveToTop />
-        <Footer />
+        <FooterNew />
       </div>
     </>
   );

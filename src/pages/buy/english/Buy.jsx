@@ -1,14 +1,15 @@
-import './buy.scss';
-import { useState } from 'react';
-import Header from '../../../components/header';
-import QueryCard from '../../../components/querycard';
-import RenderComponent from '../../../components/renderComponent';
-import Footer from '../../../components/footer/english';
-import ListHeading from '../../../components/ListHeading';
-import { MoveToTop } from '../../../components/movetotop';
+import "./buy.scss";
+import { useState } from "react";
+import Header from "../../../components/header";
+import QueryCard from "../../../components/querycard";
+import RenderComponent from "../../../components/renderComponent";
+import Footer from "../../../components/footer/english";
+import ListHeading from "../../../components/ListHeading";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
-const Buy = props => {
-  const [param, setParam] = useState('');
+const Buy = (props) => {
+  const [param, setParam] = useState("");
   return (
     <div className="buy-english">
       <Header customClass="buy-header-class" />
@@ -17,7 +18,7 @@ const Buy = props => {
         onSearchLocation={props.getBuyLocationSearch}
         isSale={false}
         cardInput={props.cardInput}
-        onSearch={params => {
+        onSearch={(params) => {
           props.getBuyProperty(`sale=buy&limit=${6}&offset=${0}${params}`);
           setParam(params);
         }}
@@ -32,7 +33,7 @@ const Buy = props => {
         isPagination
       />
       <MoveToTop />
-      <Footer />
+      <FooterNew />
     </div>
   );
 };

@@ -6,6 +6,7 @@ import RenderComponent from '../../components/renderComponent';
 import ListHeading from '../../components/ListHeading';
 import Footer from '../../components/footer';
 import { MoveToTop } from '../../components/movetotop';
+import FooterNew from '../../components/footerNew';
 
 const ListProperty = props => {
   let location = useLocation();
@@ -57,7 +58,7 @@ const ListProperty = props => {
         isPagination
       />
       <MoveToTop />
-      <Footer />
+      <FooterNew />
     </div>
   );
 };
