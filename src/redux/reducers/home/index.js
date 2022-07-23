@@ -108,20 +108,7 @@ const reducer = (state = initialState, action) => {
 };
 
 const addIfNecessary = (addTo, add) => {
-  console.log(addTo, add.length);
   let mainArray = [...addTo, ...add];
-  // for (let i = 0; i < add.length; i++) {
-  //   // console.log('loop');
-  //   // let filterArray = mainArray.filter(i => i.id === add[i].id);
-  //   // console.log(filterArray);
-  //   // if (!filterArray.length) {
-  //   //   console.log('pushing', add[i]);
-  //   //   // mainArray.push(add[i]);
-  //   //   console.log(mainArray);
-  //   // }
-  //   mainArray.push(add);
-  // }
-
   return mainArray;
 };
 
