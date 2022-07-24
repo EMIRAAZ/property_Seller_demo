@@ -1,5 +1,5 @@
 import { useLocation, useSearchParams } from 'react-router-dom';
-import VishnuPreview from './vishnudeviravi';
+import VishnuPreviey from './vishnudeviravi';
 import BahulPreview from './bahul';
 import HariPreview from './hari';
 import BasicButton from '../components/button/BasicButton';
@@ -16,10 +16,10 @@ export const Preview = () => {
   };
 
   const renderPage = () => {
-    if (p === 'v') return <VishnuPreview />;
+    if (p === 'v') return <VishnuPreviey />;
     else if (p === 'h') return <HariPreview />;
     else if (p === 'b') return <BahulPreview />;
-    else return <VishnuPreview />;
+    else return <VishnuPreviey />;
   };
 
   return (
