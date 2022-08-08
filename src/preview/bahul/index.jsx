@@ -5,11 +5,12 @@ import Nft from "../../pages/nft/english/Nft";
 import "./index.scss";
 import LuxuryViewMore from "../../pages/luxuryViewMore";
 import FooterNew from "../../components/footerNew";
+import Login from "../../adminAgency/login/Login";
 
 // import OffplanView from "../../pages/offplanview";
 
 const Preview = () => {
-  return <FooterNew />;
+  return <Login />;
 };
 
 export default Preview;
