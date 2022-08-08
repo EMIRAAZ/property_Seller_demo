@@ -1,19 +1,20 @@
-import "./propertyview.scss";
-import Header from "../../../components/header/english/Header";
-import Footer from "../../../components/footer/english";
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import BasicButton from "../../../components/button/BasicButton";
-import RarrowIcon from "../../../components/svg/rarrow";
-import LarrowIcon from "../../../components/svg/larrow";
-import Bed from "../../../components/svg/bed";
-import Bath from "../../../components/svg/bath";
-import Living from "../../../components/svg/living";
-import Area from "../../../components/svg/area";
-import { MoveToTop } from "../../../components/movetotop";
-import FooterNew from "../../../components/footerNew";
+import './propertyview.scss';
+import Header from '../../../components/header/english/Header';
+import Footer from '../../../components/footer/english';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import BasicButton from '../../../components/button/BasicButton';
+import RarrowIcon from '../../../components/svg/rarrow';
+import LarrowIcon from '../../../components/svg/larrow';
+import Bed from '../../../components/svg/bed';
+import Bath from '../../../components/svg/bath';
+import Living from '../../../components/svg/living';
+import Area from '../../../components/svg/area';
+import { MoveToTop } from '../../../components/movetotop';
+import FooterNew from '../../../components/footerNew';
+import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
 
-const PropertyView = (props) => {
+const PropertyView = props => {
   let location = useLocation();
 
   const { property } = props;
@@ -22,8 +23,27 @@ const PropertyView = (props) => {
     props.getPropertyByID(getID());
   }, []);
 
-  const getID = () => location.pathname.split("/").pop();
+  const getID = () => location.pathname.split('/').pop();
   const [content, setContent] = useState(true);
+
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
+  });
+
+  const getCord = () => {
+    if (
+      property &&
+      property.address &&
+      property.address.latitude &&
+      property.address.longitude
+    ) {
+      return {
+        lat: property.address.latitude,
+        lng: property.address.longitude,
+      };
+    } else return { lat: 25.1972, lng: 55.2744 };
+  };
+
   return (
     <div className="single-property-view">
       <Header />
@@ -43,6 +63,19 @@ const PropertyView = (props) => {
         </div>
         <div className="main-details-container">
           <MainDetails setContent={setContent} property={property} />
+          <div className="property-view-google-map">
+            {isLoaded ? (
+              <>
+                <GoogleMap
+                  center={getCord()}
+                  mapContainerStyle={{ width: '100%', height: '100%' }}
+                  zoom={15}
+                >
+                  <Marker position={getCord()} />
+                </GoogleMap>
+              </>
+            ) : null}
+          </div>
         </div>
       </div>
       <div className="full-details-main-div">
@@ -59,22 +92,23 @@ const PropertyView = (props) => {
       <div className="similar-properties">
         <h1 className="proerty-details-heading">Similar Properties.</h1>
       </div>
+
       <MoveToTop />
       <FooterNew />
     </div>
   );
 };
 
-const VideoView = ({ url = "https://www.youtube.com/embed/05DqIGS_koU" }) => {
+const VideoView = ({ url = 'https://www.youtube.com/embed/05DqIGS_koU' }) => {
   return (
     <iframe width="100%" height="400px" allow=" autoplay;" src={url}></iframe>
   );
 };
 
-const ImageSlider = ({ imgArray = ["/assets/image/noimage.jpg"] }) => {
+const ImageSlider = ({ imgArray = ['/assets/image/noimage.jpg'] }) => {
   const [index, setIndex] = useState(0);
 
-  const onsetIndex = (add) => {
+  const onsetIndex = add => {
     if (index === 0 && add === -1) {
       setIndex(imgArray.length - 1);
     } else if (index === imgArray.length - 1 && add === 1) {
@@ -99,10 +133,10 @@ const ImageSlider = ({ imgArray = ["/assets/image/noimage.jpg"] }) => {
   );
 };
 const MainDetails = ({ property, setContent }) => {
-  const renderUnit = (unit) => {
+  const renderUnit = unit => {
     if (unit && unit.length < 10) return unit;
-    else if (!unit) return "";
-    else return unit.substring(0, 7) + "...";
+    else if (!unit) return '';
+    else return unit.substring(0, 7) + '...';
   };
 
   return (
@@ -153,7 +187,7 @@ const MainDetails = ({ property, setContent }) => {
       </div>
       <div className="button-div">
         <BasicButton
-          onClick={() => window.open("tel:+971521278701", "_blank")}
+          onClick={() => window.open('tel:+971521278701', '_blank')}
           customClass="btn-1"
         >
           Book a Viewing
@@ -187,7 +221,7 @@ const MainDetails = ({ property, setContent }) => {
             window.open(
               `https://wa.me/?text=Hello, I found this Property on UAE Assistant please check it out and tell me how do you feel. http://uaeassistant.com/property/${property.id}
                 `,
-              "_blank"
+              '_blank'
             )
           }
         >
@@ -197,7 +231,7 @@ const MainDetails = ({ property, setContent }) => {
             viewBox="0 0 12 15"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ marginRight: "3px" }}
+            style={{ marginRight: '3px' }}
           >
             <path
               d="M9.38312 10.3426C8.93978 10.3426 8.54312 10.5426 8.23978 10.856L4.08062 8.0887C4.10978 7.93533 4.13312 7.78196 4.13312 7.62192C4.13312 7.46188 4.10978 7.30851 4.08062 7.15514L8.19312 4.41446C8.50812 4.74788 8.92228 4.9546 9.38312 4.9546C10.3515 4.9546 11.1331 4.06104 11.1331 2.9541C11.1331 1.84717 10.3515 0.953613 9.38312 0.953613C8.41478 0.953613 7.63312 1.84717 7.63312 2.9541C7.63312 3.11414 7.65645 3.26751 7.68562 3.42089L3.57312 6.16156C3.25812 5.82814 2.84395 5.62143 2.38312 5.62143C1.41478 5.62143 0.633118 6.51498 0.633118 7.62192C0.633118 8.72885 1.41478 9.62241 2.38312 9.62241C2.84395 9.62241 3.25812 9.41569 3.57312 9.08227L7.72645 11.8563C7.69728 11.9963 7.67978 12.143 7.67978 12.2897C7.67978 13.3633 8.44395 14.2369 9.38312 14.2369C10.3223 14.2369 11.0865 13.3633 11.0865 12.2897C11.0865 11.2161 10.3223 10.3426 9.38312 10.3426Z"
@@ -256,17 +290,17 @@ const FullDetails = ({ property }) => {
           <img
             src={property.agency.agencyLogo}
             className="agency-logo"
-            style={{ width: "150px", marginTop: "20px" }}
+            style={{ width: '150px', marginTop: '20px' }}
             alt="logo"
           />
           <h2
             className="agency-name"
             style={{
-              fontFamily: "Poppins",
-              fontSize: "17px",
-              color: "#333333",
-              fontWeight: "500",
-              marginTop: "10px",
+              fontFamily: 'Poppins',
+              fontSize: '17px',
+              color: '#333333',
+              fontWeight: '500',
+              marginTop: '10px',
             }}
           >
             {property.agency.agencyName}
@@ -291,7 +325,7 @@ const ContactAgent = ({ property }) => {
         <h1 className="agent-no">
           Languages Known:
           {agent.languages.map((item, i) => (
-            <p key={i} style={{ display: "inline-block" }}>
+            <p key={i} style={{ display: 'inline-block' }}>
               {item} &nbsp;
             </p>
           ))}
@@ -306,7 +340,7 @@ const ContactAgent = ({ property }) => {
           {/* <a href="tel:+971521278701" className="button-a-tag"> */}
           <BasicButton
             customClass="btn-1"
-            onClick={() => window.open("tel:+971521278701", "_blank")}
+            onClick={() => window.open('tel:+971521278701', '_blank')}
           >
             {/* <a
               style={{ textDecoration: "none", color: "white" }}
@@ -318,7 +352,7 @@ const ContactAgent = ({ property }) => {
           </BasicButton>
           {/* <a href="tel:+971521278701"> */}
           <BasicButton
-            onClick={() => window.open("tel:+971521278701", "_blank")}
+            onClick={() => window.open('tel:+971521278701', '_blank')}
             customClass="btn-2"
           >
             Call
@@ -327,7 +361,7 @@ const ContactAgent = ({ property }) => {
               height="13"
               viewBox="0 0 11 11"
               fill="none"
-              style={{ marginLeft: "5px", marginTop: "2px" }}
+              style={{ marginLeft: '5px', marginTop: '2px' }}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -345,7 +379,7 @@ const ContactAgent = ({ property }) => {
                 
                 Reference: ${property.id} .
                 Please send me more information regards`,
-                "_blank"
+                '_blank'
               )
             }
             customClass="btn-3"
@@ -360,7 +394,7 @@ const ContactAgent = ({ property }) => {
                 Location: ${property.address}
                 Reference: ${property.id}
                 Please send me more information regards`,
-                "_blank"
+                '_blank'
               )
             }
             customClass="btn-2"
@@ -372,7 +406,7 @@ const ContactAgent = ({ property }) => {
               viewBox="0 0 14 11"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              style={{ marginLeft: "5px" }}
+              style={{ marginLeft: '5px' }}
             >
               <path
                 d="M12.2886 -0.000244141H2.0529C1.34919 -0.000244141 0.779835 0.575512 0.779835 1.27921L0.773438 8.95596C0.773438 9.65966 1.34919 10.2354 2.0529 10.2354H12.2886C12.9923 10.2354 13.568 9.65966 13.568 8.95596V1.27921C13.568 0.575512 12.9923 -0.000244141 12.2886 -0.000244141ZM12.2886 2.55867L7.17073 5.75732L2.0529 2.55867V1.27921L7.17073 4.47786L12.2886 1.27921V2.55867Z"
@@ -401,7 +435,7 @@ const ContactAgent = ({ property }) => {
           <BasicButton
             // onClick={() => ()}
             customClass="btn-2"
-            style={{ color: "red" }}
+            style={{ color: 'red' }}
           >
             Report
             <svg

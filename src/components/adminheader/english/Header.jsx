@@ -80,7 +80,7 @@ const Header = props => {
       </div>
       <ul className="adminheader-list">
         <li className="logo" onClick={onSidebarWebToggle}>
-          <HamburgerLogo width="35" height="28" />
+          <HamburgerLogo fill="#1c3988" width="35" height="28" />
         </li>
         <li className="company-name" onClick={() => navigate('/admin')}>
           <span className="main-name">UAE&nbsp;Assistant</span>

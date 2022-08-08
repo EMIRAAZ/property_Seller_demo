@@ -35,6 +35,8 @@ export const initialState = {
     placeAddress: '',
     building: '',
     city: '',
+    emirate: '',
+    coordinates: { lat: 0.0, lng: 0.0 },
     agentId: '',
     agencyId: '',
     neighborhood: [],
@@ -64,5 +66,14 @@ export const initialState = {
     amenities: [],
     neighbor: [],
     tagline: [],
+    emirate: [
+      { name: 'Abu Dhabi', value: 'Abu Dhabi' },
+      { name: 'Dubai', value: 'Dubai' },
+      { name: 'Sharjah', value: 'Sharjah' },
+      { name: 'Ajman', value: 'Ajman' },
+      { name: 'Umm Al Quwain', value: 'Umm Al Quwain' },
+      { name: 'Ras Al Khaimah', value: 'Ras Al Khaimah' },
+      { name: 'Fujairah', value: 'Fujairah' },
+    ],
   },
 };
