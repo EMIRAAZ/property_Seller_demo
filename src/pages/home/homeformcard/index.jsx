@@ -41,7 +41,8 @@ const HomeFormCard = props => {
     let mlString = '';
     for (let i = 0; i < newSearchArray.length; i++) {
       let currentObject = newSearchArray[i];
-      mlString += `&placeAddress=${currentObject.placeAddress}&city=${currentObject.city}&building=${currentObject.building}`;
+      // mlString += `&placeAddress=${currentObject.placeAddress}&city=${currentObject.city}&building=${currentObject.building}`;
+      mlString += `city=${currentObject.city}`;
     }
     return mlString;
   };
@@ -65,10 +66,13 @@ const HomeFormCard = props => {
           leftIcon={LocationIcon}
           options={props.homeSearch.locationSearch.location.map(location => {
             return {
-              name: `${location.placeAddress} ${location.building} ${location.city}`,
+              // name: `${location.placeAddress} ${location.building} ${location.city}`,
+              name: `${location.city}${
+                location.emirate ? `-${location.emirate}` : ''
+              } `,
               value: {
-                placeAddress: location.placeAddress,
-                building: location.building,
+                // placeAddress: location.placeAddress,
+                // building: location.building,
                 city: location.city,
               },
             };

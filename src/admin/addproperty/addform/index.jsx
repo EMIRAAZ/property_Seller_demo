@@ -11,6 +11,13 @@ import { useState, useEffect } from 'react';
 import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
 import Plus from '../../../components/svg/plus';
+import { useRef } from 'react';
+import {
+  useJsApiLoader,
+  GoogleMap,
+  StandaloneSearchBox,
+  Marker,
+} from '@react-google-maps/api';
 
 const keyArr = [
   'title',
@@ -35,6 +42,7 @@ const keyArr = [
   'city',
   'agentId',
   'mainTitle',
+  'emirate',
 ];
 
 const AddForm = ({
@@ -53,7 +61,11 @@ const AddForm = ({
   let navigate = useNavigate();
   let location = useLocation();
 
+  const inputRef = useRef();
+
   const [uploadCount, setUploadCount] = useState([0]);
+  const [center, setCenter] = useState({ lat: 24.4539, lng: 54.3773 });
+  const [marker, setMarker] = useState({ lat: 24.4539, lng: 54.3773 });
 
   useEffect(() => {
     if (propertyValue.images.length > 0 && editing) {
@@ -61,9 +73,45 @@ const AddForm = ({
     }
   }, [propertyValue.images]);
 
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
+    libraries: ['places'],
+  });
+
+  const onChangeMapInput = e => {
+    const [place] = inputRef.current.getPlaces();
+    if (place) {
+      console.log(place.formatted_address);
+
+      setCenter({
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      });
+      setMarker({
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      });
+      onChangeInput('coordinates', {
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      });
+    }
+  };
+
+  const onMapClick = e => {
+    setMarker({
+      lat: e.latLng.lat(),
+      lng: e.latLng.lng(),
+    });
+    onChangeInput('coordinates', {
+      lat: e.latLng.lat(),
+      lng: e.latLng.lng(),
+    });
+  };
+
   const getID = () => location.pathname.split('/').pop();
 
-  const { agent, propertyType, amenities, sale, neighbor, tagline } =
+  const { agent, propertyType, amenities, sale, neighbor, tagline, emirate } =
     propertyOptions;
 
   const onChangeInput = (key, value) => {
@@ -315,6 +363,35 @@ const AddForm = ({
             value={propertyValue.agentBRN}
             onChange={e => onChangeInput('agentBRN', e.target.value)}
           />
+        </div>
+        <Select
+          customClass="property-input"
+          label="Emirate"
+          required
+          value={propertyValue.emirate}
+          options={emirate}
+          onChange={v => onChangeInput('emirate', v)}
+        />
+        <span className="select-border"></span>
+        <div className="add-property-google-map">
+          {isLoaded ? (
+            <>
+              <StandaloneSearchBox
+                onLoad={ref => (inputRef.current = ref)}
+                onPlacesChanged={e => onChangeMapInput(e)}
+              >
+                <input className="google-map-input" type="text" />
+              </StandaloneSearchBox>
+              <GoogleMap
+                center={center}
+                mapContainerStyle={{ width: '100%', height: '100%' }}
+                zoom={15}
+                onClick={onMapClick}
+              >
+                <Marker position={marker} />
+              </GoogleMap>
+            </>
+          ) : null}
         </div>
         <Input
           divClass="property-input"
