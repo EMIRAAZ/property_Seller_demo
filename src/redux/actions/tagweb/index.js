@@ -52,7 +52,7 @@ const getTagLineWebError = () => {
 export const getTagLineWeb = id => async dispatch => {
   try {
     dispatch(getTagLineWebStarted());
-    const res = await axios.get(`/api/tagline?limit=4`, {
+    const res = await axios.get(`/api/tagline?limit=100`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('authToken'),
       },
