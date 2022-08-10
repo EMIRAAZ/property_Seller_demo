@@ -23,6 +23,8 @@ const TagLine = props => {
     if (getID() !== 'tagline') props.getByIdAdminTagLine(getID());
   }, []);
 
+  console.log(props);
+
   return (
     <div className="tagline-admin-table">
       <AdminHeader />

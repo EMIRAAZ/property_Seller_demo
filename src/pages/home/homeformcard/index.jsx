@@ -190,7 +190,7 @@ const HomeFormCard = props => {
                 height="6"
                 viewBox="0 0 8 8"
                 fill="#2f70ff"
-              />{' '}
+              />
               Less Search
             </span>
           ) : (
@@ -200,7 +200,7 @@ const HomeFormCard = props => {
                 height="12"
                 viewBox="0 0 24 24"
                 fill="#2f70ff"
-              />{' '}
+              />
               Advanced Search
             </span>
           )}

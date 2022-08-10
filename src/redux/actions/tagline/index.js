@@ -73,6 +73,7 @@ const addAdminTagLineError = () => {
 };
 
 export const addAdminTagLine = (tagline, cb) => async dispatch => {
+  console.log(tagline, 'tagline');
   try {
     dispatch(addAdminTagLineStarted());
     const res = await axios.post(`/api/tagline`, tagline, {
