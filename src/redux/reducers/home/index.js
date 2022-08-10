@@ -30,9 +30,10 @@ const reducer = (state = initialState, action) => {
           ...state.homeProperty,
           error: false,
           loading: false,
-          property: [
-            ...addIfNecessary(state.homeProperty.property, action.payload.rows),
-          ],
+          // property: [
+          //   ...addIfNecessary(state.homeProperty.property, action.payload.rows),
+          // ],
+          property: action.payload.rows,
           count: action.payload.count,
         },
       };

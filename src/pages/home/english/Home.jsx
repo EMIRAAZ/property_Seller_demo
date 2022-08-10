@@ -43,10 +43,7 @@ const Home = props => {
         newList
       />
       <div className="home-ctrl">
-        <ViewAll
-          count={props.homeProperty.count}
-          getApi={props.getHomeProperty}
-        />
+        <ViewAll goToOtherPage link={`/property-search?limit=10&offset=0`} />
         <MoveToTop />
       </div>
 
