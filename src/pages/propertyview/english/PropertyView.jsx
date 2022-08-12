@@ -43,24 +43,23 @@ const PropertyView = props => {
       };
     } else return { lat: 25.1972, lng: 55.2744 };
   };
+  console.log(props);
 
   return (
     <div className="single-property-view">
-      <Header />
+      <Header customClass="prop-view-header-class" />
       <div className="main-container">
-        <div className="image-slider-container">
+        <div className="img-container">
           {props.property.images && content ? (
-            <ImageSlider imgArray={props.property.images} />
-          ) : // <VideoView />
-          props.property.videoView ? (
-            <VideoView url={props.property.videoView} />
+            <ImageSlider
+              imgArray={props.property.images}
+              videoView={props.property.videoView}
+            />
           ) : (
-            // <VideoView />
-            <>
-              <VideoView />
-            </>
+            <></>
           )}
         </div>
+
         <div className="main-details-container">
           <MainDetails setContent={setContent} property={property} />
           <div className="property-view-google-map">
@@ -92,7 +91,6 @@ const PropertyView = props => {
       <div className="similar-properties">
         <h1 className="proerty-details-heading">Similar Properties.</h1>
       </div>
-
       <MoveToTop />
       <FooterNew />
     </div>
@@ -101,11 +99,20 @@ const PropertyView = props => {
 
 const VideoView = ({ url = 'https://www.youtube.com/embed/05DqIGS_koU' }) => {
   return (
-    <iframe width="100%" height="400px" allow=" autoplay;" src={url}></iframe>
+    <iframe
+      title="drf4rf4r"
+      width="100%"
+      height="100%"
+      allow="autoplay;"
+      src={url}
+    ></iframe>
   );
 };
 
-const ImageSlider = ({ imgArray = ['/assets/image/noimage.jpg'] }) => {
+const ImageSlider = ({
+  imgArray = ['/assets/image/noimage.jpg'],
+  videoView = '',
+}) => {
   const [index, setIndex] = useState(0);
 
   const onsetIndex = add => {
@@ -115,21 +122,40 @@ const ImageSlider = ({ imgArray = ['/assets/image/noimage.jpg'] }) => {
       setIndex(0);
     } else setIndex(index + add);
   };
-
+  const getIndex = () => {
+    if (imgArray.length - 1 < index + 1) {
+      return 0;
+    } else return index + 1;
+  };
   return (
-    <div
-      className="image-container"
-      style={{
-        backgroundImage: `url(${imgArray[index]})`,
-      }}
-    >
-      <div className="div-1">
-        <LarrowIcon className="rArrow" onClick={() => onsetIndex(-1)} />
+    <>
+      <div className="main-img-container">
+        <div
+          className="image-slide-container"
+          style={{
+            backgroundImage: `url(${imgArray[index]})`,
+            backgroundRepeat: 'space',
+            backgroundSize: 'cover',
+          }}
+        >
+          <div className="carousel-panel-prop">
+            <LarrowIcon className="rArrow" onClick={() => onsetIndex(-1)} />
+            <RarrowIcon className="rArrow" onClick={() => onsetIndex(1)} />
+          </div>
+        </div>
       </div>
-      <div className="div-2">
-        <RarrowIcon className="rArrow" onClick={() => onsetIndex(1)} />
+      <div
+        className="sub-img-container"
+        style={{
+          backgroundImage: `url(${imgArray[getIndex()]})`,
+          backgroundRepeat: 'space',
+          backgroundSize: 'cover',
+        }}
+      ></div>
+      <div className="main-video-container">
+        <VideoView url={videoView} />
       </div>
-    </div>
+    </>
   );
 };
 const MainDetails = ({ property, setContent }) => {
