@@ -1,6 +1,7 @@
 import './rendercomponent.scss';
 import Pagination from '../pagination';
 import Property from '../property';
+import Offplan from '../offpaln/offplanCard/OffplanCard';
 import { useEffect } from 'react';
 
 const RenderComponent = ({
@@ -24,6 +25,8 @@ const RenderComponent = ({
     switch (type) {
       case 'PROPERTY':
         return Property;
+      case 'OFFPLAN':
+        return Offplan;
       default:
         return Property;
     }

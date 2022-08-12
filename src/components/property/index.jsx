@@ -127,7 +127,8 @@ const Property = props => {
               fill="#979797"
             />
             <p>
-              {props.propertySize} {renderUnit(props.propertySizeUnit)}
+              {props.propertySize}{' '}
+              {props.propertySizeUnit ? renderUnit(props.propertySizeUnit) : ''}
             </p>
           </div>
         </div>
