@@ -41,6 +41,7 @@ import Topstory from './pages/topstory';
 import ListProperty from './pages/listproperty';
 import AddOffplan from './admin/addoffplan';
 import PropertySearchView from './pages/propertysearchview';
+import ScrollToTop from './components/scrollToTop/ScrollToTop';
 
 function Router() {
   const makePrivate = (component, role = '') => (
@@ -48,6 +49,7 @@ function Router() {
   );
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />

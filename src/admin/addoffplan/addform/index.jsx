@@ -26,6 +26,7 @@ const AddForm = ({
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
+  console.log(offplanValue);
 
   const getID = () => location.pathname.split('/').pop();
 

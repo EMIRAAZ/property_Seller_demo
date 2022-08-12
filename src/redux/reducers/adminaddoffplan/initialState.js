@@ -16,7 +16,7 @@ export const initialState = {
     amenities: [],
     availability: [],
     paymentPlan: [],
-    brochurePDF: [],
+    brochurePDF: '',
   },
   offplanOptions: {
     amenities: [],

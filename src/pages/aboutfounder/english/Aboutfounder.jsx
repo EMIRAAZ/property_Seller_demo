@@ -1,10 +1,10 @@
-import React from "react";
-import "./aboutfounder.scss";
-import Socialpanel from "../../../components/socialpanel";
-import Footer from "../../../components/footer";
-import Header from "../../../components/header";
-import { MoveToTop } from "../../../components/movetotop";
-import FooterNew from "../../../components/footerNew";
+import React from 'react';
+import './aboutfounder.scss';
+import Socialpanel from '../../../components/socialpanel';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header';
+import { MoveToTop } from '../../../components/movetotop';
+import FooterNew from '../../../components/footerNew';
 
 const Aboutfounder = () => {
   return (
@@ -18,11 +18,11 @@ const Aboutfounder = () => {
               We so opinion friends me message as delight. Whole front do of
               plate heard oh ought. His defective nor convinced residence own.
             </p>
-            <img
+            {/* <img
               className="founder-image"
               src="/assets/image/founder.jpg"
               alt="founder"
-            />
+            /> */}
             <p className="content-2">
               Being a landlord is great! Until you need to find a new tenant or
               deal with a faulty AC on your own. Being a landlord is great!
@@ -47,11 +47,11 @@ const Aboutfounder = () => {
               What’s more, our goal is to ensure maximum return on your
               investment. In addition to providing you with a hassle-free
               experience, we make it our business to maintain a high occupancy
-              rate.{" "}
+              rate.{' '}
             </p>
             <p className="content-3">
               Whether you own a single unit or an entire building, let us manage
-              your property while you reap the rewards.{" "}
+              your property while you reap the rewards.{' '}
             </p>
           </div>
         </div>
