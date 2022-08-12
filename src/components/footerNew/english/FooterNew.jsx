@@ -1,17 +1,17 @@
-import "./footerNew.scss";
-import RightArrow from "../../svg/rightarrow";
-import BasicButton from "../../button/BasicButton";
-import Facebook from "../../svg/facebook";
-import Twitter from "../../svg/twitter";
-import Instagram from "../../svg/instagram";
-import Mail from "../../svg/mailsvg";
-import LocationIcon from "../../svg/location";
-import Youtube from "../../svg/youtube";
-import Phone from "../../svg/phone";
+import './footerNew.scss';
+import RightArrow from '../../svg/rightarrow';
+import BasicButton from '../../button/BasicButton';
+import Facebook from '../../svg/facebook';
+import Twitter from '../../svg/twitter';
+import Instagram from '../../svg/instagram';
+import Mail from '../../svg/mailsvg';
+import LocationIcon from '../../svg/location';
+import Youtube from '../../svg/youtube';
+import Phone from '../../svg/phone';
 
 // import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function FooterNew(props) {
   const navigate = useNavigate();
@@ -39,8 +39,8 @@ function FooterNew(props) {
           <p>© UAEAssistant 2022 . All rights reserved.</p>
         </div>
         <div className="terms">
-          <a onClick={() => navigate("/terms")}>Terms of use</a>
-          <a href="" onClick={() => navigate("/privacypolicy")}>
+          <a onClick={() => navigate('/terms')}>Terms of use</a>
+          <a href="" onClick={() => navigate('/privacypolicy')}>
             Privacy Policy
           </a>
         </div>
@@ -67,14 +67,14 @@ const DivTwo = () => {
     <div className="div-two">
       <h1 className="heading">Helpful Links.</h1>
       <ul>
-        <li onClick={() => navigate("/about")}>
+        <li onClick={() => navigate('/about')}>
           <RightArrow color="#3270FC " viewBox="12 0 16 8" />
           About Us
         </li>
-        <li onClick={() => navigate("/aboutfounder")}>
+        {/* <li onClick={() => navigate("/aboutfounder")}>
           <RightArrow color="#3270FC " viewBox="12 0 16 8" />
           about founder
-        </li>
+        </li> */}
         {/* <li>
           <RightArrow color="#3270FC " viewBox="12 0 16 8" />
           Our Team
@@ -83,15 +83,15 @@ const DivTwo = () => {
           <RightArrow color="#3270FC " viewBox="12 0 16 8" />
           Our Partners
         </li> */}
-        <li onClick={() => navigate("/news")}>
+        <li onClick={() => navigate('/news')}>
           <RightArrow color="#3270FC " viewBox="12 0 16 8" />
           News
         </li>
-        <li onClick={() => navigate("/career")}>
+        <li onClick={() => navigate('/career')}>
           <RightArrow color="#3270FC " viewBox="12 0 16 8" />
           Careers
         </li>
-        <li onClick={() => navigate("/blogs")}>
+        <li onClick={() => navigate('/blogs')}>
           <RightArrow color="#3270FC " viewBox="12 0 16 8" />
           Blog
         </li>
@@ -105,10 +105,10 @@ const DivThree = () => {
       <h1 className="heading">Contact info.</h1>
       <p className="sub-heading">
         <Mail fill="#3270FC" width="10" height="10" customClass="icon" />
-        &nbsp;&nbsp;Mail &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{" "}
+        &nbsp;&nbsp;Mail &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{' '}
         <span> hello@uaeassistant.com</span>
       </p>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: 'flex' }}>
         <p className="sub-heading">
           <LocationIcon
             fill="#3270FC"
@@ -155,7 +155,7 @@ const DivFour = () => {
           viewBox="0 0 24 28"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          style={{ marginRight: "10px" }}
+          style={{ marginRight: '10px' }}
         >
           <path
             d="M19.5116 14.9438C19.525 13.9024 19.8024 12.8814 20.3179 11.9757C20.8334 11.07 21.5702 10.309 22.4599 9.76363C21.8947 8.95872 21.1491 8.29631 20.2823 7.82902C19.4155 7.36173 18.4514 7.10242 17.4665 7.07169C15.3656 6.85179 13.3289 8.32532 12.2583 8.32532C11.167 8.32532 9.51864 7.09352 7.74365 7.12994C6.59554 7.16693 5.47662 7.49986 4.4959 8.09629C3.51519 8.69272 2.70612 9.5323 2.14754 10.5332C-0.2721 14.7108 1.53274 20.8503 3.85055 24.2271C5.0102 25.8806 6.36551 27.7276 8.13889 27.6621C9.87425 27.5903 10.5224 26.5586 12.6171 26.5586C14.6924 26.5586 15.3005 27.6621 17.1098 27.6205C18.972 27.5903 20.1452 25.9596 21.2642 24.2904C22.0974 23.1122 22.7385 21.8101 23.1639 20.4322C22.082 19.9759 21.1588 19.2122 20.5093 18.2362C19.8598 17.2602 19.5128 16.1151 19.5116 14.9438Z"
@@ -177,7 +177,7 @@ const DivFour = () => {
           width="14"
           height="12"
           // viewBox="0 0 224 258"
-          style={{ marginRight: "10px" }}
+          style={{ marginRight: '10px' }}
           fill="white"
         >
           <g>
