@@ -1,6 +1,5 @@
 import './propertyview.scss';
 import Header from '../../../components/header/english/Header';
-import Footer from '../../../components/footer/english';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import BasicButton from '../../../components/button/BasicButton';
@@ -50,14 +49,107 @@ const PropertyView = props => {
       <Header customClass="prop-view-header-class" />
       <div className="main-container">
         <div className="img-container">
-          {props.property.images && content ? (
+          {property.images && content ? (
             <ImageSlider
-              imgArray={props.property.images}
-              videoView={props.property.videoView}
+              imgArray={property.images}
+              videoView={property.videoView}
             />
           ) : (
             <></>
           )}
+        </div>
+        <div className="content-container">
+          <div className="left-container">
+            <div className="details">
+              <p className="heading">{property.mainTitle}</p>
+              <div className="spec">
+                <div className="spec-wrap">
+                  <Bed
+                    className="property-bed"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 17 1"
+                  />
+                  <div className="ft">
+                    <div>Bedrooms:</div>
+                    {property.noOfBedroom}
+                  </div>
+                </div>
+                <div class="vl"></div>
+                <div className="spec-wrap">
+                  <Bath
+                    className="property-bath"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 17 17"
+                  />
+                  <div className="ft">
+                    <div> Bathrooms:</div>
+                    {property.noOfBathroom}
+                  </div>
+                </div>
+                <div class="vl"></div>
+                <div className="spec-wrap">
+                  <Living
+                    className="property-living"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 17 14"
+                  />
+                  <div className="ft">
+                    <div> Property Type:</div>
+                    {property.propertyType}
+                  </div>
+                </div>
+                <div class="vl"></div>
+                <div className="spec-wrap">
+                  <Area
+                    className="property-area"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 17 16"
+                  />
+                  <div className="ft">
+                    <div> Area:</div>
+                    {property.propertySize}
+                    {/* {renderUnit(property.propertySizeUnit)} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div className="details-two">
+              <div className="loc-column">
+                <p className="location-header">Location</p>
+                <div className="property-view-google-map">
+                  {isLoaded ? (
+                    <>
+                      <GoogleMap
+                        center={getCord()}
+                        mapContainerStyle={{ width: '100%', height: '100%' }}
+                        zoom={15}
+                      >
+                        <Marker position={getCord()} />
+                      </GoogleMap>
+                    </>
+                  ) : null}
+                </div>
+              </div>
+              <div className="loc-column-ad">
+                <p>
+                  {property && property.address && property.address.building}
+                </p>
+                <p>
+                  {property &&
+                    property.address &&
+                    property.address.placeAddress}
+                </p>
+                <p>{property && property.address && property.address.city}</p>
+              </div>
+            </div>
+            <hr />
+          </div>
+          <div className="right-container"></div>
         </div>
 
         <div className="main-details-container">

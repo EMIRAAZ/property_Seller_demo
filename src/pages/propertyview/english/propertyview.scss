@@ -48,6 +48,72 @@
         grid-row-end: 3;
       }
     }
+    .content-container {
+      font-family: 'Poppins';
+      display: flex;
+      width: 95%;
+      margin: 10px auto;
+      .left-container {
+        margin-top: 40px;
+        hr {
+          display: block;
+          height: 1px;
+          border: 0;
+          border-top: 1px solid #c5c5c5;
+          margin: 40px 0;
+        }
+        .details {
+          .heading {
+            font-size: 23px;
+            font-weight: bold;
+            color: #464646;
+          }
+          .spec {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 0px;
+            margin-top: 30px;
+            color: #464646;
+            .spec-wrap {
+              display: flex;
+              flex: 50%;
+              .ft {
+                padding-left: 30px;
+                display: flex;
+                font-weight: 500;
+
+                div {
+                  width: 130px;
+                  font-weight: normal;
+                }
+              }
+            }
+          }
+        }
+        .details-two {
+          display: flex;
+          .loc-column {
+            display: flex;
+            flex-direction: column;
+            .location-header {
+              font-size: 18px;
+              font-weight: 600;
+              color: #464646;
+              margin-bottom: 5px;
+            }
+            .property-view-google-map {
+              width: 200px;
+              height: 200px;
+            }
+          }
+          .loc-column-ad {
+            margin: 50px 30px;
+          }
+        }
+      }
+      .right-container {
+      }
+    }
   }
 }
 
