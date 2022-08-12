@@ -6,11 +6,12 @@ import "./index.scss";
 import LuxuryViewMore from "../../pages/luxuryViewMore";
 import FooterNew from "../../components/footerNew";
 import Login from "../../adminAgency/login/Login";
+import Home from "../../adminAgency/home/Home";
 
 // import OffplanView from "../../pages/offplanview";
 
 const Preview = () => {
-  return <Login />;
+  return <Home />;
 };
 
 export default Preview;
