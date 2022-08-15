@@ -1,0 +1,60 @@
+.agency-sidebar {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #f3f8ff;
+  align-items: center;
+  font-family: 'Inter';
+  .agency-sidebar-header {
+    color: #2c72fb;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 30px;
+  }
+  .first-list {
+    margin: 50px 0px 20px 0px;
+  }
+  .second-list {
+    margin: 20px 0px 20px 0px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    width: 60%;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    font-weight: 500;
+    font-size: 15.5882px;
+
+    li {
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      height: 50px;
+      border-radius: 8.8px;
+      margin-bottom: 10px;
+      &:hover {
+        background-color: #d3e8fb;
+        color: #2f70fe;
+        .logo-sidebar svg path {
+          fill: #2f70fe;
+        }
+      }
+      .logo-sidebar {
+        width: 25px;
+      }
+      p {
+        width: 150px;
+      }
+    }
+  }
+}

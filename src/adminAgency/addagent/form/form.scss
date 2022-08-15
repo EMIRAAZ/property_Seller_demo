@@ -1,0 +1,31 @@
+.agency-form-add-agency {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  .add-left-agent-form {
+    width: 45%;
+  }
+  .add-right-agent-form {
+    width: 45%;
+    .agent-logo-img {
+      width: 100%;
+      height: 200px;
+      margin-top: 10px;
+    }
+    .agency-control-btn {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 150px;
+      .add-agent-btn {
+        width: 48%;
+        background-color: #2f70fe;
+      }
+      .cancel {
+        background-color: #a2a7b4;
+      }
+    }
+  }
+}
