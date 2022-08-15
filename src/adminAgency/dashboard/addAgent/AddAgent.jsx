@@ -1,7 +1,10 @@
-import React from "react";
-import "./addAgent.scss";
+import React from 'react';
+import './addAgent.scss';
+import { useNavigate } from 'react-router-dom';
 
 function AddAgent() {
+  let navigate = useNavigate();
+
   return (
     <div className="add-main">
       <div className="text-div">
@@ -27,7 +30,10 @@ function AddAgent() {
         <h1>Add Agent</h1>
         <h2>Click the plus icon to add</h2>
       </div>
-      <div className="add-icon-div">
+      <div
+        className="add-icon-div"
+        onClick={() => navigate('/agency/add-agent')}
+      >
         <div className="icon">
           <svg
             width="23"

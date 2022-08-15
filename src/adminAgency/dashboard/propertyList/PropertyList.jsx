@@ -1,7 +1,12 @@
-import React from "react";
-import Items from "../items/Items";
-import "./propertyList.scss";
-function PropertyList() {
+import React from 'react';
+import Items from '../items/Items';
+import './propertyList.scss';
+import { useEffect } from 'react';
+function PropertyList(props) {
+  useEffect(() => {
+    props.getAgencyProperty();
+  }, []);
+
   return (
     <div className="property-list-div">
       <div className="heading-div">
@@ -30,17 +35,20 @@ function PropertyList() {
           <h1>Rate</h1>
         </div>
         <div className="col4">
-          <h1>Status</h1>
+          <h1>Verified</h1>
         </div>
         <div className="col5">
           <h1>Options</h1>
         </div>
       </div>
-      <Items />
-      <Items />
-      <Items />
-      <Items />
-      <Items />
+      {props.agencyProperty.property &&
+        props.agencyProperty.property.map(item => (
+          <Items
+            {...item}
+            onDelete={props.deleteAgencyProperty}
+            getProperty={props.getAgencyProperty}
+          />
+        ))}
     </div>
   );
 }

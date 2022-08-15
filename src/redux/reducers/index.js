@@ -30,6 +30,7 @@ import offplanwebReducer from './offplan';
 import agencyloginReducer from './agencylogin';
 import agencyagentReducer from './addagencyagent';
 import agencyaddpropertyReducer from './agencyaddproperty';
+import agencypropertyReducer from './agencyproperty';
 
 const rootReducer = combineReducers({
   homeReducer,
@@ -63,6 +64,7 @@ const rootReducer = combineReducers({
   agencyloginReducer,
   agencyagentReducer,
   agencyaddpropertyReducer,
+  agencypropertyReducer,
 });
 
 export default rootReducer;

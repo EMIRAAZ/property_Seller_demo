@@ -29,3 +29,4 @@ export * from './offplan';
 export * from './agencylogin';
 export * from './agencyaddagent';
 export * from './agencyaddproperty';
+export * from './agencyproperty';

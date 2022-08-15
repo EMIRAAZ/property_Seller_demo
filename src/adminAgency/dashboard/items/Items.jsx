@@ -1,18 +1,25 @@
-import React from "react";
-import "./items.scss";
-import Checkbox from "@mui/material/Checkbox";
+import React from 'react';
+import './items.scss';
+import Checkbox from '@mui/material/Checkbox';
+import { useNavigate } from 'react-router-dom';
 
-function Items() {
+function Items(props) {
+  let navigate = useNavigate();
+
+  const navigateTo = () => {
+    navigate(`/agency/add-property/${props.id}`);
+  };
+
   return (
     <div className="items-div">
       <div className="col1">
         <Checkbox defaultChecked />
       </div>
       <div className="col2">
-        <h1>Property Name</h1>
+        <h1>{props.title}</h1>
       </div>
       <div className="col3">
-        <h1>AED 25000 </h1>
+        <h1>{props.price}</h1>
       </div>
       <div className="col4">
         <svg
@@ -35,7 +42,12 @@ function Items() {
           />
         </svg>
       </div>
-      <div className="col5">
+      <div
+        className="col5"
+        onClick={() => {
+          props.onDelete(props.id, props.getProperty);
+        }}
+      >
         <svg
           width="80"
           height="28"
@@ -68,7 +80,12 @@ function Items() {
           />
         </svg>
       </div>
-      <div className="col6">
+      <div
+        className="col6"
+        onClick={() => {
+          navigateTo();
+        }}
+      >
         <svg
           width="80"
           height="28"

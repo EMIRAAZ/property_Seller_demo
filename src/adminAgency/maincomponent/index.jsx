@@ -2,11 +2,11 @@ import './maincomponent.scss';
 import Navbar from './navbar/Navbar';
 import AgencySidebar from '../../components/agencysidebar';
 
-function MainComponent({ children }) {
+function MainComponent({ active, children }) {
   return (
     <div className="admin-agency-home">
       <div className="side-nav-div">
-        <AgencySidebar />
+        <AgencySidebar active={active} />
       </div>
       <div className="main-div">
         <Navbar />

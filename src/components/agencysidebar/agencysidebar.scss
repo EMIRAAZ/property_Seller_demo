@@ -31,6 +31,13 @@
     list-style-type: none;
     font-weight: 500;
     font-size: 15.5882px;
+    .active-li {
+      background-color: #d3e8fb;
+      color: #2f70fe;
+      .logo-sidebar svg path {
+        fill: #2f70fe;
+      }
+    }
 
     li {
       cursor: pointer;
@@ -49,6 +56,7 @@
           fill: #2f70fe;
         }
       }
+
       .logo-sidebar {
         width: 25px;
       }

@@ -18,7 +18,6 @@ const AddAgent = props => {
     if (getID() !== 'add-property') props.getAgencyPropertyById(getID());
   }, []);
 
-  console.log(props);
   return (
     <MainComponent>
       <div className="agency-add-property">

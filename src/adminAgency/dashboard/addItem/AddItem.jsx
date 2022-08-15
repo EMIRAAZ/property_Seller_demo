@@ -1,7 +1,10 @@
-import React from "react";
-import "./addItem.scss";
+import React from 'react';
+import './addItem.scss';
+import { useNavigate } from 'react-router-dom';
 
 function AddItem() {
+  let navigate = useNavigate();
+
   return (
     <div className="add-item-main">
       <div className="text-div">
@@ -85,7 +88,10 @@ function AddItem() {
         <h1>Add Property</h1>
         <h2>Click the plus icon to add</h2>
       </div>
-      <div className="add-icon-div">
+      <div
+        className="add-icon-div"
+        onClick={() => navigate('/agency/add-property')}
+      >
         <div className="icon">
           <svg
             width="23"

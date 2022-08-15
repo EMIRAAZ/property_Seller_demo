@@ -1,6 +1,6 @@
 import './agencysidebar.scss';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Dashboard from '../svg/dashboard';
 import Agent from '../svg/agent';
 import Logout from '../svg/logout';
@@ -9,7 +9,7 @@ import AddProperty from '../svg/addproperty';
 
 const first = [
   { name: 'Dashboard', link: '/agency', logo: Dashboard },
-  { name: 'List Agent', link: '/agency/list-agent', logo: ListAgent },
+  // { name: 'List Agent', link: '/agency/list-agent', logo: ListAgent },
   { name: 'Add Agent', link: '/agency/add-agent', logo: Agent },
   { name: 'Add Property', link: '/agency/add-property', logo: AddProperty },
 ];
@@ -36,8 +36,22 @@ const AgencySidebar = () => {
 
 const RenderSingleList = ({ name, link, logo }) => {
   let navigate = useNavigate();
+  let location = useLocation();
+  const getLink = () => location.pathname.split('/').pop();
+  const onClick = () => {
+    if (name === 'Log Out') {
+      localStorage.clear();
+      navigate('/agency/login');
+    } else {
+      navigate(link);
+    }
+  };
+
   return (
-    <li onClick={() => navigate(link)}>
+    <li
+      className={getLink() === link.split('/').pop() ? 'active-li' : ''}
+      onClick={onClick}
+    >
       {logo ? React.createElement(logo, { className: 'logo-sidebar' }) : null}
       <p> {name}</p>
     </li>
