@@ -27,6 +27,9 @@ import tagwebReducer from './tagweb';
 import luxurywebReducer from './luxuryweb';
 import adminaddoffplanReducer from './adminaddoffplan';
 import offplanwebReducer from './offplan';
+import agencyloginReducer from './agencylogin';
+import agencyagentReducer from './addagencyagent';
+import agencyaddpropertyReducer from './agencyaddproperty';
 
 const rootReducer = combineReducers({
   homeReducer,
@@ -57,6 +60,9 @@ const rootReducer = combineReducers({
   adminoffplanReducer,
   adminaddoffplanReducer,
   offplanwebReducer,
+  agencyloginReducer,
+  agencyagentReducer,
+  agencyaddpropertyReducer,
 });
 
 export default rootReducer;

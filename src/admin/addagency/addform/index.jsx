@@ -9,6 +9,8 @@ import Agent from '../agent';
 
 const keyArr = [
   'agencyName',
+  'username',
+  'password',
   'tradeLicenseNo',
   'brn',
   'website',
@@ -93,10 +95,23 @@ const AddForm = ({
           value={agencyValue.agencyName}
           onChange={e => onChangeInput('agencyName', e.target.value)}
         />
+        <Input
+          divClass="agency-input"
+          label="Username"
+          required
+          value={agencyValue.username}
+          onChange={e => onChangeInput('username', e.target.value)}
+        />{' '}
+        <Input
+          divClass="agency-input"
+          label="Password"
+          required
+          value={agencyValue.password}
+          onChange={e => onChangeInput('password', e.target.value)}
+        />
         <label className="property-image-label spinner-label">
           Property Images<span>*</span> {renderImageLoadingSpinner()}
         </label>
-
         <UploadImage
           editing={editing}
           linkIndex={0}
@@ -163,7 +178,6 @@ const AddForm = ({
         <span id="on-add-warning" className="pls-fill">
           please fill all the required fields !!
         </span>
-
         <Button
           customClass="add-agency-btn"
           onClick={addAdminAgency}

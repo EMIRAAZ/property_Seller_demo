@@ -7,6 +7,8 @@ export const initialState = {
   },
   agencyValue: {
     agencyName: '',
+    username: '',
+    password: '',
     agencyLogo: [],
     tradeLicenseNo: '',
     brn: '',

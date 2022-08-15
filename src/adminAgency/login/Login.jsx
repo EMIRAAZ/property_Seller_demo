@@ -1,19 +1,19 @@
-import "./login.scss";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Input from "../../components/input/BasicInput";
-import Button from "../../components/button/BasicButton";
+import './login.scss';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Input from '../../components/input/BasicInput';
+import Button from '../../components/button/BasicButton';
 
-const Login = (props) => {
+const Login = props => {
   let navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
-    username: "",
-    password: "",
+    username: '',
+    password: '',
   });
 
   const navigateToAdmin = () => {
-    navigate("/admin/");
+    navigate('/agency/');
   };
 
   const onInputChange = (e, key) => {
@@ -21,7 +21,7 @@ const Login = (props) => {
   };
 
   const onButtonClick = () => {
-    props.loginAdmin(credentials, navigateToAdmin);
+    props.loginAgency(credentials, navigateToAdmin);
   };
 
   return (
@@ -47,14 +47,14 @@ const Login = (props) => {
             divClass="admin-login-input"
             placeholder="Username"
             customClass="input-class"
-            onChange={(e) => onInputChange(e, "username")}
+            onChange={e => onInputChange(e, 'username')}
           />
           <Input
             divClass="admin-login-input"
             placeholder="Password"
             customClass="input-class"
             type="password"
-            onChange={(e) => onInputChange(e, "password")}
+            onChange={e => onInputChange(e, 'password')}
           />
 
           <Button customClass="btn-cls" onClick={onButtonClick}>

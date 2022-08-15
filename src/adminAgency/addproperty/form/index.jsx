@@ -19,60 +19,190 @@ import {
   Marker,
 } from '@react-google-maps/api';
 
-const Form = () => {
+const keyArr = [
+  'title',
+  'description',
+  'placeAddress',
+  'city',
+  'propertySize',
+  'propertySizeUnit',
+  'propertyType',
+  'propertyAge',
+  'noOfBedroom',
+  'noOfBathroom',
+  'referenceNo',
+  'trakheesiPermit',
+  'ownership',
+  'brokerORN',
+  'agentBRN',
+  'call',
+  'email',
+  'whatsapp',
+  'for',
+  'city',
+  'agentId',
+  'mainTitle',
+  'emirate',
+];
+
+const Form = ({
+  addProperty,
+  editProperty,
+  env,
+  onChange,
+  images,
+  imgLoading,
+  imgError,
+  propertyValue,
+  propertyOptions,
+  editing,
+  clear,
+}) => {
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  const inputRef = useRef();
+
+  const [uploadCount, setUploadCount] = useState([0]);
+  const [center, setCenter] = useState({ lat: 24.4539, lng: 54.3773 });
+  const [marker, setMarker] = useState({ lat: 24.4539, lng: 54.3773 });
+
+  useEffect(() => {
+    if (propertyValue.images.length > 0 && editing) {
+      setUploadCount([...propertyValue.images]);
+    }
+  }, [propertyValue.images]);
+
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
+    libraries: ['places'],
+  });
+
+  const onChangeMapInput = e => {
+    const [place] = inputRef.current.getPlaces();
+    if (place) {
+      setCenter({
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      });
+      setMarker({
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      });
+      onChangeInput('coordinates', {
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      });
+    }
+  };
+
+  const onMapClick = e => {
+    setMarker({
+      lat: e.latLng.lat(),
+      lng: e.latLng.lng(),
+    });
+    onChangeInput('coordinates', {
+      lat: e.latLng.lat(),
+      lng: e.latLng.lng(),
+    });
+  };
+
+  const getID = () => location.pathname.split('/').pop();
+
+  const { agent, propertyType, amenities, sale, neighbor, tagline, emirate } =
+    propertyOptions;
+
+  const onChangeInput = (key, value) => {
+    // document.getElementById('on-add-warning').style.display = 'none';
+    onChange({ key, value });
+  };
+
+  const onSetUploadCount = () => {
+    setUploadCount([...uploadCount, 0]);
+  };
+
+  const addAdminProperty = () => {
+    if (checkIfAllKeyHasValue(propertyValue, keyArr)) {
+      // document.getElementById('on-add-warning').style.display = 'block';
+      return;
+    }
+    if (editing) {
+      editProperty(
+        getID(),
+        { ...propertyValue, images: [...propertyValue.images, ...images] },
+        () => {
+          clear();
+          navigate('/agency');
+        }
+      );
+    } else {
+      addProperty({ ...propertyValue, images: [...images] }, () => {
+        clear();
+        navigate('/agency');
+      });
+    }
+  };
+
+  const renderImageLoadingSpinner = () => {
+    if (imgLoading) {
+      return <Spinner />;
+    } else if (imgError) {
+      return <span className="img-add-error">Errored ! please try again</span>;
+    }
+  };
   return (
     <div className="agency-form-add-property">
-      <div className="add-left-agent-form">
+      <div className="add-left-agency-prop-form">
         <Input
           divClass="property-input"
           label="Title"
           required
-          // value={propertyValue.title}
-          // onChange={e => onChangeInput('title', e.target.value)}
+          value={propertyValue.title}
+          onChange={e => onChangeInput('title', e.target.value)}
         />
         <Input
           divClass="property-input"
           label="Main Title"
           required
-          // value={propertyValue.mainTitle}
-          // onChange={e => onChangeInput('mainTitle', e.target.value)}
+          value={propertyValue.mainTitle}
+          onChange={e => onChangeInput('mainTitle', e.target.value)}
         />
         <Textarea
           divClass="property-input"
           label="Description"
           rows={8}
-          // onChange={e => onChangeInput('description', e.target.value)}
-          // value={propertyValue.description}
+          onChange={e => onChangeInput('description', e.target.value)}
+          value={propertyValue.description}
           required
         />
         <Textarea
           divClass="property-input"
           label="Place Address"
           rows={5}
-          // onChange={e => onChangeInput('placeAddress', e.target.value)}
-          // value={propertyValue.placeAddress}
+          onChange={e => onChangeInput('placeAddress', e.target.value)}
+          value={propertyValue.placeAddress}
           required
         />
         <Input
           divClass="property-input"
           label="Building"
-          // value={propertyValue.building}
-          // onChange={e => onChangeInput('building', e.target.value)}
+          value={propertyValue.building}
+          onChange={e => onChangeInput('building', e.target.value)}
         />
         <Input
           divClass="property-input"
           label="City"
           required
-          // value={propertyValue.city}
-          // onChange={e => onChangeInput('city', e.target.value)}
+          value={propertyValue.city}
+          onChange={e => onChangeInput('city', e.target.value)}
         />
         <Select
           customClass="property-input"
           label="Agent"
           required
-          // value={`${propertyValue.agentId} ${propertyValue.agencyId}`}
-          // options={agent}
-          // onChange={v => onChangeInput('agentId', v)}
+          value={`${propertyValue.agentId} ${propertyValue.agencyId}`}
+          options={agent}
+          onChange={v => onChangeInput('agentId', v)}
         />
         <span className="select-border"></span>
         <span className="property-input amenities-instruction">
@@ -82,9 +212,9 @@ const Form = () => {
         <ChipSelect
           customClass="property-input"
           label="Amenities"
-          // options={amenities}
-          // value={propertyValue.amenities}
-          // onChange={v => onChangeInput('amenities', v)}
+          options={amenities}
+          value={propertyValue.amenities}
+          onChange={v => onChangeInput('amenities', v)}
           required
         />
         <div className="property-row-div">
@@ -92,53 +222,73 @@ const Form = () => {
             divClass="property-input"
             label="Property size"
             required
-            // value={propertyValue.propertySize}
-            // onChange={e => onChangeInput('propertySize', e.target.value)}
+            value={propertyValue.propertySize}
+            onChange={e => onChangeInput('propertySize', e.target.value)}
           />
           <Input
             divClass="property-input"
             label="Property size unit"
             required
-            // value={propertyValue.propertySizeUnit}
-            // onChange={e => onChangeInput('propertySizeUnit', e.target.value)}
+            value={propertyValue.propertySizeUnit}
+            onChange={e => onChangeInput('propertySizeUnit', e.target.value)}
           />
         </div>
         <Select
           customClass="property-input"
           label="Property type"
           required
-          // value={propertyValue.propertyType}
-          // options={propertyType}
-          // onChange={v => onChangeInput('propertyType', v)}
+          value={propertyValue.propertyType}
+          options={propertyType}
+          onChange={v => onChangeInput('propertyType', v)}
         />
         <span className="select-border"></span>
         <Input
           divClass="property-input"
           label="Property age"
           required
-          // value={propertyValue.propertyAge}
-          // onChange={e => onChangeInput('propertyAge', e.target.value)}
+          value={propertyValue.propertyAge}
+          onChange={e => onChangeInput('propertyAge', e.target.value)}
         />
         <div className="property-row-div">
           <Input
             divClass="property-input"
             label="No. of bedrooms"
             required
-            // value={propertyValue.noOfBedroom}
-            // onChange={e => onChangeInput('noOfBedroom', e.target.value)}
+            value={propertyValue.noOfBedroom}
+            onChange={e => onChangeInput('noOfBedroom', e.target.value)}
           />
           <Input
             divClass="property-input"
             label="No. of bathrooms"
             required
-            // value={propertyValue.noOfBathroom}
-            // onChange={e => onChangeInput('noOfBathroom', e.target.value)}
+            value={propertyValue.noOfBathroom}
+            onChange={e => onChangeInput('noOfBathroom', e.target.value)}
           />
         </div>
+        <Input
+          divClass="property-input"
+          label="Youtube Link"
+          value={propertyValue.videoView}
+          onChange={e => onChangeInput('videoView', e.target.value)}
+        />
+        <Input
+          divClass="property-input"
+          label="Call"
+          required
+          value={propertyValue.call}
+          onChange={e => onChangeInput('call', e.target.value)}
+        />
+        <Input
+          divClass="property-input"
+          label="Email"
+          required
+          value={propertyValue.email}
+          onChange={e => onChangeInput('email', e.target.value)}
+        />
       </div>
-      <div className="add-right-agent-form">
+      <div className="add-right-agency-prop-form">
         <label className="property-image-label spinner-label">
-          Property Images<span>*</span> {renderImageLoadingSpinner()}
+          {/* Property Images<span>*</span> {renderImageLoadingSpinner()} */}
         </label>
         <div className="property-row-div-upload">
           {uploadCount.map((_, i) => (
@@ -263,26 +413,6 @@ const Form = () => {
         </div>
         <Input
           divClass="property-input"
-          label="Youtube Link"
-          value={propertyValue.videoView}
-          onChange={e => onChangeInput('videoView', e.target.value)}
-        />
-        <Input
-          divClass="property-input"
-          label="Call"
-          required
-          value={propertyValue.call}
-          onChange={e => onChangeInput('call', e.target.value)}
-        />
-        <Input
-          divClass="property-input"
-          label="Email"
-          required
-          value={propertyValue.email}
-          onChange={e => onChangeInput('email', e.target.value)}
-        />
-        <Input
-          divClass="property-input"
           label="Whatsapp"
           required
           value={propertyValue.whatsapp}
@@ -311,17 +441,11 @@ const Form = () => {
           />
         </div>
         <div className="agency-control-btn">
-          <Button
-            customClass="add-agent-btn cancel"
-            //   onClick={addAdminAgent}
-            //   loading={env.loading}
-          >
-            CANCEL
-          </Button>
+          <Button customClass="add-agent-btn cancel">CANCEL</Button>
           <Button
             customClass="add-agent-btn"
-            //   onClick={addAdminAgent}
-            //   loading={env.loading}
+            onClick={addAdminProperty}
+            loading={env.loading}
           >
             ADD AGENT
           </Button>

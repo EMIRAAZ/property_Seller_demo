@@ -15,7 +15,6 @@ function OffplanCard(props) {
 
     return add.length < 50 ? add : add.substring(0, 50) + ' . . .';
   };
-  console.log(props);
   return (
     <div className="image-container">
       <ImgPropCarousel

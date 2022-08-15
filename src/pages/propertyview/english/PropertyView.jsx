@@ -42,7 +42,6 @@ const PropertyView = props => {
       };
     } else return { lat: 25.1972, lng: 55.2744 };
   };
-  console.log(props);
 
   return (
     <div className="single-property-view">
