@@ -1,13 +1,14 @@
 const Facebook = ({
-  width = "10",
-  height = "21",
-  viewBox = "0 0 10 21",
+  width = '10',
+  height = '21',
+  viewBox = '0 0 10 21',
 
-  fill = "none",
+  fill = 'none',
   customClass,
+  onClick,
 }) => {
   return (
-    <div className={customClass}>
+    <div className={customClass} onClick={onClick}>
       <svg
         width={width}
         height={height}

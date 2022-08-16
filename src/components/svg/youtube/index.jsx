@@ -4,9 +4,10 @@ const Youtube = ({
   height = '19',
   viewBox = '0 0 22 19',
   fill = 'none',
+  onClick,
 }) => {
   return (
-    <div className={customClass}>
+    <div className={customClass} onClick={onClick}>
       <svg
         width={width}
         height={height}

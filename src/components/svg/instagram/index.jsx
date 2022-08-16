@@ -1,12 +1,13 @@
 const Instagram = ({
-  width = "22",
-  height = "23",
-  viewBox = "0 0 22 23",
-  fill = "none",
+  width = '22',
+  height = '23',
+  viewBox = '0 0 22 23',
+  fill = 'none',
   customClass,
+  onClick,
 }) => {
   return (
-    <div className={customClass}>
+    <div className={customClass} onClick={onClick}>
       <svg
         width={width}
         height={height}
