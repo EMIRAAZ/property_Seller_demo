@@ -132,10 +132,47 @@ const DivThree = () => {
         &nbsp; Phone &nbsp; : <span> +71521278701</span>
       </p>
       <div className="soci">
-        <Facebook width="10" height="13" customClass="social" />
-        <Twitter width="10" height="13" customClass="social" />
-        <Instagram width="10" height="13" customClass="social" />
-        <Youtube width="10" height="13" customClass="social" />
+        <Facebook
+          width="10"
+          height="13"
+          customClass="social"
+          onClick={() =>
+            window.open('https://www.facebook.com/uaeassistant/', '_blank')
+          }
+        />
+        <Twitter
+          width="10"
+          height="13"
+          customClass="social"
+          onClick={() =>
+            window.open(
+              'https://twitter.com/uaeassistant?s=11&t=EjqkNH6hsnyByqo8StNZXw',
+              '_blank'
+            )
+          }
+        />
+        <Instagram
+          width="10"
+          height="13"
+          customClass="social"
+          onClick={() =>
+            window.open(
+              'https://www.instagram.com/uaeassistant/?igshid=YmMyMTA2M2Y%3D',
+              '_blank'
+            )
+          }
+        />
+        <Youtube
+          width="10"
+          height="13"
+          customClass="social"
+          onClick={() =>
+            window.open(
+              'https://www.youtube.com/channel/UCoz2ZhW0jbB4uQqqpCBLBtg',
+              '_blank'
+            )
+          }
+        />
       </div>
     </div>
   );
