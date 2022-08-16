@@ -86,10 +86,10 @@ const QueryCard = ({
           name="Property Type"
           onChange={value => onChange('propertyType', value)}
           options={[
-            { name: 'Villas', value: 'villas' },
-            { name: 'Resorts', value: 'resorts' },
-            { name: 'Estates', value: 'estates' },
             { name: 'Apartments', value: 'apartment' },
+            { name: 'Villas', value: 'villas' },
+            { name: 'Townhouse', value: 'townhouse' },
+            { name: 'Penthouse', value: 'penthouse' },
           ]}
         />
         {isSale ? (

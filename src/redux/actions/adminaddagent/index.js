@@ -34,10 +34,10 @@ const getAgentByIdError = () => {
   };
 };
 
-export const getAdminAgentById = () => async dispatch => {
+export const getAdminAgentById = id => async dispatch => {
   try {
     dispatch(getAgentByIdStarted());
-    const res = await axios.get(`/api/agent`, {
+    const res = await axios.get(`/api/agent/${id}`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('authToken'),
       },

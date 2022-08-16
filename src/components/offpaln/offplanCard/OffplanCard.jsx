@@ -1,21 +1,31 @@
 import './offplan.scss';
-import React from 'react';
+import ImgPropCarousel from '../../imgpropcarousel';
 
 function OffplanCard(props) {
+  const renderDescription = description => {
+    return description.length < 120
+      ? description
+      : description.substring(0, 140) + '...';
+  };
+
+  const renderAddress = address => {
+    let add = `${address.placeAddress}, ${
+      address.building ? address.building : ''
+    } ${address.city}`;
+
+    return add.length < 50 ? add : add.substring(0, 50) + ' . . .';
+  };
   return (
     <div className="image-container">
-      <img src={props.images[0]} className="offplan-card" alt="building" />
+      <ImgPropCarousel
+        customClass="prop-list-img"
+        imgArray={props.images}
+        curImgClass="prop-list-img"
+      />
       <div className="details-div">
         <h1 className="heading">{props.title}</h1>
-        <h1 className="bedrooms">3&4 Bedrooms</h1>
-        <h1 className="price">Starting from AED 3.6 Million </h1>
         <div className="logo-div">
           <h1 className="description">{props.description}</h1>
-          <img
-            src="/assets/image/emaar-logo.png"
-            className="offplan-logo"
-            alt="logo"
-          />
         </div>
       </div>
     </div>

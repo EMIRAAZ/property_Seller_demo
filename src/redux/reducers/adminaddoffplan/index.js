@@ -131,10 +131,23 @@ const reducer = (state = initialState, action) => {
       const createdOffplanValue = {};
 
       for (const key in propVal) {
-        if (newOffplanValue.hasOwnOffplan(key)) {
+        if (newOffplanValue.hasOwnProperty(key)) {
           createdOffplanValue[key] = propVal[key];
         }
       }
+      createdOffplanValue.building = propVal.address.building
+        ? propVal.address.building
+        : '';
+      createdOffplanValue.emirate = propVal.address.emirate
+        ? propVal.address.emirate
+        : '';
+
+      createdOffplanValue.placeAddress = propVal.address.placeAddress
+        ? propVal.address.placeAddress
+        : '';
+      createdOffplanValue.city = propVal.address.city
+        ? propVal.address.city
+        : '';
       return {
         ...state,
         offplanValue: {

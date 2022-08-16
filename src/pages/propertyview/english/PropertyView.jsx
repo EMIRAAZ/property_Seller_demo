@@ -1,6 +1,5 @@
 import './propertyview.scss';
 import Header from '../../../components/header/english/Header';
-import Footer from '../../../components/footer/english';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import BasicButton from '../../../components/button/BasicButton';
@@ -46,21 +45,112 @@ const PropertyView = props => {
 
   return (
     <div className="single-property-view">
-      <Header />
+      <Header customClass="prop-view-header-class" />
       <div className="main-container">
-        <div className="image-slider-container">
-          {props.property.images && content ? (
-            <ImageSlider imgArray={props.property.images} />
-          ) : // <VideoView />
-          props.property.videoView ? (
-            <VideoView url={props.property.videoView} />
+        <div className="img-container">
+          {property.images && content ? (
+            <ImageSlider
+              imgArray={property.images}
+              videoView={property.videoView}
+            />
           ) : (
-            // <VideoView />
-            <>
-              <VideoView />
-            </>
+            <></>
           )}
         </div>
+        <div className="content-container">
+          <div className="left-container">
+            <div className="details">
+              <p className="heading">{property.mainTitle}</p>
+              <div className="spec">
+                <div className="spec-wrap">
+                  <Bed
+                    className="property-bed"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 17 1"
+                  />
+                  <div className="ft">
+                    <div>Bedrooms:</div>
+                    {property.noOfBedroom}
+                  </div>
+                </div>
+                <div class="vl"></div>
+                <div className="spec-wrap">
+                  <Bath
+                    className="property-bath"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 17 17"
+                  />
+                  <div className="ft">
+                    <div> Bathrooms:</div>
+                    {property.noOfBathroom}
+                  </div>
+                </div>
+                <div class="vl"></div>
+                <div className="spec-wrap">
+                  <Living
+                    className="property-living"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 17 14"
+                  />
+                  <div className="ft">
+                    <div> Property Type:</div>
+                    {property.propertyType}
+                  </div>
+                </div>
+                <div class="vl"></div>
+                <div className="spec-wrap">
+                  <Area
+                    className="property-area"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 17 16"
+                  />
+                  <div className="ft">
+                    <div> Area:</div>
+                    {property.propertySize}
+                    {/* {renderUnit(property.propertySizeUnit)} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div className="details-two">
+              <div className="loc-column">
+                <p className="location-header">Location</p>
+                <div className="property-view-google-map">
+                  {isLoaded ? (
+                    <>
+                      <GoogleMap
+                        center={getCord()}
+                        mapContainerStyle={{ width: '100%', height: '100%' }}
+                        zoom={15}
+                      >
+                        <Marker position={getCord()} />
+                      </GoogleMap>
+                    </>
+                  ) : null}
+                </div>
+              </div>
+              <div className="loc-column-ad">
+                <p>
+                  {property && property.address && property.address.building}
+                </p>
+                <p>
+                  {property &&
+                    property.address &&
+                    property.address.placeAddress}
+                </p>
+                <p>{property && property.address && property.address.city}</p>
+              </div>
+            </div>
+            <hr />
+          </div>
+          <div className="right-container"></div>
+        </div>
+
         <div className="main-details-container">
           <MainDetails setContent={setContent} property={property} />
           <div className="property-view-google-map">
@@ -92,7 +182,6 @@ const PropertyView = props => {
       <div className="similar-properties">
         <h1 className="proerty-details-heading">Similar Properties.</h1>
       </div>
-
       <MoveToTop />
       <FooterNew />
     </div>
@@ -101,11 +190,20 @@ const PropertyView = props => {
 
 const VideoView = ({ url = 'https://www.youtube.com/embed/05DqIGS_koU' }) => {
   return (
-    <iframe width="100%" height="400px" allow=" autoplay;" src={url}></iframe>
+    <iframe
+      title="drf4rf4r"
+      width="100%"
+      height="100%"
+      allow="autoplay;"
+      src={url}
+    ></iframe>
   );
 };
 
-const ImageSlider = ({ imgArray = ['/assets/image/noimage.jpg'] }) => {
+const ImageSlider = ({
+  imgArray = ['/assets/image/noimage.jpg'],
+  videoView = '',
+}) => {
   const [index, setIndex] = useState(0);
 
   const onsetIndex = add => {
@@ -115,21 +213,40 @@ const ImageSlider = ({ imgArray = ['/assets/image/noimage.jpg'] }) => {
       setIndex(0);
     } else setIndex(index + add);
   };
-
+  const getIndex = () => {
+    if (imgArray.length - 1 < index + 1) {
+      return 0;
+    } else return index + 1;
+  };
   return (
-    <div
-      className="image-container"
-      style={{
-        backgroundImage: `url(${imgArray[index]})`,
-      }}
-    >
-      <div className="div-1">
-        <LarrowIcon className="rArrow" onClick={() => onsetIndex(-1)} />
+    <>
+      <div className="main-img-container">
+        <div
+          className="image-slide-container"
+          style={{
+            backgroundImage: `url(${imgArray[index]})`,
+            backgroundRepeat: 'space',
+            backgroundSize: 'cover',
+          }}
+        >
+          <div className="carousel-panel-prop">
+            <LarrowIcon className="rArrow" onClick={() => onsetIndex(-1)} />
+            <RarrowIcon className="rArrow" onClick={() => onsetIndex(1)} />
+          </div>
+        </div>
       </div>
-      <div className="div-2">
-        <RarrowIcon className="rArrow" onClick={() => onsetIndex(1)} />
+      <div
+        className="sub-img-container"
+        style={{
+          backgroundImage: `url(${imgArray[getIndex()]})`,
+          backgroundRepeat: 'space',
+          backgroundSize: 'cover',
+        }}
+      ></div>
+      <div className="main-video-container">
+        <VideoView url={videoView} />
       </div>
-    </div>
+    </>
   );
 };
 const MainDetails = ({ property, setContent }) => {

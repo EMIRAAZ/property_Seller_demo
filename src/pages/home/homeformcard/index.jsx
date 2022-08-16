@@ -87,10 +87,10 @@ const HomeFormCard = props => {
           name="Property Type"
           onChange={value => onInputChange('propertyType', value)}
           options={[
-            { name: 'Villas', value: 'villas' },
-            { name: 'Resorts', value: 'resorts' },
-            { name: 'Estates', value: 'estates' },
             { name: 'Apartments', value: 'apartment' },
+            { name: 'Villas', value: 'villas' },
+            { name: 'Townhouse', value: 'townhouse' },
+            { name: 'Penthouse', value: 'penthouse' },
           ]}
         />
         <BasicSelect
@@ -190,7 +190,7 @@ const HomeFormCard = props => {
                 height="6"
                 viewBox="0 0 8 8"
                 fill="#2f70ff"
-              />{' '}
+              />
               Less Search
             </span>
           ) : (
@@ -200,7 +200,7 @@ const HomeFormCard = props => {
                 height="12"
                 viewBox="0 0 24 24"
                 fill="#2f70ff"
-              />{' '}
+              />
               Advanced Search
             </span>
           )}
