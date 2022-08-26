@@ -6,6 +6,7 @@ import {
   onChangeListPropParams,
   getListpropLocationSearch,
   getPropWithNeighSale,
+  getVP,
 } from '../../redux/actions';
 
 const mapStateToProps = state => {
@@ -14,12 +15,14 @@ const mapStateToProps = state => {
     readyToMoveIn: state.listpropReducer.readyToMoveIn,
     listSearch: state.listpropReducer.listSearch,
     propWithNeighbor: state.listpropReducer.propWithNeighbor,
+    vp: state.listpropReducer.vp,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     getCatFeatured: params => dispatch(getCatFeatured(params)),
+    getVP: params => dispatch(getVP(params)),
     getPropWithNeighSale: param => dispatch(getPropWithNeighSale(param)),
     getRtmin: params => dispatch(getRtmin(params)),
     onChangeListPropParams: input => dispatch(onChangeListPropParams(input)),

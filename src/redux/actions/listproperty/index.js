@@ -13,6 +13,9 @@ import {
   GET_PROPERTY_NEIGHBORHOOD_SALE,
   GET_PROPERTY_NEIGHBORHOOD_SALE_STARTED,
   GET_PROPERTY_NEIGHBORHOOD_SALE_ERROR,
+  GET_VP_STARTED,
+  GET_VP_ERROR,
+  GET_VP,
 } from '../../constants';
 
 export const onChangeListPropParams = payload => {
@@ -129,3 +132,32 @@ export const getPropWithNeighSale = param => async dispatch => {
     dispatch(getPropWithNeighSaleError());
   }
 };
+
+/// VP ///
+
+const getVPStarted = () => {
+  return {
+    type: GET_VP_STARTED,
+  };
+};
+
+const getVPError = () => {
+  return {
+    type: GET_VP_ERROR,
+  };
+};
+
+export const getVP =
+  (params = '') =>
+  async dispatch => {
+    try {
+      dispatch(getVPStarted());
+      const res = await axios.get(`/api/property?${params}&verified=true`);
+      dispatch({
+        type: GET_VP,
+        payload: res.data?.data,
+      });
+    } catch (e) {
+      dispatch(getVPError());
+    }
+  };
