@@ -1,25 +1,25 @@
-import "./header.scss";
-import HamburgerLogo from "../../svg/hamburger";
-import DownArrow from "../../svg/downarrow";
-import HeaderButton from "../../button/HeaderButton";
-import HeaderSelect from "../../select/HeaderSelect";
-import Close from "../../svg/close";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import './header.scss';
+import HamburgerLogo from '../../svg/hamburger';
+import DownArrow from '../../svg/downarrow';
+import HeaderButton from '../../button/HeaderButton';
+import HeaderSelect from '../../select/HeaderSelect';
+import Close from '../../svg/close';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Header = ({ customClass }) => {
   const navigate = useNavigate();
   let location = useLocation();
 
-  const getLoc = () => location.pathname.split("/").pop();
-  const [state, changeState] = useState("hide");
+  const getLoc = () => location.pathname.split('/').pop();
+  const [state, changeState] = useState('hide');
   const onSidebarWebToggle = () => {
-    changeState(state === "hide" ? "show" : "hide");
+    changeState(state === 'hide' ? 'show' : 'hide');
   };
 
-  document.addEventListener("scroll", function (e) {
-    if (state === "show") {
+  document.addEventListener('scroll', function (e) {
+    if (state === 'show') {
       onSidebarWebToggle();
     }
   });
@@ -31,13 +31,13 @@ const Header = ({ customClass }) => {
           <li onClick={onSidebarWebToggle}>
             <Close />
           </li>
-          <li onClick={() => navigate("/blogs")}>Blogs</li>
-          <li onClick={() => navigate("/news")}>News</li>
-          <li onClick={() => navigate("/about")}>About Us</li>
-          <li onClick={() => navigate("/aboutfounder")}>About Founder</li>
-          <li onClick={() => navigate("/career")}>Careers</li>
-          <li onClick={() => navigate("/terms")}>Teams And Conditions</li>
-          <li onClick={() => navigate("/privacypolicy")}>Privacy Policy</li>
+          <li onClick={() => navigate('/blogs')}>Blogs</li>
+          <li onClick={() => navigate('/news')}>News</li>
+          <li onClick={() => navigate('/about')}>About Us</li>
+          {/* <li onClick={() => navigate("/aboutfounder")}>About Founder</li> */}
+          <li onClick={() => navigate('/career')}>Careers</li>
+          <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
+          <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li>
         </ul>
       </div>
       <div className={`mobile-sidebar ${state}`}>
@@ -45,20 +45,20 @@ const Header = ({ customClass }) => {
           <li onClick={onSidebarWebToggle}>
             <Close />
           </li>
-          <li onClick={() => navigate("/buy")}>Buy</li>
-          <li onClick={() => navigate("/rent")}>Rent</li>
+          <li onClick={() => navigate('/buy')}>Buy</li>
+          <li onClick={() => navigate('/rent')}>Rent</li>
           <li>Commercial</li>
-          <li onClick={() => navigate("/off-plan")}>Off Plan</li>
-          <li onClick={() => navigate("/luxury-property")}>
+          <li onClick={() => navigate('/off-plan')}>Off Plan</li>
+          <li onClick={() => navigate('/luxury-property')}>
             Luxury Properties
           </li>
-          <li onClick={() => navigate("/blogs")}>Blogs</li>
-          <li onClick={() => navigate("/news")}>News</li>
-          <li onClick={() => navigate("/about")}>About Us</li>
-          <li onClick={() => navigate("/aboutfounder")}>About Founder</li>
-          <li onClick={() => navigate("/career")}>Careers</li>
-          <li onClick={() => navigate("/terms")}>Teams And Conditions</li>
-          <li onClick={() => navigate("/privacypolicy")}>Privacy Policy</li>
+          <li onClick={() => navigate('/blogs')}>Blogs</li>
+          <li onClick={() => navigate('/news')}>News</li>
+          <li onClick={() => navigate('/about')}>About Us</li>
+          {/* <li onClick={() => navigate("/aboutfounder")}>About Founder</li> */}
+          <li onClick={() => navigate('/career')}>Careers</li>
+          <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
+          <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li>
         </ul>
       </div>
       <ul className="header-list">
@@ -66,23 +66,23 @@ const Header = ({ customClass }) => {
           <HamburgerLogo
             width="27"
             height="26"
-            fill={getLoc() === "" ? "#ffffff" : "#1C3988"}
+            fill={getLoc() === '' ? '#ffffff' : '#1C3988'}
           />
         </li>
-        <li className="company-name" onClick={() => navigate("/")}>
+        <li className="company-name" onClick={() => navigate('/')}>
           <span className="main-name">UAE&nbsp;Assistant</span>
         </li>
         <li className="desktop-li">
           <ul className="desktop-ul">
-            <li className="simple-list buy" onClick={() => navigate("/buy")}>
+            <li className="simple-list buy" onClick={() => navigate('/buy')}>
               Buy
             </li>
-            <li className="simple-list rent" onClick={() => navigate("/rent")}>
+            <li className="simple-list rent" onClick={() => navigate('/rent')}>
               Rent
             </li>
             <li
               className="simple-list off"
-              onClick={() => navigate("/off-plan")}
+              onClick={() => navigate('/off-plan')}
             >
               Off&nbsp;Plan
             </li>
@@ -90,15 +90,15 @@ const Header = ({ customClass }) => {
               <HeaderSelect
                 name="Luxury&nbsp;Properties"
                 options={[
-                  { name: "Villas", type: "Villa" },
-                  { name: "Apartments", type: "Apartment" },
-                  { name: "Town House", type: "Townhouse" },
-                  { name: "Pent House", type: "Penthouse" },
+                  { name: 'Villas', type: 'Villa' },
+                  { name: 'Apartments', type: 'Apartment' },
+                  { name: 'Town House', type: 'Townhouse' },
+                  { name: 'Pent House', type: 'Penthouse' },
                 ]}
               />
-              <DownArrow fill={getLoc() === "" ? "#ffffff" : "#000000"} />
+              <DownArrow fill={getLoc() === '' ? '#ffffff' : '#000000'} />
             </li>
-            <li className="simple-list" onClick={() => navigate("/sell")}>
+            <li className="simple-list" onClick={() => navigate('/sell')}>
               Advertise&nbsp;With&nbsp;Us
             </li>
           </ul>
