@@ -15,6 +15,7 @@ import FooterNew from "../../../components/footerNew";
 import Phone from "../../../components/svg/phone";
 import Mail from "../../../components/svg/mailsvg";
 import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
+import BottomFixed from "../../../components/bottomfixed/BottomFixed";
 
 const PropertyView = (props) => {
   let location = useLocation();
@@ -45,6 +46,10 @@ const PropertyView = (props) => {
       };
     } else return { lat: 25.1972, lng: 55.2744 };
   };
+  if (property.updatedAt) {
+    var d = property.updatedAt;
+    d = d.split("T");
+  }
 
   return (
     <div className="single-property-view">
@@ -178,31 +183,32 @@ const PropertyView = (props) => {
             <div className="more-details">
               <div className="details">
                 <p>Reference:</p>
-                <h1>Wil-S12</h1>
+                <h1>{property.id}</h1>
+                {console.log(property)}
               </div>
               <div className="details">
                 <p>property age:</p>
-                <h1>4 years</h1>
+                <h1>{property.propertyAge}</h1>
               </div>
               <div className="details">
                 <p>Listed Date:</p>
-                <h1>5 days ago</h1>
+                {d && <h1>{d[0]}</h1>}
               </div>
               <div className="details">
                 <p> Tarkheesi permit:</p>
-                <h1>Wil-S12</h1>
+                <h1>{property.trakheesiPermit}</h1>
               </div>
               <div className="details">
                 <p> Broker ORN:</p>
-                <h1>3edd-S12</h1>
+                <h1>{property.brokerORN}</h1>
               </div>
               <div className="details">
                 <p> Agent BRN:</p>
-                <h1>643234</h1>
+                <h1>{property.agentBRN}</h1>
               </div>
               <div className="details">
                 <p> Ownership:</p>
-                <h1>ddkdkkd</h1>
+                <h1>{property.ownership}</h1>
               </div>
             </div>
             <hr />
@@ -232,11 +238,12 @@ const PropertyView = (props) => {
                   className="service-btn-property whatsapp"
                   onClick={() =>
                     window.open(
-                      `https://wa.me/+971521278701/?text=Hello UAE Assistant. I’m interested in this property http://uaeassistant.com/property/${props.id}
-                Price: AED ${property.price}
-                Location: ${property.address.placeAddress}
-                Reference: ${property.id}
-                Please send me more information regards`
+                      `https://wa.me/+971521278701/?text=Hello UAE Assistant. I’m interested in this property %0a%0aLink: http://uaeassistant.com/property/${property.id}
+              %0a%0aPrice: AED ${property.price}
+              %0aLocation: ${property.address.city}
+                
+                %0aReference: ${property.id}
+                %0a%0aPlease send me more information regards`
                     )
                   }
                 >
@@ -279,6 +286,7 @@ const PropertyView = (props) => {
           </div>
         </div>
       </div>
+      <BottomFixed property={property} />
       <MoveToTop />
       <FooterNew />
     </div>
@@ -293,6 +301,7 @@ const VideoView = ({ url = "https://www.youtube.com/embed/05DqIGS_koU" }) => {
       width="100%"
       height="100%"
       allow="autoplay;"
+      allow="fullscreen"
       src={url}
     ></iframe>
   );

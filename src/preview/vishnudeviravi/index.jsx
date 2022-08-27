@@ -1,7 +1,8 @@
-import './index.scss';
+import BottomFixed from "../../components/bottomfixed/BottomFixed";
+import "./index.scss";
 
 const Preview = () => {
-  return 'hacked';
+  return <BottomFixed />;
 };
 
 export default Preview;

@@ -32,8 +32,9 @@
             padding: 20px;
             .rArrow {
               cursor: pointer;
-              padding: 5px 10px;
-              background-color: #ffffff;
+              padding: 3px 10px;
+              padding-top: 8px;
+              background-color: rgba(255, 255, 255, 0.4);
               border-radius: 4px;
             }
           }
@@ -300,8 +301,9 @@
               padding: 20px;
               .rArrow {
                 cursor: pointer;
-                padding: 5px 10px;
-                background-color: #ffffff;
+                padding: 3px 10px;
+                padding-top: 8px;
+                background-color: rgba(255, 255, 255, 0.4);
                 border-radius: 4px;
               }
             }
