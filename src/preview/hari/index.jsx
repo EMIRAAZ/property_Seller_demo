@@ -1,13 +1,19 @@
 import "./index.scss";
 
 import Nft from "../../pages/nft/english/Nft";
-import Luxuary from "../../pages/luxuary/english/Luxuary";
-import OffplanView from "../../pages/offplanview/english/OffplanView";
+
+import Policy from "../../pages/privacypolicy/english/Policy"
+import Advertise from "../../pages/advertise/english/Advertise";
+
+
 
 const Preview = () => {
   return (
     <>
-      <OffplanView />
+
+      <Policy/>
+=======
+
     </>
   );
 };
