@@ -46,6 +46,9 @@ const PropertyView = (props) => {
     } else return { lat: 25.1972, lng: 55.2744 };
   };
 
+  var d = property.updatedAt;
+  d = d.split("T");
+  console.log(d[0]);
   return (
     <div className="single-property-view">
       <Header customClass="prop-view-header-class" />
@@ -178,31 +181,32 @@ const PropertyView = (props) => {
             <div className="more-details">
               <div className="details">
                 <p>Reference:</p>
-                <h1>Wil-S12</h1>
+                <h1>{property.id}</h1>
+                {console.log(property)}
               </div>
               <div className="details">
                 <p>property age:</p>
-                <h1>4 years</h1>
+                <h1>{property.propertyAge}</h1>
               </div>
               <div className="details">
                 <p>Listed Date:</p>
-                <h1>5 days ago</h1>
+                <h1>{d[0]}</h1>
               </div>
               <div className="details">
                 <p> Tarkheesi permit:</p>
-                <h1>Wil-S12</h1>
+                <h1>{property.trakheesiPermit}</h1>
               </div>
               <div className="details">
                 <p> Broker ORN:</p>
-                <h1>3edd-S12</h1>
+                <h1>{property.brokerORN}</h1>
               </div>
               <div className="details">
                 <p> Agent BRN:</p>
-                <h1>643234</h1>
+                <h1>{property.agentBRN}</h1>
               </div>
               <div className="details">
                 <p> Ownership:</p>
-                <h1>ddkdkkd</h1>
+                <h1>{property.ownership}</h1>
               </div>
             </div>
             <hr />
