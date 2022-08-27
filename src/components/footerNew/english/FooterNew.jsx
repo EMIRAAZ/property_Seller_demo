@@ -129,7 +129,7 @@ const DivThree = () => {
 
       <p className="sub-heading">
         <Phone fill="#3270FC" width="15" height="15" customClass="icon3" />
-        &nbsp; Phone &nbsp; : <span> +71521278701</span>
+        &nbsp; Phone &nbsp; : <span> +971521278701</span>
       </p>
       <div className="soci">
         <Facebook
