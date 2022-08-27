@@ -15,6 +15,7 @@ import FooterNew from "../../../components/footerNew";
 import Phone from "../../../components/svg/phone";
 import Mail from "../../../components/svg/mailsvg";
 import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
+import BottomFixed from "../../../components/bottomfixed/BottomFixed";
 
 const PropertyView = (props) => {
   let location = useLocation();
@@ -48,7 +49,6 @@ const PropertyView = (props) => {
   if (property.updatedAt) {
     var d = property.updatedAt;
     d = d.split("T");
-    console.log(d[0]);
   }
 
   return (
@@ -238,11 +238,12 @@ const PropertyView = (props) => {
                   className="service-btn-property whatsapp"
                   onClick={() =>
                     window.open(
-                      `https://wa.me/+971521278701/?text=Hello UAE Assistant. I’m interested in this property http://uaeassistant.com/property/${props.id}
-                Price: AED ${property.price}
-                Location: ${property.address.placeAddress}
-                Reference: ${property.id}
-                Please send me more information regards`
+                      `https://wa.me/+971521278701/?text=Hello UAE Assistant. I’m interested in this property %0a%0aLink: http://uaeassistant.com/property/${property.id}
+              %0a%0aPrice: AED ${property.price}
+              %0aLocation: ${property.address.city}
+                
+                %0aReference: ${property.id}
+                %0a%0aPlease send me more information regards`
                     )
                   }
                 >
@@ -285,6 +286,7 @@ const PropertyView = (props) => {
           </div>
         </div>
       </div>
+      <BottomFixed property={property} />
       <MoveToTop />
       <FooterNew />
     </div>
@@ -299,6 +301,7 @@ const VideoView = ({ url = "https://www.youtube.com/embed/05DqIGS_koU" }) => {
       width="100%"
       height="100%"
       allow="autoplay;"
+      allow="fullscreen"
       src={url}
     ></iframe>
   );

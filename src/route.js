@@ -21,6 +21,7 @@ import Blog from "./pages/dailyblog";
 import Property from "./admin/property";
 import AdminAgency from "./admin/agency";
 import AddProperty from "./admin/addproperty";
+import Advertise from "./pages/advertise/english/Advertise";
 import Login from "./admin/login";
 import PropertyView from "./pages/propertyview";
 import AddAgency from "./admin/addagency";
@@ -162,7 +163,7 @@ function Router() {
           <Route path="luxury-property" element={<Luxuary />} />
           <Route path="luxuryproperty/:id" element={<LuxuaryViewMore />} />
           <Route path="neighbourhood" element={<NeighBourhood />} />
-          <Route path="sell" element={<Sell />} />
+          <Route path="sell" element={<Advertise />} />
           <Route path="off-plan" element={<WebOffplan />} />
           <Route path="shortterm" element={<ShortTerm />} />
           <Route path="management" element={<Management />} />

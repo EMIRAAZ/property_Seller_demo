@@ -96,13 +96,12 @@ const HomeFormCard = (props) => {
         <BasicSelect
           bgColor="white"
           customClass={`sale ${props.advancedSearch ? "advanced-sale" : ""}`}
-          name="Sale"
+          name="Buy"
           border
           onChange={(value) => onInputChange("sale", value)}
           options={[
             { name: "Buy", value: "buy" },
             { name: "Rent", value: "buy" },
-            { name: "Both", value: "both" },
           ]}
         />
         <InputSelect
