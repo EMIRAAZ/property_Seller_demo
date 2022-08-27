@@ -45,10 +45,12 @@ const PropertyView = (props) => {
       };
     } else return { lat: 25.1972, lng: 55.2744 };
   };
+  if (property.updatedAt) {
+    var d = property.updatedAt;
+    d = d.split("T");
+    console.log(d[0]);
+  }
 
-  var d = property.updatedAt;
-  d = d.split("T");
-  console.log(d[0]);
   return (
     <div className="single-property-view">
       <Header customClass="prop-view-header-class" />
@@ -190,7 +192,7 @@ const PropertyView = (props) => {
               </div>
               <div className="details">
                 <p>Listed Date:</p>
-                <h1>{d[0]}</h1>
+                {d && <h1>{d[0]}</h1>}
               </div>
               <div className="details">
                 <p> Tarkheesi permit:</p>
