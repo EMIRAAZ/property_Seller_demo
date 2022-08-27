@@ -1,0 +1,90 @@
+ .panel-head-main{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .search-box{
+        display: flex;
+        // transform: translate(-50%,-50%); 
+        height: 50px;
+         padding :10px;
+         background: #FFFFFF;
+         border: 1.3px solid rgba(196, 202, 205, 0.4);
+         border-radius: 57px;
+        align-items: center;
+
+
+        .search-txt{
+            border: none;
+            background: none;
+            outline: none;
+            float: left;
+            padding: 0;
+            color:lightgray;
+            width: 440px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 10px;
+           display: flex;
+            align-items: center;
+            color: rgba(98, 109, 125, 0.4);
+        }
+        .search-txt::placeholder{
+            color:lightgrey;
+        }
+        .search-btn{
+            font-size: large;
+        }
+    }
+    .username-container{
+        background: #F2F8FF;
+        border-radius: 12.6265px;
+        display: flex;
+        flex-direction: row;
+        margin: 5px ;
+        padding: 5px;
+        width: 13%;
+        
+
+        .admin-image{
+         border-radius: 4px;
+        }
+        .admin-des-cont{
+
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+          
+            .admin-name{
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 13.4683px;
+                line-height: 28px;
+                /* identical to box height, or 211% */
+
+                display: flex;
+                align-items: center;
+
+                color: #1F1F1F;
+            }
+            .admin-email{
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 28px;
+                /* identical to box height, or 259% */
+
+                display: flex;
+                align-items: center;
+
+
+            }
+        }
+    }
+}

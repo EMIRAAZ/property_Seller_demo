@@ -1,12 +1,13 @@
 import "./index.scss";
 
 import Nft from "../../pages/nft/english/Nft";
-import Luxuary from "../../pages/luxuary/english/Luxuary";
+import Policy from "../../pages/privacypolicy/english/Policy"
+import Advertise from "../../pages/advertise/english/Advertise";
 
 const Preview = () => {
   return (
     <>
-      <Luxuary />
+      <Advertise/>
     </>
   );
 };
