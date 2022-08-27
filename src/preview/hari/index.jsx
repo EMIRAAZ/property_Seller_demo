@@ -11,7 +11,7 @@ const Preview = () => {
   return (
     <>
 
-      <Advertise/>
+      <Policy/>
 =======
 
     </>
