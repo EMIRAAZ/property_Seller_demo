@@ -1,6 +1,7 @@
 import './addform.scss';
 import Input from '../../../components/input/admininput';
 import Textarea from '../../../components/input/admintextarea';
+import Select from '../../../components/select/adminSelect';
 import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import UploadImage from '../../../components/uploadimage';
@@ -82,6 +83,27 @@ const AddForm = ({
           value={offplanValue.description}
           required
         />
+        <Textarea
+          divClass="offplan-input"
+          label="Place Address"
+          rows={5}
+          onChange={e => onChangeInput('placeAddress', e.target.value)}
+          value={offplanValue.placeAddress}
+          required
+        />
+        <Input
+          divClass="offplan-input"
+          label="Building"
+          value={offplanValue.building}
+          onChange={e => onChangeInput('building', e.target.value)}
+        />
+        <Input
+          divClass="offplan-input"
+          label="City"
+          required
+          value={offplanValue.city}
+          onChange={e => onChangeInput('city', e.target.value)}
+        />
         <p className="property-input amenities-instruction">
           Use comma to add multiple values in availability
         </p>
@@ -116,6 +138,15 @@ const AddForm = ({
           onChange={v => onChangeInput('amenities', v)}
           required
         />
+        <Select
+          customClass="property-input"
+          label="Emirate"
+          required
+          value={offplanValue.emirate}
+          options={offplanOptions.emirate}
+          onChange={v => onChangeInput('emirate', v)}
+        />
+        <span className="select-border"></span>
         <label className="offplan-image-label spinner-label">
           Offplan Image<span>*</span> {renderImageLoadingSpinner()}
         </label>

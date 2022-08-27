@@ -58,7 +58,7 @@
         }
 
         li:hover {
-          margin-left: 10px;
+          // margin-left: 10px;
           color: #2f70ff;
         }
       }
@@ -84,6 +84,7 @@
         margin-top: 20px;
         margin-left: 5px;
         .social {
+          cursor: pointer;
           background-color: #2f70ff;
           width: 30px;
           height: 30px;
@@ -341,18 +342,24 @@
     }
     .bottom-div {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       width: 95%;
+      flex-wrap: wrap;
       margin: auto;
       margin-top: 40px;
       .copyright {
+        width: 100%;
+        text-align: center;
         p {
           font-family: "Poppins";
-          font-size: 10px;
+          font-size: 13px;
           color: #144273;
         }
       }
       .terms {
+        text-align: center;
+        width: 100%;
+
         a {
           text-decoration: none;
           font-family: "Poppins";

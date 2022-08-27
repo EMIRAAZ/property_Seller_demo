@@ -1,0 +1,28 @@
+.main-navbar {
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  .navbar-mini-container {
+    display: flex;
+    svg {
+      margin-right: 16px;
+      margin-top: 10px;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .main-navbar {
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    .navbar-mini-container {
+      display: flex;
+      svg {
+        margin-right: 0px;
+        margin-top: 10px;
+      }
+    }
+  }
+}

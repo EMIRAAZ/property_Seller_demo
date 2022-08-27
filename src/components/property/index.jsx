@@ -59,7 +59,18 @@ const Property = (props) => {
         <div className="property-rectangle favourite">
           <Favourite width="15" height="16" viewbox="0 -1.2 12 10" />
         </div>
-        <div className="property-rectangle share">
+        <div
+          className="property-rectangle share"
+          onClick={() =>
+            window.open(
+              `https://wa.me/+971521278701/?text=Hello UAE Assistant. I’m interested in this property http://uaeassistant.com/property/${props.id}
+                Price: AED ${props.price}
+                Location: ${props.address.placeAddress}
+                Reference: ${props.id}
+                Please send me more information regards`
+            )
+          }
+        >
           <Share width="14" height="15" fill="#979797" viewbox="1 -3 9 15" />
         </div>
         <div className="address">
@@ -72,15 +83,19 @@ const Property = (props) => {
           />
           <p>{renderAddress(props.address)}</p>
         </div>
-        <div className="property-type-property">{props.propertyType}</div>
+        <div className="property-type-property" onClick={navigateTo}>
+          {props.propertyType}
+        </div>
         <div className="main-heading" onClick={navigateTo}>
           {props.title.toLowerCase()}
         </div>
-        <div className="price-tag">AED {props.price}</div>
+        <div className="price-tag" onClick={navigateTo}>
+          AED {props.price}
+        </div>
         <div className="description" onClick={navigateTo}>
           {renderDescription(props.description).toLowerCase()}
         </div>
-        <div className="spec">
+        <div className="spec" onClick={navigateTo}>
           <div className="spec-wrap">
             <Bed
               className="property-bed"
@@ -123,12 +138,30 @@ const Property = (props) => {
               fill="#979797"
             />
             <p>
-              {props.propertySize} {renderUnit(props.propertySizeUnit)}
+              {props.propertySize}{" "}
+              {props.propertySizeUnit ? renderUnit(props.propertySizeUnit) : ""}
             </p>
           </div>
         </div>
         <div className="property-line" />
         <div className="service-property">
+          <div
+            className="service-btn-property email"
+            onClick={() =>
+              window.open("mailto:hello@uaeassistant.com", "_blank")
+            }
+          >
+            <Mail width="15" height="15" viewBox="0 0 15 15" fill="#2f70ff" />
+            Email
+          </div>
+          <div
+            className="service-btn-property phone"
+            onClick={() => window.open("tel:+971521278701", "_blank")}
+          >
+            <Phone width="17" height="17" viewBox="0 0 15 15" fill="#2f70ff" />
+            Phone
+          </div>
+
           <div
             className="service-btn-property whatsapp"
             onClick={() =>
@@ -148,22 +181,6 @@ const Property = (props) => {
               fill="#2f70ff"
             />
             WhatsApp
-          </div>
-          <div
-            className="service-btn-property phone"
-            onClick={() => window.open("tel:+971521278701", "_blank")}
-          >
-            <Phone width="17" height="17" viewBox="0 0 15 15" fill="#2f70ff" />
-            Phone
-          </div>
-          <div
-            className="service-btn-property email"
-            onClick={() =>
-              window.open("mailto:hello@uaeassistant.com", "_blank")
-            }
-          >
-            <Mail width="15" height="15" viewBox="0 0 15 15" fill="#2f70ff" />
-            Email
           </div>
         </div>
       </div>

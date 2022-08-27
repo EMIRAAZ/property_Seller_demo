@@ -168,6 +168,9 @@ const reducer = (state = initialState, action) => {
       createdPropertyValue.building = propVal.address.building
         ? propVal.address.building
         : '';
+      createdPropertyValue.emirate = propVal.address.emirate
+        ? propVal.address.emirate
+        : '';
 
       createdPropertyValue.placeAddress = propVal.address.placeAddress
         ? propVal.address.placeAddress

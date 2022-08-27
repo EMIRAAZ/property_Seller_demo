@@ -41,6 +41,11 @@ import Topstory from './pages/topstory';
 import ListProperty from './pages/listproperty';
 import AddOffplan from './admin/addoffplan';
 import PropertySearchView from './pages/propertysearchview';
+import ScrollToTop from './components/scrollToTop/ScrollToTop';
+import AgentDashboard from './adminAgency/dashboard';
+import AgentAddAgent from './adminAgency/addagent';
+import AgencyLogin from './adminAgency/login';
+import AgentAddProperty from './adminAgency/addproperty';
 
 function Router() {
   const makePrivate = (component, role = '') => (
@@ -48,9 +53,26 @@ function Router() {
   );
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
+          <Route path="agency">
+            <Route exact path="login" element={<AgencyLogin />} />
+            <Route index element={makePrivate(<AgentDashboard />, 'AGENCY')} />
+            <Route
+              path="add-agent"
+              element={makePrivate(<AgentAddAgent />, 'AGENCY')}
+            />
+            <Route
+              path="add-property"
+              element={makePrivate(<AgentAddProperty />, 'AGENCY')}
+            />
+            <Route
+              path="add-property/:id"
+              element={makePrivate(<AgentAddProperty />, 'AGENCY')}
+            />
+          </Route>
           <Route path="admin">
             <Route path="login" element={<Login />} />
             <Route index element={makePrivate(<Property />, 'ADMIN')} />

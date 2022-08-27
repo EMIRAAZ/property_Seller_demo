@@ -25,6 +25,7 @@ const Offplan = (props) => {
           sub="offplans found"
         />
         <RenderComponent
+          type="OFFPLAN"
           data={props.offplan.data}
           propertyCallApi={props.getOffplanWeb}
           count={props.offplan.count}

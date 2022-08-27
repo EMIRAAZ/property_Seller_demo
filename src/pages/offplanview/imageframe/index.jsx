@@ -10,7 +10,7 @@ const ImageFrame = () => {
         alt="building"
       />
 
-      <ShortTermFormCard />
+      {/* <ShortTermFormCard /> */}
     </div>
   );
 };

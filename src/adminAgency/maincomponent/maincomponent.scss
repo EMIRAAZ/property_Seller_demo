@@ -1,0 +1,37 @@
+.admin-agency-home {
+  display: flex;
+  flex-wrap: wrap;
+  .side-nav-div {
+    width: 20%;
+    background-color: aquamarine;
+  }
+  .main-div {
+    width: 80%;
+    background-color: #d5e6fb;
+    .add-div {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .admin-agency-home {
+    display: flex;
+    flex-wrap: wrap;
+    .side-nav-div {
+      width: 0%;
+      background-color: aquamarine;
+      display: none;
+    }
+    .main-div {
+      width: 100%;
+      background-color: #d5e6fb;
+      .add-div {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

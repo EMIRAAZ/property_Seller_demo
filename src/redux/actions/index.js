@@ -26,3 +26,7 @@ export * from './luxuryweb';
 export * from './adminoffplan';
 export * from './adminaddoffplan';
 export * from './offplan';
+export * from './agencylogin';
+export * from './agencyaddagent';
+export * from './agencyaddproperty';
+export * from './agencyproperty';

@@ -27,7 +27,7 @@ const Topstory = (props) => {
         <div className="news-div">
           {props.news.map((item, i) =>
             i === 0 ? (
-              <div key={i}>
+              <div key={i} style={{ width: "100%" }}>
                 <StoryCard item={item} />
               </div>
             ) : (

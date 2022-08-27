@@ -1,8 +1,8 @@
-import "./about.scss";
-import Footer from "../../../components/footer";
-import Header from "../../../components/header";
-import { MoveToTop } from "../../../components/movetotop";
-import FooterNew from "../../../components/footerNew";
+import './about.scss';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header';
+import { MoveToTop } from '../../../components/movetotop';
+import FooterNew from '../../../components/footerNew';
 
 const TeamCard = ({ url, name, position }) => {
   return (
@@ -71,7 +71,7 @@ const About = () => {
               done without.
             </p>
           </p>
-          <div className="about-properties-img">
+          {/* <div className="about-properties-img">
             <TeamCard
               className="teamcard"
               url="/assets/image/ashique.jpg"
@@ -90,7 +90,7 @@ const About = () => {
               name="Faisal Mangat"
               position="Director & Research"
             />
-          </div>
+          </div> */}
         </div>
       </div>
       <MoveToTop />

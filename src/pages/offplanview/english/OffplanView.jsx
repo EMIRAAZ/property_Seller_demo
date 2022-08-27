@@ -28,7 +28,16 @@ const OffplanView = () => {
           <h1 className="Heading">Amenities</h1>
         </div>
         <div className="amenities">
-          <Amenities />
+          <div className="amenities-main-div">
+            {/*                  
+                {property.amenities &&
+                  property.amenities.map((item, i) => (
+                    <div className="amenties-div" key={i}>
+                      <div className="dot-div"></div>
+                      <p>{item}</p>
+                    </div>
+                  ))} */}
+          </div>
         </div>
         <div className="offplans-projects">
           <h1 className="Heading">Image Gallery</h1>

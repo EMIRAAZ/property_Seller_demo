@@ -1,0 +1,188 @@
+.admin-agency-login {
+  .logo-wrapper {
+    padding: 25px;
+    .uaeassistant-logo {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+
+      color: #2c72fb;
+    }
+  }
+  .login-div {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+    .text-div {
+      width: 40%;
+
+      padding: 25px;
+      h1 {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 75px;
+
+        color: #000000;
+      }
+      h2 {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 42px;
+
+        color: #2c72fb;
+        span {
+          color: #000000;
+        }
+      }
+      p {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 24px;
+        margin-top: 30px;
+
+        color: #000000;
+        span {
+          color: #2c72fb;
+        }
+      }
+    }
+    .input-div {
+      width: 40%;
+      h1 {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 5px;
+
+        color: #000000;
+        // margin-bottom: 30px;
+      }
+      .admin-login-input {
+        margin-top: 30px;
+        width: 80%;
+      }
+      .input-class {
+        background-color: #eaf3fd;
+
+        color: #2c72fb;
+        &::placeholder {
+          color: #2c72fb;
+        }
+      }
+      .btn-cls {
+        background: #2c72fb;
+        // box-shadow: 0px 4px 61px rgba(44, 114, 251, 0.4);
+        border-radius: 9px;
+        width: 80%;
+        margin-top: 40px;
+        height: 50px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .admin-agency-login {
+    .logo-wrapper {
+      padding: 25px;
+      display: none;
+      .uaeassistant-logo {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+
+        color: #2c72fb;
+      }
+    }
+    .login-div {
+      display: flex;
+      width: 90%;
+      margin: auto;
+      justify-content: space-evenly;
+      margin-top: 2vh;
+      flex-wrap: wrap;
+      .text-div {
+        width: 100%;
+
+        padding: 10px;
+        h1 {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 23px;
+          line-height: 35px;
+          margin-top: 40px;
+          color: #000000;
+        }
+        h2 {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 30px;
+          line-height: 42px;
+
+          color: #2c72fb;
+          span {
+            color: #000000;
+          }
+        }
+        p {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 20px;
+          margin-top: 10px;
+
+          color: #000000;
+          span {
+            color: #2c72fb;
+          }
+        }
+      }
+      .input-div {
+        width: 100%;
+        h1 {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 5px;
+          padding: 10px;
+          color: #000000;
+          margin-top: 30px;
+        }
+        .admin-login-input {
+          margin-top: 30px;
+          width: 100%;
+        }
+        .input-class {
+          background-color: #eaf3fd;
+
+          color: #2c72fb;
+          &::placeholder {
+            color: #2c72fb;
+          }
+        }
+        .btn-cls {
+          background: #2c72fb;
+          // box-shadow: 0px 4px 61px rgba(44, 114, 251, 0.4);
+          border-radius: 9px;
+          width: 100%;
+          margin-top: 40px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}

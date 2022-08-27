@@ -1,14 +1,14 @@
-import "./propertysearchview.scss";
-import { useLocation } from "react-router-dom";
-import Header from "../../components/header";
-import ListHeading from "../../components/ListHeading";
-import QueryCard from "../../components/querycard";
-import RenderComponent from "../../components/renderComponent";
-import Footer from "../../components/footer";
-import FooterNew from "../../components/footerNew";
-import { MoveToTop } from "../../components/movetotop";
+import './propertysearchview.scss';
+import { useLocation } from 'react-router-dom';
+import Header from '../../components/header';
+import ListHeading from '../../components/ListHeading';
+import QueryCard from '../../components/querycard';
+import RenderComponent from '../../components/renderComponent';
+import Footer from '../../components/footer';
+import FooterNew from '../../components/footerNew';
+import { MoveToTop } from '../../components/movetotop';
 
-const PropertySearchView = (props) => {
+const PropertySearchView = props => {
   const search = useLocation().search;
   return (
     <div className="list-property-api">
@@ -17,7 +17,7 @@ const PropertySearchView = (props) => {
         onInputChange={props.onHomeSearchInputChange}
         onSearchLocation={props.getHomeLocationSearch}
         cardInput={props.homeSearch}
-        onSearch={(params) => {
+        onSearch={params => {
           props.getHomeProperty(params);
         }}
       />

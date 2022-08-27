@@ -3,22 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 const CAT = [
   {
-    id: 1,
-    name: 'Featured Properties',
-    page: '/listproperty/featured',
-    image: '/assets/image/cat1-min.png',
-  },
-  {
-    id: 2,
-    name: 'Neighbourhoods',
-    page: '/neighbourhood',
-    image: '/assets/image/cat2-min.png',
-  },
-  {
-    id: 3,
-    name: 'Luxury Properties',
-    page: '/luxury-property',
-    image: '/assets/image/cat3-min.png',
+    id: 5,
+    name: 'Off Plan Properties',
+    page: '/off-plan',
+    image: '/assets/image/cat5-min.png',
   },
   {
     id: 4,
@@ -27,16 +15,29 @@ const CAT = [
     image: '/assets/image/cat4-min.png',
   },
   {
-    id: 5,
-    name: 'Off Plan Properties',
-    page: '/off-plan',
-    image: '/assets/image/cat5-min.png',
+    id: 3,
+    name: 'Luxury Properties',
+    page: '/luxury-property',
+    image: '/assets/image/cat3-min.png',
   },
+  {
+    id: 2,
+    name: 'Neighbourhoods',
+    page: '/neighbourhood',
+    image: '/assets/image/cat2-min.png',
+  },
+  {
+    id: 1,
+    name: 'Featured Properties',
+    page: '/listproperty/featured',
+    image: '/assets/image/cat1-min.png',
+  },
+
   {
     id: 6,
     name: 'Verified Properties',
     page: '/listproperty/verifiedproperties',
-    image: '/assets/image/download.jpeg',
+    image: '/assets/image/download.jpg',
   },
 ];
 

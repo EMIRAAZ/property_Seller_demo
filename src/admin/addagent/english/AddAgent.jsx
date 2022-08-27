@@ -32,6 +32,7 @@ const AddAgent = props => {
           agentValue={props.agentValue}
           agentOptions={props.agentOptions}
           clearAddAgency={props.clearAddAgency}
+          clrUpload={props.clearUpload}
         />
       </div>
     </div>

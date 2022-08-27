@@ -1,12 +1,22 @@
 import './viewall.scss';
 import BasicButton from '../../../components/button/BasicButton';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const ViewAll = ({ count, getApi, limit = 6 }) => {
+const ViewAll = ({
+  count,
+  getApi,
+  limit = 6,
+  goToOtherPage = false,
+  link = '',
+}) => {
   const [current, setCurrent] = useState(1);
+  const navigate = useNavigate();
 
   const setCurrentPage = () => {
-    if (current * limit < count) {
+    if (goToOtherPage) {
+      navigate(link);
+    } else if (current * limit < count) {
       setCurrent(current + 1);
       onChangeCurrentPage(current + 1);
     }

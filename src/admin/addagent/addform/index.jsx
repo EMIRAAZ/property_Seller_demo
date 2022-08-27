@@ -29,6 +29,7 @@ const AddForm = ({
   agentValue,
   editing,
   clearAddAgency,
+  clrUpload,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -54,6 +55,7 @@ const AddForm = ({
         },
         () => {
           clearAddAgency();
+          clrUpload();
           navigate(`/admin/add-agency/${agentValue.agencyId}`);
         }
       );
@@ -62,6 +64,7 @@ const AddForm = ({
         { ...agentValue, agentImage: images[0], agencyId: location.state.id },
         () => {
           clearAddAgency();
+          clrUpload();
           navigate(`/admin/add-agency/${location.state.id}`);
         }
       );

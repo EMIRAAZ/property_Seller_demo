@@ -99,6 +99,7 @@ const reducer = (state = initialState, action) => {
           createdAgencyValue[key] = agencyVal[key];
         }
       }
+      createdAgencyValue.password = '';
 
       return {
         ...state,
