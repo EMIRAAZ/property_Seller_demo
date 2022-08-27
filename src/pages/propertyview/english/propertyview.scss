@@ -45,6 +45,8 @@
         grid-row-start: 4;
         grid-row-end: 6;
         border-radius: 10px;
+
+        display: none;
       }
       .main-video-container {
         grid-column-start: 1;
@@ -52,10 +54,11 @@
         grid-row-start: 6;
         grid-row-end: 7;
         border-radius: 10px;
+        display: none;
       }
     }
     .content-container {
-      font-family: 'Poppins';
+      font-family: "Poppins";
       display: flex;
       flex-direction: column;
       width: 95%;
@@ -135,6 +138,71 @@
             font-size: 17px;
             line-height: 30px;
           }
+          .main-video-container2 {
+            height: 280px;
+            margin-top: 20px;
+            margin-left: 6px;
+            width: 100%;
+          }
+          .amenities-main-div {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            h1 {
+              width: 100%;
+              font-family: "Poppins";
+              font-size: 18px;
+              font-weight: 600;
+              line-height: 28px;
+              letter-spacing: 0em;
+              text-align: left;
+            }
+            .amenties-div {
+              width: 100%;
+              margin-top: 20px;
+              display: flex;
+              align-items: center;
+              .dot-div {
+                width: 15px;
+                height: 15px;
+                background-color: #2f70ff;
+                border-radius: 8px;
+              }
+              p {
+                margin-left: 5px;
+                font-family: "Roboto";
+                font-weight: 500;
+                color: #464646;
+                font-size: 18px;
+              }
+            }
+          }
+        }
+        .more-details {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          padding-bottom: 20px;
+          .details {
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            p {
+              width: 47%;
+              font-family: "Roboto";
+              font-weight: 500;
+              color: #464646;
+              font-size: 18px;
+            }
+            h1 {
+              width: 53%;
+              font-family: "Roboto";
+              font-weight: 400;
+              color: #706f6f;
+              font-size: 17px;
+            }
+          }
         }
       }
       .right-container {
@@ -155,6 +223,11 @@
             .agent-details {
               display: flex;
               flex-direction: column;
+              p {
+                font-family: "Poppins";
+                font-size: 13px;
+                font-weight: 600;
+              }
             }
             img {
               width: 70px;
@@ -169,7 +242,7 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            font-family: 'Roboto';
+            font-family: "Roboto";
             font-weight: 600;
             font-size: 10px;
             margin: 20px 0px 0px 0px;
@@ -239,18 +312,21 @@
           grid-column-end: 5;
           grid-row-start: 1;
           grid-row-end: 3;
+
           border-radius: 10px;
+          display: flex;
         }
         .main-video-container {
           grid-column-start: 3;
           grid-column-end: 5;
           grid-row-start: 3;
           grid-row-end: 3;
+          display: flex;
           border-radius: 10px;
         }
       }
       .content-container {
-        font-family: 'Poppins';
+        font-family: "Poppins";
         display: flex;
         width: 95%;
         flex-direction: row;
@@ -331,6 +407,67 @@
               font-size: 17px;
               line-height: 30px;
             }
+            .main-video-container2 {
+              display: none;
+            }
+            .amenities-main-div {
+              display: flex;
+              flex-wrap: wrap;
+              margin-top: 20px;
+              h1 {
+                width: 100%;
+                font-family: "Poppins";
+                font-size: 32px;
+                font-weight: 600;
+                line-height: 28px;
+                letter-spacing: 0em;
+                text-align: left;
+              }
+              .amenties-div {
+                width: 30%;
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                .dot-div {
+                  width: 15px;
+                  height: 15px;
+                  background-color: #2f70ff;
+                  border-radius: 8px;
+                }
+                p {
+                  margin-left: 5px;
+                  font-family: "Roboto";
+                  font-weight: 500;
+                  color: #464646;
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+          .more-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .details {
+              width: 44%;
+              margin-top: 20px;
+              display: flex;
+              flex-wrap: wrap;
+              p {
+                width: 44%;
+                font-family: "Roboto";
+                font-weight: 500;
+                color: #464646;
+                font-size: 18px;
+              }
+              h1 {
+                width: 56%;
+                font-family: "Roboto";
+                font-weight: 400;
+                color: #6b6a6a;
+                font-size: 17px;
+              }
+            }
           }
         }
         .right-container {
@@ -345,7 +482,7 @@
               rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
             width: 100%;
             background-color: #ffffff;
-            padding: 10px 5px;
+            padding: 20px 15px;
 
             .top-header-agent {
               display: flex;
@@ -355,11 +492,13 @@
               .agent-details {
                 display: flex;
                 flex-direction: column;
+                width: 45%;
               }
               img {
                 width: 70px;
                 height: 70px;
                 border-radius: 8px;
+                object-fit: contain;
                 border: 1px solid rgb(206, 206, 206);
               }
             }
@@ -369,7 +508,7 @@
               justify-content: space-between;
               align-items: center;
               width: 100%;
-              font-family: 'Roboto';
+              font-family: "Roboto";
               font-weight: 600;
               font-size: 10px;
               margin: 20px 0px 0px 0px;
