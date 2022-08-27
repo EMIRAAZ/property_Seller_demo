@@ -1,15 +1,15 @@
-import './Offplan.scss';
-import Header from '../../../components/header';
-import RenderComponent from '../../../components/renderComponent';
-import Footer from '../../../components/footer/english';
-import ListHeading from '../../../components/ListHeading';
-import OffplanCard from '../../../components/offpaln/offplanCard/OffplanCard';
-import { MoveToTop } from '../../../components/movetotop';
-import FooterNew from '../../../components/footerNew';
+import "./Offplan.scss";
+import Header from "../../../components/header";
+import RenderComponent from "../../../components/renderComponent";
+import Footer from "../../../components/footer/english";
+import ListHeading from "../../../components/ListHeading";
+import OffplanCard from "../../../components/offpaln/offplanCard/OffplanCard";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
 
-const Offplan = props => {
+const Offplan = (props) => {
   const renderOffplan = () =>
-    props.offplan.data.map(item => (
+    props.offplan.data.map((item) => (
       <div className="offplan-card-size-div">
         <OffplanCard key={item.id} {...item} />
       </div>

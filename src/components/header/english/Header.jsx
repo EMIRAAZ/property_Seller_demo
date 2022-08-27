@@ -31,7 +31,8 @@ const Header = ({ customClass }) => {
           <li onClick={onSidebarWebToggle}>
             <Close />
           </li>
-          <li onClick={() => navigate("/blogs")}>Blogs</li>
+          <li onClick={() => navigate("/")}>Home</li>
+          <li onClick={() => navigate("/dailyblog")}>Blogs</li>
           <li onClick={() => navigate("/news")}>News</li>
           <li onClick={() => navigate("/about")}>About Us</li>
           <li onClick={() => navigate("/aboutfounder")}>About Founder</li>
@@ -45,6 +46,8 @@ const Header = ({ customClass }) => {
           <li onClick={onSidebarWebToggle}>
             <Close />
           </li>
+          <li onClick={() => navigate("/")}>Home</li>
+
           <li onClick={() => navigate("/buy")}>Buy</li>
           <li onClick={() => navigate("/rent")}>Rent</li>
           <li>Commercial</li>
@@ -52,7 +55,7 @@ const Header = ({ customClass }) => {
           <li onClick={() => navigate("/luxury-property")}>
             Luxury Properties
           </li>
-          <li onClick={() => navigate("/blogs")}>Blogs</li>
+          <li onClick={() => navigate("/dailyblog")}>Blogs</li>
           <li onClick={() => navigate("/news")}>News</li>
           <li onClick={() => navigate("/about")}>About Us</li>
           <li onClick={() => navigate("/aboutfounder")}>About Founder</li>
@@ -66,7 +69,7 @@ const Header = ({ customClass }) => {
           <HamburgerLogo
             width="27"
             height="26"
-            fill={getLoc() === "" ? "#ffffff" : "#1C3988"}
+            fill={getLoc() === "" ? "#ffffff" : "#2f70ff"}
           />
         </li>
         <li className="company-name" onClick={() => navigate("/")}>
@@ -74,6 +77,9 @@ const Header = ({ customClass }) => {
         </li>
         <li className="desktop-li">
           <ul className="desktop-ul">
+            <li className="simple-list buy" onClick={() => navigate("/")}>
+              Home
+            </li>{" "}
             <li className="simple-list buy" onClick={() => navigate("/buy")}>
               Buy
             </li>
