@@ -47,7 +47,7 @@ const Blog = props => {
         <div className="daily-blog">
           <div className="heading-bt-container">
             <h1>Daily Blog</h1>
-            <button>View all</button>
+            {/* <button>View all</button> */}
           </div>
           {renderCard()}
         </div>
