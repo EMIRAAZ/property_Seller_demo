@@ -31,6 +31,7 @@ const News = (props) => {
             ))}
         </div>
         <h1 className="sub-heading">{props.news[0] && props.news[0].title}</h1>
+        {console.log(props)}
         <img
           src={props.news[0] && props.news[0].images[0]}
           className="image-div"

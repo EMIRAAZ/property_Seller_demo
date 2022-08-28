@@ -20,7 +20,7 @@ const Offplan = (props) => {
         <Header customClass="offplan-header-class" />
         <div className="offplan-card-container"></div>
         <ListHeading
-          main="Offplan Projects"
+          main="Offplan Properties"
           count={props.offplan.count}
           sub="offplans found"
         />
