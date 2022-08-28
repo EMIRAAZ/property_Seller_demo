@@ -4,6 +4,7 @@ import {
   UPLOAD_IMAGE_ERROR,
   UPLOAD_IMAGE,
   CLEAR_UPLOAD,
+  REMOVE_IMAGE,
 } from '../../constants';
 
 const uploadImageStarted = () => {
@@ -34,4 +35,12 @@ export const uploadAdminPropertyImage = (payload, cb, i) => async dispatch => {
   } catch (e) {
     dispatch(uploadImageError());
   }
+};
+
+export const removeImage = img => {
+  console.log(img);
+  return {
+    type: REMOVE_IMAGE,
+    payload: img,
+  };
 };
