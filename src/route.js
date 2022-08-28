@@ -162,7 +162,7 @@ function Router() {
           <Route path="news/:id" element={<News />} />
           <Route path="rent" element={<Rent />} />
           <Route path="luxury-property" element={<Luxuary />} />
-          <Route path="luxuryproperty/:id" element={<LuxuaryViewMore />} />
+          <Route path="luxury-property/:id" element={<Luxuary />} />
           <Route path="neighbourhood" element={<NeighBourhood />} />
           <Route path="sell" element={<Advertise />} />
           <Route path="off-plan" element={<WebOffplan />} />
