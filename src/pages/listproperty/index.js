@@ -7,6 +7,7 @@ import {
   getListpropLocationSearch,
   getPropWithNeighSale,
   getVP,
+  getPropWithTag,
 } from '../../redux/actions';
 
 const mapStateToProps = state => {
@@ -16,12 +17,14 @@ const mapStateToProps = state => {
     listSearch: state.listpropReducer.listSearch,
     propWithNeighbor: state.listpropReducer.propWithNeighbor,
     vp: state.listpropReducer.vp,
+    tag: state.listpropReducer.tag,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     getCatFeatured: params => dispatch(getCatFeatured(params)),
+    getPropWithTag: params => dispatch(getPropWithTag(params)),
     getVP: params => dispatch(getVP(params)),
     getPropWithNeighSale: param => dispatch(getPropWithNeighSale(param)),
     getRtmin: params => dispatch(getRtmin(params)),

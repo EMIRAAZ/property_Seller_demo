@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    font-family: "Arial";
+    font-family: 'Arial';
     .column-heading {
       font-size: 13px;
       color: rgb(44, 44, 44);
@@ -26,6 +26,7 @@
       letter-spacing: 0.1px;
       padding-left: 2px;
       color: #3b97ba;
+      cursor: pointer;
 
       &:hover {
         text-decoration: underline;

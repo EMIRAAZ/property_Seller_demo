@@ -16,6 +16,9 @@ import {
   GET_VP_STARTED,
   GET_VP_ERROR,
   GET_VP,
+  GET_PROP_TAG_STARTED,
+  GET_PROP_TAG,
+  GET_PROP_TAG_ERROR,
 } from '../../constants';
 
 export const onChangeListPropParams = payload => {
@@ -159,5 +162,32 @@ export const getVP =
       });
     } catch (e) {
       dispatch(getVPError());
+    }
+  };
+
+const getPROP_TAGStarted = () => {
+  return {
+    type: GET_PROP_TAG_STARTED,
+  };
+};
+
+const getPROP_TAGError = () => {
+  return {
+    type: GET_PROP_TAG_ERROR,
+  };
+};
+
+export const getPropWithTag =
+  (params = '') =>
+  async dispatch => {
+    try {
+      dispatch(getPROP_TAGStarted());
+      const res = await axios.get(`/api/property?${params}`);
+      dispatch({
+        type: GET_PROP_TAG,
+        payload: res.data?.data,
+      });
+    } catch (e) {
+      dispatch(getPROP_TAGError());
     }
   };
