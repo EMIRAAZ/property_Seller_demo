@@ -13,6 +13,11 @@ const ListProperty = props => {
 
   const getID = () => location.pathname.split('/').pop();
 
+  const getParamsForNeigh = params => {
+    let pathname = location.search.substring(1);
+    return `${params}&${pathname}`;
+  };
+
   const getPropertyData = () => {
     if (getID() === 'featured') return props.featured.data;
     else if (getID() === 'readytomove') return props.readyToMoveIn.data;
@@ -29,7 +34,8 @@ const ListProperty = props => {
   const getPropertyFn = params => {
     if (getID() === 'featured') return props.getCatFeatured(params);
     else if (getID() === 'readytomove') return props.getRtmin(params);
-    else if (getID() === 'neighbourhood') return () => {};
+    else if (getID() === 'neighbourhood')
+      return props.getPropWithNeighSale(getParamsForNeigh(params));
     else if (getID() === 'verifiedproperties') return props.getVP(params);
   };
 
