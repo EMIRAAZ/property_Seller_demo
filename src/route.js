@@ -47,7 +47,7 @@ import AgentDashboard from './adminAgency/dashboard';
 import AgentAddAgent from './adminAgency/addagent';
 import AgencyLogin from './adminAgency/login';
 import AgentAddProperty from './adminAgency/addproperty';
-import Nft from './pages/nft/english/Nft';
+import Nft from './pages/nft/english';
 import OffplanView from './pages/offplanview/english';
 
 function Router() {
@@ -178,7 +178,7 @@ function Router() {
           <Route path="dailyblog" element={<Blog />} />
           <Route path="listproperty/:id" element={<ListProperty />} />
           <Route path="dailyblog/:id" element={<Blog />} />
-          <Route path="viewblog" element={<Nft />} />
+          <Route path="viewblog/:id" element={<Nft />} />
           <Route path="privacypolicy" element={<Policy />} />
           <Route path="terms" element={<Terms />} />
           <Route path="career" element={<Career />} />

@@ -15,7 +15,6 @@ import { MoveToTop } from '../../../components/movetotop';
 const OffplanView = props => {
   let location = useLocation();
 
-  console.log(props);
   useEffect(() => {
     props.getOffplanByIdWeb(getID());
   }, []);

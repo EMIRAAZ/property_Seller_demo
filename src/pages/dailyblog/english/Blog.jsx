@@ -1,17 +1,17 @@
-import "./blog.scss";
-import Header from "../../../components/header";
-import SocialPanel from "../../../components/socialpanel";
-import Footer from "../../../components/footer";
-import { useEffect } from "react";
-import { MoveToTop } from "../../../components/movetotop";
-import FooterNew from "../../../components/footerNew";
-import { useNavigate } from "react-router-dom";
+import './blog.scss';
+import Header from '../../../components/header';
+import SocialPanel from '../../../components/socialpanel';
+import Footer from '../../../components/footer';
+import { useEffect } from 'react';
+import { MoveToTop } from '../../../components/movetotop';
+import FooterNew from '../../../components/footerNew';
+import { useNavigate } from 'react-router-dom';
 
-export const BlogCard = ({ updatedAt, mainTitle, images, description }) => {
+export const BlogCard = ({ id, updatedAt, mainTitle, images, description }) => {
   let navigate = useNavigate();
 
   const navigateTo = () => {
-    navigate(`/viewblog`);
+    navigate(`/viewblog/${id}`);
   };
   return (
     <div className="blog-card-container" onClick={navigateTo}>
@@ -32,7 +32,7 @@ export const BlogCard = ({ updatedAt, mainTitle, images, description }) => {
   );
 };
 
-const Blog = (props) => {
+const Blog = props => {
   useEffect(() => {
     props.getBlogWeb();
   }, []);
