@@ -5,20 +5,13 @@ const HeaderSelect = ({ name, options }) => {
   const navigate = useNavigate();
   const renderOptions = () =>
     (options || []).map((option, i) => (
-      <p
-        key={i}
-        onClick={() =>
-          navigate(`/luxuryproperty/${option.type}`, { replace: true })
-        }
-      >
+      <p key={i} onClick={() => navigate(`/luxury-property/${option.type}`)}>
         {option.name}
       </p>
     ));
   return (
     <div className="header-select">
-      <p className="drop-btn" onClick={() => navigate('/luxury-property')}>
-        {name}
-      </p>
+      <p className="drop-btn">{name}</p>
       <div className="dropdown-content">{renderOptions()}</div>
     </div>
   );

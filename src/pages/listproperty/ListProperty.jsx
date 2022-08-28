@@ -13,27 +13,37 @@ const ListProperty = props => {
 
   const getID = () => location.pathname.split('/').pop();
 
+  const getParamsForNeigh = params => {
+    let pathname = location.search.substring(1);
+    return `${params}&${pathname}`;
+  };
+
   const getPropertyData = () => {
     if (getID() === 'featured') return props.featured.data;
     else if (getID() === 'readytomove') return props.readyToMoveIn.data;
     else if (getID() === 'neighbourhood') return props.propWithNeighbor.data;
+    else if (getID() === 'verifiedproperties') return props.vp.data;
   };
 
   const getPropertyName = () => {
     if (getID() === 'featured') return 'Featured Properties';
     else if (getID() === 'readytomove') return 'Ready Properties';
     else if (getID() === 'neighbourhood') return 'Famous Neighbourhoods';
+    else if (getID() === 'verifiedproperties') return 'Verified Properties';
   };
   const getPropertyFn = params => {
     if (getID() === 'featured') return props.getCatFeatured(params);
     else if (getID() === 'readytomove') return props.getRtmin(params);
-    else if (getID() === 'neighbourhood') return () => {};
+    else if (getID() === 'neighbourhood')
+      return props.getPropWithNeighSale(getParamsForNeigh(params));
+    else if (getID() === 'verifiedproperties') return props.getVP(params);
   };
 
   const getPropertyCount = () => {
     if (getID() === 'featured') return props.featured.count;
     else if (getID() === 'readytomove') return props.readyToMoveIn.count;
     else if (getID() === 'neighbourhood') return props.propWithNeighbor.count;
+    else if (getID() === 'verifiedproperties') return props.vp.count;
   };
 
   return (

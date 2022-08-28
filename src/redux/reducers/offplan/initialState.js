@@ -5,4 +5,9 @@ export const initialState = {
     data: [],
     count: 0,
   },
+  singleOffplan: {
+    loading: false,
+    error: false,
+    offplan: [],
+  },
 };

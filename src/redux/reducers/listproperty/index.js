@@ -13,6 +13,9 @@ import {
   GET_PROPERTY_NEIGHBORHOOD_SALE,
   GET_PROPERTY_NEIGHBORHOOD_SALE_STARTED,
   GET_PROPERTY_NEIGHBORHOOD_SALE_ERROR,
+  GET_VP,
+  GET_VP_ERROR,
+  GET_VP_STARTED,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -150,6 +153,36 @@ const reducer = (state = initialState, action) => {
           loading: false,
         },
       };
+    case GET_VP:
+      return {
+        ...state,
+        vp: {
+          ...state.vp,
+          error: false,
+          loading: false,
+          data: action.payload.rows,
+          count: action.payload.count,
+        },
+      };
+    case GET_VP_STARTED:
+      return {
+        ...state,
+        vp: {
+          ...state.vp,
+          error: false,
+          loading: true,
+        },
+      };
+    case GET_VP_ERROR:
+      return {
+        ...state,
+        vp: {
+          ...state.vp,
+          error: true,
+          loading: false,
+        },
+      };
+
     default:
       return state;
   }

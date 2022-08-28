@@ -1,7 +1,14 @@
 import './offplan.scss';
 import ImgPropCarousel from '../../imgpropcarousel';
+import { useNavigate } from 'react-router-dom';
 
 function OffplanCard(props) {
+  let navigate = useNavigate();
+
+  const navigateTo = () => {
+    navigate(`/off-plan/${props.id}`);
+  };
+
   const renderDescription = description => {
     return description.length < 120
       ? description
@@ -16,7 +23,7 @@ function OffplanCard(props) {
     return add.length < 50 ? add : add.substring(0, 50) + ' . . .';
   };
   return (
-    <div className="image-container">
+    <div className="image-container" onClick={navigateTo}>
       <ImgPropCarousel
         customClass="prop-list-img"
         imgArray={props.images}

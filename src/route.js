@@ -1,56 +1,57 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PrivateRoute from "./components/privateroute";
-import Home from "./pages/home";
-import Buy from "./pages/buy";
-import Rent from "./pages/rent";
-import NeighBourhood from "./pages/neighbourhood";
-import Sell from "./pages/sell";
-import WebOffplan from "./pages/offplan";
-import ShortTerm from "./pages/shortterm";
-import Management from "./pages/management";
-import Mortgage from "./pages/mortgage";
-import { Preview } from "./preview";
-import OurTeam from "./pages/ourteam";
-import AboutFounder from "./pages/aboutfounder";
-import About from "./pages/about";
-import Partner from "./pages/ourpartners";
-import Policy from "./pages/privacypolicy";
-import Terms from "./pages/terms";
-import Career from "./pages/career";
-import Blog from "./pages/dailyblog";
-import Property from "./admin/property";
-import AdminAgency from "./admin/agency";
-import AddProperty from "./admin/addproperty";
-import Advertise from "./pages/advertise/english/Advertise";
-import Login from "./admin/login";
-import PropertyView from "./pages/propertyview";
-import AddAgency from "./admin/addagency";
-import AddAgent from "./admin/addagent";
-import Amenity from "./admin/amenity";
-import News from "./pages/news";
-import AdminNeighborhood from "./admin/neighborhood";
-import PropertyList from "./pages/propertylist";
-import Luxuary from "./pages/luxuary/english";
-import LuxuaryViewMore from "./pages/luxuryViewMore";
-import Offplan from "./admin/offplan";
-import TagHead from "./admin/taghead";
-import TagLine from "./admin/tagline";
-import NewsTopics from "./admin/newstopics";
-import AdminNews from "./admin/news";
-import AdminBlog from "./admin/blog";
-import Topstory from "./pages/topstory";
-import ListProperty from "./pages/listproperty";
-import AddOffplan from "./admin/addoffplan";
-import PropertySearchView from "./pages/propertysearchview";
-import ScrollToTop from "./components/scrollToTop/ScrollToTop";
-import AgentDashboard from "./adminAgency/dashboard";
-import AgentAddAgent from "./adminAgency/addagent";
-import AgencyLogin from "./adminAgency/login";
-import AgentAddProperty from "./adminAgency/addproperty";
-import Nft from "./pages/nft/english/Nft";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import PrivateRoute from './components/privateroute';
+import Home from './pages/home';
+import Buy from './pages/buy';
+import Rent from './pages/rent';
+import NeighBourhood from './pages/neighbourhood';
+import Sell from './pages/sell';
+import WebOffplan from './pages/offplan';
+import ShortTerm from './pages/shortterm';
+import Management from './pages/management';
+import Mortgage from './pages/mortgage';
+import { Preview } from './preview';
+import OurTeam from './pages/ourteam';
+import AboutFounder from './pages/aboutfounder';
+import About from './pages/about';
+import Partner from './pages/ourpartners';
+import Policy from './pages/privacypolicy';
+import Terms from './pages/terms';
+import Career from './pages/career';
+import Blog from './pages/dailyblog';
+import Property from './admin/property';
+import AdminAgency from './admin/agency';
+import AddProperty from './admin/addproperty';
+import Advertise from './pages/advertise/english/Advertise';
+import Login from './admin/login';
+import PropertyView from './pages/propertyview';
+import AddAgency from './admin/addagency';
+import AddAgent from './admin/addagent';
+import Amenity from './admin/amenity';
+import News from './pages/news';
+import AdminNeighborhood from './admin/neighborhood';
+import PropertyList from './pages/propertylist';
+import Luxuary from './pages/luxuary/english';
+import LuxuaryViewMore from './pages/luxuryViewMore';
+import Offplan from './admin/offplan';
+import TagHead from './admin/taghead';
+import TagLine from './admin/tagline';
+import NewsTopics from './admin/newstopics';
+import AdminNews from './admin/news';
+import AdminBlog from './admin/blog';
+import Topstory from './pages/topstory';
+import ListProperty from './pages/listproperty';
+import AddOffplan from './admin/addoffplan';
+import PropertySearchView from './pages/propertysearchview';
+import ScrollToTop from './components/scrollToTop/ScrollToTop';
+import AgentDashboard from './adminAgency/dashboard';
+import AgentAddAgent from './adminAgency/addagent';
+import AgencyLogin from './adminAgency/login';
+import AgentAddProperty from './adminAgency/addproperty';
+import Nft from './pages/nft/english';
+import OffplanView from './pages/offplanview/english';
 
 function Router() {
-  const makePrivate = (component, role = "") => (
+  const makePrivate = (component, role = '') => (
     <PrivateRoute role={role}>{component}</PrivateRoute>
   );
   return (
@@ -61,96 +62,96 @@ function Router() {
           <Route index element={<Home />} />
           <Route path="agency">
             <Route exact path="login" element={<AgencyLogin />} />
-            <Route index element={makePrivate(<AgentDashboard />, "AGENCY")} />
+            <Route index element={makePrivate(<AgentDashboard />, 'AGENCY')} />
             <Route
               path="add-agent"
-              element={makePrivate(<AgentAddAgent />, "AGENCY")}
+              element={makePrivate(<AgentAddAgent />, 'AGENCY')}
             />
             <Route
               path="add-property"
-              element={makePrivate(<AgentAddProperty />, "AGENCY")}
+              element={makePrivate(<AgentAddProperty />, 'AGENCY')}
             />
             <Route
               path="add-property/:id"
-              element={makePrivate(<AgentAddProperty />, "AGENCY")}
+              element={makePrivate(<AgentAddProperty />, 'AGENCY')}
             />
           </Route>
           <Route path="admin">
             <Route path="login" element={<Login />} />
-            <Route index element={makePrivate(<Property />, "ADMIN")} />
+            <Route index element={makePrivate(<Property />, 'ADMIN')} />
             <Route
               path="agency"
-              element={makePrivate(<AdminAgency />, "ADMIN")}
+              element={makePrivate(<AdminAgency />, 'ADMIN')}
             />
             <Route
               path="add-property"
-              element={makePrivate(<AddProperty />, "ADMIN")}
+              element={makePrivate(<AddProperty />, 'ADMIN')}
             />
             <Route
               path="add-property/:id"
-              element={makePrivate(<AddProperty />, "ADMIN")}
+              element={makePrivate(<AddProperty />, 'ADMIN')}
             />
             <Route
               path="add-offplan"
-              element={makePrivate(<AddOffplan />, "ADMIN")}
+              element={makePrivate(<AddOffplan />, 'ADMIN')}
             />
             <Route
               path="add-offplan/:id"
-              element={makePrivate(<AddOffplan />, "ADMIN")}
+              element={makePrivate(<AddOffplan />, 'ADMIN')}
             />
-            <Route path="amenity" element={makePrivate(<Amenity />, "ADMIN")} />
+            <Route path="amenity" element={makePrivate(<Amenity />, 'ADMIN')} />
             <Route
               path="amenity/:id"
-              element={makePrivate(<Amenity />, "ADMIN")}
+              element={makePrivate(<Amenity />, 'ADMIN')}
             />
             <Route
               path="neighborhood"
-              element={makePrivate(<AdminNeighborhood />, "ADMIN")}
+              element={makePrivate(<AdminNeighborhood />, 'ADMIN')}
             />
-            <Route path="offplan" element={makePrivate(<Offplan />, "ADMIN")} />
+            <Route path="offplan" element={makePrivate(<Offplan />, 'ADMIN')} />
             <Route
               path="add-agent"
-              element={makePrivate(<AddAgent />, "ADMIN")}
+              element={makePrivate(<AddAgent />, 'ADMIN')}
             />
             <Route
               path="add-agent/:id"
-              element={makePrivate(<AddAgent />, "ADMIN")}
+              element={makePrivate(<AddAgent />, 'ADMIN')}
             />
             <Route
               path="add-agency"
-              element={makePrivate(<AddAgency />, "ADMIN")}
+              element={makePrivate(<AddAgency />, 'ADMIN')}
             />
             <Route
               path="add-agency/:id"
-              element={makePrivate(<AddAgency />, "ADMIN")}
+              element={makePrivate(<AddAgency />, 'ADMIN')}
             />
-            <Route path="taghead" element={makePrivate(<TagHead />, "ADMIN")} />
+            <Route path="taghead" element={makePrivate(<TagHead />, 'ADMIN')} />
             <Route
               path="taghead/:id"
-              element={makePrivate(<TagHead />, "ADMIN")}
+              element={makePrivate(<TagHead />, 'ADMIN')}
             />
-            <Route path="tagline" element={makePrivate(<TagLine />, "ADMIN")} />
+            <Route path="tagline" element={makePrivate(<TagLine />, 'ADMIN')} />
             <Route
               path="tagline/:id"
-              element={makePrivate(<TagLine />, "ADMIN")}
+              element={makePrivate(<TagLine />, 'ADMIN')}
             />
             <Route
               path="newstopics"
-              element={makePrivate(<NewsTopics />, "ADMIN")}
+              element={makePrivate(<NewsTopics />, 'ADMIN')}
             />
             <Route
               path="newstopics/:id"
-              element={makePrivate(<NewsTopics />, "ADMIN")}
+              element={makePrivate(<NewsTopics />, 'ADMIN')}
             />
-            <Route path="news" element={makePrivate(<AdminNews />, "ADMIN")} />
+            <Route path="news" element={makePrivate(<AdminNews />, 'ADMIN')} />
             <Route
               path="news/:id"
-              element={makePrivate(<AdminNews />, "ADMIN")}
+              element={makePrivate(<AdminNews />, 'ADMIN')}
             />
-            <Route path="blog" element={makePrivate(<AdminBlog />, "ADMIN")} />
+            <Route path="blog" element={makePrivate(<AdminBlog />, 'ADMIN')} />
             <Route
               path="blog/:id"
-              element={makePrivate(<AdminBlog />, "ADMIN")}
+              element={makePrivate(<AdminBlog />, 'ADMIN')}
             />
           </Route>
 
@@ -161,10 +162,11 @@ function Router() {
           <Route path="news/:id" element={<News />} />
           <Route path="rent" element={<Rent />} />
           <Route path="luxury-property" element={<Luxuary />} />
-          <Route path="luxuryproperty/:id" element={<LuxuaryViewMore />} />
+          <Route path="luxury-property/:id" element={<Luxuary />} />
           <Route path="neighbourhood" element={<NeighBourhood />} />
           <Route path="sell" element={<Advertise />} />
           <Route path="off-plan" element={<WebOffplan />} />
+          <Route path="off-plan/:id" element={<OffplanView />} />
           <Route path="shortterm" element={<ShortTerm />} />
           <Route path="management" element={<Management />} />
           <Route path="management" element={<PropertyList />} />
@@ -176,7 +178,7 @@ function Router() {
           <Route path="dailyblog" element={<Blog />} />
           <Route path="listproperty/:id" element={<ListProperty />} />
           <Route path="dailyblog/:id" element={<Blog />} />
-          <Route path="viewblog" element={<Nft />} />
+          <Route path="viewblog/:id" element={<Nft />} />
           <Route path="privacypolicy" element={<Policy />} />
           <Route path="terms" element={<Terms />} />
           <Route path="career" element={<Career />} />
