@@ -16,6 +16,7 @@ import Phone from '../../../components/svg/phone';
 import Mail from '../../../components/svg/mailsvg';
 import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
 import BottomFixed from '../../../components/bottomfixed/BottomFixed';
+import { Button } from '@mui/material';
 
 const PropertyView = props => {
   let location = useLocation();
@@ -28,10 +29,23 @@ const PropertyView = props => {
 
   const getID = () => location.pathname.split('/').pop();
   const [content, setContent] = useState(true);
+  const [read, setRead] = useState(false);
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
   });
+
+  const getDescription = description => {
+    if (description) {
+      if (read) {
+        return description;
+      } else {
+        if (description.length > 200)
+          return description.substring(0, 200) + ' . . .';
+        else return description;
+      }
+    } else return '';
+  };
 
   const openMap = ({ lat, lng }) => {
     // If it's an iPhone..
@@ -181,7 +195,16 @@ const PropertyView = props => {
             <hr />
             <div className="details-three">
               <p className="head">{property.mainTitle}</p>
-              <p className="description">{property.description}</p>
+              <p className="description">
+                {getDescription(property.description)}
+              </p>
+              <Button
+                size="small"
+                variant="outlined"
+                onClick={() => setRead(!read)}
+              >
+                {read ? 'Read less' : 'Read more'}
+              </Button>
 
               <div className="amenities-main-div">
                 <h1>Facilities and Amenities.</h1>
