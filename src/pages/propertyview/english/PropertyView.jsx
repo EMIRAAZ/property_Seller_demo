@@ -17,6 +17,7 @@ import Mail from '../../../components/svg/mailsvg';
 import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
 import BottomFixed from '../../../components/bottomfixed/BottomFixed';
 import { Button } from '@mui/material';
+import SimilarProperty from '../../../components/similarproperty';
 
 const PropertyView = props => {
   let location = useLocation();
@@ -329,6 +330,17 @@ const PropertyView = props => {
         </div>
       </div>
       <BottomFixed property={property} />
+      {property && property.address && property.address.city ? (
+        <SimilarProperty
+          getSimilarProperty={props.getSimilarProperty}
+          city={property.address.city}
+          similarProperty={
+            props.similarProperty.length ? props.similarProperty : []
+          }
+        />
+      ) : (
+        <></>
+      )}
       <MoveToTop />
       <FooterNew />
     </div>

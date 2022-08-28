@@ -1,0 +1,13 @@
+.similar-property {
+  width: 100%;
+  .scroll-similar {
+    grid-template-columns: repeat(3, 1fr);
+    width: 95%;
+    margin: 40px 0px 20px 0;
+    display: grid;
+  }
+  h1 {
+    font-family: 'Poppins';
+    margin-left: 20px;
+  }
+}

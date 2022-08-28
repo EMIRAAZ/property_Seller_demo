@@ -48,16 +48,14 @@ const UploadImage = ({
     } else <></>;
   };
 
-  console.log(link);
-
   return (
     <div key={key} className={`upload-container ${customClass || ''}`}>
-      <Delete
+      {/* <Delete
         className="delete-icon"
         onClick={() => {
           removeImage([...value, ...link][linkIndex]);
         }}
-      />
+      /> */}
       <label htmlFor="icon-button-file">
         <input
           accept="image/*"
