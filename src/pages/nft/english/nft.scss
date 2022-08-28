@@ -1,337 +1,316 @@
-.nft-card-container{
-    display: flex;
+.nft-card-container {
+  display: flex;
+  width: 70%;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px auto;
+  border-radius: 20px;
+  padding: 20px;
+  background: white;
+
+  .nft-desciption {
+    .nft-date {
+      font-family: "Graphik";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 120%;
+      text-align: left;
+      text-transform: uppercase;
+      color: #667085;
+      margin-left: 30px;
+      padding-top: 20px;
+    }
+    .nft-content {
+      width: 85%;
+      margin-top: 30px;
+      margin-left: 20px;
+      .nft-heading {
+        font-family: "Graphik";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 130%;
+        color: #1d2939;
+      }
+      .nft-description {
+        font-family: "Graphik";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        color: #475467;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.nft-main-container {
+  width: 100%;
+  .nft-showcase {
     width: 70%;
-    align-items: center;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin:10px auto;
-    border-radius: 20px;
-    padding: 20px;
-    background: white;
-
-    .nft-desciption{
-    
-        
-        .nft-date{
-            font-family: 'Graphik';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 13px;
-            line-height: 120%;
-            text-align: left;
-            text-transform: uppercase;
-            color: #667085;
-            margin-left: 30px;
-            padding-top: 20px;
-
-        }
-        .nft-content{
-            
-            width: 85%;
-            margin-top: 30px;
-            margin-left: 20px;
-            .nft-heading{
-                font-family: 'Graphik';
-                font-style: normal;
-                font-weight: 600;
-                font-size: 26px;
-                line-height: 130%;
-                color: #1D2939;
-            }
-            .nft-description{
-                font-family: 'Graphik';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 18px;
-                line-height: 150%;
-                color: #475467;
-                margin-top: 10px;
-            }
-        }
+    align-items: center;
+    margin: 30px auto;
+    .nft-header {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 53.6232px;
+      line-height: 120%;
+      width: 100%;
+      text-align: center;
+      letter-spacing: -0.03em;
+      color: #4764c3;
+      text-align: center;
     }
+    .nft-date {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14.734px;
+      line-height: 120%;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .nft-main-image {
+      width: 100%;
+      margin-top: 50px;
+    }
+    .nft-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 40px auto;
 
-}   
-
-
-
-.nft-main-container{
-    width: 100%;
-    .nft-showcase{
+      p {
+        font-family: "Graphik";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        color: #1d2939;
+        margin-top: 20px;
         width: 70%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+      }
+      .nft-image {
         margin: 30px auto;
-        .nft-header{
-            font-family: 'Poppins';
-            font-style: normal;
-            font-weight: 600;
-            font-size: 73.6232px;
-            line-height: 120%;
-            width: 100%;
-            text-align: center;
-            letter-spacing: -0.03em;
-            color: #4764C3;
-            text-align: center;
-
-        }
-        .nft-date{
-            font-family: 'Poppins';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 14.734px;
-            line-height: 120%;
-            text-align: center;
-            text-transform: uppercase;
-        }
-        .nft-main-image{
-            width: 100%;
-            margin-top: 150px;
-        }
-        .nft-content{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 40px auto;
-
-            p{                
-                font-family: 'Graphik';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 18px;
-                line-height: 150%;
-                color: #1D2939;
-                margin-top: 20px ;
-                width: 70%;
-            }
-            .nft-image{
-                margin: 30px auto;
-                width: 78%;
-            }
-          
-        }
-        .single-news-h1{
-            padding-left: 20px;
-            border-left: 10px solid #C41740;;
-            font-family: 'Graphik';
-            font-style: normal;
-            font-weight: 600;
-            font-size: 32px;
-            line-height: 140%;
-            color: #1D2939;
-            width: 78%;
-        }
-        .single-news-paragraph{
-            width: 70%;
-            p{
-                margin: 20px 0px;
-                font-family: 'Graphik';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 18px;
-                line-height: 150%;
-                color: #1D2939;
-            }
-        }
+        width: 78%;
+      }
     }
-    .personal-newsletter{
-        display: none;
+    .single-news-h1 {
+      padding-left: 20px;
+      border-left: 10px solid #c41740;
+      font-family: "Graphik";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 140%;
+      color: #1d2939;
+      width: 78%;
     }
+    .single-news-paragraph {
+      width: 70%;
+      p {
+        margin: 20px 0px;
+        font-family: "Graphik";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        color: #1d2939;
+      }
+    }
+  }
+  .personal-newsletter {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 800px) {
+  .nft-card-container {
+    display: none;
+    width: 95%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px auto;
+    border-radius: 20px;
 
-    .nft-card-container{
-        display: none;
-        width: 95%;
-        align-items: center;
-        flex-direction: row;
-        justify-content: center;
-        margin:10px auto;
-        border-radius: 20px;
-        
-        background: #FFFFFF;
-    
-        .nft-desciption{
-        
-            
-            .nft-date{font-family: 'Poppins';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 7px;
-                line-height: 120%;
-                text-align: left;
-                text-transform: uppercase;
-                color: #667085;
-                margin: 0px auto;
-                padding: 0;
-    
-            }
-            .nft-content{
-                
-                width: 100%;
-            
-                margin: 10px auto;
-                .nft-heading{
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 12px;
-                    line-height: 130%;
-                    color: #1D2939;
-                }
-                .nft-description{
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 8px;
-                    line-height: 150%;
-                    color: #475467;
-                    margin-top: 10px;
-                }
-            }
-        }
-        .nft-main-image{
-           width: 120px; 
-           height: 90px;
-        }
-    
-    }  
-    
-    
-    .nft-main-container{
+    background: #ffffff;
+
+    .nft-desciption {
+      .nft-date {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 7px;
+        line-height: 120%;
+        text-align: left;
+        text-transform: uppercase;
+        color: #667085;
+        margin: 0px auto;
+        padding: 0;
+      }
+      .nft-content {
         width: 100%;
-        .nft-showcase{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 30px auto;
-            .nft-header{
-                font-family: 'Poppins';
-                font-style: normal;
-                font-weight: 600;
-                font-size: 29.12px;
-                line-height: 120%;
-                text-align: center;
-                letter-spacing: -0.03em;
-                color: #4764C3;
-                text-align: center;
-    
-            }
-            .nft-date{
-                font-family: 'Poppins';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 13.52px;
-                line-height: 120%;
-                text-align: center;
-                text-transform: uppercase;
-            }
-            .nft-main-image{
-                width: 100%;
-                margin:0;
-                margin-top: 20px;
-            }
-            .nft-content{
-                display: flex;
-                width: 100%;
-                margin: 0;
-    
-                p{                
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 16.64px;
-                    line-height: 150%;
-                    color: #1D2939;
-                    margin-top: 20px ;
-                    width: 80%;
-                }
-                .nft-image{
-                    margin: 30px auto;
-                    width: 90%;
-                }
-              
-            }
-            .single-news-h1{
-                padding-left: 20px;
-                border-left: 10px solid #C41740;;
-                font-family: 'Poppins';
-                font-style: normal;
-                font-weight: 600;
-                font-size: 18.72px;
-                line-height: 140%;
-                color: #1D2939;
-                width: 90%;
-                margin-top: 20px;
-            }
-            .single-news-paragraph{
-                width: 80%;
-                margin-top: 20px;
-                p{
-                    margin: 20px 0px;
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 16.64px;
-                    line-height: 150%;
-                    color: #1D2939;
-                }
-            }
-        }
-        .personal-newsletter{
-            display: none;
-            .letter-heading{
-                font-family: 'Poppins';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 18px;
-                line-height: 130%;
-                text-align: center;
-                background: linear-gradient(97.1deg, #C41740 4.8%, #EA9C28 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                
-            }
-            .letter-content{
-                width: 60%;
-                margin-top: 20px;
-                margin-left: 70px;
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 150%;
-                text-align: center;
-                align-self: center;
-            }
-            .letter-input{
-                background: #FFFFFF;
-                border: 1px solid #D0D5DD;
-                border-radius: 8px;
-                margin-top: 20px;
-                margin-left: 50px;
-                width: 80%;
-                height: 40px;
-                padding-left: 20px;
 
-            }
-            .letter-button{
-                background: #1D2939;
-                border-radius: 8px;
-                margin-top: 20px;
-                margin-left: 50px;
-                width: 80%;
-                height: 40px;
-                color: #D0D5DD; 
-            }
+        margin: 10px auto;
+        .nft-heading {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 130%;
+          color: #1d2939;
         }
+        .nft-description {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 8px;
+          line-height: 150%;
+          color: #475467;
+          margin-top: 10px;
+        }
+      }
     }
+    .nft-main-image {
+      width: 120px;
+      height: 90px;
+    }
+  }
 
+  .nft-main-container {
+    width: 100%;
+    .nft-showcase {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 30px auto;
+      .nft-header {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 29.12px;
+        line-height: 120%;
+        text-align: center;
+        letter-spacing: -0.03em;
+        color: #4764c3;
+        text-align: center;
+      }
+      .nft-date {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13.52px;
+        line-height: 120%;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .nft-main-image {
+        width: 100%;
+        margin: 0;
+        margin-top: 20px;
+      }
+      .nft-content {
+        display: flex;
+        width: 100%;
+        margin: 0;
 
+        p {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16.64px;
+          line-height: 150%;
+          color: #1d2939;
+          margin-top: 20px;
+          width: 80%;
+        }
+        .nft-image {
+          margin: 30px auto;
+          width: 90%;
+        }
+      }
+      .single-news-h1 {
+        padding-left: 20px;
+        border-left: 10px solid #c41740;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18.72px;
+        line-height: 140%;
+        color: #1d2939;
+        width: 90%;
+        margin-top: 20px;
+      }
+      .single-news-paragraph {
+        width: 80%;
+        margin-top: 20px;
+        p {
+          margin: 20px 0px;
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16.64px;
+          line-height: 150%;
+          color: #1d2939;
+        }
+      }
+    }
+    .personal-newsletter {
+      display: none;
+      .letter-heading {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 130%;
+        text-align: center;
+        background: linear-gradient(97.1deg, #c41740 4.8%, #ea9c28 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .letter-content {
+        width: 60%;
+        margin-top: 20px;
+        margin-left: 70px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+        align-self: center;
+      }
+      .letter-input {
+        background: #ffffff;
+        border: 1px solid #d0d5dd;
+        border-radius: 8px;
+        margin-top: 20px;
+        margin-left: 50px;
+        width: 80%;
+        height: 40px;
+        padding-left: 20px;
+      }
+      .letter-button {
+        background: #1d2939;
+        border-radius: 8px;
+        margin-top: 20px;
+        margin-left: 50px;
+        width: 80%;
+        height: 40px;
+        color: #d0d5dd;
+      }
+    }
+  }
 }

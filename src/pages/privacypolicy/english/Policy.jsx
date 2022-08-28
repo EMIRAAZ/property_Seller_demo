@@ -17,8 +17,9 @@ const Policy = () => {
           <div className="description-container">
             <p>
               <h3>1. INTRODUCTION</h3> <b>1.1</b> UAE Assistant is a company
-              registered in Dubai with its registered office at ………………… , which
-              owns and operates the website www.the uaeassistant.com. <br />
+              registered in Dubai with its registered office at Blue Bay Tower,
+              Business bay, Dubai, UAE , which owns and operates the website
+              www.uaeassistant.com. <br />
               <b>1.2</b> This document is termed as ‘The Privacy Policy’, or the
               policy forms part of the Terms of Use related to the use and
               information of the use of the website. By using the website you

@@ -5,10 +5,16 @@ import Footer from "../../../components/footer";
 import { useEffect } from "react";
 import { MoveToTop } from "../../../components/movetotop";
 import FooterNew from "../../../components/footerNew";
+import { useNavigate } from "react-router-dom";
 
 export const BlogCard = ({ updatedAt, mainTitle, images, description }) => {
+  let navigate = useNavigate();
+
+  const navigateTo = () => {
+    navigate(`/viewblog`);
+  };
   return (
-    <div className="blog-card-container">
+    <div className="blog-card-container" onClick={navigateTo}>
       <div className="blog-desciption">
         <p className="blog-date">{updatedAt}</p>
         <div className="blog-content">
