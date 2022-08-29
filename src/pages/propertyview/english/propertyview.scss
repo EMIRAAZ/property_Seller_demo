@@ -110,22 +110,29 @@
         }
         .details-two {
           display: flex;
+          flex-direction: column;
           .loc-column {
             display: flex;
             flex-direction: column;
+
             .location-header {
-              font-size: 18px;
+              font-size: 15px;
               font-weight: 600;
               color: #464646;
               margin-bottom: 5px;
             }
             .property-view-google-map {
-              width: 200px;
-              height: 200px;
+              width: 240px;
+              height: 240px;
             }
           }
           .loc-column-ad {
-            margin: 50px 30px;
+            margin: 50px 10px;
+            .loc-open-mp {
+              cursor: pointer;
+              color: #2f70ff;
+              text-decoration: underline;
+            }
           }
         }
         .details-three {
