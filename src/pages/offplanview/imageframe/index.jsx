@@ -1,12 +1,12 @@
-import "./imageframe.scss";
-import ShortTermFormCard from "./managementformcard";
+import './imageframe.scss';
+import ShortTermFormCard from './managementformcard';
 
 const ImageFrame = ({ props }) => {
   return (
     <div className="management-image-frame">
       <img
         className="img-frame"
-        // src={props.offplan && props.offplan.images[0]}
+        src={props.offplan && props.offplan.images[0]}
         alt="building"
       />
 

@@ -25,7 +25,7 @@ const OffplanView = props => {
     <>
       <div className="offplan-main-container">
         <Header />
-        {/* {props.offplan && <ImageFrame props={props} />} */}
+        {props.offplan && <ImageFrame props={props} />}
 
         <div className="offplans-projects">
           <h1 className="Heading">{props.offplan.title}</h1>
