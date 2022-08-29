@@ -121,8 +121,11 @@
     padding-bottom: 100px;
     width: 90%;
     margin: auto;
+
     .amenities-main-div {
       display: flex;
+
+      width: 100%;
       flex-wrap: wrap;
       margin-top: 20px;
       h1 {
@@ -227,6 +230,30 @@
           }
         }
       }
+      .availability {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 20px;
+        .availability-div {
+          background-color: white;
+          width: 50%;
+          // height: 100px;
+          padding: 30px;
+          text-align: center;
+          .title {
+            font-size: 15px;
+            font-family: "Poppins";
+            font-weight: 400;
+          }
+          .sub-title {
+            font-size: 12px;
+            font-family: "Poppins";
+            font-weight: 600;
+            color: #4764c3;
+            margin-top: 10px;
+          }
+        }
+      }
       .about {
         font-size: 18px;
         font-family: "Poppins";
@@ -263,11 +290,40 @@
       padding-bottom: 100px;
       width: 90%;
       margin: auto;
-      .amenities-div {
-        background-color: white;
-        padding: 20px;
-        width: 100px;
-        height: 130px;
+      .amenities-main-div {
+        display: flex;
+
+        width: 100%;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        h1 {
+          width: 100%;
+          font-family: "Poppins";
+          font-size: 32px;
+          font-weight: 600;
+          line-height: 28px;
+          letter-spacing: 0em;
+          text-align: left;
+        }
+        .amenties-div {
+          width: 100%;
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          .dot-div {
+            width: 15px;
+            height: 15px;
+            background-color: #2f70ff;
+            border-radius: 8px;
+          }
+          p {
+            margin-left: 5px;
+            font-family: "Roboto";
+            font-weight: 500;
+            color: #464646;
+            font-size: 18px;
+          }
+        }
       }
       svg {
         margin: auto;

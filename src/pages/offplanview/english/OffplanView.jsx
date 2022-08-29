@@ -1,63 +1,60 @@
-import './Offplanview.scss';
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import Header from '../../../components/header';
-import ImageFrame from '../imageframe';
-import OffplanCard from '../../../components/offpaln/offplanCard/OffplanCard';
-import ImgPropCarousel from '../../../components/imgpropcarouselview';
-import LarrowIcon from '../../../components/svg/larrow';
-import RarrowIcon from '../../../components/svg/rarrow';
-import FooterNew from '../../../components/footerNew';
-import { useState } from 'react';
-import Bed from '../../../components/svg/bed';
-import { MoveToTop } from '../../../components/movetotop';
+import "./Offplanview.scss";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import Header from "../../../components/header";
+import ImageFrame from "../imageframe";
+import OffplanCard from "../../../components/offpaln/offplanCard/OffplanCard";
+import ImgPropCarousel from "../../../components/imgpropcarouselview";
+import LarrowIcon from "../../../components/svg/larrow";
+import RarrowIcon from "../../../components/svg/rarrow";
+import FooterNew from "../../../components/footerNew";
+import { useState } from "react";
+import Bed from "../../../components/svg/bed";
+import { MoveToTop } from "../../../components/movetotop";
 
-const OffplanView = props => {
+const OffplanView = (props) => {
   let location = useLocation();
 
   useEffect(() => {
     props.getOffplanByIdWeb(getID());
   }, []);
 
-  const getID = () => location.pathname.split('/').pop();
+  const getID = () => location.pathname.split("/").pop();
 
   return (
     <>
       <div className="offplan-main-container">
         <Header />
-        <ImageFrame />
+        {props.offplan && <ImageFrame props={props} />}
+
         <div className="offplans-projects">
-          <p className="about">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-            voluptatibus doloribus adipisci maxime voluptas amet. Incidunt
-            obcaecati officia accusamus atque! Iste amet placeat iure atque
-            libero veritatis at nulla recusandae.
-          </p>
+          <h1 className="Heading">{props.offplan.title}</h1>
+
+          <p className="about">{props.offplan.description}</p>
           <h1 className="Heading">Amenities</h1>
         </div>
         <div className="amenities">
           <div className="amenities-main-div">
-            {/*                  
-                {property.amenities &&
-                  property.amenities.map((item, i) => (
-                    <div className="amenties-div" key={i}>
-                      <div className="dot-div"></div>
-                      <p>{item}</p>
-                    </div>
-                  ))} */}
+            {props.offplan.amenities &&
+              props.offplan.amenities.map((item, i) => (
+                <div className="amenties-div" key={i}>
+                  <div className="dot-div"></div>
+                  <p>{item}</p>
+                </div>
+              ))}
           </div>
         </div>
         <div className="offplans-projects">
-          <h1 className="Heading">Image Gallery</h1>
+          {/* <h1 className="Heading">Image Gallery</h1>
           <div className="image-slider-container">
             <ImageSlider />
-          </div>
+          </div> */}
           <h1 className="Heading">Availability</h1>
           <div className="availability">
-            <Availability />
-            <Availability />
+            <Availability availability={props.offplan.availability} />
+            {/* <Availability /> */}
           </div>
-          <h1 className="Heading">similar projects</h1>
+          {/* <h1 className="Heading">similar projects</h1> */}
         </div>
         <MoveToTop />
         <FooterNew />
@@ -89,22 +86,22 @@ const Amenities = () => {
 };
 ////////////////////
 
-const Availability = () => {
+const Availability = ({ availability }) => {
   return (
     <div className="availability-div">
       <Bed width="40" height="40" />
-      <h1 className="title">4 Bed</h1>
-      <h1 className="sub-title">View Floor Plan</h1>
+      <h1 className="title">{availability}</h1>
+      {/* <h1 className="sub-title">View Floor Plan</h1> */}
     </div>
   );
 };
 
 //////////////////////////////////
 
-const ImageSlider = ({ imgArray = ['/assets/image/noimage.jpg'] }) => {
+const ImageSlider = ({ imgArray = ["/assets/image/noimage.jpg"] }) => {
   const [index, setIndex] = useState(0);
 
-  const onsetIndex = add => {
+  const onsetIndex = (add) => {
     if (index === 0 && add === -1) {
       setIndex(imgArray.length - 1);
     } else if (index === imgArray.length - 1 && add === 1) {
