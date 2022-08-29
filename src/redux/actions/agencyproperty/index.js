@@ -25,7 +25,11 @@ export const getAgencyProperty =
   async dispatch => {
     try {
       dispatch(getAgencyPropertyStarted());
-      const res = await axios.get(`/api/property${params}`);
+      const res = await axios.get(`/api/agency/property${params}`, {
+        headers: {
+          Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+        },
+      });
       dispatch({
         type: GET_AGENCY_PROPERTY,
         payload: res.data?.data,
