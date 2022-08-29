@@ -4,6 +4,7 @@ import {
   UPLOAD_IMAGE_ERROR,
   UPLOAD_IMAGE_STARTED,
   CLEAR_UPLOAD,
+  REMOVE_IMAGE,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -26,6 +27,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...initialState,
       };
+    case REMOVE_IMAGE:
+      return {
+        ...state,
+        link: removeFromArray(state.link, action.payload),
+      };
     default:
       return state;
   }
@@ -41,6 +47,14 @@ const addToLinkArray = (state, payload, i) => {
     error: false,
     link: linkArray,
   };
+};
+
+const removeFromArray = (arr, rElement) => {
+  const index = arr.indexOf(rElement);
+  if (index > -1) {
+    arr.splice(index, 1);
+  }
+  return arr;
 };
 
 export default reducer;

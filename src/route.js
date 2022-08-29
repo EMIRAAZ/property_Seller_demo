@@ -108,6 +108,10 @@ function Router() {
               path="neighborhood"
               element={makePrivate(<AdminNeighborhood />, 'ADMIN')}
             />
+            <Route
+              path="neighborhood/:id"
+              element={makePrivate(<AdminNeighborhood />, 'ADMIN')}
+            />
             <Route path="offplan" element={makePrivate(<Offplan />, 'ADMIN')} />
             <Route
               path="add-agent"

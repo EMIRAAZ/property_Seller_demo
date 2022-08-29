@@ -1,25 +1,25 @@
-import "./Offplanview.scss";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import Header from "../../../components/header";
-import ImageFrame from "../imageframe";
-import OffplanCard from "../../../components/offpaln/offplanCard/OffplanCard";
-import ImgPropCarousel from "../../../components/imgpropcarouselview";
-import LarrowIcon from "../../../components/svg/larrow";
-import RarrowIcon from "../../../components/svg/rarrow";
-import FooterNew from "../../../components/footerNew";
-import { useState } from "react";
-import Bed from "../../../components/svg/bed";
-import { MoveToTop } from "../../../components/movetotop";
+import './Offplanview.scss';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import Header from '../../../components/header';
+import ImageFrame from '../imageframe';
+import OffplanCard from '../../../components/offpaln/offplanCard/OffplanCard';
+import ImgPropCarousel from '../../../components/imgpropcarouselview';
+import LarrowIcon from '../../../components/svg/larrow';
+import RarrowIcon from '../../../components/svg/rarrow';
+import FooterNew from '../../../components/footerNew';
+import { useState } from 'react';
+import Bed from '../../../components/svg/bed';
+import { MoveToTop } from '../../../components/movetotop';
 
-const OffplanView = (props) => {
+const OffplanView = props => {
   let location = useLocation();
 
   useEffect(() => {
     props.getOffplanByIdWeb(getID());
   }, []);
 
-  const getID = () => location.pathname.split("/").pop();
+  const getID = () => location.pathname.split('/').pop();
 
   return (
     <>
@@ -45,10 +45,10 @@ const OffplanView = (props) => {
           </div>
         </div>
         <div className="offplans-projects">
-          {/* <h1 className="Heading">Image Gallery</h1>
+          <h1 className="Heading">Image Gallery</h1>
           <div className="image-slider-container">
-            <ImageSlider />
-          </div> */}
+            <ImageSlider imgArray={props.offplan ? props.offplan.images : []} />
+          </div>
           <h1 className="Heading">Availability</h1>
           <div className="availability">
             <Availability availability={props.offplan.availability} />
@@ -98,10 +98,10 @@ const Availability = ({ availability }) => {
 
 //////////////////////////////////
 
-const ImageSlider = ({ imgArray = ["/assets/image/noimage.jpg"] }) => {
+const ImageSlider = ({ imgArray = ['/assets/image/noimage.jpg'] }) => {
   const [index, setIndex] = useState(0);
 
-  const onsetIndex = (add) => {
+  const onsetIndex = add => {
     if (index === 0 && add === -1) {
       setIndex(imgArray.length - 1);
     } else if (index === imgArray.length - 1 && add === 1) {

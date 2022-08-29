@@ -20,14 +20,15 @@
         }
       }
       .card-row {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
         width: 95%;
         margin: 3px auto;
       }
       .vw-btn {
         width: 97%;
-        margin: 0px auto;
+        margin: 20px auto;
+        margin-left: 20px;
       }
     }
   }
@@ -54,7 +55,7 @@
         }
         .vw-btn {
           width: 97%;
-          margin: 0px auto;
+          margin-left: 60px;
         }
       }
     }

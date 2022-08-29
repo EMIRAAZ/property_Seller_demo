@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PropertyView from './PropertyView';
-import { getPropertyByID } from '../../../redux/actions';
+import { getPropertyByID, getSimilarProperty } from '../../../redux/actions';
 
 const mapStateToProps = state => {
   return {
@@ -9,12 +9,14 @@ const mapStateToProps = state => {
       : {},
     loading: state.propertyReducer.loading,
     error: state.propertyReducer.error,
+    similarProperty: state.propertyReducer.similarProperty,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     getPropertyByID: id => dispatch(getPropertyByID(id)),
+    getSimilarProperty: city => dispatch(getSimilarProperty(city)),
   };
 };
 
