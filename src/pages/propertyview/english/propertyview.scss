@@ -59,7 +59,7 @@
       }
     }
     .content-container {
-      font-family: 'Poppins';
+      font-family: "Poppins";
       display: flex;
       flex-direction: column;
       width: 95%;
@@ -151,7 +151,7 @@
             margin-top: 20px;
             h1 {
               width: 100%;
-              font-family: 'Poppins';
+              font-family: "Poppins";
               font-size: 18px;
               font-weight: 600;
               line-height: 28px;
@@ -171,7 +171,7 @@
               }
               p {
                 margin-left: 5px;
-                font-family: 'Roboto';
+                font-family: "Roboto";
                 font-weight: 500;
                 color: #464646;
                 font-size: 18px;
@@ -191,14 +191,14 @@
             flex-wrap: wrap;
             p {
               width: 47%;
-              font-family: 'Roboto';
+              font-family: "Roboto";
               font-weight: 500;
               color: #464646;
               font-size: 18px;
             }
             h1 {
               width: 53%;
-              font-family: 'Roboto';
+              font-family: "Roboto";
               font-weight: 400;
               color: #706f6f;
               font-size: 17px;
@@ -225,9 +225,20 @@
               display: flex;
               flex-direction: column;
               p {
-                font-family: 'Poppins';
-                font-size: 13px;
+                font-family: "Poppins";
+                font-size: 15px;
                 font-weight: 600;
+              }
+              h1 {
+                font-family: "Poppins";
+                font-size: 13px;
+                font-weight: 500;
+                color: grey;
+              }
+              h2 {
+                font-family: "Poppins";
+                font-size: 13px;
+                font-weight: 500;
               }
             }
             img {
@@ -243,7 +254,7 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            font-family: 'Roboto';
+            font-family: "Roboto";
             font-weight: 600;
             font-size: 10px;
             margin: 20px 0px 0px 0px;
@@ -328,7 +339,7 @@
         }
       }
       .content-container {
-        font-family: 'Poppins';
+        font-family: "Poppins";
         display: flex;
         width: 95%;
         flex-direction: row;
@@ -423,7 +434,7 @@
               margin-top: 20px;
               h1 {
                 width: 100%;
-                font-family: 'Poppins';
+                font-family: "Poppins";
                 font-size: 32px;
                 font-weight: 600;
                 line-height: 28px;
@@ -443,7 +454,7 @@
                 }
                 p {
                   margin-left: 5px;
-                  font-family: 'Roboto';
+                  font-family: "Roboto";
                   font-weight: 500;
                   color: #464646;
                   font-size: 18px;
@@ -462,14 +473,14 @@
               flex-wrap: wrap;
               p {
                 width: 44%;
-                font-family: 'Roboto';
+                font-family: "Roboto";
                 font-weight: 500;
                 color: #464646;
                 font-size: 18px;
               }
               h1 {
                 width: 56%;
-                font-family: 'Roboto';
+                font-family: "Roboto";
                 font-weight: 400;
                 color: #6b6a6a;
                 font-size: 17px;
@@ -515,7 +526,7 @@
               justify-content: space-between;
               align-items: center;
               width: 100%;
-              font-family: 'Roboto';
+              font-family: "Roboto";
               font-weight: 600;
               font-size: 10px;
               margin: 20px 0px 0px 0px;

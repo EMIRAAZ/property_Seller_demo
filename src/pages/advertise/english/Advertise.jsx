@@ -8,23 +8,23 @@ const Adform = () => {
       <form className="adform">
         <label>Name</label>
         <br />
-        <input type="text" placeholder="name here" />
+        <input type="text" placeholder="Name" />
         <br />
         <label>Email</label>
         <br />
-        <input type="text" placeholder="name here" />
+        <input type="text" placeholder="Email" />
         <br />
         <label>Mobile</label>
         <br />
-        <input type="text" placeholder="name here" />
+        <input type="text" placeholder="Mobile Number" />
         <br />
         <label>Property Type</label>
         <br />
-        <input type="text" placeholder="name here" />
+        <input type="text" placeholder="Property Type" />
         <br />
         <label>Location</label>
         <br />
-        <input type="text" placeholder="name here" />
+        <input type="text" placeholder="Location" />
         <br />
         <input className="sub-btn" type="submit" name="value" />
       </form>
@@ -88,7 +88,6 @@ const Advertise = () => {
               <p className="list-no">6</p>
             </div>
             <p className="list-content">
-              {" "}
               Directives on contracts and legal services
             </p>
           </div>
