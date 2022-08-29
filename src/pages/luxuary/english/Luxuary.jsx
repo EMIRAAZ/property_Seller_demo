@@ -1,30 +1,35 @@
 import './luxuary.scss';
 import Header from '../../../components/header';
 import Property from '../../../components/property';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import ViewAll from '../viewall';
 import { MoveToTop } from '../../../components/movetotop';
 import FooterNew from '../../../components/footerNew';
+import { Button } from '@mui/material';
 
 const Luxuary = props => {
   let location = useLocation();
   const getPath = () => location.pathname.split('/').pop();
+  const [villa, setVilla] = useState(0);
+  const [apartment, setApartment] = useState(0);
+  const [penthouse, setPenthouse] = useState(0);
+  const [townhouse, setTownhouse] = useState(0);
 
   useEffect(() => {
     if (getPath() === 'luxury-property') {
-      props.getLuxuryVillaWeb();
-      props.getLuxuryAppartmentWeb();
-      props.getLuxuryPenthouseWeb();
-      props.getLuxuryTownhouseWeb();
+      props.getLuxuryVillaWeb('&limit=3');
+      props.getLuxuryAppartmentWeb('&limit=3');
+      props.getLuxuryPenthouseWeb('&limit=3');
+      props.getLuxuryTownhouseWeb('&limit=3');
     } else if (getPath() === 'Villa') {
-      props.getLuxuryVillaWeb();
+      props.getLuxuryVillaWeb('&limit=3');
     } else if (getPath() === 'Apartment') {
-      props.getLuxuryAppartmentWeb();
+      props.getLuxuryAppartmentWeb('&limit=3');
     } else if (getPath() === 'Townhouse') {
-      props.getLuxuryTownhouseWeb();
+      props.getLuxuryTownhouseWeb('&limit=3');
     } else if (getPath() === 'Penthouse') {
-      props.getLuxuryPenthouseWeb();
+      props.getLuxuryPenthouseWeb('&limit=3');
     }
   }, [getPath()]);
 
@@ -49,7 +54,11 @@ const Luxuary = props => {
                 </div>
                 <div className="card-row">{renderstory1()}</div>
                 <div className="vw-btn">
-                  <ViewAll />
+                  <ViewAllBtn
+                    onClick={props.getLuxuryVillaWeb}
+                    setCount={setVilla}
+                    count={villa}
+                  />
                 </div>
               </div>
             </div>
@@ -64,7 +73,11 @@ const Luxuary = props => {
                 </div>
                 <div className="card-row">{renderstory2()}</div>
                 <div className="vw-btn">
-                  <ViewAll />
+                  <ViewAllBtn
+                    onClick={props.getLuxuryAppartmentWeb}
+                    setCount={setApartment}
+                    count={apartment}
+                  />
                 </div>
               </div>
             </div>
@@ -79,7 +92,11 @@ const Luxuary = props => {
                 </div>
                 <div className="card-row">{renderstory3()}</div>
                 <div className="vw-btn">
-                  <ViewAll />
+                  <ViewAllBtn
+                    onClick={props.getLuxuryTownhouseWeb}
+                    setCount={setTownhouse}
+                    count={townhouse}
+                  />
                 </div>
               </div>
             </div>
@@ -94,7 +111,11 @@ const Luxuary = props => {
                 </div>
                 <div className="card-row">{renderstory4()}</div>
                 <div className="vw-btn">
-                  <ViewAll />
+                  <ViewAllBtn
+                    onClick={props.getLuxuryPenthouseWeb}
+                    setCount={setPenthouse}
+                    count={penthouse}
+                  />
                 </div>
               </div>
             </div>
@@ -112,7 +133,11 @@ const Luxuary = props => {
             </div>
             <div className="card-row">{renderstory1()}</div>
             <div className="vw-btn">
-              <ViewAll />
+              <ViewAllBtn
+                onClick={props.getLuxuryVillaWeb}
+                setCount={setVilla}
+                count={villa}
+              />
             </div>
           </div>
         </div>
@@ -126,7 +151,11 @@ const Luxuary = props => {
             </div>
             <div className="card-row">{renderstory2()}</div>
             <div className="vw-btn">
-              <ViewAll />
+              <ViewAllBtn
+                onClick={props.getLuxuryAppartmentWeb}
+                setCount={setApartment}
+                count={apartment}
+              />
             </div>
           </div>
         </div>
@@ -140,7 +169,11 @@ const Luxuary = props => {
             </div>
             <div className="card-row">{renderstory3()}</div>
             <div className="vw-btn">
-              <ViewAll />
+              <ViewAllBtn
+                onClick={props.getLuxuryTownhouseWeb}
+                setCount={setTownhouse}
+                count={townhouse}
+              />
             </div>
           </div>
         </div>
@@ -154,7 +187,11 @@ const Luxuary = props => {
             </div>
             <div className="card-row">{renderstory4()}</div>
             <div className="vw-btn">
-              <ViewAll />
+              <ViewAllBtn
+                onClick={props.getLuxuryPenthouseWeb}
+                setCount={setPenthouse}
+                count={penthouse}
+              />
             </div>
           </div>
         </div>
@@ -233,3 +270,15 @@ const Luxuary = props => {
 };
 
 export default Luxuary;
+
+const ViewAllBtn = ({ onClick, setCount, count }) => {
+  const onBtnClick = () => {
+    setCount(count + 3);
+    onClick(`&limit=${count + 3}`);
+  };
+  return (
+    <Button variant="outlined" onClick={onBtnClick}>
+      View All
+    </Button>
+  );
+};

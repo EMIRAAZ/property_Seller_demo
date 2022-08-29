@@ -18,10 +18,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getLuxuryVillaWeb: () => dispatch(getLuxuryVillaWeb()),
-    getLuxuryPenthouseWeb: () => dispatch(getLuxuryPenthouseWeb()),
-    getLuxuryTownhouseWeb: () => dispatch(getLuxuryTownhouseWeb()),
-    getLuxuryAppartmentWeb: () => dispatch(getLuxuryAppartmentWeb()),
+    getLuxuryVillaWeb: p => dispatch(getLuxuryVillaWeb(p)),
+    getLuxuryPenthouseWeb: p => dispatch(getLuxuryPenthouseWeb(p)),
+    getLuxuryTownhouseWeb: p => dispatch(getLuxuryTownhouseWeb(p)),
+    getLuxuryAppartmentWeb: p => dispatch(getLuxuryAppartmentWeb(p)),
   };
 };
 

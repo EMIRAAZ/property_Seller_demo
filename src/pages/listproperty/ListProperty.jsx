@@ -4,7 +4,6 @@ import Header from '../../components/header';
 import QueryCard from '../../components/querycard';
 import RenderComponent from '../../components/renderComponent';
 import ListHeading from '../../components/ListHeading';
-import Footer from '../../components/footer';
 import { MoveToTop } from '../../components/movetotop';
 import FooterNew from '../../components/footerNew';
 
@@ -12,6 +11,7 @@ const ListProperty = props => {
   let location = useLocation();
 
   const getID = () => location.pathname.split('/').pop();
+  const getSearch = () => location.search.substring(1);
 
   const getParamsForNeigh = params => {
     let pathname = location.search.substring(1);
@@ -23,6 +23,7 @@ const ListProperty = props => {
     else if (getID() === 'readytomove') return props.readyToMoveIn.data;
     else if (getID() === 'neighbourhood') return props.propWithNeighbor.data;
     else if (getID() === 'verifiedproperties') return props.vp.data;
+    else if (getID() === 'tag') return props.tag.data;
   };
 
   const getPropertyName = () => {
@@ -30,6 +31,7 @@ const ListProperty = props => {
     else if (getID() === 'readytomove') return 'Ready Properties';
     else if (getID() === 'neighbourhood') return 'Famous Neighbourhoods';
     else if (getID() === 'verifiedproperties') return 'Verified Properties';
+    else if (getID() === 'tag') return 'Result for your Search';
   };
   const getPropertyFn = params => {
     if (getID() === 'featured') return props.getCatFeatured(params);
@@ -37,6 +39,8 @@ const ListProperty = props => {
     else if (getID() === 'neighbourhood')
       return props.getPropWithNeighSale(getParamsForNeigh(params));
     else if (getID() === 'verifiedproperties') return props.getVP(params);
+    else if (getID() === 'tag')
+      return props.getPropWithTag(`params&${getSearch()}`);
   };
 
   const getPropertyCount = () => {
@@ -44,6 +48,7 @@ const ListProperty = props => {
     else if (getID() === 'readytomove') return props.readyToMoveIn.count;
     else if (getID() === 'neighbourhood') return props.propWithNeighbor.count;
     else if (getID() === 'verifiedproperties') return props.vp.count;
+    else if (getID() === 'tag') return props.tag.count;
   };
 
   return (

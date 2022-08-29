@@ -1,48 +1,48 @@
-import "./form.scss";
-import Input from "../../../components/input/admininput";
-import UploadImage from "../../../components/uploadimage";
-import Textarea from "../../../components/input/admintextarea";
-import Select from "../../../components/select/adminSelect";
-import ChipSelect from "../../../components/select/ChipSelect";
-import Button from "../../../components/button/SpinnerButton";
-import Checkbox from "../../../components/input/checkbox";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
-import Spinner from "../../../components/spinner";
-import { checkIfAllKeyHasValue } from "../../../utils";
-import Plus from "../../../components/svg/plus";
-import { useRef } from "react";
+import './form.scss';
+import Input from '../../../components/input/admininput';
+import UploadImage from '../../../components/uploadimage';
+import Textarea from '../../../components/input/admintextarea';
+import Select from '../../../components/select/adminSelect';
+import ChipSelect from '../../../components/select/ChipSelect';
+import Button from '../../../components/button/SpinnerButton';
+import Checkbox from '../../../components/input/checkbox';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import Spinner from '../../../components/spinner';
+import { checkIfAllKeyHasValue } from '../../../utils';
+import Plus from '../../../components/svg/plus';
+import { useRef } from 'react';
 import {
   useJsApiLoader,
   GoogleMap,
   StandaloneSearchBox,
   Marker,
-} from "@react-google-maps/api";
+} from '@react-google-maps/api';
 
 const keyArr = [
-  "title",
-  "description",
-  "placeAddress",
-  "city",
-  "propertySize",
-  "propertySizeUnit",
-  "propertyType",
-  "propertyAge",
-  "noOfBedroom",
-  "noOfBathroom",
-  "referenceNo",
-  "trakheesiPermit",
-  "ownership",
-  "brokerORN",
-  "agentBRN",
-  "call",
-  "email",
-  "whatsapp",
-  "for",
-  "city",
-  "agentId",
-  "mainTitle",
-  "emirate",
+  'title',
+  'description',
+  'placeAddress',
+  'city',
+  'propertySize',
+  'propertySizeUnit',
+  'propertyType',
+  'propertyAge',
+  'noOfBedroom',
+  'noOfBathroom',
+  'referenceNo',
+  'trakheesiPermit',
+  'ownership',
+  'brokerORN',
+  'agentBRN',
+  'call',
+  'email',
+  'whatsapp',
+  'for',
+  'city',
+  'agentId',
+  'mainTitle',
+  'emirate',
 ];
 
 const Form = ({
@@ -75,10 +75,10 @@ const Form = ({
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
-    libraries: ["places"],
+    libraries: ['places'],
   });
 
-  const onChangeMapInput = (e) => {
+  const onChangeMapInput = e => {
     const [place] = inputRef.current.getPlaces();
     if (place) {
       setCenter({
@@ -89,25 +89,25 @@ const Form = ({
         lat: place.geometry.location.lat(),
         lng: place.geometry.location.lng(),
       });
-      onChangeInput("coordinates", {
+      onChangeInput('coordinates', {
         lat: place.geometry.location.lat(),
         lng: place.geometry.location.lng(),
       });
     }
   };
 
-  const onMapClick = (e) => {
+  const onMapClick = e => {
     setMarker({
       lat: e.latLng.lat(),
       lng: e.latLng.lng(),
     });
-    onChangeInput("coordinates", {
+    onChangeInput('coordinates', {
       lat: e.latLng.lat(),
       lng: e.latLng.lng(),
     });
   };
 
-  const getID = () => location.pathname.split("/").pop();
+  const getID = () => location.pathname.split('/').pop();
 
   const { agent, propertyType, amenities, sale, neighbor, tagline, emirate } =
     propertyOptions;
@@ -132,13 +132,13 @@ const Form = ({
         { ...propertyValue, images: [...propertyValue.images, ...images] },
         () => {
           clear();
-          navigate("/agency");
+          navigate('/agency');
         }
       );
     } else {
       addProperty({ ...propertyValue, images: [...images] }, () => {
         clear();
-        navigate("/agency");
+        navigate('/agency');
       });
     }
   };
@@ -158,20 +158,20 @@ const Form = ({
           label="Title"
           required
           value={propertyValue.title}
-          onChange={(e) => onChangeInput("title", e.target.value)}
+          onChange={e => onChangeInput('title', e.target.value)}
         />
         <Input
           divClass="property-input"
           label="Main Title"
           required
           value={propertyValue.mainTitle}
-          onChange={(e) => onChangeInput("mainTitle", e.target.value)}
+          onChange={e => onChangeInput('mainTitle', e.target.value)}
         />
         <Textarea
           divClass="property-input"
           label="Description"
           rows={8}
-          onChange={(e) => onChangeInput("description", e.target.value)}
+          onChange={e => onChangeInput('description', e.target.value)}
           value={propertyValue.description}
           required
         />
@@ -179,7 +179,7 @@ const Form = ({
           divClass="property-input"
           label="Place Address"
           rows={5}
-          onChange={(e) => onChangeInput("placeAddress", e.target.value)}
+          onChange={e => onChangeInput('placeAddress', e.target.value)}
           value={propertyValue.placeAddress}
           required
         />
@@ -187,14 +187,14 @@ const Form = ({
           divClass="property-input"
           label="Building"
           value={propertyValue.building}
-          onChange={(e) => onChangeInput("building", e.target.value)}
+          onChange={e => onChangeInput('building', e.target.value)}
         />
         <Input
           divClass="property-input"
           label="City"
           required
           value={propertyValue.city}
-          onChange={(e) => onChangeInput("city", e.target.value)}
+          onChange={e => onChangeInput('city', e.target.value)}
         />
         <Select
           customClass="property-input"
@@ -202,7 +202,7 @@ const Form = ({
           required
           value={`${propertyValue.agentId} ${propertyValue.agencyId}`}
           options={agent}
-          onChange={(v) => onChangeInput("agentId", v)}
+          onChange={v => onChangeInput('agentId', v)}
         />
         <span className="select-border"></span>
         <span className="property-input amenities-instruction">
@@ -214,7 +214,7 @@ const Form = ({
           label="Amenities"
           options={amenities}
           value={propertyValue.amenities}
-          onChange={(v) => onChangeInput("amenities", v)}
+          onChange={v => onChangeInput('amenities', v)}
           required
         />
         <div className="property-row-div">
@@ -223,14 +223,14 @@ const Form = ({
             label="Property size"
             required
             value={propertyValue.propertySize}
-            onChange={(e) => onChangeInput("propertySize", e.target.value)}
+            onChange={e => onChangeInput('propertySize', e.target.value)}
           />
           <Input
             divClass="property-input"
             label="Property size unit"
             required
             value={propertyValue.propertySizeUnit}
-            onChange={(e) => onChangeInput("propertySizeUnit", e.target.value)}
+            onChange={e => onChangeInput('propertySizeUnit', e.target.value)}
           />
         </div>
         <Select
@@ -239,7 +239,7 @@ const Form = ({
           required
           value={propertyValue.propertyType}
           options={propertyType}
-          onChange={(v) => onChangeInput("propertyType", v)}
+          onChange={v => onChangeInput('propertyType', v)}
         />
         <span className="select-border"></span>
         <Input
@@ -247,7 +247,7 @@ const Form = ({
           label="Property age"
           required
           value={propertyValue.propertyAge}
-          onChange={(e) => onChangeInput("propertyAge", e.target.value)}
+          onChange={e => onChangeInput('propertyAge', e.target.value)}
         />
         <div className="property-row-div">
           <Input
@@ -255,35 +255,35 @@ const Form = ({
             label="No. of bedrooms"
             required
             value={propertyValue.noOfBedroom}
-            onChange={(e) => onChangeInput("noOfBedroom", e.target.value)}
+            onChange={e => onChangeInput('noOfBedroom', e.target.value)}
           />
           <Input
             divClass="property-input"
             label="No. of bathrooms"
             required
             value={propertyValue.noOfBathroom}
-            onChange={(e) => onChangeInput("noOfBathroom", e.target.value)}
+            onChange={e => onChangeInput('noOfBathroom', e.target.value)}
           />
         </div>
         <Input
           divClass="property-input"
           label="Youtube Link"
           value={propertyValue.videoView}
-          onChange={(e) => onChangeInput("videoView", e.target.value)}
+          onChange={e => onChangeInput('videoView', e.target.value)}
         />
         <Input
           divClass="property-input"
           label="Call"
           required
           value={propertyValue.call}
-          onChange={(e) => onChangeInput("call", e.target.value)}
+          onChange={e => onChangeInput('call', e.target.value)}
         />
         <Input
           divClass="property-input"
           label="Email"
           required
           value={propertyValue.email}
-          onChange={(e) => onChangeInput("email", e.target.value)}
+          onChange={e => onChangeInput('email', e.target.value)}
         />
       </div>
       <div className="add-right-agency-prop-form">
@@ -314,7 +314,7 @@ const Form = ({
           required
           value={propertyValue.for}
           options={sale}
-          onChange={(v) => onChangeInput("for", v)}
+          onChange={v => onChangeInput('for', v)}
         />
         <span className="select-border"></span>
         <ChipSelect
@@ -322,7 +322,7 @@ const Form = ({
           label="Famous Neighborhoods"
           options={neighbor}
           value={propertyValue.neighborhood}
-          onChange={(v) => onChangeInput("neighborhood", v)}
+          onChange={v => onChangeInput('neighborhood', v)}
           required
         />
         <Select
@@ -331,7 +331,7 @@ const Form = ({
           required
           value={`${propertyValue.taglineId}`}
           options={tagline}
-          onChange={(v) => onChangeInput("taglineId", v)}
+          onChange={v => onChangeInput('taglineId', v)}
         />
         <span className="select-border"></span>
         <div className="property-row-div">
@@ -340,14 +340,14 @@ const Form = ({
             label="Price"
             required
             value={propertyValue.price}
-            onChange={(e) => onChangeInput("price", e.target.value)}
+            onChange={e => onChangeInput('price', e.target.value)}
           />
           <Input
             divClass="property-input"
             label="Ownership"
             required
             value={propertyValue.ownership}
-            onChange={(e) => onChangeInput("ownership", e.target.value)}
+            onChange={e => onChangeInput('ownership', e.target.value)}
           />
         </div>
         <div className="property-row-div">
@@ -356,14 +356,14 @@ const Form = ({
             label="Reference No"
             required
             value={propertyValue.referenceNo}
-            onChange={(e) => onChangeInput("referenceNo", e.target.value)}
+            onChange={e => onChangeInput('referenceNo', e.target.value)}
           />
           <Input
             divClass="property-input"
             label="Trakheesi Permit"
             required
             value={propertyValue.trakheesiPermit}
-            onChange={(e) => onChangeInput("trakheesiPermit", e.target.value)}
+            onChange={e => onChangeInput('trakheesiPermit', e.target.value)}
           />
         </div>
         <div className="property-row-div">
@@ -372,14 +372,14 @@ const Form = ({
             label="Broker ORN"
             required
             value={propertyValue.brokerORN}
-            onChange={(e) => onChangeInput("brokerORN", e.target.value)}
+            onChange={e => onChangeInput('brokerORN', e.target.value)}
           />
           <Input
             divClass="property-input"
             label="Agent BRN"
             required
             value={propertyValue.agentBRN}
-            onChange={(e) => onChangeInput("agentBRN", e.target.value)}
+            onChange={e => onChangeInput('agentBRN', e.target.value)}
           />
         </div>
         <Select
@@ -388,21 +388,21 @@ const Form = ({
           required
           value={propertyValue.emirate}
           options={emirate}
-          onChange={(v) => onChangeInput("emirate", v)}
+          onChange={v => onChangeInput('emirate', v)}
         />
         <span className="select-border"></span>
         <div className="add-property-google-map">
           {isLoaded ? (
             <>
               <StandaloneSearchBox
-                onLoad={(ref) => (inputRef.current = ref)}
-                onPlacesChanged={(e) => onChangeMapInput(e)}
+                onLoad={ref => (inputRef.current = ref)}
+                onPlacesChanged={e => onChangeMapInput(e)}
               >
                 <input className="google-map-input" type="text" />
               </StandaloneSearchBox>
               <GoogleMap
                 center={center}
-                mapContainerStyle={{ width: "100%", height: "100%" }}
+                mapContainerStyle={{ width: '100%', height: '100%' }}
                 zoom={15}
                 onClick={onMapClick}
               >
@@ -416,29 +416,29 @@ const Form = ({
           label="Whatsapp"
           required
           value={propertyValue.whatsapp}
-          onChange={(e) => onChangeInput("whatsapp", e.target.value)}
+          onChange={e => onChangeInput('whatsapp', e.target.value)}
         />
         <div className="property-row-div">
-          <Checkbox
+          {/* <Checkbox
             label="Featured"
             value={propertyValue.featured}
             onChange={(e) => onChangeInput("featured", e.target.checked)}
-          />
+          /> */}
           <Checkbox
             label="Luxury"
             value={propertyValue.luxury}
-            onChange={(e) => onChangeInput("luxury", e.target.checked)}
+            onChange={e => onChangeInput('luxury', e.target.checked)}
           />
-          <Checkbox
+          {/* <Checkbox
             label="Verified"
             value={propertyValue.verified}
             onChange={(e) => onChangeInput("verified", e.target.checked)}
-          />
-          <Checkbox
+          /> */}
+          {/* <Checkbox
             label="ReadyToMove"
             value={propertyValue.readyToMove}
             onChange={(e) => onChangeInput("readyToMove", e.target.checked)}
-          />
+          /> */}
         </div>
         <div className="agency-control-btn">
           <Button customClass="add-agent-btn cancel">CANCEL</Button>

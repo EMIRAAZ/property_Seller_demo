@@ -31,18 +31,22 @@ const getLuxuryError = () => {
   };
 };
 
-export const getLuxuryVillaWeb = () => async dispatch => {
-  try {
-    dispatch(getLuxuryVillaStarted());
-    const res = await axios.get(`/api/property?propertyType=Villa&limit=3`);
-    dispatch({
-      type: GET_LUXURY_VILLA,
-      payload: res.data?.data,
-    });
-  } catch (e) {
-    dispatch(getLuxuryError());
-  }
-};
+export const getLuxuryVillaWeb =
+  (p = '') =>
+  async dispatch => {
+    try {
+      dispatch(getLuxuryVillaStarted());
+      const res = await axios.get(
+        `/api/property?propertyType=Villa&offset=0${p}`
+      );
+      dispatch({
+        type: GET_LUXURY_VILLA,
+        payload: res.data?.data,
+      });
+    } catch (e) {
+      dispatch(getLuxuryError());
+    }
+  };
 
 // appartment
 
@@ -58,18 +62,22 @@ const getLuxuryAppartmentError = () => {
   };
 };
 
-export const getLuxuryAppartmentWeb = () => async dispatch => {
-  try {
-    dispatch(getLuxuryAppartmentStarted());
-    const res = await axios.get(`/api/property?propertyType=Apartment&limit=3`);
-    dispatch({
-      type: GET_LUXURY_APPARTMENT,
-      payload: res.data?.data,
-    });
-  } catch (e) {
-    dispatch(getLuxuryAppartmentError());
-  }
-};
+export const getLuxuryAppartmentWeb =
+  (p = '') =>
+  async dispatch => {
+    try {
+      dispatch(getLuxuryAppartmentStarted());
+      const res = await axios.get(
+        `/api/property?propertyType=Apartment&offset=0${p}`
+      );
+      dispatch({
+        type: GET_LUXURY_APPARTMENT,
+        payload: res.data?.data,
+      });
+    } catch (e) {
+      dispatch(getLuxuryAppartmentError());
+    }
+  };
 
 // townhouse
 
@@ -85,18 +93,22 @@ const getLuxuryTownhouseError = () => {
   };
 };
 
-export const getLuxuryTownhouseWeb = () => async dispatch => {
-  try {
-    dispatch(getLuxuryTownhouseStarted());
-    const res = await axios.get(`/api/property?propertyType=Townhouse&limit=3`);
-    dispatch({
-      type: GET_LUXURY_TOWNHOUSE,
-      payload: res.data?.data,
-    });
-  } catch (e) {
-    dispatch(getLuxuryTownhouseError());
-  }
-};
+export const getLuxuryTownhouseWeb =
+  (p = '') =>
+  async dispatch => {
+    try {
+      dispatch(getLuxuryTownhouseStarted());
+      const res = await axios.get(
+        `/api/property?propertyType=Townhouse&offset=0${p}`
+      );
+      dispatch({
+        type: GET_LUXURY_TOWNHOUSE,
+        payload: res.data?.data,
+      });
+    } catch (e) {
+      dispatch(getLuxuryTownhouseError());
+    }
+  };
 
 // penthouse
 
@@ -112,18 +124,22 @@ const getLuxuryPenthouseError = () => {
   };
 };
 
-export const getLuxuryPenthouseWeb = () => async dispatch => {
-  try {
-    dispatch(getLuxuryPenthouseStarted());
-    const res = await axios.get(`/api/property?propertyType=Penthouse&limit=3`);
-    dispatch({
-      type: GET_LUXURY_PENTHOUSE,
-      payload: res.data?.data,
-    });
-  } catch (e) {
-    dispatch(getLuxuryPenthouseError());
-  }
-};
+export const getLuxuryPenthouseWeb =
+  (p = '') =>
+  async dispatch => {
+    try {
+      dispatch(getLuxuryPenthouseStarted());
+      const res = await axios.get(
+        `/api/property?propertyType=Penthouse&offset=0${p}`
+      );
+      dispatch({
+        type: GET_LUXURY_PENTHOUSE,
+        payload: res.data?.data,
+      });
+    } catch (e) {
+      dispatch(getLuxuryPenthouseError());
+    }
+  };
 
 const getLuxuryWithTypeStarted = () => {
   return {

@@ -16,6 +16,9 @@ import {
   GET_VP,
   GET_VP_ERROR,
   GET_VP_STARTED,
+  GET_PROP_TAG_STARTED,
+  GET_PROP_TAG,
+  GET_PROP_TAG_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -178,6 +181,36 @@ const reducer = (state = initialState, action) => {
         ...state,
         vp: {
           ...state.vp,
+          error: true,
+          loading: false,
+        },
+      };
+
+    case GET_PROP_TAG:
+      return {
+        ...state,
+        tag: {
+          ...state.tag,
+          error: false,
+          loading: false,
+          data: action.payload.rows,
+          count: action.payload.count,
+        },
+      };
+    case GET_PROP_TAG_STARTED:
+      return {
+        ...state,
+        tag: {
+          ...state.tag,
+          error: false,
+          loading: true,
+        },
+      };
+    case GET_PROP_TAG_ERROR:
+      return {
+        ...state,
+        tag: {
+          ...state.tag,
           error: true,
           loading: false,
         },

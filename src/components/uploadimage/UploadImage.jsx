@@ -1,10 +1,12 @@
 import './uploadimage.scss';
 
 import Camera from '../../components/svg/camera';
+import Delete from '../../components/svg/delete';
 
 const UploadImage = ({
   onChangeImage,
   uploadImage,
+  removeImage,
   linkIndex,
   editing,
   value,
@@ -38,7 +40,9 @@ const UploadImage = ({
     } else if (!editing) {
       if (link[linkIndex]) {
         return (
-          <img className="upload-img-class" alt="pic" src={link[linkIndex]} />
+          <>
+            <img className="upload-img-class" alt="pic" src={link[linkIndex]} />
+          </>
         );
       } else <></>;
     } else <></>;
@@ -46,6 +50,12 @@ const UploadImage = ({
 
   return (
     <div key={key} className={`upload-container ${customClass || ''}`}>
+      {/* <Delete
+        className="delete-icon"
+        onClick={() => {
+          removeImage([...value, ...link][linkIndex]);
+        }}
+      /> */}
       <label htmlFor="icon-button-file">
         <input
           accept="image/*"
