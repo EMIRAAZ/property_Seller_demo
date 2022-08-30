@@ -36,10 +36,10 @@ function FooterNew(props) {
       </div>
       <div className="bottom-div">
         <div className="copyright">
-          <p>© UAEAssistant 2022 . All rights reserved.</p>
+          <p>© UAE Assistant 2022 . All rights reserved.</p>
         </div>
         <div className="terms">
-          <a onClick={() => navigate("/terms")}>Terms of use</a>
+          <a onClick={() => navigate("/terms")}>Terms and Conditions</a>
           <a href="" onClick={() => navigate("/privacypolicy")}>
             Privacy Policy
           </a>
