@@ -15,7 +15,7 @@ const Topstory = (props) => {
     <div className="top-stories-main-container">
       <Header />
       <div className="container">
-        <h2 className="heading">Top stories for you</h2>
+        <h2 className="heading">Top News for you</h2>
         <div className="categories">
           {props.newsTopics.map((item) => (
             <div key={item.id} className="item-div">

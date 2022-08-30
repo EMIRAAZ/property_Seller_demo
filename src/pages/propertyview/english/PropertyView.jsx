@@ -1,25 +1,25 @@
-import './propertyview.scss';
-import Header from '../../../components/header/english/Header';
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import BasicButton from '../../../components/button/BasicButton';
-import RarrowIcon from '../../../components/svg/rarrow';
-import LarrowIcon from '../../../components/svg/larrow';
-import Bed from '../../../components/svg/bed';
-import Bath from '../../../components/svg/bath';
-import Living from '../../../components/svg/living';
-import Area from '../../../components/svg/area';
-import Whatsapp from '../../../components/svg/whatsapp';
-import { MoveToTop } from '../../../components/movetotop';
-import FooterNew from '../../../components/footerNew';
-import Phone from '../../../components/svg/phone';
-import Mail from '../../../components/svg/mailsvg';
-import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
-import BottomFixed from '../../../components/bottomfixed/BottomFixed';
-import { Button } from '@mui/material';
-import SimilarProperty from '../../../components/similarproperty';
+import "./propertyview.scss";
+import Header from "../../../components/header/english/Header";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import BasicButton from "../../../components/button/BasicButton";
+import RarrowIcon from "../../../components/svg/rarrow";
+import LarrowIcon from "../../../components/svg/larrow";
+import Bed from "../../../components/svg/bed";
+import Bath from "../../../components/svg/bath";
+import Living from "../../../components/svg/living";
+import Area from "../../../components/svg/area";
+import Whatsapp from "../../../components/svg/whatsapp";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
+import Phone from "../../../components/svg/phone";
+import Mail from "../../../components/svg/mailsvg";
+import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
+import BottomFixed from "../../../components/bottomfixed/BottomFixed";
+import { Button } from "@mui/material";
+import SimilarProperty from "../../../components/similarproperty";
 
-const PropertyView = props => {
+const PropertyView = (props) => {
   let location = useLocation();
 
   const { property } = props;
@@ -28,7 +28,7 @@ const PropertyView = props => {
     props.getPropertyByID(getID());
   }, []);
 
-  const getID = () => location.pathname.split('/').pop();
+  const getID = () => location.pathname.split("/").pop();
   const [content, setContent] = useState(true);
   const [read, setRead] = useState(false);
 
@@ -38,24 +38,24 @@ const PropertyView = props => {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
   });
 
-  const getDescription = description => {
+  const getDescription = (description) => {
     if (description) {
       if (read) {
         return description;
       } else {
         if (description.length > 200)
-          return description.substring(0, 200) + ' . . .';
+          return description.substring(0, 200) + " . . .";
         else return description;
       }
-    } else return '';
+    } else return "";
   };
 
   const openMap = ({ lat, lng }) => {
     // If it's an iPhone..
     if (
-      navigator.platform.indexOf('iPhone') != -1 ||
-      navigator.platform.indexOf('iPod') != -1 ||
-      navigator.platform.indexOf('iPad') != -1
+      navigator.platform.indexOf("iPhone") != -1 ||
+      navigator.platform.indexOf("iPod") != -1 ||
+      navigator.platform.indexOf("iPad") != -1
     )
       window.open(
         `maps://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination=${lat},${lng}`
@@ -82,7 +82,7 @@ const PropertyView = props => {
 
   if (property.updatedAt) {
     var d = property.updatedAt;
-    d = d.split('T');
+    d = d.split("T");
   }
 
   return (
@@ -172,7 +172,7 @@ const PropertyView = props => {
                     <>
                       <GoogleMap
                         center={getCord()}
-                        mapContainerStyle={{ width: '100%', height: '100%' }}
+                        mapContainerStyle={{ width: "100%", height: "100%" }}
                         zoom={15}
                       >
                         <Marker position={getCord()} />
@@ -207,7 +207,7 @@ const PropertyView = props => {
                 variant="outlined"
                 onClick={() => setRead(!read)}
               >
-                {read ? 'Read less' : 'Read more'}
+                {read ? "Read less" : "Read more"}
               </Button>
 
               <div className="amenities-main-div">
@@ -265,8 +265,8 @@ const PropertyView = props => {
                   {property && property.agent ? (
                     <>
                       <p>{property.agent.agentName}</p>
-                      <p>{property.agent.languages}</p>
-                      <p>{property.agency.agencyName}</p>
+                      <h1>{property.agent.languages}</h1>
+                      <h2>{property.agency.agencyName}</h2>
                       {/* <p>{property.agency.officeAddress}</p> */}
                     </>
                   ) : null}
@@ -302,7 +302,7 @@ const PropertyView = props => {
                 </div>
                 <div
                   className="service-btn-property phone"
-                  onClick={() => window.open('tel:+971521278701', '_blank')}
+                  onClick={() => window.open("tel:+971521278701", "_blank")}
                 >
                   <Phone
                     width="17"
@@ -315,7 +315,7 @@ const PropertyView = props => {
                 <div
                   className="service-btn-property email"
                   onClick={() =>
-                    window.open('mailto:hello@uaeassistant.com', '_blank')
+                    window.open("mailto:hello@uaeassistant.com", "_blank")
                   }
                 >
                   <Mail
@@ -349,10 +349,10 @@ const PropertyView = props => {
   );
 };
 
-const VideoView = ({ url = 'https://www.youtube.com/embed/05DqIGS_koU' }) => {
+const VideoView = ({ url = "https://www.youtube.com/embed/05DqIGS_koU" }) => {
   return (
     <iframe
-      style={{ borderRadius: '10px' }}
+      style={{ borderRadius: "10px" }}
       title="drf4rf4r"
       width="100%"
       height="100%"
@@ -364,12 +364,12 @@ const VideoView = ({ url = 'https://www.youtube.com/embed/05DqIGS_koU' }) => {
 };
 
 const ImageSlider = ({
-  imgArray = ['/assets/image/noimage.jpg'],
-  videoView = '',
+  imgArray = ["/assets/image/noimage.jpg"],
+  videoView = "",
 }) => {
   const [index, setIndex] = useState(0);
 
-  const onsetIndex = add => {
+  const onsetIndex = (add) => {
     if (index === 0 && add === -1) {
       setIndex(imgArray.length - 1);
     } else if (index === imgArray.length - 1 && add === 1) {
@@ -388,8 +388,8 @@ const ImageSlider = ({
           className="image-slide-container"
           style={{
             backgroundImage: `url(${imgArray[index]})`,
-            backgroundRepeat: 'space',
-            backgroundSize: 'cover',
+            backgroundRepeat: "space",
+            backgroundSize: "cover",
           }}
         >
           <div className="carousel-panel-prop">
@@ -402,8 +402,8 @@ const ImageSlider = ({
         className="sub-img-container"
         style={{
           backgroundImage: `url(${imgArray[getIndex()]})`,
-          backgroundRepeat: 'space',
-          backgroundSize: 'cover',
+          backgroundRepeat: "space",
+          backgroundSize: "cover",
         }}
       ></div>
       <div className="main-video-container">
