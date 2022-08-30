@@ -32,6 +32,8 @@ const PropertyView = props => {
   const [content, setContent] = useState(true);
   const [read, setRead] = useState(false);
 
+  console.log('MAP', props);
+
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
   });
@@ -72,11 +74,12 @@ const PropertyView = props => {
       property.address.longitude
     ) {
       return {
-        lat: property.address.latitude,
-        lng: property.address.longitude,
+        lat: parseFloat(property.address.latitude),
+        lng: parseFloat(property.address.longitude),
       };
     } else return { lat: 25.1972, lng: 55.2744 };
   };
+
   if (property.updatedAt) {
     var d = property.updatedAt;
     d = d.split('T');
@@ -227,7 +230,6 @@ const PropertyView = props => {
               <div className="details">
                 <p>Reference:</p>
                 <h1>{property.id}</h1>
-                {console.log(property)}
               </div>
               <div className="details">
                 <p>property age:</p>
