@@ -6,7 +6,7 @@ const ImageFrame = ({ props }) => {
     <div className="management-image-frame">
       <img
         className="img-frame"
-        src={props.offplan && props.offplan.images[0]}
+        src={props.offplan && props.offplan.images && props.offplan.images[0]}
         alt="building"
       />
 

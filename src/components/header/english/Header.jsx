@@ -39,6 +39,9 @@ const Header = ({ customClass }) => {
           <li onClick={() => navigate('/career')}>Careers</li>
           <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
           <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li>
+          <li className="simple-list" onClick={() => navigate('/sell')}>
+            Advertise&nbsp;With&nbsp;Us
+          </li>
         </ul>
       </div>
       <div className={`mobile-sidebar ${state}`}>
@@ -62,6 +65,9 @@ const Header = ({ customClass }) => {
           <li onClick={() => navigate('/career')}>Careers</li>
           <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
           <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li>
+          <li className="simple-list" onClick={() => navigate('/sell')}>
+            Advertise&nbsp;With&nbsp;Us
+          </li>
         </ul>
       </div>
       <ul className="header-list">
