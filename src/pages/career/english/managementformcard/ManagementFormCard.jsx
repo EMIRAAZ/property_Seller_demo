@@ -6,7 +6,7 @@ import BasicButton from "../../../../components/button/BasicButton";
 
 const ManagementFormCard = () => {
   return (
-    <div className="management-form-card">
+    <div className="management-form-card-career">
       <FormCard customClass="management-formcard">
         <p className="management-list-main">Send your Resume.</p>
 

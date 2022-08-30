@@ -1,4 +1,4 @@
-.management-form-card {
+.management-form-card-career {
   z-index: 10;
   font-family: "Poppins";
   // position: relative;
@@ -56,13 +56,15 @@
       grid-column-start: 1;
       grid-column-end: 5;
       grid-row-start: 6;
+      background-color: #2f70ff;
     }
   }
 }
 
 @media only screen and (min-width: 600px) {
-  .management-form-card {
+  .management-form-card-career {
     width: 500px;
+    margin: auto;
     .management-formcard {
       .management-list-main {
         font-family: "Poppins";
@@ -108,6 +110,7 @@
         grid-column-start: 1;
         grid-column-end: 5;
         grid-row-start: 6;
+        background-color: #2f70ff;
       }
     }
   }
