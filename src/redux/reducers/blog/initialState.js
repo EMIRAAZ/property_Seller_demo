@@ -4,7 +4,6 @@ export const initialState = {
   blog: [],
   blogValue: {
     title: '',
-    mainTitle: '',
     description: '',
     images: [],
   },

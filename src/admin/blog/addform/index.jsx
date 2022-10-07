@@ -7,7 +7,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { checkIfAllKeyHasValue } from '../../../utils';
 import Spinner from '../../../components/spinner';
 
-const keyArr = ['title', 'mainTitle', 'description'];
+const keyArr = ['title', 'description'];
 
 const AddForm = ({
   addBlog,
@@ -81,13 +81,6 @@ const AddForm = ({
         required
         value={blogValue.title}
         onChange={e => onChangeInput('title', e.target.value)}
-      />
-      <Input
-        divClass="blog-input"
-        label="Main Title"
-        required
-        value={blogValue.mainTitle}
-        onChange={e => onChangeInput('mainTitle', e.target.value)}
       />
       <Textarea
         divClass="blog-input"

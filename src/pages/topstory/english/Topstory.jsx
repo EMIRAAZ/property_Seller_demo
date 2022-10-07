@@ -1,12 +1,12 @@
-import Footer from "../../../components/footer";
-import { useNavigate } from "react-router-dom";
-import Header from "../../../components/header";
-import { useEffect } from "react";
-import { MoveToTop } from "../../../components/movetotop";
-import "./topstory.scss";
-import FooterNew from "../../../components/footerNew";
+import Footer from '../../../components/footer';
+import { useNavigate } from 'react-router-dom';
+import Header from '../../../components/header';
+import { useEffect } from 'react';
+import { MoveToTop } from '../../../components/movetotop';
+import './topstory.scss';
+import FooterNew from '../../../components/footerNew';
 
-const Topstory = (props) => {
+const Topstory = props => {
   useEffect(() => {
     props.getTopStory();
     props.getTopStoryTopics();
@@ -17,7 +17,7 @@ const Topstory = (props) => {
       <div className="container">
         <h2 className="heading">Top News for you</h2>
         <div className="categories">
-          {props.newsTopics.map((item) => (
+          {props.newsTopics.map(item => (
             <div key={item.id} className="item-div">
               <h1 className="item-name">{item.name}</h1>
             </div>
@@ -27,7 +27,7 @@ const Topstory = (props) => {
         <div className="news-div">
           {props.news.map((item, i) =>
             i === 0 ? (
-              <div key={i} style={{ width: "100%" }}>
+              <div key={i} style={{ width: '100%' }}>
                 <StoryCard item={item} />
               </div>
             ) : (
@@ -50,14 +50,16 @@ const StoryCard = ({ item }) => {
   const navigateTo = () => {
     navigate(`/news/${item.id}`);
   };
+  let date = new Date(item.updatedAt);
+
   return (
     <div className="storycard-div" onClick={navigateTo}>
       <div className="text-div">
-        <h1 className="heading-news-item"> {item.mainTitle}</h1>
+        <h1 className="heading-news-item"> {item.title}</h1>
+        <p className="date">{date.toDateString()}</p>
         <p className="description">{item.description}</p>
         <div className="location-div">
           <h1 className="location">{item.location}</h1>
-          <h1 className="time">{item.time}</h1>
         </div>
       </div>
       <div className="image-div">

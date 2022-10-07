@@ -15,7 +15,7 @@
     width: 70%;
     padding-right: 10px;
     .blog-date {
-      font-family: "Graphik";
+      font-family: 'Graphik';
       font-style: normal;
       font-weight: 400;
       font-size: 13px;
@@ -31,8 +31,14 @@
       margin-top: 30px;
       margin-left: 20px;
 
+      .date {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgba(73, 73, 73, 0.867);
+        font-size: 12px;
+      }
+
       .blog-heading {
-        font-family: "Poppins";
+        font-family: 'Poppins';
 
         font-style: normal;
         font-weight: 600;
@@ -47,7 +53,7 @@
         display: -webkit-box;
       }
       .blog-description {
-        font-family: "Poppins";
+        font-family: 'Poppins';
 
         font-style: normal;
         font-weight: 400;
@@ -81,7 +87,7 @@
       flex-direction: row;
       justify-content: space-between;
       h1 {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
         font-size: 26px;
@@ -107,7 +113,7 @@
       flex-direction: row;
       justify-content: space-between;
       h1 {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
         font-size: 26px;
@@ -133,7 +139,7 @@
       flex-direction: row;
       justify-content: space-between;
       h1 {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
         font-size: 26px;
@@ -167,7 +173,7 @@
 
     .blog-desciption {
       .blog-date {
-        font-family: "Graphik";
+        font-family: 'Graphik';
         font-style: normal;
         font-weight: 400;
         font-size: 7px;
@@ -183,7 +189,7 @@
 
         margin: 10px auto;
         .blog-heading {
-          font-family: "Poppins";
+          font-family: 'Poppins';
 
           font-style: normal;
           font-weight: 600;
@@ -192,7 +198,7 @@
           color: #1d2939;
         }
         .blog-description {
-          font-family: "Poppins";
+          font-family: 'Poppins';
 
           font-style: normal;
           font-weight: 400;
@@ -220,7 +226,7 @@
         flex-direction: row;
         justify-content: space-between;
         h1 {
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-style: normal;
           font-weight: 700;
           font-size: 17px;
@@ -247,7 +253,7 @@
         flex-direction: row;
         justify-content: space-between;
         h1 {
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-style: normal;
           font-weight: 700;
           font-size: 17px;
@@ -274,7 +280,7 @@
         flex-direction: row;
         justify-content: space-between;
         h1 {
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-style: normal;
           font-weight: 700;
           font-size: 17px;

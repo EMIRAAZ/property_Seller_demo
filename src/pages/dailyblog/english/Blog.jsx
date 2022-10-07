@@ -7,18 +7,20 @@ import { MoveToTop } from '../../../components/movetotop';
 import FooterNew from '../../../components/footerNew';
 import { useNavigate } from 'react-router-dom';
 
-export const BlogCard = ({ id, updatedAt, mainTitle, images, description }) => {
+export const BlogCard = ({ id, updatedAt, title, images, description }) => {
   let navigate = useNavigate();
 
   const navigateTo = () => {
     navigate(`/viewblog/${id}`);
   };
+  let date = new Date(updatedAt);
+
   return (
     <div className="blog-card-container" onClick={navigateTo}>
       <div className="blog-desciption">
-        <p className="blog-date">{updatedAt}</p>
         <div className="blog-content">
-          <h1 className="blog-heading">{mainTitle}</h1>
+          <h1 className="blog-heading">{title}</h1>
+          <p className="date">{date.toDateString()}</p>
           <p className="blog-description">{description}</p>
         </div>
       </div>

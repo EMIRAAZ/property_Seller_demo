@@ -194,6 +194,7 @@ const HomeFormCard = props => {
             { name: '5,000,000', value: 5000000 },
           ]}
         />
+
         <InputSelect
           customClass={`bed-home ${
             props.advancedSearch ? 'advanced-bed-home' : ''
@@ -232,6 +233,20 @@ const HomeFormCard = props => {
             { name: '6', value: 6 },
             { name: '7', value: 7 },
             { name: '8', value: 8 },
+          ]}
+        />
+        <InputSelect
+          customClass={`furnish-home ${
+            props.advancedSearch ? 'advanced-furnish-home' : ''
+          }`}
+          name="Furnish type"
+          bgColor="white"
+          border
+          onChange={value => onInputChange('amenities', value)}
+          value={props.homeSearch.amenities}
+          options={[
+            { name: 'Furnished', value: 'furnished' },
+            { name: 'Un Furnished', value: 'unfurnished' },
           ]}
         />
         <BasicButton

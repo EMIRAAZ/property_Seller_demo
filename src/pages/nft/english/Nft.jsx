@@ -35,11 +35,13 @@ const card1 = [
 ];
 
 const BlogCard = ({ date, heading, description, image }) => {
+  let newDate = new Date(date);
+
   return (
     <>
       <div className="nft-card-container">
         <div className="nft-desciption">
-          <p className="nft-date">{date}</p>
+          <p className="nft-date">{newDate.toDateString()}</p>
           <div className="nft-content">
             <h1 className="nft-heading">{heading}</h1>
             <p className="nft-description">{description}</p>
@@ -59,56 +61,21 @@ const Nft = props => {
     props.getByIdBlog(getID());
   }, []);
 
-  console.log(props);
-
   const getID = () => location.pathname.split('/').pop();
 
-  const renderCard = () =>
-    card1.map((item, i) => <BlogCard key={i} {...item} />);
+  let newDate = new Date(props.blog.createdAt);
+
   return (
     <div className="nft-main-container">
       <Header />
       <div className="nft-showcase">
-        <h1 className="nft-header">
-          {props.blog.title}
-        </h1>
-        <p className="nft-date">{props.blog.createdAt}</p>
+        <h1 className="nft-header">{props.blog.title}</h1>
+        <p className="date">{newDate.toDateString()}</p>
         <img className="nft-main-image" src={props.blog.images} alt="nft" />
         <div className="nft-content">
-          
-
-          <p>
-        {props.blog.description}
-          </p>
-        </div>
-        <h1 className="single-news-h1">
-          {props.blog.mainTitle}
-        </h1>
-        <div className="single-news-paragraph">
-          <p>
-            {props.blog.description}
-          </p>
-
+          <p>{props.blog.description}</p>
         </div>
       </div>
-      {/* {renderCard()} */}
-      {/* <div className="personal-newsletter">
-        <h2 className="letter-heading">Personally Newsletter</h2>
-        <p className="letter-content">
-          A bi-weekly newsletter of design inspiration, resources and anything
-          related to career development.
-        </p>
-        <input
-          className="letter-input"
-          type="text"
-          id="lname"
-          name="lname"
-          placeholder="EMAIL ADDRESS"
-        />
-        <br />
-        <input className="letter-button" type="submit" value="Subscribe" />
-      </div> */}
-      {/* <SocialPanel /> */}
       <MoveToTop />
       <FooterNew />
     </div>
