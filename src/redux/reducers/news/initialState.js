@@ -4,7 +4,6 @@ export const initialState = {
   news: [],
   newsValue: {
     title: '',
-    mainTitle: '',
     description: '',
     topics: [],
     images: [],
