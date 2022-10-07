@@ -58,6 +58,9 @@
     .bed-home {
       display: none;
     }
+    .furnish-home {
+      display: none;
+    }
 
     .home-search-btn {
       font-weight: 700;
@@ -87,15 +90,21 @@
       grid-column-end: 5;
       grid-row-start: 3;
     }
+    .advanced-furnish-home {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 4;
+      display: block;
+    }
     .advanced-price-from {
       grid-column-start: 1;
       grid-column-end: 3;
-      grid-row-start: 4;
+      grid-row-start: 5;
     }
     .advanced-price-two {
       grid-column-start: 3;
       grid-column-end: 5;
-      grid-row-start: 4;
+      grid-row-start: 5;
     }
 
     .advanced-home-search-btn {
@@ -106,7 +115,7 @@
       justify-content: center;
       grid-column-start: 1;
       grid-column-end: 5;
-      grid-row-start: 6;
+      grid-row-start: 7;
       background-color: #2f70ff;
       color: #ffffff;
       border: none;
@@ -115,13 +124,13 @@
       display: block;
       grid-column-start: 1;
       grid-column-end: 3;
-      grid-row-start: 5;
+      grid-row-start: 6;
     }
     .advanced-bed-home {
       display: block;
       grid-column-start: 3;
       grid-column-end: 5;
-      grid-row-start: 5;
+      grid-row-start: 6;
     }
 
     .advanced-search {
@@ -189,6 +198,9 @@
       .bed-home {
         display: none;
       }
+      .furnish-home {
+        display: none;
+      }
 
       .home-search-btn {
         font-weight: 700;
@@ -204,17 +216,17 @@
 
       .advanced-search-input {
         grid-column-start: 1;
-        grid-column-end: 4;
+        grid-column-end: 5;
         grid-row-start: 1;
       }
       .advanced-property {
-        grid-column-start: 4;
-        grid-column-end: 4;
+        grid-column-start: 5;
+        grid-column-end: 6;
         grid-row-start: 1;
       }
       .advanced-sale {
-        grid-column-start: 5;
-        grid-column-end: 5;
+        grid-column-start: 6;
+        grid-column-end: 6;
         grid-row-start: 1;
       }
       .advanced-price-from {
@@ -231,13 +243,19 @@
       .advanced-bath-home {
         display: block;
         grid-column-start: 3;
-        grid-column-end: 3;
+        grid-column-end: 4;
         grid-row-start: 2;
       }
       .advanced-bed-home {
         display: block;
         grid-column-start: 4;
         grid-column-end: 4;
+        grid-row-start: 2;
+      }
+      .advanced-furnish-home {
+        display: block;
+        grid-column-start: 5;
+        grid-column-end: 5;
         grid-row-start: 2;
       }
       .advanced-home-search-btn {
@@ -247,8 +265,8 @@
         align-items: center;
         justify-content: center;
         grid-row-start: 2;
-        grid-column-start: 5;
-        grid-column-end: 5;
+        grid-column-start: 6;
+        grid-column-end: 6;
       }
     }
   }
