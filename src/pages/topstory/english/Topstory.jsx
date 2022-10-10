@@ -1,7 +1,7 @@
 import Footer from '../../../components/footer';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../../components/header';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { MoveToTop } from '../../../components/movetotop';
 import './topstory.scss';
 import FooterNew from '../../../components/footerNew';
@@ -12,7 +12,10 @@ const Topstory = props => {
     props.getTopStoryTopics();
   }, []);
 
+  const [selected, setSelected] = useState('All');
+
   const onChipClick = topic => {
+    setSelected(topic);
     if (topic === 'All') {
       props.getTopStory();
     } else {
@@ -28,7 +31,7 @@ const Topstory = props => {
         <div className="categories">
           <div
             key={'fiunf83f838'}
-            className="item-div"
+            className={`item-div ${selected === 'All' ? 'topic-selected' : ''}`}
             onClick={() => onChipClick('All')}
           >
             <h1 className="item-name">{'All'}</h1>
@@ -36,7 +39,9 @@ const Topstory = props => {
           {props.newsTopics.map(item => (
             <div
               key={item.id}
-              className="item-div"
+              className={`item-div ${
+                selected === item.name ? 'topic-selected' : ''
+              }`}
               onClick={() => onChipClick(item.name)}
             >
               <h1 className="item-name">{item.name}</h1>
