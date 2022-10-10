@@ -11,14 +11,34 @@ const Topstory = props => {
     props.getTopStory();
     props.getTopStoryTopics();
   }, []);
+
+  const onChipClick = topic => {
+    if (topic === 'All') {
+      props.getTopStory();
+    } else {
+      let newTopic = topic.replace(/ /g, '%20');
+      props.getTopStory(`topic=${newTopic}`);
+    }
+  };
   return (
     <div className="top-stories-main-container">
       <Header />
       <div className="container">
         <h2 className="heading">Top News for you</h2>
         <div className="categories">
+          <div
+            key={'fiunf83f838'}
+            className="item-div"
+            onClick={() => onChipClick('All')}
+          >
+            <h1 className="item-name">{'All'}</h1>
+          </div>
           {props.newsTopics.map(item => (
-            <div key={item.id} className="item-div">
+            <div
+              key={item.id}
+              className="item-div"
+              onClick={() => onChipClick(item.name)}
+            >
               <h1 className="item-name">{item.name}</h1>
             </div>
           ))}
