@@ -43,6 +43,8 @@ const HomeFormCard = props => {
     return mlString;
   };
 
+  console.log(props.homeSearch.locationSearch.location);
+
   return (
     <div className="home-form-card">
       <div
