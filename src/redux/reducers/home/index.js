@@ -114,12 +114,13 @@ const addIfNecessary = (addTo, add) => {
 };
 
 const removeDuplicate = (array = []) => {
+  console.log(array);
   const newArray = [...array];
   const uniqueTitle = [];
   const uniqueArray = [];
   for (let i = 0; i < newArray.length; i++) {
-    if (!uniqueTitle.includes(newArray[i].placeAddress)) {
-      uniqueTitle.push(newArray[i].placeAddress);
+    if (!uniqueTitle.includes(newArray[i].city.toLowerCase())) {
+      uniqueTitle.push(newArray[i].city.toLowerCase());
       uniqueArray.push(newArray[i]);
     }
   }
