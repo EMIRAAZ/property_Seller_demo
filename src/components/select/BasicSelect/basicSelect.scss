@@ -12,7 +12,7 @@
     background-color: white;
     max-height: 200px;
     overflow-y: scroll !important;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch !important;
     p {
       font-family: 'Open Sans';
       font-weight: 400;
