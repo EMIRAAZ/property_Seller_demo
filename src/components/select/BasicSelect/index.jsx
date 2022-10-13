@@ -59,7 +59,7 @@ const BasicSelect = ({
       </div>
       <div
         style={{
-          WebkitOverflowScrolling: 'touch',
+          webkitOverflowScrolling: 'touch',
           overflowScrolling: 'scroll',
         }}
         className={`dropdown-content ${dropdownClass}`}
