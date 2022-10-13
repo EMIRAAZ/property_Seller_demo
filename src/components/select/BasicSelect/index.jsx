@@ -57,13 +57,7 @@ const BasicSelect = ({
           viewbox="0 0 15 10"
         />
       </div>
-      <div
-        style={{
-          webkitOverflowScrolling: 'touch',
-          overflowScrolling: 'scroll',
-        }}
-        className={`dropdown-content ${dropdownClass}`}
-      >
+      <div className={`dropdown-content ${dropdownClass}`}>
         {renderOptions()}
       </div>
     </div>

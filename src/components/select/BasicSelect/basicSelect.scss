@@ -11,8 +11,8 @@
     z-index: 2;
     background-color: white;
     max-height: 200px;
-    overflow-y: scroll;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     p {
       font-family: 'Open Sans';
       font-weight: 400;
