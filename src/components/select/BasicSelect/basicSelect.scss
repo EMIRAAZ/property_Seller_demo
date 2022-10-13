@@ -10,6 +10,8 @@
     position: relative;
     z-index: 999 !important;
     background-color: white;
+    max-height: 200px;
+    overflow-y: scroll;
     p {
       font-family: 'Open Sans';
       font-weight: 400;
