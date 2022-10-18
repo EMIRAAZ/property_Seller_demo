@@ -1,35 +1,36 @@
-import './luxuary.scss';
-import Header from '../../../components/header';
-import Property from '../../../components/property';
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import ViewAll from '../viewall';
-import { MoveToTop } from '../../../components/movetotop';
-import FooterNew from '../../../components/footerNew';
-import { Button } from '@mui/material';
+import "./luxuary.scss";
+import Header from "../../../components/header";
+import Property from "../../../components/property";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import ViewAll from "../viewall";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
+import { Button } from "@mui/material";
+import { Helmet } from "react-helmet";
 
-const Luxuary = props => {
+const Luxuary = (props) => {
   let location = useLocation();
-  const getPath = () => location.pathname.split('/').pop();
+  const getPath = () => location.pathname.split("/").pop();
   const [villa, setVilla] = useState(0);
   const [apartment, setApartment] = useState(0);
   const [penthouse, setPenthouse] = useState(0);
   const [townhouse, setTownhouse] = useState(0);
 
   useEffect(() => {
-    if (getPath() === 'luxury-property') {
-      props.getLuxuryVillaWeb('&limit=3');
-      props.getLuxuryAppartmentWeb('&limit=3');
-      props.getLuxuryPenthouseWeb('&limit=3');
-      props.getLuxuryTownhouseWeb('&limit=3');
-    } else if (getPath() === 'Villa') {
-      props.getLuxuryVillaWeb('&limit=3');
-    } else if (getPath() === 'Apartment') {
-      props.getLuxuryAppartmentWeb('&limit=3');
-    } else if (getPath() === 'Townhouse') {
-      props.getLuxuryTownhouseWeb('&limit=3');
-    } else if (getPath() === 'Penthouse') {
-      props.getLuxuryPenthouseWeb('&limit=3');
+    if (getPath() === "luxury-property") {
+      props.getLuxuryVillaWeb("&limit=3");
+      props.getLuxuryAppartmentWeb("&limit=3");
+      props.getLuxuryPenthouseWeb("&limit=3");
+      props.getLuxuryTownhouseWeb("&limit=3");
+    } else if (getPath() === "Villa") {
+      props.getLuxuryVillaWeb("&limit=3");
+    } else if (getPath() === "Apartment") {
+      props.getLuxuryAppartmentWeb("&limit=3");
+    } else if (getPath() === "Townhouse") {
+      props.getLuxuryTownhouseWeb("&limit=3");
+    } else if (getPath() === "Penthouse") {
+      props.getLuxuryPenthouseWeb("&limit=3");
     }
   }, [getPath()]);
 
@@ -43,7 +44,7 @@ const Luxuary = props => {
     props.penthouse.data.map((item, i) => <Property key={i} {...item} />);
 
   const getData = () => {
-    if (getPath() === 'luxury-property') {
+    if (getPath() === "luxury-property") {
       return (
         <>
           {props.villa.data.length ? (
@@ -124,7 +125,7 @@ const Luxuary = props => {
           )}
         </>
       );
-    } else if (getPath() === 'Villa') {
+    } else if (getPath() === "Villa") {
       return (
         <div className="lux-main">
           <div className="viewall">
@@ -142,7 +143,7 @@ const Luxuary = props => {
           </div>
         </div>
       );
-    } else if (getPath() === 'Apartment') {
+    } else if (getPath() === "Apartment") {
       return (
         <div className="lux-main">
           <div className="viewall">
@@ -160,7 +161,7 @@ const Luxuary = props => {
           </div>
         </div>
       );
-    } else if (getPath() === 'Townhouse') {
+    } else if (getPath() === "Townhouse") {
       return (
         <div className="lux-main">
           <div className="viewall">
@@ -178,7 +179,7 @@ const Luxuary = props => {
           </div>
         </div>
       );
-    } else if (getPath() === 'Penthouse') {
+    } else if (getPath() === "Penthouse") {
       return (
         <div className="lux-main">
           <div className="viewall">
@@ -199,8 +200,70 @@ const Luxuary = props => {
     }
   };
 
+  const metaWithPath = () => {
+    if (getPath() === "Penthouse") {
+      return (
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>
+            Penthouse for sale in Dubai | Luxury Penthouse for sale in Dubai |
+            Luxury Penthouse for rent in Dubai, UAE - UAE Assistant
+          </title>
+          <meta name="keywords" content="Penthouse for sale in Dubai" />
+          <meta
+            name="description"
+            content="Penthouse for sale in Dubai from UAE Assistant, a trusted real estate agent in Dubai, UAE.
+            Browse and choose your dream penthouse from UAE Assistant."
+          />
+        </Helmet>
+      );
+    } else if (getPath() === "Apartment") {
+      return (
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>
+            Apartment for Sale in Dubai | Apartment for Sale in
+            Abudhabi,Downtown Dubai - UAE Assistant
+          </title>
+          <meta
+            name="keywords"
+            content="Apartment for Sale in Dubai, Apartment for Sale in Abudhabi, Apartment for sale in Downtown Dubai"
+          />
+          <meta
+            name="description"
+            content="Browse through the list of apartment for sale in Dubai, Abudhabi and Downtown Dubai from
+            UAE Assistant. Get in touch with us now for more details!
+            "
+          />
+        </Helmet>
+      );
+    } else if (getPath() === "Villa") {
+      return (
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>
+            Villas for sale in Dubai | Villas in Palm Jumeirah Dubai | Luxury
+            Villas for Rent in Dubai- UAE Assistant
+          </title>
+          <meta
+            name="keywords"
+            content="Villas for sale in Dubai, Villas in Palm Jumeirah Dubai"
+          />
+          <meta
+            name="description"
+            content="Find the best villas in Dubai! UAE Assistant offers a wide range of luxury villas for sale in Palm
+          Jumeirah, Dubai and other areas of UAE. Contact for more details.
+          
+            "
+          />
+        </Helmet>
+      );
+    }
+  };
+
   return (
     <div className="luxuary-container">
+      {metaWithPath()}
       <Header customClass="luxury-header-class" />
       {getData()}
       {/* {props.villa.data.length ? (
