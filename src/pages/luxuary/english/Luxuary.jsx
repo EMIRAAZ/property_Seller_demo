@@ -210,11 +210,21 @@ const Luxuary = (props) => {
             Luxury Penthouse for rent in Dubai, UAE - UAE Assistant
           </title>
           <meta name="keywords" content="Penthouse for sale in Dubai" />
-          <meta
-            name="description"
-            content="Penthouse for sale in Dubai from UAE Assistant, a trusted real estate agent in Dubai, UAE.
-            Browse and choose your dream penthouse from UAE Assistant."
-          />
+          <meta property="og:title" content="Penthouse for sale in Dubai | Luxury Penthouse for sale in Dubai | Luxury Penthouse for rent in Dubai, UAE - UAE Assistant" />
+    <meta name="description" content="Penthouse for sale in Dubai from UAE Assistant, a trusted real estate agent in Dubai, UAE. Browse and choose your dream penthouse from UAE Assistant.  " />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="http://www.uaeassistant.com/luxury-property/Penthouse"/>
+ <meta property="og:title" content="Penthouse for sale in Dubai | Luxury Penthouse for sale in Dubai | Luxury Penthouse for rent in Dubai, UAE - UAE Assistant" />
+ <meta property="og: description" content="Penthouse for sale in Dubai from UAE Assistant, a trusted real estate agent in Dubai, UAE. Browse and choose your dream penthouse from UAE Assistant." />
+  <meta property="og:url" content="http://www.uaeassistant.com/luxury-property/Penthouse" />
+ <meta property="og:image" content="" />
+ <meta property="og:image:width" content="600" />
+ <meta property="og:image:height" content="315" />
+ <meta name="twitter:card" content="summary" />
+ <meta name="twitter: description" content="Penthouse for sale in Dubai from UAE Assistant, a trusted real estate agent in Dubai, UAE. Browse and choose your dream penthouse from UAE Assistant." />
+ <meta name="twitter:image" content=""/>
+<meta name="twitter:title" content="Penthouse for sale in Dubai | Luxury Penthouse for sale in Dubai | Luxury Penthouse for rent in Dubai, UAE - UAE Assistant" />
+
         </Helmet>
       );
     } else if (getPath() === "Apartment") {
@@ -224,17 +234,25 @@ const Luxuary = (props) => {
           <title>
             Apartment for Sale in Dubai | Apartment for Sale in
             Abudhabi,Downtown Dubai - UAE Assistant
-          </title>
+          </title>  
           <meta
             name="keywords"
             content="Apartment for Sale in Dubai, Apartment for Sale in Abudhabi, Apartment for sale in Downtown Dubai"
           />
-          <meta
-            name="description"
-            content="Browse through the list of apartment for sale in Dubai, Abudhabi and Downtown Dubai from
-            UAE Assistant. Get in touch with us now for more details!
-            "
-          />
+            <meta property="og:title" content="Apartment for Sale in Dubai | Apartment for Sale in Abudhabi,Downtown Dubai - UAE Assistant" />
+    <meta name="description" content="Browse through the list of apartment for sale in Dubai, Abudhabi and Downtown Dubai from UAE Assistant. Get in touch with us now for more details!" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="http://www.uaeassistant.com/luxury-property/Apartment"/>
+ <meta property="og:title" content="Apartment for Sale in Dubai | Apartment for Sale in Abudhabi,Downtown Dubai - UAE Assistant" />
+ <meta property="og: description" content="Browse through the list of apartment for sale in Dubai, Abudhabi and Downtown Dubai from UAE Assistant. Get in touch with us now for more details!" />
+  <meta property="og:url" content="http://www.uaeassistant.com/luxury-property/Apartment" />
+ <meta property="og:image" content="" />
+ <meta property="og:image:width" content="600" />
+ <meta property="og:image:height" content="315" />
+ <meta name="twitter:card" content="summary" />
+ <meta name="twitter: description" content="Browse through the list of apartment for sale in Dubai, Abudhabi and Downtown Dubai from UAE Assistant. Get in touch with us now for more details!" />
+ <meta name="twitter:image" content=""/>
+<meta name="twitter:title" content="Apartment for Sale in Dubai | Apartment for Sale in Abudhabi,Downtown Dubai - UAE Assistant" />
         </Helmet>
       );
     } else if (getPath() === "Villa") {
@@ -249,13 +267,20 @@ const Luxuary = (props) => {
             name="keywords"
             content="Villas for sale in Dubai, Villas in Palm Jumeirah Dubai"
           />
-          <meta
-            name="description"
-            content="Find the best villas in Dubai! UAE Assistant offers a wide range of luxury villas for sale in Palm
-          Jumeirah, Dubai and other areas of UAE. Contact for more details.
-          
-            "
-          />
+             <meta property="og:title" content="Villas for sale in Dubai | Villas in Palm Jumeirah Dubai | Luxury Villas for Rent in Dubai- UAE Assistant" />
+    <meta name="description" content="Find the best villas in Dubai! UAE Assistant offers a wide range of luxury villas for sale in Palm Jumeirah, Dubai and other areas of UAE. Contact for more details." />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="http://www.uaeassistant.com/luxury-property/Villa"/>
+ <meta property="og:title" content="Villas for sale in Dubai | Villas in Palm Jumeirah Dubai | Luxury Villas for Rent in Dubai- UAE Assistant" />
+ <meta property="og: description" content="Find the best villas in Dubai! UAE Assistant offers a wide range of luxury villas for sale in Palm Jumeirah, Dubai and other areas of UAE. Contact for more details." />
+  <meta property="og:url" content="http://www.uaeassistant.com/luxury-property/Villa" />
+ <meta property="og:image" content="" />
+ <meta property="og:image:width" content="600" />
+ <meta property="og:image:height" content="315" />
+ <meta name="twitter:card" content="summary" />
+ <meta name="twitter: description" content="Find the best villas in Dubai! UAE Assistant offers a wide range of luxury villas for sale in Palm Jumeirah, Dubai and other areas of UAE. Contact for more details." />
+ <meta name="twitter:image" content=""/>
+<meta name="twitter:title" content="Villas for sale in Dubai | Villas in Palm Jumeirah Dubai | Luxury Villas for Rent in Dubai- UAE Assistant" />
         </Helmet>
       );
     }

@@ -26,11 +26,40 @@ const Buy = (props) => {
           content="Properties for sale in UAE, Luxury Properties for Sale in Dubai, Properties for sale in UAE, Properties for sale in Dubai"
         />
         <meta
+          property="og:title"
+          content="Luxury Properties for Sale in Dubai, UAE | Best Luxury Properties for Sale in Dubai | Buy or Sale luxury properties in Dubai, UAE - UAE Assistant"
+        />
+        <meta
           name="description"
-          content="Are you searching the luxury properties for sale in Dubai, UAE? Buy or sale luxury properties in
-          Dubai, UAE with the help of the leading real estate agent at best prices. Browse property listings
-          and start your dream home search.
-          "
+          content="Are you searching the luxury properties for sale in Dubai, UAE? Buy or sale luxury properties in Dubai, UAE with the help of the leading real estate agent at best prices. Browse property listings and start your dream home search."
+        />
+        <meta
+          name="robots"
+          content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <link rel="canonical" href="http://www.uaeassistant.com/buy" />
+        <meta
+          property="og:title"
+          content="Luxury Properties for Sale in Dubai, UAE | Best Luxury Properties for Sale in Dubai | Buy or Sale luxury properties in Dubai, UAE - UAE Assistant"
+        />
+
+        <meta
+          property="og: description"
+          content="Are you searching the luxury properties for sale in Dubai, UAE? Buy or sale luxury properties in Dubai, UAE with the help of the leading real estate agent at best prices. Browse property listings and start your dream home search."
+        />
+        <meta property="og:url" content="http://www.uaeassistant.com/buy" />
+        <meta property="og:image" content="" />
+        <meta property="og:image:width" content="600" />
+        <meta property="og:image:height" content="315" />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter: description"
+          content="Are you searching the luxury properties for sale in Dubai, UAE? Buy or sale luxury properties in Dubai, UAE with the help of the leading real estate agent at best prices. Browse property listings and start your dream home search."
+        />
+        <meta name="twitter:image" content="" />
+        <meta
+          name="twitter:title"
+          content="Luxury Properties for Sale in Dubai, UAE | Best Luxury Properties for Sale in Dubai | Buy or Sale luxury properties in Dubai, UAE - UAE Assistant"
         />
       </Helmet>
       <Header customClass="buy-header-class" />

@@ -36,10 +36,45 @@ const Home = (props) => {
           content="Freehold Properties in Dubai, Residential Properties in Dubai, Commercial properties in UAE"
         />
         <meta
+          property="og:title"
+          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - UAE Assistant "
+        />
+
+        <meta
           name="description"
-          content="Looking for Freehold,Commercial and Residential Properties in Dubai, UAE. We are an
-          exclusive real estate agent in Dubai, UAE specialized in the best real estate deals for sale and
-          rent. Contact us for more details"
+          content="Looking for Freehold,Commercial and Residential Properties in Dubai, UAE. We are an exclusive real estate agent in Dubai, UAE specialized in the best real estate deals for sale and rent. Contact us for more details."
+        />
+        <meta
+          name="robots"
+          content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+
+        <link rel="canonical" href="http://www.uaeassistant.com" />
+
+        <meta
+          property="og:title"
+          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - UAE Assistant"
+        />
+
+        <meta
+          property="og: description"
+          content="Looking for Freehold,Commercial and Residential Properties in Dubai, UAE. We are an exclusive real estate agent in Dubai, UAE specialized in the best real estate deals for sale and rent. Contact us for more details."
+        />
+
+        <meta property="og:url" content="http://www.uaeassistant.com" />
+        <meta property="og:image" content="" />
+        <meta property="og:image:width" content="600" />
+        <meta property="og:image:height" content="315" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter: description"
+          content="Looking for Freehold,Commercial and Residential Properties in Dubai, UAE. We are an exclusive real estate agent in Dubai, UAE specialized in the best real estate deals for sale and rent. Contact us for more details."
+        />
+        <meta name="twitter:image" content="" />
+        <meta
+          name="twitter:title"
+          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - UAE Assistant"
         />
       </Helmet>
 
