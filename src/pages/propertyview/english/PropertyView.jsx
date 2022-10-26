@@ -22,8 +22,6 @@ import SimilarProperty from '../../../components/similarproperty';
 const PropertyView = props => {
   let location = useLocation();
 
-  console.log(props);
-
   const { property } = props;
 
   useEffect(() => {
@@ -33,8 +31,6 @@ const PropertyView = props => {
   const getID = () => location.pathname.split('/').pop();
   const [content, setContent] = useState(true);
   const [read, setRead] = useState(false);
-
-  console.log('MAP', props);
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
