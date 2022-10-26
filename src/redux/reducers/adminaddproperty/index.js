@@ -26,6 +26,7 @@ import {
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
+  console.log(state);
   switch (action.type) {
     case ADMIN_PROPERTY_INPUT_CHANGE:
       if (action.payload.key === 'agentId') {

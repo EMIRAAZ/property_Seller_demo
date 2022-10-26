@@ -143,9 +143,9 @@
       font-size: 10px;
       font-weight: 400;
       color: #333333;
-      margin: 10px 10px 10px 15px;
+      margin: 10px 10px 0px 15px;
       width: 90%;
-      height: 90px;
+      height: 60px;
     }
 
     .property-line {
@@ -239,6 +239,8 @@
         line-height: 24px;
         margin-top: 5px;
         margin-right: 20px;
+        margin-bottom: 10px;
+        height: 90px;
       }
 
       .property-line {

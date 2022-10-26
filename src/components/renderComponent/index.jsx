@@ -11,7 +11,7 @@ const RenderComponent = ({
   limit = 6,
   offset = 0,
   iQuery = `limit=${limit}&offset=${offset}`,
-  query = `limit=${limit}&offset=${offset}`,
+  query = ``,
   propertyCallApi = () => {},
   data = [],
   count = 0,
