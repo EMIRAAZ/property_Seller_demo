@@ -3,7 +3,7 @@ import Table from '../../../components/table';
 import AdminHeader from '../../../components/adminheader';
 import PropertyHeader from '../propertyheader';
 import { tableHeader } from './table';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Property = props => {
@@ -31,9 +31,9 @@ const Property = props => {
           props.getAdminProperty();
           props.deleteAdminProperty(id, props.getAdminProperty);
         }}
-        onChangePage={page =>
-          props.getAdminProperty(`?offset=${page * 10 + 1}`)
-        }
+        onChangePage={page => {
+          props.getAdminProperty(`?offset=${page * 10}&limit=10`);
+        }}
         count={props.adminProperty.count || 0}
       />
     </div>
