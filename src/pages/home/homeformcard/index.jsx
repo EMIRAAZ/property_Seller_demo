@@ -66,7 +66,7 @@ const HomeFormCard = props => {
         <BasicSelect
           bgColor="white"
           customClass="sale"
-          name="For"
+          name="Purpose"
           border
           onChange={value => onInputChange('sale', value)}
           options={[
