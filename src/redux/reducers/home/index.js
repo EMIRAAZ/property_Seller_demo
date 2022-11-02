@@ -4,10 +4,10 @@ import {
   CLEAR_HOME_PROPERTY,
   GET_HOME_PROPERTY_ERROR,
   GET_HOME_PROPERTY_STARTED,
-  HOME_SEARCH_INPUT_CHANGE,
   GET_HOME_LOCATION_SEARCH,
   GET_HOME_LOCATION_SEARCH_ERROR,
   GET_HOME_LOCATION_SEARCH_STARTED,
+  HOME_SEARCH_INPUT_CHANGE_ITEM,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -30,9 +30,6 @@ const reducer = (state = initialState, action) => {
           ...state.homeProperty,
           error: false,
           loading: false,
-          // property: [
-          //   ...addIfNecessary(state.homeProperty.property, action.payload.rows),
-          // ],
           property: action.payload.rows,
           count: action.payload.count,
         },
@@ -44,7 +41,6 @@ const reducer = (state = initialState, action) => {
           ...state.homeProperty,
           error: false,
           loading: true,
-          // property: [],
           params: action.payload,
         },
       };
@@ -58,7 +54,7 @@ const reducer = (state = initialState, action) => {
           loading: false,
         },
       };
-    case HOME_SEARCH_INPUT_CHANGE:
+    case HOME_SEARCH_INPUT_CHANGE_ITEM:
       return {
         ...state,
         homeSearch: {
@@ -75,7 +71,9 @@ const reducer = (state = initialState, action) => {
             ...state.homeSearch.locationSearch,
             error: false,
             loading: false,
-            location: action.payload && removeDuplicate(action.payload[0]),
+            location:
+              action.payload[0] &&
+              drawLocationFromApi(action.payload[0], action.keyword),
           },
         },
       };
@@ -108,23 +106,33 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const addIfNecessary = (addTo, add) => {
-  let mainArray = [...addTo, ...add];
-  return mainArray;
-};
-
-const removeDuplicate = (array = []) => {
-  console.log(array);
+const drawLocationFromApi = (array = [], keyword) => {
   const newArray = [...array];
-  const uniqueTitle = [];
-  const uniqueArray = [];
-  for (let i = 0; i < newArray.length; i++) {
-    if (!uniqueTitle.includes(newArray[i].city.toLowerCase())) {
-      uniqueTitle.push(newArray[i].city.toLowerCase());
-      uniqueArray.push(newArray[i]);
+  const locationArray = [];
+  for (var i = 0; i < newArray.length; i++) {
+    if (
+      newArray[i].placeAddress &&
+      newArray[i].placeAddress.toLowerCase().includes(keyword.toLowerCase()) &&
+      !locationArray.includes(newArray[i].placeAddress)
+    ) {
+      locationArray.push(newArray[i].placeAddress);
+    }
+    if (
+      newArray[i].city &&
+      newArray[i].city.toLowerCase().includes(keyword.toLowerCase()) &&
+      !locationArray.includes(newArray[i].city)
+    ) {
+      locationArray.push(newArray[i].city);
+    }
+    if (
+      newArray[i].building &&
+      newArray[i].building.toLowerCase().includes(keyword.toLowerCase()) &&
+      !locationArray.includes(newArray[i].building)
+    ) {
+      locationArray.push(newArray[i].building);
     }
   }
-  return uniqueArray;
+  return locationArray;
 };
 
 export default reducer;

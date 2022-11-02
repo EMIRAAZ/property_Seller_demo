@@ -16,16 +16,16 @@ const News = props => {
     props.getSingleNews(getID());
   }, []);
   let date = new Date(props.news[0] && props.news[0].updatedAt);
-  console.log(date)
 
   return (
     <div className="news-main-container">
       <Header />
 
       <div className="container">
-
         <h1 className="heading">{props.news[0] && props.news[0].title}</h1>
-        <p className="date">{date.toDateString()!=="Invalid Date"? date.toDateString():''}</p>
+        <p className="date">
+          {date.toDateString() !== 'Invalid Date' ? date.toDateString() : ''}
+        </p>
         <div className="category">
           {props.news[0] &&
             props.news[0].topics.map((item, i) => (

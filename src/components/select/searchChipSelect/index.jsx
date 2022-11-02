@@ -8,13 +8,13 @@ const SearchChipSelect = ({
   options,
   customClass = '',
   onChange,
-  value,
+  value = [],
   leftIcon,
   bgColor = '#f3f3fa',
   border = false,
   onArrayChange = () => {},
 }) => {
-  const [selectName, setSelectName] = useState([]);
+  const [selectName, setSelectName] = useState(value.length ? value : []);
   const [selectObj, setSelectObj] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [dropdownClass, setdropdownClass] = useState('hide');
@@ -132,6 +132,7 @@ const SearchChipSelect = ({
               width: '14',
               height: '20',
               viewbox: '0 0 19 20',
+              fill: '#2e2e2e',
             })
           : null}
         <div className="input-visual">{renderChip()}</div>

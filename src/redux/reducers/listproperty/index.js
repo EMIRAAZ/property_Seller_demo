@@ -98,7 +98,9 @@ const reducer = (state = initialState, action) => {
             ...state.listSearch.locationSearch,
             error: false,
             loading: false,
-            location: action.payload && removeDuplicate(action.payload[0]),
+            location:
+              action.payload[0] &&
+              drawLocationFromApi(action.payload[0], action.keyword),
           },
         },
       };
@@ -220,17 +222,33 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
-const removeDuplicate = (array = []) => {
+const drawLocationFromApi = (array = [], keyword) => {
   const newArray = [...array];
-  const uniqueTitle = [];
-  const uniqueArray = [];
-  for (let i = 0; i < newArray.length; i++) {
-    if (!uniqueTitle.includes(newArray[i].placeAddress)) {
-      uniqueTitle.push(newArray[i].placeAddress);
-      uniqueArray.push(newArray[i]);
+  const locationArray = [];
+  for (var i = 0; i < newArray.length; i++) {
+    if (
+      newArray[i].placeAddress &&
+      newArray[i].placeAddress.toLowerCase().includes(keyword.toLowerCase()) &&
+      !locationArray.includes(newArray[i].placeAddress)
+    ) {
+      locationArray.push(newArray[i].placeAddress);
+    }
+    if (
+      newArray[i].city &&
+      newArray[i].city.toLowerCase().includes(keyword.toLowerCase()) &&
+      !locationArray.includes(newArray[i].city)
+    ) {
+      locationArray.push(newArray[i].city);
+    }
+    if (
+      newArray[i].building &&
+      newArray[i].building.toLowerCase().includes(keyword.toLowerCase()) &&
+      !locationArray.includes(newArray[i].building)
+    ) {
+      locationArray.push(newArray[i].building);
     }
   }
-  return uniqueArray;
+  return locationArray;
 };
 
 export default reducer;
