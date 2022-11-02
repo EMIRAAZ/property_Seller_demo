@@ -4,10 +4,10 @@ import {
   CLEAR_HOME_PROPERTY,
   GET_HOME_PROPERTY_ERROR,
   GET_HOME_PROPERTY_STARTED,
-  HOME_SEARCH_INPUT_CHANGE,
   GET_HOME_LOCATION_SEARCH,
   GET_HOME_LOCATION_SEARCH_ERROR,
   GET_HOME_LOCATION_SEARCH_STARTED,
+  HOME_SEARCH_INPUT_CHANGE_ITEM,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -30,9 +30,6 @@ const reducer = (state = initialState, action) => {
           ...state.homeProperty,
           error: false,
           loading: false,
-          // property: [
-          //   ...addIfNecessary(state.homeProperty.property, action.payload.rows),
-          // ],
           property: action.payload.rows,
           count: action.payload.count,
         },
@@ -44,7 +41,6 @@ const reducer = (state = initialState, action) => {
           ...state.homeProperty,
           error: false,
           loading: true,
-          // property: [],
           params: action.payload,
         },
       };
@@ -58,7 +54,7 @@ const reducer = (state = initialState, action) => {
           loading: false,
         },
       };
-    case HOME_SEARCH_INPUT_CHANGE:
+    case HOME_SEARCH_INPUT_CHANGE_ITEM:
       return {
         ...state,
         homeSearch: {
@@ -67,11 +63,6 @@ const reducer = (state = initialState, action) => {
         },
       };
     case GET_HOME_LOCATION_SEARCH:
-      // console.log(
-      //   action.payload[0] &&
-      //     drawLocationFromApi(action.payload[0], action.keyword)
-      // );
-
       return {
         ...state,
         homeSearch: {
@@ -142,19 +133,6 @@ const drawLocationFromApi = (array = [], keyword) => {
     }
   }
   return locationArray;
-};
-
-const removeDuplicate = (array = []) => {
-  const newArray = [...array];
-  const uniqueTitle = [];
-  const uniqueArray = [];
-  for (let i = 0; i < newArray.length; i++) {
-    if (!uniqueTitle.includes(newArray[i].city.toLowerCase())) {
-      uniqueTitle.push(newArray[i].city.toLowerCase());
-      uniqueArray.push(newArray[i]);
-    }
-  }
-  return uniqueArray;
 };
 
 export default reducer;

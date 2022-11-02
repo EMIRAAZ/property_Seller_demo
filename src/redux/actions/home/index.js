@@ -3,7 +3,7 @@ import {
   GET_HOME_PROPERTY,
   GET_HOME_PROPERTY_ERROR,
   GET_HOME_PROPERTY_STARTED,
-  HOME_SEARCH_INPUT_CHANGE,
+  HOME_SEARCH_INPUT_CHANGE_ITEM,
   GET_HOME_LOCATION_SEARCH,
   GET_HOME_LOCATION_SEARCH_ERROR,
   GET_HOME_LOCATION_SEARCH_STARTED,
@@ -52,7 +52,7 @@ export const getHomeProperty =
 
 export const onHomeSearchInputChange = payload => {
   return {
-    type: HOME_SEARCH_INPUT_CHANGE,
+    type: HOME_SEARCH_INPUT_CHANGE_ITEM,
     payload: payload,
   };
 };

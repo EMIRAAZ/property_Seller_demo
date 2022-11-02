@@ -49,7 +49,7 @@ export const makeUrlParam = paramObject => {
 export const makeParams = paramObject => {
   let query = '';
   for (const key in paramObject) {
-    if (paramObject.hasOwnProperty(key)) {
+    if (paramObject.hasOwnProperty(key) && paramObject[key]) {
       if (Array.isArray(paramObject[key])) {
         for (let i = 0; i < paramObject[key].length; i++) {
           query += `&${key}=${paramObject[key][i]}`;

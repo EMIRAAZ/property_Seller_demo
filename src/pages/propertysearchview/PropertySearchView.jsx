@@ -4,12 +4,13 @@ import Header from '../../components/header';
 import ListHeading from '../../components/ListHeading';
 import QueryCard from '../../components/querycard';
 import RenderComponent from '../../components/renderComponent';
-import Footer from '../../components/footer';
 import FooterNew from '../../components/footerNew';
 import { MoveToTop } from '../../components/movetotop';
 
 const PropertySearchView = props => {
   const search = useLocation().search;
+  console.log(props.homeSearch);
+
   return (
     <div className="list-property-api">
       <Header />

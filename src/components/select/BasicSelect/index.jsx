@@ -9,8 +9,18 @@ const BasicSelect = ({
   onChange,
   bgColor = '#f3f3fa',
   border = false,
+  value = '',
 }) => {
-  const [selectName, setSelectName] = useState(name);
+  const renderValue = () => {
+    if (value) {
+      const currentOption = options.filter(option => option.value === value);
+      if (currentOption.length) {
+        return currentOption[0].name;
+      }
+    }
+    return '';
+  };
+  const [selectName, setSelectName] = useState(value ? renderValue() : name);
   const [dropdownClass, setdropdownClass] = useState('hide');
 
   const onMouseEnter = () => setdropdownClass('show');
@@ -35,6 +45,7 @@ const BasicSelect = ({
         {option.name}
       </p>
     ));
+
   return (
     <div
       className={`basic-select ${customClass}`}

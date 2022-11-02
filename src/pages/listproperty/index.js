@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
   getCatFeatured,
   getRtmin,
-  onChangeListPropParams,
+  onChangePropsList,
   getListpropLocationSearch,
   getPropWithNeighSale,
   getVP,
@@ -28,7 +28,7 @@ const mapDispatchToProps = dispatch => {
     getVP: params => dispatch(getVP(params)),
     getPropWithNeighSale: param => dispatch(getPropWithNeighSale(param)),
     getRtmin: params => dispatch(getRtmin(params)),
-    onChangeListPropParams: input => dispatch(onChangeListPropParams(input)),
+    inputChange: input => dispatch(onChangePropsList(input)),
     getListpropLocationSearch: location =>
       dispatch(getListpropLocationSearch(location)),
   };

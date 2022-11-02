@@ -5,14 +5,13 @@ import SearchChipSelect from '../select/searchChipSelect';
 import LocationIcon from '../svg/location';
 import BasicButton from '../button/BasicButton';
 import SearchIcon from '../svg/search';
-import { makeUrlParam } from '../../utils';
+import { makeParams } from '../../utils';
 
 const QueryCard = ({
   onInputChange,
   onSearchLocation,
   cardInput,
   onSearch,
-  isSale = true,
 }) => {
   const onChange = (key, value) => {
     if (
@@ -37,26 +36,29 @@ const QueryCard = ({
     const newListSearch = { ...cardInput };
     delete newListSearch.locationSearch;
     delete newListSearch.location;
+    newListSearch.location = newListSearch.searchArray;
     delete newListSearch.searchArray;
-
-    return `&${makeUrlParam({
-      ...newListSearch,
-    })}${makeMultipleLocString()}`;
+    return `${makeParams(newListSearch)}`;
   };
-
-  const makeMultipleLocString = () => {
-    const newSearchArray = [...cardInput.searchArray];
-    let mlString = '';
-    for (let i = 0; i < newSearchArray.length; i++) {
-      let currentObject = newSearchArray[i];
-      mlString += `city=${currentObject.city}`;
-    }
-    return mlString;
-  };
-
   return (
     <div className="query-card-component">
       <div className="container">
+        <BasicSelect
+          bgColor="white"
+          border
+          customClass="emirate"
+          name="Emirate"
+          onChange={value => onChange('emirate', value)}
+          value={cardInput.emirate}
+          options={[
+            { name: 'Abu Dhabi', value: 'Abu Dhabi' },
+            { name: 'Dubai', value: 'Dubai' },
+            { name: 'Sharjah', value: 'Sharjah' },
+            { name: 'Ajman', value: 'Ajman' },
+            { name: 'Umm Al-Quwain', value: 'Umm Al-Quwain' },
+            { name: 'Fujairah', value: 'Fujairah' },
+          ]}
+        />
         <SearchChipSelect
           bgColor="white"
           border
@@ -67,24 +69,30 @@ const QueryCard = ({
           leftIcon={LocationIcon}
           options={cardInput.locationSearch.location.map(location => {
             return {
-              // name: `${location.placeAddress} ${location.building} ${location.city}`,
-              name: `${location.city}${
-                location.emirate ? `-${location.emirate}` : ''
-              } `,
-              value: {
-                // placeAddress: location.placeAddress,
-                // building: location.building,
-                city: location.city,
-              },
+              name: location,
+              value: location,
             };
           })}
         />
         <BasicSelect
           bgColor="white"
+          customClass="sale"
+          name="Purpose"
           border
-          customClass={`property ${isSale ? '' : 'no-sale'}`}
+          value={cardInput.sale}
+          onChange={value => onChange('sale', value)}
+          options={[
+            { name: 'Buy', value: 'buy' },
+            { name: 'Rent', value: 'rent' },
+          ]}
+        />
+        <BasicSelect
+          bgColor="white"
+          border
+          customClass="property"
           name="Property Type"
           onChange={value => onChange('propertyType', value)}
+          value={cardInput.propertyType}
           options={[
             { name: 'Apartments', value: 'apartment' },
             { name: 'Villas', value: 'villas' },
@@ -98,20 +106,19 @@ const QueryCard = ({
             { name: 'Full Floor', value: 'fullfloor' },
           ]}
         />
-        {isSale ? (
-          <BasicSelect
-            bgColor="white"
-            customClass="sale"
-            name="Purpose"
-            border
-            onChange={value => onChange('sale', value)}
-            options={[
-              { name: 'Buy', value: 'buy' },
-              { name: 'Rent', value: 'rent' },
-            ]}
-          />
-        ) : null}
-        <InputSelect
+        <BasicSelect
+          customClass="furnish-q-card"
+          name="Furnish type"
+          bgColor="white"
+          border
+          onChange={value => onChange('amenities', value)}
+          value={cardInput.amenities}
+          options={[
+            { name: 'Furnished', value: 'furnished' },
+            { name: 'Un Furnished', value: 'unfurnished' },
+          ]}
+        />
+        <BasicSelect
           customClass="price-from-list"
           bgColor="white"
           border
@@ -151,7 +158,7 @@ const QueryCard = ({
             { name: '5,000,000', value: 5000000 },
           ]}
         />
-        <InputSelect
+        <BasicSelect
           customClass="price-two-list"
           name="Price To"
           bgColor="white"
@@ -191,7 +198,7 @@ const QueryCard = ({
             { name: '5,000,000', value: 5000000 },
           ]}
         />
-        <InputSelect
+        <BasicSelect
           customClass="bed-list"
           name="Beds"
           bgColor="white"
@@ -209,7 +216,7 @@ const QueryCard = ({
             { name: '8', value: 8 },
           ]}
         />
-        <InputSelect
+        <BasicSelect
           customClass="bath-list"
           name="Bathrooms"
           bgColor="white"
@@ -225,18 +232,6 @@ const QueryCard = ({
             { name: '6', value: 6 },
             { name: '7', value: 7 },
             { name: '8', value: 8 },
-          ]}
-        />
-        <InputSelect
-          customClass="furnish-q-card"
-          name="Furnish type"
-          bgColor="white"
-          border
-          onChange={value => onChange('amenities', value)}
-          value={cardInput.amenities}
-          options={[
-            { name: 'Furnished', value: 'furnished' },
-            { name: 'Un Furnished', value: 'unfurnished' },
           ]}
         />
         <BasicButton
