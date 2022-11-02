@@ -30,8 +30,6 @@ const HomeFormCard = props => {
     return `${makeParams(newListSearch)}`;
   };
 
-  console.log(props.homeSearch);
-
   return (
     <div className="home-form-card">
       <div className="home-formcard">

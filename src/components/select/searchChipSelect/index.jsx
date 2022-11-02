@@ -19,8 +19,6 @@ const SearchChipSelect = ({
   const [inputValue, setInputValue] = useState('');
   const [dropdownClass, setdropdownClass] = useState('hide');
 
-  console.log(selectName);
-
   const onMouseEnter = () => setdropdownClass('show');
   const onMouseLeave = () => setdropdownClass('hide');
 

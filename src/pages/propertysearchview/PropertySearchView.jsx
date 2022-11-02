@@ -9,7 +9,6 @@ import { MoveToTop } from '../../components/movetotop';
 
 const PropertySearchView = props => {
   const search = useLocation().search;
-  console.log(props.homeSearch);
 
   return (
     <div className="list-property-api">
