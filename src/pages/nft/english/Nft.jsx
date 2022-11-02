@@ -70,7 +70,7 @@ const Nft = props => {
       <Header />
       <div className="nft-showcase">
         <h1 className="nft-header">{props.blog.title}</h1>
-        <p className="date">{newDate.toDateString()}</p>
+        <p className="date">{ newDate.toDateString()}</p>
         <img className="nft-main-image" src={props.blog.images} alt="nft" />
         <div className="nft-content">
           <p>{props.blog.description}</p>
