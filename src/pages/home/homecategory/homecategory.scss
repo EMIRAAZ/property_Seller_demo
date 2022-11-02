@@ -1,10 +1,10 @@
 .ad-s-on {
-  transition: 1s !important;
+  // transition: 1s !important;
   top: 700px !important;
 }
 
 .home-category-frame {
-  transition: 1s;
+  // transition: 1s;
   align-items: center;
   position: absolute;
   display: grid;
@@ -25,8 +25,8 @@
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      transition: all 1s;
-      -webkit-transition: all 1s;
+      // transition: all 1s;
+      // -webkit-transition: all 1s;
 
       &:hover {
         width: 110px;

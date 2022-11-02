@@ -1,9 +1,9 @@
 .ad-s-on-frame {
-  height: 1000px !important;
+  height: 1010px !important;
 }
 
 .home-image-frame {
-  transition: 1s;
+  // transition: 1s;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -19,13 +19,13 @@
     z-index: 10;
     display: flex;
     margin: 10px auto;
-    margin-top: 110px;
+    margin-top: 100px;
     justify-content: center;
     width: 100%;
     font-family: 'Poppins';
     color: #ffffff;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 28px;
   }
 
   @keyframes textclip {
