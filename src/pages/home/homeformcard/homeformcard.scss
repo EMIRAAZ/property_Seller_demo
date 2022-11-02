@@ -18,8 +18,8 @@
     border-radius: 8px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 5px 5px;
-    padding: 20px 20px 20px 20px;
+    gap: 8px 8px;
+    padding: 10px 10px 10px 10px;
     margin: 0px auto;
     width: 100%;
     transition: 1s;
@@ -90,44 +90,58 @@
 @media only screen and (min-width: 600px) {
   .home-form-card {
     width: 65%;
-    top: 290px;
+    top: 250px;
 
     .home-formcard {
-      gap: 20px 10px;
+      padding: 10px 10px 10px 10px;
 
+      gap: 8px 10px;
       .search {
+        grid-row-start: 1;
         grid-column-start: 1;
         grid-column-end: 4;
+      }
+
+      .emirate {
         grid-row-start: 1;
+        grid-column-start: 4;
+        grid-column-end: 6;
+      }
+
+      .sale {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 2;
       }
       .property {
-        grid-column-start: 4;
-        grid-column-end: 5;
-        grid-row-start: 1;
-      }
-      .sale {
-        grid-column-start: 1;
-        grid-column-end: 1;
         grid-row-start: 2;
-      }
-      .price-from {
         grid-column-start: 2;
-        grid-column-end: 2;
-        grid-row-start: 2;
-      }
-      .price-two {
-        grid-column-start: 3;
         grid-column-end: 3;
-        grid-row-start: 2;
-      }
-      .bath-home {
-        display: none;
-      }
-      .bed-home {
-        display: none;
       }
       .furnish-home {
-        display: none;
+        grid-row-start: 2;
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+      .bed-home {
+        grid-row-start: 2;
+        grid-column-start: 4;
+        grid-column-end: 6;
+      }
+      .bath-home {
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+      .price-from {
+        grid-row-start: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+      .price-to {
+        grid-row-start: 3;
+        grid-column-start: 3;
+        grid-column-end: 4;
       }
 
       .home-search-btn {
@@ -136,9 +150,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        grid-row-start: 2;
+        grid-row-start: 3;
         grid-column-start: 4;
-        grid-column-end: 4;
+        grid-column-end: 6;
       }
     }
   }

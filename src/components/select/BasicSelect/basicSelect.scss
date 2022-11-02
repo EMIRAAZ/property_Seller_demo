@@ -40,9 +40,18 @@
     font-weight: 400;
     font-size: 12px;
     justify-content: space-between;
-    color: #1c3988;
     align-items: center;
     background-color: #f3f3fa;
+    .drop-btn {
+      font-family: 'Poppins';
+      color: #838383;
+      font-size: 12px;
+      font-weight: 300;
+    }
+    .selected {
+      color: #1c3988;
+      font-weight: 500;
+    }
   }
 
   .show {

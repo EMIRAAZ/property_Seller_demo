@@ -49,7 +49,9 @@ const BasicSelect = ({
           border: border ? '1px solid #c1cdee' : 'none',
         }}
       >
-        <p className="drop-btn">{selectName}</p>
+        <p className={`drop-btn ${selectName === name ? '' : 'selected'}`}>
+          {selectName}
+        </p>
         <ExpandIcon
           className="basic-select-icon"
           width="12"

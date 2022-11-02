@@ -132,6 +132,7 @@ const SearchChipSelect = ({
               width: '14',
               height: '20',
               viewbox: '0 0 19 20',
+              fill: '#2e2e2e',
             })
           : null}
         <div className="input-visual">{renderChip()}</div>

@@ -50,7 +50,7 @@ const HomeFormCard = props => {
           bgColor="white"
           border
           customClass="emirate"
-          name="Property Type"
+          name="Emirate"
           onChange={value => onInputChange('propertyType', value)}
           options={[
             { name: 'Abu Dhabi', value: 'Abu Dhabi' },
@@ -86,7 +86,7 @@ const HomeFormCard = props => {
         <BasicSelect
           bgColor="white"
           customClass="sale"
-          name="Buy"
+          name="Sale"
           border
           onChange={value => onInputChange('sale', value)}
           options={[
