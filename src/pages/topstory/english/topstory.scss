@@ -88,6 +88,7 @@
             display: -webkit-box;
           }
           .description {
+         
             font-family: 'Poppins';
             font-size: 15px;
             color: #072d4b;
@@ -169,6 +170,11 @@
               overflow: hidden;
               text-overflow: ellipsis;
               display: -webkit-box;
+            }
+            .date {
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              color: rgba(73, 73, 73, 0.867);
+              font-size: 12px;
             }
             .location-div {
               display: flex;
@@ -269,7 +275,7 @@
             width: 60%;
             .heading-news-item {
               font-family: 'Poppins';
-              font-size: 15px;
+              font-size: 13px;
               font-weight: 600;
               color: #072d4b;
               -webkit-line-clamp: 2; /* number of lines to show */
@@ -280,6 +286,7 @@
               display: -webkit-box;
             }
             .description {
+              display: none;
               font-family: 'Poppins';
               font-size: 15px;
               color: #072d4b;
@@ -290,7 +297,7 @@
               -webkit-box-orient: vertical;
               overflow: hidden;
               text-overflow: ellipsis;
-              display: -webkit-box;
+              // display: -webkit-box;
             }
             .location-div {
               display: flex;
@@ -336,7 +343,7 @@
               width: 60%;
               .heading-news-item {
                 font-family: 'Poppins';
-                font-size: 15px;
+                font-size: 13px;
                 font-weight: 600;
                 color: #072d4b;
                 -webkit-line-clamp: 2; /* number of lines to show */
@@ -347,6 +354,7 @@
                 display: -webkit-box;
               }
               .description {
+                display: none;
                 font-family: 'Poppins';
                 font-size: 15px;
                 color: #072d4b;
@@ -357,7 +365,7 @@
                 -webkit-box-orient: vertical;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                display: -webkit-box;
+                // display: -webkit-box;
               }
               .location-div {
                 display: flex;

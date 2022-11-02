@@ -106,11 +106,14 @@ const StoryCardSmall = ({ item }) => {
   const navigateTo = () => {
     navigate(`/news/${item.id}`);
   };
+  let date = new Date(item.updatedAt);
   return (
     <div className="storycard-small-div" onClick={navigateTo}>
       <div className="text-div">
         <h1 className="heading-news-item"> {item.title}</h1>
+        <p className="date">{date.toDateString()}</p>
         <p className="description">{item.description}</p>
+        
         <div className="location-div">
           <h1 className="location">{item.location}</h1>
           <h1 className="time">{item.time}</h1>
