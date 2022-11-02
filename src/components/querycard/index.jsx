@@ -67,6 +67,7 @@ const QueryCard = ({
           onChange={value => onChange('location', value)}
           onArrayChange={value => onChange('searchArray', value)}
           leftIcon={LocationIcon}
+          value={cardInput.searchArray}
           options={cardInput.locationSearch.location.map(location => {
             return {
               name: location,

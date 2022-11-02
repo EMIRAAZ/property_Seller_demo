@@ -8,16 +8,18 @@ const SearchChipSelect = ({
   options,
   customClass = '',
   onChange,
-  value,
+  value = [],
   leftIcon,
   bgColor = '#f3f3fa',
   border = false,
   onArrayChange = () => {},
 }) => {
-  const [selectName, setSelectName] = useState([]);
+  const [selectName, setSelectName] = useState(value.length ? value : []);
   const [selectObj, setSelectObj] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [dropdownClass, setdropdownClass] = useState('hide');
+
+  console.log(selectName);
 
   const onMouseEnter = () => setdropdownClass('show');
   const onMouseLeave = () => setdropdownClass('hide');

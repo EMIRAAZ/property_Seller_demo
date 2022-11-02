@@ -30,6 +30,8 @@ const HomeFormCard = props => {
     return `${makeParams(newListSearch)}`;
   };
 
+  console.log(props.homeSearch);
+
   return (
     <div className="home-form-card">
       <div className="home-formcard">
@@ -56,6 +58,7 @@ const HomeFormCard = props => {
           onChange={value => onInputChange('location', value)}
           onArrayChange={value => onInputChange('searchArray', value)}
           leftIcon={LocationIcon}
+          value={props.searchArray}
           options={props.homeSearch.locationSearch.location.map(location => {
             return {
               name: location,
