@@ -110,10 +110,10 @@
 
 @media only screen and (min-width: 600px) {
   .ad-s-on-frame {
-    height: 116vh !important;
+    height: 106vh !important;
   }
   .home-image-frame {
-    height: 116vh;
+    height: 100vh;
     flex-direction: row;
 
     .home-properties-caption {
@@ -121,7 +121,7 @@
       z-index: 10;
       display: flex;
       margin: 10px auto;
-      margin-top: 150px;
+      margin-top: 130px;
       justify-content: center;
       width: 100%;
       font-family: 'Poppins';
