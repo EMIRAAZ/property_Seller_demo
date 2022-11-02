@@ -80,6 +80,7 @@ export const getHomeLocationSearch = location => async dispatch => {
     dispatch({
       type: GET_HOME_LOCATION_SEARCH,
       payload: res.data?.data,
+      keyword: location,
     });
   } catch (e) {
     dispatch(getHomeLocationSearchError());

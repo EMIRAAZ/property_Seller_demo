@@ -6,6 +6,7 @@ export const initialState = {
   },
   homeSearch: {
     location: '',
+    emirate: '',
     propertyType: '',
     sale: '',
     priceFrom: '',

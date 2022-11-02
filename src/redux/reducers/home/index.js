@@ -67,6 +67,11 @@ const reducer = (state = initialState, action) => {
         },
       };
     case GET_HOME_LOCATION_SEARCH:
+      // console.log(
+      //   action.payload[0] &&
+      //     drawLocationFromApi(action.payload[0], action.keyword)
+      // );
+
       return {
         ...state,
         homeSearch: {
@@ -75,7 +80,9 @@ const reducer = (state = initialState, action) => {
             ...state.homeSearch.locationSearch,
             error: false,
             loading: false,
-            location: action.payload && removeDuplicate(action.payload[0]),
+            location:
+              action.payload[0] &&
+              drawLocationFromApi(action.payload[0], action.keyword),
           },
         },
       };
@@ -108,13 +115,36 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const addIfNecessary = (addTo, add) => {
-  let mainArray = [...addTo, ...add];
-  return mainArray;
+const drawLocationFromApi = (array = [], keyword) => {
+  const newArray = [...array];
+  const locationArray = [];
+  for (var i = 0; i < newArray.length; i++) {
+    if (
+      newArray[i].placeAddress &&
+      newArray[i].placeAddress.toLowerCase().includes(keyword.toLowerCase()) &&
+      !locationArray.includes(newArray[i].placeAddress)
+    ) {
+      locationArray.push(newArray[i].placeAddress);
+    }
+    if (
+      newArray[i].city &&
+      newArray[i].city.toLowerCase().includes(keyword.toLowerCase()) &&
+      !locationArray.includes(newArray[i].city)
+    ) {
+      locationArray.push(newArray[i].city);
+    }
+    if (
+      newArray[i].building &&
+      newArray[i].building.toLowerCase().includes(keyword.toLowerCase()) &&
+      !locationArray.includes(newArray[i].building)
+    ) {
+      locationArray.push(newArray[i].building);
+    }
+  }
+  return locationArray;
 };
 
 const removeDuplicate = (array = []) => {
-  console.log(array);
   const newArray = [...array];
   const uniqueTitle = [];
   const uniqueArray = [];
