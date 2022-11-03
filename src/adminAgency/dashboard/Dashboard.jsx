@@ -1,6 +1,6 @@
 import './dashboard.scss';
 import AddAgent from './addAgent/AddAgent';
-import AddItem from './addItem/AddItem';
+import AddItem from './addItem';
 import PropertyList from './propertyList';
 import MainComponent from '../maincomponent';
 
