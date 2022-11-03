@@ -1,0 +1,124 @@
+.items-div {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  align-items: center;
+  .col1 {
+    width: 7%;
+    h1 {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 19px;
+
+      color: #809fb8;
+    }
+  }
+  .col2 {
+    width: 33%;
+    h1 {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 19px;
+
+      color: #06152b;
+    }
+  }
+  .col3 {
+    width: 15%;
+    h1 {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 22px;
+
+      color: #585858;
+    }
+  }
+  .col4 {
+    width: 15%;
+  }
+  .col5 {
+    width: 15%;
+    cursor: pointer;
+  }
+  .col6 {
+    width: 15%;
+    cursor: pointer;
+  }
+  hr {
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    height: 1px;
+    background-color: #e2e2e2;
+    opacity: 0.3;
+  }
+}
+@media screen and (max-width: 767px) {
+  .items-div {
+    display: flex;
+    width: 800px;
+
+    flex-wrap: wrap;
+    padding-top: 20px;
+    align-items: center;
+    .col1 {
+      width: 7%;
+      h1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 19px;
+
+        color: #809fb8;
+      }
+    }
+    .col2 {
+      width: 33%;
+      h1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 19px;
+
+        color: #06152b;
+      }
+    }
+    .col3 {
+      width: 15%;
+      h1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 22px;
+
+        color: #585858;
+      }
+    }
+    .col4 {
+      width: 15%;
+    }
+    .col5 {
+      width: 15%;
+    }
+    .col6 {
+      width: 15%;
+    }
+    hr {
+      width: 90%;
+      margin: auto;
+      margin-top: 10px;
+      height: 1px;
+      background-color: #e2e2e2;
+      opacity: 0.3;
+    }
+  }
+}
