@@ -53,6 +53,7 @@ const HomeCategory = props => {
         key={propertyType.id}
         className="property-type-component-outer"
         onClick={() => navigateTo(propertyType.page)}
+        onContextMenu={e => e.preventDefault()}
       >
         <div className="property-type-component-inner">
           <img src={propertyType.image} alt={propertyType.name} />
