@@ -14,6 +14,7 @@ import {
   GET_ADMIN_AGENCY_AGENT_STARTED,
   GET_ADMIN_AGENCY_AGENT_ERROR,
   CLEAR_ADD_AGENCY,
+  CLEAR_ADD_AGENT,
 } from '../../constants';
 
 export const changeAdminAgencyInput = payload => {
@@ -125,6 +126,11 @@ export const getAdminAgencyById = id => async dispatch => {
 export const clearAddAgency = () => {
   return {
     type: CLEAR_ADD_AGENCY,
+  };
+};
+export const clearAddAgent = () => {
+  return {
+    type: CLEAR_ADD_AGENT,
   };
 };
 

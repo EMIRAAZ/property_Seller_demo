@@ -13,6 +13,7 @@ import {
   DELETE_AGENCY_AGENT,
   DELETE_AGENCY_AGENT_STARTED,
   DELETE_AGENCY_AGENT_ERROR,
+  CLEAR_ADD_AGENT,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -52,6 +53,10 @@ const reducer = (state = initialState, action) => {
     case GET_AGENCY_AGENT_BY_ID_STARTED:
       return {
         ...state,
+      };
+    case CLEAR_ADD_AGENT:
+      return {
+        ...initialState,
       };
     case GET_AGENCY_AGENT_BY_ID_ERROR:
       return {

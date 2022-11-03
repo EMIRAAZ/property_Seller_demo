@@ -4,10 +4,10 @@ import AddItem from './addItem';
 import PropertyList from './propertyList';
 import MainComponent from '../maincomponent';
 
-function Dashboard() {
+function Dashboard(props) {
   return (
     <MainComponent>
-      <AddAgent />
+      <AddAgent clr={props.clearAddAgent} clrUpload={props.clearUpload} />
       <AddItem />
       <PropertyList />
     </MainComponent>
