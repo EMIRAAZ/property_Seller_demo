@@ -1,60 +1,63 @@
-import "./property.scss";
-import LocationIcon from "../svg/location";
-import Bath from "../svg/bath";
-import Whatsapp from "../svg/whatsapp";
-import Favourite from "../svg/favourite";
-import Share from "../svg/share";
-import Phone from "../svg/phone";
-import Mail from "../svg/mailsvg";
-import Bed from "../svg/bed";
-import Living from "../svg/living";
-import Area from "../svg/area";
-import { useNavigate } from "react-router-dom";
-import ImgPropCarousel from "../imgpropcarousel";
+import './property.scss';
+import LocationIcon from '../svg/location';
+import Bath from '../svg/bath';
+import Whatsapp from '../svg/whatsapp';
+import Favourite from '../svg/favourite';
+import Share from '../svg/share';
+import Phone from '../svg/phone';
+import Mail from '../svg/mailsvg';
+import Bed from '../svg/bed';
+import Living from '../svg/living';
+import Area from '../svg/area';
+import { useNavigate } from 'react-router-dom';
+import ImgPropCarousel from '../imgpropcarousel';
 
-const Property = (props) => {
+const Property = props => {
   let navigate = useNavigate();
 
   const navigateTo = () => {
     navigate(`/property/${props.id}`);
   };
-  const renderDescription = (description) => {
+  const renderDescription = description => {
     return description.length < 120
       ? description
-      : description.substring(0, 140) + "...";
+      : description.substring(0, 140) + '...';
   };
 
-  const renderAddress = (address) => {
+  const renderAddress = address => {
     let add = `${address.placeAddress}, ${
-      address.building ? address.building : ""
+      address.building ? address.building : ''
     } ${address.city}`;
 
-    return add.length < 50 ? add : add.substring(0, 50) + " . . .";
+    return add.length < 50 ? add : add.substring(0, 50) + ' . . .';
   };
 
-  const renderUnit = (unit) => {
-    return unit.length < 10 ? unit : unit.substring(0, 7) + " ...";
+  const renderUnit = unit => {
+    return unit.length < 10 ? unit : unit.substring(0, 7) + ' ...';
   };
 
-  const renderVerified = (verified) =>
+  const renderVerified = verified =>
     verified ? (
       <div
         className={`new-listing verified-property ${
-          props.check ? "" : "no-verified"
+          props.check ? '' : 'no-verified'
         }`}
       >
         VERIFIED
       </div>
     ) : null;
   return (
-    <div className="property-list">
-      <div className="property-list-item">
+    <div className="property-list" onContextMenu={e => e.preventDefault()}>
+      <div
+        className="property-list-item"
+        onContextMenu={e => e.preventDefault()}
+      >
         <ImgPropCarousel
           customClass="prop-list-img"
           imgArray={props.images}
           curImgClass="prop-list-img"
         />
-        {props.check ? <div className="new-listing">New Listing</div> : ""}
+        {props.check ? <div className="new-listing">New Listing</div> : ''}
         {renderVerified(props.verified)}
         <div className="property-rectangle favourite">
           <Favourite width="15" height="16" viewbox="0 -1.2 12 10" />
@@ -135,8 +138,8 @@ const Property = (props) => {
               fill="#979797"
             />
             <p>
-              {props.propertySize}{" "}
-              {props.propertySizeUnit ? renderUnit(props.propertySizeUnit) : ""}
+              {props.propertySize}{' '}
+              {props.propertySizeUnit ? renderUnit(props.propertySizeUnit) : ''}
             </p>
           </div>
         </div>
@@ -145,7 +148,7 @@ const Property = (props) => {
           <div
             className="service-btn-property email"
             onClick={() =>
-              window.open("mailto:hello@uaeassistant.com", "_blank")
+              window.open('mailto:hello@uaeassistant.com', '_blank')
             }
           >
             <Mail width="15" height="15" viewBox="0 0 15 15" fill="#2f70ff" />
@@ -153,7 +156,7 @@ const Property = (props) => {
           </div>
           <div
             className="service-btn-property phone"
-            onClick={() => window.open("tel:+971521278701", "_blank")}
+            onClick={() => window.open('tel:+971521278701', '_blank')}
           >
             <Phone width="17" height="17" viewBox="0 0 15 15" fill="#2f70ff" />
             Phone

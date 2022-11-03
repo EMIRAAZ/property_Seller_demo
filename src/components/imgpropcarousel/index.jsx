@@ -18,7 +18,10 @@ const ImgPropCarousel = ({
     } else setIndex(index + add);
   };
   return (
-    <div className={`image-carousel ${customClass}`}>
+    <div
+      className={`image-carousel ${customClass}`}
+      onContextMenu={e => e.preventDefault()}
+    >
       <div className="carousel-panel">
         <LeftCarousel
           customClass="left-carousel-arrow"

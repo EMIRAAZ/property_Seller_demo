@@ -56,7 +56,7 @@ const Form = ({
         () => {
           clearAddAgency();
           clrUpload();
-          navigate(`/agency`);
+          navigate(`/agency/list-agent`);
         }
       );
     } else {
@@ -69,7 +69,7 @@ const Form = ({
         () => {
           clearAddAgency();
           clrUpload();
-          navigate(`/agency`);
+          navigate(`/agency/list-agent`);
         }
       );
     }

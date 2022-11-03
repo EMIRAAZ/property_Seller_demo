@@ -56,7 +56,14 @@ const SearchChipSelect = ({
       if (!selectName.includes(option.name)) {
         return (
           <p key={i} onClick={() => onClickOption(option.name, option.value)}>
-            {option.name}
+            {React.createElement(leftIcon, {
+              className: 'left-b-input-icon',
+              width: '13',
+              height: '18',
+              viewbox: '0 0 19 20',
+              fill: '#2e2e2e',
+            })}
+            <span>{option.name}</span>
           </p>
         );
       }

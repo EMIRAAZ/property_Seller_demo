@@ -1,11 +1,20 @@
 import React from 'react';
 import Items from '../items/Items';
 import './propertyList.scss';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Confirm from '../../../components/Confirm';
 function PropertyList(props) {
   useEffect(() => {
     props.getAgencyProperty();
   }, []);
+
+  const [isOpen, setOpen] = useState(false);
+  const [{ id, cb }, setIdCb] = useState({});
+
+  const onDeleteProperty = (id, cb) => {
+    setOpen(true);
+    setIdCb({ id, cb });
+  };
 
   return (
     <div className="property-list-div">
@@ -41,11 +50,18 @@ function PropertyList(props) {
           <h1>Options</h1>
         </div>
       </div>
+      <Confirm
+        open={isOpen}
+        handleOpen={setOpen}
+        question="Do you want to delete the property ?"
+        description="By confirming the property will be deleted. You cannot undo the process after confirming."
+        callback={() => props.deleteAgencyProperty(id, cb)}
+      />
       {props.agencyProperty.property &&
         props.agencyProperty.property.map(item => (
           <Items
             {...item}
-            onDelete={props.deleteAgencyProperty}
+            onDelete={onDeleteProperty}
             getProperty={props.getAgencyProperty}
           />
         ))}

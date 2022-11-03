@@ -36,6 +36,7 @@ const reducer = (state = initialState, action) => {
           success: true,
         },
       };
+
     case ADD_ADMIN_AGENCY_STARTED:
       return {
         ...state,
