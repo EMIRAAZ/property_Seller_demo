@@ -1,11 +1,11 @@
-import React from "react";
-import LogoGroup from "../logoGroup/LogoGroup";
-import "./navbar.scss";
+import React from 'react';
+import LogoGroup from '../logoGroup/LogoGroup';
+import './navbar.scss';
 function Navbar() {
   return (
     <div className="main-navbar">
       <div className="navbar-mini-container">
-        <svg
+        {/* <svg
           width="27"
           height="28"
           viewBox="0 0 27 28"
@@ -20,7 +20,7 @@ function Navbar() {
             d="M22.2069 10.6206C24.3398 10.6206 26.0689 8.89152 26.0689 6.75855C26.0689 4.62559 24.3398 2.89648 22.2069 2.89648C20.0739 2.89648 18.3448 4.62559 18.3448 6.75855C18.3448 8.89152 20.0739 10.6206 22.2069 10.6206Z"
             fill="#FF5959"
           />
-        </svg>
+        </svg> */}
 
         <LogoGroup />
       </div>

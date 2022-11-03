@@ -26,6 +26,9 @@ export const loginAgency = (payload, cb) => async dispatch => {
     localStorage.setItem('authToken', res?.headers['auth-token']);
     localStorage.setItem('role', res?.headers?.role);
     localStorage.setItem('agency_id', res?.data?.id);
+    localStorage.setItem('agency_name', res?.data?.agencyName);
+    localStorage.setItem('agency_photo', res?.data?.photo);
+    localStorage.setItem('agency_email', res?.data?.email);
     dispatch({
       type: AGENCY_LOGGED_IN,
       payload: res.data?.data,
