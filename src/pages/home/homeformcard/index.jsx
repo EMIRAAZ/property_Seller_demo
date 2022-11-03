@@ -4,7 +4,7 @@ import SearchChiptSelect from '../../../components/select/searchChipSelect';
 import LocationIcon from '../../../components/svg/location';
 import BasicButton from '../../../components/button/BasicButton';
 import SearchIcon from '../../../components/svg/search';
-import { makeUrlParam } from '../../../utils';
+import { makeParams } from '../../../utils';
 
 const HomeFormCard = props => {
   const onInputChange = (key, value) => {
@@ -25,63 +25,60 @@ const HomeFormCard = props => {
     const newListSearch = { ...props.homeSearch };
     delete newListSearch.locationSearch;
     delete newListSearch.location;
+    newListSearch.location = newListSearch.searchArray;
     delete newListSearch.searchArray;
-
-    return `&${makeUrlParam({
-      ...newListSearch,
-    })}${makeMultipleLocString()}`;
+    return `${makeParams(newListSearch)}`;
   };
-
-  const makeMultipleLocString = () => {
-    const newSearchArray = [...props.homeSearch.searchArray];
-    let mlString = '';
-    for (let i = 0; i < newSearchArray.length; i++) {
-      let currentObject = newSearchArray[i];
-      // mlString += `&placeAddress=${currentObject.placeAddress}&city=${currentObject.city}&building=${currentObject.building}`;
-      mlString += `city=${currentObject.city}`;
-    }
-    return mlString;
-  };
-
-  console.log(props.homeSearch.locationSearch.location);
 
   return (
     <div className="home-form-card">
-      <div
-        className={`home-formcard advanced-formcard ${
-          props.advancedSearch ? 'advanced-formcard' : ''
-        }`}
-      >
+      <div className="home-formcard">
+        <BasicSelect
+          bgColor="white"
+          border
+          customClass="emirate"
+          name="Emirate"
+          onChange={value => onInputChange('emirate', value)}
+          options={[
+            { name: 'Abu Dhabi', value: 'Abu Dhabi' },
+            { name: 'Dubai', value: 'Dubai' },
+            { name: 'Sharjah', value: 'Sharjah' },
+            { name: 'Ajman', value: 'Ajman' },
+            { name: 'Umm Al-Quwain', value: 'Umm Al-Quwain' },
+            { name: 'Fujairah', value: 'Fujairah' },
+          ]}
+        />
         <SearchChiptSelect
           bgColor="white"
           border
-          customClass={`search advanced-search-input ${
-            props.advancedSearch ? 'advanced-search-input' : ''
-          }`}
+          customClass="search"
           name="Search City, Building, Community .."
           onChange={value => onInputChange('location', value)}
           onArrayChange={value => onInputChange('searchArray', value)}
           leftIcon={LocationIcon}
+          value={props.searchArray}
           options={props.homeSearch.locationSearch.location.map(location => {
             return {
-              // name: `${location.placeAddress} ${location.building} ${location.city}`,
-              name: `${location.city}${
-                location.emirate ? ` (${location.emirate})` : ''
-              } `,
-              value: {
-                // placeAddress: location.placeAddress,
-                // building: location.building,
-                city: location.city,
-              },
+              name: location,
+              value: location,
             };
           })}
         />
         <BasicSelect
           bgColor="white"
+          customClass="sale"
+          name="Purpose"
           border
-          customClass={`property advanced-property ${
-            props.advancedSearch ? 'advanced-property' : ''
-          }`}
+          onChange={value => onInputChange('sale', value)}
+          options={[
+            { name: 'Buy', value: 'buy' },
+            { name: 'Rent', value: 'rent' },
+          ]}
+        />
+        <BasicSelect
+          bgColor="white"
+          border
+          customClass="property"
           name="Property Type"
           onChange={value => onInputChange('propertyType', value)}
           options={[
@@ -98,22 +95,19 @@ const HomeFormCard = props => {
           ]}
         />
         <BasicSelect
+          customClass="furnish-home"
+          name="Furnish type"
           bgColor="white"
-          customClass={`sale advanced-sale ${
-            props.advancedSearch ? 'advanced-sale' : ''
-          }`}
-          name="Buy"
           border
-          onChange={value => onInputChange('sale', value)}
+          onChange={value => onInputChange('amenities', value)}
+          value={props.homeSearch.amenities}
           options={[
-            { name: 'Buy', value: 'buy' },
-            { name: 'Rent', value: 'buy' },
+            { name: 'Furnished', value: 'furnished' },
+            { name: 'Un Furnished', value: 'unfurnished' },
           ]}
         />
         <BasicSelect
-          customClass={`price-from advanced-price-from ${
-            props.advancedSearch ? 'advanced-price-from' : ''
-          }`}
+          customClass="price-from"
           bgColor="white"
           border
           name="Price From"
@@ -153,9 +147,7 @@ const HomeFormCard = props => {
           ]}
         />
         <BasicSelect
-          customClass={`price-two advanced-price-two ${
-            props.advancedSearch ? 'advanced-price-two' : ''
-          }`}
+          customClass="price-to"
           name="Price To"
           bgColor="white"
           border
@@ -196,9 +188,7 @@ const HomeFormCard = props => {
         />
 
         <BasicSelect
-          customClass={`bed-home advanced-bed-home ${
-            props.advancedSearch ? 'advanced-bed-home' : ''
-          }`}
+          customClass="bed-home"
           name="Bed"
           bgColor="white"
           border
@@ -216,9 +206,7 @@ const HomeFormCard = props => {
           ]}
         />
         <BasicSelect
-          customClass={`bath-home advanced-bath-home ${
-            props.advancedSearch ? 'advanced-bath-home' : ''
-          }`}
+          customClass="bath-home"
           name="Bath"
           bgColor="white"
           border
@@ -235,40 +223,12 @@ const HomeFormCard = props => {
             { name: '8', value: 8 },
           ]}
         />
-        <BasicSelect
-          customClass={`furnish-home advanced-furnish-home ${
-            props.advancedSearch ? 'advanced-furnish-home' : ''
-          }`}
-          name="Furnish type"
-          bgColor="white"
-          border
-          onChange={value => onInputChange('amenities', value)}
-          value={props.homeSearch.amenities}
-          options={[
-            { name: 'Furnished', value: 'furnished' },
-            { name: 'Un Furnished', value: 'unfurnished' },
-          ]}
-        />
         <BasicButton
-          customClass={`home-search-btn advanced-home-search-btn ${
-            props.advancedSearch ? 'advanced-home-search-btn' : ''
-          }`}
+          customClass="home-search-btn"
           onClick={() => props.onSearch(makeParam())}
         >
           <SearchIcon /> Search
         </BasicButton>
-        <p
-          className="advanced-search"
-          onClick={() => {
-            props.setAdvancedSearch(!props.advancedSearch);
-          }}
-        >
-          {/* {props.advancedSearch ? (
-            <span className="icon-class">Less Options</span>
-          ) : (
-            <span className="icon-class">More Options</span>
-          )} */}
-        </p>
       </div>
     </div>
   );

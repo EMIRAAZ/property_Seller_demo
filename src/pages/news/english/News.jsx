@@ -23,7 +23,9 @@ const News = props => {
 
       <div className="container">
         <h1 className="heading">{props.news[0] && props.news[0].title}</h1>
-        <p className="date">{date.toDateString()}</p>
+        <p className="date">
+          {date.toDateString() !== 'Invalid Date' ? date.toDateString() : ''}
+        </p>
         <div className="category">
           {props.news[0] &&
             props.news[0].topics.map((item, i) => (

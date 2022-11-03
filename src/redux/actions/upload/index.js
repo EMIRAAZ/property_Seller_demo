@@ -38,7 +38,6 @@ export const uploadAdminPropertyImage = (payload, cb, i) => async dispatch => {
 };
 
 export const removeImage = img => {
-  console.log(img);
   return {
     type: REMOVE_IMAGE,
     payload: img,

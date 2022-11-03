@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import Property from '../property';
 
 const SimilarProperty = props => {
-  console.log(props);
   useEffect(() => {
     props.getSimilarProperty(props.city);
   }, []);

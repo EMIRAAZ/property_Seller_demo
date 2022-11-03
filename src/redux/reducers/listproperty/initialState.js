@@ -15,6 +15,7 @@ export const initialState = {
     noOfBed: '',
     noOfBath: '',
     amenities: '',
+    emirate: '',
     searchArray: [],
     locationSearch: {
       loading: false,

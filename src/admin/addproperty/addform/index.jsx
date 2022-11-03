@@ -80,8 +80,6 @@ const AddForm = ({
   const onChangeMapInput = e => {
     const [place] = inputRef.current.getPlaces();
     if (place) {
-      console.log(place.formatted_address);
-
       setCenter({
         lat: place.geometry.location.lat(),
         lng: place.geometry.location.lng(),

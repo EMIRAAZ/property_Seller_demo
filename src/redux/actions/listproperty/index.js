@@ -21,7 +21,7 @@ import {
   GET_PROP_TAG_ERROR,
 } from '../../constants';
 
-export const onChangeListPropParams = payload => {
+export const onChangePropsList = payload => {
   return {
     type: ON_CHANGE_LIST_PAGE_PROPERTY_INPUT,
     payload: payload,
@@ -105,6 +105,7 @@ export const getListpropLocationSearch = location => async dispatch => {
     dispatch({
       type: GET_LISTPROP_LOCATION_SEARCH,
       payload: res.data?.data,
+      keyword: location,
     });
   } catch (e) {
     dispatch(getListpropLocationSearchError());
