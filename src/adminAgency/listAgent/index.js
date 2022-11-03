@@ -1,17 +1,17 @@
-import { connect } from "react-redux";
-import AgentList from "./AgentList";
-import { getAgencyProperty, deleteAgencyProperty } from "../../redux/actions";
+import { connect } from 'react-redux';
+import AgentList from './AgentList';
+import { listAgencyAgent } from '../../redux/actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    agencyProperty: state.agencypropertyReducer.agencyProperty,
+    agentList: state.agencylistagentReducer.agents,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    getAgencyProperty: (params) => dispatch(getAgencyProperty(params)),
-    deleteAgencyProperty: (id, cb) => dispatch(deleteAgencyProperty(id, cb)),
+    listAgencyAgent: params => dispatch(listAgencyAgent(params)),
+    // deleteAgencyProperty: (id, cb) => dispatch(deleteAgencyProperty(id, cb)),
   };
 };
 

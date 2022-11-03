@@ -1,11 +1,11 @@
-import React from "react";
-import Items from "./items/Items";
-import MainComponent from "../maincomponent";
-import "./agentList.scss";
-import { useEffect } from "react";
+import React from 'react';
+import Items from './items/Items';
+import MainComponent from '../maincomponent';
+import './agentList.scss';
+import { useEffect } from 'react';
 function PropertyList(props) {
   useEffect(() => {
-    props.getAgencyProperty();
+    props.listAgencyAgent();
   }, []);
 
   return (
@@ -43,8 +43,8 @@ function PropertyList(props) {
             <h1>Options</h1>
           </div>
         </div>
-        {props.agencyProperty.property &&
-          props.agencyProperty.property.map((item) => (
+        {props.agentList &&
+          props.agentList.map(item => (
             <Items
               {...item}
               onDelete={props.deleteAgencyProperty}

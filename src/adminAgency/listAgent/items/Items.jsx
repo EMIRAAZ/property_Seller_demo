@@ -1,7 +1,7 @@
-import React from "react";
-import "./items.scss";
-import Checkbox from "@mui/material/Checkbox";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import './items.scss';
+import Checkbox from '@mui/material/Checkbox';
+import { useNavigate } from 'react-router-dom';
 
 function Items(props) {
   let navigate = useNavigate();
@@ -16,10 +16,10 @@ function Items(props) {
         <Checkbox defaultChecked />
       </div>
       <div className="col2">
-        <h1>Agent X</h1>
+        <h1>{props.agentName}</h1>
       </div>
       <div className="col3">
-        <h1>Vikram</h1>
+        <h1>{props.id}</h1>
       </div>
       <div className="col4">
         <svg
