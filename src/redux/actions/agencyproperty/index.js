@@ -56,7 +56,11 @@ const deleteAgencyPropertyError = () => {
 export const deleteAgencyProperty = (id, cb) => async dispatch => {
   try {
     dispatch(deleteAgencyPropertyStarted());
-    const res = await axios.delete(`/api/property/${id}`);
+    const res = await axios.delete(`/api/property/${id}`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
     dispatch({
       type: DELETE_AGENCY_PROPERTY,
       payload: res.data?.data,
