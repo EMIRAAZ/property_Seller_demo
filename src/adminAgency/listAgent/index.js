@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import AgentList from './AgentList';
-import { listAgencyAgent } from '../../redux/actions';
+import { listAgencyAgent, deleteAgencyAgent } from '../../redux/actions';
 
 const mapStateToProps = state => {
   return {
@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     listAgencyAgent: params => dispatch(listAgencyAgent(params)),
-    // deleteAgencyProperty: (id, cb) => dispatch(deleteAgencyProperty(id, cb)),
+    deleteAgencyAgent: (id, cb) => dispatch(deleteAgencyAgent(id, cb)),
   };
 };
 

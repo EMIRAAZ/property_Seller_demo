@@ -2,11 +2,21 @@ import React from 'react';
 import Items from './items/Items';
 import MainComponent from '../maincomponent';
 import './agentList.scss';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Confirm from '../../components/Confirm';
+
 function PropertyList(props) {
   useEffect(() => {
     props.listAgencyAgent();
   }, []);
+
+  const [isOpen, setOpen] = useState(false);
+  const [{ id, cb }, setIdCb] = useState({});
+
+  const onDeleteAgency = (id, cb) => {
+    setOpen(true);
+    setIdCb({ id, cb });
+  };
 
   return (
     <MainComponent>
@@ -43,12 +53,19 @@ function PropertyList(props) {
             <h1>Options</h1>
           </div>
         </div>
+        <Confirm
+          open={isOpen}
+          handleOpen={setOpen}
+          question="Do you want to delete this Agent ?"
+          description="By confirming the agent will be deleted. You cannot undo the process after confirming."
+          callback={() => props.deleteAgencyAgent(id, cb)}
+        />
         {props.agentList &&
           props.agentList.map(item => (
             <Items
               {...item}
-              onDelete={props.deleteAgencyProperty}
-              getProperty={props.getAgencyProperty}
+              onDelete={onDeleteAgency}
+              getAgent={props.listAgencyAgent}
             />
           ))}
       </div>
