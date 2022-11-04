@@ -36,14 +36,32 @@ const PropertyView = props => {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
   });
 
+  const renderLinkFromString = str => {
+    const strArr = str?.split(' ');
+    for (let i = 0; i < strArr?.length; i++) {
+      if (strArr[i].includes('www')) {
+        strArr[i] = (
+          <span>
+            &nbsp;
+            <a
+              href={`https://${strArr[i]}`}
+              target="_blank"
+            >{`${strArr[i]}`}</a>
+          </span>
+        );
+      } else strArr[i] = <span>{` ${strArr[i]}`}</span>;
+    }
+    return strArr;
+  };
+
   const getDescription = description => {
     if (description) {
       if (read) {
-        return description;
+        return renderLinkFromString(description);
       } else {
         if (description.length > 200)
-          return description.substring(0, 200) + ' . . .';
-        else return description;
+          return renderLinkFromString(description.substring(0, 200) + ' . . .');
+        else return renderLinkFromString(description);
       }
     } else return '';
   };
