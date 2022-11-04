@@ -39,7 +39,7 @@ const PropertyView = props => {
   const renderLinkFromString = str => {
     const strArr = str?.split(' ');
     for (let i = 0; i < strArr?.length; i++) {
-      if (strArr[i].includes('www')) {
+      if (strArr[i].includes('http')) {
         strArr[i] = (
           <span>
             &nbsp;
