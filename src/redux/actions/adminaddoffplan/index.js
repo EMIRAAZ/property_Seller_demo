@@ -14,12 +14,23 @@ import {
   GET_ADMIN_OFFPLAN_BY_ID_ERROR,
   GET_ADMIN_OFFPLAN_BY_ID_STARTED,
   CLEAR_ADD_OFFPLAN,
+  ADMIN_OFFPLAN_MULTIPLE_INPUT_CHANGE,
 } from '../../constants';
 
 export const changeAdminOffplanInput = payload => {
   return {
     type: ADMIN_OFFPLAN_INPUT_CHANGE,
     payload: payload,
+  };
+};
+
+export const changeAdminOffplanMultipleInput = (mk, k, v, i) => {
+  return {
+    type: ADMIN_OFFPLAN_MULTIPLE_INPUT_CHANGE,
+    mainKey: mk,
+    key: k,
+    value: v,
+    position: i,
   };
 };
 

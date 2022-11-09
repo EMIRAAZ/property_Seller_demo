@@ -1,5 +1,5 @@
-import { connect } from "react-redux";
-import AddOffplan from "./AddOffplan";
+import { connect } from 'react-redux';
+import AddOffplan from './AddOffplan';
 import {
   changeAdminOffplanInput,
   addAdminOffplan,
@@ -8,9 +8,10 @@ import {
   getAdminOffplanById,
   clearUpload,
   clearAddOffplan,
-} from "../../../redux/actions";
+  changeAdminOffplanMultipleInput,
+} from '../../../redux/actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     env: state.adminaddoffplanReducer.env,
     offplanValue: state.adminaddoffplanReducer.offplanValue,
@@ -21,16 +22,18 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    onInputChange: (payload) => dispatch(changeAdminOffplanInput(payload)),
+    onInputChange: payload => dispatch(changeAdminOffplanInput(payload)),
     addAdminOffplan: (payload, cb) => dispatch(addAdminOffplan(payload, cb)),
     editAdminOffplan: (id, payload, cb) =>
       dispatch(editAdminOffplan(id, payload, cb)),
-    getAmenityOffplan: (payload) => dispatch(getAmenityOffplan(payload)),
-    getAdminOffplanById: (id) => dispatch(getAdminOffplanById(id)),
+    getAmenityOffplan: payload => dispatch(getAmenityOffplan(payload)),
+    getAdminOffplanById: id => dispatch(getAdminOffplanById(id)),
     clearUpload: () => dispatch(clearUpload()),
     clearAddOffplan: () => dispatch(clearAddOffplan()),
+    changeAdminOffplanMultipleInput: (mk, k, v, i) =>
+      dispatch(changeAdminOffplanMultipleInput(mk, k, v, i)),
   };
 };
 

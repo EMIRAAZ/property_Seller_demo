@@ -31,6 +31,9 @@ const AddOffplan = props => {
           offplanValue={props.offplanValue}
           offplanOptions={props.offplanOptions}
           clear={props.clearUpload}
+          changeAdminOffplanMultipleInput={
+            props.changeAdminOffplanMultipleInput
+          }
         />
       </div>
     </div>

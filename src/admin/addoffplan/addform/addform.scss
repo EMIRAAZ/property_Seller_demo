@@ -38,7 +38,6 @@
       color: #ff0000;
       display: none;
     }
-
     .offplan-image-label {
       font-family: 'Poppins';
       margin: 5px 0;
@@ -67,6 +66,30 @@
     display: flex;
     width: 49%;
     gap: 10px;
+  }
+  .offplan-row-div-upload {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    height: max-content;
+    gap: 10px;
+
+    .second-img-Class-admin {
+      height: 200px;
+    }
+
+    .first-img-Class-admin {
+      height: 200px;
+    }
+
+    .add-new-img-upload {
+      height: 200px;
+      border: 1px dotted gray;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .first-img-Class-admin {
@@ -143,6 +166,72 @@
         font-family: 'Poppins';
         background-color: #1c3988;
         font-weight: 600;
+      }
+
+      .multiple-input-container {
+        border: 1px solid #cacaca;
+        padding: 5px 5px;
+        width: 70%;
+        label {
+          font-size: 14px;
+          font-family: 'Poppins';
+          margin: 5px 0;
+          color: #464646;
+          font-weight: 500;
+        }
+        .multiple-input-control {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          border: none;
+          margin: 10px;
+          border-radius: 5px;
+          background-color: #a9af7e;
+          .control-div {
+            padding: 5px 5px 0px 5px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            .close-btn {
+              padding: 3px 5px;
+              cursor: pointer;
+            }
+          }
+          .multiple-input-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0px 5px 5px 5px;
+            padding: 2px 2px;
+            border: none;
+            border-radius: 5px;
+            background-color: #a9af7e;
+            .multiple-input-class {
+              order: 1;
+              width: 47%;
+              height: 30px;
+              border: none;
+              outline: none;
+              padding-left: 7px;
+              border-radius: 3px;
+              font-family: 'Poppins';
+              font-size: 13px;
+            }
+            .multiple-textarea-class {
+              order: 2;
+              width: 97%;
+              min-height: 80px;
+              border: none;
+              outline: none;
+              border-radius: 3px;
+              padding: 0px 4px 0px 7px;
+              font-family: 'Poppins';
+              font-size: 13px;
+            }
+          }
+        }
       }
     }
 
