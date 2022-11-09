@@ -76,7 +76,35 @@ const AddForm = ({
   const loopThroughObjectAndMakeInput = (obj, i, mainKey) => {
     const objArray = [];
     for (var keyValue in obj) {
-      if (keyValue !== 'description') {
+      if (keyValue === 'description') {
+        const key = keyValue;
+        objArray.push(
+          <div className="for-label-cls-txt">
+            <label>{keyValue}</label>
+            <textarea
+              class="multiple-textarea-class"
+              value={obj[keyValue]}
+              onChange={e =>
+                changeAdminOffplanMultipleInput(mainKey, key, e.target.value, i)
+              }
+            />
+          </div>
+        );
+      } else if (keyValue === 'image') {
+        const key = keyValue;
+        objArray.push(
+          <div className="for-label-cls-txt">
+            <label>{keyValue}</label>
+            <UploadImage
+              editing={editing}
+              linkIndex={0}
+              customClass="agent-logo-img upload"
+              onChangeImage={() => {}}
+              value={[obj[key]]}
+            />
+          </div>
+        );
+      } else {
         const key = keyValue;
         objArray.push(
           <div className="for-label-cls">
@@ -92,20 +120,6 @@ const AddForm = ({
                   i
                 );
               }}
-            />
-          </div>
-        );
-      } else {
-        const key = keyValue;
-        objArray.push(
-          <div className="for-label-cls-txt">
-            <label>{keyValue}</label>
-            <textarea
-              class="multiple-textarea-class"
-              value={obj[keyValue]}
-              onChange={e =>
-                changeAdminOffplanMultipleInput(mainKey, key, e.target.value, i)
-              }
             />
           </div>
         );
@@ -199,6 +213,42 @@ const AddForm = ({
           value={offplanValue.building}
           onChange={e => onChangeInput('building', e.target.value)}
         />
+        <Input
+          divClass="offplan-input"
+          label="Price Availability"
+          required
+          value={offplanValue.priceAvailability}
+          onChange={e => onChangeInput('paymentPlan', e.target.value)}
+        />
+        <Input
+          divClass="offplan-input"
+          label="Video Link"
+          value={offplanValue.videoLink}
+          onChange={e => onChangeInput('videoLink', e.target.value)}
+        />
+        <Select
+          customClass="offplan-input"
+          label="Property type"
+          required
+          value={offplanValue.propertyType}
+          options={offplanOptions.propertyType}
+          onChange={v => onChangeInput('propertyType', v)}
+        />
+        <Select
+          customClass="offplan-input"
+          label="Agent"
+          required
+          value={`${offplanValue.agentId} ${offplanValue.agencyId}`}
+          options={offplanOptions.agent}
+          onChange={v => onChangeInput('agentId', v)}
+        />
+        <Input
+          divClass="offplan-input"
+          label="Price"
+          required
+          value={offplanValue.price.toString()}
+          onChange={e => onChangeInput('price', e.target.value)}
+        />
       </div>
       <div className="add-offplan-form-right">
         <label className="offplan-image-label spinner-label">
@@ -222,20 +272,7 @@ const AddForm = ({
             </div>
           ) : null}
         </div>
-        <Input
-          divClass="offplan-input"
-          label="Video Link"
-          value={offplanValue.videoLink}
-          onChange={e => onChangeInput('videoLink', e.target.value)}
-        />
-        <Select
-          customClass="offplan-input"
-          label="Property type"
-          required
-          value={offplanValue.propertyType}
-          options={offplanOptions.propertyType}
-          onChange={v => onChangeInput('propertyType', v)}
-        />
+
         <span className="select-border"></span>
         <div className="offplan-row-div">
           <Input
@@ -269,37 +306,20 @@ const AddForm = ({
             onChange={e => onChangeInput('propertySizeUnit', e.target.value)}
           />
         </div>
-        <Select
-          customClass="offplan-input"
-          label="Agent"
-          required
-          value={`${offplanValue.agentId} ${offplanValue.agencyId}`}
-          options={offplanOptions.agent}
-          onChange={v => onChangeInput('agentId', v)}
-        />
-        <Input
-          divClass="offplan-input"
-          label="Price"
-          required
-          value={offplanValue.price.toString()}
-          onChange={e => onChangeInput('price', e.target.value)}
-        />
         {renderMultipleInput(
           offplanValue.paymentPlan,
           'Payment Plan',
           'paymentPlan'
         )}
-        <Input
-          divClass="offplan-input"
-          label="Price Availability"
-          required
-          value={offplanValue.priceAvailability}
-          onChange={e => onChangeInput('paymentPlan', e.target.value)}
-        />
         {renderMultipleInput(
           offplanValue.whyThisProperty,
           'Why This Property',
           'whyThisProperty'
+        )}
+        {renderMultipleInput(
+          offplanValue.priceForAvailability,
+          'Price Availability',
+          'priceAvailability'
         )}
         <Button
           customClass="add-offplan-btn"
