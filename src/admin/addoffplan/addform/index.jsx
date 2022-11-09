@@ -27,6 +27,7 @@ const AddForm = ({
   editing,
   clear,
   changeAdminOffplanMultipleInput,
+  deleteAdminOffplanMultipleInput,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -75,36 +76,40 @@ const AddForm = ({
   const loopThroughObjectAndMakeInput = (obj, i, mainKey) => {
     const objArray = [];
     for (var keyValue in obj) {
-      if (keyValue === 'description') {
+      if (keyValue !== 'description') {
+        const key = keyValue;
         objArray.push(
-          <textarea
-            class="multiple-textarea-class"
-            value={obj[keyValue]}
-            onChange={e =>
-              changeAdminOffplanMultipleInput(
-                mainKey,
-                keyValue,
-                e.target.value,
-                i
-              )
-            }
-          />
+          <div className="for-label-cls">
+            <label>{keyValue}</label>
+            <input
+              class="multiple-input-class"
+              value={obj[keyValue]}
+              onChange={e => {
+                changeAdminOffplanMultipleInput(
+                  mainKey,
+                  key,
+                  e.target.value,
+                  i
+                );
+              }}
+            />
+          </div>
         );
-      } else
+      } else {
+        const key = keyValue;
         objArray.push(
-          <input
-            class="multiple-input-class"
-            value={obj[keyValue]}
-            onChange={e =>
-              changeAdminOffplanMultipleInput(
-                mainKey,
-                keyValue,
-                e.target.value,
-                i
-              )
-            }
-          />
+          <div className="for-label-cls-txt">
+            <label>{keyValue}</label>
+            <textarea
+              class="multiple-textarea-class"
+              value={obj[keyValue]}
+              onChange={e =>
+                changeAdminOffplanMultipleInput(mainKey, key, e.target.value, i)
+              }
+            />
+          </div>
         );
+      }
     }
     return objArray;
   };
@@ -116,7 +121,11 @@ const AddForm = ({
         {data.map((item, i) => (
           <div className="multiple-input-control">
             <div className="control-div">
-              <Close className="close-btn" fill="#ffffff" />
+              <Close
+                className="close-btn"
+                fill="#ffffff"
+                onClick={() => deleteAdminOffplanMultipleInput(mainKey, i)}
+              />
             </div>
             <div className="multiple-input-row">
               {loopThroughObjectAndMakeInput(item, i, mainKey)}
@@ -287,14 +296,11 @@ const AddForm = ({
           value={offplanValue.priceAvailability}
           onChange={e => onChangeInput('paymentPlan', e.target.value)}
         />
-        <Input
-          divClass="offplan-input"
-          label="Why This Property ?"
-          required
-          value={offplanValue.paymentPlan.toString()}
-          onChange={e => onChangeInput('paymentPlan', e.target.value)}
-        />
-
+        {renderMultipleInput(
+          offplanValue.whyThisProperty,
+          'Why This Property',
+          'whyThisProperty'
+        )}
         <Button
           customClass="add-offplan-btn"
           onClick={addAdminOffplan}

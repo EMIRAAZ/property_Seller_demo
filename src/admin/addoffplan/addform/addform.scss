@@ -208,27 +208,42 @@
             border: none;
             border-radius: 5px;
             background-color: #a9af7e;
-            .multiple-input-class {
+            .for-label-cls {
+              display: flex;
+              flex-direction: column;
               order: 1;
               width: 47%;
-              height: 30px;
-              border: none;
-              outline: none;
-              padding-left: 7px;
-              border-radius: 3px;
-              font-family: 'Poppins';
-              font-size: 13px;
+              label {
+                color: #ffffff;
+              }
+
+              .multiple-input-class {
+                height: 30px;
+                border: none;
+                outline: none;
+                padding-left: 7px;
+                border-radius: 3px;
+                font-family: 'Poppins';
+                font-size: 13px;
+              }
             }
-            .multiple-textarea-class {
+            .for-label-cls-txt {
+              display: flex;
+              flex-direction: column;
               order: 2;
               width: 97%;
-              min-height: 80px;
-              border: none;
-              outline: none;
-              border-radius: 3px;
-              padding: 0px 4px 0px 7px;
-              font-family: 'Poppins';
-              font-size: 13px;
+              label {
+                color: #ffffff;
+              }
+              .multiple-textarea-class {
+                min-height: 80px;
+                border: none;
+                outline: none;
+                border-radius: 3px;
+                padding: 0px 4px 0px 7px;
+                font-family: 'Poppins';
+                font-size: 13px;
+              }
             }
           }
         }

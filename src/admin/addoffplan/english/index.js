@@ -9,6 +9,7 @@ import {
   clearUpload,
   clearAddOffplan,
   changeAdminOffplanMultipleInput,
+  deleteAdminOffplanMultipleInput,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -34,6 +35,8 @@ const mapDispatchToProps = dispatch => {
     clearAddOffplan: () => dispatch(clearAddOffplan()),
     changeAdminOffplanMultipleInput: (mk, k, v, i) =>
       dispatch(changeAdminOffplanMultipleInput(mk, k, v, i)),
+    deleteAdminOffplanMultipleInput: (mk, i) =>
+      dispatch(deleteAdminOffplanMultipleInput(mk, i)),
   };
 };
 

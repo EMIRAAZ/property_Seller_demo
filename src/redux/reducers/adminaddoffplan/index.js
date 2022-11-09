@@ -15,6 +15,7 @@ import {
   GET_ADMIN_OFFPLAN_BY_ID_STARTED,
   CLEAR_ADD_OFFPLAN,
   ADMIN_OFFPLAN_MULTIPLE_INPUT_CHANGE,
+  DELETE_MULTIPLE_ADMIN_OFFPLAN,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -49,6 +50,17 @@ const reducer = (state = initialState, action) => {
             state.offplanValue[action.mainKey],
             action.key,
             action.value,
+            action.position
+          ),
+        },
+      };
+    case DELETE_MULTIPLE_ADMIN_OFFPLAN:
+      return {
+        ...state,
+        offplanValue: {
+          ...state.offplanValue,
+          [action.mainKey]: deleteValueFromArray(
+            state.offplanValue[action.mainKey],
             action.position
           ),
         },
@@ -186,15 +198,18 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const changeValueFromArray = (arr, key, value, position, del) => {
-  console.log(arr);
+const changeValueFromArray = (arr, key, value, position) => {
   const newArr = [...arr];
   const val = newArr[position];
   const changedObject = { ...val, [key]: value };
   newArr[position] = changedObject;
-
-  console.log(newArr);
   return newArr;
 };
 
 export default reducer;
+
+const deleteValueFromArray = (arr, position) => {
+  const newArr = [...arr];
+  newArr.splice(position, 1);
+  return newArr;
+};

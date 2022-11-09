@@ -15,6 +15,7 @@ import {
   GET_ADMIN_OFFPLAN_BY_ID_STARTED,
   CLEAR_ADD_OFFPLAN,
   ADMIN_OFFPLAN_MULTIPLE_INPUT_CHANGE,
+  DELETE_MULTIPLE_ADMIN_OFFPLAN,
 } from '../../constants';
 
 export const changeAdminOffplanInput = payload => {
@@ -30,6 +31,14 @@ export const changeAdminOffplanMultipleInput = (mk, k, v, i) => {
     mainKey: mk,
     key: k,
     value: v,
+    position: i,
+  };
+};
+
+export const deleteAdminOffplanMultipleInput = (mk, i) => {
+  return {
+    type: DELETE_MULTIPLE_ADMIN_OFFPLAN,
+    mainKey: mk,
     position: i,
   };
 };
