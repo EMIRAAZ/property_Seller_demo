@@ -10,7 +10,13 @@ import UploadImageOffplan from '../../../components/uploadimageoffplan';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import {
+  useJsApiLoader,
+  GoogleMap,
+  StandaloneSearchBox,
+  Marker,
+} from '@react-google-maps/api';
 
 const keyArr = [];
 
@@ -32,7 +38,16 @@ const AddForm = ({
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
+  const inputRef = useRef();
+
   const [uploadCount, setUploadCount] = useState([0]);
+  const [center, setCenter] = useState({ lat: 24.4539, lng: 54.3773 });
+  const [marker, setMarker] = useState({ lat: 24.4539, lng: 54.3773 });
+
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
+    libraries: ['places'],
+  });
 
   const onSetUploadCount = () => {
     setUploadCount([...uploadCount, 0]);
@@ -65,6 +80,35 @@ const AddForm = ({
         navigate('/admin');
       });
     }
+  };
+
+  const onChangeMapInput = e => {
+    const [place] = inputRef.current.getPlaces();
+    if (place) {
+      setCenter({
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      });
+      setMarker({
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      });
+      onChangeInput('coordinates', {
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      });
+    }
+  };
+
+  const onMapClick = e => {
+    setMarker({
+      lat: e.latLng.lat(),
+      lng: e.latLng.lng(),
+    });
+    onChangeInput('coordinates', {
+      lat: e.latLng.lat(),
+      lng: e.latLng.lng(),
+    });
   };
 
   const renderImageLoadingSpinner = () => {
@@ -264,6 +308,26 @@ const AddForm = ({
           value={offplanValue.price.toString()}
           onChange={e => onChangeInput('price', e.target.value)}
         />
+        <div className="add-property-google-map">
+          {isLoaded ? (
+            <>
+              <StandaloneSearchBox
+                onLoad={ref => (inputRef.current = ref)}
+                onPlacesChanged={e => onChangeMapInput(e)}
+              >
+                <input className="google-map-input" type="text" />
+              </StandaloneSearchBox>
+              <GoogleMap
+                center={center}
+                mapContainerStyle={{ width: '100%', height: '100%' }}
+                zoom={15}
+                onClick={onMapClick}
+              >
+                <Marker position={marker} />
+              </GoogleMap>
+            </>
+          ) : null}
+        </div>
       </div>
       <div className="add-offplan-form-right">
         <label className="offplan-image-label spinner-label">

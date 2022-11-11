@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL,
-  // baseURL: 'https://api.uaeassistant.com/',
+  // baseURL: process.env.REACT_APP_BASE_URL,
+  baseURL: 'https://api.uaeassistant.com/',
   timeout: 20000,
 });
