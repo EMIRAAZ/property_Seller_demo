@@ -2,14 +2,23 @@ import './addform.scss';
 import Input from '../../../components/input/admininput';
 import Textarea from '../../../components/input/admintextarea';
 import Select from '../../../components/select/adminSelect';
-import ChipSelect from '../../../components/select/ChipSelect';
+import Plus from '../../../components/svg/plus';
+import Close from '../../../components/svg/close';
 import Button from '../../../components/button/SpinnerButton';
 import UploadImage from '../../../components/uploadimage';
+import UploadImageOffplan from '../../../components/uploadimageoffplan';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
+import { useState, useRef } from 'react';
+import {
+  useJsApiLoader,
+  GoogleMap,
+  StandaloneSearchBox,
+  Marker,
+} from '@react-google-maps/api';
 
-const keyArr = ['title', 'description'];
+const keyArr = [];
 
 const AddForm = ({
   addOffplan,
@@ -23,13 +32,28 @@ const AddForm = ({
   offplanOptions,
   editing,
   clear,
+  changeAdminOffplanMultipleInput,
+  deleteAdminOffplanMultipleInput,
+  addNewBoxOffplan,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
+  const inputRef = useRef();
+
+  const [uploadCount, setUploadCount] = useState([0]);
+  const [center, setCenter] = useState({ lat: 24.4539, lng: 54.3773 });
+  const [marker, setMarker] = useState({ lat: 24.4539, lng: 54.3773 });
+
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
+    libraries: ['places'],
+  });
+
+  const onSetUploadCount = () => {
+    setUploadCount([...uploadCount, 0]);
+  };
 
   const getID = () => location.pathname.split('/').pop();
-
-  const { amenities } = offplanOptions;
 
   const onChangeInput = (key, value) => {
     document.getElementById('on-add-warning').style.display = 'none';
@@ -58,6 +82,35 @@ const AddForm = ({
     }
   };
 
+  const onChangeMapInput = e => {
+    const [place] = inputRef.current.getPlaces();
+    if (place) {
+      setCenter({
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      });
+      setMarker({
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      });
+      onChangeInput('coordinates', {
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      });
+    }
+  };
+
+  const onMapClick = e => {
+    setMarker({
+      lat: e.latLng.lat(),
+      lng: e.latLng.lng(),
+    });
+    onChangeInput('coordinates', {
+      lat: e.latLng.lat(),
+      lng: e.latLng.lng(),
+    });
+  };
+
   const renderImageLoadingSpinner = () => {
     if (imgLoading) {
       return <Spinner />;
@@ -65,6 +118,99 @@ const AddForm = ({
       return <span className="img-add-error">Errored ! please try again</span>;
     }
   };
+  const loopThroughObjectAndMakeInput = (obj, i, mainKey) => {
+    const objArray = [];
+    for (var keyValue in obj) {
+      if (keyValue === 'description') {
+        const key = keyValue;
+        objArray.push(
+          <div className="for-label-cls-txt">
+            <label>{keyValue}</label>
+            <textarea
+              class="multiple-textarea-class"
+              value={obj[keyValue]}
+              onChange={e =>
+                changeAdminOffplanMultipleInput(mainKey, key, e.target.value, i)
+              }
+            />
+          </div>
+        );
+      } else if (keyValue === 'image') {
+        const key = keyValue;
+        objArray.push(
+          <div className="for-label-cls-txt">
+            <label>{keyValue}</label>
+            <UploadImageOffplan
+              editing={editing}
+              linkIndex={0}
+              customClass="agent-logo-img upload"
+              onChangeImage={d =>
+                changeAdminOffplanMultipleInput(mainKey, key, d, i)
+              }
+              value={[obj[key]]}
+            />
+          </div>
+        );
+      } else {
+        const key = keyValue;
+        objArray.push(
+          <div className="for-label-cls">
+            <label>{keyValue}</label>
+            <input
+              class="multiple-input-class"
+              value={obj[keyValue]}
+              onChange={e => {
+                changeAdminOffplanMultipleInput(
+                  mainKey,
+                  key,
+                  e.target.value,
+                  i
+                );
+              }}
+            />
+          </div>
+        );
+      }
+    }
+    return objArray;
+  };
+
+  const keyObj = {
+    paymentPlan: { percentage: '', type: '', description: '' },
+    whyThisProperty: { feature: '', description: '' },
+    priceForAvailability: { name: '', price: '', image: '' },
+  };
+
+  const renderMultipleInput = (data, label, mainKey) => {
+    return (
+      <div className="multiple-input-container">
+        <div className="add-n-label">
+          <label>{label}</label>
+          <Plus
+            className="plus-add-n-label"
+            width="14"
+            height="14"
+            onClick={() => addNewBoxOffplan(mainKey, keyObj[mainKey])}
+          />
+        </div>
+        {data.map((item, i) => (
+          <div className="multiple-input-control">
+            <div className="control-div">
+              <Close
+                className="close-btn"
+                fill="#ffffff"
+                onClick={() => deleteAdminOffplanMultipleInput(mainKey, i)}
+              />
+            </div>
+            <div className="multiple-input-row">
+              {loopThroughObjectAndMakeInput(item, i, mainKey)}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div className="add-offplan-form">
       <div className="add-offplan-form-left">
@@ -75,12 +221,27 @@ const AddForm = ({
           value={offplanValue.title}
           onChange={e => onChangeInput('title', e.target.value)}
         />
+        <Input
+          divClass="offplan-input"
+          label="Project Name"
+          required
+          value={offplanValue.projectName}
+          onChange={e => onChangeInput('projectName', e.target.value)}
+        />
         <Textarea
           divClass="offplan-input"
-          label="Description"
+          label="Project Overview"
           rows={8}
-          onChange={e => onChangeInput('description', e.target.value)}
-          value={offplanValue.description}
+          onChange={e => onChangeInput('projectOverview', e.target.value)}
+          value={offplanValue.projectOverview}
+          required
+        />
+        <Textarea
+          divClass="offplan-input"
+          label="Interior Details"
+          rows={8}
+          onChange={e => onChangeInput('interiorDetails', e.target.value)}
+          value={offplanValue.interiorDetails}
           required
         />
         <Textarea
@@ -93,53 +254,13 @@ const AddForm = ({
         />
         <Input
           divClass="offplan-input"
-          label="Building"
-          value={offplanValue.building}
-          onChange={e => onChangeInput('building', e.target.value)}
-        />
-        <Input
-          divClass="offplan-input"
           label="City"
           required
           value={offplanValue.city}
           onChange={e => onChangeInput('city', e.target.value)}
         />
-        <p className="property-input amenities-instruction">
-          Use comma to add multiple values in availability
-        </p>
-        <Input
-          divClass="offplan-input"
-          label="Availability"
-          required
-          value={offplanValue.availability.toString()}
-          onChange={e => onChangeInput('availability', e.target.value)}
-        />
-        <p className="property-input amenities-instruction">
-          Use comma to add multiple values in payment plan
-        </p>
-        <Input
-          divClass="offplan-input"
-          label="Payment Plan"
-          required
-          value={offplanValue.paymentPlan.toString()}
-          onChange={e => onChangeInput('paymentPlan', e.target.value)}
-        />
-      </div>
-      <div className="add-offplan-form-right">
-        <p className="property-input amenities-instruction">
-          Select multiple amenities from the drop down list to add multiple
-          amenities to the property.
-        </p>
-        <ChipSelect
-          customClass="property-input"
-          label="Amenities"
-          options={amenities}
-          value={offplanValue.amenities}
-          onChange={v => onChangeInput('amenities', v)}
-          required
-        />
         <Select
-          customClass="property-input"
+          customClass="offplan-input"
           label="Emirate"
           required
           value={offplanValue.emirate}
@@ -147,17 +268,138 @@ const AddForm = ({
           onChange={v => onChangeInput('emirate', v)}
         />
         <span className="select-border"></span>
-        <label className="offplan-image-label spinner-label">
-          Offplan Image<span>*</span> {renderImageLoadingSpinner()}
-        </label>
-        <UploadImage
-          editing={editing}
-          linkIndex={0}
-          customClass="first-img-Class-admin"
-          onChangeImage={() => {}}
-          value={offplanValue.images}
+        <Input
+          divClass="offplan-input"
+          label="Building"
+          value={offplanValue.building}
+          onChange={e => onChangeInput('building', e.target.value)}
         />
 
+        <Input
+          divClass="offplan-input"
+          label="Video Link"
+          value={offplanValue.videoLink}
+          onChange={e => onChangeInput('videoLink', e.target.value)}
+        />
+        <Select
+          customClass="offplan-input"
+          label="Property type"
+          required
+          value={offplanValue.propertyType}
+          options={offplanOptions.propertyType}
+          onChange={v => onChangeInput('propertyType', v)}
+        />
+        <span className="select-border"></span>
+
+        <Select
+          customClass="offplan-input"
+          label="Agent"
+          required
+          value={`${offplanValue.agentId}`}
+          options={offplanOptions.agent}
+          onChange={v => onChangeInput('agentId', v)}
+        />
+        <span className="select-border"></span>
+
+        <Input
+          divClass="offplan-input"
+          label="Price"
+          required
+          value={offplanValue.price.toString()}
+          onChange={e => onChangeInput('price', e.target.value)}
+        />
+        <div className="add-property-google-map">
+          {isLoaded ? (
+            <>
+              <StandaloneSearchBox
+                onLoad={ref => (inputRef.current = ref)}
+                onPlacesChanged={e => onChangeMapInput(e)}
+              >
+                <input className="google-map-input" type="text" />
+              </StandaloneSearchBox>
+              <GoogleMap
+                center={center}
+                mapContainerStyle={{ width: '100%', height: '100%' }}
+                zoom={15}
+                onClick={onMapClick}
+              >
+                <Marker position={marker} />
+              </GoogleMap>
+            </>
+          ) : null}
+        </div>
+      </div>
+      <div className="add-offplan-form-right">
+        <label className="offplan-image-label spinner-label">
+          Offplan Images<span>*</span> {renderImageLoadingSpinner()}
+        </label>
+        <div className="offplan-row-div-upload">
+          {uploadCount.map((_, i) => (
+            <UploadImage
+              key={i}
+              multiple={true}
+              linkIndex={i}
+              customClass="first-img-Class-admin"
+              onChangeImage={() => {}}
+              value={offplanValue.images}
+              editing={editing}
+            />
+          ))}
+          {uploadCount.length < 15 ? (
+            <div className="add-new-img-upload" onClick={onSetUploadCount}>
+              <Plus />
+            </div>
+          ) : null}
+        </div>
+
+        <span className="select-border"></span>
+        <div className="offplan-row-div">
+          <Input
+            divClass="offplan-input"
+            label="No. of bedrooms"
+            required
+            value={offplanValue.noOfBedroom}
+            onChange={e => onChangeInput('noOfBedroom', e.target.value)}
+          />
+          <Input
+            divClass="offplan-input"
+            label="No. of bathrooms"
+            required
+            value={offplanValue.noOfBathroom}
+            onChange={e => onChangeInput('noOfBathroom', e.target.value)}
+          />
+        </div>
+        <div className="offplan-row-div">
+          <Input
+            divClass="offplan-input"
+            label="Property size"
+            required
+            value={offplanValue.propertySize}
+            onChange={e => onChangeInput('propertySize', e.target.value)}
+          />
+          <Input
+            divClass="offplan-input"
+            label="Property size unit"
+            required
+            value={offplanValue.propertySizeUnit}
+            onChange={e => onChangeInput('propertySizeUnit', e.target.value)}
+          />
+        </div>
+        {renderMultipleInput(
+          offplanValue.paymentPlan,
+          'Payment Plan',
+          'paymentPlan'
+        )}
+        {renderMultipleInput(
+          offplanValue.whyThisProperty,
+          'Why This Property',
+          'whyThisProperty'
+        )}
+        {renderMultipleInput(
+          offplanValue.priceForAvailability,
+          'Price Availability',
+          'priceForAvailability'
+        )}
         <Button
           customClass="add-offplan-btn"
           onClick={addAdminOffplan}

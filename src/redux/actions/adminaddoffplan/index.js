@@ -14,12 +14,44 @@ import {
   GET_ADMIN_OFFPLAN_BY_ID_ERROR,
   GET_ADMIN_OFFPLAN_BY_ID_STARTED,
   CLEAR_ADD_OFFPLAN,
+  ADMIN_OFFPLAN_MULTIPLE_INPUT_CHANGE,
+  DELETE_MULTIPLE_ADMIN_OFFPLAN,
+  ADD_NEW_BOX_OFFPLAN,
+  GET_AGENT_OFFPLAN,
+  GET_AGENT_OFFPLAN_ERROR,
+  GET_AGENT_OFFPLAN_STARTED,
 } from '../../constants';
 
 export const changeAdminOffplanInput = payload => {
   return {
     type: ADMIN_OFFPLAN_INPUT_CHANGE,
     payload: payload,
+  };
+};
+
+export const changeAdminOffplanMultipleInput = (mk, k, v, i) => {
+  return {
+    type: ADMIN_OFFPLAN_MULTIPLE_INPUT_CHANGE,
+    mainKey: mk,
+    key: k,
+    value: v,
+    position: i,
+  };
+};
+
+export const addNewBoxOffplan = (mk, v) => {
+  return {
+    type: ADD_NEW_BOX_OFFPLAN,
+    mainKey: mk,
+    value: v,
+  };
+};
+
+export const deleteAdminOffplanMultipleInput = (mk, i) => {
+  return {
+    type: DELETE_MULTIPLE_ADMIN_OFFPLAN,
+    mainKey: mk,
+    position: i,
   };
 };
 
@@ -151,4 +183,33 @@ export const clearAddOffplan = () => {
   return {
     type: CLEAR_ADD_OFFPLAN,
   };
+};
+
+const getAgentOffplanStarted = () => {
+  return {
+    type: GET_AGENT_OFFPLAN_STARTED,
+  };
+};
+
+const getAgentOffplanError = () => {
+  return {
+    type: GET_AGENT_OFFPLAN_ERROR,
+  };
+};
+
+export const getAgentOffplan = () => async dispatch => {
+  try {
+    dispatch(getAgentOffplanStarted());
+    const res = await axios.get(`/api/agent`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    dispatch({
+      type: GET_AGENT_OFFPLAN,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getAgentOffplanError());
+  }
 };

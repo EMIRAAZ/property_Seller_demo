@@ -22,8 +22,6 @@ const News = props => {
               tempStrArr[i].includes('http') ||
               tempStrArr[i].includes('https')
             ) {
-              console.log(tempStrArr);
-
               tempStrArr[i] = (
                 <span>
                   &nbsp;
