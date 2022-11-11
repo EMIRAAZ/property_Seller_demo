@@ -50,6 +50,7 @@ import AgencyLogin from "./adminAgency/login";
 import AgentAddProperty from "./adminAgency/addproperty";
 import Nft from "./pages/nft/english";
 import OffplanView from "./pages/offplanview/english";
+import OffplanViewNew from "./pages/offplanviewnew/english";
 
 function Router() {
   const makePrivate = (component, role = "") => (
@@ -175,7 +176,7 @@ function Router() {
           <Route path="neighbourhood" element={<NeighBourhood />} />
           <Route path="sell" element={<Advertise />} />
           <Route path="off-plan" element={<WebOffplan />} />
-          <Route path="off-plan/:id" element={<OffplanView />} />
+          <Route path="off-plan/:id" element={<OffplanViewNew />} />
           <Route path="shortterm" element={<ShortTerm />} />
           <Route path="management" element={<Management />} />
           <Route path="management" element={<PropertyList />} />
