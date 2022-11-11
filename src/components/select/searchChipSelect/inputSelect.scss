@@ -13,11 +13,17 @@
     p {
       font-family: 'Open Sans';
       font-weight: 400;
-      font-size: 12px;
+      font-size: 14px;
       padding: 10px;
       cursor: pointer;
       color: #1c3988;
       margin: 1px;
+      display: flex;
+      border-bottom: 1px solid rgb(235, 235, 235);
+      span {
+        margin-left: 10px;
+        margin-top: 2px;
+      }
 
       &:hover {
         background-color: #f3f3fa;
@@ -92,7 +98,7 @@
         font-family: 'Poppins';
         font-weight: 300;
         font-size: 12px;
-        color: #2e2e2e;
+        color: #838383;
       }
 
       &::-ms-input-placeholder {
@@ -100,14 +106,14 @@
         font-family: 'Poppins';
         font-weight: 300;
         font-size: 12px;
-        color: #2e2e2e;
+        color: #838383;
       }
 
       &::placeholder {
         font-family: 'Poppins';
         font-weight: 300;
         font-size: 12px;
-        color: #2e2e2e;
+        color: #838383;
       }
     }
   }

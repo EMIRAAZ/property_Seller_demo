@@ -14,6 +14,12 @@ import {
   GET_ADMIN_OFFPLAN_BY_ID_ERROR,
   GET_ADMIN_OFFPLAN_BY_ID_STARTED,
   CLEAR_ADD_OFFPLAN,
+  ADMIN_OFFPLAN_MULTIPLE_INPUT_CHANGE,
+  DELETE_MULTIPLE_ADMIN_OFFPLAN,
+  ADD_NEW_BOX_OFFPLAN,
+  GET_AGENT_OFFPLAN,
+  GET_AGENT_OFFPLAN_ERROR,
+  GET_AGENT_OFFPLAN_STARTED,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -39,6 +45,30 @@ const reducer = (state = initialState, action) => {
           },
         };
       }
+    case ADMIN_OFFPLAN_MULTIPLE_INPUT_CHANGE:
+      return {
+        ...state,
+        offplanValue: {
+          ...state.offplanValue,
+          [action.mainKey]: changeValueFromArray(
+            state.offplanValue[action.mainKey],
+            action.key,
+            action.value,
+            action.position
+          ),
+        },
+      };
+    case DELETE_MULTIPLE_ADMIN_OFFPLAN:
+      return {
+        ...state,
+        offplanValue: {
+          ...state.offplanValue,
+          [action.mainKey]: deleteValueFromArray(
+            state.offplanValue[action.mainKey],
+            action.position
+          ),
+        },
+      };
     case ADD_ADMIN_OFFPLAN:
       return {
         ...state,
@@ -59,6 +89,28 @@ const reducer = (state = initialState, action) => {
           success: true,
         },
       };
+    case GET_AGENT_OFFPLAN:
+      const agent = action.payload.map(a => {
+        return {
+          name: a.username,
+          value: a.id,
+        };
+      });
+      return {
+        ...state,
+        offplanOptions: {
+          ...state.offplanOptions,
+          agent: agent,
+        },
+      };
+    case GET_AGENT_OFFPLAN_STARTED:
+      return {
+        ...state,
+      };
+    case GET_AGENT_OFFPLAN_ERROR:
+      return {
+        ...state,
+      };
     case ADD_ADMIN_OFFPLAN_ERROR:
       return {
         ...state,
@@ -67,6 +119,17 @@ const reducer = (state = initialState, action) => {
           error: true,
           loading: false,
           success: false,
+        },
+      };
+    case ADD_NEW_BOX_OFFPLAN:
+      return {
+        ...state,
+        offplanValue: {
+          ...state.offplanValue,
+          [action.mainKey]: addNewToArray(
+            state.offplanValue[action.mainKey],
+            action.value
+          ),
         },
       };
     case GET_AMENITY_OFFPLAN:
@@ -172,4 +235,23 @@ const reducer = (state = initialState, action) => {
   }
 };
 
+const changeValueFromArray = (arr, key, value, position) => {
+  const newArr = [...arr];
+  const val = newArr[position];
+  const changedObject = { ...val, [key]: value };
+  newArr[position] = changedObject;
+  return newArr;
+};
+
 export default reducer;
+
+const deleteValueFromArray = (arr, position) => {
+  const newArr = [...arr];
+  newArr.splice(position, 1);
+  return newArr;
+};
+
+const addNewToArray = (arr, obj) => {
+  const newArr = [...arr];
+  return [obj].concat(newArr);
+};

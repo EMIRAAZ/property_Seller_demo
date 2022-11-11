@@ -5,9 +5,15 @@ import {
   UPLOAD_IMAGE_STARTED,
   CLEAR_UPLOAD,
   REMOVE_IMAGE,
+  UPLOAD_IMAGE_OFFPLAN,
+  UPLOAD_IMAGE_OFFPLAN_ERROR,
+  UPLOAD_IMAGE_OFFPLAN_STARTED,
+  CLEAR_OFFPLAN_UPLOAD,
+  REMOVE_IMAGE_OFFPLAN,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
+  console.log(action.type);
   switch (action.type) {
     case UPLOAD_IMAGE_STARTED:
       return {
@@ -32,6 +38,29 @@ const reducer = (state = initialState, action) => {
         ...state,
         link: removeFromArray(state.link, action.payload),
       };
+    case UPLOAD_IMAGE_OFFPLAN_STARTED:
+      return {
+        ...state,
+        offplanLoading: true,
+        offplanError: false,
+      };
+    case UPLOAD_IMAGE_OFFPLAN:
+      return addToLinkArrayOffplan(state, action.payload, action.index);
+    case UPLOAD_IMAGE_OFFPLAN_ERROR:
+      return {
+        ...state,
+        offplanLoading: false,
+        offplanError: true,
+      };
+    case CLEAR_OFFPLAN_UPLOAD:
+      return {
+        ...initialState,
+      };
+    case REMOVE_IMAGE_OFFPLAN:
+      return {
+        ...state,
+        offplanLink: removeFromArray(state.offplanLink, action.payload),
+      };
     default:
       return state;
   }
@@ -46,6 +75,18 @@ const addToLinkArray = (state, payload, i) => {
     loading: false,
     error: false,
     link: linkArray,
+  };
+};
+
+const addToLinkArrayOffplan = (state, payload, i) => {
+  const linkArray = [...state.offplanLink];
+  if (i) linkArray[i] = payload;
+  else if (payload) linkArray.push(payload);
+  return {
+    ...state,
+    offplanLoading: false,
+    offplanError: false,
+    offplanLink: linkArray,
   };
 };
 

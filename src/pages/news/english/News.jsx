@@ -11,6 +11,45 @@ const News = props => {
   let location = useLocation();
 
   const getID = () => location.pathname.split('/').pop();
+  const renderLinkFromString = str => {
+    const strArr = str?.split(' ');
+    for (let i = 0; i < strArr?.length; i++) {
+      if (strArr[i].includes('http') || strArr[i].includes('https')) {
+        if (strArr[i].includes('\n')) {
+          const tempStrArr = strArr[i].split('\n');
+          for (let i = 0; i < tempStrArr?.length; i++) {
+            if (
+              tempStrArr[i].includes('http') ||
+              tempStrArr[i].includes('https')
+            ) {
+              tempStrArr[i] = (
+                <span>
+                  &nbsp;
+                  <a
+                    href={`https://${tempStrArr[i]}`}
+                    target="_blank"
+                  >{`${tempStrArr[i]}`}</a>
+                </span>
+              );
+            } else tempStrArr[i] = <span>{` ${tempStrArr[i]}`}</span>;
+          }
+
+          strArr[i] = tempStrArr;
+        } else {
+          strArr[i] = (
+            <span>
+              &nbsp;
+              <a
+                href={`https://${strArr[i]}`}
+                target="_blank"
+              >{`${strArr[i]}`}</a>
+            </span>
+          );
+        }
+      } else strArr[i] = <span>{` ${strArr[i]}`}</span>;
+    }
+    return strArr;
+  };
 
   useEffect(() => {
     props.getSingleNews(getID());
@@ -41,7 +80,7 @@ const News = props => {
         />
 
         <p className="news-content">
-          {props.news[0] && props.news[0].description}
+          {props.news[0] && renderLinkFromString(props.news[0].description)}
         </p>
       </div>
       <MoveToTop />

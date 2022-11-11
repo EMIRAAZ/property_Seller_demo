@@ -51,7 +51,6 @@ import AgentAddProperty from "./adminAgency/addproperty";
 import Nft from "./pages/nft/english";
 import OffplanView from "./pages/offplanview/english";
 import OffplanViewNew from "./pages/offplanviewnew/english";
-
 function Router() {
   const makePrivate = (component, role = "") => (
     <PrivateRoute role={role}>{component}</PrivateRoute>
@@ -67,6 +66,10 @@ function Router() {
             <Route index element={makePrivate(<AgentDashboard />, "AGENCY")} />
             <Route
               path="add-agent"
+              element={makePrivate(<AgentAddAgent />, "AGENCY")}
+            />
+            <Route
+              path="add-agent/:id"
               element={makePrivate(<AgentAddAgent />, "AGENCY")}
             />
             <Route

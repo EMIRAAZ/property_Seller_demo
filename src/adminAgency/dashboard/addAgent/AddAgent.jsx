@@ -2,7 +2,7 @@ import React from 'react';
 import './addAgent.scss';
 import { useNavigate } from 'react-router-dom';
 
-function AddAgent() {
+function AddAgent(props) {
   let navigate = useNavigate();
 
   return (
@@ -32,7 +32,11 @@ function AddAgent() {
       </div>
       <div
         className="add-icon-div"
-        onClick={() => navigate('/agency/add-agent')}
+        onClick={() => {
+          props.clr();
+          props.clrUpload();
+          navigate('/agency/add-agent');
+        }}
       >
         <div className="icon">
           <svg
