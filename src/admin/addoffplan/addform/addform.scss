@@ -173,13 +173,25 @@
         padding: 5px 5px;
         margin: 5px 0px;
         width: 70%;
-        label {
-          font-size: 14px;
-          font-family: 'Poppins';
-          margin: 5px 0;
-          color: #464646;
-          font-weight: 500;
+
+        .add-n-label {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          label {
+            font-size: 14px;
+            font-family: 'Poppins';
+            margin: 5px 0;
+            color: #464646;
+            font-weight: 500;
+          }
+
+          .plus-add-n-label {
+            margin-right: 10px;
+            cursor: pointer;
+          }
         }
+
         .multiple-input-control {
           display: flex;
           flex-direction: column;

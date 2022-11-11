@@ -16,6 +16,10 @@ import {
   CLEAR_ADD_OFFPLAN,
   ADMIN_OFFPLAN_MULTIPLE_INPUT_CHANGE,
   DELETE_MULTIPLE_ADMIN_OFFPLAN,
+  ADD_NEW_BOX_OFFPLAN,
+  GET_AGENT_OFFPLAN,
+  GET_AGENT_OFFPLAN_ERROR,
+  GET_AGENT_OFFPLAN_STARTED,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -85,6 +89,28 @@ const reducer = (state = initialState, action) => {
           success: true,
         },
       };
+    case GET_AGENT_OFFPLAN:
+      const agent = action.payload.map(a => {
+        return {
+          name: a.username,
+          value: a.id,
+        };
+      });
+      return {
+        ...state,
+        offplanOptions: {
+          ...state.offplanOptions,
+          agent: agent,
+        },
+      };
+    case GET_AGENT_OFFPLAN_STARTED:
+      return {
+        ...state,
+      };
+    case GET_AGENT_OFFPLAN_ERROR:
+      return {
+        ...state,
+      };
     case ADD_ADMIN_OFFPLAN_ERROR:
       return {
         ...state,
@@ -93,6 +119,17 @@ const reducer = (state = initialState, action) => {
           error: true,
           loading: false,
           success: false,
+        },
+      };
+    case ADD_NEW_BOX_OFFPLAN:
+      return {
+        ...state,
+        offplanValue: {
+          ...state.offplanValue,
+          [action.mainKey]: addNewToArray(
+            state.offplanValue[action.mainKey],
+            action.value
+          ),
         },
       };
     case GET_AMENITY_OFFPLAN:
@@ -212,4 +249,9 @@ const deleteValueFromArray = (arr, position) => {
   const newArr = [...arr];
   newArr.splice(position, 1);
   return newArr;
+};
+
+const addNewToArray = (arr, obj) => {
+  const newArr = [...arr];
+  return [obj].concat(newArr);
 };

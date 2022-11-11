@@ -11,7 +11,7 @@ const AddOffplan = props => {
   const getID = () => location.pathname.split('/').pop();
 
   useEffect(() => {
-    props.getAmenityOffplan();
+    props.getAgentOffplan();
     if (getID() !== 'add-offplan') props.getAdminOffplanById(getID());
   }, []);
   return (
@@ -37,6 +37,7 @@ const AddOffplan = props => {
           deleteAdminOffplanMultipleInput={
             props.deleteAdminOffplanMultipleInput
           }
+          addNewBoxOffplan={props.addNewBoxOffplan}
         />
       </div>
     </div>

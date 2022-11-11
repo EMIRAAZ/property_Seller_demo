@@ -330,13 +330,6 @@ const AddForm = ({
           />
         </div>
         <div className="property-row-div">
-          {/* <Input
-            divClass="property-input"
-            label="Reference No"
-            required
-            value={propertyValue.referenceNo}
-            onChange={e => onChangeInput('referenceNo', e.target.value)}
-          /> */}
           <Input
             divClass="property-input"
             label="Trakheesi Permit"

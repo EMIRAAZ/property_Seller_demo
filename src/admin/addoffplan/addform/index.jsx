@@ -4,15 +4,15 @@ import Textarea from '../../../components/input/admintextarea';
 import Select from '../../../components/select/adminSelect';
 import Plus from '../../../components/svg/plus';
 import Close from '../../../components/svg/close';
-import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import UploadImage from '../../../components/uploadimage';
+import UploadImageOffplan from '../../../components/uploadimageoffplan';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
 import { useState } from 'react';
 
-const keyArr = ['title', 'description'];
+const keyArr = [];
 
 const AddForm = ({
   addOffplan,
@@ -28,6 +28,7 @@ const AddForm = ({
   clear,
   changeAdminOffplanMultipleInput,
   deleteAdminOffplanMultipleInput,
+  addNewBoxOffplan,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -95,11 +96,13 @@ const AddForm = ({
         objArray.push(
           <div className="for-label-cls-txt">
             <label>{keyValue}</label>
-            <UploadImage
+            <UploadImageOffplan
               editing={editing}
               linkIndex={0}
               customClass="agent-logo-img upload"
-              onChangeImage={() => {}}
+              onChangeImage={d =>
+                changeAdminOffplanMultipleInput(mainKey, key, d, i)
+              }
               value={[obj[key]]}
             />
           </div>
@@ -128,10 +131,24 @@ const AddForm = ({
     return objArray;
   };
 
+  const keyObj = {
+    paymentPlan: { percentage: '', type: '', description: '' },
+    whyThisProperty: { feature: '', description: '' },
+    priceForAvailability: { name: '', price: '', image: '' },
+  };
+
   const renderMultipleInput = (data, label, mainKey) => {
     return (
       <div className="multiple-input-container">
-        <label>{label}</label>
+        <div className="add-n-label">
+          <label>{label}</label>
+          <Plus
+            className="plus-add-n-label"
+            width="14"
+            height="14"
+            onClick={() => addNewBoxOffplan(mainKey, keyObj[mainKey])}
+          />
+        </div>
         {data.map((item, i) => (
           <div className="multiple-input-control">
             <div className="control-div">
@@ -213,13 +230,7 @@ const AddForm = ({
           value={offplanValue.building}
           onChange={e => onChangeInput('building', e.target.value)}
         />
-        <Input
-          divClass="offplan-input"
-          label="Price Availability"
-          required
-          value={offplanValue.priceAvailability}
-          onChange={e => onChangeInput('paymentPlan', e.target.value)}
-        />
+
         <Input
           divClass="offplan-input"
           label="Video Link"
@@ -234,14 +245,18 @@ const AddForm = ({
           options={offplanOptions.propertyType}
           onChange={v => onChangeInput('propertyType', v)}
         />
+        <span className="select-border"></span>
+
         <Select
           customClass="offplan-input"
           label="Agent"
           required
-          value={`${offplanValue.agentId} ${offplanValue.agencyId}`}
+          value={`${offplanValue.agentId}`}
           options={offplanOptions.agent}
           onChange={v => onChangeInput('agentId', v)}
         />
+        <span className="select-border"></span>
+
         <Input
           divClass="offplan-input"
           label="Price"
@@ -319,7 +334,7 @@ const AddForm = ({
         {renderMultipleInput(
           offplanValue.priceForAvailability,
           'Price Availability',
-          'priceAvailability'
+          'priceForAvailability'
         )}
         <Button
           customClass="add-offplan-btn"

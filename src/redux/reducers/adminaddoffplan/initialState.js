@@ -20,14 +20,7 @@ export const initialState = {
     noOfBedroom: '',
     noOfBathroom: '',
     priceForAvailability: [],
-    paymentPlan: [
-      {
-        percentage: '10',
-        type: 'On Booking',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco',
-      },
-    ],
+    paymentPlan: [],
     whyThisProperty: [],
     placeAddress: '',
     building: '',
