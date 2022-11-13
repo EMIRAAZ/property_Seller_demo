@@ -320,7 +320,7 @@ const PropertyView = props => {
                   className="service-btn-property whatsapp"
                   onClick={() =>
                     window.open(
-                      `https://wa.me/+971521278701/?text=Hello UAE Assistant. I’m interested in this property %0a%0aLink: http://uaeassistant.com/property/${property.id}
+                      `https://wa.me/+971521278701/?text=Hello Property Assistant. I’m interested in this property %0a%0aLink: http://uaeassistant.com/property/${property.id}
               %0a%0aPrice: AED ${property.price}
               %0aLocation: ${property.address.city}
                 

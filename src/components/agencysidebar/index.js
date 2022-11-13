@@ -6,6 +6,7 @@ import Agent from '../svg/agent';
 import Logout from '../svg/logout';
 import ListAgent from '../svg/listagent';
 import AddProperty from '../svg/addproperty';
+import { TITLE } from '../../utils/constants';
 
 const first = [
   { name: 'Dashboard', link: '/agency', logo: Dashboard },
@@ -19,7 +20,7 @@ const second = [{ name: 'Log Out', link: '', logo: Logout }];
 const AgencySidebar = props => {
   return (
     <div className="agency-sidebar">
-      <p className="agency-sidebar-header">UAE Assistant</p>
+      <p className="agency-sidebar-header">{TITLE}</p>
       <ul className="first-list">
         {first.map(item => (
           <RenderSingleList

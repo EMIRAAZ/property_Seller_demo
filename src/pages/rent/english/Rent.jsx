@@ -1,24 +1,24 @@
-import "./rent.scss";
-import { useState } from "react";
-import Header from "../../../components/header";
-import QueryCard from "../../../components/querycard";
-import RenderComponent from "../../../components/renderComponent";
-import Footer from "../../../components/footer";
-import ListHeading from "../../../components/ListHeading";
-import { MoveToTop } from "../../../components/movetotop";
-import FooterNew from "../../../components/footerNew";
-import { Helmet } from "react-helmet";
+import './rent.scss';
+import { useState } from 'react';
+import Header from '../../../components/header';
+import QueryCard from '../../../components/querycard';
+import RenderComponent from '../../../components/renderComponent';
+import { TITLE } from '../../../utils/constants';
+import ListHeading from '../../../components/ListHeading';
+import { MoveToTop } from '../../../components/movetotop';
+import FooterNew from '../../../components/footerNew';
+import { Helmet } from 'react-helmet';
 
-const Rent = (props) => {
-  const [param, setParam] = useState("");
+const Rent = props => {
+  const [param, setParam] = useState('');
 
   return (
     <div className="rent-english">
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent
-          in Dubai - UAE Assistant
+          {`Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent
+          in Dubai - ${TITLE}`}
         </title>
         <meta
           name="keywords"
@@ -26,7 +26,7 @@ const Rent = (props) => {
         />
         <meta
           property="og:title"
-          content="Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent in Dubai - UAE Assistant "
+          content="Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent in Dubai - Property Assistant "
         />
         <meta
           name="description"
@@ -39,7 +39,7 @@ const Rent = (props) => {
         <link rel="canonical" href="http://www.uaeassistant.com/rent" />
         <meta
           property="og:title"
-          content="Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent in Dubai - UAE Assistant"
+          content="Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent in Dubai - Property Assistant"
         />
         <meta
           property="og: description"
@@ -57,7 +57,7 @@ const Rent = (props) => {
         <meta name="twitter:image" content="" />
         <meta
           name="twitter:title"
-          content="Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent in Dubai - UAE Assistant"
+          content="Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent in Dubai - Property Assistant"
         />
       </Helmet>
       <Header customClass="rent-header-class" />
@@ -66,7 +66,7 @@ const Rent = (props) => {
         onSearchLocation={props.getRentLocationSearch}
         isSale={false}
         cardInput={props.cardInput}
-        onSearch={(params) => {
+        onSearch={params => {
           props.getRentProperty(`sale=rent&limit=${6}&offset=${0}${params}`);
           setParam(params);
         }}

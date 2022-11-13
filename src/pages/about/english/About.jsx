@@ -66,7 +66,7 @@ const About = () => {
               supported by research, tech, data analysis, automation and
               management expertise making it more organized and reliable with
               enabling our clientelle to capitalize and reap rewards on their
-              investment. Explore the UAE Assistant to learn more of the
+              investment. Explore the Property Assistant to learn more of the
               unlimited opportunities. Know what it does and why it can’t be
               done without.
             </p>

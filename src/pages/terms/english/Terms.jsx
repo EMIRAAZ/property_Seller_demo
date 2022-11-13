@@ -1,9 +1,9 @@
-import "./terms.scss";
-import SocialPanel from "../../../components/socialpanel";
-import Footer from "../../../components/footer";
-import Header from "../../../components/header";
-import { MoveToTop } from "../../../components/movetotop";
-import FooterNew from "../../../components/footerNew";
+import './terms.scss';
+import SocialPanel from '../../../components/socialpanel';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header';
+import { MoveToTop } from '../../../components/movetotop';
+import FooterNew from '../../../components/footerNew';
 
 const Terms = () => {
   return (
@@ -19,7 +19,7 @@ const Terms = () => {
             <h3>1. TERMS</h3>
             <br />
             <b>1.1</b> The term mentioned here as ‘we’,’our’ and ‘us’ would mean
-            ‘The UAE assistant’, its representatives, subsidiaries, agents,
+            ‘The Property Assistant’, its representatives, subsidiaries, agents,
             affiliates or its assigned parties. <br />
             <b>1.2</b> The website and its contents is herein referred to as
             ‘www.theuaeassistant.com’. <br />
@@ -37,7 +37,7 @@ const Terms = () => {
             <b>a)</b> Modifying or copying the contents <br />
             <b>b)</b> To use for any kind of display both commercial and
             non-commercial <br />
-            <b>c)</b> Manipulate the website or its functionalities in any way.{" "}
+            <b>c)</b> Manipulate the website or its functionalities in any way.{' '}
             <br />
             <b>d)</b> Remove copyright or trademarks. <br />
             <b>e)</b> Transfer of materials to any entity or server. <br />
@@ -62,7 +62,7 @@ const Terms = () => {
             own respect if any of these rules have been violated. Upon barring
             your views of the contentor termination of the license, any material
             in your possession obtained as downloaded matter in the form of
-            print or storage should be immediately destroyed.{" "}
+            print or storage should be immediately destroyed.{' '}
             <h3> 3. YOUR RESPONSIBILITIES</h3>
             <br />
             <b>3.1</b> We do ot claim to be a real estate agency, we only
@@ -97,7 +97,7 @@ const Terms = () => {
             damage, costs and expenses <br />
             <b>d)</b>Profit loss <br />
             <b>e)</b>Business loss <br />
-            <b>f)</b>Lack of goodwill or something affecting your reputation or{" "}
+            <b>f)</b>Lack of goodwill or something affecting your reputation or{' '}
             <br />
             <b>g)</b>Data loss or data corruption <br />
             <b>4.3</b> Unless we enter into an agreement the use of our website
@@ -156,7 +156,7 @@ const Terms = () => {
             are
             <br />
             <b>1.</b>misleading <br />
-            <b>2.</b>inappropriate with respect to the purpose of our Website;{" "}
+            <b>2.</b>inappropriate with respect to the purpose of our Website;{' '}
             <br />
             <b>3.</b>Offensive and obscene <br />
             <b>4.</b>Incorrect matter; <br />
@@ -192,9 +192,9 @@ const Terms = () => {
             <br />
             <b>2.</b>You will not make any Contributions that violates the
             rights of any third party, and that you will pay all royalties, fees
-            or other payable amount for the Contributions made by you; and{" "}
+            or other payable amount for the Contributions made by you; and{' '}
             <br />
-            <b>3.</b>Your Contributions will not contain any contents that are :{" "}
+            <b>3.</b>Your Contributions will not contain any contents that are :{' '}
             <br />
             1.Misleading
             <br /> 2.Deceptive <br />
@@ -202,8 +202,8 @@ const Terms = () => {
             4.Offensive <br /> 5.directly or indirectly related to any
             advertising or marketing of any products or services
             <br /> 6.Obscene, that includes pornographic, hate, racial or
-            ethnically offensive materia <br /> 7.Defamatory or <br />{" "}
-            8.Unlawful or that which encourages unlawful conduct.{" "}
+            ethnically offensive materia <br /> 7.Defamatory or <br />{' '}
+            8.Unlawful or that which encourages unlawful conduct.{' '}
             <h3>10. INTELLECTUAL PROPERTY</h3> <br />
             <b>10.1</b> Unless otherwise expressed, all contents of the Website
             are copyrights, trademarks, trade dress or any other intellectual
@@ -224,7 +224,7 @@ const Terms = () => {
             names, design marks and slogans are our trademarks or service marks
             belonging to us or our licensors. <br />
             <b>10.4</b>Access to this Website does not authorize anyone to use
-            any name, logo or mark in any manner.{" "}
+            any name, logo or mark in any manner.{' '}
             <h3>11. ELECTRONIC COMMUNICATIONS</h3>
             <br /> By using the website or sending us mails, you are engaging
             with us through the electronic media. Our communications with you
@@ -246,13 +246,13 @@ const Terms = () => {
             include the veracity or non-infringement of intellectual property or
             that which is in violation of any rights. We also do not offer any
             assurances on the accuracy or reliability of the materials published
-            or linked with this site.{" "}
+            or linked with this site.{' '}
             <h3>14. MONITORING AND RECORDING TELEPHONE CALLS</h3>
             <br /> Calls of Real Estate Agents or Brokers who are engaged in our
             call tracking services and who have agreed to generate enquiries
             through our website, will be recorded for training and assistance.
             The calls will be recorded only with prior consent and will be
-            reminded of the recordings before a conversation.{" "}
+            reminded of the recordings before a conversation.{' '}
             <h3>15. GOVERNING LAW </h3>
             <br />
             <b>15.1</b>
