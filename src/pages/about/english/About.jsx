@@ -25,12 +25,12 @@ const About = () => {
           <h2 className="property-header">About Us.</h2>
           <p className="properties-description">
             <p>
-              A one stop solution for all your property needs, the ‘UAE
+              A one stop solution for all your property needs, the ‘Property
               Assistant’ has been disrupting the real estate sector in the UAE
               in ways never imagined before. A comprehensive real estate portal,
-              the ‘UAE Assistant’, it has been conceived to provide a seamless,
-              effective, intuitive and transparent way to transact properties
-              across the country.
+              the ‘Property Assistant’, it has been conceived to provide a
+              seamless, effective, intuitive and transparent way to transact
+              properties across the country.
             </p>
             <p>
               Available in web and mobile apps, it lets you experience the
