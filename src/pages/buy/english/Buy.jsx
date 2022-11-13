@@ -1,17 +1,17 @@
-import "./buy.scss";
-import { useState } from "react";
-import Header from "../../../components/header";
-import QueryCard from "../../../components/querycard";
-import RenderComponent from "../../../components/renderComponent";
-import Footer from "../../../components/footer/english";
-import ListHeading from "../../../components/ListHeading";
-import { MoveToTop } from "../../../components/movetotop";
-import FooterNew from "../../../components/footerNew";
+import './buy.scss';
+import { useState } from 'react';
+import Header from '../../../components/header';
+import QueryCard from '../../../components/querycard';
+import RenderComponent from '../../../components/renderComponent';
+import Footer from '../../../components/footer/english';
+import ListHeading from '../../../components/ListHeading';
+import { MoveToTop } from '../../../components/movetotop';
+import FooterNew from '../../../components/footerNew';
 
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
-const Buy = (props) => {
-  const [param, setParam] = useState("");
+const Buy = props => {
+  const [param, setParam] = useState('');
   return (
     <div className="buy-english">
       <Helmet>
@@ -27,7 +27,7 @@ const Buy = (props) => {
         />
         <meta
           property="og:title"
-          content="Luxury Properties for Sale in Dubai, UAE | Best Luxury Properties for Sale in Dubai | Buy or Sale luxury properties in Dubai, UAE - UAE Assistant"
+          content="Luxury Properties for Sale in Dubai, UAE | Best Luxury Properties for Sale in Dubai | Buy or Sale luxury properties in Dubai, UAE - Property Assistant"
         />
         <meta
           name="description"
@@ -40,7 +40,7 @@ const Buy = (props) => {
         <link rel="canonical" href="http://www.uaeassistant.com/buy" />
         <meta
           property="og:title"
-          content="Luxury Properties for Sale in Dubai, UAE | Best Luxury Properties for Sale in Dubai | Buy or Sale luxury properties in Dubai, UAE - UAE Assistant"
+          content="Luxury Properties for Sale in Dubai, UAE | Best Luxury Properties for Sale in Dubai | Buy or Sale luxury properties in Dubai, UAE - Property Assistant"
         />
 
         <meta
@@ -59,7 +59,7 @@ const Buy = (props) => {
         <meta name="twitter:image" content="" />
         <meta
           name="twitter:title"
-          content="Luxury Properties for Sale in Dubai, UAE | Best Luxury Properties for Sale in Dubai | Buy or Sale luxury properties in Dubai, UAE - UAE Assistant"
+          content="Luxury Properties for Sale in Dubai, UAE | Best Luxury Properties for Sale in Dubai | Buy or Sale luxury properties in Dubai, UAE - Property Assistant"
         />
       </Helmet>
       <Header customClass="buy-header-class" />
@@ -68,7 +68,7 @@ const Buy = (props) => {
         onSearchLocation={props.getBuyLocationSearch}
         isSale={false}
         cardInput={props.cardInput}
-        onSearch={(params) => {
+        onSearch={params => {
           props.getBuyProperty(`sale=buy&limit=${6}&offset=${0}${params}`);
           setParam(params);
         }}

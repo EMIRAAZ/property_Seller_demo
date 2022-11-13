@@ -11,6 +11,7 @@ import Living from '../svg/living';
 import Area from '../svg/area';
 import { useNavigate } from 'react-router-dom';
 import ImgPropCarousel from '../imgpropcarousel';
+import { TITLE } from '../../utils/constants';
 
 const Property = props => {
   let navigate = useNavigate();
@@ -66,7 +67,7 @@ const Property = props => {
           className="property-rectangle share"
           onClick={() =>
             window.open(
-              `https://wa.me/?text=Hello, I found this Property on UAE Assistant please check it out and tell me how do you feel.  %0a%0ahttp://uaeassistant.com/property/${props.id}
+              `https://wa.me/?text=Hello, I found this Property on ${TITLE} please check it out and tell me how do you feel.  %0a%0ahttp://uaeassistant.com/property/${props.id}
              `
             )
           }
@@ -166,7 +167,7 @@ const Property = props => {
             className="service-btn-property whatsapp"
             onClick={() =>
               window.open(
-                `https://wa.me/+971521278701/?text=Hello UAE Assistant. I’m interested in this property %0a%0aLink: http://uaeassistant.com/property/${props.id}
+                `https://wa.me/+971521278701/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://uaeassistant.com/property/${props.id}
               %0a%0aPrice: AED ${props.price}
               %0aLocation: ${props.address.city}
                 

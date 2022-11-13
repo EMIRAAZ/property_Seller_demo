@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../../../components/input/BasicInput';
 import Button from '../../../components/button/BasicButton';
+import { TITLE } from '../../../utils/constants';
 
 const Login = props => {
   let navigate = useNavigate();
@@ -28,7 +29,7 @@ const Login = props => {
     <div className="admin-login">
       <div className="logo-wrapper">
         <span className="admin-logo">ADMIN</span>
-        <span className="uaeassistant-logo">UAE ASSISTANT</span>
+        <span className="uaeassistant-logo">{TITLE}</span>
       </div>
       <Input
         divClass="admin-login-input"

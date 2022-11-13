@@ -79,7 +79,9 @@ const Header = ({ customClass }) => {
           />
         </li>
         <li className="company-name" onClick={() => navigate('/')}>
-          <span className="main-name">UAE&nbsp;Assistant</span>
+          <span className="main-name">
+            Property<span>Assistant</span>
+          </span>
         </li>
         <li className="desktop-li">
           <ul className="desktop-ul">
