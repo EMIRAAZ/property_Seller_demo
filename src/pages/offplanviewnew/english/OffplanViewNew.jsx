@@ -32,12 +32,24 @@ const OffplanViewNew = (props) => {
   const getID = () => location.pathname.split("/").pop();
   const [content, setContent] = useState(true);
   const [read, setRead] = useState(false);
+  const [read1, setRead2] = useState(false);
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
   });
 
   const getDescription = (description) => {
+    if (description) {
+      if (read) {
+        return description;
+      } else {
+        if (description.length > 200)
+          return description.substring(0, 200) + " . . .";
+        else return description;
+      }
+    } else return "";
+  };
+  const getDescription2 = (description) => {
     if (description) {
       if (read) {
         return description;
@@ -102,65 +114,7 @@ const OffplanViewNew = (props) => {
           <div className="left-container">
             <div className="details">
               <p className="heading">{property.title}</p>
-              <p className="price">{`AED ${property.price}`}</p>
-              <div className="spec">
-                <div className="spec-wrap">
-                  <Bed
-                    className="property-bed"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 17 1"
-                    fill="#2f70ff"
-                  />
-                  <div className="ft">
-                    <div>Bedrooms:</div>
-                    {property.noOfBedroom}
-                  </div>
-                </div>
-                <div class="vl"></div>
-                <div className="spec-wrap">
-                  <Bath
-                    className="property-bath"
-                    width="18"
-                    height="18"
-                    fill="#2f70ff"
-                    viewBox="0 0 17 17"
-                  />
-                  <div className="ft">
-                    <div> Bathrooms:</div>
-                    {property.noOfBathroom}
-                  </div>
-                </div>
-                <div class="vl"></div>
-                <div className="spec-wrap">
-                  <Living
-                    className="property-living"
-                    width="18"
-                    fill="#2f70ff"
-                    height="18"
-                    viewBox="0 0 17 14"
-                  />
-                  <div className="ft">
-                    <div> Property Type:</div>
-                    {property.propertyType}
-                  </div>
-                </div>
-                <div class="vl"></div>
-                <div className="spec-wrap">
-                  <Area
-                    className="property-area"
-                    width="18"
-                    height="18"
-                    fill="#2f70ff"
-                    viewBox="0 0 17 16"
-                  />
-                  <div className="ft">
-                    <div> Area:</div>
-                    {property.propertySize}
-                    {/* {renderUnit(property.propertySizeUnit)} */}
-                  </div>
-                </div>
-              </div>
+              {/* <p className="price">{`AED ${property.price}`}</p> */}
             </div>
             <hr />
             <div className="details-two">
@@ -197,17 +151,32 @@ const OffplanViewNew = (props) => {
             </div>
             <hr />
             <div className="details-three">
-              <p className="head">{property.mainTitle}</p>
-              <p className="description">
-                {getDescription(property.description)}
-              </p>
-              <Button
-                size="small"
-                variant="outlined"
-                onClick={() => setRead(!read)}
-              >
-                {read ? "Read less" : "Read more"}
-              </Button>
+              <div className="dtails-inside-div">
+                <p className="head">Project Overview</p>
+                <p className="description">
+                  {getDescription(property.description)}
+                </p>
+                <Button
+                  size="small"
+                  variant="outlined"
+                  onClick={() => setRead(!read)}
+                >
+                  {read ? "Read less" : "Read more"}
+                </Button>
+              </div>
+              <div className="dtails-inside-div">
+                <p className="head">Interior Details</p>
+                <p className="description">
+                  {getDescription2(property.description)}
+                </p>
+                <Button
+                  size="small"
+                  variant="outlined"
+                  onClick={() => setRead2(!read1)}
+                >
+                  {read ? "Read less" : "Read more"}
+                </Button>
+              </div>
 
               <div className="amenities-main-div">
                 <h1>Facilities and Amenities.</h1>
@@ -224,8 +193,8 @@ const OffplanViewNew = (props) => {
               </div>
             </div>
 
-            <hr />
-            <div className="more-details">
+            {/* <hr /> */}
+            {/* <div className="more-details">
               <div className="details">
                 <p>Reference:</p>
                 <h1>{property.id}</h1>
@@ -254,8 +223,14 @@ const OffplanViewNew = (props) => {
                 <p> Ownership:</p>
                 <h1>{property.ownership}</h1>
               </div>
+            </div> */}
+            {/* <hr /> */}
+            <div className="why-this-property">
+              <div className="head-div">
+                <h1>ABOUT</h1>
+                <hr />
+              </div>
             </div>
-            <hr />
           </div>
           <div className="right-container">
             <div className="agent-card">

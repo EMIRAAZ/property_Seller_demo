@@ -139,16 +139,24 @@
           }
         }
         .details-three {
-          .head {
-            font-size: 23px;
-            font-weight: bold;
-            color: #464646;
-          }
-          .description {
-            margin-top: 20px;
-            font-size: 17px;
-            line-height: 30px;
-            white-space: pre-line;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          .dtails-inside-div {
+            width: 45%;
+            .head {
+              font-size: 23px;
+              font-weight: bold;
+              color: #333333;
+            }
+            .description {
+              margin-top: 20px;
+              font-size: 17px;
+              line-height: 30px;
+              white-space: pre-line;
+              color: #9c9c9c;
+              font-family: "Poppins";
+            }
           }
           .main-video-container2 {
             height: 200px;
@@ -213,6 +221,25 @@
               font-weight: 400;
               color: #706f6f;
               font-size: 17px;
+            }
+          }
+        }
+        .why-this-property {
+          .head-div {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            hr {
+              width: 50%;
+              margin-left: 10px;
+              color: black;
+            }
+            h1 {
+              font-family: "Poppins";
+              font-style: normal;
+              font-weight: 500;
+              font-size: 20px;
             }
           }
         }
@@ -428,15 +455,17 @@
             }
           }
           .details-three {
-            .head {
-              font-size: 23px;
-              font-weight: bold;
-              color: #464646;
-            }
-            .description {
-              margin-top: 20px;
-              font-size: 17px;
-              line-height: 30px;
+            .dtails-inside-div {
+              .head {
+                font-size: 23px;
+                font-weight: bold;
+                color: #464646;
+              }
+              .description {
+                margin-top: 20px;
+                font-size: 17px;
+                line-height: 30px;
+              }
             }
             .main-video-container2 {
               display: none;
@@ -475,6 +504,7 @@
               }
             }
           }
+
           .more-details {
             display: flex;
             flex-wrap: wrap;
