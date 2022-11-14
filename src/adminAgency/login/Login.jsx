@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../../components/input/BasicInput';
 import Button from '../../components/button/BasicButton';
+import { TITLE } from '../../utils/constants';
 
 const Login = props => {
   let navigate = useNavigate();
@@ -27,13 +28,13 @@ const Login = props => {
   return (
     <div className="admin-agency-login">
       <div className="logo-wrapper">
-        <span className="uaeassistant-logo">UAE Assistant</span>
+        <span className="uaeassistant-logo">{TITLE}</span>
       </div>
       <div className="login-div">
         <div className="text-div">
           <h1>Sign in to</h1>
           <h2>
-            UAE Assistant <span>Admin</span>
+            {TITLE} <span>Admin</span>
           </h2>
           <p>
             If youre having problems logging in <br />
