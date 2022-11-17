@@ -3,6 +3,7 @@ import './bottomFixed.scss';
 import Whatsapp from '../svg/whatsapp';
 import Phone from '../svg/phone';
 import Mail from '../svg/mailsvg';
+import { TITLE } from '../../utils/constants';
 
 function BottomFixed({ property }) {
   return (
@@ -12,7 +13,7 @@ function BottomFixed({ property }) {
           className="service-btn-property whatsapp"
           onClick={() =>
             window.open(
-              `https://wa.me/+971521278701/?text=Hello UAE Assistant. I’m interested in this property %0a%0aLink: http://uaeassistant.com/property/${property.id}
+              `https://wa.me/+971521278701/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://uaeassistant.com/property/${property.id}
               %0a%0aPrice: AED ${property.price}
               %0aLocation: ${property.address.city}
                 %0aReference: ${property.id}

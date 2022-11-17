@@ -27,7 +27,7 @@ const Home = props => {
         <meta charSet="utf-8" />
         <title>
           Freehold Properties in Dubai | Residential Properties in Dubai |
-          Commercial properties in UAE - UAE Assistant
+          Commercial properties in UAE - Property Assistant
         </title>
         <meta
           name="keywords"
@@ -35,7 +35,7 @@ const Home = props => {
         />
         <meta
           property="og:title"
-          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - UAE Assistant "
+          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - Property Assistant "
         />
 
         <meta
@@ -51,7 +51,7 @@ const Home = props => {
 
         <meta
           property="og:title"
-          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - UAE Assistant"
+          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - Property Assistant"
         />
 
         <meta
@@ -72,7 +72,7 @@ const Home = props => {
         <meta name="twitter:image" content="" />
         <meta
           name="twitter:title"
-          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - UAE Assistant"
+          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - Property Assistant"
         />
       </Helmet>
 

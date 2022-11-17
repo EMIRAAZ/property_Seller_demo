@@ -1,5 +1,5 @@
-import { connect } from "react-redux";
-import AddOffplan from "./AddOffplan";
+import { connect } from 'react-redux';
+import AddOffplan from './AddOffplan';
 import {
   changeAdminOffplanInput,
   addAdminOffplan,
@@ -8,9 +8,14 @@ import {
   getAdminOffplanById,
   clearUpload,
   clearAddOffplan,
-} from "../../../redux/actions";
+  changeAdminOffplanMultipleInput,
+  deleteAdminOffplanMultipleInput,
+  addNewBoxOffplan,
+  getAgentOffplan,
+} from '../../../redux/actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
+  console.log(state);
   return {
     env: state.adminaddoffplanReducer.env,
     offplanValue: state.adminaddoffplanReducer.offplanValue,
@@ -18,19 +23,28 @@ const mapStateToProps = (state) => {
     images: state.uploadReducer.link,
     imgLoading: state.uploadReducer.loading,
     imgError: state.uploadReducer.error,
+    offplanLink: state.uploadReducer.offplanLink,
+    offplanLoading: state.uploadReducer.offplanLoading,
+    offplanError: state.uploadReducer.offplanError,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    onInputChange: (payload) => dispatch(changeAdminOffplanInput(payload)),
+    onInputChange: payload => dispatch(changeAdminOffplanInput(payload)),
+    addNewBoxOffplan: (mk, v) => dispatch(addNewBoxOffplan(mk, v)),
     addAdminOffplan: (payload, cb) => dispatch(addAdminOffplan(payload, cb)),
     editAdminOffplan: (id, payload, cb) =>
       dispatch(editAdminOffplan(id, payload, cb)),
-    getAmenityOffplan: (payload) => dispatch(getAmenityOffplan(payload)),
-    getAdminOffplanById: (id) => dispatch(getAdminOffplanById(id)),
+    getAmenityOffplan: payload => dispatch(getAmenityOffplan(payload)),
+    getAdminOffplanById: id => dispatch(getAdminOffplanById(id)),
     clearUpload: () => dispatch(clearUpload()),
     clearAddOffplan: () => dispatch(clearAddOffplan()),
+    changeAdminOffplanMultipleInput: (mk, k, v, i) =>
+      dispatch(changeAdminOffplanMultipleInput(mk, k, v, i)),
+    deleteAdminOffplanMultipleInput: (mk, i) =>
+      dispatch(deleteAdminOffplanMultipleInput(mk, i)),
+    getAgentOffplan: () => dispatch(getAgentOffplan()),
   };
 };
 

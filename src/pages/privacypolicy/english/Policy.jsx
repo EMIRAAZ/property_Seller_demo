@@ -1,9 +1,9 @@
-import "./policy.scss";
-import SocialPanel from "../../../components/socialpanel";
-import Footer from "../../../components/footer";
-import Header from "../../../components/header";
-import { MoveToTop } from "../../../components/movetotop";
-import FooterNew from "../../../components/footerNew";
+import './policy.scss';
+import SocialPanel from '../../../components/socialpanel';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header';
+import { MoveToTop } from '../../../components/movetotop';
+import FooterNew from '../../../components/footerNew';
 
 const Policy = () => {
   return (
@@ -16,10 +16,10 @@ const Policy = () => {
         <div className="policy-description">
           <div className="description-container">
             <p>
-              <h3>1. INTRODUCTION</h3> <b>1.1</b> UAE Assistant is a company
-              registered in Dubai with its registered office at Blue Bay Tower,
-              Business bay, Dubai, UAE , which owns and operates the website
-              www.uaeassistant.com. <br />
+              <h3>1. INTRODUCTION</h3> <b>1.1</b> Property Assistant is a
+              company registered in Dubai with its registered office at Blue Bay
+              Tower, Business bay, Dubai, UAE , which owns and operates the
+              website www.uaeassistant.com. <br />
               <b>1.2</b> This document is termed as ‘The Privacy Policy’, or the
               policy forms part of the Terms of Use related to the use and
               information of the use of the website. By using the website you
@@ -32,7 +32,7 @@ const Policy = () => {
               then you must immediately stop using the website or make use of
               its contents.
               <br /> <b>1.3</b> The terms mentioned as “we", "our", "us" , here
-              means ‘The UAE Assistant’ and its affiliates, subsidiaries,
+              means ‘The Property Assistant’ and its affiliates, subsidiaries,
               employees, agents or assigned parties.
               <br />
               <b>1.4</b> This Policy becomes effective between you and us from
@@ -45,11 +45,11 @@ const Policy = () => {
               determined by a Data Controller which expression would mean a
               person, who by himself or jointly act as a legal entity.
               <br /> <b>1.7</b> With respect to the data processed by the
-              website, ‘The UAE Assistant’ vests control as the Data Controller.
-              The UAE Assistant is part of the ………………… Group of companies, which
-              for reference also include…………… <h3>2. YOUR INFORMATION</h3>{" "}
-              <b>2.1</b> The type of information we collect is either personal
-              or general in nature: <br />
+              website, ‘The Property Assistant’ vests control as the Data
+              Controller. The Property Assistant is part of the ………………… Group of
+              companies, which for reference also include……………{' '}
+              <h3>2. YOUR INFORMATION</h3> <b>2.1</b> The type of information we
+              collect is either personal or general in nature: <br />
               <b>a.</b> Personal Information: Whilst you sign in on the website
               as a consumer or otherwise, update your facts, buy any goods or
               services, participate in promotions or campaigns or contest, sign
@@ -79,7 +79,7 @@ const Policy = () => {
               Payment Data, relating to the amount of details of mode of payment
               of fees for the usage of the website and services (like
               information relating to bank account, credit card, debit card, net
-              banking, etc.) given by you whilst making the payment of fees:{" "}
+              banking, etc.) given by you whilst making the payment of fees:{' '}
               <br />
               <b>(a)</b>
               goes through safe and secure channels provided by ‘the uae
@@ -88,8 +88,8 @@ const Policy = () => {
               depending upon your mode(s) of payment. In order to avoid any
               exploitation of your mode of payment details, <br />
               <b>(c)</b> such information is not shared with the website , ‘The
-              UAE Assistant’, its branches, partners and any other third parties
-              or users of the Website and Services. <br />
+              Property Assistant’, its branches, partners and any other third
+              parties or users of the Website and Services. <br />
               <b>(d)</b> Information we receive from other sources: We may get
               information about you, by your usage of any of our websites that
               we operate on, or from any other services we render. We are also
@@ -98,7 +98,7 @@ const Policy = () => {
               organizations, analytics providers and search information
               providers. We may get details about you from such third parties.
               This data may be joined with some other data you gave to us, as
-              mentioned above. <h3>3. COLLECTING AND USING INFORMATION:</h3>{" "}
+              mentioned above. <h3>3. COLLECTING AND USING INFORMATION:</h3>{' '}
               <b>3.1</b>
               The most part of this website can be used without divulging
               details . But, some services and third party technology however
@@ -115,7 +115,7 @@ const Policy = () => {
               goods, services and the Website. <br /> <b>c)</b> To contact you
               in case of any order, purchase or participation in any of our
               offers on the website. <br />
-              <b>d)</b>To gather information for market research processes.{" "}
+              <b>d)</b>To gather information for market research processes.{' '}
               <br /> <b>e)</b>To brief you about new possibilities, promotions,
               special offers and other details we may regard as beneficial to
               you. If you reach out to us through the Website, or through email
@@ -135,7 +135,7 @@ const Policy = () => {
               property for further course of action. Further to receiving your
               details the third party receiving your details will become the
               Data controller thereon and their use of your information will be
-              done in accordance to their terms of use and privacy policy.{" "}
+              done in accordance to their terms of use and privacy policy.{' '}
               <br />
               <b>b.</b>suppliers and subcontractors will have access to your
               information for the execution of any contractual terms entered
@@ -153,19 +153,20 @@ const Policy = () => {
               with third parties: <br />
               <b>a.</b>Your Personal Information will be disclosed to the
               prospective seller or buyer in the event of selling or buying of
-              any business or assets. If ‘The UAE Assistant’’, or in substance
-              all of its assets are acquired by a third party, information held
-              by it regarding customers will also be one of the transferred
-              assets; <br />
+              any business or assets. If ‘The Property Assistant’’, or in
+              substance all of its assets are acquired by a third party,
+              information held by it regarding customers will also be one of the
+              transferred assets; <br />
               <b>b.</b>For obtaining professional advice; <br />
               <b>c.</b>To fulfill legal obligations if we are compelled under
               any circumstances, in order to enforce law or to exercise any
               conditions specified in the terms of use or other agreements
               entered into. or <br />
               <b>d.</b>To safeguard the interests that include the rights and
-              assets of The UAE Assistant, any of our associates, clients or
-              officials. This would mean the exchange of information with other
-              organizations, groups or concerns for protection against fraud.
+              assets of The Property Assistant, any of our associates, clients
+              or officials. This would mean the exchange of information with
+              other organizations, groups or concerns for protection against
+              fraud.
               <h3>5. SECURITY</h3> <b>5.1</b> We value your privacy and it is in
               our top priority to keep your personal/contact Information secure
               and prevent any unauthorized access to it. We have put in place
@@ -188,9 +189,9 @@ const Policy = () => {
               efforts to prevent unauthorized access to the details through
               strict guidelines and security norms.
               <h3>
-                {" "}
+                {' '}
                 7. YOUR RIGHT TO ACCESS AND CORRECT YOUR PERSONAL INFORMATION
-              </h3>{" "}
+              </h3>{' '}
               <b>7.1</b> You have the right to access and control your
               information. Your requests will be honored and wherever applicable
               the data can be corrected, amended or deleted. Kindly write to
@@ -210,7 +211,7 @@ const Policy = () => {
               to stop receiving email communication or you can send a mail to
               support@theuaeassistant.ae. For enquiries on Marketing you can use
               any of the links mentioned in the marketing and communication
-              section or by sending an email to marketing@theuaeassistant.ae.{" "}
+              section or by sending an email to marketing@theuaeassistant.ae.{' '}
               <h3>8. USE OF COOKIES</h3> <b>8.1</b>: This website uses cookies
               (which is not limited to google analytics and double click for
               publishers. Information regarding google partner sites can be
@@ -222,7 +223,7 @@ const Policy = () => {
               the usage of sessions which are basically meant to optimize the
               usage of the site for better experience. Cookies are automatically
               deleted after a period of time for online advertisements. Details
-              regarding this are available at support@the uaeassistant.com{" "}
+              regarding this are available at support@the uaeassistant.com{' '}
               <br />
               <b>8.2</b> Though browsers accept cookies automatically it can be
               disabled from the browser. With the cookies deleted from your
@@ -264,7 +265,7 @@ const Policy = () => {
               information from our Website and elsewhere on the internet and use
               that information to provide data on web analytics. If you wish not
               to entertain the use of these tracking pixels we would request you
-              to adjust your browser settings accordingly.{" "}
+              to adjust your browser settings accordingly.{' '}
               <h3>10. WEB SERVER & APPLICATION LOGS</h3> <b>10.1</b> Our servers
               have been programmed to collect certain information from the users
               visiting our website to help us monitor and protect our interests
@@ -277,7 +278,7 @@ const Policy = () => {
               assigned by us. d.Operating system of the device and other
               technical facts e.Page visits and content viewed, saved, and
               purchased f.Details provided g.URLs visited during, before and
-              after you use our Services<h3> 11. THIRD PARTY ADVERTISERS</h3>{" "}
+              after you use our Services<h3> 11. THIRD PARTY ADVERTISERS</h3>{' '}
               <b>11.1</b> Third party advertising networks are allowed to place
               advertisements on the site on our behalf. They may use cookies in
               the visitor’s cookie file, which will have their own target
@@ -291,7 +292,7 @@ const Policy = () => {
               Third party advertisers operate on their own Privacy Policies
               which are made available on their websites. For further
               information on what third party advertisers do please get in touch
-              with info@theuaeassistant.com{" "}
+              with info@theuaeassistant.com{' '}
               <h3>12. INTEREST-BASED ADVERTISING (IBA) </h3>
               <b>12.1</b> IBA or Interest-based advertising are meant to deliver
               advertising material to users who show specific interest (target
@@ -302,7 +303,7 @@ const Policy = () => {
               content you are interested in. This information collected from
               your device is grouped with information from other devices that
               show similar interests. This is then used to display
-              advertisements to users grouped on the basis of common interests.{" "}
+              advertisements to users grouped on the basis of common interests.{' '}
               <br />
               <b>12.2</b> You have the option to opt out of receiving Interest
               Based Advertisements though it does not mean that you will no
@@ -331,7 +332,7 @@ const Policy = () => {
               <h3>
                 13. LINKS AND CONNECTIONS TO AND USE OF OTHER THIRD-PARTY
                 SERVICES
-              </h3>{" "}
+              </h3>{' '}
               <b>13.1</b> Our site may contain links that are connected to third
               party apps, which you may come across while using the website,
               that are not directly linked to us. These links may lead you to
@@ -351,9 +352,9 @@ const Policy = () => {
               site will have to be transferred to the company or organization
               taking over, pursuant to this Policy that will form part of the
               transferred assets. As a user you acknowledge the transfer of the
-              information to the acquirer or successor to ‘The UAE Assistant’,
-              who may continue to use the data pursuant to this Privacy Policy,
-              in the way detailed in this document.
+              information to the acquirer or successor to ‘The Property
+              Assistant’, who may continue to use the data pursuant to this
+              Privacy Policy, in the way detailed in this document.
             </p>
           </div>
         </div>
