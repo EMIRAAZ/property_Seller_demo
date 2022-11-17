@@ -41,6 +41,7 @@
         justify-content: space-evenly;
         padding: 1%;
         margin: 1%;
+        font-size: 15.8026px;
 
         .off-info-box1{
           border-right: 1px solid black;
@@ -48,6 +49,9 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          font-size: 12.8026px;
+          font-weight: 500;
+          color: #898989;
         
         }
         .off-info-box2{
@@ -56,12 +60,20 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          font-size: 12.8026px;
+          font-weight: 500;
+          color: #898989;
+          
+
         }
         .off-info-box{
           width: 30%;
           display: flex;
           align-items: center;
           justify-content: center;
+          font-size: 12.8026px;
+          font-weight: 500;
+          color: #898989;
 
         }
 

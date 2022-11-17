@@ -9,7 +9,11 @@ import Favourite from '../../svg/favourite';
 
 
 
-const OffplanCard =({image,heading,description,position,address})=>{
+const OffplanCard =(props)=>{
+
+  console.log(props)
+  console.log(props.title)
+  
 
   return(
     <div className='offplan-card-container'>
@@ -17,24 +21,23 @@ const OffplanCard =({image,heading,description,position,address})=>{
      
       <ImgPropCarousel
       className='offplan-card-image'
-        // customClass="prop-list-img"
-        imgArray={image}
+        imgArray={props.images}
         curImgClass="prop-list-img"
       />
       <div className='offplan-main-div'>
         <div className='offplan-description'>
-          <p className='offplan-head'>{heading}</p>
+          <p className='offplan-head'>{props.title}</p>
           <div className='of-ad'>
-          <p className='of-ad-info1'>{address}</p>
+          <p className='of-ad-info1'>{props.address.building}</p>
             <img className='of-ad-info2' src='EMAAR_WORD_MARK_EN.png'></img>
           </div>
-          <p className='of-ty'>{position}</p>
+          <p className='of-ty'>{props.address.city}</p>
           <div className='off-info'>
-            <p className='off-info-box1'>hai</p>
-            <p className='off-info-box'>hai</p>
-            <p className='off-info-box2'>hai</p>
+            <p className='off-info-box1'>Bedrooms {props.noOfBedroom}</p>
+            <p className='off-info-box'>{props.noOfBathroom} Baths</p>
+            <p className='off-info-box2'>Sq Ft {props.propertySize}</p>
           </div>
-          <p className='of-des'>{description}</p>
+          <p className='of-des'>{props.interiorDetails}</p>
           
         
 
@@ -42,7 +45,7 @@ const OffplanCard =({image,heading,description,position,address})=>{
         <div className='off-card-footer'>
           <div className='shortlist'><p className='shortlist-info'>shortlist</p> <Favourite fill="#1FA0E9" width='100%'
           height='15px'/></div>
-          <h2 className='amount'>ASRSUGIS</h2>
+          <h2 className='amount'>${props.price[0]}</h2>
           <div className='blue-arrow'><RightArrow/></div>
          </div>
 
