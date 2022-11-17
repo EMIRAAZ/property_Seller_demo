@@ -38,6 +38,7 @@ const Header = ({ customClass }) => {
           {/* <li onClick={() => navigate("/aboutfounder")}>About Founder</li> */}
           <li onClick={() => navigate('/career')}>Careers</li>
           <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
+          <li onClick={() => navigate('/')}>Land</li>
           <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li>
           <li className="simple-list" onClick={() => navigate('/sell')}>
             Advertise&nbsp;With&nbsp;Us
@@ -60,6 +61,7 @@ const Header = ({ customClass }) => {
           </li>
           <li onClick={() => navigate('/dailyblog')}>Blogs</li>
           <li onClick={() => navigate('/news')}>News</li>
+          <li onClick={() => navigate('/')}>Land</li>
           <li onClick={() => navigate('/about')}>About Us</li>
           {/* <li onClick={() => navigate("/aboutfounder")}>About Founder</li> */}
           <li onClick={() => navigate('/career')}>Careers</li>
