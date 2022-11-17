@@ -13,7 +13,7 @@ function BottomFixed({ property }) {
           className="service-btn-property whatsapp"
           onClick={() =>
             window.open(
-              `https://wa.me/+971521278701/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://uaeassistant.com/property/${property.id}
+              `https://wa.me/+971521278701/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${property.id}
               %0a%0aPrice: AED ${property.price}
               %0aLocation: ${property.address.city}
                 %0aReference: ${property.id}
@@ -33,7 +33,7 @@ function BottomFixed({ property }) {
         </div>
         <div
           className="service-btn-property email"
-          onClick={() => window.open('mailto:hello@uaeassistant.com', '_blank')}
+          onClick={() => window.open('mailto:hello@propertyassistant.ae', '_blank')}
         >
           <Mail width="15" height="15" viewBox="0 0 15 15" fill="#2f70ff" />
           Email

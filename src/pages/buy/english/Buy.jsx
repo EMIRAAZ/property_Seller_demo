@@ -37,7 +37,7 @@ const Buy = props => {
           name="robots"
           content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         />
-        <link rel="canonical" href="http://www.uaeassistant.com/buy" />
+        <link rel="canonical" href="http://www.propertyassistant.ae/buy" />
         <meta
           property="og:title"
           content="Luxury Properties for Sale in Dubai, UAE | Best Luxury Properties for Sale in Dubai | Buy or Sale luxury properties in Dubai, UAE - Property Assistant"
@@ -47,7 +47,7 @@ const Buy = props => {
           property="og: description"
           content="Are you searching the luxury properties for sale in Dubai, UAE? Buy or sale luxury properties in Dubai, UAE with the help of the leading real estate agent at best prices. Browse property listings and start your dream home search."
         />
-        <meta property="og:url" content="http://www.uaeassistant.com/buy" />
+        <meta property="og:url" content="http://www.propertyassistant.ae/buy" />
         <meta property="og:image" content="" />
         <meta property="og:image:width" content="600" />
         <meta property="og:image:height" content="315" />

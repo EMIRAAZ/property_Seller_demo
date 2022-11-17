@@ -19,7 +19,7 @@ const Policy = () => {
               <h3>1. INTRODUCTION</h3> <b>1.1</b> Property Assistant is a
               company registered in Dubai with its registered office at Blue Bay
               Tower, Business bay, Dubai, UAE , which owns and operates the
-              website www.uaeassistant.com. <br />
+              website www.propertyassistant.ae <br />
               <b>1.2</b> This document is termed as ‘The Privacy Policy’, or the
               policy forms part of the Terms of Use related to the use and
               information of the use of the website. By using the website you
@@ -195,7 +195,7 @@ const Policy = () => {
               <b>7.1</b> You have the right to access and control your
               information. Your requests will be honored and wherever applicable
               the data can be corrected, amended or deleted. Kindly write to
-              support@the uaeassistant.com for further queries. <br />
+              support@the propertyassistant.ae for further queries. <br />
               <b>7.2</b> Access to personal information:You can request access
               to the information provided by you and will be granted access
               unless subject to any legal exemptions. You are required to
@@ -209,9 +209,9 @@ const Policy = () => {
               <br />
               <b>7.4</b> Marketing preferences: You can use the unsubscribe link
               to stop receiving email communication or you can send a mail to
-              support@theuaeassistant.ae. For enquiries on Marketing you can use
+              support@propertyassistant.ae. For enquiries on Marketing you can use
               any of the links mentioned in the marketing and communication
-              section or by sending an email to marketing@theuaeassistant.ae.{' '}
+              section or by sending an email to marketing@propertyassistant.ae.{' '}
               <h3>8. USE OF COOKIES</h3> <b>8.1</b>: This website uses cookies
               (which is not limited to google analytics and double click for
               publishers. Information regarding google partner sites can be
@@ -223,7 +223,7 @@ const Policy = () => {
               the usage of sessions which are basically meant to optimize the
               usage of the site for better experience. Cookies are automatically
               deleted after a period of time for online advertisements. Details
-              regarding this are available at support@the uaeassistant.com{' '}
+              regarding this are available at support@the propertyassistant.ae{' '}
               <br />
               <b>8.2</b> Though browsers accept cookies automatically it can be
               disabled from the browser. With the cookies deleted from your
@@ -292,7 +292,7 @@ const Policy = () => {
               Third party advertisers operate on their own Privacy Policies
               which are made available on their websites. For further
               information on what third party advertisers do please get in touch
-              with info@theuaeassistant.com{' '}
+              with info@thepropertyassistant.ae{' '}
               <h3>12. INTEREST-BASED ADVERTISING (IBA) </h3>
               <b>12.1</b> IBA or Interest-based advertising are meant to deliver
               advertising material to users who show specific interest (target
