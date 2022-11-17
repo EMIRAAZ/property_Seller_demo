@@ -20,6 +20,12 @@ import {
   GET_AGENT_OFFPLAN,
   GET_AGENT_OFFPLAN_ERROR,
   GET_AGENT_OFFPLAN_STARTED,
+  ADD_IMAGES_OFFPLAN,
+  ADD_IMAGES_OFFPLAN_STARTED,
+  ADD_IMAGES_OFFPLAN_ERROR,
+  DELETE_IMAGES_OFFPLAN,
+  DELETE_IMAGES_OFFPLAN_STARTED,
+  DELETE_IMAGES_OFFPLAN_ERROR,
 } from '../../constants';
 
 export const changeAdminOffplanInput = payload => {
@@ -27,6 +33,57 @@ export const changeAdminOffplanInput = payload => {
     type: ADMIN_OFFPLAN_INPUT_CHANGE,
     payload: payload,
   };
+};
+
+export const addOffplanImagesStarted = payload => {
+  return {
+    type: ADD_IMAGES_OFFPLAN_STARTED,
+  };
+};
+export const addOffplanImagesError = payload => {
+  return {
+    type: ADD_IMAGES_OFFPLAN_ERROR,
+  };
+};
+
+export const addOffplanImages = payload => async dispatch => {
+  try {
+    dispatch(addOffplanImagesStarted());
+    const res = await axios.post(`/image/upload-single`, payload);
+    dispatch({
+      type: ADD_IMAGES_OFFPLAN,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(addOffplanImagesError());
+  }
+};
+
+export const deleteOffplanImagesStarted = payload => {
+  return {
+    type: DELETE_IMAGES_OFFPLAN_STARTED,
+  };
+};
+export const deleteOffplanImagesError = payload => {
+  return {
+    type: DELETE_IMAGES_OFFPLAN_ERROR,
+  };
+};
+
+export const deleteOffplanImages = id => async dispatch => {
+  const newId = id;
+  try {
+    dispatch(deleteOffplanImagesStarted());
+    await axios.delete(
+      `/image/delete-single-image/${newId.split('/uploads/').pop()}`
+    );
+    dispatch({
+      type: DELETE_IMAGES_OFFPLAN,
+      payload: id,
+    });
+  } catch (e) {
+    dispatch(deleteOffplanImagesError());
+  }
 };
 
 export const changeAdminOffplanMultipleInput = (mk, k, v, i) => {
@@ -130,6 +187,8 @@ const editAdminOffplanError = () => {
 };
 
 export const editAdminOffplan = (id, offplan, cb) => async dispatch => {
+  offplan.price = offplan.price ? offplan.price.split(' ') : [];
+
   try {
     dispatch(editAdminOffplanStarted());
     const res = await axios.patch(`/api/offplan/${id}`, offplan, {

@@ -6,6 +6,7 @@ import Plus from '../../../components/svg/plus';
 import Close from '../../../components/svg/close';
 import Button from '../../../components/button/SpinnerButton';
 import UploadImage from '../../../components/uploadimage';
+import ImageUpload from '../../../components/imageupload';
 import UploadImageOffplan from '../../../components/uploadimageoffplan';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Spinner from '../../../components/spinner';
@@ -35,6 +36,8 @@ const AddForm = ({
   changeAdminOffplanMultipleInput,
   deleteAdminOffplanMultipleInput,
   addNewBoxOffplan,
+  deleteOffplanImages,
+  addOffplanImages,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -330,26 +333,15 @@ const AddForm = ({
         </div>
       </div>
       <div className="add-offplan-form-right">
-        <label className="offplan-image-label spinner-label">
-          Offplan Images<span>*</span> {renderImageLoadingSpinner()}
-        </label>
         <div className="offplan-row-div-upload">
-          {uploadCount.map((_, i) => (
-            <UploadImage
-              key={i}
-              multiple={true}
-              linkIndex={i}
-              customClass="first-img-Class-admin"
-              onChangeImage={() => {}}
-              value={offplanValue.images}
-              editing={editing}
-            />
-          ))}
-          {uploadCount.length < 15 ? (
-            <div className="add-new-img-upload" onClick={onSetUploadCount}>
-              <Plus />
-            </div>
-          ) : null}
+          <ImageUpload
+            name="images"
+            label="Images"
+            required
+            value={offplanValue.images}
+            onChange={addOffplanImages}
+            onDelete={deleteOffplanImages}
+          />
         </div>
 
         <span className="select-border"></span>

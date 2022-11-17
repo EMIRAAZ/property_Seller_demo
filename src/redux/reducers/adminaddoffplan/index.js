@@ -20,6 +20,12 @@ import {
   GET_AGENT_OFFPLAN,
   GET_AGENT_OFFPLAN_ERROR,
   GET_AGENT_OFFPLAN_STARTED,
+  ADD_IMAGES_OFFPLAN,
+  ADD_IMAGES_OFFPLAN_STARTED,
+  ADD_IMAGES_OFFPLAN_ERROR,
+  DELETE_IMAGES_OFFPLAN,
+  DELETE_IMAGES_OFFPLAN_STARTED,
+  DELETE_IMAGES_OFFPLAN_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -216,7 +222,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         offplanValue: {
           ...state.offplanValue,
-
           ...createdOffplanValue,
         },
       };
@@ -231,6 +236,68 @@ const reducer = (state = initialState, action) => {
     case CLEAR_ADD_OFFPLAN:
       return {
         ...initialState,
+      };
+    case ADD_IMAGES_OFFPLAN:
+      return {
+        ...state,
+        offplanValue: {
+          ...state.offplanValue,
+          images: [...state.offplanValue.images, action.payload],
+        },
+      };
+    case ADD_IMAGES_OFFPLAN_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case ADD_IMAGES_OFFPLAN_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
+      };
+    case DELETE_IMAGES_OFFPLAN:
+      const imageArray = [...state.offplanValue.images];
+      imageArray.splice(action.payload, 1);
+      return {
+        ...state,
+        offplanValue: {
+          ...state.offplanValue,
+          images: [...imageArray],
+        },
+      };
+    case DELETE_IMAGES_OFFPLAN_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case DELETE_IMAGES_OFFPLAN_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
       };
     default:
       return state;
