@@ -13,7 +13,6 @@ import {
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
-  console.log(action.type);
   switch (action.type) {
     case UPLOAD_IMAGE_STARTED:
       return {

@@ -1,23 +1,22 @@
-import { connect } from "react-redux";
-import OffplanViewNew from "./OffplanViewNew";
+import { connect } from 'react-redux';
+import OffplanViewNew from './OffplanViewNew';
 
-import { getPropertyByID, getSimilarProperty } from "../../../redux/actions";
+import { getOffplanByIdWeb, getSimilarProperty } from '../../../redux/actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    property: state.propertyReducer.property.length
-      ? state.propertyReducer.property[0]
+    property: state.offplanwebReducer.singleOffplan.offplan.length
+      ? state.offplanwebReducer.singleOffplan.offplan[0]
       : {},
-    loading: state.propertyReducer.loading,
-    error: state.propertyReducer.error,
     similarProperty: state.propertyReducer.similarProperty,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    getPropertyByID: (id) => dispatch(getPropertyByID(id)),
-    getSimilarProperty: (city) => dispatch(getSimilarProperty(city)),
+    getOffplanByIdWeb: id => dispatch(getOffplanByIdWeb(id)),
+
+    getSimilarProperty: city => dispatch(getSimilarProperty(city)),
   };
 };
 
