@@ -44,6 +44,7 @@ const HomeFormCard = props => {
             { name: 'Dubai', value: 'Dubai' },
             { name: 'Sharjah', value: 'Sharjah' },
             { name: 'Ajman', value: 'Ajman' },
+            { name: 'Ras Al-Khaimah', value: 'Ras Al-Khaimah' },
             { name: 'Umm Al-Quwain', value: 'Umm Al-Quwain' },
             { name: 'Fujairah', value: 'Fujairah' },
           ]}
@@ -86,7 +87,7 @@ const HomeFormCard = props => {
             { name: 'Villas', value: 'villas' },
             { name: 'Townhouse', value: 'townhouse' },
             { name: 'Penthouse', value: 'penthouse' },
-            { name: 'Land', value: 'land' },
+            // { name: 'Land', value: 'land' },
             { name: 'Full Building', value: 'fullbuilding' },
             { name: 'Hotel Apartment', value: 'hotelapartment' },
             { name: 'Compound', value: 'compound' },
