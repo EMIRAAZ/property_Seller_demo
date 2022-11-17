@@ -13,7 +13,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     uploadOffplanAdminImage: (payload, cb, i) => {
-      console.log('worrrrrrrrrrrrrrrrrrrrrking');
       dispatch(uploadOffplanAdminImage(payload, cb, i));
     },
   };

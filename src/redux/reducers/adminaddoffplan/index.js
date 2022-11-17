@@ -211,10 +211,12 @@ const reducer = (state = initialState, action) => {
       createdOffplanValue.city = propVal.address.city
         ? propVal.address.city
         : '';
+      createdOffplanValue.price = propVal.price ? propVal.price.join(' ') : '';
       return {
         ...state,
         offplanValue: {
           ...state.offplanValue,
+
           ...createdOffplanValue,
         },
       };

@@ -38,15 +38,14 @@ const paln = [
 ];
 const OffplanViewNew = (props) => {
   let location = useLocation();
-  console.log(props);
 
   const { property } = props;
+  const getID = () => location.pathname.split("/").pop();
 
   useEffect(() => {
-    props.getPropertyByID("b3095e228525");
+    props.getOffplanByIdWeb(getID());
   }, []);
 
-  const getID = () => location.pathname.split("/").pop();
   const [content, setContent] = useState(true);
   const [read, setRead] = useState(false);
   const [read1, setRead2] = useState(false);
@@ -251,7 +250,6 @@ const OffplanViewNew = (props) => {
 
                   {property && property.agent ? (
                     <>
-                      {console.log(property.agent)}
                       <p>{property.agent.agentName}</p>
 
                       <h1>

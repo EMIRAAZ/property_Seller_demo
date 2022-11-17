@@ -15,7 +15,6 @@ import {
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     env: state.adminaddoffplanReducer.env,
     offplanValue: state.adminaddoffplanReducer.offplanValue,

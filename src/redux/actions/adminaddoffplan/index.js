@@ -68,6 +68,7 @@ const addAdminOffplanError = () => {
 };
 
 export const addAdminOffplan = (offplan, cb) => async dispatch => {
+  offplan.price = offplan.price ? offplan.price.split(' ') : [];
   try {
     dispatch(addAdminOffplanStarted());
     const res = await axios.post(`/api/offplan`, offplan, {
