@@ -4,6 +4,10 @@ export const initialState = {
     loading: false,
     success: false,
     editing: false,
+    images: {
+      loading: false,
+      error: false,
+    },
   },
   offplanValue: {
     title: '',

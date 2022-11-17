@@ -38,6 +38,8 @@ const AddOffplan = props => {
             props.deleteAdminOffplanMultipleInput
           }
           addNewBoxOffplan={props.addNewBoxOffplan}
+          deleteOffplanImages={props.deleteOffplanImages}
+          addOffplanImages={props.addOffplanImages}
         />
       </div>
     </div>
