@@ -139,6 +139,7 @@
     margin: 0px auto;
     justify-content: center;
     margin-top: 30px;
+    width: 100%;
 
     .property-input {
       width: 70%;
@@ -149,12 +150,12 @@
     .add-property-form-left {
       display: flex;
       flex-direction: column;
-      width: 100%;
+      width: 50%;
     }
     .add-property-form-right {
       display: flex;
       flex-direction: column;
-      width: 100%;
+      width: 50%;
 
       .add-property-google-map {
         width: 90%;
@@ -208,7 +209,7 @@
     }
     .property-row-div-upload {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
       width: 70%;
       height: max-content;
       gap: 10px;
