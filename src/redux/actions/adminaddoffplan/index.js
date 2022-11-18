@@ -26,6 +26,12 @@ import {
   DELETE_IMAGES_OFFPLAN,
   DELETE_IMAGES_OFFPLAN_STARTED,
   DELETE_IMAGES_OFFPLAN_ERROR,
+  DELETE_IMAGES_OFFPLAN_PRICE_AVAIL,
+  DELETE_IMAGES_OFFPLAN_PRICE_AVAIL_STARTED,
+  DELETE_IMAGES_OFFPLAN_PRICE_AVAIL_ERROR,
+  ADD_IMAGE_OFPLN_PRC_AVL,
+  ADD_IMAGE_OFPLN_PRC_AVL_STARTED,
+  ADD_IMAGE_OFPLN_PRC_AVL_ERROR,
 } from '../../constants';
 
 export const changeAdminOffplanInput = payload => {
@@ -59,6 +65,31 @@ export const addOffplanImages = payload => async dispatch => {
   }
 };
 
+export const addOffplanImgPrcAvlStarted = payload => {
+  return {
+    type: ADD_IMAGE_OFPLN_PRC_AVL_STARTED,
+  };
+};
+export const addOffplanImgPrcAvlError = payload => {
+  return {
+    type: ADD_IMAGE_OFPLN_PRC_AVL_ERROR,
+  };
+};
+
+export const addOffplanImgPrcAvl =
+  (formData, key, position) => async dispatch => {
+    try {
+      dispatch(addOffplanImgPrcAvlStarted());
+      const res = await axios.post(`/image/upload-single`, formData);
+      dispatch({
+        type: ADD_IMAGE_OFPLN_PRC_AVL,
+        payload: { img: res.data?.data, key, position },
+      });
+    } catch (e) {
+      dispatch(addOffplanImgPrcAvlError());
+    }
+  };
+
 export const deleteOffplanImagesStarted = payload => {
   return {
     type: DELETE_IMAGES_OFFPLAN_STARTED,
@@ -90,6 +121,39 @@ export const deleteOffplanImages = id => async dispatch => {
     } else dispatch(deleteOffplanImagesError());
   }
 };
+
+export const deleteOffplanImagePriceAvailStarted = payload => {
+  return {
+    type: DELETE_IMAGES_OFFPLAN_PRICE_AVAIL_STARTED,
+  };
+};
+export const deleteOffplanImagePriceAvailError = payload => {
+  return {
+    type: DELETE_IMAGES_OFFPLAN_PRICE_AVAIL_ERROR,
+  };
+};
+
+export const deleteOffplanImagePriceAvail =
+  (name, key, position) => async dispatch => {
+    const newId = name;
+    try {
+      dispatch(deleteOffplanImagePriceAvailStarted());
+      await axios.delete(
+        `/image/delete-single-image/${newId.split('/uploads/').pop()}`
+      );
+      dispatch({
+        type: DELETE_IMAGES_OFFPLAN_PRICE_AVAIL,
+        payload: { name, key, position },
+      });
+    } catch (e) {
+      if (e.response?.data?.message === 'No file exist') {
+        dispatch({
+          type: DELETE_IMAGES_OFFPLAN_PRICE_AVAIL,
+          payload: { name, key, position },
+        });
+      } else dispatch(deleteOffplanImagePriceAvailError());
+    }
+  };
 
 export const changeAdminOffplanMultipleInput = (mk, k, v, i) => {
   return {

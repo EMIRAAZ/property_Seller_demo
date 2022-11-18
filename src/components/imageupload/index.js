@@ -60,14 +60,14 @@ export default function ImageUpload(props) {
         {props.label}{' '}
         {props.required ? <span className="text-red-600">*</span> : ''}
       </label>
-      <div class="flex bg-gray-50 flex-col items-center border cursor-pointer justify-center pt-5 pb-6 w-full rounded-lg">
-        <div class="grid grid-rows-1  grid-cols-4 gap-2 ml-1 mr-1">
+      <div className="flex bg-gray-50 flex-col items-center border cursor-pointer justify-center pt-5 pb-6 w-full rounded-lg">
+        <div className="grid grid-rows-1  grid-cols-4 gap-2 ml-1 mr-1">
           {renderImage()}
         </div>
-        <label for="dropzone-file">
+        <label className="mt-6 flex justify-center" for="dropzone-file">
           <svg
             aria-hidden="true"
-            class="w-10 h-10 mb-3 text-gray-400"
+            className="w-10 h-10 mb-3 text-gray-400"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -80,16 +80,18 @@ export default function ImageUpload(props) {
               d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
             ></path>
           </svg>
-          <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-            <span class="font-semibold">Click to upload</span> or drag and drop
-          </p>
-          <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG</p>
+          <div className="ml-2 mt-1">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              <span className="font-semibold">Click to upload</span>
+            </p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">PNG, JPG</p>
+          </div>
         </label>
       </div>
       <input
         id="dropzone-file"
         type="file"
-        class="hidden"
+        className="hidden"
         accept='accept="image/png, image/jpeg, image/jpg" '
         onChange={e => onChange(e)}
       />

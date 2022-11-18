@@ -5,11 +5,9 @@ import Select from '../../../components/select/adminSelect';
 import Plus from '../../../components/svg/plus';
 import Close from '../../../components/svg/close';
 import Button from '../../../components/button/SpinnerButton';
-import UploadImage from '../../../components/uploadimage';
 import ImageUpload from '../../../components/imageupload';
 import UploadImageOffplan from '../../../components/uploadimageoffplan';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
 import { useState, useRef } from 'react';
 import {
@@ -18,6 +16,7 @@ import {
   StandaloneSearchBox,
   Marker,
 } from '@react-google-maps/api';
+import SingleImageUpload from '../../../components/singleimageupload';
 
 const keyArr = [];
 
@@ -27,8 +26,6 @@ const AddForm = ({
   env,
   onChange,
   images,
-  imgLoading,
-  imgError,
   offplanValue,
   offplanOptions,
   editing,
@@ -38,12 +35,13 @@ const AddForm = ({
   addNewBoxOffplan,
   deleteOffplanImages,
   addOffplanImages,
+  addOffplanImgPrcAvl,
+  deleteOffplanImagePriceAvail,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
   const inputRef = useRef();
 
-  const [uploadCount, setUploadCount] = useState([0]);
   const [center, setCenter] = useState({ lat: 24.4539, lng: 54.3773 });
   const [marker, setMarker] = useState({ lat: 24.4539, lng: 54.3773 });
 
@@ -51,10 +49,6 @@ const AddForm = ({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
     libraries: ['places'],
   });
-
-  const onSetUploadCount = () => {
-    setUploadCount([...uploadCount, 0]);
-  };
 
   const getID = () => location.pathname.split('/').pop();
 
@@ -114,13 +108,6 @@ const AddForm = ({
     });
   };
 
-  const renderImageLoadingSpinner = () => {
-    if (imgLoading) {
-      return <Spinner />;
-    } else if (imgError) {
-      return <span className="img-add-error">Errored ! please try again</span>;
-    }
-  };
   const loopThroughObjectAndMakeInput = (obj, i, mainKey) => {
     const objArray = [];
     for (var keyValue in obj) {
@@ -142,15 +129,12 @@ const AddForm = ({
         const key = keyValue;
         objArray.push(
           <div className="for-label-cls-txt">
-            <label>{keyValue}</label>
-            <UploadImageOffplan
-              editing={editing}
-              linkIndex={0}
-              customClass="agent-logo-img upload"
-              onChangeImage={d =>
-                changeAdminOffplanMultipleInput(mainKey, key, d, i)
-              }
-              value={[obj[key]]}
+            <SingleImageUpload
+              name="image"
+              label="Image"
+              value={obj[key]}
+              onDelete={name => deleteOffplanImagePriceAvail(name, mainKey, i)}
+              onChange={formData => addOffplanImgPrcAvl(formData, mainKey, i)}
             />
           </div>
         );
