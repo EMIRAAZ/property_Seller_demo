@@ -224,7 +224,7 @@ const Luxuary = props => {
           />
           <link
             rel="canonical"
-            href="http://www.uaeassistant.com/luxury-property/Penthouse"
+            href="http://www.propertyassistant.ae/luxury-property/Penthouse"
           />
           <meta
             property="og:title"
@@ -236,7 +236,7 @@ const Luxuary = props => {
           />
           <meta
             property="og:url"
-            content="http://www.uaeassistant.com/luxury-property/Penthouse"
+            content="http://www.propertyassistant.ae/luxury-property/Penthouse"
           />
           <meta property="og:image" content="" />
           <meta property="og:image:width" content="600" />
@@ -279,7 +279,7 @@ const Luxuary = props => {
           />
           <link
             rel="canonical"
-            href="http://www.uaeassistant.com/luxury-property/Apartment"
+            href="http://www.propertyassistant.ae/luxury-property/Apartment"
           />
           <meta
             property="og:title"
@@ -291,7 +291,7 @@ const Luxuary = props => {
           />
           <meta
             property="og:url"
-            content="http://www.uaeassistant.com/luxury-property/Apartment"
+            content="http://www.propertyassistant.ae/luxury-property/Apartment"
           />
           <meta property="og:image" content="" />
           <meta property="og:image:width" content="600" />
@@ -334,7 +334,7 @@ const Luxuary = props => {
           />
           <link
             rel="canonical"
-            href="http://www.uaeassistant.com/luxury-property/Villa"
+            href="http://www.propertyassistant.ae/luxury-property/Villa"
           />
           <meta
             property="og:title"
@@ -346,7 +346,7 @@ const Luxuary = props => {
           />
           <meta
             property="og:url"
-            content="http://www.uaeassistant.com/luxury-property/Villa"
+            content="http://www.propertyassistant.ae/luxury-property/Villa"
           />
           <meta property="og:image" content="" />
           <meta property="og:image:width" content="600" />

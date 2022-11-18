@@ -1,46 +1,46 @@
-import './Offplanviewnew.scss';
-import Header from '../../../components/header/english/Header';
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import BasicButton from '../../../components/button/BasicButton';
-import RarrowIcon from '../../../components/svg/rarrow';
-import LarrowIcon from '../../../components/svg/larrow';
-import Bed from '../../../components/svg/bed';
-import Bath from '../../../components/svg/bath';
-import Living from '../../../components/svg/living';
-import Area from '../../../components/svg/area';
-import Whatsapp from '../../../components/svg/whatsapp';
-import { MoveToTop } from '../../../components/movetotop';
-import FooterNew from '../../../components/footerNew';
-import Phone from '../../../components/svg/phone';
-import Mail from '../../../components/svg/mailsvg';
-import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
-import BottomFixed from '../../../components/bottomfixed/BottomFixed';
-import { Button } from '@mui/material';
-import SimilarProperty from '../../../components/similarproperty';
+import "./Offplanviewnew.scss";
+import Header from "../../../components/header/english/Header";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import BasicButton from "../../../components/button/BasicButton";
+import RarrowIcon from "../../../components/svg/rarrow";
+import LarrowIcon from "../../../components/svg/larrow";
+import Bed from "../../../components/svg/bed";
+import Bath from "../../../components/svg/bath";
+import Living from "../../../components/svg/living";
+import Area from "../../../components/svg/area";
+import Whatsapp from "../../../components/svg/whatsapp";
+import { MoveToTop } from "../../../components/movetotop";
+import FooterNew from "../../../components/footerNew";
+import Phone from "../../../components/svg/phone";
+import Mail from "../../../components/svg/mailsvg";
+import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
+import BottomFixed from "../../../components/bottomfixed/BottomFixed";
+import { Button } from "@mui/material";
+import SimilarProperty from "../../../components/similarproperty";
 
 const paln = [
   {
-    url: '/assets/image/plans.png',
-    name: 'Slide 1',
-    price: '20000',
+    url: "/assets/image/plans.png",
+    name: "Slide 1",
+    price: "20000",
   },
   {
-    url: '/assets/image/plans.png',
-    name: 'Slide 2',
-    price: '20000',
+    url: "/assets/image/plans.png",
+    name: "Slide 2",
+    price: "20000",
   },
   {
-    url: '/assets/image/plans.png',
-    name: 'Slide 2',
-    price: '20000',
+    url: "/assets/image/plans.png",
+    name: "Slide 2",
+    price: "20000",
   },
 ];
-const OffplanViewNew = props => {
+const OffplanViewNew = (props) => {
   let location = useLocation();
 
   const { property } = props;
-  const getID = () => location.pathname.split('/').pop();
+  const getID = () => location.pathname.split("/").pop();
 
   useEffect(() => {
     props.getOffplanByIdWeb(getID());
@@ -54,35 +54,35 @@ const OffplanViewNew = props => {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
   });
 
-  const getDescription = description => {
+  const getDescription = (description) => {
     if (description) {
       if (read) {
         return description;
       } else {
         if (description.length > 200)
-          return description.substring(0, 200) + ' . . .';
+          return description.substring(0, 200) + " . . .";
         else return description;
       }
-    } else return '';
+    } else return "";
   };
-  const getDescription2 = description => {
+  const getDescription2 = (description) => {
     if (description) {
-      if (read) {
+      if (read1) {
         return description;
       } else {
         if (description.length > 200)
-          return description.substring(0, 200) + ' . . .';
+          return description.substring(0, 200) + " . . .";
         else return description;
       }
-    } else return '';
+    } else return "";
   };
 
   const openMap = ({ lat, lng }) => {
     // If it's an iPhone..
     if (
-      navigator.platform.indexOf('iPhone') != -1 ||
-      navigator.platform.indexOf('iPod') != -1 ||
-      navigator.platform.indexOf('iPad') != -1
+      navigator.platform.indexOf("iPhone") != -1 ||
+      navigator.platform.indexOf("iPod") != -1 ||
+      navigator.platform.indexOf("iPad") != -1
     )
       window.open(
         `maps://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination=${lat},${lng}`
@@ -109,11 +109,14 @@ const OffplanViewNew = props => {
 
   if (property.updatedAt) {
     var d = property.updatedAt;
-    d = d.split('T');
+    d = d.split("T");
   }
 
   return (
     <div className="OffplanViewNew">
+      {console.log("........//////////................")}
+      {console.log(property)}
+      {console.log("........//////////................")}
       <Header customClass="prop-view-header-class" />
       <div className="main-container">
         <div className="img-container">
@@ -130,7 +133,9 @@ const OffplanViewNew = props => {
           <div className="left-container">
             <div className="details">
               <p className="heading">{property.title}</p>
-              {/* <p className="price">{`AED ${property.price}`}</p> */}
+              <p className="city">
+                {property.address.city}, {property.address.emirate}
+              </p>
             </div>
             <hr />
             <div className="details-two">
@@ -141,7 +146,7 @@ const OffplanViewNew = props => {
                     <>
                       <GoogleMap
                         center={getCord()}
-                        mapContainerStyle={{ width: '100%', height: '100%' }}
+                        mapContainerStyle={{ width: "100%", height: "100%" }}
                         zoom={15}
                       >
                         <Marker position={getCord()} />
@@ -170,27 +175,27 @@ const OffplanViewNew = props => {
               <div className="dtails-inside-div">
                 <p className="head">Project Overview</p>
                 <p className="description">
-                  {getDescription(property.description)}
+                  {getDescription(property.projectOverview)}
                 </p>
                 <Button
                   size="small"
                   variant="outlined"
                   onClick={() => setRead(!read)}
                 >
-                  {read ? 'Read less' : 'Read more'}
+                  {read ? "Read less" : "Read more"}
                 </Button>
               </div>
               <div className="dtails-inside-div">
                 <p className="head">Interior Details</p>
                 <p className="description">
-                  {getDescription2(property.description)}
+                  {getDescription2(property.interiorDetails)}
                 </p>
                 <Button
                   size="small"
                   variant="outlined"
                   onClick={() => setRead2(!read1)}
                 >
-                  {read ? 'Read less' : 'Read more'}
+                  {read ? "Read less" : "Read more"}
                 </Button>
               </div>
 
@@ -208,45 +213,12 @@ const OffplanViewNew = props => {
                 <VideoView url={property.videoView} />
               </div>
             </div>
-
-            {/* <hr /> */}
-            {/* <div className="more-details">
-              <div className="details">
-                <p>Reference:</p>
-                <h1>{property.id}</h1>
-              </div>
-              <div className="details">
-                <p>property age:</p>
-                <h1>{property.propertyAge}</h1>
-              </div>
-              <div className="details">
-                <p>Listed Date:</p>
-                {d && <h1>{d[0]}</h1>}
-              </div>
-              <div className="details">
-                <p> Tarkheesi permit:</p>
-                <h1>{property.trakheesiPermit}</h1>
-              </div>
-              <div className="details">
-                <p> Broker ORN:</p>
-                <h1>{property.brokerORN}</h1>
-              </div>
-              <div className="details">
-                <p> Agent BRN:</p>
-                <h1>{property.agentBRN}</h1>
-              </div>
-              <div className="details">
-                <p> Ownership:</p>
-                <h1>{property.ownership}</h1>
-              </div>
-            </div> */}
-            {/* <hr /> */}
           </div>
           <div className="right-container">
             <div className="agent-card">
               <div className="top-header-agent">
                 <div className="agent-details">
-                  <p style={{ color: 'grey' }}>Agent</p>
+                  <p style={{ color: "grey" }}>Agent</p>
 
                   {property && property.agent ? (
                     <>
@@ -254,24 +226,24 @@ const OffplanViewNew = props => {
 
                       <h1>
                         Response time :
-                        <span style={{ color: 'black' }}>
-                          {' '}
+                        <span style={{ color: "black" }}>
+                          {" "}
                           within 5 minutes
                         </span>
                       </h1>
                       <h1>
-                        Languages :{' '}
-                        <span style={{ color: 'black' }}>
-                          {property.agent.languages}{' '}
+                        Languages :{" "}
+                        <span style={{ color: "black" }}>
+                          {property.agent.languages}{" "}
                         </span>
                       </h1>
                       <h1>
-                        Experience :{' '}
-                        <span style={{ color: 'black' }}>
-                          {property.agent.yearsOfExperience}{' '}
+                        Experience :{" "}
+                        <span style={{ color: "black" }}>
+                          {property.agent.yearsOfExperience}{" "}
                         </span>
                       </h1>
-                      <h2>Agency : {property.agency.agencyName}</h2>
+                      {/* <h2>Agency : {property.agency.agencyName}</h2> */}
                       {/* <p>{property.agency.officeAddress}</p> */}
                     </>
                   ) : null}
@@ -288,7 +260,7 @@ const OffplanViewNew = props => {
                   className="service-btn-property whatsapp"
                   onClick={() =>
                     window.open(
-                      `https://wa.me/+971521278701/?text=Hello UAE Assistant. I’m interested in this property %0a%0aLink: http://uaeassistant.com/property/${property.id}
+                      `https://wa.me/+971521278701/?text=Hello Property Assistant. I’m interested in this property %0a%0aLink: https://propertyassistant.ae/property/${property.id}
               %0a%0aPrice: AED ${property.price}
               %0aLocation: ${property.address.city}
                 
@@ -307,7 +279,7 @@ const OffplanViewNew = props => {
                 </div>
                 <div
                   className="service-btn-property phone"
-                  onClick={() => window.open('tel:+971521278701', '_blank')}
+                  onClick={() => window.open("tel:+971521278701", "_blank")}
                 >
                   <Phone
                     width="17"
@@ -320,7 +292,7 @@ const OffplanViewNew = props => {
                 <div
                   className="service-btn-property email"
                   onClick={() =>
-                    window.open('mailto:hello@uaeassistant.com', '_blank')
+                    window.open("mailto:hello@propertyassistant.ae", "_blank")
                   }
                 >
                   <Mail
@@ -350,25 +322,16 @@ const OffplanViewNew = props => {
         </p>
 
         <div className="component-div">
-          <Whythis
-            title="High Quality"
-            desc="Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations."
-          />
-          <Whythis
-            title="High Quality"
-            desc="Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations."
-          />
-          <Whythis
-            title="High Quality"
-            desc="Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations."
-          />
+          {property.whyThisProperty.map((why, index) => (
+            <Whythis key={index} title={why.feature} desc={why.description} />
+          ))}
         </div>
       </div>
       <div className="why-this-property">
         <h1>Price For Availability</h1>
 
         <div className="component-div">
-          {paln.map((plans, index) => (
+          {property.priceForAvailability.map((plans, index) => (
             <div className="Priceforavailability" key={index}>
               <PriceForAvailability plans={plans} />
             </div>
@@ -390,34 +353,27 @@ const OffplanViewNew = props => {
         </p>
 
         <div className="component-div">
-          <PaymentPlan
-            percentage="20%"
-            title="High Quality"
-            desc="Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations."
-          />
-          <PaymentPlan
-            percentage="30%"
-            title="High Quality"
-            desc="Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations."
-          />
-          <PaymentPlan
-            percentage="50%"
-            title="High Quality"
-            desc="Customize your interior design into a dream place with the best designers and quality furniture. We try our best to fulfill your expectations."
-          />
+          {property.paymentPlan.map((plans, index) => (
+            <PaymentPlan
+              key={index}
+              percentage={plans.percentage}
+              title={plans.type}
+              desc={plans.description}
+            />
+          ))}
         </div>
       </div>
       <MoveToTop />
-      <NewFooter />
+      <NewFooter property={property} />
       <FooterNew />
     </div>
   );
 };
 
-const VideoView = ({ url = 'https://www.youtube.com/embed/05DqIGS_koU' }) => {
+const VideoView = ({ url = "https://www.youtube.com/embed/05DqIGS_koU" }) => {
   return (
     <iframe
-      style={{ borderRadius: '10px' }}
+      style={{ borderRadius: "10px" }}
       title="drf4rf4r"
       width="100%"
       height="100%"
@@ -429,12 +385,12 @@ const VideoView = ({ url = 'https://www.youtube.com/embed/05DqIGS_koU' }) => {
 };
 
 const ImageSlider = ({
-  imgArray = ['/assets/image/noimage.jpg'],
-  videoView = '',
+  imgArray = ["/assets/image/noimage.jpg"],
+  videoView = "https://www.youtube.com/embed/05DqIGS_koU",
 }) => {
   const [index, setIndex] = useState(0);
 
-  const onsetIndex = add => {
+  const onsetIndex = (add) => {
     if (index === 0 && add === -1) {
       setIndex(imgArray.length - 1);
     } else if (index === imgArray.length - 1 && add === 1) {
@@ -453,8 +409,8 @@ const ImageSlider = ({
           className="image-slide-container"
           style={{
             backgroundImage: `url(${imgArray[index]})`,
-            backgroundRepeat: 'space',
-            backgroundSize: 'cover',
+            backgroundRepeat: "space",
+            backgroundSize: "100%",
           }}
         >
           <div className="carousel-panel-prop">
@@ -467,8 +423,8 @@ const ImageSlider = ({
         className="sub-img-container"
         style={{
           backgroundImage: `url(${imgArray[getIndex()]})`,
-          backgroundRepeat: 'space',
-          backgroundSize: 'cover',
+          backgroundRepeat: "space",
+          backgroundSize: "cover",
         }}
       ></div>
       <div className="main-video-container">
@@ -478,9 +434,9 @@ const ImageSlider = ({
   );
 };
 
-const Whythis = ({ title, desc }) => {
+const Whythis = ({ key, title, desc }) => {
   return (
-    <div className="why-this-property-component">
+    <div key={key} className="why-this-property-component">
       <svg
         width="68"
         height="69"
@@ -504,15 +460,15 @@ const PriceForAvailability = ({ plans }) => {
   return (
     <>
       <img
-        style={{ width: '100%' }}
+        style={{ width: "100%" }}
         className="image-class"
-        src={plans.url}
+        src={plans.image}
         alt=""
       />
       <div className="price-div">
         <div className="title">
-          <h1 className="name">Studio Apartment</h1>
-          <h2 className="price">AED 800K</h2>
+          <h1 className="name">{plans.name}</h1>
+          <h2 className="price">AED {plans.price} </h2>
         </div>
         <div className="svg-div">
           <svg
@@ -535,11 +491,11 @@ const PriceForAvailability = ({ plans }) => {
   );
 };
 
-const PaymentPlan = ({ percentage, title, desc }) => {
+const PaymentPlan = ({ percentage, title, key, desc }) => {
   return (
-    <div className="why-this-property-component">
+    <div className="why-this-property-component" key={key}>
       <div className="circle">
-        <h1 className="percentage">{percentage}</h1>
+        <h1 className="percentage">{percentage}%</h1>
       </div>
 
       <h1>{title}</h1>
@@ -548,7 +504,7 @@ const PaymentPlan = ({ percentage, title, desc }) => {
     </div>
   );
 };
-const NewFooter = () => {
+const NewFooter = ({ property }) => {
   return (
     <div className="new-footer">
       <div className="main-title">
@@ -562,7 +518,19 @@ const NewFooter = () => {
           Contact us below to work together to build your amazing project.
         </h1>
         <div className="svg-div">
-          <div className="wp-div">
+          <div
+            className="wp-div"
+            onClick={() =>
+              window.open(
+                `https://wa.me/+971521278701/?text=Hello Property Assistant. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${property.id}
+              %0a%0aPrice: AED ${property.price}
+              %0aLocation: ${property.address.city}
+                
+                %0aReference: ${property.id}
+                %0a%0aPlease send me more information regards`
+              )
+            }
+          >
             <svg
               width="22"
               height="23"
@@ -593,8 +561,12 @@ const NewFooter = () => {
             </svg>
             <h1>Whatsapp</h1>
           </div>
-
-          <div className="wp-div">
+          <div
+            className="wp-div"
+            onClick={() =>
+              window.open("mailto:hello@propertyassistant.ae", "_blank")
+            }
+          >
             <svg
               width="23"
               height="18"
@@ -611,7 +583,10 @@ const NewFooter = () => {
             <h1>Email</h1>
           </div>
 
-          <div className="wp-div">
+          <div
+            className="wp-div"
+            onClick={() => window.open("tel:+971521278701", "_blank")}
+          >
             <svg
               width="21"
               height="21"
