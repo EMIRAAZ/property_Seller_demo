@@ -82,7 +82,12 @@ export const deleteOffplanImages = id => async dispatch => {
       payload: id,
     });
   } catch (e) {
-    dispatch(deleteOffplanImagesError());
+    if (e.response?.data?.message === 'No file exist') {
+      dispatch({
+        type: DELETE_IMAGES_OFFPLAN,
+        payload: id,
+      });
+    } else dispatch(deleteOffplanImagesError());
   }
 };
 
@@ -188,7 +193,6 @@ const editAdminOffplanError = () => {
 
 export const editAdminOffplan = (id, offplan, cb) => async dispatch => {
   offplan.price = offplan.price ? offplan.price.split(' ') : [];
-
   try {
     dispatch(editAdminOffplanStarted());
     const res = await axios.patch(`/api/offplan/${id}`, offplan, {

@@ -74,13 +74,13 @@ const AddForm = ({
         { ...offplanValue, images: [...offplanValue.images, ...images] },
         () => {
           clear();
-          navigate('/admin');
+          navigate('/admin/offplan');
         }
       );
     } else {
       addOffplan({ ...offplanValue, images: [...images] }, () => {
         clear();
-        navigate('/admin');
+        navigate('/admin/offplan');
       });
     }
   };

@@ -269,7 +269,8 @@ const reducer = (state = initialState, action) => {
       };
     case DELETE_IMAGES_OFFPLAN:
       const imageArray = [...state.offplanValue.images];
-      imageArray.splice(action.payload, 1);
+      const index = imageArray.indexOf(action.payload);
+      imageArray.splice(index, 1);
       return {
         ...state,
         offplanValue: {

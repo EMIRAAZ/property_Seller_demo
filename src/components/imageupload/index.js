@@ -8,9 +8,6 @@ export default function ImageUpload(props) {
   }, [props.value]);
 
   const onRemoveImage = name => {
-    // const newArray = [...imgArr];
-    // newArray.splice(id, 1);
-    // setImgArr(newArray);
     props.onDelete(name);
   };
 
@@ -36,7 +33,7 @@ export default function ImageUpload(props) {
           src={item}
           width={100}
           height={100}
-          alt={item}
+          alt="img"
         />
       </div>
     ));
