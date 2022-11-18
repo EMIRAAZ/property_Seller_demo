@@ -15,24 +15,31 @@ export default function ImageUpload(props) {
     imgArr.map((item, i) => (
       <div key={`${item}-${i}`} className="relative">
         <svg
-          className="absolute -top-2 -right-1"
+          className="absolute -top-1 -right-1"
           onClick={() => onRemoveImage(item)}
-          viewBox="0 0 20 30"
-          width="20"
-          height="20"
-          fill="none"
+          id="Layer_1"
+          data-name="Layer 1"
+          width="15.5px"
+          height="15.5px"
           xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 122.88 122.88"
         >
           <path
-            fill="#606060"
-            d="M 14.984375 2.4863281 A 1.0001 1.0001 0 0 0 14 3.5 L 14 4 L 8.5 4 A 1.0001 1.0001 0 0 0 7.4863281 5 L 6 5 A 1.0001 1.0001 0 1 0 6 7 L 24 7 A 1.0001 1.0001 0 1 0 24 5 L 22.513672 5 A 1.0001 1.0001 0 0 0 21.5 4 L 16 4 L 16 3.5 A 1.0001 1.0001 0 0 0 14.984375 2.4863281 z M 6 9 L 7.7929688 24.234375 C 7.9109687 25.241375 8.7633438 26 9.7773438 26 L 20.222656 26 C 21.236656 26 22.088031 25.241375 22.207031 24.234375 L 24 9 L 6 9 z"
+            style={{ fill: '#eb0100' }}
+            d="M61.44,0A61.44,61.44,0,1,1,0,61.44,61.44,61.44,0,0,1,61.44,0Z"
+          />
+          <path
+            style={{ fill: '#fff' }}
+            d="M35.38,49.72c-2.16-2.13-3.9-3.47-1.19-6.1l8.74-8.53c2.77-2.8,4.39-2.66,7,0L61.68,46.86,73.39,35.15c2.14-2.17,3.47-3.91,6.1-1.2L88,42.69c2.8,2.77,2.66,4.4,0,7L76.27,61.44,88,73.21c2.65,2.58,2.79,4.21,0,7l-8.54,8.74c-2.63,2.71-4,1-6.1-1.19L61.68,76,49.9,87.81c-2.58,2.64-4.2,2.78-7,0l-8.74-8.53c-2.71-2.63-1-4,1.19-6.1L47.1,61.44,35.38,49.72Z"
           />
         </svg>
         <img
           className="rounded"
           src={item}
+          max-width={100}
           width={100}
           height={100}
+          max-height={100}
           alt="img"
         />
       </div>
@@ -54,7 +61,9 @@ export default function ImageUpload(props) {
         {props.required ? <span className="text-red-600">*</span> : ''}
       </label>
       <div class="flex bg-gray-50 flex-col items-center border cursor-pointer justify-center pt-5 pb-6 w-full rounded-lg">
-        <div class="grid grid-rows-2  grid-cols-3 gap-3">{renderImage()}</div>
+        <div class="grid grid-rows-1  grid-cols-4 gap-2 ml-1 mr-1">
+          {renderImage()}
+        </div>
         <label for="dropzone-file">
           <svg
             aria-hidden="true"
