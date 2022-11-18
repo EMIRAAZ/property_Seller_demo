@@ -119,6 +119,8 @@ const PropertyView = (props) => {
           <div className="left-container">
             <div className="details">
               <p className="heading">{property.title}</p>
+              <p className="heading1">{property.mainTitle}</p>
+
               <p className="price">{`AED ${property.price}`}</p>
               <div className="spec">
                 <div className="spec-wrap">
@@ -218,7 +220,7 @@ const PropertyView = (props) => {
             </div>
             <hr />
             <div className="details-three">
-              <p className="head">{property.mainTitle}</p>
+              <p className="head">{property.mainTitle} Description</p>
               <p className="description">
                 {getDescription(property.description)}
               </p>
@@ -409,7 +411,7 @@ const VideoView = ({ url = "https://www.youtube.com/embed/05DqIGS_koU" }) => {
 
 const ImageSlider = ({
   imgArray = ["/assets/image/noimage.jpg"],
-  videoView = "",
+  videoView = "https://www.youtube.com/embed/05DqIGS_koU",
 }) => {
   const [index, setIndex] = useState(0);
 

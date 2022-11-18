@@ -80,14 +80,17 @@
         .details {
           .heading {
             font-size: 23px;
-            font-weight: 300;
-            color: #464646;
+            font-weight: 700;
+            color: #242527;
           }
-          .price {
-            width: 95%;
-            display: flex;
-            font-size: 20px;
-            color: #2f70ff;
+          .city {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18.9898px;
+            line-height: 139.52%;
+
+            color: #979797;
           }
           .spec {
             display: flex;
@@ -474,10 +477,11 @@
         .wp-div {
           background-color: white;
           display: flex;
-
+          cursor: pointer;
           padding: 10px 12.5px;
           margin-right: 0px;
           margin-top: 20px;
+
           h1 {
             font-family: "Poppins";
             font-style: normal;
@@ -571,15 +575,18 @@
           }
           .details {
             .heading {
-              font-size: 23px;
-              font-weight: 300;
-              color: #464646;
+              font-size: 29px;
+              font-weight: 700;
+              color: #242527;
             }
-            .price {
-              width: 95%;
-              display: flex;
-              font-size: 20px;
-              color: #2f70ff;
+            .city {
+              font-family: "Poppins";
+              font-style: normal;
+              font-weight: 600;
+              font-size: 23.9898px;
+              line-height: 139.52%;
+
+              color: #979797;
             }
             .spec {
               display: flex;
@@ -883,7 +890,7 @@
             margin: auto;
             border-radius: 50%;
             justify-content: center;
-            padding-top: 23px;
+            padding-top: 13px;
             .percentage {
               color: white !important;
               font-size: 20px;
