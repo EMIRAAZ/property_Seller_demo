@@ -69,27 +69,10 @@
   }
   .offplan-row-div-upload {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     width: 100%;
     height: max-content;
     gap: 10px;
-
-    .second-img-Class-admin {
-      height: 200px;
-    }
-
-    .first-img-Class-admin {
-      height: 200px;
-    }
-
-    .add-new-img-upload {
-      height: 200px;
-      border: 1px dotted gray;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
   }
 
   .first-img-Class-admin {
@@ -288,11 +271,7 @@
       gap: 10px;
     }
     .offplan-row-div-upload {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
       width: 70%;
-      height: max-content;
-      gap: 10px;
     }
   }
   .img-loading {

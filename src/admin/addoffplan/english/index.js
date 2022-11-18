@@ -12,6 +12,10 @@ import {
   deleteAdminOffplanMultipleInput,
   addNewBoxOffplan,
   getAgentOffplan,
+  addOffplanImages,
+  deleteOffplanImages,
+  addOffplanImgPrcAvl,
+  deleteOffplanImagePriceAvail,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -44,6 +48,12 @@ const mapDispatchToProps = dispatch => {
     deleteAdminOffplanMultipleInput: (mk, i) =>
       dispatch(deleteAdminOffplanMultipleInput(mk, i)),
     getAgentOffplan: () => dispatch(getAgentOffplan()),
+    addOffplanImages: payload => dispatch(addOffplanImages(payload)),
+    deleteOffplanImages: payload => dispatch(deleteOffplanImages(payload)),
+    addOffplanImgPrcAvl: (formData, key, position) =>
+      dispatch(addOffplanImgPrcAvl(formData, key, position)),
+    deleteOffplanImagePriceAvail: (name, key, position) =>
+      dispatch(deleteOffplanImagePriceAvail(name, key, position)),
   };
 };
 
