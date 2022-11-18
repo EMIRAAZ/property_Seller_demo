@@ -26,6 +26,12 @@ import {
   DELETE_IMAGES_OFFPLAN,
   DELETE_IMAGES_OFFPLAN_STARTED,
   DELETE_IMAGES_OFFPLAN_ERROR,
+  DELETE_IMAGES_OFFPLAN_PRICE_AVAIL,
+  DELETE_IMAGES_OFFPLAN_PRICE_AVAIL_STARTED,
+  DELETE_IMAGES_OFFPLAN_PRICE_AVAIL_ERROR,
+  ADD_IMAGE_OFPLN_PRC_AVL,
+  ADD_IMAGE_OFPLN_PRC_AVL_STARTED,
+  ADD_IMAGE_OFPLN_PRC_AVL_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -267,9 +273,42 @@ const reducer = (state = initialState, action) => {
           },
         },
       };
+    case ADD_IMAGE_OFPLN_PRC_AVL:
+      const newPfvArr = [...state.offplanValue.priceForAvailability];
+      newPfvArr[action.payload.position].image = action.payload.img;
+      return {
+        ...state,
+        offplanValue: {
+          ...state.offplanValue,
+          priceForAvailability: [...newPfvArr],
+        },
+      };
+    case ADD_IMAGE_OFPLN_PRC_AVL_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case ADD_IMAGE_OFPLN_PRC_AVL_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
+      };
     case DELETE_IMAGES_OFFPLAN:
       const imageArray = [...state.offplanValue.images];
-      imageArray.splice(action.payload, 1);
+      const index = imageArray.indexOf(action.payload);
+      imageArray.splice(index, 1);
       return {
         ...state,
         offplanValue: {
@@ -294,6 +333,38 @@ const reducer = (state = initialState, action) => {
         env: {
           ...state.env,
           images: {
+            error: true,
+            loading: false,
+          },
+        },
+      };
+    case DELETE_IMAGES_OFFPLAN_PRICE_AVAIL:
+      const imgArr = [...state.offplanValue.priceForAvailability];
+      imgArr[action.payload.position].image = '';
+      return {
+        ...state,
+        offplanValue: {
+          ...state.offplanValue,
+          priceForAvailability: [...imgArr],
+        },
+      };
+    case DELETE_IMAGES_OFFPLAN_PRICE_AVAIL_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          image: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case DELETE_IMAGES_OFFPLAN_PRICE_AVAIL_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          image: {
             error: true,
             loading: false,
           },
