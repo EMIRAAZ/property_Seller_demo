@@ -175,7 +175,7 @@ const Offplan =(props)=>{
         isPagination
       />
     </div>
-    <Footer/>
+    <FooterNew/>
     </div>
   )
 }

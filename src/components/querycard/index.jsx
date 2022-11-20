@@ -59,6 +59,19 @@ const QueryCard = ({
             { name: 'Fujairah', value: 'Fujairah' },
           ]}
         />
+
+        <BasicSelect
+          bgColor="white"
+          customClass="sale"
+          name="Purpose"
+          border
+          value={cardInput.sale}
+          onChange={value => onChange('sale', value)}
+          options={[
+            { name: 'Buy', value: 'buy' },
+            { name: 'Rent', value: 'rent' },
+          ]}
+        />
         <SearchChipSelect
           bgColor="white"
           border
@@ -74,18 +87,6 @@ const QueryCard = ({
               value: location,
             };
           })}
-        />
-        <BasicSelect
-          bgColor="white"
-          customClass="sale"
-          name="Purpose"
-          border
-          value={cardInput.sale}
-          onChange={value => onChange('sale', value)}
-          options={[
-            { name: 'Buy', value: 'buy' },
-            { name: 'Rent', value: 'rent' },
-          ]}
         />
         <BasicSelect
           bgColor="white"
@@ -202,7 +203,7 @@ const QueryCard = ({
         />
         <BasicSelect
           customClass="bed-list"
-          name="Beds"
+          name="Bed"
           bgColor="white"
           border
           onChange={value => onChange('noOfBed', value)}
@@ -220,7 +221,7 @@ const QueryCard = ({
         />
         <BasicSelect
           customClass="bath-list"
-          name="Bathrooms"
+          name="Bath"
           bgColor="white"
           border
           onChange={value => onChange('noOfBath', value)}

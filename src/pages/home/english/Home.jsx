@@ -47,7 +47,7 @@ const Home = props => {
           content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         />
 
-        <link rel="canonical" href="http://www.uaeassistant.com" />
+        <link rel="canonical" href="https://www.propertyassistant.ae" />
 
         <meta
           property="og:title"
@@ -59,7 +59,7 @@ const Home = props => {
           content="Looking for Freehold,Commercial and Residential Properties in Dubai, UAE. We are an exclusive real estate agent in Dubai, UAE specialized in the best real estate deals for sale and rent. Contact us for more details."
         />
 
-        <meta property="og:url" content="http://www.uaeassistant.com" />
+        <meta property="og:url" content="http://www.propertyassistant.ae" />
         <meta property="og:image" content="" />
         <meta property="og:image:width" content="600" />
         <meta property="og:image:height" content="315" />

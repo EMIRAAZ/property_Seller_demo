@@ -98,21 +98,20 @@
       gap: 8px 10px;
       .search {
         grid-row-start: 1;
-        grid-column-start: 1;
-        grid-column-end: 4;
-      }
-
-      .emirate {
-        grid-row-start: 1;
-        grid-column-start: 4;
+        grid-column-start: 2;
         grid-column-end: 6;
       }
-
       .sale {
         grid-row-start: 2;
         grid-column-start: 1;
         grid-column-end: 2;
       }
+      .emirate {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+
       .property {
         grid-row-start: 2;
         grid-column-start: 2;
@@ -123,22 +122,22 @@
         grid-column-start: 3;
         grid-column-end: 4;
       }
-      .bed-home {
+      .price-from {
         grid-row-start: 2;
         grid-column-start: 4;
         grid-column-end: 6;
       }
-      .bath-home {
+      .price-to {
         grid-row-start: 3;
         grid-column-start: 1;
         grid-column-end: 2;
       }
-      .price-from {
+      .bed-home {
         grid-row-start: 3;
         grid-column-start: 2;
         grid-column-end: 3;
       }
-      .price-to {
+      .bath-home {
         grid-row-start: 3;
         grid-column-start: 3;
         grid-column-end: 4;

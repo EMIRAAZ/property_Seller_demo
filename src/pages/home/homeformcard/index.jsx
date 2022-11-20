@@ -65,17 +65,7 @@ const HomeFormCard = props => {
             };
           })}
         />
-        <BasicSelect
-          bgColor="white"
-          customClass="sale"
-          name="Purpose"
-          border
-          onChange={value => onInputChange('sale', value)}
-          options={[
-            { name: 'Buy', value: 'buy' },
-            { name: 'Rent', value: 'rent' },
-          ]}
-        />
+
         <BasicSelect
           bgColor="white"
           border
