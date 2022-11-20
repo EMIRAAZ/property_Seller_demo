@@ -117,6 +117,7 @@ const QueryCard = ({
           options={[
             { name: 'Furnished', value: 'furnished' },
             { name: 'Un Furnished', value: 'unfurnished' },
+            { name: 'Both', value: '' },
           ]}
         />
         <BasicSelect
