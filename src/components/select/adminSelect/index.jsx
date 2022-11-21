@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const AdminSelect = ({
   name,
-  options,
+  options = [],
   customClass = '',
   onChange,
   label,
