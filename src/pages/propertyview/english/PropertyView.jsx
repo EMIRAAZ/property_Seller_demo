@@ -121,7 +121,7 @@ const PropertyView = props => {
               <p className="heading">{property.title}</p>
               <p className="heading1">{property.mainTitle}</p>
 
-              <p className="price">{`AED ${property.price}`}</p>
+              <p className="price">{` ${property.price} AED`}</p>
               <div className="spec">
                 <div className="spec-wrap">
                   <Bed
@@ -309,7 +309,6 @@ const PropertyView = props => {
                           {property.agent.yearsOfExperience}{' '}
                         </span>
                       </h1>
-                      <h2>Agency : {property.agency.agencyName}</h2>
                       {/* <p>{property.agency.officeAddress}</p> */}
                     </>
                   ) : null}

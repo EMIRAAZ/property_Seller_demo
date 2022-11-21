@@ -468,7 +468,7 @@ const PriceForAvailability = ({ plans }) => {
       <div className="price-div">
         <div className="title">
           <h1 className="name">{plans.name}</h1>
-          <h2 className="price">AED {plans.price} </h2>
+          <h2 className="price"> {plans.price} AED </h2>
         </div>
         <div className="svg-div">
           <svg
