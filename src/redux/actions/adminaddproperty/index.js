@@ -23,7 +23,69 @@ import {
   GET_TAGLINE_PROPERTY,
   GET_TAGLINE_PROPERTY_STARTED,
   GET_TAGLINE_PROPERTY_ERROR,
+  ADD_IMAGES_PROPERTY,
+  ADD_IMAGES_PROPERTY_STARTED,
+  ADD_IMAGES_PROPERTY_ERROR,
+  DELETE_IMAGES_PROPERTY,
+  DELETE_IMAGES_PROPERTY_STARTED,
+  DELETE_IMAGES_PROPERTY_ERROR,
 } from '../../constants';
+
+const addPropertyImagesStarted = payload => {
+  return {
+    type: ADD_IMAGES_PROPERTY_STARTED,
+  };
+};
+const addPropertyImagesError = payload => {
+  return {
+    type: ADD_IMAGES_PROPERTY_ERROR,
+  };
+};
+
+export const addPropertyImages = payload => async dispatch => {
+  try {
+    dispatch(addPropertyImagesStarted());
+    const res = await axios.post(`/image/upload-single`, payload);
+    dispatch({
+      type: ADD_IMAGES_PROPERTY,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(addPropertyImagesError());
+  }
+};
+
+const deletePropertyImagesStarted = payload => {
+  return {
+    type: DELETE_IMAGES_PROPERTY_STARTED,
+  };
+};
+const deletePropertyImagesError = payload => {
+  return {
+    type: DELETE_IMAGES_PROPERTY_ERROR,
+  };
+};
+
+export const deletePropertyImages = id => async dispatch => {
+  const newId = id;
+  try {
+    dispatch(deletePropertyImagesStarted());
+    await axios.delete(
+      `/image/delete-single-image/${newId.split('/uploads/').pop()}`
+    );
+    dispatch({
+      type: DELETE_IMAGES_PROPERTY,
+      payload: id,
+    });
+  } catch (e) {
+    if (e.response?.data?.message === 'No file exist') {
+      dispatch({
+        type: DELETE_IMAGES_PROPERTY,
+        payload: id,
+      });
+    } else dispatch(deletePropertyImagesError());
+  }
+};
 
 export const changeAdminPropertyInput = payload => {
   return {

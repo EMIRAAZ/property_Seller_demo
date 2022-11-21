@@ -34,6 +34,8 @@ const AddProperty = props => {
           propertyValue={props.propertyValue}
           propertyOptions={props.propertyOptions}
           clear={props.clearUpload}
+          addPropertyImages={props.addPropertyImages}
+          deletePropertyImages={props.deletePropertyImages}
         />
       </div>
     </div>

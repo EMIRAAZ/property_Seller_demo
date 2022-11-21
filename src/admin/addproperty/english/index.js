@@ -10,6 +10,8 @@ import {
   clearUpload,
   getNeighborhoodProperty,
   getTaglineProperty,
+  addPropertyImages,
+  deletePropertyImages,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -36,6 +38,8 @@ const mapDispatchToProps = dispatch => {
     getAmenityProperty: payload => dispatch(getAmenityProperty(payload)),
     getAdminPropertyById: id => dispatch(getAdminPropertyById(id)),
     clearUpload: () => dispatch(clearUpload()),
+    addPropertyImages: payload => dispatch(addPropertyImages(payload)),
+    deletePropertyImages: payload => dispatch(deletePropertyImages(payload)),
   };
 };
 

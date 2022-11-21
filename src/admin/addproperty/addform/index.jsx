@@ -18,6 +18,7 @@ import {
   StandaloneSearchBox,
   Marker,
 } from '@react-google-maps/api';
+import ImageUpload from '../../../components/imageupload';
 
 const keyArr = [
   'title',
@@ -56,6 +57,8 @@ const AddForm = ({
   propertyOptions,
   editing,
   clear,
+  addPropertyImages,
+  deletePropertyImages,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -266,26 +269,15 @@ const AddForm = ({
         </div>
       </div>
       <div className="add-property-form-right">
-        <label className="property-image-label spinner-label">
-          Property Images<span>*</span> {renderImageLoadingSpinner()}
-        </label>
         <div className="property-row-div-upload">
-          {uploadCount.map((_, i) => (
-            <UploadImage
-              key={i}
-              multiple={true}
-              linkIndex={i}
-              customClass="first-img-Class-admin"
-              onChangeImage={() => {}}
-              value={propertyValue.images}
-              editing={editing}
-            />
-          ))}
-          {uploadCount.length < 15 ? (
-            <div className="add-new-img-upload" onClick={onSetUploadCount}>
-              <Plus />
-            </div>
-          ) : null}
+          <ImageUpload
+            name="images"
+            label="Images"
+            required
+            value={propertyValue.images}
+            onChange={addPropertyImages}
+            onDelete={deletePropertyImages}
+          />
         </div>
         <Select
           customClass="property-input"
