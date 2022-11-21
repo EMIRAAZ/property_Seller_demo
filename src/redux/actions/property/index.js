@@ -45,13 +45,14 @@ const getSimilarPropertyError = () => {
   };
 };
 
-export const getSimilarProperty = city => async dispatch => {
+export const getSimilarProperty = (city, currentId) => async dispatch => {
   try {
     dispatch(getSimilarPropertyStarted());
-    const res = await axios.get(`/api/property?city=${city}&limit=3`);
+    const res = await axios.get(`/api/property?city=${city}&limit=4`);
     dispatch({
       type: GET_SIMILAR_PROPERTY,
       payload: res.data?.data,
+      currentId,
     });
   } catch (e) {
     dispatch(getSimilarPropertyError());

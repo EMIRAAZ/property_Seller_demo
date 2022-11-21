@@ -30,9 +30,16 @@ const reducer = (state = initialState, action) => {
         loading: false,
       };
     case GET_SIMILAR_PROPERTY:
+      const similarProperty = action.payload.rows.filter(
+        item => item.id !== action.currentId
+      );
+      const newSimilarArr =
+        similarProperty.length > 3
+          ? similarProperty.splice(0, 3)
+          : similarProperty;
       return {
         ...state,
-        similarProperty: action.payload.rows,
+        similarProperty: newSimilarArr,
       };
     case GET_SIMILAR_PROPERTY_STARTED:
       return {

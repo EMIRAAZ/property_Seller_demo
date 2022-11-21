@@ -4,7 +4,7 @@ import Property from '../property';
 
 const SimilarProperty = props => {
   useEffect(() => {
-    props.getSimilarProperty(props.city);
+    props.getSimilarProperty(props.city, props.id);
   }, []);
 
   return (
