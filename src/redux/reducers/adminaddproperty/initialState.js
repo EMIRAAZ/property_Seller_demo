@@ -63,6 +63,7 @@ export const initialState = {
       { name: 'Rent', value: 'rent' },
     ],
     agent: [],
+    city: [],
     amenities: [],
     neighbor: [],
     tagline: [],

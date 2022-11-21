@@ -29,6 +29,9 @@ import {
   DELETE_IMAGES_PROPERTY,
   DELETE_IMAGES_PROPERTY_STARTED,
   DELETE_IMAGES_PROPERTY_ERROR,
+  GET_CITY_PROPERTY_ERROR,
+  GET_CITY_PROPERTY_STARTED,
+  GET_CITY_PROPERTY,
 } from '../../constants';
 
 const addPropertyImagesStarted = payload => {
@@ -312,5 +315,53 @@ export const getTaglineProperty = () => async dispatch => {
     });
   } catch (e) {
     dispatch(getTaglinePropertyError());
+  }
+};
+
+// CITY
+
+const getCityPropertyStarted = () => {
+  return {
+    type: GET_CITY_PROPERTY_STARTED,
+  };
+};
+
+const getCityPropertyError = () => {
+  return {
+    type: GET_CITY_PROPERTY_ERROR,
+  };
+};
+
+export const getCityProperty = () => async dispatch => {
+  try {
+    dispatch(getCityPropertyStarted());
+    const res = await axios.get(`/api/city`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    dispatch({
+      type: GET_CITY_PROPERTY,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getCityPropertyError());
+  }
+};
+
+export const getCityByEmirateProperty = emirate => async dispatch => {
+  try {
+    dispatch(getCityPropertyStarted());
+    const res = await axios.get(`/api/city/emirate?emirate=${emirate}`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    dispatch({
+      type: GET_CITY_PROPERTY,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getCityPropertyError());
   }
 };

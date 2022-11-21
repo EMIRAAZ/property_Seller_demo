@@ -12,6 +12,8 @@ const AddOffplan = props => {
 
   useEffect(() => {
     props.getAgentOffplan();
+    props.getCityOffplan();
+
     if (getID() !== 'add-offplan') props.getAdminOffplanById(getID());
   }, []);
   return (
@@ -42,6 +44,7 @@ const AddOffplan = props => {
           addOffplanImages={props.addOffplanImages}
           addOffplanImgPrcAvl={props.addOffplanImgPrcAvl}
           deleteOffplanImagePriceAvail={props.deleteOffplanImagePriceAvail}
+          getCityByEmirateOffplan={props.getCityByEmirateOffplan}
         />
       </div>
     </div>

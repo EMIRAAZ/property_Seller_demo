@@ -15,6 +15,7 @@ const AddProperty = props => {
     props.getAmenityProperty();
     props.getNeighborhoodProperty();
     props.getTaglineProperty();
+    props.getCityProperty();
     if (getID() !== 'add-property') props.getAdminPropertyById(getID());
   }, []);
   return (
@@ -36,6 +37,7 @@ const AddProperty = props => {
           clear={props.clearUpload}
           addPropertyImages={props.addPropertyImages}
           deletePropertyImages={props.deletePropertyImages}
+          getCityByEmirateProperty={props.getCityByEmirateProperty}
         />
       </div>
     </div>

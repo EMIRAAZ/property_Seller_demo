@@ -12,6 +12,8 @@ import {
   getTaglineProperty,
   addPropertyImages,
   deletePropertyImages,
+  getCityProperty,
+  getCityByEmirateProperty,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -40,6 +42,9 @@ const mapDispatchToProps = dispatch => {
     clearUpload: () => dispatch(clearUpload()),
     addPropertyImages: payload => dispatch(addPropertyImages(payload)),
     deletePropertyImages: payload => dispatch(deletePropertyImages(payload)),
+    getCityProperty: () => dispatch(getCityProperty()),
+    getCityByEmirateProperty: emirate =>
+      dispatch(getCityByEmirateProperty(emirate)),
   };
 };
 

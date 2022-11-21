@@ -32,6 +32,9 @@ import {
   ADD_IMAGE_OFPLN_PRC_AVL,
   ADD_IMAGE_OFPLN_PRC_AVL_STARTED,
   ADD_IMAGE_OFPLN_PRC_AVL_ERROR,
+  GET_CITY_OFFPLAN,
+  GET_CITY_OFFPLAN_STARTED,
+  GET_CITY_OFFPLAN_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -369,6 +372,28 @@ const reducer = (state = initialState, action) => {
             loading: false,
           },
         },
+      };
+    case GET_CITY_OFFPLAN:
+      const city = action.payload?.map(a => {
+        return {
+          name: a.name,
+          value: a.name,
+        };
+      });
+      return {
+        ...state,
+        offplanOptions: {
+          ...state.offplanOptions,
+          city,
+        },
+      };
+    case GET_CITY_OFFPLAN_STARTED:
+      return {
+        ...state,
+      };
+    case GET_CITY_OFFPLAN_ERROR:
+      return {
+        ...state,
       };
     default:
       return state;
