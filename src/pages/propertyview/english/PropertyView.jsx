@@ -121,7 +121,7 @@ const PropertyView = (props) => {
               <p className="heading">{property.title}</p>
               <p className="heading1">{property.mainTitle}</p>
 
-              <p className="price">{`AED ${property.price}`}</p>
+              <p className="price">{` ${property.price} AED`}</p>
               <div className="spec">
                 <div className="spec-wrap">
                   <Bed
@@ -291,25 +291,21 @@ const PropertyView = (props) => {
                       <p>{property.agent.agentName}</p>
 
                       <h1>
-                        Response time :
-                        <span style={{ color: "black" }}>
-                          {" "}
-                          within 5 minutes
-                        </span>
+                        <span style={{ color: "black" }}>Response time :</span>
+                        within 5 minutes
                       </h1>
                       <h1>
-                        Languages :{" "}
-                        <span style={{ color: "black" }}>
-                          {property.agent.languages}{" "}
-                        </span>
+                        <span style={{ color: "black" }}>Languages :</span>
+                        {property.agent.languages}
                       </h1>
                       <h1>
-                        Experience :{" "}
-                        <span style={{ color: "black" }}>
-                          {property.agent.yearsOfExperience}{" "}
-                        </span>
+                        <span style={{ color: "black" }}>Experience :</span>
+                        {property.agent.yearsOfExperience}
                       </h1>
-                      <h2>Agency : {property.agency.agencyName}</h2>
+                      <h1>
+                        <span style={{ color: "black" }}>Agency :</span>
+                        {property.agency.agencyName}
+                      </h1>
                       {/* <p>{property.agency.officeAddress}</p> */}
                     </>
                   ) : null}
