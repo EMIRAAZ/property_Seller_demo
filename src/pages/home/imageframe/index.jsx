@@ -7,7 +7,7 @@ const ImageFrame = (props) => {
         props.advancedSearch ? "ad-s-on-frame" : ""
       }`}
     >
-      <p className="home-properties-caption">Find Properties in UAE</p>
+      <p className="home-properties-caption">Your Property Assistant.</p>
     </div>
   );
 };
