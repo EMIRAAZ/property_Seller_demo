@@ -6,7 +6,7 @@ export const initialState = {
     title: '',
     description: '',
     topics: [],
-    images: [],
+    image: '',
   },
   env: {
     loading: false,

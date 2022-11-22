@@ -20,6 +20,12 @@ import {
   GET_TOPICS_NEWS,
   GET_TOPICS_NEWS_STARTED,
   GET_TOPICS_NEWS_ERROR,
+  ADD_NEWS_IMAGE_STARTED,
+  ADD_NEWS_IMAGE,
+  ADD_NEWS_IMAGE_ERROR,
+  DELETE_NEWS_IMAGE_STARTED,
+  DELETE_NEWS_IMAGE,
+  DELETE_NEWS_IMAGE_ERROR,
 } from '../../constants';
 
 export const changeAdminNewsInput = payload => {
@@ -219,5 +225,62 @@ export const getTopicsNews = () => async dispatch => {
     });
   } catch (e) {
     dispatch(getTopicsNewsError());
+  }
+};
+
+//IMAGE
+
+const addNewsImageStarted = payload => {
+  return {
+    type: ADD_NEWS_IMAGE_STARTED,
+  };
+};
+const addNewsImageError = payload => {
+  return {
+    type: ADD_NEWS_IMAGE_ERROR,
+  };
+};
+
+export const addNewsImage = payload => async dispatch => {
+  try {
+    dispatch(addNewsImageStarted());
+    const res = await axios.post(`/image/upload-single`, payload);
+    dispatch({
+      type: ADD_NEWS_IMAGE,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(addNewsImageError());
+  }
+};
+const deleteNewsImageStarted = payload => {
+  return {
+    type: DELETE_NEWS_IMAGE_STARTED,
+  };
+};
+const deleteNewsImageError = payload => {
+  return {
+    type: DELETE_NEWS_IMAGE_ERROR,
+  };
+};
+
+export const deleteNewsImage = id => async dispatch => {
+  const newId = id;
+  try {
+    dispatch(deleteNewsImageStarted());
+    await axios.delete(
+      `/image/delete-single-image/${newId.split('/uploads/').pop()}`
+    );
+    dispatch({
+      type: DELETE_NEWS_IMAGE,
+      payload: id,
+    });
+  } catch (e) {
+    if (e.response?.data?.message === 'No file exist') {
+      dispatch({
+        type: DELETE_NEWS_IMAGE,
+        payload: id,
+      });
+    } else dispatch(deleteNewsImageError());
   }
 };
