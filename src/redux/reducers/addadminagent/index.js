@@ -13,6 +13,13 @@ import {
   DELETE_ADMIN_AGENT,
   DELETE_ADMIN_AGENT_STARTED,
   DELETE_ADMIN_AGENT_ERROR,
+  ADD_AGENT_IMAGE_STARTED,
+  ADD_AGENT_IMAGE,
+  ADD_AGENT_IMAGE_ERROR,
+  DELETE_AGENT_IMAGE_STARTED,
+  DELETE_AGENT_IMAGE,
+  DELETE_AGENT_IMAGE_ERROR,
+  CLEAR_AGENT_DATA,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -46,7 +53,7 @@ const reducer = (state = initialState, action) => {
         agentValue: {
           ...state.agentValue,
           ...createdAgentValue,
-          agentImage: [createdAgentValue.agentImage],
+          agentImage: createdAgentValue.agentImage,
         },
       };
     case GET_ADMIN_AGENT_BY_ID_STARTED:
@@ -130,6 +137,68 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
       };
+    case ADD_AGENT_IMAGE:
+      return {
+        ...state,
+        agentValue: {
+          ...state.agentValue,
+          agentImage: action.payload,
+        },
+      };
+    case ADD_AGENT_IMAGE_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case ADD_AGENT_IMAGE_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
+      };
+    case DELETE_AGENT_IMAGE:
+      return {
+        ...state,
+        agentValue: {
+          ...state.agentValue,
+          agentImage: '',
+        },
+      };
+    case DELETE_AGENT_IMAGE_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case DELETE_AGENT_IMAGE_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
+      };
+    case CLEAR_AGENT_DATA:
+      return initialState;
     default:
       return state;
   }

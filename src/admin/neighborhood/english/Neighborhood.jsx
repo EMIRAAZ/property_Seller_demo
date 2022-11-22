@@ -57,6 +57,8 @@ const Property = props => {
             images={props.images}
             imgLoading={props.imgLoading}
             imgError={props.imgError}
+            deleteNeighImage={props.deleteNeighImage}
+            addNeighImage={props.addNeighImage}
           />
         </div>
       </div>

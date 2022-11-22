@@ -17,6 +17,12 @@ import {
   DELETE_ADMIN_BLOG,
   DELETE_ADMIN_BLOG_STARTED,
   DELETE_ADMIN_BLOG_ERROR,
+  ADD_BLOG_IMAGE_STARTED,
+  ADD_BLOG_IMAGE,
+  ADD_BLOG_IMAGE_ERROR,
+  DELETE_BLOG_IMAGE_STARTED,
+  DELETE_BLOG_IMAGE,
+  DELETE_BLOG_IMAGE_ERROR,
 } from '../../constants';
 
 export const changeAdminBlogInput = payload => {
@@ -185,5 +191,62 @@ export const deleteAdminBlog = (id, cb) => async dispatch => {
     cb();
   } catch (e) {
     dispatch(deleteAdminBlogError());
+  }
+};
+
+//IMAGE
+
+const addBlogImageStarted = payload => {
+  return {
+    type: ADD_BLOG_IMAGE_STARTED,
+  };
+};
+const addBlogImageError = payload => {
+  return {
+    type: ADD_BLOG_IMAGE_ERROR,
+  };
+};
+
+export const addBlogImage = payload => async dispatch => {
+  try {
+    dispatch(addBlogImageStarted());
+    const res = await axios.post(`/image/upload-single`, payload);
+    dispatch({
+      type: ADD_BLOG_IMAGE,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(addBlogImageError());
+  }
+};
+const deleteBlogImageStarted = payload => {
+  return {
+    type: DELETE_BLOG_IMAGE_STARTED,
+  };
+};
+const deleteBlogImageError = payload => {
+  return {
+    type: DELETE_BLOG_IMAGE_ERROR,
+  };
+};
+
+export const deleteBlogImage = id => async dispatch => {
+  const newId = id;
+  try {
+    dispatch(deleteBlogImageStarted());
+    await axios.delete(
+      `/image/delete-single-image/${newId.split('/uploads/').pop()}`
+    );
+    dispatch({
+      type: DELETE_BLOG_IMAGE,
+      payload: id,
+    });
+  } catch (e) {
+    if (e.response?.data?.message === 'No file exist') {
+      dispatch({
+        type: DELETE_BLOG_IMAGE,
+        payload: id,
+      });
+    } else dispatch(deleteBlogImageError());
   }
 };

@@ -14,6 +14,12 @@ import {
   DELETE_ADMIN_NEIGHBORHOOD_ERROR,
   DELETE_ADMIN_NEIGHBORHOOD_STARTED,
   DELETE_ADMIN_NEIGHBORHOOD,
+  ADD_NEIGHBORHOOD_IMAGE,
+  ADD_NEIGHBORHOOD_IMAGE_STARTED,
+  ADD_NEIGHBORHOOD_IMAGE_ERROR,
+  DELETE_NEIGHBORHOOD_IMAGE,
+  DELETE_NEIGHBORHOOD_IMAGE_STARTED,
+  DELETE_NEIGHBORHOOD_IMAGE_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -115,6 +121,66 @@ const reducer = (state = initialState, action) => {
     case DELETE_ADMIN_NEIGHBORHOOD_ERROR:
       return {
         ...state,
+      };
+    case ADD_NEIGHBORHOOD_IMAGE:
+      return {
+        ...state,
+        neighborValue: {
+          ...state.neighborValue,
+          image: action.payload,
+        },
+      };
+    case ADD_NEIGHBORHOOD_IMAGE_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case ADD_NEIGHBORHOOD_IMAGE_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
+      };
+    case DELETE_NEIGHBORHOOD_IMAGE:
+      return {
+        ...state,
+        neighborValue: {
+          ...state.neighborValue,
+          image: '',
+        },
+      };
+    case DELETE_NEIGHBORHOOD_IMAGE_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case DELETE_NEIGHBORHOOD_IMAGE_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
       };
     default:
       return state;

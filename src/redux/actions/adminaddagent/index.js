@@ -13,6 +13,13 @@ import {
   DELETE_ADMIN_AGENT,
   DELETE_ADMIN_AGENT_STARTED,
   DELETE_ADMIN_AGENT_ERROR,
+  ADD_AGENT_IMAGE_STARTED,
+  ADD_AGENT_IMAGE,
+  ADD_AGENT_IMAGE_ERROR,
+  DELETE_AGENT_IMAGE_STARTED,
+  DELETE_AGENT_IMAGE,
+  DELETE_AGENT_IMAGE_ERROR,
+  CLEAR_AGENT_DATA,
 } from '../../constants';
 
 export const changeAdminAgentInput = payload => {
@@ -145,4 +152,68 @@ export const deleteAdminAgent = (id, cb) => async dispatch => {
   } catch (e) {
     dispatch(deleteAdminAgentError());
   }
+};
+
+//IMAGE
+
+const addAgentImageStarted = payload => {
+  return {
+    type: ADD_AGENT_IMAGE_STARTED,
+  };
+};
+const addAgentImageError = payload => {
+  return {
+    type: ADD_AGENT_IMAGE_ERROR,
+  };
+};
+
+export const addAgentImage = payload => async dispatch => {
+  try {
+    dispatch(addAgentImageStarted());
+    const res = await axios.post(`/image/upload-single`, payload);
+    dispatch({
+      type: ADD_AGENT_IMAGE,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(addAgentImageError());
+  }
+};
+const deleteAgentImageStarted = payload => {
+  return {
+    type: DELETE_AGENT_IMAGE_STARTED,
+  };
+};
+const deleteAgentImageError = payload => {
+  return {
+    type: DELETE_AGENT_IMAGE_ERROR,
+  };
+};
+
+export const deleteAgentImage = id => async dispatch => {
+  const newId = id;
+  try {
+    dispatch(deleteAgentImageStarted());
+    await axios.delete(
+      `/image/delete-single-image/${newId.split('/uploads/').pop()}`
+    );
+    dispatch({
+      type: DELETE_AGENT_IMAGE,
+      payload: id,
+    });
+  } catch (e) {
+    console.log(e);
+    if (e.response?.data?.message === 'No file exist') {
+      dispatch({
+        type: DELETE_AGENT_IMAGE,
+        payload: id,
+      });
+    } else dispatch(deleteAgentImageError());
+  }
+};
+
+export const clearAgent = () => {
+  return {
+    type: CLEAR_AGENT_DATA,
+  };
 };

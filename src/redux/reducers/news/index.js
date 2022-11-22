@@ -17,6 +17,12 @@ import {
   GET_TOPICS_NEWS,
   GET_TOPICS_NEWS_STARTED,
   GET_TOPICS_NEWS_ERROR,
+  ADD_NEWS_IMAGE_STARTED,
+  ADD_NEWS_IMAGE,
+  ADD_NEWS_IMAGE_ERROR,
+  DELETE_NEWS_IMAGE_STARTED,
+  DELETE_NEWS_IMAGE,
+  DELETE_NEWS_IMAGE_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -137,6 +143,66 @@ const reducer = (state = initialState, action) => {
     case GET_TOPICS_NEWS_ERROR:
       return {
         ...state,
+      };
+    case ADD_NEWS_IMAGE:
+      return {
+        ...state,
+        newsValue: {
+          ...state.newsValue,
+          image: action.payload,
+        },
+      };
+    case ADD_NEWS_IMAGE_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case ADD_NEWS_IMAGE_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
+      };
+    case DELETE_NEWS_IMAGE:
+      return {
+        ...state,
+        newsValue: {
+          ...state.newsValue,
+          image: '',
+        },
+      };
+    case DELETE_NEWS_IMAGE_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case DELETE_NEWS_IMAGE_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
       };
     default:
       return state;

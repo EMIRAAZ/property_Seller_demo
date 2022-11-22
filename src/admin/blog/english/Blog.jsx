@@ -58,6 +58,8 @@ const Blog = props => {
             images={props.images}
             imgLoading={props.imgLoading}
             imgError={props.imgError}
+            deleteBlogImage={props.deleteBlogImage}
+            addBlogImage={props.addBlogImage}
           />
         </div>
       </div>

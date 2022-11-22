@@ -6,6 +6,7 @@ import Button from '../../../components/button/SpinnerButton';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { checkIfAllKeyHasValue } from '../../../utils';
 import Spinner from '../../../components/spinner';
+import SingleImageUpload from '../../../components/singleimageupload';
 
 const keyArr = ['title', 'description'];
 
@@ -22,6 +23,8 @@ const AddForm = ({
   imgLoading,
   imgError,
   clearUpload,
+  deleteBlogImage,
+  addBlogImage,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -90,17 +93,14 @@ const AddForm = ({
         value={blogValue.description}
         required
       />
-      <label className="property-image-label spinner-label">
-        Blog Image<span>*</span> {renderImageLoadingSpinner()}
-      </label>
 
-      <UploadImage
-        editing={editing}
-        linkIndex={0}
-        customClass="blog-logo-img"
-        onChangeImage={() => {}}
-        svg={true}
-        value={blogValue.images}
+      <SingleImageUpload
+        name="image"
+        label="Image"
+        required
+        value={blogValue.image}
+        onChange={addBlogImage}
+        onDelete={deleteBlogImage}
       />
 
       <span id="on-add-warning" className="pls-fill">

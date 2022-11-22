@@ -10,6 +10,8 @@ import {
   deleteAdminNews,
   getTopicsNews,
   clearUpload,
+  deleteNewsImage,
+  addNewsImage,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -36,6 +38,8 @@ const mapDispatchToProps = dispatch => {
     clearAddNews: () => dispatch(clearAddNews()),
     getTopicsNews: () => dispatch(getTopicsNews()),
     clearUpload: () => dispatch(clearUpload()),
+    addNewsImage: payload => dispatch(addNewsImage(payload)),
+    deleteNewsImage: payload => dispatch(deleteNewsImage(payload)),
   };
 };
 

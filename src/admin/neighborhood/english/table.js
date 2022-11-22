@@ -14,11 +14,7 @@ export const tableHeader = [
     renderCell: params => {
       return (
         <>
-          <img
-            src={params.row.images && params.row.images[0]}
-            alt=""
-            className="image"
-          />
+          <img src={params.row.image} alt="" className="image" />
           <p>{params.row.title}</p>
         </>
       );
@@ -30,9 +26,6 @@ export const tableHeader = [
     minWidth: 180,
     renderCell: params => {
       var date = new Date(params.row.updatedAt);
-      // .toLocaleString(undefined, {
-      //   timeZone: 'Asia/Kolkata',
-      // });
       const options = {
         weekday: 'short',
         year: 'numeric',
