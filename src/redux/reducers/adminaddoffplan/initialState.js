@@ -32,6 +32,7 @@ export const initialState = {
     emirate: '',
     latitude: '',
     longitude: '',
+    amenities: '',
   },
   offplanOptions: {
     propertyType: [
@@ -60,5 +61,6 @@ export const initialState = {
     ],
     agent: [],
     city: [],
+    amenities: [],
   },
 };

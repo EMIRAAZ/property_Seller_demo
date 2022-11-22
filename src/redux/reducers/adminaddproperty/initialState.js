@@ -30,6 +30,7 @@ export const initialState = {
     whatsapp: '',
     featured: false,
     luxury: false,
+    offplan: false,
     readyToMove: false,
     for: '',
     placeAddress: '',
