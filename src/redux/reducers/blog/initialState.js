@@ -5,7 +5,7 @@ export const initialState = {
   blogValue: {
     title: '',
     description: '',
-    images: [],
+    image: '',
   },
   env: {
     loading: false,
