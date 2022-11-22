@@ -17,6 +17,12 @@ import {
   DELETE_ADMIN_AMENITY,
   DELETE_ADMIN_AMENITY_STARTED,
   DELETE_ADMIN_AMENITY_ERROR,
+  DELETE_LOGO_AMENITY_STARTED,
+  DELETE_LOGO_AMENITY,
+  DELETE_LOGO_AMENITY_ERROR,
+  ADD_LOGO_AMENITY_STARTED,
+  ADD_LOGO_AMENITY,
+  ADD_LOGO_AMENITY_ERROR,
 } from '../../constants';
 
 export const changeAdminAmenityInput = payload => {
@@ -185,5 +191,62 @@ export const deleteAdminAmenity = (id, cb) => async dispatch => {
     cb();
   } catch (e) {
     dispatch(deleteAdminAmenityError());
+  }
+};
+
+//IMAGE
+
+const addAmenityLogoStarted = payload => {
+  return {
+    type: ADD_LOGO_AMENITY_STARTED,
+  };
+};
+const addAmenityLogoError = payload => {
+  return {
+    type: ADD_LOGO_AMENITY_ERROR,
+  };
+};
+
+export const addAmenityLogo = payload => async dispatch => {
+  try {
+    dispatch(addAmenityLogoStarted());
+    const res = await axios.post(`/image/upload-single`, payload);
+    dispatch({
+      type: ADD_LOGO_AMENITY,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(addAmenityLogoError());
+  }
+};
+const deleteAmenityLogoStarted = payload => {
+  return {
+    type: DELETE_LOGO_AMENITY_STARTED,
+  };
+};
+const deleteAmenityLogoError = payload => {
+  return {
+    type: DELETE_LOGO_AMENITY_ERROR,
+  };
+};
+
+export const deleteAmenityLogo = id => async dispatch => {
+  const newId = id;
+  try {
+    dispatch(deleteAmenityLogoStarted());
+    await axios.delete(
+      `/image/delete-single-image/${newId.split('/uploads/').pop()}`
+    );
+    dispatch({
+      type: DELETE_LOGO_AMENITY,
+      payload: id,
+    });
+  } catch (e) {
+    if (e.response?.data?.message === 'No file exist') {
+      dispatch({
+        type: DELETE_LOGO_AMENITY,
+        payload: id,
+      });
+    } else dispatch(deleteAmenityLogoError());
   }
 };

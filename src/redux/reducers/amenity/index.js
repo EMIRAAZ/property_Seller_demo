@@ -14,6 +14,12 @@ import {
   DELETE_ADMIN_AMENITY_ERROR,
   DELETE_ADMIN_AMENITY_STARTED,
   DELETE_ADMIN_AMENITY,
+  DELETE_LOGO_AMENITY_STARTED,
+  DELETE_LOGO_AMENITY,
+  DELETE_LOGO_AMENITY_ERROR,
+  ADD_LOGO_AMENITY_STARTED,
+  ADD_LOGO_AMENITY,
+  ADD_LOGO_AMENITY_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -86,7 +92,7 @@ const reducer = (state = initialState, action) => {
         amenityValue: {
           ...state.amenityValue,
           ...createdAgentValue,
-          amenityLogo: [createdAgentValue.amenityLogo],
+          amenityLogo: createdAgentValue.amenityLogo,
         },
       };
     case GET_AMENITY_ADMIN_STARTED_BY_ID:
@@ -115,6 +121,66 @@ const reducer = (state = initialState, action) => {
     case DELETE_ADMIN_AMENITY_ERROR:
       return {
         ...state,
+      };
+    case ADD_LOGO_AMENITY:
+      return {
+        ...state,
+        amenityValue: {
+          ...state.amenityValue,
+          amenityLogo: action.payload,
+        },
+      };
+    case ADD_LOGO_AMENITY_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case ADD_LOGO_AMENITY_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
+      };
+    case DELETE_LOGO_AMENITY:
+      return {
+        ...state,
+        amenityValue: {
+          ...state.amenityValue,
+          amenityLogo: '',
+        },
+      };
+    case DELETE_LOGO_AMENITY_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case DELETE_LOGO_AMENITY_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
       };
     default:
       return state;

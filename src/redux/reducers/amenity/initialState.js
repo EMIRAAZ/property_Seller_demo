@@ -4,7 +4,7 @@ export const initialState = {
   amenity: [],
   amenityValue: {
     name: '',
-    amenityLogo: [],
+    amenityLogo: '',
   },
   env: {
     loading: false,

@@ -1,11 +1,9 @@
 import './addform.scss';
 import Input from '../../../components/input/admininput';
-import UploadImage from '../../../components/uploadimage';
 import Button from '../../../components/button/SpinnerButton';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
-import { max } from 'moment';
+import SingleImageUpload from '../../../components/singleimageupload';
 
 const keyArr = ['name', 'amenityLogo'];
 
@@ -15,12 +13,11 @@ const AddForm = ({
   getAmenity,
   env,
   onChange,
-  images,
-  imgLoading,
-  imgError,
   amenityValue,
   editing,
   clear,
+  deleteAmenityLogo,
+  addAmenityLogo,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -48,7 +45,6 @@ const AddForm = ({
         getID(),
         {
           ...amenityValue,
-          amenityLogo: images[0] ? images[0] : amenityValue.amenityLogo[0],
         },
         () => editCB()
       );
@@ -56,18 +52,9 @@ const AddForm = ({
       addAmenity(
         {
           ...amenityValue,
-          amenityLogo: images[0],
         },
         () => editCB()
       );
-    }
-  };
-
-  const renderImageLoadingSpinner = () => {
-    if (imgLoading) {
-      return <Spinner />;
-    } else if (imgError) {
-      return <span className="img-add-error">Errored ! please try again</span>;
     }
   };
 
@@ -80,17 +67,13 @@ const AddForm = ({
         value={amenityValue.name}
         onChange={e => onChangeInput('name', e.target.value)}
       />
-      <label className="property-image-label spinner-label">
-        Amenity Image<span>*</span> {renderImageLoadingSpinner()}
-      </label>
-
-      <UploadImage
-        editing={editing}
-        linkIndex={0}
-        customClass="amenity-logo-img"
-        onChangeImage={() => {}}
-        svg={true}
+      <SingleImageUpload
+        name="amenityLogo"
+        label="Amenity Logo"
+        required
         value={amenityValue.amenityLogo}
+        onChange={addAmenityLogo}
+        onDelete={deleteAmenityLogo}
       />
 
       <span id="on-add-warning" className="pls-fill">
