@@ -36,6 +36,8 @@ const AddAgency = props => {
           deleteAgent={props.deleteAdminAgent}
           getAgentAgency={props.getAdminAgentByAgency}
           clearAgency={props.clearAgency}
+          addAgencyLogo={props.addAgencyLogo}
+          deleteAgencyLogo={props.deleteAgencyLogo}
         />
       </div>
     </div>
