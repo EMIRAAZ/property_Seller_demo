@@ -29,6 +29,9 @@ import {
   DELETE_IMAGES_PROPERTY,
   DELETE_IMAGES_PROPERTY_STARTED,
   DELETE_IMAGES_PROPERTY_ERROR,
+  GET_CITY_PROPERTY_ERROR,
+  GET_CITY_PROPERTY_STARTED,
+  GET_CITY_PROPERTY,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -308,6 +311,28 @@ const reducer = (state = initialState, action) => {
         ...state,
       };
     case GET_TAGLINE_PROPERTY_ERROR:
+      return {
+        ...state,
+      };
+    case GET_CITY_PROPERTY:
+      const city = action.payload?.map(a => {
+        return {
+          name: a.name,
+          value: a.name,
+        };
+      });
+      return {
+        ...state,
+        propertyOptions: {
+          ...state.propertyOptions,
+          city,
+        },
+      };
+    case GET_CITY_PROPERTY_STARTED:
+      return {
+        ...state,
+      };
+    case GET_CITY_PROPERTY_ERROR:
       return {
         ...state,
       };

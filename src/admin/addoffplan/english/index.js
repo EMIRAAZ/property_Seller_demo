@@ -16,6 +16,8 @@ import {
   deleteOffplanImages,
   addOffplanImgPrcAvl,
   deleteOffplanImagePriceAvail,
+  getCityByEmirateOffplan,
+  getCityOffplan,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -54,6 +56,9 @@ const mapDispatchToProps = dispatch => {
       dispatch(addOffplanImgPrcAvl(formData, key, position)),
     deleteOffplanImagePriceAvail: (name, key, position) =>
       dispatch(deleteOffplanImagePriceAvail(name, key, position)),
+    getCityOffplan: () => dispatch(getCityOffplan()),
+    getCityByEmirateOffplan: emirate =>
+      dispatch(getCityByEmirateOffplan(emirate)),
   };
 };
 

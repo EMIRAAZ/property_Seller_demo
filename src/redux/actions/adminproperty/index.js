@@ -52,7 +52,11 @@ const deleteAdminPropertyError = () => {
 export const deleteAdminProperty = (id, cb) => async dispatch => {
   try {
     dispatch(deleteAdminPropertyStarted());
-    const res = await axios.delete(`/api/property/${id}`);
+    const res = await axios.delete(`/api/property/${id}`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
     dispatch({
       type: DELETE_ADMIN_PROPERTY,
       payload: res.data?.data,

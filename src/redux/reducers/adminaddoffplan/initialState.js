@@ -59,5 +59,6 @@ export const initialState = {
       { name: 'Fujairah', value: 'Fujairah' },
     ],
     agent: [],
+    city: [],
   },
 };
