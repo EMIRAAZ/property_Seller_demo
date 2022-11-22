@@ -7,6 +7,8 @@ import {
   getAgencyAgentById,
   clearAddAgency,
   clearUpload,
+  deleteAgencyAgentImage,
+  addAgencyAgentImage,
 } from '../../redux/actions';
 
 const mapStateToProps = state => {
@@ -28,6 +30,9 @@ const mapDispatchToProps = dispatch => {
     getAgencyAgentById: id => dispatch(getAgencyAgentById(id)),
     clearAddAgency: () => dispatch(clearAddAgency()),
     clearUpload: () => dispatch(clearUpload()),
+    deleteAgencyAgentImage: payload =>
+      dispatch(deleteAgencyAgentImage(payload)),
+    addAgencyAgentImage: payload => dispatch(addAgencyAgentImage(payload)),
   };
 };
 

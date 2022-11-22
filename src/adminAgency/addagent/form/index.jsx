@@ -4,6 +4,7 @@ import UploadImage from '../../../components/uploadimage';
 import Button from '../../../components/button/SpinnerButton';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { checkIfAllKeyHasValue } from '../../../utils';
+import SingleImageUpload from '../../../components/singleimageupload';
 
 const keyArr = [
   'agentName',
@@ -22,13 +23,12 @@ const Form = ({
   editAgent,
   env,
   onChange,
-  images,
-  imgLoading,
-  imgError,
   agentValue,
   editing,
   clearAddAgency,
   clrUpload,
+  deleteAgencyAgentImage,
+  addAgencyAgentImage,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -50,7 +50,6 @@ const Form = ({
         getID(),
         {
           ...agentValue,
-          agentImage: images[0] ? images[0] : agentValue.agentImage[0],
           agencyId: localStorage.getItem('agency_id'),
         },
         () => {
@@ -63,7 +62,6 @@ const Form = ({
       addAgent(
         {
           ...agentValue,
-          agentImage: images[0],
           agencyId: localStorage.getItem('agency_id'),
         },
         () => {
@@ -74,14 +72,6 @@ const Form = ({
       );
     }
   };
-
-  // const renderImageLoadingSpinner = () => {
-  //   if (imgLoading) {
-  //     return <Spinner />;
-  //   } else if (imgError) {
-  //     return <span className="img-add-error">Errored ! please try again</span>;
-  //   }
-  // };
 
   return (
     <div className="agency-form-add-agency">
@@ -137,15 +127,13 @@ const Form = ({
         />
       </div>
       <div className="add-right-agent-form">
-        <label className="property-image-label spinner-label">
-          {/* Agent Image<span>*</span> {renderImageLoadingSpinner()} */}
-        </label>
-        <UploadImage
-          editing={editing}
-          linkIndex={0}
-          customClass="agent-logo-img"
-          onChangeImage={() => {}}
+        <SingleImageUpload
+          name="agentImage"
+          label="Agent Image"
+          required
           value={agentValue.agentImage}
+          onChange={addAgencyAgentImage}
+          onDelete={deleteAgencyAgentImage}
         />
         <Input
           divClass="agent-input"

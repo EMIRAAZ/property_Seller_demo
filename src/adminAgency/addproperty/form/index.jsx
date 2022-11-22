@@ -1,16 +1,13 @@
 import './form.scss';
 import Input from '../../../components/input/admininput';
-import UploadImage from '../../../components/uploadimage';
 import Textarea from '../../../components/input/admintextarea';
 import Select from '../../../components/select/adminSelect';
 import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import Checkbox from '../../../components/input/checkbox';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import Spinner from '../../../components/spinner';
+import { useState } from 'react';
 import { checkIfAllKeyHasValue } from '../../../utils';
-import Plus from '../../../components/svg/plus';
 import { useRef } from 'react';
 import {
   useJsApiLoader,
@@ -18,6 +15,7 @@ import {
   StandaloneSearchBox,
   Marker,
 } from '@react-google-maps/api';
+import ImageUpload from '../../../components/imageupload';
 
 const keyArr = [
   'title',
@@ -50,28 +48,20 @@ const Form = ({
   editProperty,
   env,
   onChange,
-  images,
-  imgLoading,
-  imgError,
   propertyValue,
   propertyOptions,
   editing,
   clear,
+  deleteAgencyPropertyImages,
+  addAgencyPropertyImages,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
 
   const inputRef = useRef();
 
-  const [uploadCount, setUploadCount] = useState([0]);
   const [center, setCenter] = useState({ lat: 24.4539, lng: 54.3773 });
   const [marker, setMarker] = useState({ lat: 24.4539, lng: 54.3773 });
-
-  useEffect(() => {
-    if (propertyValue.images.length > 0 && editing) {
-      setUploadCount([...propertyValue.images]);
-    }
-  }, [propertyValue.images]);
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
@@ -117,39 +107,24 @@ const Form = ({
     onChange({ key, value });
   };
 
-  const onSetUploadCount = () => {
-    setUploadCount([...uploadCount, 0]);
-  };
-
   const addAdminProperty = () => {
     if (checkIfAllKeyHasValue(propertyValue, keyArr)) {
       // document.getElementById('on-add-warning').style.display = 'block';
       return;
     }
     if (editing) {
-      editProperty(
-        getID(),
-        { ...propertyValue, images: [...propertyValue.images, ...images] },
-        () => {
-          clear();
-          navigate('/agency');
-        }
-      );
+      editProperty(getID(), { ...propertyValue }, () => {
+        clear();
+        navigate('/agency');
+      });
     } else {
-      addProperty({ ...propertyValue, images: [...images] }, () => {
+      addProperty({ ...propertyValue }, () => {
         clear();
         navigate('/agency');
       });
     }
   };
 
-  const renderImageLoadingSpinner = () => {
-    if (imgLoading) {
-      return <Spinner />;
-    } else if (imgError) {
-      return <span className="img-add-error">Errored ! please try again</span>;
-    }
-  };
   return (
     <div className="agency-form-add-property">
       <div className="add-left-agency-prop-form">
@@ -287,26 +262,15 @@ const Form = ({
         />
       </div>
       <div className="add-right-agency-prop-form">
-        <label className="property-image-label spinner-label">
-          {/* Property Images<span>*</span> {renderImageLoadingSpinner()} */}
-        </label>
         <div className="property-row-div-upload">
-          {uploadCount.map((_, i) => (
-            <UploadImage
-              key={i}
-              multiple={true}
-              linkIndex={i}
-              customClass="first-img-Class-admin"
-              onChangeImage={() => {}}
-              value={propertyValue.images}
-              editing={editing}
-            />
-          ))}
-          {uploadCount.length < 15 ? (
-            <div className="add-new-img-upload" onClick={onSetUploadCount}>
-              <Plus />
-            </div>
-          ) : null}
+          <ImageUpload
+            name="images"
+            label="Images"
+            required
+            value={propertyValue.images}
+            onChange={addAgencyPropertyImages}
+            onDelete={deleteAgencyPropertyImages}
+          />
         </div>
         <Select
           customClass="property-input"
@@ -447,7 +411,7 @@ const Form = ({
             onClick={addAdminProperty}
             loading={env.loading}
           >
-            UOLOAD
+            ADD
           </Button>
         </div>
       </div>
