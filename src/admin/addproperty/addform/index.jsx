@@ -398,6 +398,11 @@ const AddForm = ({
             onChange={e => onChangeInput('verified', e.target.checked)}
           />
           <Checkbox
+            label="Offplan"
+            value={propertyValue.offplan}
+            onChange={e => onChangeInput('offplan', e.target.checked)}
+          />
+          <Checkbox
             label="ReadyToMove"
             value={propertyValue.readyToMove}
             onChange={e => onChangeInput('readyToMove', e.target.checked)}

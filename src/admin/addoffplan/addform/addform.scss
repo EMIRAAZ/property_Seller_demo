@@ -30,6 +30,10 @@
     width: 100%;
     margin-bottom: 40px;
 
+    .chipselect-offplan {
+      width: 100%;
+    }
+
     .pls-fill {
       margin-top: 10px;
       font-family: 'Poppins';
@@ -135,6 +139,10 @@
       display: flex;
       flex-direction: column;
       width: 100%;
+
+      .chipselect-offplan {
+        width: 70%;
+      }
 
       .offplan-image-label {
         font-family: 'Poppins';

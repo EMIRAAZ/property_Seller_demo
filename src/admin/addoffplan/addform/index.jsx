@@ -17,6 +17,7 @@ import {
   Marker,
 } from '@react-google-maps/api';
 import SingleImageUpload from '../../../components/singleimageupload';
+import ChipSelect from '../../../components/select/ChipSelect';
 
 const keyArr = [];
 
@@ -238,6 +239,7 @@ const AddForm = ({
           value={offplanValue.placeAddress}
           required
         />
+
         <Select
           customClass="offplan-input"
           label="Emirate"
@@ -330,6 +332,14 @@ const AddForm = ({
         </div>
 
         <span className="select-border"></span>
+        <ChipSelect
+          customClass="offfplan-input chipselect-offplan"
+          label="Amenities"
+          options={offplanOptions.amenities}
+          value={offplanValue.amenities}
+          onChange={v => onChangeInput('amenities', v)}
+          required
+        />
         <div className="offplan-row-div">
           <Input
             divClass="offplan-input"
