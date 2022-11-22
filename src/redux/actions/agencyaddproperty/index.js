@@ -23,6 +23,12 @@ import {
   GET_AGENCY_TAGLINE_PROPERTY,
   GET_AGENCY_TAGLINE_PROPERTY_STARTED,
   GET_AGENCY_TAGLINE_PROPERTY_ERROR,
+  ADD_IMAGES_AGENT_PROPERTY,
+  ADD_IMAGES_AGENT_PROPERTY_STARTED,
+  ADD_IMAGES_AGENT_PROPERTY_ERROR,
+  DELETE_IMAGES_AGENT_PROPERTY,
+  DELETE_IMAGES_AGENT_PROPERTY_STARTED,
+  DELETE_IMAGES_AGENT_PROPERTY_ERROR,
 } from '../../constants';
 
 export const changeAgencyPropertyInput = payload => {
@@ -253,5 +259,61 @@ export const getAgencyTaglineProperty = () => async dispatch => {
     });
   } catch (e) {
     dispatch(getTaglinePropertyError());
+  }
+};
+
+const addAgencyPropertyImagesStarted = payload => {
+  return {
+    type: ADD_IMAGES_AGENT_PROPERTY_STARTED,
+  };
+};
+const addAgencyPropertyImagesError = payload => {
+  return {
+    type: ADD_IMAGES_AGENT_PROPERTY_ERROR,
+  };
+};
+
+export const addAgencyPropertyImages = payload => async dispatch => {
+  try {
+    dispatch(addAgencyPropertyImagesStarted());
+    const res = await axios.post(`/image/upload-single`, payload);
+    dispatch({
+      type: ADD_IMAGES_AGENT_PROPERTY,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(addAgencyPropertyImagesError());
+  }
+};
+
+const deleteAgencyPropertyImagesStarted = payload => {
+  return {
+    type: DELETE_IMAGES_AGENT_PROPERTY_STARTED,
+  };
+};
+const deleteAgencyPropertyImagesError = payload => {
+  return {
+    type: DELETE_IMAGES_AGENT_PROPERTY_ERROR,
+  };
+};
+
+export const deleteAgencyPropertyImages = id => async dispatch => {
+  const newId = id;
+  try {
+    dispatch(deleteAgencyPropertyImagesStarted());
+    await axios.delete(
+      `/image/delete-single-image/${newId.split('/uploads/').pop()}`
+    );
+    dispatch({
+      type: DELETE_IMAGES_AGENT_PROPERTY,
+      payload: id,
+    });
+  } catch (e) {
+    if (e.response?.data?.message === 'No file exist') {
+      dispatch({
+        type: DELETE_IMAGES_AGENT_PROPERTY,
+        payload: id,
+      });
+    } else dispatch(deleteAgencyPropertyImagesError());
   }
 };

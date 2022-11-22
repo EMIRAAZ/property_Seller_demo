@@ -37,6 +37,8 @@ const AddAgent = props => {
           propertyValue={props.propertyValue}
           propertyOptions={props.propertyOptions}
           clear={props.clearUpload}
+          deleteAgencyPropertyImages={props.deleteAgencyPropertyImages}
+          addAgencyPropertyImages={props.addAgencyPropertyImages}
         />
       </div>
     </MainComponent>

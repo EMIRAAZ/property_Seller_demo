@@ -13,6 +13,12 @@ import {
   DELETE_AGENCY_AGENT,
   DELETE_AGENCY_AGENT_STARTED,
   DELETE_AGENCY_AGENT_ERROR,
+  ADD_AGENCY_AGENT_IMAGE,
+  ADD_AGENCY_AGENT_IMAGE_STARTED,
+  ADD_AGENCY_AGENT_IMAGE_ERROR,
+  DELETE_AGENCY_AGENT_IMAGE,
+  DELETE_AGENCY_AGENT_IMAGE_STARTED,
+  DELETE_AGENCY_AGENT_IMAGE_ERROR,
 } from '../../constants';
 
 export const changeAgencyAgentInput = payload => {
@@ -144,5 +150,63 @@ export const deleteAgencyAgent = (id, cb) => async dispatch => {
     cb();
   } catch (e) {
     dispatch(deleteAgencyAgentError());
+  }
+};
+
+//IMAGE
+
+const addAgencyAgentImageStarted = payload => {
+  return {
+    type: ADD_AGENCY_AGENT_IMAGE_STARTED,
+  };
+};
+const addAgencyAgentImageError = payload => {
+  return {
+    type: ADD_AGENCY_AGENT_IMAGE_ERROR,
+  };
+};
+
+export const addAgencyAgentImage = payload => async dispatch => {
+  try {
+    dispatch(addAgencyAgentImageStarted());
+    const res = await axios.post(`/image/upload-single`, payload);
+    dispatch({
+      type: ADD_AGENCY_AGENT_IMAGE,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(addAgencyAgentImageError());
+  }
+};
+const deleteAgencyAgentImageStarted = payload => {
+  return {
+    type: DELETE_AGENCY_AGENT_IMAGE_STARTED,
+  };
+};
+const deleteAgencyAgentImageError = payload => {
+  return {
+    type: DELETE_AGENCY_AGENT_IMAGE_ERROR,
+  };
+};
+
+export const deleteAgencyAgentImage = id => async dispatch => {
+  const newId = id;
+  try {
+    dispatch(deleteAgencyAgentImageStarted());
+    await axios.delete(
+      `/image/delete-single-image/${newId.split('/uploads/').pop()}`
+    );
+    dispatch({
+      type: DELETE_AGENCY_AGENT_IMAGE,
+      payload: id,
+    });
+  } catch (e) {
+    console.log(e);
+    if (e.response?.data?.message === 'No file exist') {
+      dispatch({
+        type: DELETE_AGENCY_AGENT_IMAGE,
+        payload: id,
+      });
+    } else dispatch(deleteAgencyAgentImageError());
   }
 };

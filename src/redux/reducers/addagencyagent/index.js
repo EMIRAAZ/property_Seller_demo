@@ -14,6 +14,12 @@ import {
   DELETE_AGENCY_AGENT_STARTED,
   DELETE_AGENCY_AGENT_ERROR,
   CLEAR_ADD_AGENT,
+  ADD_AGENCY_AGENT_IMAGE,
+  ADD_AGENCY_AGENT_IMAGE_STARTED,
+  ADD_AGENCY_AGENT_IMAGE_ERROR,
+  DELETE_AGENCY_AGENT_IMAGE,
+  DELETE_AGENCY_AGENT_IMAGE_STARTED,
+  DELETE_AGENCY_AGENT_IMAGE_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -47,7 +53,7 @@ const reducer = (state = initialState, action) => {
         agentValue: {
           ...state.agentValue,
           ...createdAgentValue,
-          agentImage: [createdAgentValue.agentImage],
+          agentImage: createdAgentValue.agentImage,
         },
       };
     case GET_AGENCY_AGENT_BY_ID_STARTED:
@@ -135,6 +141,67 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
       };
+    case ADD_AGENCY_AGENT_IMAGE:
+      return {
+        ...state,
+        agentValue: {
+          ...state.agentValue,
+          agentImage: action.payload,
+        },
+      };
+    case ADD_AGENCY_AGENT_IMAGE_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case ADD_AGENCY_AGENT_IMAGE_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
+      };
+    case DELETE_AGENCY_AGENT_IMAGE:
+      return {
+        ...state,
+        agentValue: {
+          ...state.agentValue,
+          agentImage: '',
+        },
+      };
+    case DELETE_AGENCY_AGENT_IMAGE_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case DELETE_AGENCY_AGENT_IMAGE_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
+      };
+
     default:
       return state;
   }
