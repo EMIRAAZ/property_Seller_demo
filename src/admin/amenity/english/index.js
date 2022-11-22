@@ -8,6 +8,8 @@ import {
   editAdminAmenity,
   clearAddAmenity,
   deleteAdminAmenity,
+  addAmenityLogo,
+  deleteAmenityLogo,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -32,6 +34,8 @@ const mapDispatchToProps = dispatch => {
     getByIdAdminAmenity: id => dispatch(getByIdAdminAmenity(id)),
     deleteAdminAmenity: (id, cb) => dispatch(deleteAdminAmenity(id, cb)),
     clearAddAmenity: () => dispatch(clearAddAmenity()),
+    addAmenityLogo: payload => dispatch(addAmenityLogo(payload)),
+    deleteAmenityLogo: payload => dispatch(deleteAmenityLogo(payload)),
   };
 };
 

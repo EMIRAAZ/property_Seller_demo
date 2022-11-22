@@ -14,6 +14,12 @@ import {
   DELETE_ADMIN_BLOG_ERROR,
   DELETE_ADMIN_BLOG_STARTED,
   DELETE_ADMIN_BLOG,
+  ADD_BLOG_IMAGE_STARTED,
+  ADD_BLOG_IMAGE,
+  ADD_BLOG_IMAGE_ERROR,
+  DELETE_BLOG_IMAGE_STARTED,
+  DELETE_BLOG_IMAGE,
+  DELETE_BLOG_IMAGE_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -115,6 +121,66 @@ const reducer = (state = initialState, action) => {
     case DELETE_ADMIN_BLOG_ERROR:
       return {
         ...state,
+      };
+    case ADD_BLOG_IMAGE:
+      return {
+        ...state,
+        blogValue: {
+          ...state.blogValue,
+          image: action.payload,
+        },
+      };
+    case ADD_BLOG_IMAGE_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case ADD_BLOG_IMAGE_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
+      };
+    case DELETE_BLOG_IMAGE:
+      return {
+        ...state,
+        blogValue: {
+          ...state.blogValue,
+          image: '',
+        },
+      };
+    case DELETE_BLOG_IMAGE_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case DELETE_BLOG_IMAGE_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
       };
     default:
       return state;

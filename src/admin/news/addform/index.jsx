@@ -1,14 +1,13 @@
 import './addform.scss';
 import Input from '../../../components/input/admininput';
-import UploadImage from '../../../components/uploadimage';
 import Textarea from '../../../components/input/admintextarea';
 import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { checkIfAllKeyHasValue } from '../../../utils';
-import Spinner from '../../../components/spinner';
+import SingleImageUpload from '../../../components/singleimageupload';
 
-const keyArr = ['title', 'description'];
+const keyArr = ['title', 'description', 'image'];
 
 const AddForm = ({
   addNews,
@@ -20,10 +19,9 @@ const AddForm = ({
   newsValue,
   editing,
   clear,
-  images,
-  imgLoading,
-  imgError,
   clearUpload,
+  deleteNewsImage,
+  addNewsImage,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -52,7 +50,6 @@ const AddForm = ({
         getID(),
         {
           ...newsValue,
-          images: images[0] ? images : newsValue.images,
         },
         () => editCB()
       );
@@ -60,18 +57,9 @@ const AddForm = ({
       addNews(
         {
           ...newsValue,
-          images: images,
         },
         () => editCB()
       );
-    }
-  };
-
-  const renderImageLoadingSpinner = () => {
-    if (imgLoading) {
-      return <Spinner />;
-    } else if (imgError) {
-      return <span className="img-add-error">Errored ! please try again</span>;
     }
   };
 
@@ -92,17 +80,13 @@ const AddForm = ({
         value={newsValue.description}
         required
       />
-      <label className="property-image-label spinner-label">
-        News Image<span>*</span> {renderImageLoadingSpinner()}
-      </label>
-
-      <UploadImage
-        editing={editing}
-        linkIndex={0}
-        customClass="news-logo-img"
-        onChangeImage={() => {}}
-        svg={true}
-        value={newsValue.images}
+      <SingleImageUpload
+        name="image"
+        label="Image"
+        required
+        value={newsValue.image}
+        onChange={addNewsImage}
+        onDelete={deleteNewsImage}
       />
 
       <span id="on-add-warning" className="pls-fill">

@@ -25,7 +25,6 @@ const AddForm = ({
   editOffplan,
   env,
   onChange,
-  images,
   offplanValue,
   offplanOptions,
   editing,
@@ -67,16 +66,12 @@ const AddForm = ({
       return;
     }
     if (editing) {
-      editOffplan(
-        getID(),
-        { ...offplanValue, images: [...offplanValue.images, ...images] },
-        () => {
-          clear();
-          navigate('/admin/offplan');
-        }
-      );
+      editOffplan(getID(), { ...offplanValue }, () => {
+        clear();
+        navigate('/admin/offplan');
+      });
     } else {
-      addOffplan({ ...offplanValue, images: [...images] }, () => {
+      addOffplan({ ...offplanValue }, () => {
         clear();
         navigate('/admin/offplan');
       });

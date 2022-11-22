@@ -49,7 +49,6 @@ export default function City() {
   }, []);
 
   const onChange = (key, value) => {
-    console.log(key, value);
     setForm({ ...form, [key]: value });
   };
 

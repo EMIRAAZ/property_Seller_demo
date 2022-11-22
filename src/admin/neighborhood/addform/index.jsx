@@ -1,10 +1,10 @@
 import './addform.scss';
 import Input from '../../../components/input/admininput';
-import UploadImage from '../../../components/uploadimage';
 import Button from '../../../components/button/SpinnerButton';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
+import SingleImageUpload from '../../../components/singleimageupload';
+import Select from '../../../components/select/adminSelect';
 
 const keyArr = ['title'];
 
@@ -14,12 +14,11 @@ const AddForm = ({
   getNeighborhood,
   env,
   onChange,
-  images,
-  imgLoading,
-  imgError,
   neighborValue,
   editing,
   clear,
+  deleteNeighImage,
+  addNeighImage,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -47,7 +46,6 @@ const AddForm = ({
         getID(),
         {
           ...neighborValue,
-          images: images[0] ? images : neighborValue.images,
         },
         () => editCB()
       );
@@ -55,18 +53,9 @@ const AddForm = ({
       addNeighborhood(
         {
           ...neighborValue,
-          images: images,
         },
         () => editCB()
       );
-    }
-  };
-
-  const renderImageLoadingSpinner = () => {
-    if (imgLoading) {
-      return <Spinner />;
-    } else if (imgError) {
-      return <span className="img-add-error">Errored ! please try again</span>;
     }
   };
 
@@ -79,24 +68,29 @@ const AddForm = ({
         value={neighborValue.title}
         onChange={e => onChangeInput('title', e.target.value)}
       />
-      <Input
-        divClass="neighbor-input"
+      <SingleImageUpload
+        name="image"
+        label="Image"
+        required
+        value={neighborValue.image}
+        onChange={addNeighImage}
+        onDelete={deleteNeighImage}
+      />
+      <Select
+        customClass="w-full"
         label="Emirate"
         required
         value={neighborValue.emirate}
-        onChange={e => onChangeInput('emirate', e.target.value)}
-      />
-      <label className="property-image-label spinner-label">
-        Neighborhood Image<span>*</span> {renderImageLoadingSpinner()}
-      </label>
-
-      <UploadImage
-        editing={editing}
-        linkIndex={0}
-        customClass="neighbor-logo-img"
-        onChangeImage={() => {}}
-        svg={true}
-        value={neighborValue.images}
+        options={[
+          { name: 'Abu Dhabi', value: 'Abu Dhabi' },
+          { name: 'Dubai', value: 'Dubai' },
+          { name: 'Sharjah', value: 'Sharjah' },
+          { name: 'Ajman', value: 'Ajman' },
+          { name: 'Umm Al Quwain', value: 'Umm Al Quwain' },
+          { name: 'Ras Al Khaimah', value: 'Ras Al Khaimah' },
+          { name: 'Fujairah', value: 'Fujairah' },
+        ]}
+        onChange={value => onChangeInput('emirate', value)}
       />
 
       <span id="on-add-warning" className="pls-fill">

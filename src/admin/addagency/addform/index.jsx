@@ -30,6 +30,7 @@ const AddForm = ({
   getAgentAgency,
   addAgencyLogo,
   deleteAgencyLogo,
+  clearAgent,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -70,8 +71,6 @@ const AddForm = ({
     ));
   };
 
-  console.log(agencyValue);
-
   return (
     <div className="add-agency-form">
       <div className="add-left-agency-form">
@@ -96,16 +95,6 @@ const AddForm = ({
           value={agencyValue.password}
           onChange={e => onChangeInput('password', e.target.value)}
         />
-        {/* <label className="property-image-label spinner-label">
-          Property Images<span>*</span> {renderImageLoadingSpinner()}
-        </label>
-        <UploadImage
-          editing={editing}
-          linkIndex={0}
-          customClass="agency-logo-img"
-          onChangeImage={() => {}}
-          value={agencyValue.agencyLogo}
-        /> */}
         <SingleImageUpload
           name="agencyLogo"
           label="Agency Logo"
@@ -189,6 +178,7 @@ const AddForm = ({
             <Button
               customClass="add-agency-btn"
               onClick={() => {
+                clearAgent();
                 navigate('/admin/add-agent', { state: { id: getID() } });
               }}
             >

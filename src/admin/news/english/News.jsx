@@ -60,6 +60,8 @@ const News = props => {
             images={props.images}
             imgLoading={props.imgLoading}
             imgError={props.imgError}
+            deleteNewsImage={props.deleteNewsImage}
+            addNewsImage={props.addNewsImage}
           />
         </div>
       </div>

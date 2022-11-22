@@ -1,10 +1,9 @@
 import './addform.scss';
 import Input from '../../../components/input/admininput';
-import UploadImage from '../../../components/uploadimage';
 import Button from '../../../components/button/SpinnerButton';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
+import SingleImageUpload from '../../../components/singleimageupload';
 
 const keyArr = [
   'agentName',
@@ -23,13 +22,12 @@ const AddForm = ({
   editAgent,
   env,
   onChange,
-  images,
-  imgLoading,
-  imgError,
   agentValue,
   editing,
   clearAddAgency,
   clrUpload,
+  deleteAgentImage,
+  addAgentImage,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -51,7 +49,6 @@ const AddForm = ({
         getID(),
         {
           ...agentValue,
-          agentImage: images[0] ? images[0] : agentValue.agentImage[0],
         },
         () => {
           clearAddAgency();
@@ -60,22 +57,11 @@ const AddForm = ({
         }
       );
     } else {
-      addAgent(
-        { ...agentValue, agentImage: images[0], agencyId: location.state.id },
-        () => {
-          clearAddAgency();
-          clrUpload();
-          navigate(`/admin/add-agency/${location.state.id}`);
-        }
-      );
-    }
-  };
-
-  const renderImageLoadingSpinner = () => {
-    if (imgLoading) {
-      return <Spinner />;
-    } else if (imgError) {
-      return <span className="img-add-error">Errored ! please try again</span>;
+      addAgent({ ...agentValue, agencyId: location.state.id }, () => {
+        clearAddAgency();
+        clrUpload();
+        navigate(`/admin/add-agency/${location.state.id}`);
+      });
     }
   };
 
@@ -89,15 +75,13 @@ const AddForm = ({
           value={agentValue.agentName}
           onChange={e => onChangeInput('agentName', e.target.value)}
         />
-        <label className="property-image-label spinner-label">
-          Agent Image<span>*</span> {renderImageLoadingSpinner()}
-        </label>
-        <UploadImage
-          editing={editing}
-          linkIndex={0}
-          customClass="agent-logo-img"
-          onChangeImage={() => {}}
+        <SingleImageUpload
+          name="agencyLogo"
+          label="Agency Logo"
+          required
           value={agentValue.agentImage}
+          onChange={addAgentImage}
+          onDelete={deleteAgentImage}
         />
         <Input
           divClass="agent-input"
