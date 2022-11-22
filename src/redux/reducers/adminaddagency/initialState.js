@@ -9,7 +9,7 @@ export const initialState = {
     agencyName: '',
     username: '',
     password: '',
-    agencyLogo: [],
+    agencyLogo: '',
     tradeLicenseNo: '',
     brn: '',
     website: '',

@@ -10,12 +10,6 @@ export default function City() {
   const getID = () => location.pathname.split('/').pop();
   const [form, setForm] = useState({ name: '', emirate: '' });
 
-  useEffect(() => {
-    if (getID() !== 'city') {
-      getCityById();
-    }
-  }, []);
-
   const getCityById = async () => {
     const city = await axios.get(`/api/city/${getID()}`);
     const data = city.data?.data;
@@ -27,13 +21,36 @@ export default function City() {
   };
 
   const addCity = async () => {
-    const city = await axios.post(`/api/city/${getID()}`);
-    const data = city.data?.data;
-    setForm({
-      name: data.name,
-      emirate: data.emirate,
-      id: data.id,
-    });
+    try {
+      if (getID() !== 'city') {
+        await axios.patch(`/api/city/${form.id}`, form, {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+          },
+        });
+        setForm({ name: '', emirate: '' });
+      } else {
+        await axios.post(`/api/city`, form, {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+          },
+        });
+        setForm({ name: '', emirate: '' });
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    if (getID() !== 'city') {
+      getCityById();
+    }
+  }, []);
+
+  const onChange = (key, value) => {
+    console.log(key, value);
+    setForm({ ...form, [key]: value });
   };
 
   return (
@@ -44,7 +61,7 @@ export default function City() {
         <span className="font-extralight text-slate-700 mt-1">
           Add cities according to emirate for easy selection.
         </span>
-        <Form value={form} />
+        <Form value={form} onChange={onChange} onSubmit={addCity} />
       </div>
     </div>
   );

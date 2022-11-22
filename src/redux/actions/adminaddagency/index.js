@@ -15,6 +15,12 @@ import {
   GET_ADMIN_AGENCY_AGENT_ERROR,
   CLEAR_ADD_AGENCY,
   CLEAR_ADD_AGENT,
+  ADD_LOGO_AGENCY_STARTED,
+  ADD_LOGO_AGENCY,
+  ADD_LOGO_AGENCY_ERROR,
+  DELETE_LOGO_AGENCY_STARTED,
+  DELETE_LOGO_AGENCY,
+  DELETE_LOGO_AGENCY_ERROR,
 } from '../../constants';
 
 export const changeAdminAgencyInput = payload => {
@@ -162,5 +168,62 @@ export const getAdminAgentByAgency = agencyId => async dispatch => {
     });
   } catch (e) {
     dispatch(getAdminAgentByAgencyError());
+  }
+};
+
+//IMAGE
+
+const addAgencyLogoStarted = payload => {
+  return {
+    type: ADD_LOGO_AGENCY_STARTED,
+  };
+};
+const addAgencyLogoError = payload => {
+  return {
+    type: ADD_LOGO_AGENCY_ERROR,
+  };
+};
+
+export const addAgencyLogo = payload => async dispatch => {
+  try {
+    dispatch(addAgencyLogoStarted());
+    const res = await axios.post(`/image/upload-single`, payload);
+    dispatch({
+      type: ADD_LOGO_AGENCY,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(addAgencyLogoError());
+  }
+};
+const deleteAgencyLogoStarted = payload => {
+  return {
+    type: DELETE_LOGO_AGENCY_STARTED,
+  };
+};
+const deleteAgencyLogoError = payload => {
+  return {
+    type: DELETE_LOGO_AGENCY_ERROR,
+  };
+};
+
+export const deleteAgencyLogo = id => async dispatch => {
+  const newId = id;
+  try {
+    dispatch(deleteAgencyLogoStarted());
+    await axios.delete(
+      `/image/delete-single-image/${newId.split('/uploads/').pop()}`
+    );
+    dispatch({
+      type: DELETE_LOGO_AGENCY,
+      payload: id,
+    });
+  } catch (e) {
+    if (e.response?.data?.message === 'No file exist') {
+      dispatch({
+        type: DELETE_LOGO_AGENCY,
+        payload: id,
+      });
+    } else dispatch(deleteAgencyLogoError());
   }
 };
