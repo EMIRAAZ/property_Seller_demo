@@ -14,6 +14,12 @@ import {
   GET_ADMIN_AGENCY_AGENT,
   GET_ADMIN_AGENCY_AGENT_STARTED,
   GET_ADMIN_AGENCY_AGENT_ERROR,
+  ADD_LOGO_AGENCY_STARTED,
+  ADD_LOGO_AGENCY,
+  ADD_LOGO_AGENCY_ERROR,
+  DELETE_LOGO_AGENCY_STARTED,
+  DELETE_LOGO_AGENCY,
+  DELETE_LOGO_AGENCY_ERROR,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -107,7 +113,7 @@ const reducer = (state = initialState, action) => {
         agencyValue: {
           ...state.agencyValue,
           ...createdAgencyValue,
-          agencyLogo: [createdAgencyValue.agencyLogo],
+          agencyLogo: createdAgencyValue.agencyLogo,
         },
       };
     case GET_ADMIN_AGENCY_BY_ID_STARTED:
@@ -151,6 +157,66 @@ const reducer = (state = initialState, action) => {
           error: true,
           success: false,
           loading: false,
+        },
+      };
+    case ADD_LOGO_AGENCY:
+      return {
+        ...state,
+        agencyValue: {
+          ...state.agencyValue,
+          agencyLogo: action.payload,
+        },
+      };
+    case ADD_LOGO_AGENCY_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case ADD_LOGO_AGENCY_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
+        },
+      };
+    case DELETE_LOGO_AGENCY:
+      return {
+        ...state,
+        agencyValue: {
+          ...state.agencyValue,
+          agencyLogo: '',
+        },
+      };
+    case DELETE_LOGO_AGENCY_STARTED:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: false,
+            loading: true,
+          },
+        },
+      };
+    case DELETE_LOGO_AGENCY_ERROR:
+      return {
+        ...state,
+        env: {
+          ...state.env,
+          images: {
+            error: true,
+            loading: false,
+          },
         },
       };
     default:

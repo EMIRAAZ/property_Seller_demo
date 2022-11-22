@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 export default function Input(props) {
   return (
-    <div className={`flex flex-col pr-10 w-full`}>
+    <div className={`flex flex-col pr-10 w-full ${props.cls}`}>
       <label
         for={props.name}
         className="block mb-2 font-medium text-gray-900 text-sm"
@@ -29,10 +29,12 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   type: PropTypes.string,
   required: PropTypes.bool,
-  onchange: PropTypes.func,
+  onChange: PropTypes.func,
+  cls: PropTypes.string,
 };
 
 Input.defaultProps = {
   type: 'text',
   required: false,
+  cls: '',
 };

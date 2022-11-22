@@ -8,6 +8,8 @@ import {
   getAdminAgentByAgency,
   deleteAdminAgent,
   clearAddAgency,
+  addAgencyLogo,
+  deleteAgencyLogo,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -32,6 +34,8 @@ const mapDispatchToProps = dispatch => {
       dispatch(getAdminAgentByAgency(agencyId)),
     deleteAdminAgent: (id, cb) => dispatch(deleteAdminAgent(id, cb)),
     clearAddAgency: () => dispatch(clearAddAgency()),
+    addAgencyLogo: payload => dispatch(addAgencyLogo(payload)),
+    deleteAgencyLogo: payload => dispatch(deleteAgencyLogo(payload)),
   };
 };
 

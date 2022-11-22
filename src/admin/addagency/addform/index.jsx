@@ -1,16 +1,14 @@
 import './addform.scss';
 import Input from '../../../components/input/admininput';
 import Button from '../../../components/button/SpinnerButton';
-import UploadImage from '../../../components/uploadimage';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Spinner from '../../../components/spinner';
 import { checkIfAllKeyHasValue } from '../../../utils';
 import Agent from '../agent';
+import SingleImageUpload from '../../../components/singleimageupload';
 
 const keyArr = [
   'agencyName',
   'username',
-  'password',
   'tradeLicenseNo',
   'brn',
   'website',
@@ -26,14 +24,12 @@ const AddForm = ({
   env,
   onChange,
   deleteAgent,
-  images,
-  imgLoading,
-  imgError,
   agencyValue,
   agentValue,
   editing,
   getAgentAgency,
-  clearAgency,
+  addAgencyLogo,
+  deleteAgencyLogo,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -55,27 +51,15 @@ const AddForm = ({
         getID(),
         {
           ...agencyValue,
-          agencyLogo: images[0] ? images[0] : agencyValue.agencyLogo[0],
         },
         () => navigate('/admin/agency')
       );
     } else {
-      addAgency({ ...agencyValue, agencyLogo: images[0] }, () =>
-        navigate('/admin/agency')
-      );
-    }
-  };
-
-  const renderImageLoadingSpinner = () => {
-    if (imgLoading) {
-      return <Spinner />;
-    } else if (imgError) {
-      return <span className="img-add-error">Errored ! please try again</span>;
+      addAgency({ ...agencyValue }, () => navigate('/admin/agency'));
     }
   };
 
   const renderAgent = () => {
-    console.log(agentValue);
     return agentValue?.agent?.map((agent, i) => (
       <Agent
         key={i}
@@ -85,6 +69,8 @@ const AddForm = ({
       />
     ));
   };
+
+  console.log(agencyValue);
 
   return (
     <div className="add-agency-form">
@@ -110,7 +96,7 @@ const AddForm = ({
           value={agencyValue.password}
           onChange={e => onChangeInput('password', e.target.value)}
         />
-        <label className="property-image-label spinner-label">
+        {/* <label className="property-image-label spinner-label">
           Property Images<span>*</span> {renderImageLoadingSpinner()}
         </label>
         <UploadImage
@@ -119,6 +105,14 @@ const AddForm = ({
           customClass="agency-logo-img"
           onChangeImage={() => {}}
           value={agencyValue.agencyLogo}
+        /> */}
+        <SingleImageUpload
+          name="agencyLogo"
+          label="Agency Logo"
+          required
+          value={agencyValue.agencyLogo}
+          onChange={addAgencyLogo}
+          onDelete={deleteAgencyLogo}
         />
         <Input
           divClass="agency-input"
