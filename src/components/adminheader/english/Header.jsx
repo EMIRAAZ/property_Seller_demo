@@ -52,6 +52,7 @@ const Header = props => {
           </li>
           <li onClick={() => navigate('/admin/news')}>News</li>
           <li onClick={() => navigate('/admin/blog')}>Blog</li>
+          <li onClick={() => navigate('/admin/city')}>City</li>
         </ul>
       </div>
       <div className={`mobile-sidebar ${state}`}>
@@ -76,6 +77,7 @@ const Header = props => {
           </li>
           <li onClick={() => navigate('/admin/news')}>News</li>
           <li onClick={() => navigate('/admin/blog')}>Blog</li>
+          <li onClick={() => navigate('/admin/city')}>City</li>
         </ul>
       </div>
       <ul className="adminheader-list">

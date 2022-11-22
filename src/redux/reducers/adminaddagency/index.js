@@ -130,7 +130,7 @@ const reducer = (state = initialState, action) => {
           error: false,
           success: false,
           loading: false,
-          agent: action.payload ? action.payload[0] : [],
+          agent: action.payload ? action.payload : [],
         },
       };
     case GET_ADMIN_AGENCY_AGENT_STARTED:

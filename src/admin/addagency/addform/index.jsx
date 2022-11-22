@@ -75,7 +75,8 @@ const AddForm = ({
   };
 
   const renderAgent = () => {
-    return agentValue.agent.map((agent, i) => (
+    console.log(agentValue);
+    return agentValue?.agent?.map((agent, i) => (
       <Agent
         key={i}
         {...agent}

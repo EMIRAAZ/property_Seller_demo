@@ -16,7 +16,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getPropertyByID: id => dispatch(getPropertyByID(id)),
-    getSimilarProperty: city => dispatch(getSimilarProperty(city)),
+    getSimilarProperty: (city, id) => dispatch(getSimilarProperty(city, id)),
   };
 };
 

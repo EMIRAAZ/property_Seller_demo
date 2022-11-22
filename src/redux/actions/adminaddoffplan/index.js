@@ -32,6 +32,9 @@ import {
   ADD_IMAGE_OFPLN_PRC_AVL,
   ADD_IMAGE_OFPLN_PRC_AVL_STARTED,
   ADD_IMAGE_OFPLN_PRC_AVL_ERROR,
+  GET_CITY_OFFPLAN,
+  GET_CITY_OFFPLAN_STARTED,
+  GET_CITY_OFFPLAN_ERROR,
 } from '../../constants';
 
 export const changeAdminOffplanInput = payload => {
@@ -339,5 +342,53 @@ export const getAgentOffplan = () => async dispatch => {
     });
   } catch (e) {
     dispatch(getAgentOffplanError());
+  }
+};
+
+// CITY
+
+const getCityOffplanStarted = () => {
+  return {
+    type: GET_CITY_OFFPLAN_STARTED,
+  };
+};
+
+const getCityOffplanError = () => {
+  return {
+    type: GET_CITY_OFFPLAN_ERROR,
+  };
+};
+
+export const getCityOffplan = () => async dispatch => {
+  try {
+    dispatch(getCityOffplanStarted());
+    const res = await axios.get(`/api/city`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    dispatch({
+      type: GET_CITY_OFFPLAN,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getCityOffplanError());
+  }
+};
+
+export const getCityByEmirateOffplan = emirate => async dispatch => {
+  try {
+    dispatch(getCityOffplanStarted());
+    const res = await axios.get(`/api/city/emirate?emirate=${emirate}`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    dispatch({
+      type: GET_CITY_OFFPLAN,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getCityOffplanError());
   }
 };

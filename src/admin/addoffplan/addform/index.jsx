@@ -37,6 +37,7 @@ const AddForm = ({
   addOffplanImages,
   addOffplanImgPrcAvl,
   deleteOffplanImagePriceAvail,
+  getCityByEmirateOffplan,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -53,6 +54,9 @@ const AddForm = ({
   const getID = () => location.pathname.split('/').pop();
 
   const onChangeInput = (key, value) => {
+    if (key === 'emirate') {
+      getCityByEmirateOffplan(value);
+    }
     document.getElementById('on-add-warning').style.display = 'none';
     onChange({ key, value });
   };
@@ -239,13 +243,6 @@ const AddForm = ({
           value={offplanValue.placeAddress}
           required
         />
-        <Input
-          divClass="offplan-input"
-          label="City"
-          required
-          value={offplanValue.city}
-          onChange={e => onChangeInput('city', e.target.value)}
-        />
         <Select
           customClass="offplan-input"
           label="Emirate"
@@ -253,6 +250,15 @@ const AddForm = ({
           value={offplanValue.emirate}
           options={offplanOptions.emirate}
           onChange={v => onChangeInput('emirate', v)}
+        />
+        <span className="select-border"></span>
+        <Select
+          customClass="offplan-input"
+          label="City"
+          required
+          value={offplanValue.city}
+          options={offplanOptions.city}
+          onChange={v => onChangeInput('city', v)}
         />
         <span className="select-border"></span>
         <Input

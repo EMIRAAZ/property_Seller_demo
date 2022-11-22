@@ -59,6 +59,7 @@ const AddForm = ({
   clear,
   addPropertyImages,
   deletePropertyImages,
+  getCityByEmirateProperty,
 }) => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -115,6 +116,9 @@ const AddForm = ({
     propertyOptions;
 
   const onChangeInput = (key, value) => {
+    if (key === 'emirate') {
+      getCityByEmirateProperty(value);
+    }
     document.getElementById('on-add-warning').style.display = 'none';
     onChange({ key, value });
   };
@@ -191,13 +195,24 @@ const AddForm = ({
           value={propertyValue.building}
           onChange={e => onChangeInput('building', e.target.value)}
         />
-        <Input
-          divClass="property-input"
+        <Select
+          customClass="property-input"
+          label="Emirate"
+          required
+          value={propertyValue.emirate}
+          options={emirate}
+          onChange={v => onChangeInput('emirate', v)}
+        />
+        <span className="select-border"></span>
+        <Select
+          customClass="property-input"
           label="City"
           required
           value={propertyValue.city}
-          onChange={e => onChangeInput('city', e.target.value)}
+          options={propertyOptions.city}
+          onChange={v => onChangeInput('city', v)}
         />
+        <span className="select-border"></span>
         <Select
           customClass="property-input"
           label="Agent"
@@ -346,15 +361,7 @@ const AddForm = ({
             onChange={e => onChangeInput('agentBRN', e.target.value)}
           />
         </div>
-        <Select
-          customClass="property-input"
-          label="Emirate"
-          required
-          value={propertyValue.emirate}
-          options={emirate}
-          onChange={v => onChangeInput('emirate', v)}
-        />
-        <span className="select-border"></span>
+
         <div className="add-property-google-map">
           {isLoaded ? (
             <>
