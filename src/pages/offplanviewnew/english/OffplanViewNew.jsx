@@ -260,7 +260,7 @@ const OffplanViewNew = (props) => {
                   className="service-btn-property whatsapp"
                   onClick={() =>
                     window.open(
-                      `https://wa.me/+971521278701/?text=Hello Property Assistant. I’m interested in this property %0a%0aLink: https://propertyassistant.ae/property/${property.id}
+                      `https://wa.me/+971553011274/?text=Hello Property Assistant. I’m interested in this property %0a%0aLink: https://propertyassistant.ae/property/${property.id}
               %0a%0aPrice: AED ${property.price}
               %0aLocation: ${property.address.city}
                 
@@ -279,7 +279,7 @@ const OffplanViewNew = (props) => {
                 </div>
                 <div
                   className="service-btn-property phone"
-                  onClick={() => window.open("tel:+971521278701", "_blank")}
+                  onClick={() => window.open("tel:+971553011274", "_blank")}
                 >
                   <Phone
                     width="17"
@@ -370,7 +370,7 @@ const OffplanViewNew = (props) => {
   );
 };
 
-const VideoView = ({ url = "https://www.youtube.com/embed/05DqIGS_koU" }) => {
+const VideoView = ({ url = "https://www.youtube.com/embed/WGf3tNSbXs0" }) => {
   return (
     <iframe
       style={{ borderRadius: "10px" }}
@@ -386,7 +386,7 @@ const VideoView = ({ url = "https://www.youtube.com/embed/05DqIGS_koU" }) => {
 
 const ImageSlider = ({
   imgArray = ["/assets/image/noimage.jpg"],
-  videoView = "https://www.youtube.com/embed/05DqIGS_koU",
+  videoView = "https://www.youtube.com/embed/WGf3tNSbXs0",
 }) => {
   const [index, setIndex] = useState(0);
 
@@ -522,7 +522,7 @@ const NewFooter = ({ property }) => {
             className="wp-div"
             onClick={() =>
               window.open(
-                `https://wa.me/+971521278701/?text=Hello Property Assistant. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${property.id}
+                `https://wa.me/+971553011274/?text=Hello Property Assistant. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${property.id}
               %0a%0aPrice: AED ${property.price}
               %0aLocation: ${property.address.city}
                 
@@ -585,7 +585,7 @@ const NewFooter = ({ property }) => {
 
           <div
             className="wp-div"
-            onClick={() => window.open("tel:+971521278701", "_blank")}
+            onClick={() => window.open("tel:+971553011274", "_blank")}
           >
             <svg
               width="21"

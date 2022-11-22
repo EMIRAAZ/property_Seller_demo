@@ -1,20 +1,20 @@
-import './login.scss';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Input from '../../../components/input/BasicInput';
-import Button from '../../../components/button/BasicButton';
-import { TITLE } from '../../../utils/constants';
+import "./login.scss";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Input from "../../../components/input/BasicInput";
+import Button from "../../../components/button/BasicButton";
+import { TITLE } from "../../../utils/constants";
 
-const Login = props => {
+const Login = (props) => {
   let navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
-    username: '',
-    password: '',
+    username: "",
+    password: "",
   });
 
   const navigateToAdmin = () => {
-    navigate('/admin/');
+    navigate("/admin/");
   };
 
   const onInputChange = (e, key) => {
@@ -34,13 +34,13 @@ const Login = props => {
       <Input
         divClass="admin-login-input"
         placeholder="Username"
-        onChange={e => onInputChange(e, 'username')}
+        onChange={(e) => onInputChange(e, "username")}
       />
       <Input
         divClass="admin-login-input"
         placeholder="Password"
         type="password"
-        onChange={e => onInputChange(e, 'password')}
+        onChange={(e) => onInputChange(e, "password")}
       />
 
       <Button onClick={onButtonClick}>Log In</Button>
