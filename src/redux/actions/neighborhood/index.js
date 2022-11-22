@@ -203,3 +203,61 @@ export const deleteAdminNeighborhood = (id, cb) => async dispatch => {
     dispatch(deleteAdminNeighborhoodError());
   }
 };
+
+//IMAGE
+
+const addNeighImageStarted = payload => {
+  return {
+    type: ADD_NEIGHBORHOOD_IMAGE_STARTED,
+  };
+};
+const addNeighImageError = payload => {
+  return {
+    type: ADD_NEIGHBORHOOD_IMAGE_ERROR,
+  };
+};
+
+export const addNeighImage = payload => async dispatch => {
+  try {
+    dispatch(addNeighImageStarted());
+    const res = await axios.post(`/image/upload-single`, payload);
+    dispatch({
+      type: ADD_NEIGHBORHOOD_IMAGE,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    console.log(e);
+    dispatch(addNeighImageError());
+  }
+};
+const deleteNeighImageStarted = payload => {
+  return {
+    type: DELETE_NEIGHBORHOOD_IMAGE_STARTED,
+  };
+};
+const deleteNeighImageError = payload => {
+  return {
+    type: DELETE_NEIGHBORHOOD_IMAGE_ERROR,
+  };
+};
+
+export const deleteNeighImage = id => async dispatch => {
+  const newId = id;
+  try {
+    dispatch(deleteNeighImageStarted());
+    await axios.delete(
+      `/image/delete-single-image/${newId.split('/uploads/').pop()}`
+    );
+    dispatch({
+      type: DELETE_NEIGHBORHOOD_IMAGE,
+      payload: id,
+    });
+  } catch (e) {
+    if (e.response?.data?.message === 'No file exist') {
+      dispatch({
+        type: DELETE_NEIGHBORHOOD_IMAGE,
+        payload: id,
+      });
+    } else dispatch(deleteNeighImageError());
+  }
+};

@@ -8,6 +8,8 @@ import {
   editAdminNeighborhood,
   clearAddNeighborhood,
   deleteAdminNeighborhood,
+  deleteNeighImage,
+  addNeighImage,
 } from '../../../redux/actions';
 
 const mapStateToProps = state => {
@@ -34,6 +36,8 @@ const mapDispatchToProps = dispatch => {
     deleteAdminNeighborhood: (id, cb) =>
       dispatch(deleteAdminNeighborhood(id, cb)),
     clearAddNeighborhood: () => dispatch(clearAddNeighborhood()),
+    deleteNeighImage: payload => dispatch(deleteNeighImage(payload)),
+    addNeighImage: payload => dispatch(addNeighImage(payload)),
   };
 };
 
