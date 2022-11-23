@@ -59,19 +59,6 @@ const QueryCard = ({
             { name: 'Fujairah', value: 'Fujairah' },
           ]}
         />
-
-        <BasicSelect
-          bgColor="white"
-          customClass="sale"
-          name="Purpose"
-          border
-          value={cardInput.sale}
-          onChange={value => onChange('sale', value)}
-          options={[
-            { name: 'Buy', value: 'buy' },
-            { name: 'Rent', value: 'rent' },
-          ]}
-        />
         <SearchChipSelect
           bgColor="white"
           border

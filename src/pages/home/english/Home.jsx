@@ -89,7 +89,6 @@ const Home = props => {
         setAdvancedSearch={setAdvancedSearch}
       />
       <HomeCategory advancedSearch={advancedSearch} />
-      {/* <ListHeading count={props.homeProperty.count} /> */}
       <RenderComponent
         data={props.homeProperty.property}
         propertyCallApi={props.getHomeProperty}

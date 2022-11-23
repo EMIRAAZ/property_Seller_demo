@@ -8,7 +8,6 @@ export const initialState = {
     location: '',
     emirate: '',
     propertyType: '',
-    sale: '',
     priceFrom: '',
     priceTo: '',
     noOfBed: '',
