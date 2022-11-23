@@ -6,7 +6,7 @@ import Select from '../../../components/select/adminSelect';
 import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { checkIfAllKeyHasValue } from '../../../utils';
 import { useRef } from 'react';
 import {
@@ -35,7 +35,6 @@ const keyArr = [
   'call',
   'email',
   'whatsapp',
-  'for',
   'city',
   'agentId',
   'mainTitle',
@@ -99,7 +98,7 @@ const AddForm = ({
 
   const getID = () => location.pathname.split('/').pop();
 
-  const { agent, propertyType, amenities, sale, neighbor, tagline, emirate } =
+  const { agent, propertyType, amenities, neighbor, tagline, emirate } =
     propertyOptions;
 
   const onChangeInput = (key, value) => {
@@ -266,15 +265,6 @@ const AddForm = ({
             onDelete={deletePropertyImages}
           />
         </div>
-        <Select
-          customClass="property-input"
-          label="Sale"
-          required
-          value={propertyValue.for}
-          options={sale}
-          onChange={v => onChangeInput('for', v)}
-        />
-        <span className="select-border"></span>
         <ChipSelect
           customClass="property-input"
           label="Famous Neighborhoods"

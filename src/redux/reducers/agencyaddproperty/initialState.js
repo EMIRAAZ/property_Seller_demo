@@ -31,7 +31,6 @@ export const initialState = {
     featured: false,
     luxury: false,
     readyToMove: false,
-    for: '',
     placeAddress: '',
     building: '',
     city: '',

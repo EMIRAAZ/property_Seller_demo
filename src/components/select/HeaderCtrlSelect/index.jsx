@@ -2,7 +2,13 @@ import './headerSelect.scss';
 import { useState } from 'react';
 import { US, AE, SA, QA, BH, IN, GE, TR } from 'country-flag-icons/react/3x2';
 
-const HeaderSelect = ({ name, options, customClass = '', onClick, flag }) => {
+const HeaderSelect = ({
+  name,
+  options,
+  customClass = '',
+  onClick = () => {},
+  flag,
+}) => {
   const [stateName, setName] = useState(name);
   const [stateEl, setEl] = useState(flag);
   const renderOptions = () =>
