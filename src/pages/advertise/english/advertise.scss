@@ -74,7 +74,7 @@
         flex-direction: row;
         margin-top: 2%;
         .list-square {
-          width: 30px;
+          width: 25px;
           padding: 7px;
           display: flex;
           align-items: center;
@@ -185,28 +185,30 @@
         margin-top: 1%;
       }
       .list-space {
-        margin-top: 5%;
+        margin-top: 3%;
 
         .list-container {
           display: flex;
           flex-direction: row;
-          margin-top: 2%;
+          margin-top: 1%;
+          align-items: center;
+       
           .list-square {
-            width: 30px;
+            width: 25px;
             padding: 7px;
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: #2f70ff;
             border-radius: 3.33102px;
-            margin-top: 10px;
+            margin-top: 8px;
             .list-no {
               color: #ffffff;
               font-family: "Poppins";
               font-style: normal;
               font-weight: 500;
-              font-size: 17.7654px;
-              line-height: 27px;
+              font-size: 14.7654px;
+              line-height: 15px;
             }
           }
           .list-content {
@@ -217,6 +219,7 @@
             line-height: 28px;
             color: #2a3342;
             margin-left: 10px;
+            margin-top: 1%;
           }
         }
       }
