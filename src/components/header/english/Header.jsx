@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { HeaderCtrl } from '../headerctrl';
+import HamburgerLogo from '../../svg/hamburger';
 
 const Header = ({ customClass }) => {
   const navigate = useNavigate();
@@ -22,6 +23,10 @@ const Header = ({ customClass }) => {
       onSidebarWebToggle();
     }
   });
+
+  const luxuryPropertyOnClick = type => {
+    navigate(`/luxury-property/${type}`);
+  };
 
   return (
     <div className={`header-english ${customClass} ${state}`}>
@@ -52,7 +57,6 @@ const Header = ({ customClass }) => {
           <li onClick={() => navigate('/')}>Home</li>
 
           <li onClick={() => navigate('/buy')}>Buy</li>
-          <li onClick={() => navigate('/rent')}>Rent</li>
           <li>Commercial</li>
           <li onClick={() => navigate('/off-plan')}>Off Plan</li>
           <li onClick={() => navigate('/luxury-property')}>
@@ -72,7 +76,14 @@ const Header = ({ customClass }) => {
         </ul>
       </div>
       <ul className="header-list">
-        <li className="company-name" onClick={() => navigate('/')}>
+        <li className="logo" onClick={onSidebarWebToggle}>
+          <HamburgerLogo
+            width="27"
+            height="26"
+            fill={getLoc() === '' ? '#ffffff' : '#2f70ff'}
+          />
+        </li>
+        <li className="company-name absolute" onClick={() => navigate('/')}>
           {location.pathname === '/' ? (
             <img
               width={200}
@@ -86,16 +97,17 @@ const Header = ({ customClass }) => {
             </span>
           )}
         </li>
-        <li className="desktop-li">
+        <li
+          className={`desktop-li ${
+            location.pathname === '/' ? '' : 'desktop-li-margin'
+          }`}
+        >
           <ul className="desktop-ul">
             <li className="simple-list buy" onClick={() => navigate('/')}>
               Home
             </li>{' '}
             <li className="simple-list buy" onClick={() => navigate('/buy')}>
               Buy
-            </li>
-            <li className="simple-list rent" onClick={() => navigate('/rent')}>
-              Rent
             </li>
             <li
               className="simple-list off"
@@ -106,6 +118,7 @@ const Header = ({ customClass }) => {
             <li className="simple-list luxury">
               <HeaderSelect
                 name="Luxury&nbsp;Properties"
+                onClick={luxuryPropertyOnClick}
                 options={[
                   { name: 'Villas', type: 'Villa' },
                   { name: 'Apartments', type: 'Apartment' },
@@ -120,26 +133,8 @@ const Header = ({ customClass }) => {
             </li>
           </ul>
         </li>
-        <li className="desktop-li-updated">
-          <HeaderSelect
-            name="Language"
-            options={[
-              { name: 'Villas', type: 'Villa' },
-              { name: 'Apartments', type: 'Apartment' },
-              { name: 'Town House', type: 'Townhouse' },
-              { name: 'Pent House', type: 'Penthouse' },
-            ]}
-          />
-          <HeaderSelect
-            name="Country"
-            options={[
-              { name: 'Villas', type: 'Villa' },
-              { name: 'Apartments', type: 'Apartment' },
-              { name: 'Town House', type: 'Townhouse' },
-              { name: 'Pent House', type: 'Penthouse' },
-            ]}
-          />
-          {/* <HeaderButton>االعربية</HeaderButton> */}
+        <li className="desktop-li-updated absolute right-4">
+          <HeaderCtrl />
         </li>
       </ul>
     </div>
