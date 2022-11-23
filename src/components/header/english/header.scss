@@ -80,17 +80,16 @@
     }
 
     .company-name {
-      padding: 6px 10px 0px 6px;
+      padding: 11px 10px 0px 14px;
       color: #2f70ff;
       letter-spacing: 0.5px;
       display: flex;
       flex-direction: column;
-
+      left: 40px;
       .main-name {
         font-size: 20px;
         cursor: pointer;
         font-family: 'Poppins';
-
         font-weight: 700;
         line-height: 37px;
         letter-spacing: -0.6182856559753418px;
@@ -139,6 +138,8 @@
         color: #2f70ff;
         display: flex;
         flex-direction: column;
+        left: 15px;
+        top: 10px;
 
         .main-name {
           font-size: 28.5px;
@@ -159,17 +160,20 @@
       .desktop-li {
         display: inline-block;
         max-width: 690px;
-        margin-left: 10px;
+        margin-left: 220px;
         margin-top: 10px;
+      }
+      .desktop-li-margin {
+        margin-left: 250px;
       }
       .desktop-li-updated {
         display: inline-block;
-        max-width: 690px;
         margin-left: auto;
         margin-top: 0px;
         display: flex;
         font-size: 13px;
-        font-color: white;
+        font-weight: 500;
+        display: block;
       }
       .desktop-ul {
         display: inline-block;
