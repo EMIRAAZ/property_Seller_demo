@@ -8,6 +8,8 @@
   position: absolute;
   display: flex;
   overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
   top: 550px;
   width: 100%;
   padding-left: 350px;
@@ -43,6 +45,9 @@
     }
   }
 }
+.home-category-frame::-webkit-scrollbar {
+  display: none;
+}
 
 @media only screen and (min-width: 600px) {
   .ad-s-on {
@@ -53,6 +58,7 @@
     width: 100%;
     padding-left: 0px;
     overflow-x: hidden;
+
     top: 440px;
     .property-type-component-outer {
       margin: 5px 30px;

@@ -11,6 +11,9 @@
   &:hover .dropdown-content {
     display: block;
   }
+  &:active .dropdown-content {
+    display: block;
+  }
 
   .dropdown-content {
     display: none;
@@ -31,6 +34,9 @@
       margin: 1px;
 
       &:hover {
+        background-color: rgb(221, 239, 255);
+      }
+      &:active .dropdown-content {
         background-color: rgb(221, 239, 255);
       }
     }

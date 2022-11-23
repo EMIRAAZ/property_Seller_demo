@@ -32,7 +32,6 @@ export const initialState = {
     luxury: false,
     offplan: false,
     readyToMove: false,
-    for: '',
     placeAddress: '',
     building: '',
     city: '',

@@ -1,6 +1,7 @@
 import './header.scss';
 import DownArrow from '../../svg/downarrow';
 import HeaderSelect from '../../select/HeaderSelect';
+import HeaderCtrlSelect from '../../select/HeaderCtrlSelect';
 import Close from '../../svg/close';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -54,8 +55,71 @@ const Header = ({ customClass }) => {
           <li onClick={onSidebarWebToggle}>
             <Close />
           </li>
+          <li>
+            <HeaderCtrlSelect
+              customClass="mx-2 cursor-pointer"
+              name="English"
+              flag="US"
+              options={[
+                {
+                  name: 'English',
+                  type: 'en',
+                  element: 'US',
+                },
+                {
+                  name: 'Arabic',
+                  type: 'ar',
+                  element: 'AE',
+                },
+              ]}
+            />
+          </li>
+          <li>
+            <HeaderCtrlSelect
+              customClass="mx-2 cursor-pointer"
+              name="UAE"
+              flag="AE"
+              options={[
+                {
+                  name: 'UAE',
+                  type: 'UAE',
+                  element: 'AE',
+                },
+                {
+                  name: 'SAUDI',
+                  type: 'SAUDI',
+                  element: 'SA',
+                },
+                {
+                  name: 'QATAR',
+                  type: 'QATAR',
+                  element: 'QA',
+                },
+                {
+                  name: 'BAHRAIN',
+                  type: 'BAHRAIN',
+                  element: 'BH',
+                },
+                {
+                  name: 'INDIA',
+                  type: 'INDIA',
+                  element: 'IN',
+                },
+                {
+                  name: 'GEORGIA',
+                  type: 'GEORGIA',
+                  element: 'GE',
+                },
+                {
+                  name: 'ISTABUL',
+                  type: 'ISTABUL',
+                  element: 'TR',
+                },
+              ]}
+            />
+          </li>
+          <li onClick={() => navigate('/')}>Log In</li>
           <li onClick={() => navigate('/')}>Home</li>
-
           <li onClick={() => navigate('/buy')}>Buy</li>
           <li>Commercial</li>
           <li onClick={() => navigate('/off-plan')}>Off Plan</li>

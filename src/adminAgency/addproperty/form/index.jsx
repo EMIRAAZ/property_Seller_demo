@@ -36,7 +36,6 @@ const keyArr = [
   'call',
   'email',
   'whatsapp',
-  'for',
   'city',
   'agentId',
   'mainTitle',
@@ -99,7 +98,7 @@ const Form = ({
 
   const getID = () => location.pathname.split('/').pop();
 
-  const { agent, propertyType, amenities, sale, neighbor, tagline, emirate } =
+  const { agent, propertyType, amenities, neighbor, tagline, emirate } =
     propertyOptions;
 
   const onChangeInput = (key, value) => {
@@ -272,15 +271,6 @@ const Form = ({
             onDelete={deleteAgencyPropertyImages}
           />
         </div>
-        <Select
-          customClass="property-input"
-          label="Sale"
-          required
-          value={propertyValue.for}
-          options={sale}
-          onChange={v => onChangeInput('for', v)}
-        />
-        <span className="select-border"></span>
         <ChipSelect
           customClass="property-input"
           label="Famous Neighborhoods"
