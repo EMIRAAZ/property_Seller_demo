@@ -34,7 +34,7 @@ const HeaderSelect = ({
     ));
   return (
     <div className={`header-ctrl-select ${customClass}`}>
-      <p className="drop-btn-ctrl flex relative top-1.5  gap-2 w-20">
+      <p className="drop-btn-ctrl flex relative top-1.5  gap-2 w-25">
         {flag ? getFlagElement(stateEl) : null}
         {stateName}
         <DownArrow
