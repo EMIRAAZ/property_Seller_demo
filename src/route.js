@@ -149,14 +149,14 @@ function Router() {
               path="tagline/:id"
               element={makePrivate(<TagLine />, 'ADMIN')}
             />
-            <Route
+            {/* <Route
               path="newstopics"
               element={makePrivate(<NewsTopics />, 'ADMIN')}
             />
             <Route
               path="newstopics/:id"
               element={makePrivate(<NewsTopics />, 'ADMIN')}
-            />
+            /> */}
             <Route path="news" element={makePrivate(<AdminNews />, 'ADMIN')} />
             <Route
               path="news/:id"

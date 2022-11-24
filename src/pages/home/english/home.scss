@@ -1,4 +1,12 @@
 .home-english {
+  .banner-cls {
+    background: radial-gradient(
+        100% 356.6% at 0% 0%,
+        #27034f 0%,
+        rgba(39, 3, 79, 0) 100%
+      ),
+      #01010e;
+  }
   .header-btn {
     background: linear-gradient(180deg, #ffffff, #ffffff);
     color: #2f70ff;

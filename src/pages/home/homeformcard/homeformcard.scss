@@ -6,7 +6,7 @@
   padding: 15px;
   left: 0;
   right: 0;
-  top: 150px;
+  top: 175px;
   background-color: #ffffff;
   border-radius: 8px;
   width: 90%;
@@ -35,44 +35,39 @@
       grid-column-start: 1;
       grid-column-end: 5;
     }
-    .sale {
-      grid-row-start: 3;
-      grid-column-start: 1;
-      grid-column-end: 5;
-    }
     .property {
-      grid-row-start: 4;
+      grid-row-start: 3;
       grid-column-start: 1;
       grid-column-end: 3;
     }
     .furnish-home {
-      grid-row-start: 4;
+      grid-row-start: 3;
       grid-column-start: 3;
       grid-column-end: 5;
     }
     .price-from {
-      grid-row-start: 5;
+      grid-row-start: 4;
       grid-column-start: 1;
       grid-column-end: 3;
     }
     .price-to {
-      grid-row-start: 5;
+      grid-row-start: 4;
       grid-column-start: 3;
       grid-column-end: 5;
     }
     .bed-home {
-      grid-row-start: 6;
+      grid-row-start: 5;
       grid-column-start: 1;
       grid-column-end: 3;
     }
     .bath-home {
-      grid-row-start: 6;
+      grid-row-start: 5;
       grid-column-start: 3;
       grid-column-end: 5;
     }
 
     .home-search-btn {
-      grid-row-start: 7;
+      grid-row-start: 6;
       grid-column-start: 1;
       grid-column-end: 5;
       font-weight: 700;
@@ -90,31 +85,25 @@
 @media only screen and (min-width: 600px) {
   .home-form-card {
     width: 65%;
-    top: 210px;
+    top: 190px;
 
     .home-formcard {
       padding: 10px 10px 10px 10px;
 
       gap: 8px 10px;
-      .search {
-        grid-row-start: 1;
-        grid-column-start: 2;
-        grid-column-end: 6;
-      }
-      .sale {
-        grid-row-start: 2;
-        grid-column-start: 1;
-        grid-column-end: 2;
-      }
       .emirate {
         grid-row-start: 1;
         grid-column-start: 1;
         grid-column-end: 2;
       }
-
+      .search {
+        grid-row-start: 1;
+        grid-column-start: 2;
+        grid-column-end: 6;
+      }
       .property {
         grid-row-start: 2;
-        grid-column-start: 2;
+        grid-column-start: 1;
         grid-column-end: 3;
       }
       .furnish-home {

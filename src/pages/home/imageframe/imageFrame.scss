@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 900px;
+  height: 730px;
   background-image: linear-gradient(#3151ca, #6aadfe);
   position: relative;
   overflow: hidden;
@@ -19,10 +19,10 @@
     z-index: 10;
     display: flex;
     margin: 10px auto;
-    margin-top: 100px;
+    margin-top: 120px;
     justify-content: center;
     width: 100%;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     color: #ffffff;
     font-weight: 400;
     font-size: 28px;
@@ -61,17 +61,17 @@
 
       .first {
         color: #ff2d2d;
-        font-family: "Poppins";
+        font-family: 'Poppins';
       }
       .second {
         color: #000000;
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-weight: 600;
         font-size: 35px;
       }
       .third {
         color: #292929;
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-size: 12px;
         margin-top: 10px;
       }
@@ -124,9 +124,9 @@
       margin-top: 130px;
       justify-content: center;
       width: 100%;
-      font-family: "Poppins";
-      font-weight: 600;
-      font-size: 40px;
+      font-family: 'Poppins';
+      font-weight: 500;
+      font-size: 34px;
       color: #ffffff;
     }
 

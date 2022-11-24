@@ -1,13 +1,13 @@
-import "./imageFrame.scss";
+import './imageFrame.scss';
 
-const ImageFrame = (props) => {
+const ImageFrame = props => {
   return (
     <div
       className={`home-image-frame ${
-        props.advancedSearch ? "ad-s-on-frame" : ""
+        props.advancedSearch ? 'ad-s-on-frame' : ''
       }`}
     >
-      <p className="home-properties-caption">Your Property Assistant.</p>
+      <p className="home-properties-caption">Find Properties for Sale</p>
     </div>
   );
 };

@@ -65,17 +65,6 @@ const HomeFormCard = props => {
             };
           })}
         />
-        <BasicSelect
-          bgColor="white"
-          customClass="sale"
-          name="Purpose"
-          border
-          onChange={value => onInputChange('sale', value)}
-          options={[
-            { name: 'Buy', value: 'buy' },
-            { name: 'Rent', value: 'rent' },
-          ]}
-        />
 
         <BasicSelect
           bgColor="white"
@@ -88,7 +77,6 @@ const HomeFormCard = props => {
             { name: 'Villas', value: 'villas' },
             { name: 'Townhouse', value: 'townhouse' },
             { name: 'Penthouse', value: 'penthouse' },
-            // { name: 'Land', value: 'land' },
             { name: 'Full Building', value: 'fullbuilding' },
             { name: 'Hotel Apartment', value: 'hotelapartment' },
             { name: 'Compound', value: 'compound' },

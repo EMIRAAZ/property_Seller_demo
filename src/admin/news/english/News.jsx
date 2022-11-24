@@ -19,7 +19,7 @@ const News = props => {
 
   useEffect(() => {
     props.getNewsAdmin();
-    props.getTopicsNews();
+    // props.getTopicsNews();
     if (getID() !== 'news') props.getByIdAdminNews(getID());
   }, []);
 

@@ -11,7 +11,6 @@ const keyArr = ['title', 'description', 'image'];
 
 const AddForm = ({
   addNews,
-  topics,
   editNews,
   getNews,
   env,
@@ -92,7 +91,7 @@ const AddForm = ({
       <span id="on-add-warning" className="pls-fill">
         please fill all the required fields !!
       </span>
-
+      {/* 
       <ChipSelect
         customClass="news-input"
         label="Topics"
@@ -100,8 +99,7 @@ const AddForm = ({
         value={newsValue.topics}
         onChange={v => onChangeInput('topics', v)}
         required
-      />
-
+      /> */}
       <Button
         customClass="add-news-btn"
         onClick={addAdminNews}

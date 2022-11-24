@@ -13,6 +13,7 @@ const AddOffplan = props => {
   useEffect(() => {
     props.getAgentOffplan();
     props.getCityOffplan();
+    props.getAmenityOffplan();
 
     if (getID() !== 'add-offplan') props.getAdminOffplanById(getID());
   }, []);
