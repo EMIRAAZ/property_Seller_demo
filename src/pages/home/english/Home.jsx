@@ -89,6 +89,10 @@ const Home = props => {
         setAdvancedSearch={setAdvancedSearch}
       />
       <HomeCategory advancedSearch={advancedSearch} />
+      <div className="w-full p-5 bg-black text-white font-bold text-xl flex justify-center banner-cls">
+        Explore what is up for&nbsp;
+        <span style={{ color: '#FCA120' }}>Sale</span>, everyday
+      </div>
       <RenderComponent
         data={props.homeProperty.property}
         propertyCallApi={props.getHomeProperty}
