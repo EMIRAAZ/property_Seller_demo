@@ -47,9 +47,9 @@ const Header = props => {
           <li onClick={() => navigate('/admin/neighborhood')}>Neighbourhood</li>
           <li onClick={() => navigate('/admin/taghead')}>Tag&nbsp;Header</li>
           <li onClick={() => navigate('/admin/tagline')}>Tag&nbsp;Line</li>
-          <li onClick={() => navigate('/admin/newstopics')}>
+          {/* <li onClick={() => navigate('/admin/newstopics')}>
             News&nbsp;Topics
-          </li>
+          </li> */}
           <li onClick={() => navigate('/admin/news')}>News</li>
           <li onClick={() => navigate('/admin/blog')}>Blog</li>
           <li onClick={() => navigate('/admin/city')}>City</li>
