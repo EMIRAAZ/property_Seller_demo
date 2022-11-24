@@ -145,9 +145,13 @@
         width: 100%;
         margin-top: 8px;
         height: 50px;
+        padding-left: 37%;
         font-family: "Poppins";
         font-weight: 600;
         border-radius: 5px;
+        display: flex;
+
+        align-items: center;
       }
     }
   }
