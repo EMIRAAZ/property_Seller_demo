@@ -59,17 +59,14 @@ const Header = ({ customClass }) => {
             <HeaderCtrlSelect
               customClass="mx-2 cursor-pointer"
               name="English"
-              flag="US"
               options={[
                 {
                   name: 'English',
                   type: 'en',
-                  element: 'US',
                 },
                 {
                   name: 'Arabic',
                   type: 'ar',
-                  element: 'AE',
                 },
               ]}
             />
