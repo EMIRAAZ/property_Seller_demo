@@ -10,22 +10,20 @@ export function HeaderCtrl() {
       style={{ color: location.pathname === '/' ? '#ffff' : '#000' }}
     >
       <HeaderSelect
-        customClass="mx-2 cursor-pointer sm:hidden"
+        customClass="cursor-pointer sm:hidden -top-1"
         name="English"
-        flag="US"
         options={[
           {
             name: 'English',
             type: 'en',
-            element: 'US',
           },
           {
             name: 'Arabic',
             type: 'ar',
-            element: 'AE',
           },
         ]}
       />
+
       <HeaderSelect
         customClass="mx-2 cursor-pointer sm:hidden"
         name="UAE"
@@ -68,6 +66,7 @@ export function HeaderCtrl() {
           },
         ]}
       />
+
       <span className="mx-2 cursor-pointer sm:hidden">Log in</span>
       <span
         className={`mx-2 border rounded-sm px-2 py-1 cursor-pointer ${
