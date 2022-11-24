@@ -67,9 +67,11 @@ export function HeaderCtrl() {
         ]}
       />
 
-      <span className="mx-2 cursor-pointer sm:hidden">Log in</span>
+      <span className="mx-2 cursor-pointer text-sm sm:border sm:rounded-sm sm:px-2 sm:py-1">
+        Log in
+      </span>
       <span
-        className={`mx-2 border rounded-sm px-2 py-1 cursor-pointer ${
+        className={`mx-2 border rounded-sm px-2 py-1 cursor-pointer sm:hidden ${
           location.pathname === '/' ? 'border-white' : 'border-black'
         } `}
       >

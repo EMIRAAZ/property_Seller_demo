@@ -117,7 +117,6 @@ const Header = ({ customClass }) => {
           </li>
           <li onClick={() => navigate('/')}>Log In</li>
           <li onClick={() => navigate('/')}>Home</li>
-          <li onClick={() => navigate('/buy')}>Buy</li>
           <li>Commercial</li>
           <li onClick={() => navigate('/off-plan')}>Off Plan</li>
           <li onClick={() => navigate('/luxury-property')}>
@@ -164,12 +163,11 @@ const Header = ({ customClass }) => {
           }`}
         >
           <ul className="desktop-ul">
-            <li className="simple-list buy" onClick={() => navigate('/')}>
-              Home
-            </li>{' '}
-            <li className="simple-list buy" onClick={() => navigate('/buy')}>
-              Buy
-            </li>
+            {location.pathname !== '/' ? (
+              <li className="simple-list buy" onClick={() => navigate('/')}>
+                Home
+              </li>
+            ) : null}
             <li
               className="simple-list off"
               onClick={() => navigate('/off-plan')}
