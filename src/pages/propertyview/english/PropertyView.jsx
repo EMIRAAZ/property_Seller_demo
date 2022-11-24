@@ -320,7 +320,6 @@ const PropertyView = (props) => {
                   {property && property.agency && property.agency.agencyLogo ? (
                     <img src={property.agency.agencyLogo} alt="agency img" />
                   ) : null}
-                  {console.log(property.agent)}
                 </div>
               </div>
               <div className="service-property-x">
@@ -328,7 +327,7 @@ const PropertyView = (props) => {
                   className="service-btn-property whatsapp"
                   onClick={() =>
                     window.open(
-                      `https://wa.me/+971553011274/?text=Hello Property Assistant. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${property.id}
+                      `https://wa.me/+971521278701/?text=Hello Property Assistant. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${property.id}
               %0a%0aPrice: AED ${property.price}
               %0aLocation: ${property.address.city}
                 
@@ -347,7 +346,7 @@ const PropertyView = (props) => {
                 </div>
                 <div
                   className="service-btn-property phone"
-                  onClick={() => window.open("tel:+971553011274", "_blank")}
+                  onClick={() => window.open("tel:+971521278701", "_blank")}
                 >
                   <Phone
                     width="17"
@@ -404,7 +403,7 @@ const VideoView = ({ url = "https://www.youtube.com/embed/WGf3tNSbXs0" }) => {
       height="100%"
       allow="autoplay;"
       allow="fullscreen"
-      src={url}
+      src={url ? url : "https://www.youtube.com/embed/WGf3tNSbXs0"}
     ></iframe>
   );
 };

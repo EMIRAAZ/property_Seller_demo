@@ -379,7 +379,7 @@ const VideoView = ({ url = "https://www.youtube.com/embed/WGf3tNSbXs0" }) => {
       height="100%"
       allow="autoplay;"
       allow="fullscreen"
-      src={url}
+      src={url ? url : "https://www.youtube.com/embed/WGf3tNSbXs0"}
     ></iframe>
   );
 };
