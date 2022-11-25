@@ -74,8 +74,10 @@ const News = props => {
             ))}
         </div> */}
         <img
+          
           src={props.news[0] && props.news[0].image}
-          className="image-div"
+          className="image-div rounded"
+
           alt=""
         />
 

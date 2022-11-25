@@ -12,16 +12,16 @@ const Offplan = props => {
   }, []);
 
   return (
-    <div className="main-off-container">
+    <div className="offplan-projects-container">
       <Header />
       <ListHeading
         className="list-header"
-        main="Offplan"
+        main="Offplan Projects"
         count={props.offplan.count}
       />
-      
+{/*       
       <BasicButton customClass="absolute top-14 right-5 sm:text-xs" children="Offplan Projects" />
-   
+    */}
       
       {/* <div className="categories">
         <div className="item-div">
@@ -37,7 +37,7 @@ const Offplan = props => {
           <h1 className="item-name">2 Bed room</h1>
         </div>
       </div> */}
-      <div className="offplan-container">
+      <div className="offplan-projects-container">
         <RenderComponent
         className='w-full'
           data={props.offplan.data}
