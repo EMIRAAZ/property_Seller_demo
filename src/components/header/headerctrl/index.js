@@ -6,7 +6,7 @@ export function HeaderCtrl() {
 
   return (
     <div
-      className="flex-1 justify-around sm:pt-2.5"
+      className="flex-1 justify-around sm:pt-2.5 relative"
       style={{ color: location.pathname === '/' ? '#ffff' : '#000' }}
     >
       <HeaderSelect
@@ -25,7 +25,7 @@ export function HeaderCtrl() {
       />
 
       <HeaderSelect
-        customClass="mx-2 cursor-pointer sm:hidden"
+        customClass="mx-8 cursor-pointer sm:hidden"
         name="UAE"
         flag="AE"
         options={[
