@@ -63,12 +63,9 @@ const Header = ({ customClass }) => {
           <li onClick={() => navigate('/')}>Home</li>
           <li onClick={() => navigate('/about')}>About Us</li>
           <li onClick={() => navigate('/off-plan')}>Off Plan</li>
-          <li onClick={() => navigate('/luxury-property')}>
-            Luxury Properties
-          </li>
-          <li className="simple-list" onClick={() => navigate('/sell')}>
-            List&nbsp;Your&nbsp;Property
-          </li>
+          <li>Commercial</li>
+          <li onClick={() => navigate('/listproperty/readytomove')}>Ready</li>
+
           <li className="-left-2 relative">
             <HeaderCtrlSelect
               customClass="mx-2 cursor-pointer"
@@ -132,10 +129,15 @@ const Header = ({ customClass }) => {
           <li onClick={() => navigate('/dailyblog')}>Blogs</li>
           <li onClick={() => navigate('/news')}>News</li>
           <li onClick={() => navigate('/')}>Land</li>
-          {/* <li onClick={() => navigate("/aboutfounder")}>About Founder</li> */}
           <li onClick={() => navigate('/career')}>Careers</li>
           {/* <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
           <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li> */}
+          <li onClick={() => navigate('/luxury-property')}>
+            Luxury Properties
+          </li>
+          <li className="simple-list" onClick={() => navigate('/sell')}>
+            List&nbsp;Your&nbsp;Property
+          </li>
         </ul>
       </div>
       <ul className="header-list">
