@@ -1,25 +1,24 @@
-import "./propertyview.scss";
-import Header from "../../../components/header/english/Header";
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import BasicButton from "../../../components/button/BasicButton";
-import RarrowIcon from "../../../components/svg/rarrow";
-import LarrowIcon from "../../../components/svg/larrow";
-import Bed from "../../../components/svg/bed";
-import Bath from "../../../components/svg/bath";
-import Living from "../../../components/svg/living";
-import Area from "../../../components/svg/area";
-import Whatsapp from "../../../components/svg/whatsapp";
-import { MoveToTop } from "../../../components/movetotop";
-import FooterNew from "../../../components/footerNew";
-import Phone from "../../../components/svg/phone";
-import Mail from "../../../components/svg/mailsvg";
-import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
-import BottomFixed from "../../../components/bottomfixed/BottomFixed";
-import { Button } from "@mui/material";
-import SimilarProperty from "../../../components/similarproperty";
+import './propertyview.scss';
+import Header from '../../../components/header/english/Header';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import RarrowIcon from '../../../components/svg/rarrow';
+import LarrowIcon from '../../../components/svg/larrow';
+import Bed from '../../../components/svg/bed';
+import Bath from '../../../components/svg/bath';
+import Living from '../../../components/svg/living';
+import Area from '../../../components/svg/area';
+import Whatsapp from '../../../components/svg/whatsapp';
+import { MoveToTop } from '../../../components/movetotop';
+import FooterNew from '../../../components/footerNew';
+import Phone from '../../../components/svg/phone';
+import Mail from '../../../components/svg/mailsvg';
+import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
+import BottomFixed from '../../../components/bottomfixed/BottomFixed';
+import { Button } from '@mui/material';
+import SimilarProperty from '../../../components/similarproperty';
 
-const PropertyView = (props) => {
+const PropertyView = props => {
   let location = useLocation();
 
   const { property } = props;
@@ -28,7 +27,7 @@ const PropertyView = (props) => {
     props.getPropertyByID(getID());
   }, []);
 
-  const getID = () => location.pathname.split("/").pop();
+  const getID = () => location.pathname.split('/').pop();
   const [content, setContent] = useState(true);
   const [read, setRead] = useState(false);
 
@@ -36,10 +35,10 @@ const PropertyView = (props) => {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
   });
 
-  const renderLinkFromString = (str) => {
-    const strArr = str?.split(" ");
+  const renderLinkFromString = str => {
+    const strArr = str?.split(' ');
     for (let i = 0; i < strArr?.length; i++) {
-      if (strArr[i].includes("http")) {
+      if (strArr[i].includes('http')) {
         strArr[i] = (
           <span>
             &nbsp;
@@ -54,24 +53,24 @@ const PropertyView = (props) => {
     return strArr;
   };
 
-  const getDescription = (description) => {
+  const getDescription = description => {
     if (description) {
       if (read) {
         return renderLinkFromString(description);
       } else {
         if (description.length > 200)
-          return renderLinkFromString(description.substring(0, 200) + " . . .");
+          return renderLinkFromString(description.substring(0, 200) + ' . . .');
         else return renderLinkFromString(description);
       }
-    } else return "";
+    } else return '';
   };
 
   const openMap = ({ lat, lng }) => {
     // If it's an iPhone..
     if (
-      navigator.platform.indexOf("iPhone") != -1 ||
-      navigator.platform.indexOf("iPod") != -1 ||
-      navigator.platform.indexOf("iPad") != -1
+      navigator.platform.indexOf('iPhone') != -1 ||
+      navigator.platform.indexOf('iPod') != -1 ||
+      navigator.platform.indexOf('iPad') != -1
     )
       window.open(
         `maps://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination=${lat},${lng}`
@@ -98,7 +97,7 @@ const PropertyView = (props) => {
 
   if (property.updatedAt) {
     var d = property.updatedAt;
-    d = d.split("T");
+    d = d.split('T');
   }
 
   return (
@@ -191,9 +190,9 @@ const PropertyView = (props) => {
                       <GoogleMap
                         center={getCord()}
                         mapContainerStyle={{
-                          width: "100%",
-                          height: "100%",
-                          borderRadius: "10px",
+                          width: '100%',
+                          height: '100%',
+                          borderRadius: '10px',
                         }}
                         zoom={15}
                       >
@@ -220,7 +219,7 @@ const PropertyView = (props) => {
             </div>
             <hr />
             <div className="details-three">
-              <p className="head">{property.mainTitle} Description</p>
+              <p className="head">Description</p>
               <p className="description">
                 {getDescription(property.description)}
               </p>
@@ -229,7 +228,7 @@ const PropertyView = (props) => {
                 variant="outlined"
                 onClick={() => setRead(!read)}
               >
-                {read ? "Read less" : "Read more"}
+                {read ? 'Read less' : 'Read more'}
               </Button>
 
               <div className="amenities-main-div">
@@ -284,29 +283,28 @@ const PropertyView = (props) => {
             <div className="agent-card">
               <div className="top-header-agent">
                 <div className="agent-details">
-                  <p style={{ color: "grey" }}>Contact Agent</p>
+                  <p style={{ color: 'black' }}>Contact Agent</p>
 
                   {property && property.agent ? (
                     <>
-                      <p>{property.agent.agentName}</p>
+                      <p style={{ marginTop: '10px' }}>
+                        {property.agent.agentName}
+                      </p>
 
-                      <h1>
-                        Response time :
-                        <span style={{ color: "black" }}>
-                          {" "}
-                          within 5 minutes
+                      <h1 style={{ color: 'black', marginTop: '10px' }}>
+                        Response time :{' '}
+                        <span style={{ color: 'grey' }}>Within 5 minutes</span>
+                      </h1>
+                      <h1 style={{ color: 'black' }}>
+                        Languages :{' '}
+                        <span style={{ color: 'grey' }}>
+                          {property.agent.languages}{' '}
                         </span>
                       </h1>
-                      <h1>
-                        Languages :{" "}
-                        <span style={{ color: "black" }}>
-                          {property.agent.languages}{" "}
-                        </span>
-                      </h1>
-                      <h1>
-                        Experience :{" "}
-                        <span style={{ color: "black" }}>
-                          {property.agent.yearsOfExperience}{" "}
+                      <h1 style={{ color: 'black' }}>
+                        Experience :{' '}
+                        <span style={{ color: 'grey' }}>
+                          {property.agent.yearsOfExperience}{' '}
                         </span>
                       </h1>
                       {/* <p>{property.agency.officeAddress}</p> */}
@@ -347,7 +345,7 @@ const PropertyView = (props) => {
                 </div>
                 <div
                   className="service-btn-property phone"
-                  onClick={() => window.open("tel:+971553011274", "_blank")}
+                  onClick={() => window.open('tel:+971553011274', '_blank')}
                 >
                   <Phone
                     width="17"
@@ -360,7 +358,7 @@ const PropertyView = (props) => {
                 <div
                   className="service-btn-property email"
                   onClick={() =>
-                    window.open("mailto:hello@propertyassistant.ae", "_blank")
+                    window.open('mailto:hello@propertyassistant.ae', '_blank')
                   }
                 >
                   <Mail
@@ -395,10 +393,10 @@ const PropertyView = (props) => {
   );
 };
 
-const VideoView = ({ url = "https://www.youtube.com/embed/WGf3tNSbXs0" }) => {
+const VideoView = ({ url = 'https://www.youtube.com/embed/WGf3tNSbXs0' }) => {
   return (
     <iframe
-      style={{ borderRadius: "10px" }}
+      style={{ borderRadius: '10px' }}
       title="drf4rf4r"
       width="100%"
       height="100%"
@@ -410,12 +408,12 @@ const VideoView = ({ url = "https://www.youtube.com/embed/WGf3tNSbXs0" }) => {
 };
 
 const ImageSlider = ({
-  imgArray = ["/assets/image/noimage.jpg"],
-  videoView = "https://www.youtube.com/embed/WGf3tNSbXs0",
+  imgArray = ['/assets/image/noimage.jpg'],
+  videoView = 'https://www.youtube.com/embed/WGf3tNSbXs0',
 }) => {
   const [index, setIndex] = useState(0);
 
-  const onsetIndex = (add) => {
+  const onsetIndex = add => {
     if (index === 0 && add === -1) {
       setIndex(imgArray.length - 1);
     } else if (index === imgArray.length - 1 && add === 1) {
@@ -434,8 +432,8 @@ const ImageSlider = ({
           className="image-slide-container"
           style={{
             backgroundImage: `url(${imgArray[index]})`,
-            backgroundRepeat: "space",
-            backgroundSize: "cover",
+            backgroundRepeat: 'space',
+            backgroundSize: 'cover',
           }}
         >
           <div className="carousel-panel-prop">
@@ -448,8 +446,8 @@ const ImageSlider = ({
         className="sub-img-container"
         style={{
           backgroundImage: `url(${imgArray[getIndex()]})`,
-          backgroundRepeat: "space",
-          backgroundSize: "cover",
+          backgroundRepeat: 'space',
+          backgroundSize: 'cover',
         }}
       ></div>
       <div className="main-video-container">

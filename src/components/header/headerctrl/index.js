@@ -60,14 +60,14 @@ export function HeaderCtrl() {
             element: 'GE',
           },
           {
-            name: 'ISTABUL',
-            type: 'ISTABUL',
+            name: 'TURKEY',
+            type: 'TURKEY',
             element: 'TR',
           },
         ]}
       />
 
-      <span className="mx-2 cursor-pointer text-sm sm:border sm:rounded-sm sm:px-2 sm:py-1">
+      <span className="mx-2 cursor-pointer text-sm sm:border sm:rounded-sm sm:px-2 sm:py-0.5">
         Log in
       </span>
       <span
