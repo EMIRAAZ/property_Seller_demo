@@ -40,7 +40,7 @@ const HeaderSelect = ({
     <div className={`header-ctrl-select ${customClass}`}>
       <p className="drop-btn-ctrl flex relative top-1.5  gap-2 w-25 ">
         {flag ? getFlagElement(stateEl) : null}
-        <span className="ml-1  relative  "> {stateName}</span>
+        <span className=" relative left-1 "> {stateName}</span>
         <DownArrow
           className="cursor-pointer mt-1.5 ml-1 sm:left-2  sm:relative sm:-top-0.5"
           fill={
