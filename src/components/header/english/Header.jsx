@@ -53,9 +53,23 @@ const Header = ({ customClass }) => {
       <div className={`mobile-sidebar ${state}`}>
         <ul>
           <li onClick={onSidebarWebToggle}>
-            <Close />
+            <Close className="pb-1" />
           </li>
-          <li>
+          <li onClick={() => navigate('/')}>
+            <span className="border rounded-sm px-2 py-0.5 border-black">
+              Log In
+            </span>
+          </li>
+          <li onClick={() => navigate('/')}>Home</li>
+          <li onClick={() => navigate('/about')}>About Us</li>
+          <li onClick={() => navigate('/off-plan')}>Off Plan</li>
+          <li onClick={() => navigate('/luxury-property')}>
+            Luxury Properties
+          </li>
+          <li className="simple-list" onClick={() => navigate('/sell')}>
+            List&nbsp;Your&nbsp;Property
+          </li>
+          <li className="-left-2 relative">
             <HeaderCtrlSelect
               customClass="mx-2 cursor-pointer"
               name="English"
@@ -71,7 +85,7 @@ const Header = ({ customClass }) => {
               ]}
             />
           </li>
-          <li>
+          <li className="-left-2 relative">
             <HeaderCtrlSelect
               customClass="mx-2 cursor-pointer"
               name="UAE"
@@ -108,31 +122,20 @@ const Header = ({ customClass }) => {
                   element: 'GE',
                 },
                 {
-                  name: 'ISTABUL',
-                  type: 'ISTABUL',
+                  name: 'TURKEY',
+                  type: 'TURKEY',
                   element: 'TR',
                 },
               ]}
             />
           </li>
-          <li onClick={() => navigate('/')}>Log In</li>
-          <li onClick={() => navigate('/')}>Home</li>
-          <li>Commercial</li>
-          <li onClick={() => navigate('/off-plan')}>Off Plan</li>
-          <li onClick={() => navigate('/luxury-property')}>
-            Luxury Properties
-          </li>
           <li onClick={() => navigate('/dailyblog')}>Blogs</li>
           <li onClick={() => navigate('/news')}>News</li>
           <li onClick={() => navigate('/')}>Land</li>
-          <li onClick={() => navigate('/about')}>About Us</li>
           {/* <li onClick={() => navigate("/aboutfounder")}>About Founder</li> */}
           <li onClick={() => navigate('/career')}>Careers</li>
-          <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
-          <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li>
-          <li className="simple-list" onClick={() => navigate('/sell')}>
-            List&nbsp;Your&nbsp;Property
-          </li>
+          {/* <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
+          <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li> */}
         </ul>
       </div>
       <ul className="header-list">
@@ -144,22 +147,24 @@ const Header = ({ customClass }) => {
           />
         </li>
         <li className="company-name absolute" onClick={() => navigate('/')}>
-          {location.pathname === '/' ? (
+          {/* {location.pathname === '/' ? (
             <img
               width={200}
               className="relative"
               src="/assets/image/pa.png"
               alt="Property Assistant"
             />
-          ) : (
-            <span className="main-name">
-              Property<span>Assistant</span>
-            </span>
-          )}
+          ) : ( */}
+          <span className="main-name">
+            Property<span>Assistant</span>
+          </span>
+          {/* )} */}
         </li>
         <li
           className={`desktop-li ${
-            location.pathname === '/' ? '' : 'desktop-li-margin'
+            location.pathname === '/'
+              ? 'desktop-li-home-margin'
+              : 'desktop-li-margin'
           }`}
         >
           <ul className="desktop-ul">

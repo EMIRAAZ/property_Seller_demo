@@ -21,25 +21,31 @@ const HeaderSelect = ({
         style={{ display: 'flex' }}
         key={i}
         onClick={() => {
-          setName(option.name);
-          if (option.element) {
-            setEl(option.element);
-          }
-          onClick(option.type);
+          // setName(option.name);
+          // if (option.element) {
+          //   setEl(option.element);
+          // }
+          // onClick(option.type);
         }}
       >
         {option.element ? getFlagElement(option.element) : null}
         <span className="ml-2">{option.name}</span>
       </p>
     ));
+
+  function detectMob() {
+    return window.innerWidth <= 600;
+  }
   return (
     <div className={`header-ctrl-select ${customClass}`}>
       <p className="drop-btn-ctrl flex relative top-1.5  gap-2 w-25">
         {flag ? getFlagElement(stateEl) : null}
         {stateName}
         <DownArrow
-          className="cursor-pointer sm:hidden mt-1.5"
-          fill={location.pathname === '/' ? '#ffffff' : '#000000'}
+          className="cursor-pointer mt-1.5 sm:left-2  sm:relative sm:-top-0.5"
+          fill={
+            location.pathname === '/' && !detectMob() ? '#ffffff' : '#000000'
+          }
         />
       </p>
       <div className="dropdown-content">{renderOptions()}</div>

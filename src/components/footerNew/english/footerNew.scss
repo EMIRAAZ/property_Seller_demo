@@ -14,7 +14,7 @@
     // background-color: green;
     .div-one {
       .heading {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-size: 24.61px !important;
         font-weight: 700;
         line-height: 37px;
@@ -24,7 +24,7 @@
         padding-bottom: 10px;
       }
       .sub-heading {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-size: 10.61px;
         font-weight: 500;
 
@@ -39,7 +39,7 @@
     // background-color: hotpink;
     .div-two {
       .heading {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-size: 16.61px !important;
         font-weight: 600;
         padding-bottom: 10px;
@@ -48,7 +48,7 @@
       ul {
         list-style-type: none;
         li {
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-size: 11.61px !important;
           font-weight: 600;
           color: #144273;
@@ -71,7 +71,7 @@
     // background-color: hotpink;
     .div-three {
       .heading {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-size: 16.61px !important;
         font-weight: 600;
         color: #566985;
@@ -94,7 +94,7 @@
         }
       }
       .sub-heading {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-size: 11.61px !important;
         font-weight: 600;
         color: #7d93b2;
@@ -125,7 +125,7 @@
     // background-color: hotpink;
     .div-four {
       .heading {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-size: 16.61px !important;
         font-weight: 600;
         color: #566985;
@@ -133,7 +133,7 @@
         padding-left: 2px;
       }
       .sub-heading {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-size: 11.61px !important;
         font-weight: 600;
         color: #7d93b2;
@@ -141,11 +141,14 @@
         margin-top: 10px;
       }
       .btn {
+        display: flex;
+        align-items: center;
+        padding-left: 30%;
         background-color: #2f70ff;
         width: 100%;
         margin-top: 8px;
         height: 50px;
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-weight: 600;
         border-radius: 5px;
       }
@@ -159,7 +162,7 @@
     margin-top: 40px;
     .copyright {
       p {
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-size: 10px;
         color: #144273;
       }
@@ -167,7 +170,7 @@
     .terms {
       a {
         text-decoration: none;
-        font-family: "Poppins";
+        font-family: 'Poppins';
         font-size: 13px;
         color: #2f70ff;
         margin-right: 10px;
@@ -196,7 +199,7 @@
       // background-color: green;
       .div-one {
         .heading {
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-size: 24.61px !important;
           font-weight: 700;
           line-height: 37px;
@@ -206,7 +209,7 @@
           padding-bottom: 10px;
         }
         .sub-heading {
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-size: 10.61px;
           font-weight: 500;
 
@@ -224,7 +227,7 @@
       // background-color: hotpink;
       .div-two {
         .heading {
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-size: 16.61px !important;
           font-weight: 600;
           padding-bottom: 10px;
@@ -233,7 +236,7 @@
         ul {
           list-style-type: none;
           li {
-            font-family: "Poppins";
+            font-family: 'Poppins';
             font-size: 11.61px !important;
             font-weight: 600;
             color: #144273;
@@ -259,7 +262,7 @@
       // background-color: hotpink;
       .div-three {
         .heading {
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-size: 16.61px !important;
           font-weight: 600;
           color: #566985;
@@ -281,7 +284,7 @@
           }
         }
         .sub-heading {
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-size: 11.61px !important;
           font-weight: 600;
           color: #7d93b2;
@@ -315,7 +318,7 @@
       // background-color: hotpink;
       .div-four {
         .heading {
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-size: 16.61px !important;
           font-weight: 600;
           color: #566985;
@@ -323,7 +326,7 @@
           padding-left: 2px;
         }
         .sub-heading {
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-size: 11.61px !important;
           font-weight: 600;
           color: #7d93b2;
@@ -335,7 +338,7 @@
           width: 100%;
           margin-top: 8px;
           height: 50px;
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-weight: 600;
           border-radius: 5px;
         }
@@ -352,7 +355,7 @@
         width: 100%;
         text-align: center;
         p {
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-size: 13px;
           color: #144273;
         }
@@ -363,7 +366,7 @@
 
         a {
           text-decoration: none;
-          font-family: "Poppins";
+          font-family: 'Poppins';
           font-size: 13px;
           color: #2f70ff;
           margin-right: 10px;
