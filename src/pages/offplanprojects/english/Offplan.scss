@@ -1,4 +1,4 @@
-.main-off-container {
+.offplan-projects-container{
   background-color: #ffffff;
   .off-heading {
     font-family: 'Poppins';
@@ -55,7 +55,7 @@
     letter-spacing: -0.02em;
     color: #979797;
   }
-  .offplan-container {
+  .offplan-projects-container {
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
@@ -63,7 +63,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .main-off-container {
+  .offplan-projects-container {
     background-color: #f3f3f3;
     margin: 0;
     .off-heading {
@@ -123,7 +123,7 @@
       letter-spacing: -0.02em;
       color: #979797;
     }
-    .offplan-container {
+    .offplan-projects-container {
       display: flex;
       width: 100%;
       

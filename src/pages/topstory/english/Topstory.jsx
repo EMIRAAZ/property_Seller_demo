@@ -77,7 +77,12 @@ const StoryCard = ({ item }) => {
   };
   let date = new Date(item.updatedAt);
 
+
+
+
+
   return (
+   
     <div className="storycard-div" onClick={navigateTo}>
       <div className="text-div">
         <h1 className="heading-news-item"> {item.title}</h1>
@@ -89,7 +94,7 @@ const StoryCard = ({ item }) => {
       </div>
       <div className="image-div">
         <img
-          src={item.images && item.images.length && item.images[0]}
+          src={item.image}
           className="img-class"
           alt=""
         />
@@ -107,6 +112,9 @@ const StoryCardSmall = ({ item }) => {
     navigate(`/news/${item.id}`);
   };
   let date = new Date(item.updatedAt);
+
+
+  console.log(item)
   return (
     <div className="storycard-small-div" onClick={navigateTo}>
       <div className="text-div">
@@ -119,10 +127,10 @@ const StoryCardSmall = ({ item }) => {
           <h1 className="time">{item.time}</h1>
         </div>
       </div>
-      {item.images && (
+      {item.image && (
         <div className="image-div">
           <img
-            src={item.images.length && item.images[0]}
+            src={item.image}
             className="img-class"
             alt=""
           />
