@@ -38,7 +38,7 @@ const HeaderSelect = ({
   }
   return (
     <div className={`header-ctrl-select ${customClass}`}>
-      <p className="drop-btn-ctrl flex relative top-1.5  gap-2 w-25 h-17">
+      <p className="drop-btn-ctrl flex relative top-1.5  gap-2 w-25 ">
         {flag ? getFlagElement(stateEl) : null}
         {stateName}
         <DownArrow
@@ -56,23 +56,23 @@ const HeaderSelect = ({
 const getFlagElement = flag => {
   switch (flag) {
     case 'US':
-      return <US className="w-4" />;
+      return <US className="w-4 h-4" />;
     case 'SA':
-      return <SA className="w-4" />;
+      return <SA className="w-4 h-4" />;
     case 'BH':
-      return <BH className="w-4" />;
+      return <BH className="w-4 h-4" />;
     case 'IN':
-      return <IN className="w-4" />;
+      return <IN className="w-4 h-4" />;
     case 'GE':
-      return <GE className="w-4" />;
+      return <GE className="w-4 h-4" />;
     case 'TR':
-      return <TR className="w-4" />;
+      return <TR className="w-4 h-4" />;
     case 'AE':
-      return <AE className="w-4" />;
+      return <AE className="w-4 h-4" />;
     case 'QA':
-      return <QA className="w-4" />;
+      return <QA className="w-4 h-4" />;
     default:
-      return <AE className="w-4" />;
+      return <AE className="w-4 h-4" />;
   }
 };
 
