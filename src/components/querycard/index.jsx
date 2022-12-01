@@ -47,7 +47,7 @@ const QueryCard = ({
           bgColor="white"
           border
           customClass="emirate"
-          name="Emirate"
+          name="Select Emirate"
           onChange={value => onChange('emirate', value)}
           value={cardInput.emirate}
           options={[
@@ -55,7 +55,8 @@ const QueryCard = ({
             { name: 'Dubai', value: 'Dubai' },
             { name: 'Sharjah', value: 'Sharjah' },
             { name: 'Ajman', value: 'Ajman' },
-            { name: 'Umm Al-Quwain', value: 'Umm Al-Quwain' },
+            { name: 'Ras Al Khaimah', value: 'Ras Al Khaimah' },
+            { name: 'Umm Al Quwain', value: 'Umm Al Quwain' },
             { name: 'Fujairah', value: 'Fujairah' },
           ]}
         />
@@ -63,7 +64,7 @@ const QueryCard = ({
           bgColor="white"
           border
           customClass="search"
-          name="Search City, Building, Community .."
+          name="Search City, Building, Reference Id .."
           onChange={value => onChange('location', value)}
           onArrayChange={value => onChange('searchArray', value)}
           leftIcon={LocationIcon}

@@ -37,15 +37,15 @@ const HomeFormCard = props => {
           bgColor="white"
           border
           customClass="emirate"
-          name="Emirate"
+          name="Select Emirate"
           onChange={value => onInputChange('emirate', value)}
           options={[
             { name: 'Abu Dhabi', value: 'Abu Dhabi' },
             { name: 'Dubai', value: 'Dubai' },
             { name: 'Sharjah', value: 'Sharjah' },
             { name: 'Ajman', value: 'Ajman' },
-            { name: 'Ras Al-Khaimah', value: 'Ras Al-Khaimah' },
-            { name: 'Umm Al-Quwain', value: 'Umm Al-Quwain' },
+            { name: 'Ras Al Khaimah', value: 'Ras Al Khaimah' },
+            { name: 'Umm Al Quwain', value: 'Umm Al Quwain' },
             { name: 'Fujairah', value: 'Fujairah' },
           ]}
         />
@@ -53,7 +53,7 @@ const HomeFormCard = props => {
           bgColor="white"
           border
           customClass="search"
-          name="Search City, Building, Community .."
+          name="Search City, Building, Reference Id .."
           onChange={value => onInputChange('location', value)}
           onArrayChange={value => onInputChange('searchArray', value)}
           leftIcon={LocationIcon}

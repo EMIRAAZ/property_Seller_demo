@@ -19,7 +19,7 @@ const Offplan = props => {
       <Header />
       <ListHeading
         className="list-header"
-        main="Offplan"
+        main="Offplan Properties"
         count={props.offplan.count}
       />
 

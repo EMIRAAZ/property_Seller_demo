@@ -20,14 +20,14 @@ import SimilarProperty from '../../../components/similarproperty';
 
 const PropertyView = props => {
   let location = useLocation();
+  const getID = () => location.pathname.split('/').pop();
 
   const { property } = props;
 
   useEffect(() => {
     props.getPropertyByID(getID());
-  }, []);
+  }, [getID()]);
 
-  const getID = () => location.pathname.split('/').pop();
   const [content, setContent] = useState(true);
   const [read, setRead] = useState(false);
 
