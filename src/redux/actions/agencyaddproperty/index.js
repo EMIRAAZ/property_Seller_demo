@@ -94,6 +94,7 @@ export const getAgencyAgentProperty = () => async dispatch => {
         },
       }
     );
+
     dispatch({
       type: GET_AGENCY_AGENT_PROPERTY,
       payload: res.data?.data,
