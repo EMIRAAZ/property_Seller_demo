@@ -8,7 +8,7 @@ const OffplanCard = props => {
   let navigate = useNavigate();
 
   const navigateTo = () => {
-    navigate(`/off-plan/${props.id}`);
+    navigate(`/${props.to}/${props.id}`);
   };
 
   return (

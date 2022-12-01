@@ -5,6 +5,7 @@ import Buy from './pages/buy';
 import Rent from './pages/rent';
 import NeighBourhood from './pages/neighbourhood';
 import WebOffplan from './pages/offplan';
+import WebOffplanProjects from './pages/offplanprojects';
 import ShortTerm from './pages/shortterm';
 import Management from './pages/management';
 import Mortgage from './pages/mortgage';
@@ -46,7 +47,6 @@ import AgentList from './adminAgency/listAgent';
 import AgencyLogin from './adminAgency/login';
 import AgentAddProperty from './adminAgency/addproperty';
 import Nft from './pages/nft/english';
-import OffplanView from './pages/offplanview/english';
 import OffplanViewNew from './pages/offplanviewnew/english';
 import City from './admin/city/english';
 function Router() {
@@ -180,6 +180,8 @@ function Router() {
           <Route path="sell" element={<Advertise />} />
           <Route path="off-plan" element={<WebOffplan />} />
           <Route path="off-plan/:id" element={<PropertyView />} />
+          <Route path="offplan-projects" element={<WebOffplanProjects />} />
+          <Route path="offplan-projects/:id" element={<OffplanViewNew />} />
           <Route path="shortterm" element={<ShortTerm />} />
           <Route path="management" element={<Management />} />
           <Route path="management" element={<PropertyList />} />

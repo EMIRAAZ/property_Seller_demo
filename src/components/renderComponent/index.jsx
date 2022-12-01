@@ -16,6 +16,7 @@ const RenderComponent = ({
   data = [],
   count = 0,
   newList = false,
+  to,
 }) => {
   useEffect(() => {
     propertyCallApi(iQuery);
@@ -36,7 +37,7 @@ const RenderComponent = ({
     const Component = selectPropertyComponent();
 
     return data.map((item, i) => (
-      <Component check={i < 6 && newList} key={item.id} {...item} />
+      <Component check={i < 6 && newList} key={item.id} {...item} to={to} />
     ));
   };
 

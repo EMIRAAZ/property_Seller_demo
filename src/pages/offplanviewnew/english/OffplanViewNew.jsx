@@ -19,10 +19,9 @@ const OffplanViewNew = props => {
   const getID = () => location.pathname.split('/').pop();
 
   useEffect(() => {
-    props.getOffplanByIdWeb(getID());
+    props.getOffplanProjectsByIdWeb(getID());
   }, []);
 
-  const [content, setContent] = useState(true);
   const [read, setRead] = useState(false);
   const [read1, setRead2] = useState(false);
 
@@ -90,13 +89,10 @@ const OffplanViewNew = props => {
 
   return (
     <div className="OffplanViewNew">
-      {console.log('........//////////................')}
-      {console.log(property)}
-      {console.log('........//////////................')}
       <Header customClass="prop-view-header-class" />
       <div className="main-container">
         <div className="img-container">
-          {property.images && content ? (
+          {property.images ? (
             <ImageSlider
               imgArray={property.images}
               videoView={property.videoView}
@@ -110,7 +106,8 @@ const OffplanViewNew = props => {
             <div className="details">
               <p className="heading">{property.title}</p>
               <p className="city">
-                {property.address.city}, {property.address.emirate}
+                {property && property.address && property.address.city},{' '}
+                {property && property.address && property.address.emirate}
               </p>
             </div>
             <hr />
@@ -298,16 +295,17 @@ const OffplanViewNew = props => {
         </p>
 
         <div className="component-div">
-          {property.whyThisProperty.map((why, index) => (
-            <Whythis key={index} title={why.feature} desc={why.description} />
-          ))}
+          {property &&
+            property.whyThisProperty?.map((why, index) => (
+              <Whythis key={index} title={why.feature} desc={why.description} />
+            ))}
         </div>
       </div>
       <div className="why-this-property">
         <h1>Price For Availability</h1>
 
         <div className="component-div">
-          {property.priceForAvailability.map((plans, index) => (
+          {property.priceForAvailability?.map((plans, index) => (
             <div className="Priceforavailability" key={index}>
               <PriceForAvailability plans={plans} />
             </div>
@@ -329,7 +327,7 @@ const OffplanViewNew = props => {
         </p>
 
         <div className="component-div">
-          {property.paymentPlan.map((plans, index) => (
+          {property.paymentPlan?.map((plans, index) => (
             <PaymentPlan
               key={index}
               percentage={plans.percentage}

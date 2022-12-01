@@ -318,7 +318,6 @@ const PropertyView = props => {
                   {property && property.agency && property.agency.agencyLogo ? (
                     <img src={property.agency.agencyLogo} alt="agency img" />
                   ) : null}
-                  {console.log(property.agent)}
                 </div>
               </div>
               <div className="service-property-x">
