@@ -88,7 +88,7 @@ const reducer = (state = initialState, action) => {
     case GET_AGENCY_AGENT_PROPERTY:
       const agent =
         action.payload &&
-        action.payload[0].map(a => {
+        action.payload.map(a => {
           return {
             name: a.username,
             value: `${a.id} ${a.agencyId}`,
