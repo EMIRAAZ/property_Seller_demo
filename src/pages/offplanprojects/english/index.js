@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import OffplanProject from './Offplan';
-import { getOffplanWeb } from '../../../redux/actions';
+import { getOffplanProjectsWeb } from '../../../redux/actions';
 
 const mapStateToProps = state => {
   return {
@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getOffplanWeb: () => dispatch(getOffplanWeb()),
+    getOffplanProjectsWeb: () => dispatch(getOffplanProjectsWeb()),
   };
 };
 

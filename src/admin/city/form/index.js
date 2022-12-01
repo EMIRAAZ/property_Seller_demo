@@ -24,8 +24,8 @@ export default function Form({ value, onChange, onSubmit }) {
           { name: 'Dubai', value: 'Dubai' },
           { name: 'Sharjah', value: 'Sharjah' },
           { name: 'Ajman', value: 'Ajman' },
-          { name: 'Umm Al Quwain', value: 'Umm Al Quwain' },
           { name: 'Ras Al Khaimah', value: 'Ras Al Khaimah' },
+          { name: 'Umm Al Quwain', value: 'Umm Al Quwain' },
           { name: 'Fujairah', value: 'Fujairah' },
         ]}
         onChange={value => onChange('emirate', value)}

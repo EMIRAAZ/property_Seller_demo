@@ -306,6 +306,15 @@ const AddForm = ({
             value={propertyValue.trakheesiPermit}
             onChange={e => onChangeInput('trakheesiPermit', e.target.value)}
           />
+          {editing ? (
+            <Input
+              divClass="property-input"
+              label="Reference Id"
+              required
+              value={propertyValue.referenceNo}
+              onChange={e => onChangeInput('referenceNo', e.target.value)}
+            />
+          ) : null}
         </div>
         <div className="property-row-div">
           <Input

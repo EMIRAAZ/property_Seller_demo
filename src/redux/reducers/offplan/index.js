@@ -105,18 +105,18 @@ const reducer = (state = initialState, action) => {
     case GET_OFFPLAN_PROJECTS_BY_ID:
       return {
         ...state,
-        singleOffplanProjects: {
-          ...state.singleOffplanProjects,
+        singleOffplanProject: {
+          ...state.singleOffplanProject,
           error: false,
           loading: false,
-          offplanProjects: action.payload,
+          offplan: action.payload,
         },
       };
     case GET_OFFPLAN_PROJECTS_BY_ID_STARTED:
       return {
         ...state,
-        singleOffplanProjects: {
-          ...state.singleOffplanProjects,
+        singleOffplanProject: {
+          ...state.singleOffplanProject,
           error: false,
           loading: true,
         },
@@ -124,8 +124,8 @@ const reducer = (state = initialState, action) => {
     case GET_OFFPLAN_PROJECTS_BY_ID_ERROR:
       return {
         ...state,
-        singleOffplanProjects: {
-          ...state.singleOffplanProjects,
+        singleOffplanProject: {
+          ...state.singleOffplanProject,
           error: true,
           loading: false,
         },

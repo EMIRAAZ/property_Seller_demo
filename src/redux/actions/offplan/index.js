@@ -29,7 +29,7 @@ const getOffplanError = () => {
 export const getOffplanWeb = () => async dispatch => {
   try {
     dispatch(getOffplanStarted());
-    const res = await axios.get(`/api/offplan`);
+    const res = await axios.get(`/api/property?offplan=true`);
     dispatch({
       type: GET_OFFPLAN_WEB,
       payload: res.data?.data,

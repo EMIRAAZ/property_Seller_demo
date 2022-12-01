@@ -1,52 +1,27 @@
-import "./Offplanviewnew.scss";
-import Header from "../../../components/header/english/Header";
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import BasicButton from "../../../components/button/BasicButton";
-import RarrowIcon from "../../../components/svg/rarrow";
-import LarrowIcon from "../../../components/svg/larrow";
-import Bed from "../../../components/svg/bed";
-import Bath from "../../../components/svg/bath";
-import Living from "../../../components/svg/living";
-import Area from "../../../components/svg/area";
-import Whatsapp from "../../../components/svg/whatsapp";
-import { MoveToTop } from "../../../components/movetotop";
-import FooterNew from "../../../components/footerNew";
-import Phone from "../../../components/svg/phone";
-import Mail from "../../../components/svg/mailsvg";
-import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
-import BottomFixed from "../../../components/bottomfixed/BottomFixed";
-import { Button } from "@mui/material";
-import SimilarProperty from "../../../components/similarproperty";
+import './Offplanviewnew.scss';
+import Header from '../../../components/header/english/Header';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import RarrowIcon from '../../../components/svg/rarrow';
+import LarrowIcon from '../../../components/svg/larrow';
+import Whatsapp from '../../../components/svg/whatsapp';
+import { MoveToTop } from '../../../components/movetotop';
+import FooterNew from '../../../components/footerNew';
+import Phone from '../../../components/svg/phone';
+import Mail from '../../../components/svg/mailsvg';
+import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
+import { Button } from '@mui/material';
 
-const paln = [
-  {
-    url: "/assets/image/plans.png",
-    name: "Slide 1",
-    price: "20000",
-  },
-  {
-    url: "/assets/image/plans.png",
-    name: "Slide 2",
-    price: "20000",
-  },
-  {
-    url: "/assets/image/plans.png",
-    name: "Slide 2",
-    price: "20000",
-  },
-];
-const OffplanViewNew = (props) => {
+const OffplanViewNew = props => {
   let location = useLocation();
 
   const { property } = props;
-  const getID = () => location.pathname.split("/").pop();
+  const getID = () => location.pathname.split('/').pop();
 
   useEffect(() => {
-    props.getOffplanByIdWeb(getID());
+    props.getOffplanProjectsByIdWeb(getID());
   }, []);
 
-  const [content, setContent] = useState(true);
   const [read, setRead] = useState(false);
   const [read1, setRead2] = useState(false);
 
@@ -54,35 +29,35 @@ const OffplanViewNew = (props) => {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
   });
 
-  const getDescription = (description) => {
+  const getDescription = description => {
     if (description) {
       if (read) {
         return description;
       } else {
         if (description.length > 200)
-          return description.substring(0, 200) + " . . .";
+          return description.substring(0, 200) + ' . . .';
         else return description;
       }
-    } else return "";
+    } else return '';
   };
-  const getDescription2 = (description) => {
+  const getDescription2 = description => {
     if (description) {
       if (read1) {
         return description;
       } else {
         if (description.length > 200)
-          return description.substring(0, 200) + " . . .";
+          return description.substring(0, 200) + ' . . .';
         else return description;
       }
-    } else return "";
+    } else return '';
   };
 
   const openMap = ({ lat, lng }) => {
     // If it's an iPhone..
     if (
-      navigator.platform.indexOf("iPhone") != -1 ||
-      navigator.platform.indexOf("iPod") != -1 ||
-      navigator.platform.indexOf("iPad") != -1
+      navigator.platform.indexOf('iPhone') != -1 ||
+      navigator.platform.indexOf('iPod') != -1 ||
+      navigator.platform.indexOf('iPad') != -1
     )
       window.open(
         `maps://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination=${lat},${lng}`
@@ -109,18 +84,15 @@ const OffplanViewNew = (props) => {
 
   if (property.updatedAt) {
     var d = property.updatedAt;
-    d = d.split("T");
+    d = d.split('T');
   }
 
   return (
     <div className="OffplanViewNew">
-      {console.log("........//////////................")}
-      {console.log(property)}
-      {console.log("........//////////................")}
       <Header customClass="prop-view-header-class" />
       <div className="main-container">
         <div className="img-container">
-          {property.images && content ? (
+          {property.images ? (
             <ImageSlider
               imgArray={property.images}
               videoView={property.videoView}
@@ -134,7 +106,8 @@ const OffplanViewNew = (props) => {
             <div className="details">
               <p className="heading">{property.title}</p>
               <p className="city">
-                {property.address.city}, {property.address.emirate}
+                {property && property.address && property.address.city},{' '}
+                {property && property.address && property.address.emirate}
               </p>
             </div>
             <hr />
@@ -146,7 +119,7 @@ const OffplanViewNew = (props) => {
                     <>
                       <GoogleMap
                         center={getCord()}
-                        mapContainerStyle={{ width: "100%", height: "100%" }}
+                        mapContainerStyle={{ width: '100%', height: '100%' }}
                         zoom={15}
                       >
                         <Marker position={getCord()} />
@@ -182,7 +155,7 @@ const OffplanViewNew = (props) => {
                   variant="outlined"
                   onClick={() => setRead(!read)}
                 >
-                  {read ? "Read less" : "Read more"}
+                  {read ? 'Read less' : 'Read more'}
                 </Button>
               </div>
               <div className="dtails-inside-div">
@@ -195,7 +168,7 @@ const OffplanViewNew = (props) => {
                   variant="outlined"
                   onClick={() => setRead2(!read1)}
                 >
-                  {read ? "Read less" : "Read more"}
+                  {read ? 'Read less' : 'Read more'}
                 </Button>
               </div>
 
@@ -218,7 +191,7 @@ const OffplanViewNew = (props) => {
             <div className="agent-card">
               <div className="top-header-agent">
                 <div className="agent-details">
-                  <p style={{ color: "grey" }}>Agent</p>
+                  <p style={{ color: 'grey' }}>Agent</p>
 
                   {property && property.agent ? (
                     <>
@@ -226,21 +199,21 @@ const OffplanViewNew = (props) => {
 
                       <h1>
                         Response time :
-                        <span style={{ color: "black" }}>
-                          {" "}
+                        <span style={{ color: 'black' }}>
+                          {' '}
                           within 5 minutes
                         </span>
                       </h1>
                       <h1>
-                        Languages :{" "}
-                        <span style={{ color: "black" }}>
-                          {property.agent.languages}{" "}
+                        Languages :{' '}
+                        <span style={{ color: 'black' }}>
+                          {property.agent.languages}{' '}
                         </span>
                       </h1>
                       <h1>
-                        Experience :{" "}
-                        <span style={{ color: "black" }}>
-                          {property.agent.yearsOfExperience}{" "}
+                        Experience :{' '}
+                        <span style={{ color: 'black' }}>
+                          {property.agent.yearsOfExperience}{' '}
                         </span>
                       </h1>
                       {/* <h2>Agency : {property.agency.agencyName}</h2> */}
@@ -279,7 +252,7 @@ const OffplanViewNew = (props) => {
                 </div>
                 <div
                   className="service-btn-property phone"
-                  onClick={() => window.open("tel:+971553011274", "_blank")}
+                  onClick={() => window.open('tel:+971553011274', '_blank')}
                 >
                   <Phone
                     width="17"
@@ -292,7 +265,7 @@ const OffplanViewNew = (props) => {
                 <div
                   className="service-btn-property email"
                   onClick={() =>
-                    window.open("mailto:hello@propertyassistant.ae", "_blank")
+                    window.open('mailto:hello@propertyassistant.ae', '_blank')
                   }
                 >
                   <Mail
@@ -322,16 +295,17 @@ const OffplanViewNew = (props) => {
         </p>
 
         <div className="component-div">
-          {property.whyThisProperty.map((why, index) => (
-            <Whythis key={index} title={why.feature} desc={why.description} />
-          ))}
+          {property &&
+            property.whyThisProperty?.map((why, index) => (
+              <Whythis key={index} title={why.feature} desc={why.description} />
+            ))}
         </div>
       </div>
       <div className="why-this-property">
         <h1>Price For Availability</h1>
 
         <div className="component-div">
-          {property.priceForAvailability.map((plans, index) => (
+          {property.priceForAvailability?.map((plans, index) => (
             <div className="Priceforavailability" key={index}>
               <PriceForAvailability plans={plans} />
             </div>
@@ -353,7 +327,7 @@ const OffplanViewNew = (props) => {
         </p>
 
         <div className="component-div">
-          {property.paymentPlan.map((plans, index) => (
+          {property.paymentPlan?.map((plans, index) => (
             <PaymentPlan
               key={index}
               percentage={plans.percentage}
@@ -370,10 +344,10 @@ const OffplanViewNew = (props) => {
   );
 };
 
-const VideoView = ({ url = "https://www.youtube.com/embed/WGf3tNSbXs0" }) => {
+const VideoView = ({ url = 'https://www.youtube.com/embed/WGf3tNSbXs0' }) => {
   return (
     <iframe
-      style={{ borderRadius: "10px" }}
+      style={{ borderRadius: '10px' }}
       title="drf4rf4r"
       width="100%"
       height="100%"
@@ -385,12 +359,12 @@ const VideoView = ({ url = "https://www.youtube.com/embed/WGf3tNSbXs0" }) => {
 };
 
 const ImageSlider = ({
-  imgArray = ["/assets/image/noimage.jpg"],
-  videoView = "https://www.youtube.com/embed/WGf3tNSbXs0",
+  imgArray = ['/assets/image/noimage.jpg'],
+  videoView = 'https://www.youtube.com/embed/WGf3tNSbXs0',
 }) => {
   const [index, setIndex] = useState(0);
 
-  const onsetIndex = (add) => {
+  const onsetIndex = add => {
     if (index === 0 && add === -1) {
       setIndex(imgArray.length - 1);
     } else if (index === imgArray.length - 1 && add === 1) {
@@ -409,8 +383,8 @@ const ImageSlider = ({
           className="image-slide-container"
           style={{
             backgroundImage: `url(${imgArray[index]})`,
-            backgroundRepeat: "space",
-            backgroundSize: "100%",
+            backgroundRepeat: 'space',
+            backgroundSize: '100%',
           }}
         >
           <div className="carousel-panel-prop">
@@ -423,8 +397,8 @@ const ImageSlider = ({
         className="sub-img-container"
         style={{
           backgroundImage: `url(${imgArray[getIndex()]})`,
-          backgroundRepeat: "space",
-          backgroundSize: "cover",
+          backgroundRepeat: 'space',
+          backgroundSize: 'cover',
         }}
       ></div>
       <div className="main-video-container">
@@ -460,7 +434,7 @@ const PriceForAvailability = ({ plans }) => {
   return (
     <>
       <img
-        style={{ width: "100%" }}
+        style={{ width: '100%' }}
         className="image-class"
         src={plans.image}
         alt=""
@@ -564,7 +538,7 @@ const NewFooter = ({ property }) => {
           <div
             className="wp-div"
             onClick={() =>
-              window.open("mailto:hello@propertyassistant.ae", "_blank")
+              window.open('mailto:hello@propertyassistant.ae', '_blank')
             }
           >
             <svg
@@ -585,7 +559,7 @@ const NewFooter = ({ property }) => {
 
           <div
             className="wp-div"
-            onClick={() => window.open("tel:+971553011274", "_blank")}
+            onClick={() => window.open('tel:+971553011274', '_blank')}
           >
             <svg
               width="21"
