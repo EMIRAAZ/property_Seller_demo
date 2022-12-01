@@ -15,6 +15,7 @@ const AddAgent = props => {
     props.getAgencyAmenityProperty();
     props.getAgencyNeighborhoodProperty();
     props.getAgencyTaglineProperty();
+    props.getCityAgencyProp();
     if (getID() !== 'add-property') props.getAgencyPropertyById(getID());
   }, []);
 

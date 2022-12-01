@@ -163,13 +163,24 @@ const Form = ({
           value={propertyValue.building}
           onChange={e => onChangeInput('building', e.target.value)}
         />
-        <Input
-          divClass="property-input"
+        <Select
+          customClass="property-input"
+          label="Emirate"
+          required
+          value={propertyValue.emirate}
+          options={emirate}
+          onChange={v => onChangeInput('emirate', v)}
+        />
+        <span className="select-border"></span>
+        <Select
+          customClass="property-input"
           label="City"
           required
           value={propertyValue.city}
-          onChange={e => onChangeInput('city', e.target.value)}
+          options={propertyOptions.city}
+          onChange={v => onChangeInput('city', v)}
         />
+        <span className="select-border"></span>
         <Select
           customClass="property-input"
           label="Agent"
@@ -307,18 +318,20 @@ const Form = ({
         <div className="property-row-div">
           <Input
             divClass="property-input"
-            label="Reference No"
-            required
-            value={propertyValue.referenceNo}
-            onChange={e => onChangeInput('referenceNo', e.target.value)}
-          />
-          <Input
-            divClass="property-input"
             label="Trakheesi Permit"
             required
             value={propertyValue.trakheesiPermit}
             onChange={e => onChangeInput('trakheesiPermit', e.target.value)}
           />
+          {editing ? (
+            <Input
+              divClass="property-input"
+              label="Reference Id"
+              required
+              value={propertyValue.referenceNo}
+              onChange={e => onChangeInput('referenceNo', e.target.value)}
+            />
+          ) : null}
         </div>
         <div className="property-row-div">
           <Input
@@ -336,15 +349,6 @@ const Form = ({
             onChange={e => onChangeInput('agentBRN', e.target.value)}
           />
         </div>
-        <Select
-          customClass="property-input"
-          label="Emirate"
-          required
-          value={propertyValue.emirate}
-          options={emirate}
-          onChange={v => onChangeInput('emirate', v)}
-        />
-        <span className="select-border"></span>
         <div className="add-property-google-map">
           {isLoaded ? (
             <>

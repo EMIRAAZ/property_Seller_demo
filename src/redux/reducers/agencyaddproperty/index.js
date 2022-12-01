@@ -29,6 +29,9 @@ import {
   DELETE_IMAGES_AGENT_PROPERTY,
   DELETE_IMAGES_AGENT_PROPERTY_STARTED,
   DELETE_IMAGES_AGENT_PROPERTY_ERROR,
+  GET_CITY_AGENCY_PROP_ERROR,
+  GET_CITY_AGENCY_PROP_STARTED,
+  GET_CITY_AGENCY_PROP,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -312,6 +315,28 @@ const reducer = (state = initialState, action) => {
             loading: false,
           },
         },
+      };
+    case GET_CITY_AGENCY_PROP:
+      const city = action.payload?.map(a => {
+        return {
+          name: a.name,
+          value: a.name,
+        };
+      });
+      return {
+        ...state,
+        propertyOptions: {
+          ...state.propertyOptions,
+          city,
+        },
+      };
+    case GET_CITY_AGENCY_PROP_STARTED:
+      return {
+        ...state,
+      };
+    case GET_CITY_AGENCY_PROP_ERROR:
+      return {
+        ...state,
       };
     default:
       return state;

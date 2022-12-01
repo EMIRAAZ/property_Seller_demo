@@ -74,5 +74,6 @@ export const initialState = {
       { name: 'Umm Al Quwain', value: 'Umm Al Quwain' },
       { name: 'Fujairah', value: 'Fujairah' },
     ],
+    city: [],
   },
 };
