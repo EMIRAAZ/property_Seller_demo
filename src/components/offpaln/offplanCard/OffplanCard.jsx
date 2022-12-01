@@ -1,18 +1,15 @@
-import "./offplan.scss";
-import ImgPropCarousel from "../../imgpropcarousel";
-import { useNavigate } from "react-router-dom";
-import RightArrow from "../../svg/rightarrow";
-import Favourite from "../../svg/favourite";
+import './offplan.scss';
+import ImgPropCarousel from '../../imgpropcarousel';
+import { useNavigate } from 'react-router-dom';
+import RightArrow from '../../svg/rightarrow';
+import Favourite from '../../svg/favourite';
 
-const OffplanCard = (props) => {
+const OffplanCard = props => {
   let navigate = useNavigate();
 
   const navigateTo = () => {
     navigate(`/off-plan/${props.id}`);
   };
-
-  console.log(props);
-  console.log(props.title);
 
   return (
     <div className="offplan-card-container">
@@ -21,7 +18,7 @@ const OffplanCard = (props) => {
         imgArray={props.images}
         curImgClass="prop-list-img"
       />
-      <div className="offplan-main-div" onClick={navigateTo}>
+      <div className="offplan-main-div cursor-pointer" onClick={navigateTo}>
         <div className="offplan-description">
           <p className="offplan-head">{props.title}</p>
           <div className="of-ad">
@@ -38,7 +35,7 @@ const OffplanCard = (props) => {
         </div>
         <div className="off-card-footer">
           <div className="shortlist">
-            <p className="shortlist-info">shortlist</p>{" "}
+            <p className="shortlist-info">shortlist</p>{' '}
             <Favourite fill="#1FA0E9" width="100%" height="15px" />
           </div>
           <h2 className="amount">${props.price[0]}</h2>

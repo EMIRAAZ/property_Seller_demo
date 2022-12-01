@@ -19,27 +19,14 @@ const Offplan = props => {
         main="Offplan"
         count={props.offplan.count}
       />
-      
-      <BasicButton customClass="absolute top-14 right-5 sm:text-xs" children="Offplan Projects" />
-   
-      
-      {/* <div className="categories">
-        <div className="item-div">
-          <h1 className="item-name">ALL</h1>
-        </div>
-        <div className="item-div">
-          <h1 className="item-name">Studio</h1>
-        </div>
-        <div className="item-div">
-          <h1 className="item-name">1 Bed room</h1>
-        </div>
-        <div className="item-div">
-          <h1 className="item-name">2 Bed room</h1>
-        </div>
-      </div> */}
+
+      <BasicButton
+        customClass="absolute top-14 right-5 sm:text-xs"
+        children="Offplan Projects"
+      />
       <div className="offplan-container">
         <RenderComponent
-        className='w-full'
+          className="w-full"
           data={props.offplan.data}
           propertyCallApi={() => {}}
           count={props.offplan.count}

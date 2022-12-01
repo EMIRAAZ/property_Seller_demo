@@ -4,7 +4,6 @@ import Home from './pages/home';
 import Buy from './pages/buy';
 import Rent from './pages/rent';
 import NeighBourhood from './pages/neighbourhood';
-import Sell from './pages/sell';
 import WebOffplan from './pages/offplan';
 import ShortTerm from './pages/shortterm';
 import Management from './pages/management';
@@ -31,11 +30,9 @@ import News from './pages/news';
 import AdminNeighborhood from './admin/neighborhood';
 import PropertyList from './pages/propertylist';
 import Luxuary from './pages/luxuary/english';
-import LuxuaryViewMore from './pages/luxuryViewMore';
 import Offplan from './admin/offplan';
 import TagHead from './admin/taghead';
 import TagLine from './admin/tagline';
-import NewsTopics from './admin/newstopics';
 import AdminNews from './admin/news';
 import AdminBlog from './admin/blog';
 import Topstory from './pages/topstory';
@@ -182,7 +179,7 @@ function Router() {
           <Route path="neighbourhood" element={<NeighBourhood />} />
           <Route path="sell" element={<Advertise />} />
           <Route path="off-plan" element={<WebOffplan />} />
-          <Route path="off-plan/:id" element={<OffplanViewNew />} />
+          <Route path="off-plan/:id" element={<PropertyView />} />
           <Route path="shortterm" element={<ShortTerm />} />
           <Route path="management" element={<Management />} />
           <Route path="management" element={<PropertyList />} />
