@@ -290,15 +290,14 @@ const Form = ({
           onChange={v => onChangeInput('neighborhood', v)}
           required
         />
-        <Select
+        <ChipSelect
           customClass="property-input"
           label="Tagline"
-          required
-          value={`${propertyValue.taglineId}`}
           options={tagline}
-          onChange={v => onChangeInput('taglineId', v)}
+          value={propertyValue.tagline}
+          onChange={v => onChangeInput('tagline', v)}
+          required
         />
-        <span className="select-border"></span>
         <div className="property-row-div">
           <Input
             divClass="property-input"

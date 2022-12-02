@@ -39,7 +39,7 @@ export const initialState = {
     agentId: '',
     agencyId: '',
     neighborhood: [],
-    taglineId: '',
+    tagline: [],
   },
   propertyOptions: {
     propertyType: [
