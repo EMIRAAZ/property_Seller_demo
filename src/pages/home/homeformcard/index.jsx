@@ -152,11 +152,11 @@ const HomeFormCard = props => {
           onChange={value => onInputChange('priceTo', value)}
           value={props.homeSearch.priceTo}
           options={[
-            { name: '300,0000', value: 3000000 },
-            { name: '400,0000', value: 4000000 },
-            { name: '500,0000', value: 5000000 },
-            { name: '600,0000', value: 6000000 },
-            { name: '700,0000', value: 7000000 },
+            { name: '300,000', value: 300000 },
+            { name: '400,000', value: 400000 },
+            { name: '500,000', value: 500000 },
+            { name: '600,000', value: 600000 },
+            { name: '700,000', value: 700000 },
             { name: '800,000', value: 800000 },
             { name: '900,000', value: 900000 },
             { name: '1,000,000', value: 1000000 },

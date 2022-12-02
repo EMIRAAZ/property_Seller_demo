@@ -1,16 +1,17 @@
 import HeaderSelect from '../../select/HeaderCtrlSelect';
 import { useLocation } from 'react-router-dom';
+import './headerctrl.scss';
 
 export function HeaderCtrl() {
   let location = useLocation();
 
   return (
     <div
-      className="flex-1 justify-around sm:pt-2.5 relative"
+      className="headerctrl sm:pt-2.5 relative"
       style={{ color: location.pathname === '/' ? '#ffff' : '#000' }}
     >
       <HeaderSelect
-        customClass="cursor-pointer sm:hidden -top-1"
+        customClass="cursor-pointer sm:hidden"
         name="English"
         options={[
           {
@@ -25,7 +26,9 @@ export function HeaderCtrl() {
       />
 
       <HeaderSelect
-        customClass="mx-8 cursor-pointer sm:hidden"
+        customClass=" cursor-pointer sm:hidden"
+        txtcls="small-txt"
+        txtcls2="mt-0.5"
         name="UAE"
         flag="AE"
         options={[
@@ -67,7 +70,7 @@ export function HeaderCtrl() {
         ]}
       />
 
-      <span className="mx-2 cursor-pointer text-sm sm:border sm:rounded-sm sm:px-2 sm:py-0.5">
+      <span className="cursor-pointer text-sm sm:border sm:rounded-sm sm:px-2 sm:py-0.5">
         Log in
       </span>
       <span
