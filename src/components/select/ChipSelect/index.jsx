@@ -46,7 +46,9 @@ const ChipSelect = ({
     });
 
   const removeChip = item => {
-    const removedSelectName = value.filter(name => name !== item);
+    const removedSelectName = value.filter(
+      name => name.toLowerCase() !== item.toLowerCase()
+    );
     onChange([...removedSelectName]);
   };
 
