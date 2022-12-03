@@ -27,7 +27,8 @@ const AddForm = ({
 
   const onChangeInput = (key, value) => {
     document.getElementById('on-add-warning').style.opacity = '0';
-    onChange({ key, value });
+    const lValue = value && value.toLowerCase();
+    onChange({ key, value: lValue });
   };
 
   const editCB = () => {
