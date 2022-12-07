@@ -26,10 +26,20 @@ function BottomFixed({ property }) {
         </div>
         <div
           className="service-btn-property phone"
-          onClick={() => window.open("tel:+971553011274", "_blank")}
+          // onClick={() => window.open("tel:+971553011274", "_blank")}
+
+          onClick={() =>
+            window.open(
+              `https://wa.me/+971553011274/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${property.id}
+              %0a%0aPrice: AED ${property.price}
+              %0aLocation: ${property.address.city}
+                %0aReference: ${property.id}
+                %0a%0aPlease call me`
+            )
+          }
         >
           <Phone width="17" height="17" viewBox="0 0 15 15" fill="#2f70ff" />
-          Phone
+          Callback
         </div>
         <div
           className="service-btn-property email"
