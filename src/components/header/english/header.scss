@@ -109,6 +109,14 @@
     .desktop-li {
       display: none;
     }
+    .desktop-li-updated {
+      margin-left: auto;
+      margin-right: 14px;
+      display: flex;
+      font-size: 13px;
+      font-weight: 500;
+      display: block;
+    }
 
     .header-btn {
       margin-left: auto;
@@ -172,7 +180,6 @@
       .desktop-li-updated {
         display: inline-block;
         margin-left: auto;
-        margin-top: 0px;
         display: flex;
         font-size: 13px;
         font-weight: 500;

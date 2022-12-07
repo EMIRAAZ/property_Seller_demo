@@ -140,7 +140,7 @@ const Header = ({ customClass }) => {
           </li>
         </ul>
       </div>
-      <ul className="header-list">
+      <ul className="header-list ">
         <li className="logo" onClick={onSidebarWebToggle}>
           <HamburgerLogo
             width="27"
@@ -199,7 +199,7 @@ const Header = ({ customClass }) => {
             </li>
           </ul>
         </li>
-        <li className="desktop-li-updated absolute right-4">
+        <li className="desktop-li-updated ">
           <HeaderCtrl />
         </li>
       </ul>

@@ -2,12 +2,6 @@
   position: relative;
   display: inline-block;
 
-  // .drop-btn-ctrl {
-  //   display: flex;
-  //   gap: 6px;
-  //   padding-top: 8px;
-  // }
-
   &:hover .dropdown-content {
     display: block;
   }

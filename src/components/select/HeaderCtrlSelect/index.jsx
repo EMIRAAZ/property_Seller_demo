@@ -10,6 +10,8 @@ const HeaderSelect = ({
   customClass = '',
   onClick = () => {},
   flag = null,
+  txtcls = '',
+  txtcls2 = '',
 }) => {
   const [stateName, setName] = useState(name);
   const [stateEl, setEl] = useState(flag);
@@ -38,9 +40,9 @@ const HeaderSelect = ({
   }
   return (
     <div className={`header-ctrl-select ${customClass}`}>
-      <p className="drop-btn-ctrl flex relative top-1.5  gap-2 w-25 ">
-        {flag ? getFlagElement(stateEl) : null}
-        <span className=" relative left-1 "> {stateName}</span>
+      <p className={`drop-btn-ctrl flex relative  gap-2 w-25 ${txtcls} `}>
+        <span className="mt-0.5">{flag ? getFlagElement(stateEl) : null}</span>
+        <span className={`relative left-1 ${txtcls2} `}> {stateName}</span>
         <DownArrow
           className="cursor-pointer mt-1.5 ml-1 sm:left-2  sm:relative sm:-top-0.5"
           fill={
@@ -56,23 +58,23 @@ const HeaderSelect = ({
 const getFlagElement = flag => {
   switch (flag) {
     case 'US':
-      return <US className="w-4 h-4" />;
+      return <US className="w-4 h-4 mt-0.5" />;
     case 'SA':
-      return <SA className="w-4 h-4" />;
+      return <SA className="w-4 h-4 mt-0.5" />;
     case 'BH':
-      return <BH className="w-4 h-4" />;
+      return <BH className="w-4 h-4 mt-0.5" />;
     case 'IN':
-      return <IN className="w-4 h-4" />;
+      return <IN className="w-4 h-4 mt-0.5" />;
     case 'GE':
-      return <GE className="w-4 h-4" />;
+      return <GE className="w-4 h-4 mt-0.5" />;
     case 'TR':
-      return <TR className="w-4 h-4" />;
+      return <TR className="w-4 h-4 mt-0.5" />;
     case 'AE':
-      return <AE className="w-4 h-4" />;
+      return <AE className="w-4 h-4 mt-0.5" />;
     case 'QA':
-      return <QA className="w-4 h-4" />;
+      return <QA className="w-4 h-4 mt-0.5" />;
     default:
-      return <AE className="w-4 h-4" />;
+      return <AE className="w-4 h-4 mt-0.5" />;
   }
 };
 
