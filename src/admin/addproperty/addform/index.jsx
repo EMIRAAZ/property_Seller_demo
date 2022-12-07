@@ -273,15 +273,15 @@ const AddForm = ({
           onChange={v => onChangeInput('neighborhood', v)}
           required
         />
-        <Select
+        <ChipSelect
           customClass="property-input"
           label="Tagline"
-          required
-          value={`${propertyValue.taglineId}`}
           options={tagline}
-          onChange={v => onChangeInput('taglineId', v)}
+          value={propertyValue.tagline}
+          onChange={v => onChangeInput('tagline', v)}
+          required
         />
-        <span className="select-border"></span>
+
         <div className="property-row-div">
           <Input
             divClass="property-input"
@@ -306,6 +306,15 @@ const AddForm = ({
             value={propertyValue.trakheesiPermit}
             onChange={e => onChangeInput('trakheesiPermit', e.target.value)}
           />
+          {editing ? (
+            <Input
+              divClass="property-input"
+              label="Reference Id"
+              required
+              value={propertyValue.referenceNo}
+              onChange={e => onChangeInput('referenceNo', e.target.value)}
+            />
+          ) : null}
         </div>
         <div className="property-row-div">
           <Input

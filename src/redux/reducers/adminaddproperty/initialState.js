@@ -40,7 +40,7 @@ export const initialState = {
     agentId: '',
     agencyId: '',
     neighborhood: [],
-    taglineId: '',
+    tagline: [],
   },
   propertyOptions: {
     propertyType: [
@@ -72,8 +72,8 @@ export const initialState = {
       { name: 'Dubai', value: 'Dubai' },
       { name: 'Sharjah', value: 'Sharjah' },
       { name: 'Ajman', value: 'Ajman' },
-      { name: 'Umm Al Quwain', value: 'Umm Al Quwain' },
       { name: 'Ras Al Khaimah', value: 'Ras Al Khaimah' },
+      { name: 'Umm Al Quwain', value: 'Umm Al Quwain' },
       { name: 'Fujairah', value: 'Fujairah' },
     ],
   },

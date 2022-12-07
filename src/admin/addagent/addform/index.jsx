@@ -70,14 +70,14 @@ const AddForm = ({
       <div className="add-left-agent-form">
         <Input
           divClass="agent-input"
-          label="Agent Name"
+          label="Name"
           required
           value={agentValue.agentName}
           onChange={e => onChangeInput('agentName', e.target.value)}
         />
         <SingleImageUpload
-          name="agencyLogo"
-          label="Agency Logo"
+          name="agentLogo"
+          label="Agent Logo"
           required
           value={agentValue.agentImage}
           onChange={addAgentImage}

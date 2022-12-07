@@ -1,6 +1,5 @@
 import './neighbourhood.scss';
 import { useEffect } from 'react';
-import Footer from '../../../components/footer';
 import Header from '../../../components/header';
 import BasicButton from '../../../components/button/BasicButton';
 import { useNavigate } from 'react-router-dom';
@@ -35,7 +34,7 @@ const Card = props => {
     <div className="card">
       <div
         style={{
-          backgroundImage: `url(${props.images[0]})`,
+          backgroundImage: `url(${props.image})`,
         }}
         className="image-div"
       >

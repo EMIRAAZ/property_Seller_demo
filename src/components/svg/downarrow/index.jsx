@@ -1,6 +1,6 @@
-const DownArrow = ({ fill = '#02101C' }) => {
+const DownArrow = ({ fill = '#02101C', className = '' }) => {
   return (
-    <div className="down-arrow">
+    <div className={`down-arrow ${className}`}>
       <svg
         width="10"
         height="8"

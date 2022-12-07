@@ -135,9 +135,9 @@ const SearchChipSelect = ({
         {/* <p className="drop-btn">{selectName}</p> */}
         {leftIcon
           ? React.createElement(leftIcon, {
-              className: 'left-b-input-icon',
+              customClass: 'left-b-input-icon',
               width: '14',
-              height: '20',
+              height: '24',
               viewbox: '0 0 19 20',
               fill: '#2e2e2e',
             })

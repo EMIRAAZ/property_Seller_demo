@@ -65,17 +65,19 @@ const News = props => {
         <p className="date">
           {date.toDateString() !== 'Invalid Date' ? date.toDateString() : ''}
         </p>
-        <div className="category">
+        {/* <div className="category">
           {props.news[0] &&
             props.news[0].topics.map((item, i) => (
               <div className="item-div" key={i}>
                 <h1 className="item">{item}</h1>
               </div>
             ))}
-        </div>
+        </div> */}
         <img
-          src={props.news[0] && props.news[0].images[0]}
-          className="image-div"
+          
+          src={props.news[0] && props.news[0].image}
+          className="image-div rounded"
+
           alt=""
         />
 

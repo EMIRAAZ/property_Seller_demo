@@ -1,0 +1,227 @@
+.offplan-projects-container{
+  background-color: #ffffff;
+  .off-heading {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64.9727px;
+    line-height: 80px;
+    letter-spacing: -0.03em;
+    color: #242527;
+  }
+  .categories {
+    display: flex;
+    margin-left: 2%;
+    margin-top: 2%;
+    // overflow-x: scroll;
+    // -ms-overflow-style: none;
+    // scrollbar-width: none;
+    // -webkit-overflow-scrolling: touch;
+    // scroll-snap-type: x mandatory;
+    // padding-left: 120px;
+
+    .item-div {
+      padding: 6px 20px;
+      background-color: #f3f3f3;
+      cursor: pointer;
+      border-radius: 15px;
+      flex-shrink: 0;
+      margin-left: 6px;
+      margin-right: 6px;
+      border: 1px solid #1fa0e9;
+
+      .item-name {
+        font-family: 'Poppins';
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      &:hover {
+        color: white;
+        background-color: #1fa0e9;
+        border: 1px solid #2f70ff;
+      }
+    }
+    &::after {
+      color: #1fa0e9;
+    }
+  }
+  .off-found {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32.4864px;
+    line-height: 35px;
+    letter-spacing: -0.02em;
+    color: #979797;
+  }
+  .offplan-projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .offplan-projects-container {
+    background-color: #f3f3f3;
+    margin: 0;
+    .off-heading {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 64.9727px;
+      line-height: 80px;
+      letter-spacing: -0.03em;
+      color: #242527;
+    }
+    .categories {
+      display: flex;
+      margin: 0;
+      margin-left: 2%;
+      margin-top: 1%;
+      overflow-x: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      // padding-left: 120px;
+
+      .item-div {
+        padding: 6px 20px;
+        background-color: #f3f3f3;
+        cursor: pointer;
+        border-radius: 15px;
+        flex-shrink: 0;
+        margin: 0;
+        margin-left: 6px;
+        margin-right: 6px;
+        border: 1px solid #1fa0e9;
+
+        .item-name {
+          font-family: 'Poppins';
+          font-size: 15px;
+          font-weight: 500;
+        }
+
+        &:hover {
+          color: white;
+          background-color: #1fa0e9;
+          border: 1px solid #2f70ff;
+        }
+      }
+      &::after {
+        color: #1fa0e9;
+      }
+    }
+    .off-found {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32.4864px;
+      line-height: 35px;
+      letter-spacing: -0.02em;
+      color: #979797;
+    }
+    .offplan-projects-container {
+      display: flex;
+      width: 100%;
+      
+      justify-content: center;
+    }
+  }
+}
+
+// .offplan-main-container-1 {
+//   .offplan-header-class {
+//     border-bottom: 1px solid #e9f1fd;
+
+//     .mobile-sidebar {
+//       background-color: #d9e5ff !important;
+
+//       ul {
+//         background-color: #d9e5ff !important;
+//       }
+//     }
+//     width: 100%;
+//     margin: 0 auto;
+
+//     .header-list {
+//       background-color: #d9e5ff !important;
+//     }
+
+//     .logo {
+//       color: #ffffff;
+//     }
+
+//     .desktop-li {
+//       li {
+//         &:hover {
+//           transition: all 1s ease-out;
+//           color: #0084ff;
+//         }
+//       }
+//     }
+//   }
+//   .offplan-card-container {
+//     height: 40px;
+//     // background-color: #d9e5ff;
+//   }
+//   .offplans-projects {
+//     width: 90%;
+//     margin: auto;
+//     .Heading {
+//       font-size: 35px;
+//       font-family: "Poppins";
+//       color: black;
+//       font-weight: 700;
+//       margin-top: 20px;
+//     }
+//     .sub-heading {
+//       margin-top: 10px;
+//       font-size: 18px;
+//       font-family: "Poppins";
+//       color: black;
+//       font-weight: 400;
+//     }
+//     .offplan-card-div {
+//       display: flex;
+//       flex-wrap: wrap;
+//       justify-content: space-between;
+//       .offplan-card-size-div {
+//         width: 30%;
+//       }
+//     }
+//   }
+// }
+// @media screen and (max-width: 600px) {
+//   .offplan-main-container-1 {
+//     .offplans-projects {
+//       width: 90%;
+//       margin: auto;
+//       .Heading {
+//         font-size: 35px;
+//         font-family: "Poppins";
+//         color: black;
+//         font-weight: 700;
+//         margin-top: 20px;
+//       }
+//       .sub-heading {
+//         margin-top: 10px;
+//         font-size: 18px;
+//         font-family: "Poppins";
+//         color: black;
+//         font-weight: 400;
+//       }
+//       .offplan-card-div {
+//         display: flex;
+//         flex-wrap: wrap;
+//         justify-content: space-between;
+
+//         .offplan-card-size-div {
+//           width: 100%;
+//         }
+//       }
+//     }
+//   }
+// }

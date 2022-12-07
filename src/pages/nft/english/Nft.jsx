@@ -1,38 +1,9 @@
 import './nft.scss';
 import Header from '../../../components/header';
-import SocialPanel from '../../../components/socialpanel';
-import Footer from '../../../components/footer';
 import { MoveToTop } from '../../../components/movetotop';
 import { useEffect } from 'react';
 import FooterNew from '../../../components/footerNew';
 import { useLocation } from 'react-router-dom';
-
-const card1 = [
-  {
-    heading:
-      '10 Hilarious Cartoons That Depict Real-Life Problems of Programmers',
-    description:
-      'Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.',
-    date: 'AUGust 13, 2021 ',
-    image: '/assets/image/blog1.jpg',
-  },
-  {
-    heading:
-      '10 Hilarious Cartoons That Depict Real-Life Problems of Programmers',
-    description:
-      'Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.',
-    date: 'AUGust 13, 2021 ',
-    image: '/assets/image/blog2.jpg',
-  },
-  {
-    heading:
-      '10 Hilarious Cartoons That Depict Real-Life Problems of Programmers',
-    description:
-      'Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.',
-    date: 'AUGust 13, 2021 ',
-    image: '/assets/image/blog3.jpg',
-  },
-];
 
 const BlogCard = ({ date, heading, description, image }) => {
   let newDate = new Date(date);
@@ -70,8 +41,12 @@ const Nft = props => {
       <Header />
       <div className="nft-showcase">
         <h1 className="nft-header">{props.blog.title}</h1>
-        <p className="date">{ newDate.toDateString()}</p>
-        <img className="nft-main-image" src={props.blog.images} alt="nft" />
+        <p className="date">{newDate.toDateString()}</p>
+        <img
+          className="nft-main-image rounded"
+          src={props.blog.image}
+          alt="nft"
+        />
         <div className="nft-content">
           <p>{props.blog.description}</p>
         </div>

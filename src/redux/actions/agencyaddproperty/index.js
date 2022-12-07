@@ -29,6 +29,9 @@ import {
   DELETE_IMAGES_AGENT_PROPERTY,
   DELETE_IMAGES_AGENT_PROPERTY_STARTED,
   DELETE_IMAGES_AGENT_PROPERTY_ERROR,
+  GET_CITY_AGENCY_PROP_ERROR,
+  GET_CITY_AGENCY_PROP_STARTED,
+  GET_CITY_AGENCY_PROP,
 } from '../../constants';
 
 export const changeAgencyPropertyInput = payload => {
@@ -91,6 +94,7 @@ export const getAgencyAgentProperty = () => async dispatch => {
         },
       }
     );
+
     dispatch({
       type: GET_AGENCY_AGENT_PROPERTY,
       payload: res.data?.data,
@@ -315,5 +319,36 @@ export const deleteAgencyPropertyImages = id => async dispatch => {
         payload: id,
       });
     } else dispatch(deleteAgencyPropertyImagesError());
+  }
+};
+
+// CITY
+
+const getCityAgencyPropStarted = () => {
+  return {
+    type: GET_CITY_AGENCY_PROP_STARTED,
+  };
+};
+
+const getCityAgencyPropError = () => {
+  return {
+    type: GET_CITY_AGENCY_PROP_ERROR,
+  };
+};
+
+export const getCityAgencyProp = () => async dispatch => {
+  try {
+    dispatch(getCityAgencyPropStarted());
+    const res = await axios.get(`/api/city`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    dispatch({
+      type: GET_CITY_AGENCY_PROP,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getCityAgencyPropError());
   }
 };

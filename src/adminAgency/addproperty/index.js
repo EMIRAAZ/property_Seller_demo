@@ -12,6 +12,7 @@ import {
   getAgencyTaglineProperty,
   deleteAgencyPropertyImages,
   addAgencyPropertyImages,
+  getCityAgencyProp,
 } from '../../redux/actions';
 
 const mapStateToProps = state => {
@@ -46,6 +47,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(deleteAgencyPropertyImages(payload)),
     addAgencyPropertyImages: payload =>
       dispatch(addAgencyPropertyImages(payload)),
+    getCityAgencyProp: () => dispatch(getCityAgencyProp()),
   };
 };
 

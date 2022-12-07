@@ -2,7 +2,6 @@ import "./propertyview.scss";
 import Header from "../../../components/header/english/Header";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import BasicButton from "../../../components/button/BasicButton";
 import RarrowIcon from "../../../components/svg/rarrow";
 import LarrowIcon from "../../../components/svg/larrow";
 import Bed from "../../../components/svg/bed";
@@ -21,14 +20,14 @@ import SimilarProperty from "../../../components/similarproperty";
 
 const PropertyView = (props) => {
   let location = useLocation();
+  const getID = () => location.pathname.split("/").pop();
 
   const { property } = props;
 
   useEffect(() => {
     props.getPropertyByID(getID());
-  }, []);
+  }, [getID()]);
 
-  const getID = () => location.pathname.split("/").pop();
   const [content, setContent] = useState(true);
   const [read, setRead] = useState(false);
 
@@ -220,7 +219,7 @@ const PropertyView = (props) => {
             </div>
             <hr />
             <div className="details-three">
-              <p className="head">{property.mainTitle} Description</p>
+              <p className="head">Description</p>
               <p className="description">
                 {getDescription(property.description)}
               </p>
@@ -284,28 +283,28 @@ const PropertyView = (props) => {
             <div className="agent-card">
               <div className="top-header-agent">
                 <div className="agent-details">
-                  <p style={{ color: "grey" }}>Contact Agent</p>
+                  <p style={{ color: "black" }}>Contact Agent</p>
 
                   {property && property.agent ? (
                     <>
-                      <p>{property.agent.agentName}</p>
+                      <p style={{ marginTop: "10px" }}>
+                        <span style={{ color: "grey" }}>Name : </span>
+                        {property.agent.agentName}
+                      </p>
 
-                      <h1>
-                        Response time :
-                        <span style={{ color: "black" }}>
-                          {" "}
-                          within 5 minutes
-                        </span>
+                      <h1 style={{ color: "black", marginTop: "10px" }}>
+                        Response time :{" "}
+                        <span style={{ color: "grey" }}>Within 5 minutes</span>
                       </h1>
-                      <h1>
-                        Languages :{" "}
-                        <span style={{ color: "black" }}>
+                      <h1 style={{ color: "black" }}>
+                        Languages :
+                        <span style={{ color: "grey" }}>
                           {property.agent.languages}{" "}
                         </span>
                       </h1>
-                      <h1>
+                      <h1 style={{ color: "black" }}>
                         Experience :{" "}
-                        <span style={{ color: "black" }}>
+                        <span style={{ color: "grey" }}>
                           {property.agent.yearsOfExperience}{" "}
                         </span>
                       </h1>
@@ -346,7 +345,18 @@ const PropertyView = (props) => {
                 </div>
                 <div
                   className="service-btn-property phone"
-                  onClick={() => window.open("tel:+971521278701", "_blank")}
+                  // onClick={() => window.open("tel:+971553011274", "_blank")}
+
+                  onClick={() =>
+                    window.open(
+                      `https://wa.me/+971521278701/?text=Hello Property Assistant. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${property.id}
+              %0a%0aPrice: AED ${property.price}
+              %0aLocation: ${property.address.city}
+                
+                %0aReference: ${property.id}
+                %0a%0aPlease call me`
+                    )
+                  }
                 >
                   <Phone
                     width="17"
@@ -354,7 +364,7 @@ const PropertyView = (props) => {
                     viewBox="0 0 15 15"
                     fill="#2f70ff"
                   />
-                  Phone
+                  Callback
                 </div>
                 <div
                   className="service-btn-property email"

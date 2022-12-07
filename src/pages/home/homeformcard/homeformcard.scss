@@ -38,36 +38,36 @@
     .property {
       grid-row-start: 3;
       grid-column-start: 1;
-      grid-column-end: 3;
+      grid-column-end: 5;
     }
     .furnish-home {
-      grid-row-start: 3;
-      grid-column-start: 3;
+      grid-row-start: 4;
+      grid-column-start: 1;
       grid-column-end: 5;
     }
     .price-from {
-      grid-row-start: 4;
+      grid-row-start: 5;
       grid-column-start: 1;
       grid-column-end: 3;
     }
     .price-to {
-      grid-row-start: 4;
+      grid-row-start: 5;
       grid-column-start: 3;
       grid-column-end: 5;
     }
     .bed-home {
-      grid-row-start: 5;
+      grid-row-start: 6;
       grid-column-start: 1;
       grid-column-end: 3;
     }
     .bath-home {
-      grid-row-start: 5;
+      grid-row-start: 6;
       grid-column-start: 3;
       grid-column-end: 5;
     }
 
     .home-search-btn {
-      grid-row-start: 6;
+      grid-row-start: 7;
       grid-column-start: 1;
       grid-column-end: 5;
       font-weight: 700;
@@ -106,17 +106,18 @@
         grid-column-start: 1;
         grid-column-end: 3;
       }
-      .furnish-home {
+
+      .price-from {
         grid-row-start: 2;
         grid-column-start: 3;
         grid-column-end: 4;
       }
-      .price-from {
+      .price-to {
         grid-row-start: 2;
         grid-column-start: 4;
         grid-column-end: 6;
       }
-      .price-to {
+      .furnish-home {
         grid-row-start: 3;
         grid-column-start: 1;
         grid-column-end: 2;

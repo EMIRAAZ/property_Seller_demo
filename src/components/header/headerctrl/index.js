@@ -6,28 +6,26 @@ export function HeaderCtrl() {
 
   return (
     <div
-      className="flex-1 justify-around sm:pt-2.5"
+      className="flex-1 justify-around sm:pt-2.5 relative"
       style={{ color: location.pathname === '/' ? '#ffff' : '#000' }}
     >
       <HeaderSelect
-        customClass="mx-2 cursor-pointer sm:hidden"
+        customClass="cursor-pointer sm:hidden -top-1"
         name="English"
-        flag="US"
         options={[
           {
             name: 'English',
             type: 'en',
-            element: 'US',
           },
           {
             name: 'Arabic',
             type: 'ar',
-            element: 'AE',
           },
         ]}
       />
+
       <HeaderSelect
-        customClass="mx-2 cursor-pointer sm:hidden"
+        customClass="mx-8 cursor-pointer sm:hidden"
         name="UAE"
         flag="AE"
         options={[
@@ -62,15 +60,18 @@ export function HeaderCtrl() {
             element: 'GE',
           },
           {
-            name: 'ISTABUL',
-            type: 'ISTABUL',
+            name: 'TURKEY',
+            type: 'TURKEY',
             element: 'TR',
           },
         ]}
       />
-      <span className="mx-2 cursor-pointer sm:hidden">Log in</span>
+
+      <span className="mx-2 cursor-pointer text-sm sm:border sm:rounded-sm sm:px-2 sm:py-0.5">
+        Log in
+      </span>
       <span
-        className={`mx-2 border rounded-sm px-2 py-1 cursor-pointer ${
+        className={`mx-2 border rounded-sm px-2 py-1 cursor-pointer sm:hidden ${
           location.pathname === '/' ? 'border-white' : 'border-black'
         } `}
       >

@@ -22,7 +22,7 @@ const ChipSelect = ({
   };
 
   const onClickOption = name => {
-    onChange([...(value && value.length ? value : []), name]);
+    onChange([...(value && value.length ? value : []), name.toLowerCase()]);
     dropdownClass === 'hide'
       ? setdropdownClass('show')
       : setdropdownClass('hide');

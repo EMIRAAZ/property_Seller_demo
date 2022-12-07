@@ -31,6 +31,7 @@
         margin-left: 6px;
         margin-right: 6px;
         border: 1px solid white;
+        display: none;
 
         .item-name {
           font-family: 'Poppins';
@@ -67,6 +68,7 @@
         width: 100% !important;
         margin-top: 20px;
         border-radius: 10px;
+
         .text-div {
           width: 80%;
           padding: 10px;
@@ -74,6 +76,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: rgba(73, 73, 73, 0.867);
             font-size: 12px;
+            display:none
           }
           .heading-news-item {
             font-family: 'Poppins';

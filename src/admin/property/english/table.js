@@ -20,8 +20,16 @@ export const tableHeader = [
       );
     },
   },
-  { field: 'description', headerName: 'Description', minWidth: 450 },
+  { field: 'description', headerName: 'Description', minWidth: 400 },
   { field: 'price', headerName: 'Price' },
+  {
+    field: 'referenceNo',
+    headerName: 'Reference Id',
+    minWidth: 120,
+    renderCell: params => {
+      return <p className="id">{params.row.referenceNo}</p>;
+    },
+  },
   {
     field: 'updatedAt',
     headerName: 'Date',

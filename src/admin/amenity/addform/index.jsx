@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { checkIfAllKeyHasValue } from '../../../utils';
 import SingleImageUpload from '../../../components/singleimageupload';
 
-const keyArr = ['name', 'amenityLogo'];
+const keyArr = ['name'];
 
 const AddForm = ({
   addAmenity,
@@ -70,7 +70,6 @@ const AddForm = ({
       <SingleImageUpload
         name="amenityLogo"
         label="Amenity Logo"
-        required
         value={amenityValue.amenityLogo}
         onChange={addAmenityLogo}
         onDelete={deleteAmenityLogo}

@@ -37,15 +37,15 @@ const HomeFormCard = props => {
           bgColor="white"
           border
           customClass="emirate"
-          name="Emirate"
+          name="Select Emirate"
           onChange={value => onInputChange('emirate', value)}
           options={[
             { name: 'Abu Dhabi', value: 'Abu Dhabi' },
             { name: 'Dubai', value: 'Dubai' },
             { name: 'Sharjah', value: 'Sharjah' },
             { name: 'Ajman', value: 'Ajman' },
-            { name: 'Ras Al-Khaimah', value: 'Ras Al-Khaimah' },
-            { name: 'Umm Al-Quwain', value: 'Umm Al-Quwain' },
+            { name: 'Ras Al Khaimah', value: 'Ras Al Khaimah' },
+            { name: 'Umm Al Quwain', value: 'Umm Al Quwain' },
             { name: 'Fujairah', value: 'Fujairah' },
           ]}
         />
@@ -53,7 +53,7 @@ const HomeFormCard = props => {
           bgColor="white"
           border
           customClass="search"
-          name="Search City, Building, Community .."
+          name="Search City, Building, Reference Id .."
           onChange={value => onInputChange('location', value)}
           onArrayChange={value => onInputChange('searchArray', value)}
           leftIcon={LocationIcon}
@@ -73,15 +73,22 @@ const HomeFormCard = props => {
           name="Property Type"
           onChange={value => onInputChange('propertyType', value)}
           options={[
-            { name: 'Apartments', value: 'apartment' },
-            { name: 'Villas', value: 'villas' },
-            { name: 'Townhouse', value: 'townhouse' },
-            { name: 'Penthouse', value: 'penthouse' },
-            { name: 'Full Building', value: 'fullbuilding' },
-            { name: 'Hotel Apartment', value: 'hotelapartment' },
-            { name: 'Compound', value: 'compound' },
-            { name: 'Duplex', value: 'duplex' },
-            { name: 'Full Floor', value: 'fullfloor' },
+            { name: 'Apartment', value: 'Apartment' },
+            { name: 'Villa', value: 'Villa' },
+            { name: 'Townhouse', value: 'Townhouse' },
+            { name: 'Penthouse', value: 'Penthouse' },
+            { name: 'Compound', value: 'Compound' },
+            { name: 'Duplex', value: 'Duplex' },
+            { name: 'Full Floor', value: 'Full Floor' },
+            { name: 'Half Floor', value: 'Half Floor' },
+            { name: 'Whole Building', value: 'Whole Building' },
+            { name: 'Land', value: 'Land' },
+            { name: 'Bulk Sale Unit', value: 'Bulk Sale Unit' },
+            { name: 'Bungalow', value: 'Bungalow' },
+            {
+              name: 'Hotel & Hotel Apartment',
+              value: 'Hotel & Hotel Apartment',
+            },
           ]}
         />
         <BasicSelect

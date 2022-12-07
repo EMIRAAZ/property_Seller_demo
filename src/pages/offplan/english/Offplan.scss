@@ -1,6 +1,6 @@
-.main-off-container{
-  background-color:  #F3F3F3;
-  .off-heading{
+.main-off-container {
+  background-color: #ffffff;
+  .off-heading {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -11,7 +11,7 @@
   }
   .categories {
     display: flex;
-    margin-left:2%;
+    margin-left: 2%;
     margin-top: 2%;
     // overflow-x: scroll;
     // -ms-overflow-style: none;
@@ -22,34 +22,31 @@
 
     .item-div {
       padding: 6px 20px;
-      background-color: #F3F3F3;
+      background-color: #f3f3f3;
       cursor: pointer;
       border-radius: 15px;
       flex-shrink: 0;
       margin-left: 6px;
       margin-right: 6px;
-      border: 1px solid #1FA0E9;
+      border: 1px solid #1fa0e9;
 
       .item-name {
         font-family: 'Poppins';
         font-size: 15px;
         font-weight: 500;
-        
       }
 
       &:hover {
-        color:white;
-        background-color: #1FA0E9;
+        color: white;
+        background-color: #1fa0e9;
         border: 1px solid #2f70ff;
-      
       }
     }
-    &::after{
-      color:#1FA0E9;
+    &::after {
+      color: #1fa0e9;
     }
-    
   }
-  .off-found{
+  .off-found {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -58,7 +55,7 @@
     letter-spacing: -0.02em;
     color: #979797;
   }
-  .offplan-container{
+  .offplan-container {
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
@@ -66,11 +63,10 @@
 }
 
 @media screen and (max-width: 600px) {
-
-  .main-off-container{
-    background-color:  #F3F3F3;
+  .main-off-container {
+    background-color: #f3f3f3;
     margin: 0;
-    .off-heading{
+    .off-heading {
       font-family: 'Poppins';
       font-style: normal;
       font-weight: 700;
@@ -81,8 +77,8 @@
     }
     .categories {
       display: flex;
-      margin:0;
-      margin-left:2%;
+      margin: 0;
+      margin-left: 2%;
       margin-top: 1%;
       overflow-x: scroll;
       -ms-overflow-style: none;
@@ -90,38 +86,35 @@
       -webkit-overflow-scrolling: touch;
       scroll-snap-type: x mandatory;
       // padding-left: 120px;
-  
+
       .item-div {
         padding: 6px 20px;
-        background-color: #F3F3F3;
+        background-color: #f3f3f3;
         cursor: pointer;
         border-radius: 15px;
         flex-shrink: 0;
-        margin:0;
+        margin: 0;
         margin-left: 6px;
         margin-right: 6px;
-        border: 1px solid #1FA0E9;
-  
+        border: 1px solid #1fa0e9;
+
         .item-name {
           font-family: 'Poppins';
           font-size: 15px;
           font-weight: 500;
-          
         }
-  
+
         &:hover {
-          color:white;
-          background-color: #1FA0E9;
+          color: white;
+          background-color: #1fa0e9;
           border: 1px solid #2f70ff;
-        
         }
       }
-      &::after{
-        color:#1FA0E9;
+      &::after {
+        color: #1fa0e9;
       }
-      
     }
-    .off-found{
+    .off-found {
       font-family: 'Poppins';
       font-style: normal;
       font-weight: 500;
@@ -130,15 +123,14 @@
       letter-spacing: -0.02em;
       color: #979797;
     }
-    .offplan-container{
+    .offplan-container {
       display: flex;
-      flex-wrap: wrap;
-      margin: 0px;
+      width: 100%;
+      
+      justify-content: center;
     }
   }
-
 }
-
 
 // .offplan-main-container-1 {
 //   .offplan-header-class {

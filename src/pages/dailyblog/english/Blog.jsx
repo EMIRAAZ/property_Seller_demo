@@ -7,7 +7,7 @@ import { MoveToTop } from '../../../components/movetotop';
 import FooterNew from '../../../components/footerNew';
 import { useNavigate } from 'react-router-dom';
 
-export const BlogCard = ({ id, updatedAt, title, images, description }) => {
+export const BlogCard = ({ id, updatedAt, title, image, description }) => {
   let navigate = useNavigate();
 
   const navigateTo = () => {
@@ -20,16 +20,11 @@ export const BlogCard = ({ id, updatedAt, title, images, description }) => {
       <div className="blog-desciption">
         <div className="blog-content">
           <h1 className="blog-heading">{title}</h1>
-          <p className="date">{date.toDateString()}</p>
           <p className="blog-description">{description}</p>
         </div>
       </div>
 
-      <img
-        className="blog-main-image"
-        src={images.length && images[0]}
-        alt="blog"
-      />
+      <img className="blog-main-image rounded" src={image} alt="blog" />
     </div>
   );
 };

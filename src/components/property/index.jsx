@@ -157,10 +157,20 @@ const Property = (props) => {
           </div>
           <div
             className="service-btn-property phone"
-            onClick={() => window.open("tel:+971553011274", "_blank")}
+            // onClick={() => window.open("tel:+971553011274", "_blank")}
+            onClick={() =>
+              window.open(
+                `https://wa.me/+971553011274/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${props.id}
+              %0a%0aPrice: AED ${props.price}
+              %0aLocation: ${props.address.city}
+                
+                %0aReference: ${props.id}
+                %0a%0aPlease call me`
+              )
+            }
           >
             <Phone width="17" height="17" viewBox="0 0 15 15" fill="#2f70ff" />
-            Phone
+            Callback
           </div>
 
           <div
