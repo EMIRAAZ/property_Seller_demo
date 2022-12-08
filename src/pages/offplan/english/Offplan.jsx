@@ -35,7 +35,7 @@ const Offplan = props => {
           data={props.offplan.data}
           propertyCallApi={() => {}}
           count={props.offplan.count}
-          type="OFFPLAN"
+          type="PROPERTY"
           iQuery={`limit=${6}&offset=${0}`}
           isPagination
         />

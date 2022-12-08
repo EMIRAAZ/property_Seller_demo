@@ -23,7 +23,7 @@ const OffplanCard = props => {
           <p className="offplan-head">{props.title}</p>
           <div className="of-ad">
             <p className="of-ad-info1">{props.address.building}</p>
-            <img className="of-ad-info2" src="EMAAR_WORD_MARK_EN.png"></img>
+            {/* <img className="of-ad-info2" src="EMAAR_WORD_MARK_EN.png"></img> */}
           </div>
           <p className="of-ty">{props.address.city}</p>
           <div className="off-info">
