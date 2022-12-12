@@ -76,7 +76,7 @@ const Property = (props) => {
         </div>
         <div className="address">
           <LocationIcon
-            fill="#2f70ff"
+            fill="#6565D6"
             opacity="1"
             width="9"
             height="12"
@@ -152,7 +152,7 @@ const Property = (props) => {
               window.open("mailto:hello@propertyassistant.ae", "_blank")
             }
           >
-            <Mail width="15" height="15" viewBox="0 0 15 15" fill="#2f70ff" />
+            <Mail width="15" height="15" viewBox="0 0 15 15" fill="#6565D6" />
             Email
           </div>
           <div
@@ -169,7 +169,7 @@ const Property = (props) => {
               )
             }
           >
-            <Phone width="17" height="17" viewBox="0 0 15 15" fill="#2f70ff" />
+            <Phone width="17" height="17" viewBox="0 0 15 15" fill="#6565D6" />
             Callback
           </div>
 
@@ -190,7 +190,7 @@ const Property = (props) => {
               width="17"
               height="17"
               viewBox="0 0 15 15"
-              fill="#2f70ff"
+              fill="#6565D6"
             />
             WhatsApp
           </div>

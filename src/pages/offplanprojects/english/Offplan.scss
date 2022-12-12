@@ -1,7 +1,7 @@
-.offplan-projects-container{
+.offplan-projects-container {
   background-color: #ffffff;
   .off-heading {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
     font-size: 64.9727px;
@@ -31,7 +31,7 @@
       border: 1px solid #1fa0e9;
 
       .item-name {
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-size: 15px;
         font-weight: 500;
       }
@@ -39,7 +39,7 @@
       &:hover {
         color: white;
         background-color: #1fa0e9;
-        border: 1px solid #2f70ff;
+        border: 1px solid #6565d6;
       }
     }
     &::after {
@@ -47,7 +47,7 @@
     }
   }
   .off-found {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 500;
     font-size: 32.4864px;
@@ -67,7 +67,7 @@
     background-color: #f3f3f3;
     margin: 0;
     .off-heading {
-      font-family: 'Poppins';
+      font-family: "Poppins";
       font-style: normal;
       font-weight: 700;
       font-size: 64.9727px;
@@ -99,7 +99,7 @@
         border: 1px solid #1fa0e9;
 
         .item-name {
-          font-family: 'Poppins';
+          font-family: "Poppins";
           font-size: 15px;
           font-weight: 500;
         }
@@ -107,7 +107,7 @@
         &:hover {
           color: white;
           background-color: #1fa0e9;
-          border: 1px solid #2f70ff;
+          border: 1px solid #6565d6;
         }
       }
       &::after {
@@ -115,7 +115,7 @@
       }
     }
     .off-found {
-      font-family: 'Poppins';
+      font-family: "Poppins";
       font-style: normal;
       font-weight: 500;
       font-size: 32.4864px;
@@ -126,7 +126,7 @@
     .offplan-projects-container {
       display: flex;
       width: 100%;
-      
+
       justify-content: center;
     }
   }

@@ -1,5 +1,5 @@
 .header-english {
-  font-family: 'Poppins';
+  font-family: "Poppins";
 
   .web-sidebar {
     display: none;
@@ -40,7 +40,7 @@
         padding: 10px;
         padding-left: 20px;
         border-radius: 5px;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-weight: 600;
         font-size: 12px;
         cursor: pointer;
@@ -81,7 +81,7 @@
 
     .company-name {
       padding: 11px 10px 0px 14px;
-      color: #2f70ff;
+      color: #6565d6;
       letter-spacing: 0.5px;
       display: flex;
       flex-direction: column;
@@ -89,7 +89,7 @@
       .main-name {
         font-size: 21px;
         cursor: pointer;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-weight: 700;
         line-height: 37px;
         letter-spacing: -0.6182856559753418px;
@@ -127,7 +127,7 @@
 
 @media only screen and (min-width: 600px) {
   .header-english {
-    font-family: 'Poppins';
+    font-family: "Poppins";
 
     .header-list {
       margin: 0;
@@ -143,7 +143,7 @@
 
       .company-name {
         padding: 0px 15px 0px 0px;
-        color: #2f70ff;
+        color: #6565d6;
         display: flex;
         flex-direction: column;
         left: 15px;
@@ -151,7 +151,7 @@
 
         .main-name {
           font-size: 24.5px;
-          font-family: 'Poppins';
+          font-family: "Poppins";
           line-height: 37px;
           letter-spacing: -0.6182856559753418px;
           span {
@@ -267,7 +267,7 @@
           padding: 15px;
           padding-left: 20px;
           border-radius: 5px;
-          font-family: 'Poppins';
+          font-family: "Poppins";
           font-weight: 600;
           font-size: 14px;
           cursor: pointer;
