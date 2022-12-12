@@ -1,31 +1,19 @@
-.offplan-card-container{
-
-
-
+.offplan-card-container {
   margin-top: 20px;
   margin-left: 10px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 
-
-  .offplan-card-image{
+  .offplan-card-image {
     width: 700px;
     height: 580px;
-
   }
-  .offplan-main-div{
-      
-
-    .offplan-description{
+  .offplan-main-div {
+    .offplan-description {
       margin-left: 5%;
       width: 95%;
-      
 
-
-      .offplan-head{
-
-  
-
-        font-family: 'Poppins';
+      .offplan-head {
+        font-family: "Poppins";
         font-style: normal;
         font-weight: 700;
         font-size: 20.2039px;
@@ -33,7 +21,7 @@
         margin: 1%;
       }
 
-      .off-info{
+      .off-info {
         border: 1.30016px solid rgba(36, 37, 39, 0.35);
         border-radius: 10.4013px;
         width: 90%;
@@ -43,7 +31,7 @@
         margin: 1%;
         font-size: 15.8026px;
 
-        .off-info-box1{
+        .off-info-box1 {
           border-right: 1px solid black;
           width: 30%;
           display: flex;
@@ -52,9 +40,8 @@
           font-size: 12.8026px;
           font-weight: 500;
           color: #898989;
-        
         }
-        .off-info-box2{
+        .off-info-box2 {
           border-left: 1px solid black;
           width: 30%;
           display: flex;
@@ -63,10 +50,8 @@
           font-size: 12.8026px;
           font-weight: 500;
           color: #898989;
-          
-
         }
-        .off-info-box{
+        .off-info-box {
           width: 30%;
           display: flex;
           align-items: center;
@@ -74,26 +59,21 @@
           font-size: 12.8026px;
           font-weight: 500;
           color: #898989;
-
         }
-
-
       }
-      .of-des{
-        font-family: 'Poppins';
+      .of-des {
+        font-family: "Poppins";
         font-style: normal;
         font-weight: 200;
         font-size: 15.8026px;
         line-height: 25px;
         /* or 175% */
 
-
         color: #898989;
         margin: 1%;
-        
       }
-      .of-ad{
-        font-family: 'Poppins';
+      .of-ad {
+        font-family: "Poppins";
         font-style: normal;
         font-weight: 500;
         font-size: 13.9394px;
@@ -101,40 +81,35 @@
 
         display: flex;
         flex-direction: row;
-       justify-content: space-between;
-       margin: 1%;
+        justify-content: space-between;
+        margin: 1%;
 
-        .of-ad-info2{
+        .of-ad-info2 {
           margin-right: 10%;
         }
       }
-      .of-ty{
-        font-family: 'Poppins';
+      .of-ty {
+        font-family: "Poppins";
         font-style: normal;
         font-weight: 600;
         font-size: 14.0392px;
         line-height: 130.52%;
         /* identical to box height, or 28px */
-        
-        
+
         color: #979797;
         margin: 1%;
       }
-
-     
-     
     }
-    .off-card-footer{
+    .off-card-footer {
       display: flex;
-      justify-content:space-between;
+      justify-content: space-between;
 
       width: 95%;
       margin: 10px;
       margin-left: 3%;
 
-
-      .shortlist{
-        background: #F3F3F3;
+      .shortlist {
+        background: #f3f3f3;
         border-radius: 11.2453px;
         display: flex;
 
@@ -143,118 +118,94 @@
         padding: 0px;
         width: 25%;
 
-        .shortlist-info{
-          
-
-          font-family: 'Poppins';
+        .shortlist-info {
+          font-family: "Poppins";
           font-style: normal;
           font-weight: 600;
           font-size: 14.6792px;
           line-height: 1.52%;
-          
-
 
           color: #898989;
         }
-    
       }
-      .amount{
+      .amount {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-style: normal;
         font-weight: 700;
         font-size: 24.8696px;
         line-height: 57px;
         color: #242527;
       }
-      .blue-arrow{
+      .blue-arrow {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #1FA0E9;
+        background-color: #6565d6;
         padding: 5%;
-       
       }
     }
-
   }
 }
 
 @media screen and (max-width: 600px) {
-
-  .offplan-card-container{
-
-
-
+  .offplan-card-container {
     margin-top: 20px;
     margin-left: 0px;
-    background-color: #FFFFFF;
-  
-  
-    .offplan-card-image{
+    background-color: #ffffff;
+
+    .offplan-card-image {
       width: 700px;
       height: 580px;
-  
     }
-    .offplan-main-div{
-        
-  
-      .offplan-description{
+    .offplan-main-div {
+      .offplan-description {
         margin-left: 5%;
         width: 95%;
-        
-  
-  
-        .offplan-head{
-  
-    
-  
-          font-family: 'Poppins';
+
+        .offplan-head {
+          font-family: "Poppins";
           font-style: normal;
           font-weight: 700;
           font-size: 20.2039px;
           line-height: 200.52%;
           margin: 1%;
         }
-  
-        .off-info{
+
+        .off-info {
           border: 1.30016px solid rgba(36, 37, 39, 0.35);
           border-radius: 10.4013px;
           width: 90%;
           display: flex;
           justify-content: space-evenly;
           padding: 1%;
-          margin-top:2%;
-  
-          .off-info-box1{
+          margin-top: 2%;
+
+          .off-info-box1 {
             border-right: 1px solid black;
             width: 30%;
             display: flex;
             align-items: center;
             justify-content: center;
-          
           }
-          .off-info-box2{
+          .off-info-box2 {
             border-left: 1px solid black;
             width: 30%;
             display: flex;
             align-items: center;
             justify-content: center;
           }
-          .off-info-box{
+          .off-info-box {
             width: 30%;
             display: flex;
             align-items: center;
             justify-content: center;
-  
           }
-  
-  
         }
-        .of-des{
-          font-family: 'Poppins';
+        .of-des {
+          font-family: "Poppins";
           font-style: normal;
           font-weight: 500;
           font-size: 13.8026px;
@@ -262,111 +213,87 @@
           margin: 2%;
           margin-top: 10px;
           /* or 175% */
-  
-  
+
           color: #898989;
-          
-          
         }
-        .of-ad{
-          font-family: 'Poppins';
+        .of-ad {
+          font-family: "Poppins";
           font-style: normal;
           font-weight: 500;
           font-size: 13.9394px;
           line-height: 130.52%;
-  
+
           display: flex;
           flex-direction: row;
-         justify-content: space-between;
-         margin: 1%;
-  
-          .of-ad-info2{
+          justify-content: space-between;
+          margin: 1%;
+
+          .of-ad-info2 {
             margin-right: 10%;
           }
         }
-        .of-ty{
-          font-family: 'Poppins';
+        .of-ty {
+          font-family: "Poppins";
           font-style: normal;
           font-weight: 600;
           font-size: 12.0392px;
           line-height: 130.52%;
           /* identical to box height, or 28px */
-          
-          
+
           color: #979797;
           margin: 1%;
         }
-  
-       
-       
       }
-      .off-card-footer{
+      .off-card-footer {
         display: flex;
-        justify-content:space-between;
-  
+        justify-content: space-between;
+
         width: 95%;
         margin: 10px;
         margin-left: 3%;
-  
-  
-        .shortlist{
-          background: #F3F3F3;
+
+        .shortlist {
+          background: #f3f3f3;
           border-radius: 11.2453px;
           display: flex;
-  
+
           justify-content: space-evenly;
           align-items: center;
           padding: 0px;
           width: 25%;
-  
-          .shortlist-info{
-            
-  
-            font-family: 'Poppins';
+
+          .shortlist-info {
+            font-family: "Poppins";
             font-style: normal;
             font-weight: 600;
             font-size: 12.6792px;
             line-height: 1.52%;
-            
-  
-  
+
             color: #898989;
           }
-      
         }
-        .amount{
+        .amount {
           display: flex;
           justify-content: center;
           align-items: center;
-          font-family: 'Poppins';
+          font-family: "Poppins";
           font-style: normal;
           font-weight: 700;
           font-size: 20.8696px;
           line-height: 57px;
           color: #242527;
         }
-        .blue-arrow{
+        .blue-arrow {
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: #1FA0E9;
+          background-color: #6565d6;
           padding: 5%;
-         
         }
       }
-  
     }
   }
-  
-
 }
-
-
-
-
-
-
-
 
 // .image-container {
 //   width: 100%;
