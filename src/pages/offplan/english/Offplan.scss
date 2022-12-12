@@ -1,7 +1,7 @@
 .main-off-container {
   background-color: #ffffff;
   .off-heading {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
     font-size: 64.9727px;
@@ -28,26 +28,26 @@
       flex-shrink: 0;
       margin-left: 6px;
       margin-right: 6px;
-      border: 1px solid #1fa0e9;
+      border: 1px solid#6565d6;
 
       .item-name {
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-size: 15px;
         font-weight: 500;
       }
 
       &:hover {
         color: white;
-        background-color: #1fa0e9;
-        border: 1px solid #2f70ff;
+        background-color: #6565d6;
+        border: 1px solid #6565d6;
       }
     }
     &::after {
-      color: #1fa0e9;
+      color: #6565d6;
     }
   }
   .off-found {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 500;
     font-size: 32.4864px;
@@ -67,7 +67,7 @@
     background-color: #f3f3f3;
     margin: 0;
     .off-heading {
-      font-family: 'Poppins';
+      font-family: "Poppins";
       font-style: normal;
       font-weight: 700;
       font-size: 64.9727px;
@@ -96,26 +96,26 @@
         margin: 0;
         margin-left: 6px;
         margin-right: 6px;
-        border: 1px solid #1fa0e9;
+        border: 1px solid#6565d6;
 
         .item-name {
-          font-family: 'Poppins';
+          font-family: "Poppins";
           font-size: 15px;
           font-weight: 500;
         }
 
         &:hover {
           color: white;
-          background-color: #1fa0e9;
-          border: 1px solid #2f70ff;
+          background-color: #6565d6;
+          border: 1px solid #6565d6;
         }
       }
       &::after {
-        color: #1fa0e9;
+        color: #6565d6;
       }
     }
     .off-found {
-      font-family: 'Poppins';
+      font-family: "Poppins";
       font-style: normal;
       font-weight: 500;
       font-size: 32.4864px;
@@ -126,7 +126,7 @@
     .offplan-container {
       display: flex;
       width: 100%;
-      
+
       justify-content: center;
     }
   }

@@ -16,14 +16,14 @@
       left: 10px;
       z-index: 10;
       color: #ffffff;
-      background-color: #2f70ff;
+      background-color: #6565d6;
       height: 27px;
       width: 87px;
       font-size: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Roboto';
+      font-family: "Roboto";
       font-weight: 500;
       padding: 6px 10px;
       border-radius: 4px;
@@ -100,7 +100,7 @@
       border-radius: 3px;
 
       p {
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-weight: 600;
         color: #ffffff;
         font-size: 9px;
@@ -110,20 +110,20 @@
     .price-tag {
       margin-left: 15px;
       margin-top: 6px;
-      color: #2f70ff;
-      font-family: 'Poppins';
+      color: #6565d6;
+      font-family: "Poppins";
       font-size: 13.5px;
       font-weight: 600;
     }
     .property-type-property {
-      font-family: 'Poppins';
+      font-family: "Poppins";
       color: #7e808c;
       font-size: 14px;
       margin-top: 4px;
       margin-left: 15px;
     }
     .main-heading {
-      font-family: 'Poppins';
+      font-family: "Poppins";
       text-transform: capitalize;
       color: #7e808c;
       font-size: 15px;
@@ -138,7 +138,7 @@
     }
 
     .description {
-      font-family: 'Poppins';
+      font-family: "Poppins";
       cursor: pointer;
       font-size: 10px;
       font-weight: 400;
@@ -155,7 +155,7 @@
     .spec {
       display: flex;
       gap: 8px;
-      font-family: 'Poppins';
+      font-family: "Poppins";
       align-items: center;
       font-size: 10.53px;
       font-weight: 400;
@@ -179,7 +179,7 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      font-family: 'Roboto';
+      font-family: "Roboto";
       font-weight: 600;
       font-size: 10px;
       margin: 5px 0px;
@@ -192,8 +192,8 @@
         display: flex;
         gap: 4px;
         align-items: center;
-        background-color: #d3e9fc;
-        color: #2f70ff;
+        background-color: #dfdff7;
+        color: #6565d6;
         justify-content: center;
         border-radius: 5px;
         cursor: pointer;

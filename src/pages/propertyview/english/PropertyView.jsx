@@ -128,7 +128,7 @@ const PropertyView = (props) => {
                     width="18"
                     height="18"
                     viewBox="0 0 17 1"
-                    fill="#2f70ff"
+                    fill="#6565D6"
                   />
                   <div className="ft">
                     <div>Bedrooms:</div>
@@ -141,7 +141,7 @@ const PropertyView = (props) => {
                     className="property-bath"
                     width="18"
                     height="18"
-                    fill="#2f70ff"
+                    fill="#6565D6"
                     viewBox="0 0 17 17"
                   />
                   <div className="ft">
@@ -154,7 +154,7 @@ const PropertyView = (props) => {
                   <Living
                     className="property-living"
                     width="18"
-                    fill="#2f70ff"
+                    fill="#6565D6"
                     height="18"
                     viewBox="0 0 17 14"
                   />
@@ -169,7 +169,7 @@ const PropertyView = (props) => {
                     className="property-area"
                     width="18"
                     height="18"
-                    fill="#2f70ff"
+                    fill="#6565D6"
                     viewBox="0 0 17 16"
                   />
                   <div className="ft">
@@ -339,7 +339,7 @@ const PropertyView = (props) => {
                     width="17"
                     height="17"
                     viewBox="0 0 15 15"
-                    fill="#2f70ff"
+                    fill="#6565D6"
                   />
                   WhatsApp
                 </div>
@@ -362,7 +362,7 @@ const PropertyView = (props) => {
                     width="17"
                     height="17"
                     viewBox="0 0 15 15"
-                    fill="#2f70ff"
+                    fill="#6565D6"
                   />
                   Callback
                 </div>
@@ -376,7 +376,7 @@ const PropertyView = (props) => {
                     width="15"
                     height="15"
                     viewBox="0 0 15 15"
-                    fill="#2f70ff"
+                    fill="#6565D6"
                   />
                   Email
                 </div>

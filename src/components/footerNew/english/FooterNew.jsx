@@ -69,31 +69,31 @@ const DivTwo = () => {
       <h1 className="heading">Helpful Links.</h1>
       <ul>
         <li onClick={() => navigate('/about')}>
-          <RightArrow color="#3270FC " viewBox="12 0 16 8" />
+          <RightArrow color="#6565d6 " viewBox="12 0 16 8" />
           About Us
         </li>
         {/* <li onClick={() => navigate("/aboutfounder")}>
-          <RightArrow color="#3270FC " viewBox="12 0 16 8" />
+          <RightArrow color="#6565d6 " viewBox="12 0 16 8" />
           about founder
         </li> */}
         {/* <li>
-          <RightArrow color="#3270FC " viewBox="12 0 16 8" />
+          <RightArrow color="#6565d6 " viewBox="12 0 16 8" />
           Our Team
         </li>
         <li>
-          <RightArrow color="#3270FC " viewBox="12 0 16 8" />
+          <RightArrow color="#6565d6 " viewBox="12 0 16 8" />
           Our Partners
         </li> */}
         <li onClick={() => navigate('/news')}>
-          <RightArrow color="#3270FC " viewBox="12 0 16 8" />
+          <RightArrow color="#6565d6 " viewBox="12 0 16 8" />
           News
         </li>
         <li onClick={() => navigate('/career')}>
-          <RightArrow color="#3270FC " viewBox="12 0 16 8" />
+          <RightArrow color="#6565d6 " viewBox="12 0 16 8" />
           Careers
         </li>
         <li onClick={() => navigate('/dailyblog')}>
-          <RightArrow color="#3270FC " viewBox="12 0 16 8" />
+          <RightArrow color="#6565d6 " viewBox="12 0 16 8" />
           Blog
         </li>
       </ul>
@@ -105,14 +105,14 @@ const DivThree = () => {
     <div className="div-three">
       <h1 className="heading">Contact info.</h1>
       <p className="sub-heading">
-        <Mail fill="#3270FC" width="10" height="10" customClass="icon" />
+        <Mail fill="#6565d6" width="10" height="10" customClass="icon" />
         &nbsp;&nbsp;Mail &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{' '}
         <span> hello@propertyassistant.ae</span>
       </p>
       <div style={{ display: 'flex' }}>
         <p className="sub-heading">
           <LocationIcon
-            fill="#3270FC"
+            fill="#6565d6"
             opacity="1"
             width="9"
             height="12"
@@ -129,7 +129,7 @@ const DivThree = () => {
       </div>
 
       <p className="sub-heading">
-        <Phone fill="#3270FC" width="15" height="15" customClass="icon3" />
+        <Phone fill="#6565d6" width="15" height="15" customClass="icon3" />
         &nbsp; Phone &nbsp; : <span> +971521278701</span>
       </p>
       <div className="soci">

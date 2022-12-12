@@ -21,7 +21,7 @@ function BottomFixed({ property }) {
             )
           }
         >
-          <Whatsapp width="17" height="17" viewBox="0 0 15 15" fill="#2f70ff" />
+          <Whatsapp width="17" height="17" viewBox="0 0 15 15" fill="#6565D6" />
           WhatsApp
         </div>
         <div
@@ -38,7 +38,7 @@ function BottomFixed({ property }) {
             )
           }
         >
-          <Phone width="17" height="17" viewBox="0 0 15 15" fill="#2f70ff" />
+          <Phone width="17" height="17" viewBox="0 0 15 15" fill="#6565D6" />
           Callback
         </div>
         <div
@@ -47,7 +47,7 @@ function BottomFixed({ property }) {
             window.open("mailto:hello@propertyassistant.ae", "_blank")
           }
         >
-          <Mail width="15" height="15" viewBox="0 0 15 15" fill="#2f70ff" />
+          <Mail width="15" height="15" viewBox="0 0 15 15" fill="#6565D6" />
           Email
         </div>
       </div>

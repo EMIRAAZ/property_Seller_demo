@@ -1,31 +1,31 @@
-import './header.scss';
-import DownArrow from '../../svg/downarrow';
-import HeaderSelect from '../../select/HeaderSelect';
-import HeaderCtrlSelect from '../../select/HeaderCtrlSelect';
-import Close from '../../svg/close';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
-import { HeaderCtrl } from '../headerctrl';
-import HamburgerLogo from '../../svg/hamburger';
+import "./header.scss";
+import DownArrow from "../../svg/downarrow";
+import HeaderSelect from "../../select/HeaderSelect";
+import HeaderCtrlSelect from "../../select/HeaderCtrlSelect";
+import Close from "../../svg/close";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { HeaderCtrl } from "../headerctrl";
+import HamburgerLogo from "../../svg/hamburger";
 
 const Header = ({ customClass }) => {
   const navigate = useNavigate();
   let location = useLocation();
 
-  const getLoc = () => location.pathname.split('/').pop();
-  const [state, changeState] = useState('hide');
+  const getLoc = () => location.pathname.split("/").pop();
+  const [state, changeState] = useState("hide");
   const onSidebarWebToggle = () => {
-    changeState(state === 'hide' ? 'show' : 'hide');
+    changeState(state === "hide" ? "show" : "hide");
   };
 
-  document.addEventListener('scroll', function (e) {
-    if (state === 'show') {
+  document.addEventListener("scroll", function (e) {
+    if (state === "show") {
       onSidebarWebToggle();
     }
   });
 
-  const luxuryPropertyOnClick = type => {
+  const luxuryPropertyOnClick = (type) => {
     navigate(`/luxury-property/${type}`);
   };
 
@@ -36,16 +36,16 @@ const Header = ({ customClass }) => {
           <li onClick={onSidebarWebToggle}>
             <Close />
           </li>
-          <li onClick={() => navigate('/')}>Home</li>
-          <li onClick={() => navigate('/dailyblog')}>Blogs</li>
-          <li onClick={() => navigate('/news')}>News</li>
-          <li onClick={() => navigate('/about')}>About Us</li>
+          <li onClick={() => navigate("/")}>Home</li>
+          <li onClick={() => navigate("/dailyblog")}>Blogs</li>
+          <li onClick={() => navigate("/news")}>News</li>
+          <li onClick={() => navigate("/about")}>About Us</li>
           {/* <li onClick={() => navigate("/aboutfounder")}>About Founder</li> */}
-          <li onClick={() => navigate('/career')}>Careers</li>
-          <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
-          <li onClick={() => navigate('/')}>Land</li>
-          <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li>
-          <li className="simple-list" onClick={() => navigate('/sell')}>
+          <li onClick={() => navigate("/career")}>Careers</li>
+          <li onClick={() => navigate("/terms")}>Teams And Conditions</li>
+          <li onClick={() => navigate("/")}>Land</li>
+          <li onClick={() => navigate("/privacypolicy")}>Privacy Policy</li>
+          <li className="simple-list" onClick={() => navigate("/sell")}>
             Advertise&nbsp;With&nbsp;Us
           </li>
         </ul>
@@ -55,16 +55,16 @@ const Header = ({ customClass }) => {
           <li onClick={onSidebarWebToggle}>
             <Close className="pb-1" />
           </li>
-          <li onClick={() => navigate('/')}>
+          <li onClick={() => navigate("/")}>
             <span className="border rounded-sm px-2 py-0.5 border-black">
               Log In
             </span>
           </li>
-          <li onClick={() => navigate('/')}>Home</li>
-          <li onClick={() => navigate('/about')}>About Us</li>
-          <li onClick={() => navigate('/off-plan')}>Off Plan</li>
+          <li onClick={() => navigate("/")}>Home</li>
+          <li onClick={() => navigate("/about")}>About Us</li>
+          <li onClick={() => navigate("/off-plan")}>Off Plan</li>
           <li>Commercial</li>
-          <li onClick={() => navigate('/listproperty/readytomove')}>Ready</li>
+          <li onClick={() => navigate("/listproperty/readytomove")}>Ready</li>
 
           <li className="-left-2 relative">
             <HeaderCtrlSelect
@@ -72,12 +72,12 @@ const Header = ({ customClass }) => {
               name="English"
               options={[
                 {
-                  name: 'English',
-                  type: 'en',
+                  name: "English",
+                  type: "en",
                 },
                 {
-                  name: 'Arabic',
-                  type: 'ar',
+                  name: "Arabic",
+                  type: "ar",
                 },
               ]}
             />
@@ -89,53 +89,53 @@ const Header = ({ customClass }) => {
               flag="AE"
               options={[
                 {
-                  name: 'UAE',
-                  type: 'UAE',
-                  element: 'AE',
+                  name: "UAE",
+                  type: "UAE",
+                  element: "AE",
                 },
                 {
-                  name: 'SAUDI',
-                  type: 'SAUDI',
-                  element: 'SA',
+                  name: "SAUDI",
+                  type: "SAUDI",
+                  element: "SA",
                 },
                 {
-                  name: 'QATAR',
-                  type: 'QATAR',
-                  element: 'QA',
+                  name: "QATAR",
+                  type: "QATAR",
+                  element: "QA",
                 },
                 {
-                  name: 'BAHRAIN',
-                  type: 'BAHRAIN',
-                  element: 'BH',
+                  name: "BAHRAIN",
+                  type: "BAHRAIN",
+                  element: "BH",
                 },
                 {
-                  name: 'INDIA',
-                  type: 'INDIA',
-                  element: 'IN',
+                  name: "INDIA",
+                  type: "INDIA",
+                  element: "IN",
                 },
                 {
-                  name: 'GEORGIA',
-                  type: 'GEORGIA',
-                  element: 'GE',
+                  name: "GEORGIA",
+                  type: "GEORGIA",
+                  element: "GE",
                 },
                 {
-                  name: 'TURKEY',
-                  type: 'TURKEY',
-                  element: 'TR',
+                  name: "TURKEY",
+                  type: "TURKEY",
+                  element: "TR",
                 },
               ]}
             />
           </li>
-          <li onClick={() => navigate('/dailyblog')}>Blogs</li>
-          <li onClick={() => navigate('/news')}>News</li>
-          <li onClick={() => navigate('/')}>Land</li>
-          <li onClick={() => navigate('/career')}>Careers</li>
+          <li onClick={() => navigate("/dailyblog")}>Blogs</li>
+          <li onClick={() => navigate("/news")}>News</li>
+          <li onClick={() => navigate("/")}>Land</li>
+          <li onClick={() => navigate("/career")}>Careers</li>
           {/* <li onClick={() => navigate('/terms')}>Teams And Conditions</li>
           <li onClick={() => navigate('/privacypolicy')}>Privacy Policy</li> */}
-          <li onClick={() => navigate('/luxury-property')}>
+          <li onClick={() => navigate("/luxury-property")}>
             Luxury Properties
           </li>
-          <li className="simple-list" onClick={() => navigate('/sell')}>
+          <li className="simple-list" onClick={() => navigate("/sell")}>
             List&nbsp;Your&nbsp;Property
           </li>
         </ul>
@@ -145,10 +145,10 @@ const Header = ({ customClass }) => {
           <HamburgerLogo
             width="27"
             height="26"
-            fill={getLoc() === '' ? '#ffffff' : '#2f70ff'}
+            fill={getLoc() === "" ? "#ffffff" : "#6565D6"}
           />
         </li>
-        <li className="company-name absolute" onClick={() => navigate('/')}>
+        <li className="company-name absolute" onClick={() => navigate("/")}>
           {/* {location.pathname === '/' ? (
             <img
               width={200}
@@ -164,20 +164,20 @@ const Header = ({ customClass }) => {
         </li>
         <li
           className={`desktop-li ${
-            location.pathname === '/'
-              ? 'desktop-li-home-margin'
-              : 'desktop-li-margin'
+            location.pathname === "/"
+              ? "desktop-li-home-margin"
+              : "desktop-li-margin"
           }`}
         >
           <ul className="desktop-ul">
-            {location.pathname !== '/' ? (
-              <li className="simple-list buy" onClick={() => navigate('/')}>
+            {location.pathname !== "/" ? (
+              <li className="simple-list buy" onClick={() => navigate("/")}>
                 Home
               </li>
             ) : null}
             <li
               className="simple-list off"
-              onClick={() => navigate('/off-plan')}
+              onClick={() => navigate("/off-plan")}
             >
               Off&nbsp;Plan
             </li>
@@ -186,15 +186,15 @@ const Header = ({ customClass }) => {
                 name="Luxury&nbsp;Properties"
                 onClick={luxuryPropertyOnClick}
                 options={[
-                  { name: 'Villas', type: 'Villa' },
-                  { name: 'Apartments', type: 'Apartment' },
-                  { name: 'Town House', type: 'Townhouse' },
-                  { name: 'Pent House', type: 'Penthouse' },
+                  { name: "Villas", type: "Villa" },
+                  { name: "Apartments", type: "Apartment" },
+                  { name: "Town House", type: "Townhouse" },
+                  { name: "Pent House", type: "Penthouse" },
                 ]}
               />
-              <DownArrow fill={getLoc() === '' ? '#ffffff' : '#000000'} />
+              <DownArrow fill={getLoc() === "" ? "#ffffff" : "#000000"} />
             </li>
-            <li className="simple-list" onClick={() => navigate('/sell')}>
+            <li className="simple-list" onClick={() => navigate("/sell")}>
               List&nbsp;Your&nbsp;Property
             </li>
           </ul>
