@@ -7,13 +7,13 @@
     margin: auto;
     .heading {
       font-size: 35px;
-      font-family: "Poppins";
+      font-family: 'Poppins';
       margin-top: 30px;
     }
     .subheading {
       font-size: 18px;
 
-      font-family: "Poppins";
+      font-family: 'Poppins';
       font-weight: 400;
     }
     .card-div {
@@ -46,12 +46,12 @@
 
             .neigh-name {
               font-size: 20px;
-              font-family: "Poppins";
+              font-family: 'Poppins';
               color: white;
             }
             .neigh-emirate {
               font-size: 15px;
-              font-family: "Poppins";
+              font-family: 'Poppins';
               color: white;
             }
           }
@@ -70,12 +70,9 @@
           padding-bottom: 20px;
           .btn-1 {
             width: 40%;
-            height: 35 px;
-
             padding-top: 10px;
           }
           .btn-2 {
-            height: 35px;
             padding-top: 10px;
             width: 40%;
             background-color: white;

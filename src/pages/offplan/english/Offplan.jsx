@@ -16,7 +16,7 @@ const Offplan = props => {
 
   return (
     <div className="main-off-container">
-      <Header />
+      <Header customClass="header-border-cls" />
       <ListHeading
         className="list-header"
         main="Offplan Properties"
@@ -25,7 +25,7 @@ const Offplan = props => {
 
       <BasicButton
         onClick={() => navigate(`/offplan-projects`)}
-        customClass="absolute top-14 right-5 sm:text-xs"
+        customClass="absolute top-15 right-5 sm:text-xs"
         children="Offplan Projects"
       />
       <div className="offplan-container">
