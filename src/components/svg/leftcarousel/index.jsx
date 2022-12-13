@@ -1,8 +1,8 @@
 const LeftCarousel = ({
   customClass,
-  width = '32',
-  height = '51',
-  viewBox = '0 0 52 51',
+  width = "32",
+  height = "51",
+  viewBox = "0 0 52 51",
   onClick,
 }) => {
   return (
@@ -18,7 +18,7 @@ const LeftCarousel = ({
           <circle cx="27.4936" cy="24.0932" r="23.9028" fill="white" />
           <path
             d="M33.2109 35.3127L23.5146 25.5952L33.2109 15.8777L30.2258 12.8926L17.5232 25.5952L30.2258 38.2978L33.2109 35.3127Z"
-            fill="#1FA0E9"
+            fill="#6565d6"
           />
         </g>
         <defs>

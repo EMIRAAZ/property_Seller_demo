@@ -3,7 +3,7 @@ const LarrowIcon = ({
   width = "9",
   height = "15",
   viewbox = "0 0 9 15",
-  fill = "#1FA0E9",
+  fill = "#6565d6",
   onClick,
 }) => {
   return (

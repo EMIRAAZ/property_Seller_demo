@@ -1,8 +1,8 @@
 const RightCarousel = ({
   customClass,
-  width = '32',
-  height = '51',
-  viewBox = '0 0 52 51',
+  width = "32",
+  height = "51",
+  viewBox = "0 0 52 51",
   onClick,
 }) => {
   return (
@@ -18,7 +18,7 @@ const RightCarousel = ({
           <circle cx="27.1616" cy="24.0932" r="23.9028" fill="white" />
           <path
             d="M19.3193 33.8107L29.0157 24.0932L19.3193 14.3757L22.3044 11.3906L35.007 24.0932L22.3044 36.7958L19.3193 33.8107Z"
-            fill="#1FA0E9"
+            fill="#6565d6"
           />
         </g>
         <defs>

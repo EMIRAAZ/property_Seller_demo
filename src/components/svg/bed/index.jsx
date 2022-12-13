@@ -1,9 +1,9 @@
 const Bed = ({
-  customClass = '',
-  width = '17',
-  height = '14',
-  viewBox = '0 0 17 14',
-  fill = '#1FA0E9',
+  customClass = "",
+  width = "17",
+  height = "14",
+  viewBox = "0 0 17 14",
+  fill = "#6565d6",
 }) => {
   return (
     <div className={`${customClass}`}>
