@@ -110,10 +110,14 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .home-image-frame {
+  .gt-home-img-frame {
+    height: 90vh;
+  }
+  .ls-home-img-frame {
     height: 640px;
+  }
+  .home-image-frame {
     flex-direction: row;
-
     .home-properties-caption {
       position: absolute;
       z-index: 10;
