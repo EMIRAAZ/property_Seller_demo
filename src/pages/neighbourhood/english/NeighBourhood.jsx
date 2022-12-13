@@ -52,9 +52,9 @@ const Card = props => {
           }
           customClass="btn-1"
         >
-          BUY
+          VIEW PROPERTIES
         </BasicButton>
-        <BasicButton
+        {/* <BasicButton
           onClick={() =>
             navigate(
               `/listproperty/neighbourhood?neighborhood=${props.title}&sale=rent`
@@ -63,7 +63,7 @@ const Card = props => {
           customClass="btn-2"
         >
           RENT
-        </BasicButton>
+        </BasicButton> */}
       </div>
     </div>
   );
