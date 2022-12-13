@@ -38,7 +38,7 @@ const Nft = props => {
 
   return (
     <div className="nft-main-container">
-      <Header />
+      <Header customClass="header-border-cls" />
       <div className="nft-showcase">
         <h1 className="nft-header">{props.blog.title}</h1>
         <p className="date">{newDate.toDateString()}</p>
