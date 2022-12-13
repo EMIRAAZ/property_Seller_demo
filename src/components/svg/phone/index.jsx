@@ -2,7 +2,7 @@ const Phone = ({
   width = "20",
   height = "20",
   viewBox = "0 0 16 16",
-  fill = "#1FA0E9",
+  fill = "#6565d6",
   customClass,
 }) => {
   return (

@@ -1,9 +1,9 @@
 const Living = ({
   customClass,
-  width = '17',
-  height = '17',
-  viewBox = '0 0 17 17',
-  fill = '#1FA0E9',
+  width = "17",
+  height = "17",
+  viewBox = "0 0 17 17",
+  fill = "#6565d6",
 }) => {
   return (
     <div className={`${customClass}`}>

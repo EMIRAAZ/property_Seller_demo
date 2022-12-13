@@ -227,6 +227,7 @@ const PropertyView = (props) => {
                 size="small"
                 variant="outlined"
                 onClick={() => setRead(!read)}
+                style={{ color: "#6565d6", borderColor: "#6565d6" }}
               >
                 {read ? "Read less" : "Read more"}
               </Button>
