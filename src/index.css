@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header-border-cls {
+  border-bottom: 1px solid #efeff0;
+}

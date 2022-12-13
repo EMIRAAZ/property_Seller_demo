@@ -1,6 +1,6 @@
-import FooterNew from "../../../components/footerNew";
-import Header from "../../../components/header";
-import "./advertise.scss";
+import FooterNew from '../../../components/footerNew';
+import Header from '../../../components/header';
+import './advertise.scss';
 
 const Adform = () => {
   return (
@@ -35,7 +35,7 @@ const Adform = () => {
 const Advertise = () => {
   return (
     <div className="admain-div">
-      <Header />
+      <Header customClass="header-border-cls" />
 
       <div className="ad-content">
         <h2 className="adhead">Advertise With Us</h2>

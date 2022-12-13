@@ -12,7 +12,7 @@ const Offplan = props => {
 
   return (
     <div className="offplan-projects-container">
-      <Header />
+      <Header customClass="header-border-cls" />
       <ListHeading
         className="list-header"
         main="Offplan Projects"

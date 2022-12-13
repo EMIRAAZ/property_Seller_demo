@@ -1,15 +1,15 @@
-import "./career.scss";
-import SocialPanel from "../../../components/socialpanel";
-import Footer from "../../../components/footer";
-import Header from "../../../components/header";
-import ManagementFormCard from "./managementformcard/ManagementFormCard";
-import { MoveToTop } from "../../../components/movetotop";
-import FooterNew from "../../../components/footerNew";
+import './career.scss';
+import SocialPanel from '../../../components/socialpanel';
+import Footer from '../../../components/footer';
+import Header from '../../../components/header';
+import ManagementFormCard from './managementformcard/ManagementFormCard';
+import { MoveToTop } from '../../../components/movetotop';
+import FooterNew from '../../../components/footerNew';
 
 const Career = () => {
   return (
     <div className="career-container">
-      <Header />
+      <Header customClass="header-border-cls" />
       <div>
         <ManagementFormCard />
       </div>
