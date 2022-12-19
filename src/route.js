@@ -54,7 +54,7 @@ function Router() {
     <PrivateRoute role={role}>{component}</PrivateRoute>
   );
   return (
-    <BrowserRouter basename="/crm">
+    <BrowserRouter>
       <ScrollToTop />
       <Routes>
         <Route path="/">
