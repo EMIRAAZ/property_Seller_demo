@@ -247,12 +247,7 @@ const PropertyView = (props) => {
                 <VideoView url={property.videoView} />
               </div>
             </div>
-            ///////////////////////////////////////
-            <Pagination
-              count={72}
-              // onChange={(current) => onChangeCurrentPage(current)}
-            />
-            ////////////////////////////////
+
             <hr />
             <div className="more-details">
               <div className="details">
