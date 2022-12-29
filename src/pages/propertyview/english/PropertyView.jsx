@@ -17,6 +17,7 @@ import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
 import BottomFixed from "../../../components/bottomfixed/BottomFixed";
 import { Button } from "@mui/material";
 import SimilarProperty from "../../../components/similarproperty";
+import Pagination from "../../../components/pagination";
 
 const PropertyView = (props) => {
   let location = useLocation();
@@ -246,7 +247,12 @@ const PropertyView = (props) => {
                 <VideoView url={property.videoView} />
               </div>
             </div>
-
+            ///////////////////////////////////////
+            <Pagination
+              count={72}
+              // onChange={(current) => onChangeCurrentPage(current)}
+            />
+            ////////////////////////////////
             <hr />
             <div className="more-details">
               <div className="details">
