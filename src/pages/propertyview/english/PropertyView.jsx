@@ -17,6 +17,7 @@ import { useJsApiLoader, GoogleMap, Marker } from "@react-google-maps/api";
 import BottomFixed from "../../../components/bottomfixed/BottomFixed";
 import { Button } from "@mui/material";
 import SimilarProperty from "../../../components/similarproperty";
+import Pagination from "../../../components/pagination";
 
 const PropertyView = (props) => {
   let location = useLocation();
@@ -275,6 +276,10 @@ const PropertyView = (props) => {
               </div>
               <div className="details">
                 <p> Ownership:</p>
+                <h1>{property.ownership}</h1>
+              </div>{" "}
+              <div className="details">
+                <p> Property Category:</p>
                 <h1>{property.ownership}</h1>
               </div>
             </div>
