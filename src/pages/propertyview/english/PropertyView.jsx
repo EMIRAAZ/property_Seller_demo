@@ -277,6 +277,10 @@ const PropertyView = (props) => {
               <div className="details">
                 <p> Ownership:</p>
                 <h1>{property.ownership}</h1>
+              </div>{" "}
+              <div className="details">
+                <p> Property Category:</p>
+                <h1>{property.ownership}</h1>
               </div>
             </div>
             <hr />

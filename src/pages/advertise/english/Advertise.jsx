@@ -1,6 +1,6 @@
-import FooterNew from '../../../components/footerNew';
-import Header from '../../../components/header';
-import './advertise.scss';
+import FooterNew from "../../../components/footerNew";
+import Header from "../../../components/header";
+import "./advertise.scss";
 
 const Adform = () => {
   return (
@@ -40,8 +40,8 @@ const Advertise = () => {
       <div className="ad-content">
         <h2 className="adhead">Advertise With Us</h2>
         <p>
-          Reach out to potential buyers, sellers and renters with the Property
-          Assistant. Join the club, tap the network and expand your business.
+          Reach out to potential buyers with the Property Assistant. Join the
+          club, tap the network and expand your business.
         </p>
         <br />
         <br />
@@ -77,15 +77,10 @@ const Advertise = () => {
             </div>
             <p className="list-content">Consistent and genuine listings</p>
           </div>
+
           <div className="list-container">
             <div className="list-square">
               <p className="list-no">5</p>
-            </div>
-            <p className="list-content">Reasonable pricings</p>
-          </div>
-          <div className="list-container">
-            <div className="list-square">
-              <p className="list-no">6</p>
             </div>
             <p className="list-content">
               Directives on contracts and legal services
