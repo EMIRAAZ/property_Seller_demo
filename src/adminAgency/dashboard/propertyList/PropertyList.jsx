@@ -53,9 +53,10 @@ function PropertyList(props) {
       <Confirm
         open={isOpen}
         handleOpen={setOpen}
-        question="Do you want to delete the property ?"
-        description="By confirming the property will be deleted. You cannot undo the process after confirming."
+        question="Do you want to delete the Property ?"
+        description="By confirming the Property will be deleted. You cannot undo the process after confirming."
         callback={() => props.deleteAgencyProperty(id, cb)}
+        g
       />
       {props.agencyProperty.property &&
         props.agencyProperty.property.map(item => (
