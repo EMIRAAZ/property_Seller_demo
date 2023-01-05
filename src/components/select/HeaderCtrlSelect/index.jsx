@@ -23,11 +23,11 @@ const HeaderSelect = ({
         style={{ display: 'flex' }}
         key={i}
         onClick={() => {
-          // setName(option.name);
-          // if (option.element) {
-          //   setEl(option.element);
-          // }
-          // onClick(option.type);
+          setName(option.name);
+          if (option.element) {
+            setEl(option.element);
+          }
+          onClick(option.type);
         }}
       >
         {option.element ? getFlagElement(option.element) : null}

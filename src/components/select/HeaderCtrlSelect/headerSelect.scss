@@ -2,13 +2,6 @@
   position: relative;
   display: inline-block;
 
-  &:hover .dropdown-content {
-    display: block;
-  }
-  &:active .dropdown-content {
-    display: block;
-  }
-
   .dropdown-content {
     display: none;
     position: absolute;
@@ -17,7 +10,10 @@
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
     z-index: 10;
     background-color: #ffffff;
-    margin-top: 6px;
+    margin-top: 1px;
+    &:hover {
+      display: block;
+    }
 
     p {
       color: black;
@@ -34,5 +30,11 @@
         background-color: rgb(221, 239, 255);
       }
     }
+  }
+  &:hover .dropdown-content {
+    display: block;
+  }
+  &:active .dropdown-content {
+    display: block;
   }
 }

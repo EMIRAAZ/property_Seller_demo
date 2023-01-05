@@ -49,6 +49,7 @@ import AgentAddProperty from './adminAgency/addproperty';
 import Nft from './pages/nft/english';
 import OffplanViewNew from './pages/offplanviewnew/english';
 import City from './admin/city/english';
+import India from './pages/india';
 function Router() {
   const makePrivate = (component, role = '') => (
     <PrivateRoute role={role}>{component}</PrivateRoute>
@@ -59,6 +60,7 @@ function Router() {
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
+          <Route path="india" element={<India />} />
           <Route path="agency">
             <Route exact path="login" element={<AgencyLogin />} />
             <Route index element={makePrivate(<AgentDashboard />, 'AGENCY')} />
