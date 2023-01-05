@@ -1,33 +1,91 @@
-import FooterNew from "../../../components/footerNew";
-import Header from "../../../components/header";
-import "./advertise.scss";
+import FooterNew from '../../../components/footerNew';
+import Header from '../../../components/header';
+import { useState } from 'react';
+import './advertise.scss';
+import axios from '../../../utils/axios';
 
 const Adform = () => {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+    propertyType: '',
+    location: '',
+  });
+
+  const onChangeForm = (name, value) => {
+    setForm(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const onSubmit = async () => {
+    try {
+      await axios.post(`/api/advertise-with-us`, form);
+      setForm({
+        name: '',
+        email: '',
+        mobile: '',
+        propertyType: '',
+        location: '',
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  console.log(form);
   return (
     <div className="adform-container">
-      <form className="adform">
+      <div className="adform">
         <label>Name</label>
         <br />
-        <input type="text" placeholder="Name" />
+        <input
+          value={form.name}
+          type="text"
+          placeholder="Name"
+          onChange={e => onChangeForm('name', e.target.value)}
+        />
         <br />
         <label>Email</label>
         <br />
-        <input type="text" placeholder="Email" />
+        <input
+          type="text"
+          value={form.email}
+          placeholder="Email"
+          onChange={e => onChangeForm('email', e.target.value)}
+        />
         <br />
         <label>Mobile</label>
         <br />
-        <input type="text" placeholder="Mobile Number" />
+        <input
+          type="text"
+          value={form.mobile}
+          placeholder="Mobile Number"
+          onChange={e => onChangeForm('mobile', e.target.value)}
+        />
         <br />
         <label>Property Type</label>
         <br />
-        <input type="text" placeholder="Property Type" />
+        <input
+          type="text"
+          placeholder="Property Type"
+          value={form.propertyType}
+          onChange={e => onChangeForm('propertyType', e.target.value)}
+        />
         <br />
         <label>Location</label>
         <br />
-        <input type="text" placeholder="Location" />
+        <input
+          type="text"
+          placeholder="Location"
+          value={form.location}
+          onChange={e => onChangeForm('location', e.target.value)}
+        />
         <br />
-        <input className="sub-btn" type="submit" name="value" />
-      </form>
+        <input className="sub-btn" type="submit" onClick={onSubmit} />
+      </div>
     </div>
   );
 };

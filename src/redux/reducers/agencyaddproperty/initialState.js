@@ -12,6 +12,7 @@ export const initialState = {
     images: [],
     price: 0.0,
     propertyType: '',
+    propertyCategory: '',
     propertySize: 0,
     propertySizeUnit: '',
     propertyAge: 0.0,
@@ -56,6 +57,11 @@ export const initialState = {
       { name: 'Bulk Sale Unit', value: 'Bulk Sale Unit' },
       { name: 'Bungalow', value: 'Bungalow' },
       { name: 'Hotel & Hotel Apartment', value: 'Hotel & Hotel Apartment' },
+    ],
+    propertyCategory: [
+      { name: 'Offplan', value: 'Offplan' },
+      { name: 'Ready To Move In', value: 'Ready To Move In' },
+      { name: 'Secondary', value: 'Secondary' },
     ],
     sale: [
       { name: 'Buy', value: 'buy' },

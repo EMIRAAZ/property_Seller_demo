@@ -98,8 +98,15 @@ const Form = ({
 
   const getID = () => location.pathname.split('/').pop();
 
-  const { agent, propertyType, amenities, neighbor, tagline, emirate } =
-    propertyOptions;
+  const {
+    agent,
+    propertyType,
+    amenities,
+    neighbor,
+    tagline,
+    emirate,
+    propertyCategory,
+  } = propertyOptions;
 
   const onChangeInput = (key, value) => {
     // document.getElementById('on-add-warning').style.display = 'none';
@@ -225,6 +232,15 @@ const Form = ({
           value={propertyValue.propertyType}
           options={propertyType}
           onChange={v => onChangeInput('propertyType', v)}
+        />
+        <span className="select-border"></span>
+        <Select
+          customClass="property-input"
+          label="Property Category"
+          required
+          value={propertyValue.propertyCategory}
+          options={propertyCategory}
+          onChange={v => onChangeInput('propertyCategory', v)}
         />
         <span className="select-border"></span>
         <Input
