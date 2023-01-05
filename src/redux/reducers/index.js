@@ -32,6 +32,7 @@ import agencyagentReducer from './addagencyagent';
 import agencyaddpropertyReducer from './agencyaddproperty';
 import agencypropertyReducer from './agencyproperty';
 import agencylistagentReducer from './listagencyagent';
+import advertiseReducer from './adminlistadvertise';
 
 const rootReducer = combineReducers({
   homeReducer,
@@ -67,6 +68,7 @@ const rootReducer = combineReducers({
   agencyaddpropertyReducer,
   agencypropertyReducer,
   agencylistagentReducer,
+  advertiseReducer,
 });
 
 export default rootReducer;

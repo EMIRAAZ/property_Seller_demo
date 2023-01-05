@@ -32,6 +32,9 @@ import {
   GET_CITY_PROPERTY_ERROR,
   GET_CITY_PROPERTY_STARTED,
   GET_CITY_PROPERTY,
+  GET_AGENT_DETAILS_ERROR,
+  GET_AGENT_DETAILS_STARTED,
+  GET_AGENT_DETAILS,
 } from '../../constants';
 
 const addPropertyImagesStarted = payload => {
@@ -90,11 +93,14 @@ export const deletePropertyImages = id => async dispatch => {
   }
 };
 
-export const changeAdminPropertyInput = payload => {
-  return {
+export const changeAdminPropertyInput = payload => async dispatch => {
+  if (payload.key === 'agentId') {
+    dispatch(getAgentDetails(payload.value.split(' ')[0]));
+  }
+  dispatch({
     type: ADMIN_PROPERTY_INPUT_CHANGE,
     payload: payload,
-  };
+  });
 };
 
 const addAdminPropertyStarted = () => {
@@ -363,5 +369,36 @@ export const getCityByEmirateProperty = emirate => async dispatch => {
     });
   } catch (e) {
     dispatch(getCityPropertyError());
+  }
+};
+
+// --------------------------------
+
+const getAgentDetailsStarted = () => {
+  return {
+    type: GET_AGENT_DETAILS_STARTED,
+  };
+};
+
+const getAgentDetailsError = () => {
+  return {
+    type: GET_AGENT_DETAILS_ERROR,
+  };
+};
+
+export const getAgentDetails = id => async dispatch => {
+  try {
+    dispatch(getAgentDetailsStarted());
+    const res = await axios.get(`/api/agent/${id}`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+      },
+    });
+    dispatch({
+      type: GET_AGENT_DETAILS,
+      payload: res.data?.data,
+    });
+  } catch (e) {
+    dispatch(getAgentDetailsError());
   }
 };

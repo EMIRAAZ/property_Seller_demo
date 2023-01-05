@@ -31,3 +31,4 @@ export * from './agencyaddagent';
 export * from './agencyaddproperty';
 export * from './agencyproperty';
 export * from './listagencyagent';
+export * from './adminlistadvertise';

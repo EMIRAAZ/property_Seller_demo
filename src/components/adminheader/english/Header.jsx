@@ -52,6 +52,9 @@ const Header = props => {
           </li> */}
           <li onClick={() => navigate('/admin/news')}>News</li>
           <li onClick={() => navigate('/admin/blog')}>Blog</li>
+          <li onClick={() => navigate('/admin/advertise-with-us')}>
+            Advertise Enquiry
+          </li>
           <li onClick={() => navigate('/admin/city')}>City</li>
         </ul>
       </div>
@@ -77,6 +80,9 @@ const Header = props => {
           </li>
           <li onClick={() => navigate('/admin/news')}>News</li>
           <li onClick={() => navigate('/admin/blog')}>Blog</li>
+          <li onClick={() => navigate('/admin/advertise-with-us')}>
+            Advertise Enquiry
+          </li>
           <li onClick={() => navigate('/admin/city')}>City</li>
         </ul>
       </div>
