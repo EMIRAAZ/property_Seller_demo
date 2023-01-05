@@ -32,6 +32,7 @@ import {
   GET_CITY_PROPERTY_ERROR,
   GET_CITY_PROPERTY_STARTED,
   GET_CITY_PROPERTY,
+  GET_AGENT_DETAILS,
 } from '../../constants';
 
 const reducer = (state = initialState, action) => {
@@ -63,6 +64,17 @@ const reducer = (state = initialState, action) => {
           error: false,
           loading: false,
           success: true,
+        },
+      };
+    case GET_AGENT_DETAILS:
+      console.log(action.payload);
+      return {
+        ...state,
+        propertyValue: {
+          ...state.propertyValue,
+          agentBRN: action.payload[0]?.orn,
+          call: action.payload[0]?.phoneNumber,
+          whatsapp: action.payload[0]?.whatsAppNumber,
         },
       };
     case ADD_ADMIN_PROPERTY_STARTED:

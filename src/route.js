@@ -20,6 +20,7 @@ import Career from './pages/career';
 import Blog from './pages/dailyblog';
 import Property from './admin/property';
 import AdminAgency from './admin/agency';
+import AdminAdvertise from './admin/listadvertiseclient';
 import AddProperty from './admin/addproperty';
 import Advertise from './pages/advertise/english/Advertise';
 import Login from './admin/login';
@@ -91,6 +92,10 @@ function Router() {
             <Route
               path="agency"
               element={makePrivate(<AdminAgency />, 'ADMIN')}
+            />
+            <Route
+              path="advertise-with-us"
+              element={makePrivate(<AdminAdvertise />, 'ADMIN')}
             />
             <Route
               path="add-property"

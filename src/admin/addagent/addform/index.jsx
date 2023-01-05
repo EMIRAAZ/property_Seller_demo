@@ -99,7 +99,7 @@ const AddForm = ({
         />
         <Input
           divClass="agent-input"
-          label="ORN"
+          label="BRN"
           required
           value={agentValue.orn}
           onChange={e => onChangeInput('orn', e.target.value)}

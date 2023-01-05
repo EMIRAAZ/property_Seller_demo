@@ -8,6 +8,7 @@ const Table = ({
   count,
   onChangePage,
   columns,
+  addAction = true,
 }) => {
   const onPageChange = val => {
     onChangePage(val);
@@ -49,7 +50,7 @@ const Table = ({
           onPageChange={onPageChange}
           rowHeight={70}
           autoHeight={true}
-          columns={columns.concat(actionColumn)}
+          columns={addAction ? columns.concat(actionColumn) : columns}
           pageSize={10}
           rowsPerPageOptions={[10]}
         />
