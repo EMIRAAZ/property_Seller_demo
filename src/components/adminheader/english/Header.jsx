@@ -91,7 +91,7 @@ const Header = props => {
           <HamburgerLogo fill="#1c3988" width="35" height="28" />
         </li>
         <li className="company-name" onClick={() => navigate('/admin')}>
-          <span className="main-name">Property&nbsp;Assistant</span>
+          <span className="main-name">Property&nbsp;Seller</span>
           <span className="sub-name">ADMIN</span>
         </li>
         <li className="desktop-li">

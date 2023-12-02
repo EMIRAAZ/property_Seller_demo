@@ -16,10 +16,10 @@ const Policy = () => {
         <div className="policy-description">
           <div className="description-container">
             <p>
-              <h3>1. INTRODUCTION</h3> <b>1.1</b> Property Assistant is a
+              <h3>1. INTRODUCTION</h3> <b>1.1</b> Property Seller is a
               company registered in Dubai with its registered office at Blue Bay
               Tower, Business bay, Dubai, UAE , which owns and operates the
-              website www.propertyassistant.ae <br />
+              website www.propertyseller.ae <br />
               <b>1.2</b> This document is termed as ‘The Privacy Policy’, or the
               policy forms part of the Terms of Use related to the use and
               information of the use of the website. By using the website you
@@ -32,7 +32,7 @@ const Policy = () => {
               then you must immediately stop using the website or make use of
               its contents.
               <br /> <b>1.3</b> The terms mentioned as “we", "our", "us" , here
-              means ‘The Property Assistant’ and its affiliates, subsidiaries,
+              means ‘The Property Seller’ and its affiliates, subsidiaries,
               employees, agents or assigned parties.
               <br />
               <b>1.4</b> This Policy becomes effective between you and us from
@@ -45,8 +45,8 @@ const Policy = () => {
               determined by a Data Controller which expression would mean a
               person, who by himself or jointly act as a legal entity.
               <br /> <b>1.7</b> With respect to the data processed by the
-              website, ‘The Property Assistant’ vests control as the Data
-              Controller. The Property Assistant is part of the ………………… Group of
+              website, ‘The Property Seller’ vests control as the Data
+              Controller. The Property Seller is part of the ………………… Group of
               companies, which for reference also include……………{' '}
               <h3>2. YOUR INFORMATION</h3> <b>2.1</b> The type of information we
               collect is either personal or general in nature: <br />
@@ -83,12 +83,12 @@ const Policy = () => {
               <br />
               <b>(a)</b>
               goes through safe and secure channels provided by ‘the uae
-              assistant.com’ payment gateway partners; <br />
+              seller.com’ payment gateway partners; <br />
               <b>(b)</b> goes through the Visa or MasterCard pages, accordingly,
               depending upon your mode(s) of payment. In order to avoid any
               exploitation of your mode of payment details, <br />
               <b>(c)</b> such information is not shared with the website , ‘The
-              Property Assistant’, its branches, partners and any other third
+              Property Seller’, its branches, partners and any other third
               parties or users of the Website and Services. <br />
               <b>(d)</b> Information we receive from other sources: We may get
               information about you, by your usage of any of our websites that
@@ -153,7 +153,7 @@ const Policy = () => {
               with third parties: <br />
               <b>a.</b>Your Personal Information will be disclosed to the
               prospective seller or buyer in the event of selling or buying of
-              any business or assets. If ‘The Property Assistant’’, or in
+              any business or assets. If ‘The Property Seller’’, or in
               substance all of its assets are acquired by a third party,
               information held by it regarding customers will also be one of the
               transferred assets; <br />
@@ -163,7 +163,7 @@ const Policy = () => {
               conditions specified in the terms of use or other agreements
               entered into. or <br />
               <b>d.</b>To safeguard the interests that include the rights and
-              assets of The Property Assistant, any of our associates, clients
+              assets of The Property Seller, any of our associates, clients
               or officials. This would mean the exchange of information with
               other organizations, groups or concerns for protection against
               fraud.
@@ -195,7 +195,7 @@ const Policy = () => {
               <b>7.1</b> You have the right to access and control your
               information. Your requests will be honored and wherever applicable
               the data can be corrected, amended or deleted. Kindly write to
-              support@the propertyassistant.ae for further queries. <br />
+              support@the propertyseller.ae for further queries. <br />
               <b>7.2</b> Access to personal information:You can request access
               to the information provided by you and will be granted access
               unless subject to any legal exemptions. You are required to
@@ -209,9 +209,9 @@ const Policy = () => {
               <br />
               <b>7.4</b> Marketing preferences: You can use the unsubscribe link
               to stop receiving email communication or you can send a mail to
-              support@propertyassistant.ae. For enquiries on Marketing you can use
+              support@propertyseller.ae. For enquiries on Marketing you can use
               any of the links mentioned in the marketing and communication
-              section or by sending an email to marketing@propertyassistant.ae.{' '}
+              section or by sending an email to marketing@propertyseller.ae.{' '}
               <h3>8. USE OF COOKIES</h3> <b>8.1</b>: This website uses cookies
               (which is not limited to google analytics and double click for
               publishers. Information regarding google partner sites can be
@@ -223,7 +223,7 @@ const Policy = () => {
               the usage of sessions which are basically meant to optimize the
               usage of the site for better experience. Cookies are automatically
               deleted after a period of time for online advertisements. Details
-              regarding this are available at support@the propertyassistant.ae{' '}
+              regarding this are available at support@the propertyseller.ae{' '}
               <br />
               <b>8.2</b> Though browsers accept cookies automatically it can be
               disabled from the browser. With the cookies deleted from your
@@ -292,7 +292,7 @@ const Policy = () => {
               Third party advertisers operate on their own Privacy Policies
               which are made available on their websites. For further
               information on what third party advertisers do please get in touch
-              with info@thepropertyassistant.ae{' '}
+              with info@thepropertyseller.ae{' '}
               <h3>12. INTEREST-BASED ADVERTISING (IBA) </h3>
               <b>12.1</b> IBA or Interest-based advertising are meant to deliver
               advertising material to users who show specific interest (target
@@ -353,7 +353,7 @@ const Policy = () => {
               taking over, pursuant to this Policy that will form part of the
               transferred assets. As a user you acknowledge the transfer of the
               information to the acquirer or successor to ‘The Property
-              Assistant’, who may continue to use the data pursuant to this
+              Seller’, who may continue to use the data pursuant to this
               Privacy Policy, in the way detailed in this document.
             </p>
           </div>

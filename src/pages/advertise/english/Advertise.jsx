@@ -98,7 +98,7 @@ const Advertise = () => {
       <div className="ad-content">
         <h2 className="adhead">Advertise With Us</h2>
         <p>
-          Reach out to potential buyers with the Property Assistant. Join the
+          Reach out to potential buyers with the Property Seller. Join the
           club, tap the network and expand your business.
         </p>
         <br />

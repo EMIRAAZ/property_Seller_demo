@@ -27,7 +27,7 @@ const Home = props => {
         <meta charSet="utf-8" />
         <title>
           Freehold Properties in Dubai | Residential Properties in Dubai |
-          Commercial properties in UAE - Property Assistant
+          Commercial properties in UAE - Property Seller
         </title>
         <meta
           name="keywords"
@@ -35,7 +35,7 @@ const Home = props => {
         />
         <meta
           property="og:title"
-          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - Property Assistant "
+          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - Property Seller "
         />
 
         <meta
@@ -47,11 +47,11 @@ const Home = props => {
           content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         />
 
-        <link rel="canonical" href="https://www.propertyassistant.ae" />
+        <link rel="canonical" href="https://www.propertyseller.ae" />
 
         <meta
           property="og:title"
-          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - Property Assistant"
+          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - Property Seller"
         />
 
         <meta
@@ -59,7 +59,7 @@ const Home = props => {
           content="Looking for Freehold,Commercial and Residential Properties in Dubai, UAE. We are an exclusive real estate agent in Dubai, UAE specialized in the best real estate deals for sale and rent. Contact us for more details."
         />
 
-        <meta property="og:url" content="http://www.propertyassistant.ae" />
+        <meta property="og:url" content="http://www.propertyseller.ae" />
         <meta property="og:image" content="" />
         <meta property="og:image:width" content="600" />
         <meta property="og:image:height" content="315" />
@@ -72,7 +72,7 @@ const Home = props => {
         <meta name="twitter:image" content="" />
         <meta
           name="twitter:title"
-          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - Property Assistant"
+          content="Freehold Properties in Dubai | Residential Properties in Dubai | Commercial properties in UAE - Property Seller"
         />
       </Helmet>
 
@@ -91,7 +91,7 @@ const Home = props => {
       <HomeCategory advancedSearch={advancedSearch} />
       <div className="w-full p-5 bg-black text-white font-bold text-xl flex justify-center banner-cls sm:text-lg">
         Explore what is up for&nbsp;
-        <span style={{ color: '#FCA120' }}>Sale</span>, Everyday
+        <span style={{ color: '#FCA120' }}>sale</span>
       </div>
       <RenderComponent
         data={props.homeProperty.property}

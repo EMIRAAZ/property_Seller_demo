@@ -207,16 +207,16 @@ const Luxuary = (props) => {
           <meta charSet="utf-8" />
           <title>
             Penthouse for sale in Dubai | Luxury Penthouse for sale in Dubai |
-            Luxury Penthouse for rent in Dubai, UAE - Property Assistant
+            Luxury Penthouse for rent in Dubai, UAE - Property Seller
           </title>
           <meta name="keywords" content="Penthouse for sale in Dubai" />
           <meta
             property="og:title"
-            content="Penthouse for sale in Dubai | Luxury Penthouse for sale in Dubai | Luxury Penthouse for rent in Dubai, UAE - Property Assistant"
+            content="Penthouse for sale in Dubai | Luxury Penthouse for sale in Dubai | Luxury Penthouse for rent in Dubai, UAE - Property Seller"
           />
           <meta
             name="description"
-            content="Penthouse for sale in Dubai from Property Assistant, a trusted real estate agent in Dubai, UAE. Browse and choose your dream penthouse from Property Assistant.  "
+            content="Penthouse for sale in Dubai from Property Seller, a trusted real estate agent in Dubai, UAE. Browse and choose your dream penthouse from Property Seller.  "
           />
           <meta
             name="robots"
@@ -224,19 +224,19 @@ const Luxuary = (props) => {
           />
           <link
             rel="canonical"
-            href="http://www.propertyassistant.ae/luxury-property/Penthouse"
+            href="http://www.propertyseller.ae/luxury-property/Penthouse"
           />
           <meta
             property="og:title"
-            content="Penthouse for sale in Dubai | Luxury Penthouse for sale in Dubai | Luxury Penthouse for rent in Dubai, UAE - Property Assistant"
+            content="Penthouse for sale in Dubai | Luxury Penthouse for sale in Dubai | Luxury Penthouse for rent in Dubai, UAE - Property Seller"
           />
           <meta
             property="og: description"
-            content="Penthouse for sale in Dubai from Property Assistant, a trusted real estate agent in Dubai, UAE. Browse and choose your dream penthouse from Property Assistant."
+            content="Penthouse for sale in Dubai from Property Seller, a trusted real estate agent in Dubai, UAE. Browse and choose your dream penthouse from Property Seller."
           />
           <meta
             property="og:url"
-            content="http://www.propertyassistant.ae/luxury-property/Penthouse"
+            content="http://www.propertyseller.ae/luxury-property/Penthouse"
           />
           <meta property="og:image" content="" />
           <meta property="og:image:width" content="600" />
@@ -244,12 +244,12 @@ const Luxuary = (props) => {
           <meta name="twitter:card" content="summary" />
           <meta
             name="twitter: description"
-            content="Penthouse for sale in Dubai from Property Assistant, a trusted real estate agent in Dubai, UAE. Browse and choose your dream penthouse from Property Assistant."
+            content="Penthouse for sale in Dubai from Property Seller, a trusted real estate agent in Dubai, UAE. Browse and choose your dream penthouse from Property Seller."
           />
           <meta name="twitter:image" content="" />
           <meta
             name="twitter:title"
-            content="Penthouse for sale in Dubai | Luxury Penthouse for sale in Dubai | Luxury Penthouse for rent in Dubai, UAE - Property Assistant"
+            content="Penthouse for sale in Dubai | Luxury Penthouse for sale in Dubai | Luxury Penthouse for rent in Dubai, UAE - Property Seller"
           />
         </Helmet>
       );
@@ -259,7 +259,7 @@ const Luxuary = (props) => {
           <meta charSet="utf-8" />
           <title>
             Apartment for Sale in Dubai | Apartment for Sale in
-            Abudhabi,Downtown Dubai - Property Assistant
+            Abudhabi,Downtown Dubai - Property Seller
           </title>
           <meta
             name="keywords"
@@ -267,11 +267,11 @@ const Luxuary = (props) => {
           />
           <meta
             property="og:title"
-            content="Apartment for Sale in Dubai | Apartment for Sale in Abudhabi,Downtown Dubai - Property Assistant"
+            content="Apartment for Sale in Dubai | Apartment for Sale in Abudhabi,Downtown Dubai - Property Seller"
           />
           <meta
             name="description"
-            content="Browse through the list of apartment for sale in Dubai, Abudhabi and Downtown Dubai from Property Assistant. Get in touch with us now for more details!"
+            content="Browse through the list of apartment for sale in Dubai, Abudhabi and Downtown Dubai from Property Seller. Get in touch with us now for more details!"
           />
           <meta
             name="robots"
@@ -279,19 +279,19 @@ const Luxuary = (props) => {
           />
           <link
             rel="canonical"
-            href="http://www.propertyassistant.ae/luxury-property/Apartment"
+            href="http://www.propertyseller.ae/luxury-property/Apartment"
           />
           <meta
             property="og:title"
-            content="Apartment for Sale in Dubai | Apartment for Sale in Abudhabi,Downtown Dubai - Property Assistant"
+            content="Apartment for Sale in Dubai | Apartment for Sale in Abudhabi,Downtown Dubai - Property Seller"
           />
           <meta
             property="og: description"
-            content="Browse through the list of apartment for sale in Dubai, Abudhabi and Downtown Dubai from Property Assistant. Get in touch with us now for more details!"
+            content="Browse through the list of apartment for sale in Dubai, Abudhabi and Downtown Dubai from Property Seller. Get in touch with us now for more details!"
           />
           <meta
             property="og:url"
-            content="http://www.propertyassistant.ae/luxury-property/Apartment"
+            content="http://www.propertyseller.ae/luxury-property/Apartment"
           />
           <meta property="og:image" content="" />
           <meta property="og:image:width" content="600" />
@@ -299,12 +299,12 @@ const Luxuary = (props) => {
           <meta name="twitter:card" content="summary" />
           <meta
             name="twitter: description"
-            content="Browse through the list of apartment for sale in Dubai, Abudhabi and Downtown Dubai from Property Assistant. Get in touch with us now for more details!"
+            content="Browse through the list of apartment for sale in Dubai, Abudhabi and Downtown Dubai from Property Seller. Get in touch with us now for more details!"
           />
           <meta name="twitter:image" content="" />
           <meta
             name="twitter:title"
-            content="Apartment for Sale in Dubai | Apartment for Sale in Abudhabi,Downtown Dubai - Property Assistant"
+            content="Apartment for Sale in Dubai | Apartment for Sale in Abudhabi,Downtown Dubai - Property Seller"
           />
         </Helmet>
       );
@@ -314,7 +314,7 @@ const Luxuary = (props) => {
           <meta charSet="utf-8" />
           <title>
             Villas for sale in Dubai | Villas in Palm Jumeirah Dubai | Luxury
-            Villas for Rent in Dubai- Property Assistant
+            Villas for Rent in Dubai- Property Seller
           </title>
           <meta
             name="keywords"
@@ -322,11 +322,11 @@ const Luxuary = (props) => {
           />
           <meta
             property="og:title"
-            content="Villas for sale in Dubai | Villas in Palm Jumeirah Dubai | Luxury Villas for Rent in Dubai- Property Assistant"
+            content="Villas for sale in Dubai | Villas in Palm Jumeirah Dubai | Luxury Villas for Rent in Dubai- Property Seller"
           />
           <meta
             name="description"
-            content="Find the best villas in Dubai! Property Assistant offers a wide range of luxury villas for sale in Palm Jumeirah, Dubai and other areas of UAE. Contact for more details."
+            content="Find the best villas in Dubai! Property Seller offers a wide range of luxury villas for sale in Palm Jumeirah, Dubai and other areas of UAE. Contact for more details."
           />
           <meta
             name="robots"
@@ -334,19 +334,19 @@ const Luxuary = (props) => {
           />
           <link
             rel="canonical"
-            href="http://www.propertyassistant.ae/luxury-property/Villa"
+            href="http://www.propertyseller.ae/luxury-property/Villa"
           />
           <meta
             property="og:title"
-            content="Villas for sale in Dubai | Villas in Palm Jumeirah Dubai | Luxury Villas for Rent in Dubai- Property Assistant"
+            content="Villas for sale in Dubai | Villas in Palm Jumeirah Dubai | Luxury Villas for Rent in Dubai- Property Seller"
           />
           <meta
             property="og: description"
-            content="Find the best villas in Dubai! Property Assistant offers a wide range of luxury villas for sale in Palm Jumeirah, Dubai and other areas of UAE. Contact for more details."
+            content="Find the best villas in Dubai! Property Seller offers a wide range of luxury villas for sale in Palm Jumeirah, Dubai and other areas of UAE. Contact for more details."
           />
           <meta
             property="og:url"
-            content="http://www.propertyassistant.ae/luxury-property/Villa"
+            content="http://www.propertyseller.ae/luxury-property/Villa"
           />
           <meta property="og:image" content="" />
           <meta property="og:image:width" content="600" />
@@ -354,12 +354,12 @@ const Luxuary = (props) => {
           <meta name="twitter:card" content="summary" />
           <meta
             name="twitter: description"
-            content="Find the best villas in Dubai! Property Assistant offers a wide range of luxury villas for sale in Palm Jumeirah, Dubai and other areas of UAE. Contact for more details."
+            content="Find the best villas in Dubai! Property Seller offers a wide range of luxury villas for sale in Palm Jumeirah, Dubai and other areas of UAE. Contact for more details."
           />
           <meta name="twitter:image" content="" />
           <meta
             name="twitter:title"
-            content="Villas for sale in Dubai | Villas in Palm Jumeirah Dubai | Luxury Villas for Rent in Dubai- Property Assistant"
+            content="Villas for sale in Dubai | Villas in Palm Jumeirah Dubai | Luxury Villas for Rent in Dubai- Property Seller"
           />
         </Helmet>
       );

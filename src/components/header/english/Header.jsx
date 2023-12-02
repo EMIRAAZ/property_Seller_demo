@@ -154,11 +154,11 @@ const Header = ({ customClass }) => {
               width={200}
               className="relative"
               src="/assets/image/pa.png"
-              alt="Property Assistant"
+              alt="Property Seller"
             />
           ) : ( */}
           <span className="main-name">
-            Property<span>Assistant</span>
+            PropertySeller.
           </span>
           {/* )} */}
         </li>

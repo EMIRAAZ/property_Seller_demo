@@ -9,7 +9,7 @@ const ImageFrame = props => {
   };
   return (
     <div className={`home-image-frame ${adjustSizeWithScreen()}`}>
-      <p className="home-properties-caption">Find Properties for Sale</p>
+      <p className="home-properties-caption">New Properties, Everyday</p>
     </div>
   );
 };

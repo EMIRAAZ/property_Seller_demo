@@ -26,7 +26,7 @@ const Rent = (props) => {
         />
         <meta
           property="og:title"
-          content="Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent in Dubai - Property Assistant "
+          content="Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent in Dubai - Property Seller "
         />
         <meta
           name="description"
@@ -36,16 +36,16 @@ const Rent = (props) => {
           name="robots"
           content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
         />
-        <link rel="canonical" href="https://www.propertyassistant.ae/rent" />
+        <link rel="canonical" href="https://www.propertyseller.ae/rent" />
         <meta
           property="og:title"
-          content="Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent in Dubai - Property Assistant"
+          content="Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent in Dubai - Property Seller"
         />
         <meta
           property="og: description"
           content="Find the perfect luxury properties for rent in Dubai. With our selection of luxury properties for rent in Dubai, you'll find the perfect home for your family to settle down. Contact us now!"
         />
-        <meta property="og:url" content="https://www.propertyassistant.ae/rent" />
+        <meta property="og:url" content="https://www.propertyseller.ae/rent" />
         <meta property="og:image" content="" />
         <meta property="og:image:width" content="600" />
         <meta property="og:image:height" content="315" />
@@ -57,7 +57,7 @@ const Rent = (props) => {
         <meta name="twitter:image" content="" />
         <meta
           name="twitter:title"
-          content="Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent in Dubai - Property Assistant"
+          content="Luxury Properties for Rent in Dubai | Best Luxury Properties for Rent in Dubai - Property Seller"
         />
       </Helmet>
       <Header customClass="rent-header-class" />

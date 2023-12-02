@@ -13,7 +13,7 @@ function BottomFixed({ property }) {
           className="service-btn-property whatsapp"
           onClick={() =>
             window.open(
-              `https://wa.me/+971553011274/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${property.id}
+              `https://wa.me/+971553011274/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://propertyseller.ae/property/${property.id}
               %0a%0aPrice: AED ${property.price}
               %0aLocation: ${property.address.city}
                 %0aReference: ${property.id}
@@ -30,7 +30,7 @@ function BottomFixed({ property }) {
 
           onClick={() =>
             window.open(
-              `https://wa.me/+971553011274/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${property.id}
+              `https://wa.me/+971553011274/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://propertyseller.ae/property/${property.id}
               %0a%0aPrice: AED ${property.price}
               %0aLocation: ${property.address.city}
                 %0aReference: ${property.id}
@@ -44,7 +44,7 @@ function BottomFixed({ property }) {
         <div
           className="service-btn-property email"
           onClick={() =>
-            window.open("mailto:hello@propertyassistant.ae", "_blank")
+            window.open("mailto:hello@propertyseller.ae", "_blank")
           }
         >
           <Mail width="15" height="15" viewBox="0 0 15 15" fill="#6565D6" />

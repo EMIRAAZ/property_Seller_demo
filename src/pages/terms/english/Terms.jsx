@@ -19,10 +19,10 @@ const Terms = () => {
             <h3>1. TERMS</h3>
             <br />
             <b>1.1</b> The term mentioned here as ‘we’,’our’ and ‘us’ would mean
-            ‘The Property Assistant’, its representatives, subsidiaries, agents,
+            ‘The Property Seller's, its representatives, subsidiaries, agents,
             affiliates or its assigned parties. <br />
             <b>1.2</b> The website and its contents is herein referred to as
-            ‘www.propertyassistant.ae’. <br />
+            ‘www.propertyseller.ae.ae’. <br />
             <b>1.3</b> With using the website you agree to bind by the website’s
             terms of use and its privacy policy and agree to comply with all the
             applicable governing rules. All the content contained in this
@@ -274,9 +274,9 @@ const Terms = () => {
             across any misleading information, wrong portrayal or suspected
             misrepresentation of any of the properties listed in the website,
             please feel free to inform us with the details to
-            abuse@propertyassistant.ae For any queries, complaints or
+            abuse@propertyseller.ae.ae For any queries, complaints or
             recommendations about these Terms of Use, please contact us at the
-            following address: info@propertyassistant.ae          </p>
+            following address: info@propertyseller.ae.ae          </p>
         </div>
         {/* <SocialPanel /> */}
         <MoveToTop />

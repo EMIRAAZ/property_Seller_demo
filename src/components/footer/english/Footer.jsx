@@ -59,7 +59,7 @@ function Footer(props) {
           Privacy&nbsp;Policy
         </p>
       </div>
-      <p className="copy-right">Copyright 2022 - Property Assistant</p>
+      <p className="copy-right">Copyright 2022 - Property Seller</p>
     </div>
   );
 }

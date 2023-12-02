@@ -14,7 +14,7 @@ function India() {
           className="underline cursor-pointer text-blue-600 visited:text-purple-600"
           onClick={() => navigate('/')}
         >
-          propertyassistant.uae
+          propertySeller.uae
         </span>
       </p>
     </div>

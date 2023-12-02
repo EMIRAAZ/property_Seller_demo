@@ -67,7 +67,7 @@ const Property = props => {
           className="property-rectangle share"
           onClick={() =>
             window.open(
-              `https://wa.me/?text=Hello, I found this Property on ${TITLE} please check it out and tell me how do you feel.  %0a%0ahttp://propertyassistant.ae/property/${props.id}
+              `https://wa.me/?text=Hello, I found this Property on ${TITLE} please check it out and tell me how do you feel.  %0a%0ahttp://propertyseller.ae/property/${props.id}
              `
             )
           }
@@ -149,7 +149,7 @@ const Property = props => {
           <div
             className="service-btn-property email"
             onClick={() =>
-              window.open('mailto:hello@propertyassistant.ae', '_blank')
+              window.open('mailto:hello@propertyseller.ae', '_blank')
             }
           >
             <Mail width="15" height="15" viewBox="0 0 15 15" fill="#6565D6" />
@@ -160,7 +160,7 @@ const Property = props => {
             // onClick={() => window.open("tel:+971553011274", "_blank")}
             onClick={() =>
               window.open(
-                `https://wa.me/+971553011274/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${props.id}
+                `https://wa.me/+971553011274/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://propertyseller.ae/property/${props.id}
               %0a%0aPrice: AED ${props.price}
               %0aLocation: ${props.address.city}
                 
@@ -177,7 +177,7 @@ const Property = props => {
             className="service-btn-property whatsapp"
             onClick={() =>
               window.open(
-                `https://wa.me/+971553011274/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${props.id}
+                `https://wa.me/+971553011274/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://propertyseller.ae/property/${props.id}
               %0a%0aPrice: AED ${props.price}
               %0aLocation: ${props.address.city}
                 

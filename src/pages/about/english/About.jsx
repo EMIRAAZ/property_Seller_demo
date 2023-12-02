@@ -26,9 +26,9 @@ const About = () => {
           <p className="properties-description">
             <p>
               A one stop solution for all your property needs, the ‘Property
-              Assistant’ has been disrupting the real estate sector in the UAE
+              Seller’ has been disrupting the real estate sector in the UAE
               in ways never imagined before. A comprehensive real estate portal,
-              the ‘Property Assistant’, it has been conceived to provide a
+              the ‘Property Seller’, it has been conceived to provide a
               seamless, effective, intuitive and transparent way to transact
               properties across the country.
             </p>
@@ -66,7 +66,7 @@ const About = () => {
               supported by research, tech, data analysis, automation and
               management expertise making it more organized and reliable with
               enabling our clientelle to capitalize and reap rewards on their
-              investment. Explore the Property Assistant to learn more of the
+              investment. Explore the Property Seller to learn more of the
               unlimited opportunities. Know what it does and why it can’t be
               done without.
             </p>

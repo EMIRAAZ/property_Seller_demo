@@ -107,7 +107,7 @@ const DivThree = () => {
       <p className="sub-heading">
         <Mail fill="#6565d6" width="10" height="10" customClass="icon" />
         &nbsp;&nbsp;Mail &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{' '}
-        <span> hello@propertyassistant.ae</span>
+        <span> hello@propertyseller.ae</span>
       </p>
       <div style={{ display: 'flex' }}>
         <p className="sub-heading">
@@ -149,7 +149,7 @@ const DivThree = () => {
           height="13"
           customClass="social"
           onClick={() =>
-            window.open('https://twitter.com/passistantuae', '_blank')
+            window.open('https://twitter.com/pselleruae', '_blank')
           }
         />
         <Instagram
@@ -158,7 +158,7 @@ const DivThree = () => {
           customClass="social"
           onClick={() =>
             window.open(
-              'https://instagram.com/propertyassistant.ae?igshid=YmMyMTA2M2Y=',
+              'https://instagram.com/propertyseller.ae?igshid=YmMyMTA2M2Y=',
               '_blank'
             )
           }
@@ -183,7 +183,7 @@ const DivFour = () => {
     <div className="div-four">
       <h1 className="heading">Download Our App.</h1>
       {/* <p className="sub-heading">
-        Start working with Property Assistant that can provide everything you need
+        Start working with Property Seller that can provide everything you need
       </p> */}
 
       <BasicButton customClass="btn">

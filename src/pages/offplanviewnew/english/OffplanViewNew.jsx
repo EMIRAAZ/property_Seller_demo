@@ -233,7 +233,7 @@ const OffplanViewNew = (props) => {
                   className="service-btn-property whatsapp"
                   onClick={() =>
                     window.open(
-                      `https://wa.me/+971553011274/?text=Hello Property Assistant. I’m interested in this property %0a%0aLink: https://propertyassistant.ae/property/${property.id}
+                      `https://wa.me/+971553011274/?text=Hello Property Seller. I’m interested in this property %0a%0aLink: https://propertyseller.ae/property/${property.id}
               %0a%0aPrice: AED ${property.price}
               %0aLocation: ${property.address.city}
                 
@@ -265,7 +265,7 @@ const OffplanViewNew = (props) => {
                 <div
                   className="service-btn-property email"
                   onClick={() =>
-                    window.open("mailto:hello@propertyassistant.ae", "_blank")
+                    window.open("mailto:hello@propertyseller.ae", "_blank")
                   }
                 >
                   <Mail
@@ -351,7 +351,7 @@ const VideoView = ({ url = "https://www.youtube.com/embed/WGf3tNSbXs0" }) => {
       title="drf4rf4r"
       width="100%"
       height="100%"
-      allow="autoplay;"
+      // allow="autoplay;"
       allow="fullscreen"
       src={url ? url : "https://www.youtube.com/embed/WGf3tNSbXs0"}
     ></iframe>
@@ -496,7 +496,7 @@ const NewFooter = ({ property }) => {
             className="wp-div"
             onClick={() =>
               window.open(
-                `https://wa.me/+971553011274/?text=Hello Property Assistant. I’m interested in this property %0a%0aLink: http://propertyassistant.ae/property/${property.id}
+                `https://wa.me/+971553011274/?text=Hello Property Seller. I’m interested in this property %0a%0aLink: http://propertyseller.ae/property/${property.id}
               %0a%0aPrice: AED ${property.price}
               %0aLocation: ${property.address.city}
                 
@@ -538,7 +538,7 @@ const NewFooter = ({ property }) => {
           <div
             className="wp-div"
             onClick={() =>
-              window.open("mailto:hello@propertyassistant.ae", "_blank")
+              window.open("mailto:hello@propertyseller.ae", "_blank")
             }
           >
             <svg

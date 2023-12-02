@@ -1,1 +1,1 @@
-export const TITLE = 'Property Assistant';
+export const TITLE = 'Property Seller';
