@@ -6,15 +6,15 @@ import Select from '../../../components/select/adminSelect';
 import ChipSelect from '../../../components/select/ChipSelect';
 import Button from '../../../components/button/SpinnerButton';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { checkIfAllKeyHasValue } from '../../../utils';
-import { useRef } from 'react';
-import {
-  useJsApiLoader,
-  GoogleMap,
-  StandaloneSearchBox,
-  Marker,
-} from '@react-google-maps/api';
+// import { useRef } from 'react';
+// import {
+//   useJsApiLoader,
+//   GoogleMap,
+//   StandaloneSearchBox,
+//   Marker,
+// } from '@react-google-maps/api';
 import ImageUpload from '../../../components/imageupload';
 
 const keyArr = [
@@ -57,44 +57,44 @@ const AddForm = ({
   let navigate = useNavigate();
   let location = useLocation();
 
-  const inputRef = useRef();
+  // const inputRef = useRef();
 
-  const [center, setCenter] = useState({ lat: 24.4539, lng: 54.3773 });
-  const [marker, setMarker] = useState({ lat: 24.4539, lng: 54.3773 });
+  // const [center, setCenter] = useState({ lat: 24.4539, lng: 54.3773 });
+  // const [marker, setMarker] = useState({ lat: 24.4539, lng: 54.3773 });
 
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
-    libraries: ['places'],
-  });
+  // const { isLoaded } = useJsApiLoader({
+  //   googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
+  //   libraries: ['places'],
+  // });
 
-  const onChangeMapInput = e => {
-    const [place] = inputRef.current.getPlaces();
-    if (place) {
-      setCenter({
-        lat: place.geometry.location.lat(),
-        lng: place.geometry.location.lng(),
-      });
-      setMarker({
-        lat: place.geometry.location.lat(),
-        lng: place.geometry.location.lng(),
-      });
-      onChangeInput('coordinates', {
-        lat: place.geometry.location.lat(),
-        lng: place.geometry.location.lng(),
-      });
-    }
-  };
+  // const onChangeMapInput = e => {
+  //   const [place] = inputRef.current.getPlaces();
+  //   if (place) {
+  //     setCenter({
+  //       lat: place.geometry.location.lat(),
+  //       lng: place.geometry.location.lng(),
+  //     });
+  //     setMarker({
+  //       lat: place.geometry.location.lat(),
+  //       lng: place.geometry.location.lng(),
+  //     });
+  //     onChangeInput('coordinates', {
+  //       lat: place.geometry.location.lat(),
+  //       lng: place.geometry.location.lng(),
+  //     });
+  //   }
+  // };
 
-  const onMapClick = e => {
-    setMarker({
-      lat: e.latLng.lat(),
-      lng: e.latLng.lng(),
-    });
-    onChangeInput('coordinates', {
-      lat: e.latLng.lat(),
-      lng: e.latLng.lng(),
-    });
-  };
+  // const onMapClick = e => {
+  //   setMarker({
+  //     lat: e.latLng.lat(),
+  //     lng: e.latLng.lng(),
+  //   });
+  //   onChangeInput('coordinates', {
+  //     lat: e.latLng.lat(),
+  //     lng: e.latLng.lng(),
+  //   });
+  // };
 
   const getID = () => location.pathname.split('/').pop();
 
@@ -117,6 +117,7 @@ const AddForm = ({
   };
 
   const addAdminProperty = () => {
+    // mandotary validation
     if (checkIfAllKeyHasValue(propertyValue, keyArr)) {
       document.getElementById('on-add-warning').style.display = 'block';
       return;
@@ -350,7 +351,14 @@ const AddForm = ({
         </div>
 
         <div className="add-property-google-map">
-          {isLoaded ? (
+        <Input
+            divClass="property-input"
+            label="Map Link"
+            value={propertyValue.locationLinkOfGoogleMap}
+            onChange={e => onChangeInput('locationLinkOfGoogleMap', e.target.value)}
+          />
+          
+          {/* {isLoaded ? (
             <>
               <StandaloneSearchBox
                 onLoad={ref => (inputRef.current = ref)}
@@ -367,10 +375,12 @@ const AddForm = ({
                 <Marker position={marker} />
               </GoogleMap>
             </>
-          ) : null}
+          ) : null} */}
+          
+          <iframe style={{width:"100%",height:"100%",border:"0px"}} src={propertyValue.locationLinkOfGoogleMap} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <Input
-          divClass="property-input"
+          divClass="property-input mt-7rem"
           label="Youtube Link"
           value={propertyValue.videoView}
           onChange={e => onChangeInput('videoView', e.target.value)}

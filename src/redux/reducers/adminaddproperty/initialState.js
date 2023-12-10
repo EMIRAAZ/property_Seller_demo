@@ -38,6 +38,7 @@ export const initialState = {
     city: '',
     emirate: '',
     coordinates: { lat: 0.0, lng: 0.0 },
+    locationLinkOfGoogleMap: '',
     agentId: '',
     agencyId: '',
     neighborhood: [],
