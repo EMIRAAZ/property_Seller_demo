@@ -186,7 +186,7 @@ const PropertyView = (props) => {
               <div className="loc-column">
                 <p className="location-header">Location</p>
                 <div className="property-view-google-map">
-                  {isLoaded ? (
+                  {/* {isLoaded ? (
                     <>
                       <GoogleMap
                         center={getCord()}
@@ -200,7 +200,8 @@ const PropertyView = (props) => {
                         <Marker position={getCord()} />
                       </GoogleMap>
                     </>
-                  ) : null}
+                  ) : null} */}
+                  <iframe style={{width:"100%",height:'100%',borderRadius:"6px"}} src={property.locationLinkOfGoogleMap} ></iframe>
                 </div>
               </div>
               <div className="loc-column-ad">
