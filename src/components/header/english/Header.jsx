@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { HeaderCtrl } from "../headerctrl";
 import HamburgerLogo from "../../svg/hamburger";
+import RightArrow from "../../svg/rightarrow";
 
 const Header = ({ customClass }) => {
   const navigate = useNavigate();
@@ -55,11 +56,11 @@ const Header = ({ customClass }) => {
           <li onClick={onSidebarWebToggle}>
             <Close className="pb-1" />
           </li>
-          <li onClick={() => navigate("/")}>
+          {/* <li onClick={() => navigate("/")}>
             <span className="border rounded-sm px-2 py-0.5 border-black">
               Log In
             </span>
-          </li>
+          </li> */}
           <li onClick={() => navigate("/")}>Home</li>
           <li onClick={() => navigate("/about")}>About Us</li>
           <li onClick={() => navigate("/off-plan")}>Off Plan</li>
@@ -82,7 +83,7 @@ const Header = ({ customClass }) => {
               ]}
             />
           </li>
-          <li className="-left-2 relative">
+          {/* <li className="-left-2 relative">
             <HeaderCtrlSelect
               customClass="mx-2 cursor-pointer"
               name="UAE"
@@ -125,7 +126,7 @@ const Header = ({ customClass }) => {
                 },
               ]}
             />
-          </li>
+          </li> */}
           <li onClick={() => navigate("/dailyblog")}>Blogs</li>
           <li onClick={() => navigate("/news")}>News</li>
           <li onClick={() => navigate("/")}>Land</li>
@@ -138,6 +139,8 @@ const Header = ({ customClass }) => {
           <li className="simple-list" onClick={() => navigate("/sell")}>
             List&nbsp;Your&nbsp;Property
           </li>
+         
+          {/* List Your Property */}
         </ul>
       </div>
       <ul className="header-list ">
@@ -194,9 +197,13 @@ const Header = ({ customClass }) => {
               />
               <DownArrow fill={getLoc() === "" ? "#ffffff" : "#000000"} />
             </li>
-            <li className="simple-list" onClick={() => navigate("/sell")}>
+            {/* <li className="simple-list" onClick={() => navigate("/sell")}>
               List&nbsp;Your&nbsp;Property
-            </li>
+            </li> */}
+            <li className="simple-list" onClick={() => navigate('/about')}>
+          <RightArrow color="#6565d6 " viewBox="12 0 16 8" />
+          About Us
+        </li>
           </ul>
         </li>
         <li className="desktop-li-updated ">

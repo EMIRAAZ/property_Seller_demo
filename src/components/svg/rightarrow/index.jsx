@@ -2,7 +2,7 @@ const RightArrow = ({
   customClass,
   color = 'white',
   width = '16',
-  height = '8',
+  height = '0',
   viewBox = '0 0 16 8',
 }) => {
   return (

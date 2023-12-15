@@ -30,7 +30,7 @@ export function HeaderCtrl() {
         ]}
       /> */}
 
-      <HeaderSelect
+      {/* <HeaderSelect
         customClass=" cursor-pointer sm:hidden"
         txtcls="small-txt"
         txtcls2="mt-0.5"
@@ -74,18 +74,21 @@ export function HeaderCtrl() {
           //   element: 'TR',
           // },
         ]}
-      />
+      /> */}
 
-      <span className="cursor-pointer text-sm sm:border sm:rounded-sm sm:px-2 sm:py-0.5">
+ <li className="" style={{cursor:"pointer"}} onClick={() => navigate("/sell")}>
+              List&nbsp;Your&nbsp;Property
+            </li>
+      {/* <span className="cursor-pointer text-sm sm:border sm:rounded-sm sm:px-2 sm:py-0.5">
         Log in
-      </span>
-      <span
+      </span> */}
+      {/* <span
         className={`mx-2 border rounded-sm px-2 py-1 cursor-pointer sm:hidden ${
           location.pathname === '/' ? 'border-white' : 'local-broder-purp'
         } `}
       >
         Sign up
-      </span>
+      </span> */}
     </div>
   );
 }

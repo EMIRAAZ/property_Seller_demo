@@ -53,11 +53,13 @@ const Property = props => {
         className="property-list-item"
         onContextMenu={e => e.preventDefault()}
       >
+        <div className="" onClick={navigateTo} style={{cursor:"pointer"}}>
         <ImgPropCarousel
           customClass="prop-list-img"
           imgArray={props.images}
           curImgClass="prop-list-img"
         />
+        </div>
         {props.check ? <div className="new-listing">New Listing</div> : ''}
         {renderVerified(props.verified)}
         <div className="property-rectangle favourite">
@@ -74,7 +76,7 @@ const Property = props => {
         >
           <Share width="14" height="15" fill="#979797" viewbox="1 -3 9 15" />
         </div>
-        <div className="address">
+        <div className="address" onClick={navigateTo} style={{cursor:"pointer"}}>
           <LocationIcon
             fill="#6565D6"
             opacity="1"
