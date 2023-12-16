@@ -73,3 +73,16 @@
     }
   }
 }
+
+
+@media(max-width:580px){
+  .home-category-frame{
+    top: 650px;
+  }
+}
+
+@media(max-width:370px){
+  .home-category-frame{
+    top: 680px;
+  }
+}

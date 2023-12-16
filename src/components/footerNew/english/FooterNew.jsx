@@ -37,7 +37,7 @@ function FooterNew(props) {
       </div>
       <div className="bottom-div">
         <div className="copyright">
-          <p>{`© ${TITLE} 2022 . All rights reserved.`}</p>
+          <p>{`© ${TITLE} 2024 . All rights reserved.`}</p>
         </div>
         <div className="terms">
           <a onClick={() => navigate('/terms')}>Terms of Use</a>

@@ -156,3 +156,21 @@
     }
   }
 }
+
+
+@media (max-width:1120px) {
+  .ls-home-img-frame{
+    height: 660px;
+  }
+}
+@media (max-width:600px) {
+  .ls-home-img-frame{
+    height: 830px;
+  }
+}
+
+@media (max-width:330px) {
+  .ls-home-img-frame{
+    height: 842px;
+  }
+}

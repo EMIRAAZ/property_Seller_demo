@@ -33,7 +33,7 @@ const HomeFormCard = props => {
   return (
     <div className="home-form-card">
       <div className="home-formcard">
-        <BasicSelect
+        {/* <BasicSelect
           bgColor="white"
           border
           customClass="emirate"
@@ -48,7 +48,7 @@ const HomeFormCard = props => {
             { name: 'Umm Al Quwain', value: 'Umm Al Quwain' },
             { name: 'Fujairah', value: 'Fujairah' },
           ]}
-        />
+        /> */}
         <SearchChiptSelect
           bgColor="white"
           border
