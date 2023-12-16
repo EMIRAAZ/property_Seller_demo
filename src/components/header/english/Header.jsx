@@ -143,15 +143,15 @@ const Header = ({ customClass }) => {
           {/* List Your Property */}
         </ul>
       </div>
-      <ul className="header-list ">
-        <li className="logo" onClick={onSidebarWebToggle}>
+      <ul className="header-list sm:flex-row-reverse ">
+        <li className="logo sm:mr-8 sm:mt-2" onClick={onSidebarWebToggle} >
           <HamburgerLogo
-            width="27"
-            height="26"
+            width="23"
+            height="23"
             fill={getLoc() === "" ? "#ffffff" : "#6565D6"}
           />
         </li>
-        <li className="company-name absolute" onClick={() => navigate("/")}>
+        <li className="company-name absolute sm:mt-2" onClick={() => navigate("/")}>
           {/* {location.pathname === '/' ? (
             <img
               width={200}

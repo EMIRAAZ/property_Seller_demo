@@ -6,9 +6,9 @@ export function HeaderCtrl() {
   let location = useLocation();
   let navigate = useNavigate();
 
-  const onChangeCountry = country => {
-    if (country === 'INDIA') navigate('/india');
-  };
+  // const onChangeCountry = country => {
+  //   if (country === 'INDIA') navigate('/india');
+  // };
 
   return (
     <div
@@ -76,7 +76,7 @@ export function HeaderCtrl() {
         ]}
       /> */}
 
- <li className="" style={{cursor:"pointer"}} onClick={() => navigate("/sell")}>
+ <li className="sm:hidden " style={{cursor:"pointer"}} onClick={() => navigate("/sell")}>
               List&nbsp;Your&nbsp;Property
             </li>
       {/* <span className="cursor-pointer text-sm sm:border sm:rounded-sm sm:px-2 sm:py-0.5">

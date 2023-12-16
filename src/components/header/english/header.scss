@@ -398,6 +398,11 @@
 @media only screen and (max-width: 634px) {
   .header-english {
     .header-list {
+
+      .company-name {
+        left: 20px;
+      }  
+
       .buy {
         display: none;
       }
