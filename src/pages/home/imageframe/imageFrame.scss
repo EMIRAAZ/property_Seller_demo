@@ -2,6 +2,7 @@
   height: 1010px !important;
 }
 
+
 .home-image-frame {
   // transition: 1s;
   display: flex;
@@ -23,7 +24,7 @@
     margin: 10px auto;
     margin-top: 100px;
     justify-content: center;
-    width: 80%;
+    width: 90%;
     font-family: 'Poppins';
     color: #ffffff;
     font-weight: 600;
@@ -110,7 +111,7 @@
     }
   }
 }
-
+// @media screen and (max-width:)
 @media only screen and (min-width: 600px) {
   .gt-home-img-frame {
     height: 97vh;
@@ -172,5 +173,10 @@
 @media (max-width:330px) {
   .ls-home-img-frame{
     height: 842px;
+  }
+}
+@media (max-width:365px){
+  .home-image-frame{
+    height: 795px;
   }
 }
