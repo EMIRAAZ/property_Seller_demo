@@ -43,7 +43,7 @@ const QueryCard = ({
   return (
     <div className="query-card-component">
       <div className="container">
-        <BasicSelect
+        {/* <BasicSelect
           bgColor="white"
           border
           customClass="emirate"
@@ -59,7 +59,7 @@ const QueryCard = ({
             { name: 'Umm Al Quwain', value: 'Umm Al Quwain' },
             { name: 'Fujairah', value: 'Fujairah' },
           ]}
-        />
+        /> */}
         <SearchChipSelect
           bgColor="white"
           border

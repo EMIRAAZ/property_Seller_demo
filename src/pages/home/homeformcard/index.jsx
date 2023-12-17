@@ -91,7 +91,7 @@ const HomeFormCard = props => {
             },
           ]}
         />
-        <BasicSelect
+        {/* <BasicSelect
           customClass="furnish-home"
           name="Furnish type"
           bgColor="white"
@@ -103,7 +103,7 @@ const HomeFormCard = props => {
             { name: 'Un Furnished', value: 'unfurnished' },
             { name: 'Both', value: '' },
           ]}
-        />
+        /> */}
         <BasicSelect
           customClass="price-from"
           bgColor="white"
@@ -204,7 +204,7 @@ const HomeFormCard = props => {
             { name: '8', value: 8 },
           ]}
         />
-        <BasicSelect
+        {/* <BasicSelect
           customClass="bath-home"
           name="Bath"
           bgColor="white"
@@ -221,7 +221,7 @@ const HomeFormCard = props => {
             { name: '7', value: 7 },
             { name: '8', value: 8 },
           ]}
-        />
+        /> */}
         <BasicButton
           customClass="home-search-btn"
           onClick={() => props.onSearch(makeParam())}

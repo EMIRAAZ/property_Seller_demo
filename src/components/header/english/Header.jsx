@@ -179,7 +179,6 @@ const Header = ({ customClass }) => {
               </li>
             ) : null}
               <li className="simple-list" onClick={() => navigate('/about')}>
-                <RightArrow color="#6565d6 " viewBox="12 0 16 8" />
                 About Us
               </li>
          
