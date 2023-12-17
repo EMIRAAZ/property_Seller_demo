@@ -67,7 +67,7 @@ const Header = ({ customClass }) => {
           <li>Commercial</li>
           <li onClick={() => navigate("/listproperty/readytomove")}>Ready</li>
 
-          <li className="-left-2 relative">
+          {/* <li className="-left-2 relative">
             <HeaderCtrlSelect
               customClass="mx-2 cursor-pointer"
               name="English"
@@ -82,7 +82,7 @@ const Header = ({ customClass }) => {
                 },
               ]}
             />
-          </li>
+          </li> */}
           {/* <li className="-left-2 relative">
             <HeaderCtrlSelect
               customClass="mx-2 cursor-pointer"
@@ -178,12 +178,11 @@ const Header = ({ customClass }) => {
                 Home
               </li>
             ) : null}
-            <li
-              className="simple-list off"
-              onClick={() => navigate("/off-plan")}
-            >
-              Off&nbsp;Plan
-            </li>
+              <li className="simple-list" onClick={() => navigate('/about')}>
+                <RightArrow color="#6565d6 " viewBox="12 0 16 8" />
+                About Us
+              </li>
+         
             <li className="simple-list luxury">
               <HeaderSelect
                 name="Luxury&nbsp;Properties"
@@ -200,10 +199,13 @@ const Header = ({ customClass }) => {
             {/* <li className="simple-list" onClick={() => navigate("/sell")}>
               List&nbsp;Your&nbsp;Property
             </li> */}
-            <li className="simple-list" onClick={() => navigate('/about')}>
-          <RightArrow color="#6565d6 " viewBox="12 0 16 8" />
-          About Us
-        </li>
+           
+           <li
+              className="simple-list off"
+              onClick={() => navigate("/off-plan")}
+            >
+              Off&nbsp;Plan
+            </li>
           </ul>
         </li>
         <li className="desktop-li-updated ">

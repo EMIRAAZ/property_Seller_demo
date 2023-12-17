@@ -120,8 +120,7 @@ const PropertyView = (props) => {
             <div className="details">
               <p className="heading">{property.title}</p>
               <p className="heading1">{property.mainTitle}</p>
-
-              <p className="price">{` ${property.price} AED`}</p>
+              <p className="price">{'AED ' +new Intl.NumberFormat('en-IN').format(property.price)}</p>
               <div className="spec">
                 <div className="spec-wrap">
                   <Bed
@@ -205,18 +204,23 @@ const PropertyView = (props) => {
                 </div>
               </div>
               <div className="loc-column-ad">
-                <p>
+                <h2 style={{fontWeight:"500"}} htmlFor="">Address </h2>
+                {/* {
+                  JSON.stringify( property.address)
+                } */}
+                {/* <p>
                   {property && property.address && property.address.building}
-                </p>
+                </p> */}
                 <p>
                   {property &&
                     property.address &&
                     property.address.placeAddress}
                 </p>
-                <p>{property && property.address && property.address.city}</p>
-                <a className="loc-open-mp" onClick={() => openMap(getCord())}>
+                
+                <p> City : {property && property.address && property.address.city}</p>
+                {/* <a className="loc-open-mp" onClick={() => openMap(getCord())}>
                   Open in Map
-                </a>
+                </a> */}
               </div>
             </div>
             <hr />

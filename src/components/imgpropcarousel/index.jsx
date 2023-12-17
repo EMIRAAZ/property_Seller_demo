@@ -7,6 +7,7 @@ const ImgPropCarousel = ({
   imgArray = ['/assets/image/noimage.jpg'],
   customClass = '',
   curImgClass = '',
+  imageOnclickRedirectLink
 }) => {
   const [index, setIndex] = useState(0);
 
@@ -19,20 +20,31 @@ const ImgPropCarousel = ({
   };
   return (
     <div
+    onClick={imageOnclickRedirectLink}
       className={`image-carousel ${customClass}`}
       onContextMenu={e => e.preventDefault()}
     >
       <div className="carousel-panel">
         <LeftCarousel
           customClass="left-carousel-arrow"
-          onClick={() => onsetIndex(-1)}
+          onClick={(e) =>{ 
+            e.stopPropagation()
+            onsetIndex(-1)
+          }
+         }
         />
         <RightCarousel
           customClass="right-carousel-arrow"
-          onClick={() => onsetIndex(1)}
+          onClick={(e) =>{ 
+            e.stopPropagation()
+            onsetIndex(1)
+          }
+        }
         />
       </div>
       <img
+  
+  
         className={`carousel-img-tag ${curImgClass}`}
         src={imgArray[index]}
         alt="img"

@@ -47,14 +47,27 @@ const Property = props => {
         VERIFIED
       </div>
     ) : null;
+
+
+    function formatPrice(number, locale) {
+      const options = {
+        style: 'currency',
+        currency: locale === 'en-IN' ? 'INR' : 'AED',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      };
+    
+      return new Intl.NumberFormat(locale, options).format(number);
+    }
+
   return (
     <div className="property-list" onContextMenu={e => e.preventDefault()}>
       <div
         className="property-list-item"
-        onContextMenu={e => e.preventDefault()}
-      >
-        <div className="" onClick={navigateTo} style={{cursor:"pointer"}}>
+        onContextMenu={e => e.preventDefault()} >
+        <div className="" style={{cursor:"pointer"}}>
         <ImgPropCarousel
+        imageOnclickRedirectLink={navigateTo}
           customClass="prop-list-img"
           imgArray={props.images}
           curImgClass="prop-list-img"
@@ -62,9 +75,9 @@ const Property = props => {
         </div>
         {props.check ? <div className="new-listing">New Listing</div> : ''}
         {renderVerified(props.verified)}
-        <div className="property-rectangle favourite">
+        {/* <div className="property-rectangle favourite">
           <Favourite width="15" height="16" viewbox="0 -1.2 12 10" />
-        </div>
+        </div> */}
         <div
           className="property-rectangle share"
           onClick={() =>
@@ -93,7 +106,7 @@ const Property = props => {
           {props.title.toLowerCase()}
         </div>
         <div className="price-tag" onClick={navigateTo}>
-          {`${props.price} AED`}
+          {'AED ' +new Intl.NumberFormat('en-IN').format(props.price)}
         </div>
         <div className="description" onClick={navigateTo}>
           {renderDescription(props.description).toLowerCase()}
@@ -121,7 +134,7 @@ const Property = props => {
             <p>{props.noOfBathroom}</p>
           </div>
           {/* <div class="vl"></div> */}
-          <div className="spec-wrap">
+          {/* <div className="spec-wrap">
             <Living
               className="property-living"
               width="15"
@@ -130,7 +143,7 @@ const Property = props => {
               fill="#979797"
             />
             <p>{props.noOfBathroom + props.noOfBedroom}</p>
-          </div>
+          </div> */}
           {/* <div class="vl"></div> */}
           <div className="spec-wrap go-right">
             <Area
@@ -142,13 +155,13 @@ const Property = props => {
             />
             <p>
               {props.propertySize}{' '}
-              {props.propertySizeUnit ? renderUnit(props.propertySizeUnit) : ''}
+              {/* {props.propertySizeUnit ? renderUnit(props.propertySizeUnit) : ''} */}
             </p>
           </div>
         </div>
         <div className="property-line" />
         <div className="service-property">
-          <div
+          {/* <div
             className="service-btn-property email"
             onClick={() =>
               window.open('mailto:hello@propertyseller.ae', '_blank')
@@ -156,7 +169,7 @@ const Property = props => {
           >
             <Mail width="15" height="15" viewBox="0 0 15 15" fill="#6565D6" />
             Email
-          </div>
+          </div> */}
           <div
             className="service-btn-property phone"
             // onClick={() => window.open("tel:+971553011274", "_blank")}
