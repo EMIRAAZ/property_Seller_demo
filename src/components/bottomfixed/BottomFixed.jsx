@@ -39,9 +39,9 @@ function BottomFixed({ property }) {
           }
         >
           <Phone width="17" height="17" viewBox="0 0 15 15" fill="#6565D6" />
-          Callback
+          Callback Request
         </div>
-        <div
+        {/* <div
           className="service-btn-property email"
           onClick={() =>
             window.open("mailto:hello@propertyseller.ae", "_blank")
@@ -49,7 +49,7 @@ function BottomFixed({ property }) {
         >
           <Mail width="15" height="15" viewBox="0 0 15 15" fill="#6565D6" />
           Email
-        </div>
+        </div> */}
       </div>
     </div>
   );

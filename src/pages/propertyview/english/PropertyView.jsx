@@ -375,9 +375,9 @@ const PropertyView = (props) => {
                     viewBox="0 0 15 15"
                     fill="#6565D6"
                   />
-                  Callback
+                  Callback Request
                 </div>
-                <div
+                {/* <div
                   className="service-btn-property email"
                   onClick={() =>
                     window.open("mailto:hello@propertyseller.ae", "_blank")
@@ -390,7 +390,7 @@ const PropertyView = (props) => {
                     fill="#6565D6"
                   />
                   Email
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
