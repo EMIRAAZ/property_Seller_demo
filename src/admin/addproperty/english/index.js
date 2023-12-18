@@ -31,8 +31,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onInputChange: payload => dispatch(changeAdminPropertyInput(payload)),
     addAdminProperty: (payload, cb) => dispatch(addAdminProperty(payload, cb)),
-    editAdminProperty: (id, payload, cb) =>
-      dispatch(editAdminProperty(id, payload, cb)),
+    editAdminProperty: (id, payload, cb) => dispatch(editAdminProperty(id, payload, cb)),
     getAgentProperty: payload => dispatch(getAgentProperty(payload)),
     getTaglineProperty: payload => dispatch(getTaglineProperty(payload)),
     getNeighborhoodProperty: payload =>
