@@ -5,7 +5,7 @@
   background-color: #d9e5ff;
   .container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     width: 100%;
     gap: 10px 5px;
     padding: 50px 20px;
@@ -90,14 +90,14 @@
       }
 
       .price-from-list {
-        grid-row-start: 2;
-        grid-column-start: 3;
-        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
       }
       .price-two-list {
-        grid-row-start: 2;
-        grid-column-start: 4;
-        grid-column-end: 6;
+        grid-row-start: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
       }
       .furnish-q-card {
         grid-row-start: 3;
@@ -105,9 +105,9 @@
         grid-column-end: 2;
       }
       .bed-list {
-        grid-row-start: 3;
-        grid-column-start: 2;
-        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-column-start: 3;
+        grid-column-end: 6;
       }
       .bath-list {
         grid-row-start: 3;
@@ -117,7 +117,7 @@
 
       .list-search-btn {
         grid-row-start: 3;
-        grid-column-start: 4;
+        grid-column-start: 3;
         grid-column-end: 6;
         font-weight: 700;
         font-size: 16px;
@@ -125,6 +125,30 @@
         align-items: center;
         justify-content: center;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .query-card-component {
+    .container {
+     
+      .price-from-list {
+        grid-row-start: 5;
+        grid-column-start: 1;
+        grid-column-end: 5;
+      }
+      .price-two-list {
+        grid-row-start: 6;
+        grid-column-start: 1;
+      }
+
+      .bed-list {
+        grid-row-start: 4;
+        grid-column-start: 1;
+        grid-column-end: 5;
+      }
+      
     }
   }
 }

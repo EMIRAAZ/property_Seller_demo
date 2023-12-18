@@ -102,7 +102,7 @@ const QueryCard = ({
             },
           ]}
         />
-        <BasicSelect
+        {/* <BasicSelect
           customClass="furnish-q-card"
           name="Furnish type"
           bgColor="white"
@@ -114,7 +114,7 @@ const QueryCard = ({
             { name: 'Un Furnished', value: 'unfurnished' },
             { name: 'Both', value: '' },
           ]}
-        />
+        /> */}
         <BasicSelect
           customClass="price-from-list"
           bgColor="white"
@@ -214,7 +214,7 @@ const QueryCard = ({
             { name: '8', value: 8 },
           ]}
         />
-        <BasicSelect
+        {/* <BasicSelect
           customClass="bath-list"
           name="Bath"
           bgColor="white"
@@ -231,7 +231,7 @@ const QueryCard = ({
             { name: '7', value: 7 },
             { name: '8', value: 8 },
           ]}
-        />
+        /> */}
         <BasicButton
           customClass="list-search-btn"
           onClick={() => onSearch(makeParam())}
