@@ -7,12 +7,7 @@ import SingleImageUpload from '../../../components/singleimageupload';
 
 const keyArr = [
   'agentName',
-  'position',
-  'yearsOfExperience',
-  'username',
   'languages',
-  'rera',
-  'orn',
   'phoneNumber',
   'whatsAppNumber',
 ];
@@ -68,6 +63,22 @@ const AddForm = ({
   return (
     <div className="add-agent-form">
       <div className="add-left-agent-form">
+      <br />
+        <br />
+        <br />
+        
+        {
+          JSON.stringify(agentValue) 
+        }
+        agentValue
+        <br />
+        <br />
+        <br />
+        <br />
+        {
+          JSON.stringify(keyArr)
+        }
+        keyArr
         <Input
           divClass="agent-input"
           label="Name"
@@ -83,50 +94,8 @@ const AddForm = ({
           onChange={addAgentImage}
           onDelete={deleteAgentImage}
         />
-        <Input
-          divClass="agent-input"
-          label="Position"
-          required
-          value={agentValue.position}
-          onChange={e => onChangeInput('position', e.target.value)}
-        />
-        <Input
-          divClass="agent-input"
-          label="RERA"
-          required
-          value={agentValue.rera}
-          onChange={e => onChangeInput('rera', e.target.value)}
-        />
-        <Input
-          divClass="agent-input"
-          label="BRN"
-          required
-          value={agentValue.orn}
-          onChange={e => onChangeInput('orn', e.target.value)}
-        />
       </div>
       <div className="add-right-agent-form">
-        <Input
-          divClass="agent-input"
-          label="Years Of Experience"
-          required
-          value={agentValue.yearsOfExperience}
-          onChange={e => onChangeInput('yearsOfExperience', e.target.value)}
-        />
-        <Input
-          divClass="agent-input"
-          label="Username"
-          required
-          value={agentValue.username}
-          onChange={e => onChangeInput('username', e.target.value)}
-        />
-        <Input
-          divClass="agent-input"
-          label="Password"
-          required
-          value={editing ? '' : agentValue.password}
-          onChange={e => onChangeInput('password', e.target.value)}
-        />
         <Input
           divClass="agent-input"
           label="Phone Number"

@@ -8,14 +8,13 @@ export default function City() {
   let navigate = useNavigate();
   let location = useLocation();
   const getID = () => location.pathname.split('/').pop();
-  const [form, setForm] = useState({ name: '', emirate: '' });
+  const [form, setForm] = useState({ name: ''});
 
   const getCityById = async () => {
     const city = await axios.get(`/api/city/${getID()}`);
     const data = city.data?.data;
     setForm({
       name: data.name,
-      emirate: data.emirate,
       id: data.id,
     });
   };
@@ -28,14 +27,15 @@ export default function City() {
             Authorization: 'Bearer ' + localStorage.getItem('authToken'),
           },
         });
-        setForm({ name: '', emirate: '' });
+        setForm({ name: ''});
       } else {
+        console.log(form,'form')
         await axios.post(`/api/city`, form, {
           headers: {
             Authorization: 'Bearer ' + localStorage.getItem('authToken'),
           },
         });
-        setForm({ name: '', emirate: '' });
+        setForm({ name: '' });
       }
     } catch (e) {
       console.log(e);

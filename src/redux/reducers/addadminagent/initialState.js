@@ -7,12 +7,12 @@ export const initialState = {
   },
   agentValue: {
     agentImage: '',
-    agentName: '',
+    agentName: '', //
     agencyId: '',
     languages: [],
-    password: '',
+    password: '', //
     position: '',
-    username: '',
+    username: '', //
     yearsOfExperience: '',
     rera: '',
     orn: '',

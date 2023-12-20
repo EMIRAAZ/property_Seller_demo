@@ -44,7 +44,7 @@ const Property = props => {
           props.check ? '' : 'no-verified'
         }`}
       >
-        VERIFIED
+        HIGHEST ROI
       </div>
     ) : null;
 

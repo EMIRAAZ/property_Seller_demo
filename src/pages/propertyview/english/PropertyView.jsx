@@ -294,7 +294,7 @@ const PropertyView = (props) => {
             <div className="agent-card">
               <div className="top-header-agent">
                 <div className="agent-details">
-                  <p style={{ color: "black" }}>Contact Agent</p>
+                  <p style={{ color: "black" }}>Contact PropertySeller</p>
 
                   {property && property.agent ? (
                     <>
@@ -307,16 +307,17 @@ const PropertyView = (props) => {
                         Response time :{" "}
                         <span style={{ color: "grey" }}>Within 5 minutes</span>
                       </h1>
-                      <h1 style={{ color: "black" }}>
+                      {/* <h1 style={{ color: "black" }}>
                         Languages :
                         <span style={{ color: "grey" }}>
                           {property.agent.languages}{" "}
                         </span>
-                      </h1>
+                      </h1> */}
                       <h1 style={{ color: "black" }}>
-                        Experience :{" "}
+                        Developer :{" "}
                         <span style={{ color: "grey" }}>
-                          {property.agent.yearsOfExperience}{" "}
+                          {/* {property.agent.yearsOfExperience}{" "} */}
+                          Emmaar Properties
                         </span>
                       </h1>
                       {/* <p>{property.agency.officeAddress}</p> */}

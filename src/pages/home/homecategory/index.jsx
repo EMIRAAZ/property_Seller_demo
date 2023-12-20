@@ -35,7 +35,7 @@ const CAT = [
 
   {
     id: 6,
-    name: 'Verified Properties',
+    name: 'Highest Roi Properties',
     page: '/listproperty/verifiedproperties',
     image: '/assets/image/download.jpg',
   },

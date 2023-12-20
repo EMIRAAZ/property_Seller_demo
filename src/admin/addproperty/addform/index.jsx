@@ -29,7 +29,7 @@ const keyArr = [
   'noOfBedroom',
   'noOfBathroom',
   'trakheesiPermit',
-  'ownership',
+  // 'ownership',
   'brokerORN',
   'agentBRN',
   'call',
@@ -168,12 +168,6 @@ const AddForm = ({
           value={propertyValue.placeAddress}
           required
         />
-        <Input
-          divClass="property-input"
-          label="Building"
-          value={propertyValue.building}
-          onChange={e => onChangeInput('building', e.target.value)}
-        />
         <Select
           customClass="property-input"
           label="Emirate"
@@ -307,13 +301,13 @@ const AddForm = ({
             value={propertyValue.price}
             onChange={e => onChangeInput('price', e.target.value)}
           />
-          <Input
+          {/* <Input
             divClass="property-input"
             label="Ownership"
             required
             value={propertyValue.ownership}
             onChange={e => onChangeInput('ownership', e.target.value)}
-          />
+          /> */}
         </div>
         <div className="property-row-div">
           <Input
@@ -418,7 +412,7 @@ const AddForm = ({
             onChange={e => onChangeInput('luxury', e.target.checked)}
           />
           <Checkbox
-            label="Verified"
+            label="Highest Roi"
             value={propertyValue.verified}
             onChange={e => onChangeInput('verified', e.target.checked)}
           />
