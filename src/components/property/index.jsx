@@ -185,7 +185,7 @@ const Property = props => {
             }
           >
             <Phone width="17" height="17" viewBox="0 0 15 15" fill="#6565D6" />
-            Callback Request
+            Request Call Back
           </div>
 
           <div

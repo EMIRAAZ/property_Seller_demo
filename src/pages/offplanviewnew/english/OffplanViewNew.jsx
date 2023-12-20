@@ -195,40 +195,64 @@ const OffplanViewNew = (props) => {
 
                   {property && property.agent ? (
                     <>
-                      <p>{property.agent.agentName}</p>
+                      {/* <p>{property.agent.agentName}</p> */}
 
-                      <h1>
+                      {/* <h1>
                         Response time :
                         <span style={{ color: "black" }}>
                           {" "}
                           within 5 minutes
                         </span>
-                      </h1>
-                      <h1>
+                      </h1> */}
+                      {/* <h1>
                         Languages :{" "}
                         <span style={{ color: "black" }}>
                           {property.agent.languages}{" "}
                         </span>
+                      </h1> */}
+                      <h1 style={{ color: "black" }}>
+                        Developer :{" "}
+                        <span style={{ color: "grey" }}>
+                          {property.agency.username}
+                        </span>
                       </h1>
-                      <h1>
+
+                      <h1 style={{ color: "black", marginTop: "10px" }}>
+                        Response time :{" "}
+                        <span style={{ color: "grey" }}>Within 5 minutes</span>
+                      </h1>
+                      {/* <h1>
                         Experience :{" "}
                         <span style={{ color: "black" }}>
                           {property.agent.yearsOfExperience}{" "}
                         </span>
-                      </h1>
+                      </h1> */}
                       {/* <h2>Agency : {property.agency.agencyName}</h2> */}
                       {/* <p>{property.agency.officeAddress}</p> */}
                     </>
                   ) : null}
                 </div>
                 {property && property.agent && property.agent.agentImage ? (
-                  <img src={property.agent.agentImage} alt="agent img" />
+                  <img src='/assets/image/propertyselle_Logo.jpeg' alt="agent img" />
                 ) : null}
                 {property && property.agency && property.agency.agencyLogo ? (
                   <img src={property.agency.agencyLogo} alt="agency img" />
                 ) : null}
               </div>
               <div className="service-property-x">
+               
+                <div
+                  className="service-btn-property phone"
+                  onClick={() => window.open("tel:+971553011274", "_blank")}
+                >
+                  <Phone
+                    width="17"
+                    height="17"
+                    viewBox="0 0 15 15"
+                    fill="#6565D6"
+                  />
+                  Phone
+                </div>
                 <div
                   className="service-btn-property whatsapp"
                   onClick={() =>
@@ -249,18 +273,6 @@ const OffplanViewNew = (props) => {
                     fill="#6565D6"
                   />
                   WhatsApp
-                </div>
-                <div
-                  className="service-btn-property phone"
-                  onClick={() => window.open("tel:+971553011274", "_blank")}
-                >
-                  <Phone
-                    width="17"
-                    height="17"
-                    viewBox="0 0 15 15"
-                    fill="#6565D6"
-                  />
-                  Phone
                 </div>
                 <div
                   className="service-btn-property email"

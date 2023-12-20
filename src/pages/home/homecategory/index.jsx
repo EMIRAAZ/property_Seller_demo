@@ -58,7 +58,7 @@ const HomeCategory = props => {
         <div className="property-type-component-inner">
           <img src={propertyType.image} alt={propertyType.name} />
         </div>
-        <p>{propertyType.name}</p>
+        <p style={{textAlign:"center"}}>{propertyType.name}</p>
       </div>
     ));
   };

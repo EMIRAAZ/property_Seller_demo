@@ -294,19 +294,16 @@ const PropertyView = (props) => {
             <div className="agent-card">
               <div className="top-header-agent">
                 <div className="agent-details">
-                  <p style={{ color: "black" }}>Contact PropertySeller</p>
+                  <p style={{ color: "black" }}>Contact Seller</p>
 
                   {property && property.agent ? (
                     <>
-                      <p style={{ marginTop: "10px" }}>
+                      {/* <p style={{ marginTop: "10px" }}>
                         <span style={{ color: "grey" }}>Name : </span>
                         {property.agent.agentName}
-                      </p>
+                      </p> */}
 
-                      <h1 style={{ color: "black", marginTop: "10px" }}>
-                        Response time :{" "}
-                        <span style={{ color: "grey" }}>Within 5 minutes</span>
-                      </h1>
+                   
                       {/* <h1 style={{ color: "black" }}>
                         Languages :
                         <span style={{ color: "grey" }}>
@@ -316,9 +313,13 @@ const PropertyView = (props) => {
                       <h1 style={{ color: "black" }}>
                         Developer :{" "}
                         <span style={{ color: "grey" }}>
-                          {/* {property.agent.yearsOfExperience}{" "} */}
-                          Emmaar Properties
+                          {property.agency.username}
                         </span>
+                      </h1>
+
+                      <h1 style={{ color: "black", marginTop: "10px" }}>
+                        Response time :{" "}
+                        <span style={{ color: "grey" }}>Within 5 minutes</span>
                       </h1>
                       {/* <p>{property.agency.officeAddress}</p> */}
                     </>
@@ -334,6 +335,29 @@ const PropertyView = (props) => {
                 </div>
               </div>
               <div className="service-property-x">
+              <div
+                  className="service-btn-property phone"
+                  // onClick={() => window.open("tel:+971553011274", "_blank")}
+
+                  onClick={() =>
+                    window.open(
+                      `https://wa.me/+971521278701/?text=Hello Property Seller. I’m interested in this property %0a%0aLink: http://propertyseller.ae/property/${property.id}
+              %0a%0aPrice: AED ${property.price}
+              %0aLocation: ${property.address.city}
+                
+                %0aReference: ${property.id}
+                %0a%0aPlease call me`
+                    )
+                  }
+                >
+                  <Phone
+                    width="17"
+                    height="17"
+                    viewBox="0 0 15 15"
+                    fill="#6565D6"
+                  />
+                  Request Call Back
+                </div>
                 <div
                   className="service-btn-property whatsapp"
                   onClick={() =>
@@ -355,29 +379,7 @@ const PropertyView = (props) => {
                   />
                   WhatsApp
                 </div>
-                <div
-                  className="service-btn-property phone"
-                  // onClick={() => window.open("tel:+971553011274", "_blank")}
-
-                  onClick={() =>
-                    window.open(
-                      `https://wa.me/+971521278701/?text=Hello Property Seller. I’m interested in this property %0a%0aLink: http://propertyseller.ae/property/${property.id}
-              %0a%0aPrice: AED ${property.price}
-              %0aLocation: ${property.address.city}
                 
-                %0aReference: ${property.id}
-                %0a%0aPlease call me`
-                    )
-                  }
-                >
-                  <Phone
-                    width="17"
-                    height="17"
-                    viewBox="0 0 15 15"
-                    fill="#6565D6"
-                  />
-                  Callback Request
-                </div>
                 {/* <div
                   className="service-btn-property email"
                   onClick={() =>

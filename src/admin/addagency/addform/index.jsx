@@ -68,15 +68,7 @@ const AddForm = ({
   return (
     <div className="add-agency-form">
       <div className="add-left-agency-form">
-        {
-          JSON.stringify(agencyValue)
-        }
-
-        <br />
-
-        {
-          JSON.stringify(keyArr)
-        }
+      
         <Input
           divClass="agency-input"
           label="Agency Name"

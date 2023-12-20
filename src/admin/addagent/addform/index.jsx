@@ -8,6 +8,7 @@ import SingleImageUpload from '../../../components/singleimageupload';
 const keyArr = [
   'agentName',
   'languages',
+  'username',
   'phoneNumber',
   'whatsAppNumber',
 ];
@@ -63,22 +64,6 @@ const AddForm = ({
   return (
     <div className="add-agent-form">
       <div className="add-left-agent-form">
-      <br />
-        <br />
-        <br />
-        
-        {
-          JSON.stringify(agentValue) 
-        }
-        agentValue
-        <br />
-        <br />
-        <br />
-        <br />
-        {
-          JSON.stringify(keyArr)
-        }
-        keyArr
         <Input
           divClass="agent-input"
           label="Name"
@@ -86,6 +71,21 @@ const AddForm = ({
           value={agentValue.agentName}
           onChange={e => onChangeInput('agentName', e.target.value)}
         />
+          <Input
+          divClass="agent-input"
+          label="Username"
+          required
+          value={agentValue.username}
+          onChange={e => onChangeInput('username', e.target.value)}
+        />
+        <Input
+          divClass="agent-input"
+          label="Password"
+          required
+          value={editing ? '' : agentValue.password}
+          onChange={e => onChangeInput('password', e.target.value)}
+        />
+        
         <SingleImageUpload
           name="agentLogo"
           label="Agent Logo"
@@ -117,6 +117,7 @@ const AddForm = ({
           value={agentValue.languages.toString()}
           onChange={e => onChangeInput('languages', e.target.value)}
         />
+
         <span id="on-add-warning" className="pls-fill">
           please fill all the required fields !!
         </span>

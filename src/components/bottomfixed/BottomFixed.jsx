@@ -9,6 +9,23 @@ function BottomFixed({ property }) {
   return (
     <div className="btm-fixed">
       <div className="service-property-x">
+      <div
+          className="service-btn-property phone"
+          // onClick={() => window.open("tel:+971553011274", "_blank")}
+
+          onClick={() =>
+            window.open(
+              `https://wa.me/+971553011274/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://propertyseller.ae/property/${property.id}
+              %0a%0aPrice: AED ${property.price}
+              %0aLocation: ${property.address.city}
+                %0aReference: ${property.id}
+                %0a%0aPlease call me`
+            )
+          }
+        >
+          <Phone width="17" height="17" viewBox="0 0 15 15" fill="#6565D6" />
+          Request Call Back
+        </div>
         <div
           className="service-btn-property whatsapp"
           onClick={() =>
@@ -24,23 +41,7 @@ function BottomFixed({ property }) {
           <Whatsapp width="17" height="17" viewBox="0 0 15 15" fill="#6565D6" />
           WhatsApp
         </div>
-        <div
-          className="service-btn-property phone"
-          // onClick={() => window.open("tel:+971553011274", "_blank")}
-
-          onClick={() =>
-            window.open(
-              `https://wa.me/+971553011274/?text=Hello ${TITLE}. I’m interested in this property %0a%0aLink: http://propertyseller.ae/property/${property.id}
-              %0a%0aPrice: AED ${property.price}
-              %0aLocation: ${property.address.city}
-                %0aReference: ${property.id}
-                %0a%0aPlease call me`
-            )
-          }
-        >
-          <Phone width="17" height="17" viewBox="0 0 15 15" fill="#6565D6" />
-          Callback Request
-        </div>
+       
         {/* <div
           className="service-btn-property email"
           onClick={() =>
