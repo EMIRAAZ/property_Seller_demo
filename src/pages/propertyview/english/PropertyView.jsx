@@ -118,8 +118,8 @@ const PropertyView = (props) => {
         <div className="content-container">
           <div className="left-container">
             <div className="details">
-              <p className="heading">{property.title}</p>
-              <p className="heading1">{property.mainTitle}</p>
+              <p className="heading"> {property.propertyStatus}</p>
+              <p className="heading1">{property.title}</p>
               <p className="price">{'AED ' +new Intl.NumberFormat('en-IN').format(property.price)}</p>
               <div className="spec">
                 <div className="spec-wrap">
@@ -313,7 +313,7 @@ const PropertyView = (props) => {
                       <h1 style={{ color: "black" }}>
                         Developer :{" "}
                         <span style={{ color: "grey" }}>
-                          {property.agency.username}
+                          {property.agency.agencyName}
                         </span>
                       </h1>
 

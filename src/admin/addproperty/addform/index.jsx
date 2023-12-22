@@ -23,13 +23,14 @@ const keyArr = [
   'placeAddress',
   'city',
   'propertySize',
-  'propertySizeUnit',
+  // 'propertySizeUnit',
   'propertyType',
   'propertyAge',
   'noOfBedroom',
   'noOfBathroom',
   'trakheesiPermit',
   // 'ownership',
+  'propertyStatus',
   'brokerORN',
   'agentBRN',
   'call',
@@ -37,8 +38,7 @@ const keyArr = [
   'whatsapp',
   'city',
   'agentId',
-  'mainTitle',
-  'emirate',
+  // 'emirate',
 ];
 
 const AddForm = ({
@@ -104,8 +104,8 @@ const AddForm = ({
     amenities,
     neighbor,
     tagline,
-    emirate,
-    propertyCategory,
+    // emirate,
+    // propertyCategory,
   } = propertyOptions;
 
   const onChangeInput = (key, value) => {
@@ -145,13 +145,13 @@ const AddForm = ({
           value={propertyValue.title}
           onChange={e => onChangeInput('title', e.target.value)}
         />
-        <Input
+        {/* <Input
           divClass="property-input"
           label="Main Title"
           required
           value={propertyValue.mainTitle}
           onChange={e => onChangeInput('mainTitle', e.target.value)}
-        />
+        /> */}
         <Textarea
           divClass="property-input"
           label="Description"
@@ -168,14 +168,14 @@ const AddForm = ({
           value={propertyValue.placeAddress}
           required
         />
-        <Select
+        {/* <Select
           customClass="property-input"
           label="Emirate"
           required
           value={propertyValue.emirate}
           options={emirate}
           onChange={v => onChangeInput('emirate', v)}
-        />
+        /> */}
         <span className="select-border"></span>
         <Select
           customClass="property-input"
@@ -185,6 +185,14 @@ const AddForm = ({
           options={propertyOptions.city}
           onChange={v => onChangeInput('city', v)}
         />
+        {/* <Select
+          customClass="property-input"
+          label="Developer"
+          required
+          value={`${propertyValue.agentId} ${propertyValue.agencyId}`}
+          options={agent}
+          onChange={v => onChangeInput('agentId', v)}
+        /> */}
         <span className="select-border"></span>
         <Select
           customClass="property-input"
@@ -215,13 +223,13 @@ const AddForm = ({
             value={propertyValue.propertySize}
             onChange={e => onChangeInput('propertySize', e.target.value)}
           />
-          <Input
+          {/* <Input
             divClass="property-input"
             label="Property size unit"
             required
             value={propertyValue.propertySizeUnit}
             onChange={e => onChangeInput('propertySizeUnit', e.target.value)}
-          />
+          /> */}
         </div>
         <Select
           customClass="property-input"
@@ -232,14 +240,14 @@ const AddForm = ({
           onChange={v => onChangeInput('propertyType', v)}
         />
         <span className="select-border"></span>
-        <Select
+        {/* <Select
           customClass="property-input"
           label="Property Category"
           required
           value={propertyValue.propertyCategory}
           options={propertyCategory}
           onChange={v => onChangeInput('propertyCategory', v)}
-        />
+        /> */}
         <span className="select-border"></span>
         <Input
           divClass="property-input"
@@ -373,6 +381,7 @@ const AddForm = ({
           
           <iframe style={{width:"100%",height:"100%",border:"0px"}} src={propertyValue.locationLinkOfGoogleMap} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+        
         <Input
           divClass="property-input mt-7rem"
           label="Youtube Link"
@@ -399,6 +408,13 @@ const AddForm = ({
           required
           value={propertyValue.whatsapp}
           onChange={e => onChangeInput('whatsapp', e.target.value)}
+        />
+        <Input
+        required
+          divClass="property-input"
+          label="Property Status"
+          value={propertyValue.propertyStatus}
+          onChange={e => onChangeInput('propertyStatus', e.target.value)}
         />
         <div className="property-row-div">
           <Checkbox
