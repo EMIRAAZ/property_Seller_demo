@@ -194,6 +194,7 @@ const AddForm = ({
           onChange={v => onChangeInput('agentId', v)}
         /> */}
         <span className="select-border"></span>
+        {console.log(agent,'agent')}
         <Select
           customClass="property-input"
           label="Agent"

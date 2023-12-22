@@ -116,10 +116,10 @@ const PropertyView = (props) => {
           )}
         </div>
         <div className="content-container">
-          <div className="left-container">
+          <div className="left-container" style={{marginTop:"10px"}}>
             <div className="details">
-              <p className="heading"> {property.propertyStatus}</p>
-              <p className="heading1">{property.title}</p>
+              {/* <p className="heading"> {property.propertyS}tatusssssssssss</p> */}
+              <p className="heading1">{property.title}ddddddddddddddd</p>
               <p className="price">{'AED ' +new Intl.NumberFormat('en-IN').format(property.price)}</p>
               <div className="spec">
                 <div className="spec-wrap">
@@ -259,10 +259,7 @@ const PropertyView = (props) => {
                 <p>Reference:</p>
                 <h1>{property.id}</h1>
               </div>
-              <div className="details">
-                <p>property age:</p>
-                <h1>{property.propertyAge}</h1>
-              </div>
+            
               <div className="details">
                 <p>Listed Date:</p>
                 {d && <h1>{d[0]}</h1>}
@@ -279,14 +276,8 @@ const PropertyView = (props) => {
                 <p> Agent BRN:</p>
                 <h1>{property.agentBRN}</h1>
               </div>
-              <div className="details">
-                <p> Ownership:</p>
-                <h1>{property.ownership}</h1>
-              </div>{" "}
-              <div className="details">
-                <p> Property Category:</p>
-                <h1>{property.ownership}</h1>
-              </div>
+            
+           
             </div>
             <hr />
           </div>
