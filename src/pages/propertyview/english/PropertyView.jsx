@@ -119,7 +119,7 @@ const PropertyView = (props) => {
           <div className="left-container" style={{marginTop:"10px"}}>
             <div className="details">
               {/* <p className="heading"> {property.propertyS}tatusssssssssss</p> */}
-              <p className="heading1">{property.title}ddddddddddddddd</p>
+              <p className="heading1">{property.title}</p>
               <p className="price">{'AED ' +new Intl.NumberFormat('en-IN').format(property.price)}</p>
               <div className="spec">
                 <div className="spec-wrap">
