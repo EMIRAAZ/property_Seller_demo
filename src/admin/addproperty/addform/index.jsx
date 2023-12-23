@@ -25,7 +25,7 @@ const keyArr = [
   'propertySize',
   // 'propertySizeUnit',
   'propertyType',
-  'propertyAge',
+  // 'propertyAge',
   'noOfBedroom',
   'noOfBathroom',
   'trakheesiPermit',
@@ -250,13 +250,13 @@ const AddForm = ({
           onChange={v => onChangeInput('propertyCategory', v)}
         /> */}
         <span className="select-border"></span>
-        <Input
+        {/* <Input
           divClass="property-input"
           label="Property age"
           required
           value={propertyValue.propertyAge}
           onChange={e => onChangeInput('propertyAge', e.target.value)}
-        />
+        /> */}
         <div className="property-row-div">
           <Input
             divClass="property-input"

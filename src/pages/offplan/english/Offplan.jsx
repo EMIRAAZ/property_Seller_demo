@@ -23,11 +23,11 @@ const Offplan = props => {
         count={props.offplan.count}
       />
 
-      <BasicButton
+      {/* <BasicButton
         onClick={() => navigate(`/offplan-projects`)}
         customClass="absolute top-15 right-5 sm:text-xs"
         children="Offplan Projects"
-      />
+      /> */}
       <div className="offplan-container">
         <RenderComponent
           to="off-plan"
